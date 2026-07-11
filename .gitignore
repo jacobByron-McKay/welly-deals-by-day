@@ -1,0 +1,10 @@
+# Backups and dev artifacts — not part of the deployed site
+*.bak
+*.bak-*
+*.bak2
+og-image-source.html
+og-image-source-backup-sunset-coral.html
+WELLY_EVENT_SCAN_PROMPT.md
+
+# Local Netlify CLI state
+.netlify/

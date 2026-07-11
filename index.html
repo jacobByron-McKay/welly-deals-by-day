@@ -1,0 +1,1745 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Google Analytics 4 — GA property "Welly Deals by Day" (its own property under the shared GA account; separate data from Auckland) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-33GXVNEQKG"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-33GXVNEQKG');
+</script>
+<!-- ============================================================================
+     ⚠️  SEO — DO NOT LOSE "WELLINGTON"  (read before touching meta/title/content)
+     ----------------------------------------------------------------------------
+     The BRAND + DOMAIN is "Welly Deals by Day" / welly-deals-by-day.co.nz  —
+     "Welly" is deliberate: local identity + trust with Wellingtonians.
+     BUT people SEARCH GOOGLE for "WELLINGTON deals", not "Welly deals".
+     So the word "Wellington" MUST stay prominent in every SEO-visible field:
+       • <title>            → keep "Wellington" in it
+       • <meta description> → keep "Wellington" + suburb names
+       • og:/twitter: tags  → keep "Wellington"
+       • JSON-LD name/areaServed, H1 tagline, on-page copy
+     Rule of thumb: brand = "Welly", but never ship an SEO field without the
+     literal word "Wellington" in it. Losing it = losing the search traffic.
+     ============================================================================ -->
+<!-- SEO: canonical/og:url/og:image (1200x630 og-image.png)/twitter all wired to welly-deals-by-day.co.nz.
+     GA4 gtag (G-33GXVNEQKG) is LIVE above (own "Welly Deals by Day" property, separate from Auckland).
+     Search Console: verify a URL-prefix property via the Google Analytics method (gtag is present),
+       so NO google-site-verification meta tag is needed. Then submit sitemap.xml.
+     Auckland's own tracking stays intentionally absent here to keep the two sites firewalled
+     (clean grant + separate analytics — Welly has its OWN GA property, not Auckland's). -->
+<title>Welly Deals by Day — Wellington's weekly deals, happy hours &amp; events</title>
+<meta name="description" content="Browse weekly deals, happy hours, quiz nights and events across central Wellington, Petone, Lower Hutt, Upper Hutt, Porirua and the Kāpiti Coast — Cuba St, Courtenay Place, Lambton Quay, the waterfront, Jackson St, High St, Main St, Paraparaumu, Waikanae and more. Updated weekly. Filter by day, suburb and category.">
+<link rel="canonical" href="https://welly-deals-by-day.co.nz">
+<link rel="icon" type="image/png" href="/icon-512.png">
+<link rel="apple-touch-icon" href="/icon-512.png">
+<meta property="og:title" content="Welly Deals by Day — Wellington deals, happy hours &amp; events">
+<meta property="og:description" content="Dining, drinks and special event deals by weekday across central Wellington, the waterfront, Petone, Lower Hutt &amp; Upper Hutt — filter by suburb, plus what's on each night.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://welly-deals-by-day.co.nz">
+<meta property="og:image" content="https://welly-deals-by-day.co.nz/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Welly Deals by Day — Wellington deals, happy hours &amp; events">
+<meta name="twitter:description" content="Dining, drinks and special event deals by weekday across central Wellington, the waterfront, Petone, Lower Hutt &amp; Upper Hutt — filter by suburb, plus what's on each night.">
+<meta name="twitter:image" content="https://welly-deals-by-day.co.nz/og-image.png">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Welly Deals by Day",
+  "alternateName": "Wellington Deals by Day",
+  "url": "https://welly-deals-by-day.co.nz",
+  "description": "Weekly deals, happy hours, quiz nights and events across central Wellington, the waterfront, Petone & Lower Hutt",
+  "areaServed": [
+    {"@type": "Place", "name": "Wellington Central, Wellington"},
+    {"@type": "Place", "name": "Te Aro, Wellington"},
+    {"@type": "Place", "name": "Courtenay Place, Wellington"},
+    {"@type": "Place", "name": "Wellington Waterfront, Wellington"},
+    {"@type": "Place", "name": "Johnsonville, Wellington"},
+    {"@type": "Place", "name": "Karori, Wellington"},
+    {"@type": "Place", "name": "Petone, Lower Hutt"},
+    {"@type": "Place", "name": "Lower Hutt"},
+    {"@type": "Place", "name": "Upper Hutt"}
+  ]
+}
+</script>
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+  :root {
+    --ink: #16263a;
+    --ink-muted: #56627a;
+    --paper: #f6f9fb;
+    --card: #ffffff;
+    --accent: #1d6fa3;
+    --accent-soft: #e6f1f8;
+    --border: #dfe5ec;
+    --today: #fff4d6;
+    --today-border: #e6c65c;
+  }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', sans-serif;
+    background: var(--paper);
+    color: var(--ink);
+  }
+  .filter-chip { transition: all 0.15s ease; }
+  .filter-chip.active { background: var(--ink); color: var(--paper); border-color: var(--ink); }
+  .filter-chip:not(.active):hover { border-color: var(--ink); }
+  .region-chip { transition: all 0.15s ease; }
+  .region-chip.active { background: var(--accent); color: #fff; border-color: var(--accent) !important; }
+  .region-chip:not(.active):hover { border-color: var(--accent); color: var(--accent); }
+  .day-section.today { background: var(--today); border-left: 3px solid var(--today-border); }
+  .deal-card { transition: transform 0.1s ease, box-shadow 0.1s ease; }
+  .deal-card:hover { transform: translateY(-1px); box-shadow: 0 4px 12px rgba(22,38,58,0.08); }
+  .cat-badge { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.04em; }
+  .cat-food         { background: #fef3e2; color: #8a5a1a; }
+  .cat-drinks       { background: #eef0fb; color: #3a4a8a; }
+  .cat-happyhour    { background: #fde8ec; color: #9a2840; }
+  .cat-activity     { background: #e6f0e8; color: #2a6840; }
+  .cat-entertainment{ background: #f0e8f8; color: #5a2880; }
+  .cat-discount     { background: #e8f4e8; color: #1a6030; }
+  .cat-event        { background: #e8f0f8; color: #1a3860; }
+  .cat-sport-football { background: #e6f4ec; color: #1a6535; }
+  .cat-sport-rugby    { background: #f5e8f0; color: #7a1a4a; }
+  .cat-genre-music    { background: #eee8ff; color: #4c1d95; }
+  .conf-tip { position: relative; cursor: default; line-height: 1; }
+  .conf-tip::after {
+    content: attr(data-tip);
+    position: absolute;
+    bottom: calc(100% + 5px);
+    right: 0;
+    background: #16263a;
+    color: #fff;
+    font-size: 11px;
+    line-height: 1.4;
+    padding: 4px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.15s;
+    z-index: 50;
+  }
+  .conf-tip:hover::after { opacity: 1; }
+  /* scroll-padding prevents sticky filter bar from covering section headings */
+  html { scroll-padding-top: 175px; }
+  @media (max-width: 639px) { html { scroll-padding-top: 290px; } }
+  /* mobile filter collapse */
+  #filterRows { overflow: hidden; }
+  #filterRows.collapsed { display: none; }
+  /* suburb selector minimise (slide up) */
+  #suburbBody { overflow: hidden; transition: max-height 0.25s ease, opacity 0.2s ease; max-height: 1200px; }
+  #suburbBody.collapsed { max-height: 0; opacity: 0; }
+  #filterToggle { display: none; }
+  @media (max-width: 639px) { #filterToggle { display: flex; } }
+  .sd-overlay { position:fixed; inset:0; background:rgba(11,20,32,0.55); display:none; align-items:flex-start; justify-content:center; padding:24px 16px; z-index:50; overflow-y:auto; }
+  .sd-overlay.open { display:flex; }
+  .sd-card { background:var(--card); width:100%; max-width:480px; border-radius:12px; padding:20px 20px 24px; position:relative; box-shadow:0 10px 40px rgba(22,38,58,0.25); }
+  .sd-card h2 { font-size:18px; font-weight:600; margin-bottom:2px; }
+  .sd-close { position:absolute; top:10px; right:14px; background:none; border:none; font-size:22px; line-height:1; cursor:pointer; color:var(--ink-muted); }
+  .sd-label { font-size:13px; font-weight:600; display:block; margin-top:14px; color:var(--ink); }
+  .sd-field { width:100%; border:1px solid var(--border); border-radius:8px; padding:8px 10px; font-size:14px; margin-top:4px; background:#fff; color:var(--ink); font-family:inherit; }
+  .sd-hint { font-size:12px; color:var(--ink-muted); margin-top:2px; }
+  .sd-daygrid { display:flex; flex-wrap:wrap; gap:6px 12px; margin-top:6px; }
+  .sd-daygrid label, .sd-radios label { font-size:13px; display:inline-flex; align-items:center; gap:5px; color:var(--ink); }
+  .sd-radios { display:flex; flex-wrap:wrap; gap:12px; margin-top:6px; }
+  .sd-submit { margin-top:18px; width:100%; background:var(--accent); color:#fff; border:none; border-radius:8px; padding:11px; font-size:14px; font-weight:600; cursor:pointer; }
+  .sd-submit:hover { filter:brightness(1.05); }
+  .sd-hp { position:absolute; left:-9999px; top:-9999px; }
+  /* Venue detail panel (reuses the .sd-overlay / .sd-card / .sd-close shell) */
+  .vp-card { max-width: 520px; }
+  .wd-venue-link { background:none; border:0; padding:0; margin:0; font:inherit; color:inherit; text-decoration:underline; text-underline-offset:2px; cursor:pointer; }
+  .wd-venue-link:hover { color:var(--accent); }
+  .vp-name { font-size:20px; font-weight:700; line-height:1.2; padding-right:24px; }
+  .vp-chip { font-size:11px; font-weight:600; vertical-align:middle; background:#eef0fb; color:#3a4a8a; padding:2px 7px; border-radius:5px; }
+  .vp-meta { font-size:13px; color:var(--ink-muted); margin-top:3px; }
+  .vp-addr { font-size:13px; color:var(--ink-muted); margin-top:8px; line-height:1.45; }
+  .vp-actions { display:flex; flex-wrap:wrap; gap:8px; margin-top:14px; }
+  .vp-btn { font-size:13px; font-weight:600; padding:7px 12px; border-radius:8px; text-decoration:none; border:1px solid var(--border); color:var(--ink); background:var(--card); white-space:nowrap; }
+  .vp-btn:hover { border-color:var(--accent); color:var(--accent); }
+  .vp-btn.primary { background:var(--accent); color:#fff; border-color:var(--accent); }
+  .vp-btn.primary:hover { filter:brightness(1.06); color:#fff; }
+  .vp-section-title { font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:0.04em; color:var(--ink-muted); margin:20px 0 10px; }
+  .vp-deal { border:1px solid var(--border); border-radius:8px; padding:10px 12px; margin-bottom:8px; background:var(--paper); }
+  .vp-deal-head { display:flex; align-items:center; gap:8px; flex-wrap:wrap; }
+  .vp-when { font-size:12px; font-weight:600; color:var(--accent); }
+  .vp-unverified { font-size:11px; color:#d97706; }
+  .vp-deal-title { font-size:14px; font-weight:600; margin-top:5px; line-height:1.3; }
+  .vp-deal-desc { font-size:13px; color:var(--ink-muted); margin-top:3px; line-height:1.45; }
+  /* Submit-a-deal: photo upload + correction autocomplete */
+  .sd-photo-add { display:inline-flex; align-items:center; gap:6px; margin-top:8px; font-size:13px; font-weight:600; color:var(--accent); background:var(--accent-soft); border:1px solid #bcddf0; border-radius:8px; padding:7px 11px; cursor:pointer; }
+  .sd-photo-add:hover { filter:brightness(0.98); }
+  .sd-photo-input { position:absolute; left:-9999px; width:1px; height:1px; opacity:0; }
+  .sd-photo-preview { display:none; align-items:center; gap:10px; margin-top:8px; }
+  .sd-photo-preview.show { display:flex; }
+  .sd-photo-thumb { width:44px; height:44px; object-fit:cover; border-radius:6px; border:1px solid var(--border); }
+  .sd-photo-name { font-size:12px; color:var(--ink-muted); flex:1; min-width:0; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+  .sd-photo-remove { background:none; border:none; color:var(--ink-muted); font-size:18px; line-height:1; cursor:pointer; padding:2px 4px; }
+  .sd-ac-wrap { position:relative; }
+  .sd-ac { position:absolute; left:0; right:0; top:100%; margin-top:4px; background:var(--card); border:1px solid var(--border); border-radius:8px; box-shadow:0 8px 24px rgba(22,38,58,0.14); max-height:230px; overflow-y:auto; z-index:10; display:none; }
+  .sd-ac.show { display:block; }
+  .sd-ac-item { padding:8px 10px; font-size:13px; cursor:pointer; border-bottom:1px solid var(--border); color:var(--ink-muted); }
+  .sd-ac-item:last-child { border-bottom:none; }
+  .sd-ac-item.active, .sd-ac-item:hover { background:var(--accent-soft); }
+  .sd-ac-item b { color:var(--ink); font-weight:600; }
+  .sd-ac-sub { font-size:11px; color:var(--ink-muted); margin-top:1px; }
+  .sd-ac-none { padding:8px 10px; font-size:12px; color:var(--ink-muted); }
+  /* Scroll context indicator — shows the current day + suburb while scrolling the week list */
+  #scrollNav { position: fixed; left: 0; right: 0; z-index: 15; display: none;
+    background: rgba(246,249,251,0.97); backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px);
+    border-bottom: 1px solid var(--border); box-shadow: 0 2px 6px rgba(22,38,58,0.05); }
+  #scrollNav .sn-inner { max-width: 56rem; margin: 0 auto; padding: 5px 16px; display: flex; align-items: center; gap: 8px; }
+  #scrollNav .sn-day { font-size: 12px; font-weight: 700; color: var(--ink); }
+  #scrollNav .sn-sep { font-size: 12px; color: var(--border); }
+  #scrollNav .sn-suburb { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; color: var(--ink-muted); }
+  /* What's new — notice board (collapsed pill + drop-down panel) */
+  .wn-badge { font-size:10px; font-weight:700; letter-spacing:0.04em; text-transform:uppercase; color:#fff; background:#ff8a5c; padding:2px 7px; border-radius:999px; line-height:1.35; }
+  .wn-panel { margin-top:8px; border:1px solid var(--border); border-radius:12px; background:var(--card); overflow:hidden; box-shadow:0 6px 20px rgba(22,38,58,0.08); }
+  .wn-list { padding:4px 4px 2px; max-height:320px; overflow-y:auto; }
+  .wn-item { display:flex; gap:10px; align-items:flex-start; padding:11px 12px; }
+  .wn-item + .wn-item { border-top:1px solid var(--border); }
+  .wn-tag { font-size:10px; font-weight:700; text-transform:uppercase; letter-spacing:0.04em; padding:3px 7px; border-radius:6px; white-space:nowrap; margin-top:1px; flex-shrink:0; }
+  .wn-tag-new    { background:#ffe9de; color:#b3502a; }
+  .wn-tag-added  { background:#dceff1; color:#0a6273; }
+  .wn-tag-update { background:var(--accent-soft); color:var(--accent); }
+  .wn-body { flex:1; min-width:0; }
+  .wn-text { font-size:14px; line-height:1.4; color:var(--ink); }
+  .wn-date { font-size:11px; color:var(--ink-muted); margin-top:2px; }
+  .wn-fb { display:flex; align-items:center; justify-content:center; gap:8px; margin:4px; padding:11px; border-radius:9px; background:#1877f2; color:#fff; font-size:14px; font-weight:600; text-decoration:none; }
+  .wn-fb:hover { filter:brightness(1.06); }
+  .wn-fb svg { width:18px; height:18px; flex-shrink:0; }
+</style>
+</head>
+<body>
+
+<!-- Info banner -->
+<div class="text-xs text-center py-1.5 px-4" style="background:#e6f1f8;border-bottom:1px solid #bcddf0;color:#0f3d5c;">
+  659 deals across 198 venues &middot; Central Wellington, waterfront, Johnsonville, Karori, Petone, Lower Hutt, Upper Hutt, Porirua &amp; the Kāpiti Coast &middot; Updated July 2026
+</div>
+
+<!-- Header -->
+<header class="border-b" style="border-color:var(--border);background:var(--card);">
+  <div class="max-w-4xl mx-auto px-4 py-5 flex items-start justify-between gap-4">
+    <div>
+      <h1 class="text-2xl font-semibold tracking-tight">Welly Deals, by Day</h1>
+      <p class="text-sm mt-0.5" style="color:var(--ink-muted);">Central Wellington's recurring specials and events, all in one place.</p>
+      <p class="text-xs mt-1" style="color:var(--ink-muted);"><span id="dealCount">—</span> deals &middot; updated weekly</p>
+    </div>
+    <div class="text-right shrink-0 pt-1">
+      <button id="submitDealBtn" class="text-xs font-medium px-3 py-1 rounded-full border" style="color:var(--accent);border-color:var(--accent);background:var(--card);cursor:pointer;margin-right:8px;">＋ Submit a deal</button>
+      <button id="contactBtn" class="text-xs underline" style="color:var(--accent);background:none;border:none;cursor:pointer;">Contact</button>
+      <div id="contactEmail" style="display:none;" class="text-xs mt-1" style="color:var(--ink-muted);">
+        <a href="mailto:jacobb334@gmail.com" style="color:var(--accent);">jacobb334@gmail.com</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- What's new — notice board. Collapsed by default; the coral NEW badge lights up when there
+     are updates the visitor hasn't opened yet, and doubles as the "follow us on Facebook" funnel.
+     To add an entry: prepend it to SITE_UPDATES in the script near the bottom of this file. -->
+<div id="whatsNewBar" class="max-w-4xl mx-auto px-4 pt-4">
+  <button id="whatsNewToggle" type="button" aria-expanded="false"
+          class="w-full flex items-center justify-between gap-3 rounded-lg border px-4 py-2.5"
+          style="border-color:#bcddf0;background:#eef6fb;color:var(--ink);cursor:pointer;">
+    <span class="flex items-center gap-2 text-sm font-semibold">
+      <span aria-hidden="true">&#128226;</span> What's new
+      <span id="whatsNewBadge" class="wn-badge" style="display:none;">NEW</span>
+    </span>
+    <span id="whatsNewToggleState" class="text-xs font-medium px-2.5 py-0.5 rounded-full border shrink-0"
+          style="border-color:var(--border);background:#fff;color:var(--ink-muted);">Show &#9662;</span>
+  </button>
+  <div id="whatsNewPanel" style="display:none;">
+    <div class="wn-panel">
+      <div id="whatsNewList" class="wn-list"></div>
+      <a class="wn-fb" href="https://www.facebook.com/profile.php?id=61591850849329" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M24 12.07C24 5.4 18.63 0 12 0S0 5.4 0 12.07C0 18.1 4.39 23.1 10.13 24v-8.44H7.08v-3.49h3.05V9.41c0-3.02 1.79-4.69 4.53-4.69 1.31 0 2.68.24 2.68.24v2.97h-1.51c-1.49 0-1.95.93-1.95 1.88v2.26h3.32l-.53 3.49h-2.79V24C19.61 23.1 24 18.1 24 12.07z"/></svg>
+        Follow on Facebook for all updates
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- Sticky filter bar -->
+<div class="sticky top-0 z-20 border-b backdrop-blur" id="filterBar" style="border-color:var(--border);background:rgba(246,249,251,0.95);">
+  <div class="max-w-4xl mx-auto px-4 py-3 space-y-2">
+
+    <!-- Search bar -->
+    <div class="relative">
+      <span class="absolute inset-y-0 left-3 flex items-center pointer-events-none text-sm" style="color:var(--ink-muted);">&#128269;</span>
+      <input id="searchInput" type="text" placeholder="Search deals, venues, happy hours, quiz nights…"
+        class="w-full pl-8 pr-8 py-1.5 rounded-full text-sm border"
+        style="border-color:var(--border);background:var(--card);color:var(--ink);outline:none;">
+      <button id="searchClear" style="display:none;position:absolute;right:0.75rem;top:50%;transform:translateY(-50%);background:none;border:none;cursor:pointer;color:var(--ink-muted);font-size:1rem;line-height:1;">&#x2715;</button>
+    </div>
+
+    <!-- Suburb selector — primary entry point (prominent, always visible) -->
+    <div class="rounded-lg border px-3 py-2.5" style="border-color:#bcddf0;background:#eef6fb;">
+      <div class="flex items-center justify-between gap-2 mb-2">
+        <span class="text-sm font-bold flex items-center gap-1.5" style="color:var(--ink);">
+          <span>&#128205;</span> Select your suburb/s
+        </span>
+        <button id="filterToggle" class="items-center gap-1 text-xs font-medium px-3 py-1 rounded-full border shrink-0"
+                style="border-color:var(--border);color:var(--ink-muted);background:var(--card);">
+          More filters <span id="filterToggleIcon">▾</span>
+        </button>
+      </div>
+      <!-- Collapsible body: region row + suburb sub-rows (minimised via the button below) -->
+      <div id="suburbBody">
+        <!-- Region row (top tier) — built dynamically from suburbs that have data -->
+        <div class="flex items-center gap-2 flex-wrap">
+          <span class="text-xs font-semibold uppercase tracking-wide shrink-0" style="color:var(--ink-muted);">Region</span>
+          <span id="regionRow" class="flex items-center gap-2 flex-wrap"></span>
+          <button id="allWgtnBtn" class="px-3 py-1 rounded-full text-sm border shrink-0" style="border-color:var(--border);color:var(--ink-muted);background:var(--card);" title="Select every Wellington suburb we cover">All Wellington</button>
+        </div>
+        <!-- Suburb sub-rows (second tier) — one row per active region, built in JS -->
+        <div id="suburbRows" class="mt-2 space-y-2"></div>
+      </div>
+      <div class="flex items-center gap-2 mt-2">
+        <p id="suburbHelp" class="text-xs" style="color:var(--ink-muted);">Central Wellington shows by default &mdash; tap a region to add its suburbs, then fine-tune below.</p>
+        <button id="suburbMinBtn" type="button" class="text-xs font-medium px-2.5 py-0.5 rounded-full border shrink-0"
+                style="border-color:var(--border);color:var(--ink-muted);background:var(--card);margin-left:auto;cursor:pointer;">Minimise &#9652;</button>
+      </div>
+    </div>
+
+    <!-- Collapsible filter rows — hidden on mobile by default, always visible on sm+ -->
+    <div id="filterRows" class="space-y-2 collapsed">
+
+      <!-- Day -->
+      <div class="flex items-center gap-2 flex-wrap">
+        <span class="text-xs font-semibold uppercase tracking-wider shrink-0" style="color:var(--ink-muted);width:4.5rem;">Day</span>
+        <button class="filter-chip active px-3 py-1 rounded-full text-sm border" data-day="all"       style="border-color:var(--border);">All</button>
+        <button class="filter-chip        px-3 py-1 rounded-full text-sm border" data-day="Monday"    style="border-color:var(--border);">Mon</button>
+        <button class="filter-chip        px-3 py-1 rounded-full text-sm border" data-day="Tuesday"   style="border-color:var(--border);">Tue</button>
+        <button class="filter-chip        px-3 py-1 rounded-full text-sm border" data-day="Wednesday" style="border-color:var(--border);">Wed</button>
+        <button class="filter-chip        px-3 py-1 rounded-full text-sm border" data-day="Thursday"  style="border-color:var(--border);">Thu</button>
+        <button class="filter-chip        px-3 py-1 rounded-full text-sm border" data-day="Friday"    style="border-color:var(--border);">Fri</button>
+        <button class="filter-chip        px-3 py-1 rounded-full text-sm border" data-day="Saturday"  style="border-color:var(--border);">Sat</button>
+        <button class="filter-chip        px-3 py-1 rounded-full text-sm border" data-day="Sunday"    style="border-color:var(--border);">Sun</button>
+      </div>
+
+      <!-- Category -->
+      <div class="flex items-center gap-2 flex-wrap">
+        <span class="text-xs font-semibold uppercase tracking-wider shrink-0" style="color:var(--ink-muted);width:4.5rem;">Category</span>
+        <button class="filter-chip active px-3 py-1 rounded-full text-sm border" data-category="food"          style="border-color:var(--border);">Food</button>
+        <button class="filter-chip active px-3 py-1 rounded-full text-sm border" data-category="drinks"        style="border-color:var(--border);">Drinks</button>
+        <button class="filter-chip active px-3 py-1 rounded-full text-sm border" data-category="happyhour"     style="border-color:var(--border);">Happy Hour</button>
+        <button class="filter-chip active px-3 py-1 rounded-full text-sm border" data-category="activity"      style="border-color:var(--border);">Activity</button>
+        <button class="filter-chip active px-3 py-1 rounded-full text-sm border" data-category="entertainment" style="border-color:var(--border);">Entertainment</button>
+        <button class="filter-chip active px-3 py-1 rounded-full text-sm border" data-category="discount"      style="border-color:var(--border);">Discount</button>
+      </div>
+
+      <!-- Venue type + Confidence (same row) -->
+      <div class="flex items-center gap-x-6 gap-y-2 flex-wrap">
+        <div class="flex items-center gap-2 flex-wrap">
+          <span class="text-xs font-semibold uppercase tracking-wider shrink-0" style="color:var(--ink-muted);width:4.5rem;">Venue</span>
+          <button class="filter-chip active px-3 py-1 rounded-full text-sm border" data-chain="all"        style="border-color:var(--border);">All</button>
+          <button class="filter-chip        px-3 py-1 rounded-full text-sm border" data-chain="standalone" style="border-color:var(--border);">Standalone</button>
+          <button class="filter-chip        px-3 py-1 rounded-full text-sm border" data-chain="chain"      style="border-color:var(--border);">Chain</button>
+          <span class="text-xs select-none" style="color:var(--border);">|</span>
+          <button class="filter-chip active px-3 py-1 rounded-full text-sm border" id="dailyToggle"        style="border-color:var(--border);">Every Day</button>
+          <span class="text-xs select-none" style="color:var(--border);">|</span>
+          <button class="filter-chip        px-3 py-1 rounded-full text-sm border" id="kidsToggle"         style="border-color:var(--border);">Kids Deals</button>
+        </div>
+        <div class="flex items-center gap-2 flex-wrap">
+          <span class="text-xs font-semibold uppercase tracking-wider shrink-0" style="color:var(--ink-muted);">Confidence</span>
+          <button class="filter-chip active px-3 py-1 rounded-full text-sm border" data-confidence="all"  style="border-color:var(--border);">All</button>
+          <button class="filter-chip        px-3 py-1 rounded-full text-sm border" data-confidence="high" style="border-color:var(--border);">High only</button>
+        </div>
+      </div>
+
+    </div><!-- /filterRows -->
+  </div>
+</div>
+
+<!-- Scroll context indicator — updates to the current day + suburb as you scroll the week list.
+     Parked directly beneath the sticky filter bar; shown only while scrolling the list. -->
+<div id="scrollNav" aria-hidden="true">
+  <div class="sn-inner">
+    <span class="sn-day" id="snDay"></span>
+    <span class="sn-sep" id="snSep">&middot;</span>
+    <span class="sn-suburb" id="snSuburb"></span>
+  </div>
+</div>
+
+<!-- Club Rugby tab — NEW, default OFF. Its own toggle up top; fixtures show independent of suburb.
+     Hidden entirely while CLUB_RUGBY_ENABLED is false (no fixtures yet). -->
+<div id="clubRugbyBar" class="max-w-4xl mx-auto px-4 pt-4">
+  <button id="clubRugbyToggle" type="button" aria-expanded="false"
+          class="w-full flex items-center justify-between gap-3 rounded-lg border px-4 py-2.5"
+          style="border-color:#e6c2d8;background:#fbeef5;color:#7a1a4a;cursor:pointer;">
+    <span class="flex items-center gap-2 text-sm font-semibold">
+      <span>&#127945;</span> Club Rugby &mdash; Wellington Premier
+      <span class="cat-badge px-2 py-0.5 rounded" style="background:#7a1a4a;color:#fff;">NEW</span>
+    </span>
+    <span id="clubRugbyToggleState" class="text-xs font-medium px-2.5 py-0.5 rounded-full border shrink-0"
+          style="border-color:#d9a7c4;background:#fff;">Show &#9662;</span>
+  </button>
+</div>
+
+<!-- Club Rugby fixtures section (revealed by the toggle above) -->
+<section class="max-w-4xl mx-auto px-4 pt-3" id="clubRugbySection" style="display:none;">
+  <div class="rounded-lg border p-4" style="border-color:var(--border);background:var(--card);">
+    <div class="flex items-baseline gap-3 mb-1">
+      <h2 class="text-lg font-semibold tracking-tight">Club Rugby &mdash; Wellington Premier</h2>
+      <span class="text-xs" style="color:var(--ink-muted);">Jubilee Cup finals</span>
+    </div>
+    <p class="text-sm mb-4" style="color:var(--ink-muted);">The Premier men's finals &mdash; ground and kickoff for each game.</p>
+    <div id="clubRugbyList"></div>
+  </div>
+</section>
+
+<!-- Week view -->
+<main class="max-w-4xl mx-auto px-4 py-6" id="weekView"></main>
+
+<!-- Upcoming: one-off deals (future) + special events -->
+<section class="max-w-4xl mx-auto px-4 pt-2 pb-8" id="upcomingSection" style="display:none;">
+  <div class="border-t pt-6" style="border-color:var(--border);">
+    <div class="flex items-baseline gap-3 mb-1">
+      <h2 class="text-xl font-semibold tracking-tight">Upcoming Events</h2>
+      <span class="text-xs" style="color:var(--ink-muted);">one-off &amp; seasonal</span>
+    </div>
+    <p class="text-sm mb-4" style="color:var(--ink-muted);">Not this week, but worth keeping an eye on.</p>
+    <div id="upcomingList"></div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="max-w-4xl mx-auto px-4 py-8 text-center text-xs" style="color:var(--ink-muted);">
+  <p>Spotted a deal or event we're missing, or one that's changed? Use the Contact button above.</p>
+  <p class="mt-1">Wellington Deals, by Day &middot; Central Wellington</p>
+</footer>
+
+<script>
+// ---------- DATA ----------
+let DEALS = [];
+let SPECIAL_EVENTS = [];
+let VENUES_MAP = {}; // venue name → venue record
+let DEALS_BY_VENUE = {}; // venue name → array of its deal records (all of them, unfiltered)
+const VENUE_SLUGS = {}; // slug → venue name (for the detail panel + #venue/<slug> deep-links)
+
+// ── Venue detail panel (Option A): OFF for the colleague preview. ──────────────
+// While false, venue names link straight to Google Maps (the simple, known-good
+// behaviour). Flip to true to switch every venue name over to the in-page profile
+// panel — all the panel code below stays ready; this is the only line to change.
+const VENUE_PANEL_ENABLED = false;
+
+const DAYS = ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"];
+const CAT_LABELS = {
+  food: "Food",
+  drinks: "Drinks",
+  happyhour: "Happy Hour",
+  activity: "Activity",
+  entertainment: "Entertainment",
+  discount: "Discount"
+};
+
+// ---------- SUBURB DISPLAY LABELS ----------
+// Data carries precise zone names (needed for exact filtering); the UI shows friendly labels.
+// Only list a suburb here if its display label differs from the data string — suburbLabel()
+// falls back to the raw value, so simple names (Karori, Petone, ...) need no entry.
+const SUBURB_LABELS = {
+  "CBD (Cuba Street Area)": "Cuba St",
+  "Te Aro (South of Ghuznee St)": "Te Aro",
+  "Courtenay Place Area": "Courtenay Pl",
+  "CBD (Lambton Quay)": "Lambton Quay",
+  "Oriental Parade (outside current zones)": "Oriental Parade"
+};
+const suburbLabel = s => SUBURB_LABELS[s] || s;
+
+// ---------- REGIONS (two-tier filter) ----------
+// Region is a FRONTEND grouping only — the data files still carry the precise suburb string.
+// To add a suburb: drop it into the right region's `suburbs` list (and add a SUBURB_LABELS entry
+// above ONLY if the display name differs). Chips render dynamically from whichever suburbs actually
+// have deal/event data, so a suburb listed here stays hidden until its scan data lands — no other
+// HTML edit needed. Central Wellington is the default-on region.
+const SUBURB_REGIONS = [
+  { region: "Central Wellington", label: "Central", suburbs: [
+    "CBD (Cuba Street Area)", "Te Aro (South of Ghuznee St)", "Courtenay Place Area",
+    "CBD (Lambton Quay)", "Waterfront", "Mt Victoria", "Thorndon", "Kelburn",
+    "Aro Valley", "Oriental Parade (outside current zones)"
+  ]},
+  { region: "Southern & Eastern Bays", label: "South & East", suburbs: [
+    "Newtown", "Berhampore", "Mt Cook", "Brooklyn", "Island Bay", "Lyall Bay",
+    "Kilbirnie", "Hataitai", "Miramar", "Seatoun"
+  ]},
+  { region: "Western & Northern", label: "West & North", suburbs: [
+    "Karori", "Makara", "Wilton", "Northland", "Johnsonville", "Khandallah",
+    "Ngaio", "Newlands", "Crofton Downs"
+  ]},
+  { region: "Hutt Valley", label: "Hutt Valley", suburbs: [
+    "Petone", "Lower Hutt", "Upper Hutt"
+  ]},
+  { region: "Porirua", label: "Porirua", suburbs: [
+    "Porirua CBD", "Plimmerton", "Titahi Bay", "Pauatahanui",
+    "Paremata", "Whitby", "Pukerua Bay"
+  ]},
+  { region: "Kāpiti Coast", label: "Kāpiti", suburbs: [
+    "Paraparaumu", "Paraparaumu Beach", "Waikanae", "Raumati Beach",
+    "Ōtaki", "Paekākāriki", "Waikanae Beach", "Raumati South"
+  ]}
+];
+const DEFAULT_REGION = "Central Wellington";
+
+// ---------- FILTER STATE ----------
+const SUBURB_ORDER    = SUBURB_REGIONS.flatMap(r => r.suburbs);   // grouping order in render()
+const DEFAULT_SUBURBS = (SUBURB_REGIONS.find(r => r.region === DEFAULT_REGION) || {}).suburbs || [];
+const selectedSuburbs = new Set(DEFAULT_SUBURBS);   // narrowed to suburbs-with-data after load
+
+// Which suburbs actually have deal/event data right now (drives which chips render).
+function computePresentSuburbs() {
+  const s = new Set();
+  DEALS.forEach(d => { if (d.suburb) s.add(d.suburb); });
+  SPECIAL_EVENTS.forEach(e => { if (e.suburb) s.add(e.suburb); });
+  return s;
+}
+
+// Build the region row + per-region suburb sub-rows from whatever data is loaded.
+function buildSuburbSelector() {
+  const present    = computePresentSuburbs();
+  const regionRow  = document.getElementById("regionRow");
+  const suburbRows  = document.getElementById("suburbRows");
+  if (!regionRow || !suburbRows) return;
+  regionRow.innerHTML = "";
+  suburbRows.innerHTML = "";
+
+  // Drop any pre-seeded default suburb that has no data yet; if that empties the selection,
+  // fall back to whatever default-region suburbs DO have data.
+  [...selectedSuburbs].forEach(s => { if (!present.has(s)) selectedSuburbs.delete(s); });
+  if (selectedSuburbs.size === 0) DEFAULT_SUBURBS.forEach(s => { if (present.has(s)) selectedSuburbs.add(s); });
+
+  SUBURB_REGIONS.forEach(({ region, label, suburbs }) => {
+    const presentSubs = suburbs.filter(s => present.has(s));
+    if (!presentSubs.length) return;   // region has no data yet — skip it entirely
+
+    const rBtn = document.createElement("button");
+    rBtn.type = "button";
+    rBtn.dataset.region = region;
+    rBtn.className = "region-chip px-3 py-1 rounded-full text-sm border font-medium";
+    rBtn.style.borderColor = "var(--border)";
+    rBtn.textContent = label;
+    regionRow.appendChild(rBtn);
+
+    const wrap = document.createElement("div");
+    wrap.dataset.regionRow = region;
+    wrap.className = "flex items-center gap-2 flex-wrap";
+    const tag = document.createElement("span");
+    tag.className = "w-full text-xs font-semibold uppercase tracking-wide";
+    tag.style.color = "var(--ink-muted)";
+    tag.textContent = label;
+    wrap.appendChild(tag);
+    presentSubs.forEach(s => {
+      const b = document.createElement("button");
+      b.type = "button";
+      b.dataset.suburb = s;
+      b.className = "filter-chip px-3 py-1 rounded-full text-sm border";
+      b.style.borderColor = "var(--border)";
+      b.textContent = suburbLabel(s);
+      wrap.appendChild(b);
+    });
+    suburbRows.appendChild(wrap);
+  });
+
+  updateSelectorUI();
+}
+
+// Sync chip highlight + which suburb sub-rows are visible (a region's row shows when ≥1 of its
+// suburbs is selected — i.e. the region is "expanded").
+function updateSelectorUI() {
+  document.querySelectorAll("[data-suburb]").forEach(b => {
+    b.classList.toggle("active", selectedSuburbs.has(b.dataset.suburb));
+  });
+  document.querySelectorAll("[data-region]").forEach(rb => {
+    const conf   = SUBURB_REGIONS.find(r => r.region === rb.dataset.region) || { suburbs: [] };
+    const anySel = conf.suburbs.some(s => selectedSuburbs.has(s));
+    rb.classList.toggle("active", anySel);
+  });
+  document.querySelectorAll("[data-region-row]").forEach(row => {
+    const conf   = SUBURB_REGIONS.find(r => r.region === row.dataset.regionRow) || { suburbs: [] };
+    const anySel = conf.suburbs.some(s => selectedSuburbs.has(s));
+    row.style.display = anySel ? "" : "none";
+  });
+}
+const selectedCategories = new Set(Object.keys(CAT_LABELS));
+let selectedDay       = "all";   // "all" or a DAYS string
+let chainFilter       = "all";   // "all" | "standalone" | "chain"
+let confidenceFilter  = "all";   // "all" | "high"
+let showTakeaways     = false;   // (no takeaway venues in Wellington data — kept for filter-logic safety)
+let showDailyDeals    = true;    // deals that run every day of the week
+let showSports        = true;    // (no sport events in Wellington data yet — kept for filter-logic safety)
+let showWorldCup      = true;    // (no World Cup events in Wellington data yet — kept for filter-logic safety)
+let showSeniorsOnly   = false;   // (no seniors deals in Wellington data — kept for filter-logic safety)
+let showKidsOnly      = false;   // when true, show only deals tagged kids: true
+// Club Rugby tab feature flag — OFF for now (launched with no fixtures yet). Flip to true to
+// bring the whole tab back (toggle + section) and promote it as a new feature. Everything else
+// stays wired; this is the only line to change.
+const CLUB_RUGBY_ENABLED = false;
+let showClubRugby     = false;   // Club Rugby tab — default OFF; reveals the Wellington Premier fixtures section
+let searchQuery       = "";      // live search string
+let DAILY_DEAL_KEYS   = new Set(); // populated after data load
+
+// ---------- CURRENT WEEK ----------
+// Compute Mon–Sun dates for the current week once on load.
+function computeWeekDates() {
+  const today = new Date();
+  const dow = today.getDay(); // 0=Sun
+  const daysSinceMonday = dow === 0 ? 6 : dow - 1;
+  return Array.from({ length: 7 }, (_, i) => {
+    const d = new Date(today);
+    d.setDate(today.getDate() - daysSinceMonday + i);
+    const mm   = String(d.getMonth() + 1).padStart(2, "0");
+    const dd   = String(d.getDate()).padStart(2, "0");
+    const yyyy = d.getFullYear();
+    return {
+      dayName:  d.toLocaleDateString("en-NZ", { weekday: "long" }),
+      monthDay: `${mm}-${dd}`,
+      iso:      `${yyyy}-${mm}-${dd}`
+    };
+  });
+}
+const WEEK_DATES   = computeWeekDates();
+const WEEK_ISO_SET = new Set(WEEK_DATES.map(w => w.iso));
+const WEEK_START   = WEEK_DATES[0].iso;
+
+function todayName() {
+  return new Date().toLocaleDateString("en-NZ", { weekday: "long" });
+}
+
+// ---------- DATA LOAD ----------
+async function loadData() {
+  try {
+    const r = await fetch("deals.json", { cache: "no-cache" });
+    if (r.ok) DEALS = await r.json();
+  } catch (e) {}
+  try {
+    const r = await fetch("special_events.json", { cache: "no-cache" });
+    if (r.ok) SPECIAL_EVENTS = await r.json();
+  } catch (e) {}
+  try {
+    const r = await fetch("venues.json", { cache: "no-cache" });
+    if (r.ok) {
+      const venues = await r.json();
+      VENUES_MAP = {};
+      venues.forEach(v => { VENUES_MAP[v.venue] = v; });
+    }
+  } catch (e) {}
+}
+
+// ---------- DEAL TYPE HELPERS ----------
+
+// Does this deal appear on `dayName` in the current week view?
+function dealAppliesToDay(deal, dayName) {
+  const type = deal.type || "weekly";
+  if (type === "weekly") {
+    if (!deal.day) return true; // null day = runs every day
+    return deal.day === dayName;
+  }
+  if (type === "annual") {
+    // month_day = "MM-DD"; show if current week contains that date and it falls on dayName
+    if (!deal.month_day) return false;
+    return WEEK_DATES.some(w => w.dayName === dayName && w.monthDay === deal.month_day);
+  }
+  if (type === "one-off") {
+    if (!deal.date) return false;
+    return WEEK_DATES.some(w => w.dayName === dayName && w.iso === deal.date);
+  }
+  return false;
+}
+
+// Is this a one-off deal that's upcoming but NOT in the current week?
+function isUpcomingDeal(deal) {
+  if ((deal.type || "weekly") !== "one-off") return false;
+  if (!deal.date) return false;
+  return !WEEK_ISO_SET.has(deal.date) && deal.date >= WEEK_START;
+}
+
+// ---------- SEARCH ----------
+// Maps common search terms to category/sport/fields for generous matching
+const SEARCH_ALIASES = {
+  'happy hour': 'happyhour', 'happyhour': 'happyhour', 'hh': 'happyhour',
+  'quiz': 'activity', 'trivia': 'activity',
+  'food': 'food', 'drink': 'drinks', 'drinks': 'drinks',
+  'event': 'entertainment', 'live music': 'entertainment',
+  'discount': 'discount', 'deal': '',
+};
+
+function matchesSearch(item) {
+  if (!searchQuery) return true;
+  const q = searchQuery.toLowerCase().trim();
+  // Expand aliases
+  const alias = SEARCH_ALIASES[q];
+  // Fields to search across
+  const haystack = [
+    item.title, item.desc, item.venue, item.suburb,
+    item.category, item.sport, item.day,
+    CAT_LABELS[item.category] || '',
+    item.sport || '',
+  ].filter(Boolean).join(' ').toLowerCase();
+
+  // Direct substring match (generous — partial words work)
+  if (haystack.includes(q)) return true;
+  // Alias match
+  if (alias && haystack.includes(alias.toLowerCase())) return true;
+  // Match each word of multi-word query separately (AND logic)
+  const words = q.split(/\s+/).filter(w => w.length > 1);
+  if (words.length > 1 && words.every(w => haystack.includes(w))) return true;
+  return false;
+}
+
+// ---------- SORT HELPERS ----------
+const CAT_ORDER_NORMAL = { food: 0, entertainment: 1, discount: 2, drinks: 3, happyhour: 4 };
+const CAT_ORDER_DAILY  = { happyhour: 0, food: 1, entertainment: 2, discount: 3, drinks: 4 };
+function sortDeals(deals) {
+  return [...deals].sort((a, b) => {
+    const aDaily = DAILY_DEAL_KEYS.has(a.venue + '||' + a.title) ? 1 : 0;
+    const bDaily = DAILY_DEAL_KEYS.has(b.venue + '||' + b.title) ? 1 : 0;
+    if (aDaily !== bDaily) return aDaily - bDaily;
+    const order = aDaily ? CAT_ORDER_DAILY : CAT_ORDER_NORMAL;
+    return (order[a.category] ?? 3) - (order[b.category] ?? 3);
+  });
+}
+function sortRugbyFirst(events) {
+  const rank = ev => ev.world_cup ? 0 : (ev.sport === 'Rugby Union' ? 1 : 2);
+  return [...events].sort((a, b) => rank(a) - rank(b));
+}
+
+// Group events that represent the same fixture (same title + date) shown at
+// multiple venues into a single listing per suburb.
+function groupEvents(events) {
+  const groups = [];
+  const index = new Map();
+  events.forEach(ev => {
+    const key = `${ev.title}||${ev.date}`;
+    if (index.has(key)) {
+      groups[index.get(key)].venues.push(ev.venue);
+    } else {
+      index.set(key, groups.length);
+      groups.push({ ...ev, venues: [ev.venue] });
+    }
+  });
+  return groups;
+}
+
+// ---------- FILTER ----------
+function dealPassesFilters(deal) {
+  if (!selectedSuburbs.has(deal.suburb)) return false;
+  if (!selectedCategories.has(deal.category)) return false;
+  if (confidenceFilter === "high" && deal.confidence !== "high") return false;
+  const venueRecord = VENUES_MAP[deal.venue];
+  if (venueRecord && (venueRecord.status === "closed" || venueRecord.status === "ghost")) return false;
+  const isTakeaway = venueRecord && venueRecord.category_hint === "takeaway";
+  if (isTakeaway && !showTakeaways) return false;
+  if (!showDailyDeals && DAILY_DEAL_KEYS.has(deal.venue + '||' + deal.title)) return false;
+  if (showSeniorsOnly && !deal.seniors) return false;
+  if (showKidsOnly && !deal.kids) return false;
+  if (chainFilter !== "all") {
+    const v = VENUES_MAP[deal.venue];
+    const isChain = v ? !!v.is_chain : false;
+    if (chainFilter === "chain"      && !isChain) return false;
+    if (chainFilter === "standalone" &&  isChain) return false;
+  }
+  if (!matchesSearch(deal)) return false;
+  return true;
+}
+
+// ---------- RENDER ----------
+function render() {
+  const today = todayName();
+  const view  = document.getElementById("weekView");
+
+  const filtered = DEALS.filter(dealPassesFilters);
+  document.getElementById("dealCount").textContent = filtered.length;
+
+  if (selectedSuburbs.size === 0) {
+    view.innerHTML = `<div class="text-center py-16" style="color:var(--ink-muted);">Select at least one suburb to see deals.</div>`;
+    renderUpcoming(filtered);
+    return;
+  }
+
+  // Weekly view: deals that apply to a day in the current week (weekly + annual + one-off in week)
+  const weekDeals     = filtered.filter(d => !isUpcomingDeal(d));
+  const upcomingDeals = filtered.filter(isUpcomingDeal);
+
+  // Day order: today first (or just the selected day)
+  const todayIdx   = DAYS.indexOf(today);
+  const orderedAll = todayIdx >= 0
+    ? [...DAYS.slice(todayIdx), ...DAYS.slice(0, todayIdx)]
+    : DAYS;
+  const daysToShow = selectedDay === "all" ? orderedAll : [selectedDay];
+
+  view.innerHTML = daysToShow.map(day => {
+    const dayDeals  = weekDeals.filter(d => dealAppliesToDay(d, day));
+    // Special events that fall on this day in the current week
+    const dayEvents = SPECIAL_EVENTS.filter(ev =>
+      ev.date && WEEK_DATES.some(w => w.dayName === day && w.iso === ev.date)
+      && selectedSuburbs.has(ev.suburb)
+      && !ev.club_rugby   // club rugby fixtures live only in their own Club Rugby tab
+      && (ev.category !== 'sport' || (ev.world_cup ? showWorldCup : showSports))
+      && matchesSearch(ev)
+    );
+    const totalItems = dayDeals.length + dayEvents.length;
+    const isToday = day === today;
+
+    return `
+      <section class="day-section ${isToday ? "today" : ""} rounded-lg mb-4 overflow-hidden"
+               data-day="${day}"
+               style="${isToday ? "" : "background:transparent;"}">
+        <div class="flex items-baseline gap-3 px-4 pt-4 pb-2">
+          <h2 class="text-lg font-semibold">${day}</h2>
+          ${isToday ? `<span class="text-xs font-semibold uppercase tracking-wider px-2 py-0.5 rounded"
+                            style="background:var(--today-border);color:#6b4e00;">Today</span>` : ""}
+          <span class="text-xs ml-auto" style="color:var(--ink-muted);">
+            ${totalItems} deal${totalItems === 1 ? "" : "s"}
+          </span>
+        </div>
+        <div class="px-4 pb-4 space-y-2">
+          ${totalItems === 0
+            ? `<div class="text-sm italic py-3" style="color:var(--ink-muted);">Nothing on ${day} matching your filters.</div>`
+            : (() => {
+                const activeSuburbs = SUBURB_ORDER.filter(s => selectedSuburbs.has(s));
+                let cards;
+                if (activeSuburbs.length > 1) {
+                  const subLabel = s => `<div class="text-xs font-semibold uppercase tracking-wider pt-1 pb-0.5" data-suburb-label="${suburbLabel(s)}" style="color:var(--ink-muted);">${suburbLabel(s)}</div>`;
+                  const splitDeals = (deals, events) => {
+                    const pinned = deals.filter(d => d.pin);
+                    const others = deals.filter(d => !d.pin);
+                    const food = others.filter(d => d.category === 'food');
+                    const rest = others.filter(d => d.category !== 'food');
+                    return [...pinned.map(renderCard), ...food.map(renderCard), ...events.map(renderEventCard), ...rest.map(renderCard)];
+                  };
+                  cards = activeSuburbs.flatMap(suburb => {
+                    const sDeals  = sortDeals(dayDeals.filter(d => d.suburb === suburb));
+                    const sEvents = sortRugbyFirst(groupEvents(dayEvents.filter(e => e.suburb === suburb)));
+                    return (sEvents.length || sDeals.length) ? [subLabel(suburb), ...splitDeals(sDeals, sEvents)] : [];
+                  });
+                } else {
+                  const sorted = sortDeals(dayDeals);
+                  const pinned = sorted.filter(d => d.pin);
+                  const food = sorted.filter(d => !d.pin && d.category === 'food');
+                  const rest = sorted.filter(d => !d.pin && d.category !== 'food');
+                  cards = [...pinned.map(renderCard), ...food.map(renderCard), ...sortRugbyFirst(groupEvents(dayEvents)).map(renderEventCard), ...rest.map(renderCard)];
+                }
+                return cards.join("");
+              })()
+          }
+        </div>
+      </section>`;
+  }).join("");
+
+  renderUpcoming(upcomingDeals);
+  renderClubRugby();
+}
+
+function renderCard(d) {
+  const timeStr = d.start && d.end ? `${formatTime(d.start)} – ${formatTime(d.end)}`
+                : d.start          ? `from ${formatTime(d.start)}`
+                : "";
+  const catLabel  = CAT_LABELS[d.category] || d.category;
+  const sourceUrl = d.source_url || "#";
+  const isMedium  = d.confidence && d.confidence !== "high";
+  const confTip   = isMedium
+    ? `Unverified — confirm with venue before visiting`
+    : `Verified — confirmed from venue's own channel`;
+  const confIcon  = `<span class="conf-tip text-xs select-none"
+    style="color:${isMedium ? '#d97706' : '#c0c8d4'};"
+    data-tip="${confTip}">ⓘ</span>`;
+  const dateTag = (d.type === "one-off" && d.date)
+    ? `<span>&#128197; ${formatEventDate(d.date)}</span>`
+    : "";
+
+  const venue = VENUES_MAP[d.venue] || {};
+  const venueName = (VENUE_PANEL_ENABLED && venue._slug)
+    ? `<button type="button" class="wd-venue-link" data-venue-open="${venue._slug}">${d.venue}</button>`
+    : venue.google_maps_url
+      ? `<a href="${venue.google_maps_url}" target="_blank" rel="noopener"
+            style="color:inherit;text-decoration:underline;text-underline-offset:2px;">${d.venue}</a>`
+      : d.venue;
+  const ratingBadge = venue.google_rating
+    ? `<span class="text-xs font-medium" style="color:#b45309;">&#9733; ${venue.google_rating}</span>`
+    : "";
+
+  return `
+    <article class="deal-card rounded-lg p-3 border" style="background:var(--card);border-color:var(--border);">
+      <div class="flex-1 min-w-0">
+        <div class="flex items-start gap-2 mb-1">
+          <div class="flex items-center gap-2 flex-wrap flex-1 min-w-0">
+            <span class="cat-badge cat-${d.category} px-2 py-0.5 rounded">${catLabel}</span>
+            ${d.seniors ? `<span class="cat-badge px-2 py-0.5 rounded" style="background:var(--accent-soft, #e0e7ff);color:var(--accent, #4338ca);">Seniors</span>` : ""}
+            ${d.kids ? `<span class="cat-badge px-2 py-0.5 rounded" style="background:#fef3c7;color:#92400e;">Kids</span>` : ""}
+            ${d.app_required ? `<span class="cat-badge px-2 py-0.5 rounded" style="background:#fee2e2;color:#991b1b;" title="${d.app_note ? d.app_note.replace(/"/g, '&quot;') : 'Requires downloading the venue/platform app to redeem'}">&#128241; App Required</span>` : ""}
+            <span class="text-xs" style="color:var(--ink-muted);">${venueName} &middot; ${suburbLabel(d.suburb)} ${ratingBadge}</span>
+          </div>
+          ${confIcon}
+        </div>
+        <h3 class="font-semibold text-[15px] leading-snug">${d.title}</h3>
+        <p class="text-sm mt-1 leading-relaxed" style="color:var(--ink-muted);">${d.desc}</p>
+        ${(!d.app_required && d.app_note) ? `<p class="text-xs mt-1" style="color:var(--accent);" title="${d.app_note.replace(/"/g, '&quot;')}">&#127903; Free loyalty membership required for this price (app or web sign-up)</p>` : ""}
+        <div class="flex items-center gap-3 mt-2 text-xs flex-wrap" style="color:var(--ink-muted);">
+          ${dateTag}
+          ${timeStr ? `<span>&#128336; ${timeStr}</span>` : ""}
+          ${d.verified_date ? `<span>&middot; verified ${d.verified_date}</span>` : ""}
+          ${venue.booking_url ? `<a href="${venue.booking_url}" target="_blank" rel="noopener" class="ml-auto underline" style="color:var(--accent);font-weight:600;">Book</a>` : ""}
+          <a href="${sourceUrl}" target="_blank" rel="noopener"
+             class="${venue.booking_url ? '' : 'ml-auto '}underline" style="color:${venue.booking_url ? 'var(--ink-muted)' : 'var(--accent)'};">source</a>
+        </div>
+      </div>
+    </article>`;
+}
+
+function sportBadge(ev) {
+  if (ev.world_cup) return `<span class="cat-badge cat-sport-football px-2 py-0.5 rounded">&#127942; World Cup</span>`;
+  if (ev.sport === 'Rugby Union') return `<span class="cat-badge cat-sport-rugby px-2 py-0.5 rounded">Rugby Union</span>`;
+  if (ev.sport === 'Football')   return `<span class="cat-badge cat-sport-football px-2 py-0.5 rounded">Football</span>`;
+  if (ev.genre) return `<span class="cat-badge cat-genre-music px-2 py-0.5 rounded">&#9835; ${ev.genre}</span>`;
+  return `<span class="cat-badge cat-event px-2 py-0.5 rounded">Event</span>`;
+}
+
+function renderEventCard(ev) {
+  const dateStr = ev.date ? formatEventDate(ev.date) : "Recurring / seasonal";
+  const timeStr = ev.start ? `&#128336; from ${formatTime(ev.start)}` : "";
+  const confBadge = ev.confidence && ev.confidence !== 'high'
+    ? `<span class="text-xs" style="color:#d97706;">&#9432; Unverified</span>` : "";
+  const venueLabel = ev.venues && ev.venues.length > 1
+    ? `${ev.venues.length} venues: ${ev.venues.join(', ')}`
+    : ev.venue;
+  return `
+    <article class="deal-card rounded-lg p-3 border mb-2" style="background:var(--card);border-color:var(--border);">
+      <div class="flex items-center gap-2 flex-wrap mb-1">
+        ${sportBadge(ev)}
+        <span class="text-xs" style="color:var(--ink-muted);">${venueLabel} &middot; ${suburbLabel(ev.suburb)}</span>
+        ${confBadge}
+      </div>
+      <h4 class="font-semibold text-[15px] leading-snug">${ev.title}</h4>
+      <p class="text-sm mt-1 leading-relaxed" style="color:var(--ink-muted);">${ev.desc}</p>
+      <div class="flex items-center gap-3 mt-2 text-xs flex-wrap" style="color:var(--ink-muted);">
+        <span>&#128197; ${dateStr}</span>
+        ${timeStr ? `<span>${timeStr}</span>` : ""}
+        ${ev.source_url
+          ? `<a href="${ev.source_url}" target="_blank" rel="noopener"
+                class="ml-auto underline" style="color:var(--accent);">source</a>`
+          : ""}
+      </div>
+    </article>`;
+}
+
+function renderUpcoming(upcomingDeals) {
+  const section = document.getElementById("upcomingSection");
+  const list    = document.getElementById("upcomingList");
+
+  // Merge upcoming one-off deals + future/undated special events
+  const items = upcomingDeals.map(d => ({ ...d, _kind: "deal" }));
+
+  SPECIAL_EVENTS.forEach(ev => {
+    if (ev.club_rugby) return;   // club rugby fixtures live only in their own Club Rugby tab
+    if (!selectedSuburbs.has(ev.suburb)) return;
+    if (ev.category === 'sport' && !(ev.world_cup ? showWorldCup : showSports)) return;
+    if (!matchesSearch(ev)) return;
+    // Include if upcoming (future date) or undated/recurring
+    if (!ev.date || ev.date >= WEEK_START) {
+      // Exclude events already shown in the week view
+      if (!ev.date || !WEEK_ISO_SET.has(ev.date)) {
+        items.push({ ...ev, _kind: "event" });
+      }
+    }
+  });
+
+  if (!items.length) { section.style.display = "none"; return; }
+
+  // Sort by date ascending (undated last)
+  items.sort((a, b) => {
+    const da = a.date || "z";
+    const db = b.date || "z";
+    return da < db ? -1 : da > db ? 1 : 0;
+  });
+
+  section.style.display = "";
+  list.innerHTML = items.map(item =>
+    item._kind === "deal" ? renderCard(item) : renderEventCard(item)
+  ).join("");
+}
+
+// ---------- CLUB RUGBY TAB ----------
+// Fixtures tagged club_rugby:true in special_events.json. Shown only here (excluded from the
+// week view + Upcoming), independent of the suburb filter, and only when the tab is toggled on.
+function renderRugbyCard(ev) {
+  const dateStr = ev.date ? formatEventDate(ev.date) : "Date TBC";
+  const koStr   = ev.start ? `${formatTime(ev.start)} kickoff` : "";
+  const comp    = ev.competition || "Wellington Premier";
+  const ground  = ev.ground || ev.address || "";
+  return `
+    <article class="deal-card rounded-lg p-3 border mb-2" style="background:var(--paper);border-color:var(--border);">
+      <div class="flex items-center gap-2 flex-wrap mb-1">
+        <span class="cat-badge cat-sport-rugby px-2 py-0.5 rounded">${comp}</span>
+        ${ev.round ? `<span class="text-xs" style="color:var(--ink-muted);">${ev.round}</span>` : ""}
+      </div>
+      <h4 class="font-semibold text-[15px] leading-snug">${ev.title}</h4>
+      ${ev.desc ? `<p class="text-sm mt-1 leading-relaxed" style="color:var(--ink-muted);">${ev.desc}</p>` : ""}
+      <div class="flex items-center gap-3 mt-2 text-xs flex-wrap" style="color:var(--ink-muted);">
+        <span>&#128197; ${dateStr}</span>
+        ${koStr ? `<span>&#128336; ${koStr}</span>` : ""}
+        ${ground ? `<span>&#128205; ${ground}</span>` : ""}
+        ${ev.source_url ? `<a href="${ev.source_url}" target="_blank" rel="noopener" class="ml-auto underline" style="color:var(--accent);">source</a>` : ""}
+      </div>
+    </article>`;
+}
+
+function renderClubRugby() {
+  const section = document.getElementById("clubRugbySection");
+  const list    = document.getElementById("clubRugbyList");
+  if (!section || !list) return;
+  if (!CLUB_RUGBY_ENABLED) { section.style.display = "none"; return; }
+  section.style.display = showClubRugby ? "" : "none";
+  if (!showClubRugby) return;
+  const fixtures = SPECIAL_EVENTS
+    .filter(ev => ev.club_rugby && matchesSearch(ev))
+    .sort((a, b) => {
+      const da = a.date || "z", db = b.date || "z";
+      return da < db ? -1 : da > db ? 1 : 0;
+    });
+  list.innerHTML = fixtures.length
+    ? fixtures.map(renderRugbyCard).join("")
+    : `<p class="text-sm italic" style="color:var(--ink-muted);">Finals draw to be confirmed &mdash; the Wellington Premier fixtures will appear here once locked in.</p>`;
+}
+
+// ---------- UTILS ----------
+function formatTime(t) {
+  if (!t) return "";
+  const [h, m] = t.split(":").map(Number);
+  const period = h >= 12 ? "pm" : "am";
+  const h12 = h % 12 === 0 ? 12 : h % 12;
+  return m === 0 ? `${h12}${period}` : `${h12}:${String(m).padStart(2,"0")}${period}`;
+}
+
+function formatEventDate(iso) {
+  if (!iso) return "";
+  const d = new Date(iso + "T00:00:00");
+  return isNaN(d) ? iso : d.toLocaleDateString("en-NZ", { day:"numeric", month:"short", year:"numeric" });
+}
+
+function formatMonthDay(md) {
+  if (!md) return "";
+  const [mm, dd] = md.split("-").map(Number);
+  const d = new Date(2000, mm - 1, dd);
+  return isNaN(d) ? md : d.toLocaleDateString("en-NZ", { day:"numeric", month:"short" });
+}
+
+// ---------- VENUE DETAIL PANEL (Option A) ----------
+// renderVenueProfile() is a pure function of VENUES_MAP + DEALS_BY_VENUE, so the
+// future per-venue SEO page generator (Option B) can reuse it verbatim.
+const CAT_HINT_LABELS = {
+  "restaurant": "Restaurant", "bar-restaurant": "Bar & Restaurant", "bar-pub": "Bar / Pub",
+  "cafe": "Cafe", "bakery": "Bakery", "takeaway": "Takeaway", "cinema": "Cinema", "museum": "Museum"
+};
+const DAY_ABBR = { Monday:"Mon", Tuesday:"Tue", Wednesday:"Wed", Thursday:"Thu", Friday:"Fri", Saturday:"Sat", Sunday:"Sun" };
+
+function slugify(name) {
+  return String(name).toLowerCase()
+    .replace(/&/g, " and ")
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "");
+}
+
+// A Set of full day names → "Mon–Fri", "Sat, Sun", "Every day"
+function formatDayRange(daySet) {
+  const idx = DAYS.map((d, i) => daySet.has(d) ? i : -1).filter(i => i >= 0);
+  if (idx.length === 0) return "";
+  if (idx.length === 7) return "Every day";
+  const runs = []; let start = idx[0], prev = idx[0];
+  for (let k = 1; k < idx.length; k++) {
+    if (idx[k] === prev + 1) { prev = idx[k]; }
+    else { runs.push([start, prev]); start = idx[k]; prev = idx[k]; }
+  }
+  runs.push([start, prev]);
+  return runs.map(([a, b]) => a === b ? DAY_ABBR[DAYS[a]] : `${DAY_ABBR[DAYS[a]]}–${DAY_ABBR[DAYS[b]]}`).join(", ");
+}
+
+// Deals are stored one record per day; collapse duplicates into one row per distinct deal
+function collapseVenueDeals(deals) {
+  const map = new Map();
+  deals.forEach(d => {
+    const t = d.type || "weekly";
+    const key = [t, d.title, d.desc || "", d.start || "", d.end || "", d.date || "", d.month_day || ""].join("||");
+    if (!map.has(key)) map.set(key, { rep: d, type: t, days: new Set(), everyday: false });
+    const e = map.get(key);
+    if (t === "weekly") { if (d.day) e.days.add(d.day); else e.everyday = true; }
+  });
+  const items = [...map.values()];
+  const sortKey = it => {
+    if (it.type === "one-off") return [3, it.rep.date || "z"];
+    if (it.type === "annual")  return [2, it.rep.month_day || "z"];
+    if (it.everyday)           return [1, ""];
+    const first = DAYS.findIndex(d => it.days.has(d));
+    return [0, String(first).padStart(2, "0")];
+  };
+  items.sort((a, b) => { const ka = sortKey(a), kb = sortKey(b); return ka[0] - kb[0] || (ka[1] < kb[1] ? -1 : ka[1] > kb[1] ? 1 : 0); });
+  return items;
+}
+
+function renderVenueProfile(name) {
+  const v = VENUES_MAP[name] || {};
+  const deals = DEALS_BY_VENUE[name] || [];
+
+  const catLabel = v.category_hint ? (CAT_HINT_LABELS[v.category_hint] || v.category_hint) : "";
+  const rating = v.google_rating ? `<span style="color:#b45309;font-weight:600;">&#9733; ${v.google_rating}</span>` : "";
+  const metaBits = [catLabel, suburbLabel(v.suburb || ""), rating].filter(Boolean).join(" &middot; ");
+
+  const act = [];
+  if (v.booking_url)     act.push(`<a class="vp-btn primary" href="${v.booking_url}" target="_blank" rel="noopener">Book a table</a>`);
+  if (v.google_maps_url) act.push(`<a class="vp-btn" href="${v.google_maps_url}" target="_blank" rel="noopener">&#128205; Map &amp; directions</a>`);
+  if (v.website)         act.push(`<a class="vp-btn" href="${v.website}" target="_blank" rel="noopener">Website</a>`);
+  if (v.facebook)        act.push(`<a class="vp-btn" href="${v.facebook}" target="_blank" rel="noopener">Facebook</a>`);
+  if (v.instagram)       act.push(`<a class="vp-btn" href="${v.instagram}" target="_blank" rel="noopener">Instagram</a>`);
+
+  const collapsed = collapseVenueDeals(deals);
+  const dealsHtml = collapsed.length ? collapsed.map(item => {
+    const d = item.rep;
+    let when;
+    if (item.type === "one-off")     when = d.date ? formatEventDate(d.date) : "One-off";
+    else if (item.type === "annual") when = "Annual" + (d.month_day ? " &middot; " + formatMonthDay(d.month_day) : "");
+    else                             when = item.everyday ? "Every day" : formatDayRange(item.days);
+    const time = d.start && d.end ? `${formatTime(d.start)}–${formatTime(d.end)}`
+               : d.start ? `from ${formatTime(d.start)}` : "";
+    const isMedium = d.confidence && d.confidence !== "high";
+    const conf = isMedium ? `<span class="vp-unverified">&#9432; Unverified</span>` : "";
+    return `
+      <div class="vp-deal">
+        <div class="vp-deal-head">
+          <span class="cat-badge cat-${d.category} px-2 py-0.5 rounded">${CAT_LABELS[d.category] || d.category}</span>
+          <span class="vp-when">${when}${time ? " &middot; " + time : ""}</span>
+          ${conf}
+        </div>
+        <h4 class="vp-deal-title">${d.title}</h4>
+        ${d.desc ? `<p class="vp-deal-desc">${d.desc}</p>` : ""}
+      </div>`;
+  }).join("") : `<p class="sd-hint" style="margin-top:6px;">No recurring deals recorded here yet — check their own channels above, or send one in with the “＋ Submit a deal” button.</p>`;
+
+  const n = collapsed.length;
+  const heading = n ? `What's on here${n > 1 ? ` &middot; ${n} specials` : ""}` : "Deals";
+  return `
+    <h2 class="vp-name">${name}${v.is_chain ? ` <span class="vp-chip">Chain</span>` : ""}</h2>
+    <p class="vp-meta">${metaBits}</p>
+    ${v.address ? `<p class="vp-addr">&#128205; ${v.address}</p>` : ""}
+    ${act.length ? `<div class="vp-actions">${act.join("")}</div>` : ""}
+    <div class="vp-section-title">${heading}</div>
+    ${dealsHtml}`;
+}
+
+// ---------- INTERACTIONS ----------
+
+// Region row (top tier) — clicking a region toggles all its data-backed suburbs on/off.
+// Delegated (chips are built dynamically), so wired once on the persistent container.
+document.getElementById("regionRow").addEventListener("click", e => {
+  const rb = e.target.closest("[data-region]");
+  if (!rb) return;
+  const conf        = SUBURB_REGIONS.find(r => r.region === rb.dataset.region) || { suburbs: [] };
+  const present     = computePresentSuburbs();
+  const presentSubs = conf.suburbs.filter(s => present.has(s));
+  const allSelected = presentSubs.length && presentSubs.every(s => selectedSuburbs.has(s));
+  if (allSelected) presentSubs.forEach(s => selectedSuburbs.delete(s));
+  else             presentSubs.forEach(s => selectedSuburbs.add(s));
+  updateSelectorUI();
+  render();
+});
+
+// Suburb sub-rows (second tier) — toggle a single suburb. Delegated on the persistent container.
+document.getElementById("suburbRows").addEventListener("click", e => {
+  const b = e.target.closest("[data-suburb]");
+  if (!b) return;
+  const s = b.dataset.suburb;
+  selectedSuburbs.has(s) ? selectedSuburbs.delete(s) : selectedSuburbs.add(s);
+  updateSelectorUI();
+  render();
+});
+
+// "All Wellington" — select every suburb that currently has data.
+document.getElementById("allWgtnBtn").addEventListener("click", () => {
+  computePresentSuburbs().forEach(s => selectedSuburbs.add(s));
+  updateSelectorUI();
+  render();
+});
+
+// Minimise / expand the suburb selector body (region + suburb rows) to reclaim screen space.
+document.getElementById("suburbMinBtn").addEventListener("click", function() {
+  const body = document.getElementById("suburbBody");
+  const help = document.getElementById("suburbHelp");
+  const collapsed = body.classList.toggle("collapsed");
+  if (help) help.style.display = collapsed ? "none" : "";
+  this.innerHTML = collapsed ? "Show suburbs &#9662;" : "Minimise &#9652;";
+});
+
+// Day (radio)
+document.querySelectorAll("[data-day]").forEach(btn => {
+  btn.addEventListener("click", () => {
+    selectedDay = btn.dataset.day;
+    document.querySelectorAll("[data-day]").forEach(b => b.classList.remove("active"));
+    btn.classList.add("active");
+    render();
+  });
+});
+
+// Categories (toggle)
+document.querySelectorAll("[data-category]").forEach(btn => {
+  btn.addEventListener("click", () => {
+    const c = btn.dataset.category;
+    selectedCategories.has(c) ? selectedCategories.delete(c) : selectedCategories.add(c);
+    btn.classList.toggle("active", selectedCategories.has(c));
+    render();
+  });
+});
+
+// Chain (radio)
+document.querySelectorAll("[data-chain]").forEach(btn => {
+  btn.addEventListener("click", () => {
+    chainFilter = btn.dataset.chain;
+    document.querySelectorAll("[data-chain]").forEach(b => b.classList.remove("active"));
+    btn.classList.add("active");
+    render();
+  });
+});
+
+// Every Day toggle
+document.getElementById("dailyToggle").addEventListener("click", function() {
+  showDailyDeals = !showDailyDeals;
+  this.classList.toggle("active", showDailyDeals);
+  render();
+});
+
+// Kids Deals toggle
+document.getElementById("kidsToggle").addEventListener("click", function() {
+  showKidsOnly = !showKidsOnly;
+  this.classList.toggle("active", showKidsOnly);
+  render();
+});
+
+// Club Rugby tab toggle (default off)
+document.getElementById("clubRugbyToggle").addEventListener("click", function() {
+  showClubRugby = !showClubRugby;
+  this.setAttribute("aria-expanded", showClubRugby ? "true" : "false");
+  document.getElementById("clubRugbyToggleState").innerHTML = showClubRugby ? "Hide &#9652;" : "Show &#9662;";
+  renderClubRugby();
+});
+// Feature flag off → hide the whole Club Rugby tab (toggle bar + section) at launch.
+if (!CLUB_RUGBY_ENABLED) {
+  const _crBar = document.getElementById("clubRugbyBar");
+  const _crSec = document.getElementById("clubRugbySection");
+  if (_crBar) _crBar.style.display = "none";
+  if (_crSec) _crSec.style.display = "none";
+}
+
+// Confidence (radio)
+document.querySelectorAll("[data-confidence]").forEach(btn => {
+  btn.addEventListener("click", () => {
+    confidenceFilter = btn.dataset.confidence;
+    document.querySelectorAll("[data-confidence]").forEach(b => b.classList.remove("active"));
+    btn.classList.add("active");
+    render();
+  });
+});
+
+// ---------- SEARCH ----------
+(function() {
+  const input = document.getElementById("searchInput");
+  const clear = document.getElementById("searchClear");
+  input.addEventListener("input", () => {
+    searchQuery = input.value;
+    clear.style.display = searchQuery ? "block" : "none";
+    render();
+  });
+  clear.addEventListener("click", () => {
+    searchQuery = "";
+    input.value = "";
+    clear.style.display = "none";
+    render();
+  });
+})();
+
+// ---------- CONTACT REVEAL ----------
+document.getElementById("contactBtn").addEventListener("click", function() {
+  const el = document.getElementById("contactEmail");
+  el.style.display = el.style.display === "none" ? "inline" : "none";
+});
+
+// ---------- MOBILE FILTER TOGGLE ----------
+(function() {
+  const toggle = document.getElementById("filterToggle");
+  const rows   = document.getElementById("filterRows");
+  const icon   = document.getElementById("filterToggleIcon");
+  if (!toggle || !rows) return;
+
+  // On sm+ screens, always show filter rows regardless of collapsed state
+  function applyCollapse() {
+    const isMobile = window.innerWidth < 640;
+    if (!isMobile) {
+      rows.classList.remove("collapsed");
+    }
+  }
+  applyCollapse();
+  window.addEventListener("resize", applyCollapse);
+
+  toggle.addEventListener("click", () => {
+    const isCollapsed = rows.classList.toggle("collapsed");
+    icon.textContent = isCollapsed ? "▾" : "▴";
+  });
+
+  // Update scroll-padding-top to match the actual filter bar height
+  function updateScrollPadding() {
+    const bar = document.getElementById("filterBar");
+    if (bar) document.documentElement.style.scrollPaddingTop = bar.offsetHeight + "px";
+  }
+  document.getElementById("filterBar").addEventListener("click", () => setTimeout(updateScrollPadding, 50));
+  window.addEventListener("resize", updateScrollPadding);
+  setTimeout(updateScrollPadding, 100);
+})();
+
+// ---------- BOOT ----------
+render(); // renders empty state instantly
+loadData().then(() => {
+  // Compute which deals run all 7 days (same venue + title on Mon–Sun)
+  const dayMap = {};
+  DEALS.forEach(d => {
+    const t = d.type || 'weekly';
+    if (t === 'weekly' && d.day) {
+      const key = d.venue + '||' + d.title;
+      if (!dayMap[key]) dayMap[key] = new Set();
+      dayMap[key].add(d.day);
+    }
+  });
+  Object.entries(dayMap).forEach(([key, days]) => {
+    if (days.size === 7 && DAYS.every(day => days.has(day))) DAILY_DEAL_KEYS.add(key);
+  });
+  // null-day weekly deals are inherently daily
+  DEALS.forEach(d => {
+    const t = d.type || 'weekly';
+    if (t === 'weekly' && !d.day) DAILY_DEAL_KEYS.add(d.venue + '||' + d.title);
+  });
+
+  // Venue detail panel: index deals by venue + assign a stable slug to each venue
+  DEALS_BY_VENUE = {};
+  DEALS.forEach(d => { (DEALS_BY_VENUE[d.venue] = DEALS_BY_VENUE[d.venue] || []).push(d); });
+  Object.keys(VENUES_MAP).forEach(name => {
+    let slug = slugify(name), base = slug, n = 2;
+    while (VENUE_SLUGS[slug] && VENUE_SLUGS[slug] !== name) { slug = base + '-' + (n++); }
+    VENUE_SLUGS[slug] = name;
+    VENUES_MAP[name]._slug = slug;
+  });
+
+  buildSuburbSelector();  // build region + suburb chips from the loaded data, then render
+  render();
+  document.dispatchEvent(new Event('venuedata-ready')); // lets a #venue/<slug> deep-link open on load
+}); // re-renders once data is loaded
+</script>
+
+<!-- Submit-a-deal modal (Netlify Forms) -->
+<div class="sd-overlay" id="submitDealModal" role="dialog" aria-modal="true" aria-label="Submit a deal">
+  <div class="sd-card">
+    <button class="sd-close" id="submitDealClose" aria-label="Close">&times;</button>
+    <h2>Submit a deal</h2>
+    <p class="sd-hint">Know a Wellington deal or event we're missing? Send it in — we'll check it and add it. Nothing here is published automatically.</p>
+
+    <form name="submit-a-deal" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" enctype="multipart/form-data" id="submitDealForm">
+      <input type="hidden" name="form-name" value="submit-a-deal">
+      <p class="sd-hp"><label>Leave this blank: <input name="bot-field"></label></p>
+
+      <label class="sd-label">What is this?</label>
+      <div class="sd-radios">
+        <label><input type="radio" name="submission_type" value="New deal" checked> New deal</label>
+        <label><input type="radio" name="submission_type" value="Correction"> Correction</label>
+        <label><input type="radio" name="submission_type" value="Event"> Event</label>
+      </div>
+
+      <!-- Correction only: find the existing deal being corrected -->
+      <div id="sd-correction" style="display:none;">
+        <label class="sd-label" for="sd-search">Which deal needs fixing?</label>
+        <div class="sd-ac-wrap">
+          <input class="sd-field" id="sd-search" autocomplete="off" placeholder="Search a venue or deal — e.g. Bristol quiz">
+          <div class="sd-ac" id="sd-ac"></div>
+        </div>
+        <input type="hidden" name="deal_being_corrected" id="sd-corrected">
+        <p class="sd-hint">Pick the deal that's wrong — it'll fill the venue below. Then describe the fix under “The deal”.</p>
+      </div>
+
+      <label class="sd-label" for="sd-venue">Venue name *</label>
+      <input class="sd-field" id="sd-venue" name="venue" required placeholder="e.g. Hotel Bristol">
+
+      <label class="sd-label" for="sd-suburb">Suburb / area</label>
+      <select class="sd-field" id="sd-suburb" name="suburb">
+        <option value="">— pick one —</option>
+        <option>Cuba St</option><option>Te Aro</option><option>Courtenay Pl</option>
+        <option>Lambton Quay</option><option>Waterfront</option><option>Mt Victoria</option>
+        <option>Thorndon</option><option>Kelburn</option><option>Aro Valley</option>
+        <option>Oriental Parade</option><option>Johnsonville</option><option>Karori</option><option>Makara</option><option>Newtown</option><option>Island Bay</option><option>Lyall Bay</option><option>Kilbirnie</option><option>Miramar</option><option>Brooklyn</option><option>Hataitai</option><option>Berhampore</option><option>Seatoun</option><option>Khandallah</option><option>Ngaio</option><option>Newlands</option><option>Wilton</option><option>Northland</option><option>Crofton Downs</option><option>Petone</option><option>Lower Hutt</option><option>Upper Hutt</option><option>Porirua CBD</option><option>Plimmerton</option><option>Titahi Bay</option><option>Pauatahanui</option><option>Paremata</option><option>Whitby</option><option>Pukerua Bay</option><option>Paraparaumu</option><option>Paraparaumu Beach</option><option>Waikanae</option><option>Raumati Beach</option><option>Ōtaki</option><option>Paekākāriki</option><option>Waikanae Beach</option><option>Raumati South</option><option>Not sure</option>
+      </select>
+
+      <label class="sd-label">Which day(s)?</label>
+      <div class="sd-daygrid">
+        <label><input type="checkbox" name="days" value="Monday"> Mon</label>
+        <label><input type="checkbox" name="days" value="Tuesday"> Tue</label>
+        <label><input type="checkbox" name="days" value="Wednesday"> Wed</label>
+        <label><input type="checkbox" name="days" value="Thursday"> Thu</label>
+        <label><input type="checkbox" name="days" value="Friday"> Fri</label>
+        <label><input type="checkbox" name="days" value="Saturday"> Sat</label>
+        <label><input type="checkbox" name="days" value="Sunday"> Sun</label>
+        <label><input type="checkbox" name="days" value="Every day"> Every day</label>
+      </div>
+
+      <label class="sd-label" for="sd-time">Time (if any)</label>
+      <input class="sd-field" id="sd-time" name="time" placeholder="e.g. 4–6pm">
+
+      <label class="sd-label" for="sd-deal">The deal *</label>
+      <textarea class="sd-field" id="sd-deal" name="deal" required rows="2" placeholder="e.g. $12 margherita pizza, dine-in only"></textarea>
+      <label class="sd-photo-add" for="sd-photo">&#128247; Add a photo</label>
+      <input class="sd-photo-input" type="file" id="sd-photo" name="deal_photo" accept="image/*">
+      <div class="sd-photo-preview" id="sd-photo-preview">
+        <img class="sd-photo-thumb" id="sd-photo-thumb" alt="">
+        <span class="sd-photo-name" id="sd-photo-name"></span>
+        <button type="button" class="sd-photo-remove" id="sd-photo-remove" aria-label="Remove photo">&times;</button>
+      </div>
+      <p class="sd-hint">A pic of the sign or menu is enough on its own — you can send just a photo, no typing needed.</p>
+
+      <label class="sd-label" for="sd-proof">Link / proof (optional)</label>
+      <input class="sd-field" id="sd-proof" name="proof_url" type="url" placeholder="Instagram post, website, etc.">
+      <p class="sd-hint">Where you saw it — helps us verify faster.</p>
+
+      <label class="sd-label" for="sd-email">Your email (optional)</label>
+      <input class="sd-field" id="sd-email" name="submitter_email" type="email" placeholder="so we can follow up if needed">
+
+      <button type="submit" class="sd-submit">Send it in</button>
+    </form>
+
+    <div id="submitDealSuccess" style="display:none; padding:24px 4px; text-align:center; font-size:15px; color:var(--ink);">
+      Thanks! 🍻 We'll check it and add it. You can close this now.
+    </div>
+  </div>
+</div>
+
+<!-- Venue detail panel -->
+<div class="sd-overlay" id="venueModal" role="dialog" aria-modal="true" aria-label="Venue details">
+  <div class="sd-card vp-card">
+    <button class="sd-close" id="venueClose" aria-label="Close">&times;</button>
+    <div id="venueProfileBody"></div>
+  </div>
+</div>
+
+<script>
+(function(){
+  var modal = document.getElementById('submitDealModal');
+  var openBtn = document.getElementById('submitDealBtn');
+  var closeBtn = document.getElementById('submitDealClose');
+  var form = document.getElementById('submitDealForm');
+  var successBox = document.getElementById('submitDealSuccess');
+  function openModal(){ modal.classList.add('open'); document.body.style.overflow='hidden'; var f=document.getElementById('sd-venue'); if(f){ f.focus(); } }
+  function closeModal(){ modal.classList.remove('open'); document.body.style.overflow=''; }
+  if(openBtn){ openBtn.addEventListener('click', openModal); }
+  if(closeBtn){ closeBtn.addEventListener('click', closeModal); }
+  modal.addEventListener('click', function(e){ if(e.target === modal){ closeModal(); } });
+  document.addEventListener('keydown', function(e){ if(e.key === 'Escape' && modal.classList.contains('open')){ closeModal(); } });
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    // Multipart (no manual Content-Type) so an attached photo is included; Netlify parses text fields fine too.
+    fetch('/', { method:'POST', body: new FormData(form) })
+      .then(function(r){
+        if(r.ok){ form.style.display='none'; successBox.style.display='block'; }
+        else { throw new Error('status ' + r.status); }
+      })
+      .catch(function(){
+        form.style.display='none';
+        successBox.style.display='block';
+        successBox.innerHTML = "That didn't send — please email jacobb334@gmail.com instead. Sorry!";
+      });
+  });
+
+  // ── Photo upload: compress in-browser (keeps it well under Netlify's ~8MB cap), preview, swap proof hint ──
+  var photoInput   = document.getElementById('sd-photo');
+  var photoPreview = document.getElementById('sd-photo-preview');
+  var photoThumb   = document.getElementById('sd-photo-thumb');
+  var photoName    = document.getElementById('sd-photo-name');
+  var photoRemove  = document.getElementById('sd-photo-remove');
+  var proofInput   = document.getElementById('sd-proof');
+  var dealTextarea = document.getElementById('sd-deal');
+  var PROOF_PH_DEFAULT = proofInput ? proofInput.getAttribute('placeholder') : '';
+  // "The deal" is required UNLESS a photo is attached (the photo can stand in for it).
+  function syncDealRequired(hasPhoto){ if(dealTextarea){ dealTextarea.required = !hasPhoto; } }
+  function setProofHint(hasPhoto){ if(proofInput){ proofInput.setAttribute('placeholder', hasPhoto ? 'Additional proof (optional)' : PROOF_PH_DEFAULT); } }
+
+  function compressImage(file){
+    return new Promise(function(resolve){
+      if(!/^image\//.test(file.type) || /gif$/i.test(file.type)){ resolve(file); return; }
+      var url = URL.createObjectURL(file);
+      var img = new Image();
+      img.onload = function(){
+        var max = 1600, w = img.naturalWidth, h = img.naturalHeight;
+        var scale = Math.min(1, max / Math.max(w, h));
+        var cw = Math.max(1, Math.round(w * scale)), ch = Math.max(1, Math.round(h * scale));
+        var c = document.createElement('canvas'); c.width = cw; c.height = ch;
+        c.getContext('2d').drawImage(img, 0, 0, cw, ch);
+        URL.revokeObjectURL(url);
+        c.toBlob(function(blob){
+          if(!blob){ resolve(file); return; }
+          var out = new File([blob], (file.name.replace(/\.[^.]+$/, '') || 'photo') + '.jpg', { type:'image/jpeg' });
+          resolve(out.size < file.size ? out : file);
+        }, 'image/jpeg', 0.85);
+      };
+      img.onerror = function(){ URL.revokeObjectURL(url); resolve(file); };
+      img.src = url;
+    });
+  }
+  function showPhoto(file){
+    photoThumb.src = URL.createObjectURL(file);
+    photoName.textContent = file.name + ' · ' + Math.round(file.size/1024) + ' KB';
+    photoPreview.classList.add('show');
+    setProofHint(true);
+  }
+  function clearPhoto(){
+    photoInput.value = '';
+    photoPreview.classList.remove('show');
+    photoThumb.removeAttribute('src');
+    setProofHint(false);
+    syncDealRequired(false); // no photo → "The deal" text required again
+  }
+  if(photoInput){
+    photoInput.addEventListener('change', function(){
+      var f = photoInput.files && photoInput.files[0];
+      if(!f){ clearPhoto(); return; }
+      syncDealRequired(true); // photo attached → text no longer required
+      compressImage(f).then(function(out){
+        try { var dt = new DataTransfer(); dt.items.add(out); photoInput.files = dt.files; }
+        catch(err){ /* DataTransfer unsupported — original file stays on the input */ }
+        showPhoto((photoInput.files && photoInput.files[0]) || out);
+      });
+    });
+  }
+  if(photoRemove){ photoRemove.addEventListener('click', clearPhoto); }
+
+  // ── Correction tab: search existing deals (token match on venue OR title, any order) ──
+  var correctionBox  = document.getElementById('sd-correction');
+  var searchInput    = document.getElementById('sd-search');
+  var acBox          = document.getElementById('sd-ac');
+  var correctedHidden= document.getElementById('sd-corrected');
+  var venueInput     = document.getElementById('sd-venue');
+  var dealIndex = null, acItems = [], acActive = -1;
+  function esc(s){ return String(s == null ? '' : s).replace(/[&<>"]/g, function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]; }); }
+  function getIndex(){
+    if(dealIndex && dealIndex.length) return dealIndex;
+    var src = (typeof DEALS !== 'undefined' && DEALS) ? DEALS : [];
+    var seen = {}, out = [];
+    src.forEach(function(d){
+      var key = d.venue + '||' + d.title;
+      if(seen[key]) return; seen[key] = 1;
+      out.push({ venue:d.venue, title:d.title, suburb:d.suburb, hay:(d.venue + ' ' + d.title).toLowerCase() });
+    });
+    dealIndex = out; return out;
+  }
+  function searchDeals(q){
+    var words = q.toLowerCase().trim().split(/\s+/).filter(Boolean);
+    if(!words.length) return [];
+    return getIndex().filter(function(it){ return words.every(function(w){ return it.hay.indexOf(w) !== -1; }); }).slice(0, 8);
+  }
+  function renderAc(){
+    if(!acItems.length){ acBox.innerHTML = '<div class="sd-ac-none">No match — you can still type the venue below.</div>'; acBox.classList.add('show'); return; }
+    acBox.innerHTML = acItems.map(function(it, i){
+      return '<div class="sd-ac-item' + (i===acActive?' active':'') + '" data-i="' + i + '"><b>' + esc(it.venue) + '</b> — ' + esc(it.title) + (it.suburb ? '<div class="sd-ac-sub">' + esc(it.suburb) + '</div>' : '') + '</div>';
+    }).join('');
+    acBox.classList.add('show');
+  }
+  function hideAc(){ acBox.classList.remove('show'); acActive = -1; }
+  function pick(i){
+    var it = acItems[i]; if(!it) return;
+    searchInput.value = it.venue + ' — ' + it.title;
+    if(venueInput) venueInput.value = it.venue;
+    if(correctedHidden) correctedHidden.value = it.venue + ' — ' + it.title;
+    hideAc();
+  }
+  if(searchInput){
+    searchInput.addEventListener('input', function(){
+      acItems = searchDeals(searchInput.value); acActive = -1; renderAc();
+      if(correctedHidden) correctedHidden.value = '';
+    });
+    searchInput.addEventListener('keydown', function(e){
+      if(!acBox.classList.contains('show')) return;
+      if(e.key === 'ArrowDown'){ e.preventDefault(); acActive = Math.min(acActive + 1, acItems.length - 1); renderAc(); }
+      else if(e.key === 'ArrowUp'){ e.preventDefault(); acActive = Math.max(acActive - 1, 0); renderAc(); }
+      else if(e.key === 'Enter'){ if(acActive >= 0){ e.preventDefault(); pick(acActive); } }
+      else if(e.key === 'Escape'){ hideAc(); }
+    });
+    searchInput.addEventListener('blur', function(){ setTimeout(hideAc, 150); });
+    acBox.addEventListener('mousedown', function(e){ var it = e.target.closest('[data-i]'); if(it){ e.preventDefault(); pick(+it.getAttribute('data-i')); } });
+  }
+  function syncType(){
+    var checked = form.querySelector('input[name="submission_type"]:checked');
+    var isCorr = checked && checked.value === 'Correction';
+    if(correctionBox) correctionBox.style.display = isCorr ? 'block' : 'none';
+    if(!isCorr) hideAc();
+  }
+  form.querySelectorAll('input[name="submission_type"]').forEach(function(r){ r.addEventListener('change', syncType); });
+  syncType();
+})();
+</script>
+
+<script>
+// Venue detail panel controller. #venue/<slug> is the single source of truth, so the
+// browser Back button closes the panel and profiles are shareable via deep-link.
+(function(){
+  var modal = document.getElementById('venueModal');
+  var body  = document.getElementById('venueProfileBody');
+  var closeBtn = document.getElementById('venueClose');
+
+  function show(name){
+    body.innerHTML = renderVenueProfile(name);
+    modal.classList.add('open');
+    document.body.style.overflow = 'hidden';
+    modal.scrollTop = 0;
+  }
+  function hide(){
+    modal.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+  function syncFromHash(){
+    var m = location.hash.match(/^#venue\/(.+)$/);
+    var name = m && VENUE_SLUGS[decodeURIComponent(m[1])];
+    if (name) { show(name); } else { hide(); }
+  }
+  function clearHash(){
+    if (location.hash.indexOf('#venue/') === 0) { location.hash = ''; } // fires hashchange -> hide()
+    else { hide(); }
+  }
+
+  // Open when a venue name is clicked (delegated so it survives re-renders)
+  document.addEventListener('click', function(e){
+    var t = e.target.closest && e.target.closest('[data-venue-open]');
+    if (t) { e.preventDefault(); location.hash = 'venue/' + t.getAttribute('data-venue-open'); }
+  });
+  if (closeBtn) closeBtn.addEventListener('click', clearHash);
+  modal.addEventListener('click', function(e){ if (e.target === modal) clearHash(); });
+  document.addEventListener('keydown', function(e){ if (e.key === 'Escape' && modal.classList.contains('open')) clearHash(); });
+  window.addEventListener('hashchange', syncFromHash);
+  document.addEventListener('venuedata-ready', syncFromHash); // deep-link open once data is loaded
+})();
+</script>
+
+<script>
+// ---------- SCROLL CONTEXT INDICATOR ----------
+// A slim bar under the filter bar showing which day + suburb you're currently scrolled to,
+// so you don't lose your place as the day/suburb headings scroll up under the sticky filter bar.
+(function(){
+  var nav    = document.getElementById("scrollNav");
+  var filter = document.getElementById("filterBar");
+  var week   = document.getElementById("weekView");
+  if(!nav || !filter || !week) return;
+  var elDay = document.getElementById("snDay");
+  var elSep = document.getElementById("snSep");
+  var elSub = document.getElementById("snSuburb");
+
+  var ticking = false;
+  function onScroll(){ if(!ticking){ ticking = true; requestAnimationFrame(update); } }
+  function update(){
+    ticking = false;
+    var fRect     = filter.getBoundingClientRect();
+    var threshold = fRect.bottom + 4;          // just under the sticky filter bar
+    nav.style.top = fRect.bottom + "px";       // track the filter bar's (variable) height
+
+    var wr = week.getBoundingClientRect();
+    if(wr.top > threshold || wr.bottom < threshold){ nav.style.display = "none"; return; }
+
+    // Current day = last day-section whose top has scrolled above the threshold.
+    var sections = week.querySelectorAll(".day-section[data-day]");
+    var curDay = null, curSection = null;
+    for(var i = 0; i < sections.length; i++){
+      if(sections[i].getBoundingClientRect().top <= threshold){ curDay = sections[i].getAttribute("data-day"); curSection = sections[i]; }
+      else break;
+    }
+    if(!curDay){ nav.style.display = "none"; return; }
+
+    // Current suburb = last suburb sub-label within that day that has passed the threshold.
+    var curSub = "";
+    var labels = curSection.querySelectorAll("[data-suburb-label]");
+    for(var j = 0; j < labels.length; j++){
+      if(labels[j].getBoundingClientRect().top <= threshold){ curSub = labels[j].getAttribute("data-suburb-label"); }
+      else break;
+    }
+    // Single-suburb view renders no sub-labels — fall back to the one selected suburb.
+    if(!curSub && typeof selectedSuburbs !== "undefined" && selectedSuburbs.size === 1){
+      curSub = suburbLabel(Array.from(selectedSuburbs)[0]);
+    }
+
+    elDay.textContent = curDay;
+    if(curSub){ elSub.textContent = curSub; elSub.style.display = ""; elSep.style.display = ""; }
+    else       { elSub.textContent = "";     elSub.style.display = "none"; elSep.style.display = "none"; }
+    nav.style.display = "block";
+  }
+  window.addEventListener("scroll", onScroll, { passive: true });
+  window.addEventListener("resize", onScroll);
+  // Filter clicks rebuild the list / resize the filter bar — refresh on the next frame.
+  document.addEventListener("click", function(){ requestAnimationFrame(update); });
+  update();
+})();
+
+// ---------- WHAT'S NEW / notice board ----------
+// Add a new entry at the TOP of SITE_UPDATES (newest first) each time you change the site.
+// Give every entry a unique `id` (any stable string) — the coral "NEW" badge shows until a
+// visitor opens the panel, and re-lights whenever a newer id appears. tag: "New" | "Added" | "Update".
+(function(){
+  var SITE_UPDATES = [
+    { id:"2026-07-11-requests",       date:"2026-07-11", tag:"Added", text:"New deals added by request — RE Burger Petone, The Ram, Sprig + Fern Thorndon, the waterfront Ice Rink and more." },
+    { id:"2026-07-10-porirua-kapiti", date:"2026-07-10", tag:"New",   text:"Porirua and the Kāpiti Coast are now covered — 15 new towns added." }
+  ];
+  var SEEN_KEY = "wd_whatsnew_seen";
+  var bar = document.getElementById("whatsNewBar");
+  if(!bar) return;
+  if(!SITE_UPDATES.length){ bar.style.display = "none"; return; }
+
+  var toggle = document.getElementById("whatsNewToggle");
+  var panel  = document.getElementById("whatsNewPanel");
+  var list   = document.getElementById("whatsNewList");
+  var state  = document.getElementById("whatsNewToggleState");
+  var badge  = document.getElementById("whatsNewBadge");
+
+  function tagClass(t){ return t === "Added" ? "wn-tag-added" : t === "Update" ? "wn-tag-update" : "wn-tag-new"; }
+  function fmt(iso){ return (typeof formatEventDate === "function") ? formatEventDate(iso) : iso; }
+  function esc(s){ return String(s == null ? "" : s).replace(/[&<>]/g, function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;'}[c]; }); }
+
+  list.innerHTML = SITE_UPDATES.map(function(u){
+    return '<div class="wn-item">' +
+             '<span class="wn-tag ' + tagClass(u.tag) + '">' + esc(u.tag) + '</span>' +
+             '<div class="wn-body">' +
+               '<div class="wn-text">' + esc(u.text) + '</div>' +
+               '<div class="wn-date">' + esc(fmt(u.date)) + '</div>' +
+             '</div>' +
+           '</div>';
+  }).join("");
+
+  // unseen = number of entries newer than the last one the visitor acknowledged
+  var lastSeen = null;
+  try { lastSeen = localStorage.getItem(SEEN_KEY); } catch(e){}
+  var unseen;
+  if(!lastSeen){ unseen = SITE_UPDATES.length; }
+  else {
+    var idx = -1;
+    for(var i = 0; i < SITE_UPDATES.length; i++){ if(SITE_UPDATES[i].id === lastSeen){ idx = i; break; } }
+    unseen = idx === -1 ? SITE_UPDATES.length : idx;
+  }
+  function paintBadge(){
+    if(unseen > 0){ badge.textContent = unseen > 1 ? (unseen + " new") : "NEW"; badge.style.display = ""; }
+    else { badge.style.display = "none"; }
+  }
+  paintBadge();
+
+  var open = false;
+  toggle.addEventListener("click", function(){
+    open = !open;
+    panel.style.display = open ? "block" : "none";
+    toggle.setAttribute("aria-expanded", open ? "true" : "false");
+    state.innerHTML = open ? "Hide &#9652;" : "Show &#9662;";
+    if(open && unseen > 0){
+      unseen = 0; paintBadge();
+      try { localStorage.setItem(SEEN_KEY, SITE_UPDATES[0].id); } catch(e){}
+    }
+  });
+})();
+</script>
+
+</body>
+</html>
