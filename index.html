@@ -1499,7 +1499,7 @@ loadData().then(() => {
     <label class="map-day">Day
       <select id="mapDaySelect"></select>
     </label>
-    <button id="mapLocateBtn" type="button" class="map-btn">&#128205; Near me</button>
+    <button id="mapLocateBtn" type="button" class="map-btn">&#128205; Use my location</button>
     <span id="mapCount" class="map-count"></span>
     <button id="mapCloseBtn" type="button" class="map-close" aria-label="Close map">&times;</button>
   </div>
@@ -1888,6 +1888,8 @@ loadData().then(() => {
 // visitor opens the panel, and re-lights whenever a newer id appears. tag: "New" | "Added" | "Update".
 (function(){
   var SITE_UPDATES = [
+    { id:"2026-07-12-map",            date:"2026-07-12", tag:"New",   text:"New deals map — see every venue with a deal on a chosen day laid out on one map. Tap a pin for the deal, or use your location to spot what's near you." },
+    { id:"2026-07-12-ratings",        date:"2026-07-12", tag:"New",   text:"You can now rate venues and leave a comment — no account needed. Open any venue to add yours." },
     { id:"2026-07-11-requests",       date:"2026-07-11", tag:"Added", text:"New deals added by request — RE Burger Petone, The Ram, Sprig + Fern Thorndon, the waterfront Ice Rink and more." },
     { id:"2026-07-10-porirua-kapiti", date:"2026-07-10", tag:"New",   text:"Porirua and the Kāpiti Coast are now covered — 15 new towns added." }
   ];
