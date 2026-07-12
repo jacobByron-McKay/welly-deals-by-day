@@ -170,6 +170,42 @@
   .vp-unverified { font-size:11px; color:#d97706; }
   .vp-deal-title { font-size:14px; font-weight:600; margin-top:5px; line-height:1.3; }
   .vp-deal-desc { font-size:13px; color:var(--ink-muted); margin-top:3px; line-height:1.45; }
+  /* Ratings widget */
+  .vr { display:flex; align-items:center; flex-wrap:wrap; gap:10px; }
+  .vr-stars { display:inline-flex; gap:2px; }
+  .vr-star { background:none; border:0; padding:0 1px; font-size:26px; line-height:1; cursor:pointer; color:#d4d8e0; transition:color .08s, transform .08s; }
+  .vr-star:hover { transform:scale(1.12); }
+  .vr-star.on { color:#f5a623; }
+  .vr-summary { font-size:13px; color:var(--ink-muted); }
+  .vr-summary b { color:var(--ink); font-weight:700; }
+  .vr-yours { color:var(--accent); font-weight:600; }
+  .vr-google { font-size:12px; font-weight:600; color:#b45309; background:#fff7ed; border:1px solid #fcd9a8; border-radius:6px; padding:3px 7px; margin-left:auto; }
+  /* Comments */
+  .vc-list { display:flex; flex-direction:column; gap:8px; margin-bottom:12px; }
+  .vc-item { border:1px solid var(--border); border-radius:8px; padding:8px 10px; background:var(--paper); }
+  .vc-body { font-size:13px; line-height:1.45; color:var(--ink); white-space:pre-wrap; word-break:break-word; }
+  .vc-time { font-size:11px; color:var(--ink-muted); display:block; margin-top:4px; }
+  .vc-hp { position:absolute; left:-9999px; width:1px; height:1px; opacity:0; }
+  .vc-input { width:100%; box-sizing:border-box; font:inherit; font-size:13px; padding:8px 10px; border:1px solid var(--border); border-radius:8px; background:var(--card); color:var(--ink); resize:vertical; }
+  .vc-input:focus { outline:none; border-color:var(--accent); }
+  .vc-row { display:flex; align-items:center; justify-content:space-between; gap:10px; margin-top:8px; }
+  .vc-note { font-size:12px; color:var(--ink-muted); }
+  /* Full-screen deals map */
+  .map-view { position:fixed; inset:0; z-index:60; background:var(--paper); display:none; flex-direction:column; }
+  .map-view.open { display:flex; }
+  .map-bar { display:flex; align-items:center; gap:10px; padding:10px 14px; background:var(--card); border-bottom:1px solid var(--border); flex-wrap:wrap; }
+  .map-title { font-weight:700; font-size:15px; }
+  .map-day { font-size:13px; color:var(--ink-muted); display:inline-flex; align-items:center; gap:6px; }
+  .map-day select { font:inherit; font-size:13px; padding:5px 8px; border:1px solid var(--border); border-radius:8px; background:var(--card); color:var(--ink); }
+  .map-btn { font-size:13px; font-weight:600; padding:6px 11px; border-radius:8px; border:1px solid var(--border); color:var(--ink); background:var(--card); cursor:pointer; }
+  .map-btn:hover { border-color:var(--accent); color:var(--accent); }
+  .map-count { font-size:12px; color:var(--ink-muted); }
+  .map-close { margin-left:auto; background:none; border:0; font-size:26px; line-height:1; color:var(--ink-muted); cursor:pointer; padding:0 4px; }
+  .map-canvas { flex:1; width:100%; }
+  .map-popup-name { font-weight:700; font-size:14px; margin-bottom:4px; }
+  .map-popup-deal { font-size:12px; line-height:1.4; margin:3px 0; }
+  .map-popup-when { color:var(--accent); font-weight:600; }
+  .map-popup-btn { display:inline-block; margin-top:7px; font-size:12px; font-weight:600; color:#fff; background:var(--accent); border-radius:7px; padding:5px 9px; text-decoration:none; cursor:pointer; }
   /* Submit-a-deal: photo upload + correction autocomplete */
   .sd-photo-add { display:inline-flex; align-items:center; gap:6px; margin-top:8px; font-size:13px; font-weight:600; color:var(--accent); background:var(--accent-soft); border:1px solid #bcddf0; border-radius:8px; padding:7px 11px; cursor:pointer; }
   .sd-photo-add:hover { filter:brightness(0.98); }
@@ -230,6 +266,7 @@
       <p class="text-xs mt-1" style="color:var(--ink-muted);"><span id="dealCount">—</span> deals &middot; updated weekly</p>
     </div>
     <div class="text-right shrink-0 pt-1">
+      <button id="mapViewBtn" class="text-xs font-medium px-3 py-1 rounded-full border" style="color:#fff;border-color:var(--accent);background:var(--accent);cursor:pointer;margin-right:8px;">&#128506; Map</button>
       <button id="submitDealBtn" class="text-xs font-medium px-3 py-1 rounded-full border" style="color:var(--accent);border-color:var(--accent);background:var(--card);cursor:pointer;margin-right:8px;">＋ Submit a deal</button>
       <button id="contactBtn" class="text-xs underline" style="color:var(--accent);background:none;border:none;cursor:pointer;">Contact</button>
       <div id="contactEmail" style="display:none;" class="text-xs mt-1" style="color:var(--ink-muted);">
@@ -422,11 +459,16 @@ let VENUES_MAP = {}; // venue name → venue record
 let DEALS_BY_VENUE = {}; // venue name → array of its deal records (all of them, unfiltered)
 const VENUE_SLUGS = {}; // slug → venue name (for the detail panel + #venue/<slug> deep-links)
 
-// ── Venue detail panel (Option A): OFF for the colleague preview. ──────────────
-// While false, venue names link straight to Google Maps (the simple, known-good
-// behaviour). Flip to true to switch every venue name over to the in-page profile
-// panel — all the panel code below stays ready; this is the only line to change.
-const VENUE_PANEL_ENABLED = false;
+// ── Venue detail panel (Option A): ON. Venue names open the in-page profile,
+// which is where the anonymous star rating + comments live (loaded on open, so
+// the homepage is untouched). Flip to false to revert names to Google Maps links.
+const VENUE_PANEL_ENABLED = true;
+
+// ── Ratings + comments backend (Supabase, Sydney) ─────────────────────────────
+// Reads go straight to Supabase (publishable key, safe in-browser, RLS-protected).
+// Writes go via /.netlify/functions/{rate,comment} so the secret key stays server-side.
+const SUPABASE_URL = 'https://mnzyobedleurvsixnfzr.supabase.co';
+const SUPABASE_KEY = 'sb_publishable_3CF7IrbvtllW5eMqFu8toQ_VTYtdU9A';
 
 const DAYS = ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"];
 const CAT_LABELS = {
@@ -1119,13 +1161,39 @@ function renderVenueProfile(name) {
 
   const n = collapsed.length;
   const heading = n ? `What's on here${n > 1 ? ` &middot; ${n} specials` : ""}` : "Deals";
+  const slug = v._slug || slugify(name);
+  const googleBit = v.google_rating
+    ? `<span class="vr-google" title="Google rating">Google &#9733; ${v.google_rating}</span>`
+    : "";
   return `
     <h2 class="vp-name">${name}${v.is_chain ? ` <span class="vp-chip">Chain</span>` : ""}</h2>
     <p class="vp-meta">${metaBits}</p>
     ${v.address ? `<p class="vp-addr">&#128205; ${v.address}</p>` : ""}
     ${act.length ? `<div class="vp-actions">${act.join("")}</div>` : ""}
     <div class="vp-section-title">${heading}</div>
-    ${dealsHtml}`;
+    ${dealsHtml}
+
+    <div class="vp-section-title">Rate this spot</div>
+    <div class="vr" data-vr-slug="${slug}">
+      <div class="vr-stars" role="radiogroup" aria-label="Rate out of 5">
+        ${[1,2,3,4,5].map(i => `<button type="button" class="vr-star" data-star="${i}" aria-label="${i} star${i>1?'s':''}">&#9733;</button>`).join("")}
+      </div>
+      <div class="vr-summary" data-vr-summary>Loading…</div>
+      ${googleBit}
+    </div>
+
+    <div class="vp-section-title">Comments</div>
+    <div class="vc" data-vc-slug="${slug}">
+      <div class="vc-list" data-vc-list><p class="sd-hint">Loading comments…</p></div>
+      <form class="vc-form" data-vc-form>
+        <input type="text" class="vc-hp" name="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <textarea class="vc-input" data-vc-input maxlength="1000" rows="2" placeholder="Add a comment — no account needed"></textarea>
+        <div class="vc-row">
+          <span class="vc-note" data-vc-note>Posts instantly &middot; be kind</span>
+          <button type="submit" class="vp-btn primary vc-submit">Post</button>
+        </div>
+      </form>
+    </div>`;
 }
 
 // ---------- INTERACTIONS ----------
@@ -1424,6 +1492,20 @@ loadData().then(() => {
   </div>
 </div>
 
+<!-- Full-screen deals map (Leaflet loads on first open, so the homepage stays light) -->
+<div id="mapView" class="map-view" aria-hidden="true">
+  <div class="map-bar">
+    <span class="map-title">&#128506; Deals map</span>
+    <label class="map-day">Day
+      <select id="mapDaySelect"></select>
+    </label>
+    <button id="mapLocateBtn" type="button" class="map-btn">&#128205; Near me</button>
+    <span id="mapCount" class="map-count"></span>
+    <button id="mapCloseBtn" type="button" class="map-close" aria-label="Close map">&times;</button>
+  </div>
+  <div id="mapCanvas" class="map-canvas"></div>
+</div>
+
 <script>
 (function(){
   var modal = document.getElementById('submitDealModal');
@@ -1592,6 +1674,7 @@ loadData().then(() => {
     modal.classList.add('open');
     document.body.style.overflow = 'hidden';
     modal.scrollTop = 0;
+    if (window.hydrateVenueSocial) window.hydrateVenueSocial(body);
   }
   function hide(){
     modal.classList.remove('open');
@@ -1617,6 +1700,128 @@ loadData().then(() => {
   document.addEventListener('keydown', function(e){ if (e.key === 'Escape' && modal.classList.contains('open')) clearHash(); });
   window.addEventListener('hashchange', syncFromHash);
   document.addEventListener('venuedata-ready', syncFromHash); // deep-link open once data is loaded
+})();
+</script>
+
+<script>
+// ---------- RATINGS + COMMENTS (anonymous, no account) ----------
+// Reads come straight from Supabase (fast, Sydney). Writes go through the Netlify
+// functions so the secret key never ships to the browser. All of this runs only
+// when a venue profile is opened, so the homepage carries zero extra weight.
+(function(){
+  var SB = { url: SUPABASE_URL, key: SUPABASE_KEY };
+  function sbGet(path){
+    return fetch(SB.url + '/rest/v1/' + path, { headers: { apikey: SB.key, Authorization: 'Bearer ' + SB.key } })
+      .then(function(r){ return r.ok ? r.json() : []; })
+      .catch(function(){ return []; });
+  }
+  function esc(s){ return String(s == null ? '' : s).replace(/[&<>"]/g, function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]; }); }
+  function deviceId(){
+    var k = 'wd_device', v = localStorage.getItem(k);
+    if (!v) { v = (crypto.randomUUID ? crypto.randomUUID() : String(Math.random()).slice(2) + Date.now()); localStorage.setItem(k, v); }
+    return v;
+  }
+  function timeAgo(iso){
+    var s = Math.floor((Date.now() - new Date(iso).getTime())/1000);
+    if (s < 60) return 'just now';
+    var m = Math.floor(s/60); if (m < 60) return m + 'm ago';
+    var h = Math.floor(m/60); if (h < 24) return h + 'h ago';
+    var d = Math.floor(h/24); if (d < 7) return d + 'd ago';
+    return new Date(iso).toLocaleDateString('en-NZ', { day:'numeric', month:'short' });
+  }
+
+  // ----- Ratings -----
+  function paintStars(wrap, value){
+    wrap.querySelectorAll('.vr-star').forEach(function(b){
+      b.classList.toggle('on', Number(b.dataset.star) <= value);
+    });
+  }
+  function summaryText(avg, count){
+    if (!count) return 'No ratings yet — tap a star to be the first';
+    return '<b>' + avg.toFixed(1) + '</b> &#9733; (' + count + ' rating' + (count === 1 ? '' : 's') + ')';
+  }
+  function hydrateRating(wrap){
+    var slug = wrap.dataset.vrSlug;
+    var summary = wrap.querySelector('[data-vr-summary]');
+    var stars = wrap.querySelectorAll('.vr-star');
+    var mine = Number(localStorage.getItem('wd_vote_' + slug) || 0);
+    var state = { avg: 0, count: 0 };
+
+    sbGet('rating_summary?venue_slug=eq.' + encodeURIComponent(slug) + '&select=avg_stars,num_ratings')
+      .then(function(rows){
+        if (rows && rows[0]) { state.avg = Number(rows[0].avg_stars) || 0; state.count = Number(rows[0].num_ratings) || 0; }
+        summary.innerHTML = summaryText(state.avg, state.count);
+        paintStars(wrap, mine || Math.round(state.avg));
+        if (mine) wrap.classList.add('voted');
+      });
+
+    stars.forEach(function(star){
+      star.addEventListener('mouseenter', function(){ paintStars(wrap, Number(star.dataset.star)); });
+      star.addEventListener('click', function(){
+        var val = Number(star.dataset.star);
+        paintStars(wrap, val);
+        summary.textContent = 'Saving…';
+        localStorage.setItem('wd_vote_' + slug, String(val));
+        wrap.classList.add('voted');
+        fetch('/.netlify/functions/rate', {
+          method: 'POST', headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ venue_slug: slug, stars: val, device_id: deviceId() })
+        }).then(function(r){ return r.json(); }).then(function(res){
+          if (res && res.ok) {
+            state.avg = res.avg; state.count = res.count;
+            summary.innerHTML = summaryText(res.avg, res.count) + ' &middot; <span class="vr-yours">you: ' + val + '&#9733;</span>';
+          } else { summary.innerHTML = 'Could not save — try again'; }
+        }).catch(function(){ summary.innerHTML = 'Could not save — try again'; });
+      });
+    });
+    wrap.querySelector('.vr-stars').addEventListener('mouseleave', function(){
+      paintStars(wrap, mine || Math.round(state.avg));
+    });
+  }
+
+  // ----- Comments -----
+  function commentHtml(c){
+    return '<div class="vc-item"><p class="vc-body">' + esc(c.body) + '</p>' +
+           '<span class="vc-time">' + timeAgo(c.created_at) + '</span></div>';
+  }
+  function hydrateComments(wrap){
+    var slug = wrap.dataset.vcSlug;
+    var list = wrap.querySelector('[data-vc-list]');
+    var form = wrap.querySelector('[data-vc-form]');
+    var input = wrap.querySelector('[data-vc-input]');
+    var note = wrap.querySelector('[data-vc-note]');
+
+    sbGet('comments?venue_slug=eq.' + encodeURIComponent(slug) + '&select=body,created_at&order=created_at.desc&limit=100')
+      .then(function(rows){
+        if (!rows || !rows.length) { list.innerHTML = '<p class="sd-hint">No comments yet. Say something!</p>'; return; }
+        list.innerHTML = rows.map(commentHtml).join('');
+      });
+
+    form.addEventListener('submit', function(e){
+      e.preventDefault();
+      var body = (input.value || '').trim();
+      if (!body) return;
+      var hp = form.querySelector('.vc-hp').value;
+      var btn = form.querySelector('.vc-submit');
+      btn.disabled = true; note.textContent = 'Posting…';
+      fetch('/.netlify/functions/comment', {
+        method: 'POST', headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ venue_slug: slug, body: body, hp: hp })
+      }).then(function(r){ return r.json(); }).then(function(res){
+        btn.disabled = false;
+        if (res && res.ok && res.comment) {
+          if (list.querySelector('.sd-hint')) list.innerHTML = '';
+          list.insertAdjacentHTML('afterbegin', commentHtml(res.comment));
+          input.value = ''; note.textContent = 'Posted — thanks!';
+        } else { note.textContent = (res && res.error) ? res.error : 'Could not post — try again'; }
+      }).catch(function(){ btn.disabled = false; note.textContent = 'Could not post — try again'; });
+    });
+  }
+
+  window.hydrateVenueSocial = function(container){
+    var vr = container.querySelector('[data-vr-slug]'); if (vr) hydrateRating(vr);
+    var vc = container.querySelector('[data-vc-slug]'); if (vc) hydrateComments(vc);
+  };
 })();
 </script>
 
@@ -1738,6 +1943,112 @@ loadData().then(() => {
       try { localStorage.setItem(SEEN_KEY, SITE_UPDATES[0].id); } catch(e){}
     }
   });
+})();
+</script>
+
+<script>
+// ---------- DEALS MAP (Leaflet + OpenStreetMap, lazy-loaded on first open) ----------
+// A full-screen map tab. Pick a day (defaults to today); pins are venues with a deal
+// that day. Clusters when zoomed out, expand into individual pins as you zoom in.
+// Leaflet only loads the first time the map opens, so the homepage carries no cost.
+(function(){
+  var CDN = {
+    lcss: 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.css',
+    ljs:  'https://unpkg.com/leaflet@1.9.4/dist/leaflet.js',
+    mcss1:'https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css',
+    mcss2:'https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css',
+    mjs:  'https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js'
+  };
+  var WGTN = [-41.2889, 174.7772];
+  var view = document.getElementById('mapView');
+  var canvas = document.getElementById('mapCanvas');
+  var daySel = document.getElementById('mapDaySelect');
+  var countEl = document.getElementById('mapCount');
+  var map = null, cluster = null, meMarker = null;
+
+  function loadCss(href){ return new Promise(function(res){ var l=document.createElement('link'); l.rel='stylesheet'; l.href=href; l.onload=res; l.onerror=res; document.head.appendChild(l); }); }
+  function loadJs(src){ return new Promise(function(res,rej){ var s=document.createElement('script'); s.src=src; s.onload=res; s.onerror=rej; document.head.appendChild(s); }); }
+  function ensureLeaflet(){
+    if (window.L && window.L.markerClusterGroup) return Promise.resolve();
+    return Promise.all([loadCss(CDN.lcss), loadCss(CDN.mcss1), loadCss(CDN.mcss2)])
+      .then(function(){ return loadJs(CDN.ljs); })
+      .then(function(){ return loadJs(CDN.mjs); });
+  }
+  function buildDaySelect(){
+    var opts = ['<option value="all">Every day</option>'];
+    DAYS.forEach(function(d){ opts.push('<option value="'+d+'">'+d+'</option>'); });
+    daySel.innerHTML = opts.join('');
+    daySel.value = (typeof todayName === 'function' ? todayName() : 'all');
+  }
+  function dealsForVenueOnDay(name, day){
+    var out = [];
+    (DEALS||[]).forEach(function(d){
+      if (d.venue !== name) return;
+      if (day === 'all' || dealAppliesToDay(d, day)) out.push(d);
+    });
+    return out;
+  }
+  function popupHtml(name, deals){
+    var v = VENUES_MAP[name] || {};
+    var slug = v._slug || slugify(name);
+    var items = deals.slice(0,4).map(function(d){
+      var t = (d.start && d.end) ? formatTime(d.start)+'–'+formatTime(d.end) : (d.start ? 'from '+formatTime(d.start) : '');
+      return '<div class="map-popup-deal"><span class="map-popup-when">'+(d.day || 'Deal')+(t ? ' · '+t : '')+'</span><br>'+(d.title || '')+'</div>';
+    }).join('');
+    return '<div class="map-popup-name">'+name+'</div>'+items+
+      '<a class="map-popup-btn" data-map-venue="'+slug+'">View details &amp; rate &rarr;</a>';
+  }
+  function rebuild(){
+    if (!map) return;
+    if (cluster) cluster.clearLayers();
+    else { cluster = L.markerClusterGroup({ maxClusterRadius: 45 }); map.addLayer(cluster); }
+    var day = daySel.value, n = 0;
+    Object.keys(VENUES_MAP).forEach(function(name){
+      var v = VENUES_MAP[name];
+      if (typeof v.lat !== 'number' || typeof v.lng !== 'number') return;
+      var deals = dealsForVenueOnDay(name, day);
+      if (!deals.length) return;
+      n++;
+      var m = L.marker([v.lat, v.lng]);
+      m.bindPopup(popupHtml(name, deals));
+      cluster.addLayer(m);
+    });
+    countEl.textContent = n + ' venue' + (n === 1 ? '' : 's') + (day === 'all' ? '' : ' on ' + day);
+  }
+  function openMap(){
+    view.classList.add('open'); view.setAttribute('aria-hidden','false');
+    document.body.style.overflow = 'hidden';
+    countEl.textContent = 'Loading map…';
+    ensureLeaflet().then(function(){
+      if (!map){
+        map = L.map(canvas).setView(WGTN, 13);
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { maxZoom: 19, attribution: '&copy; OpenStreetMap contributors' }).addTo(map);
+        buildDaySelect();
+        daySel.addEventListener('change', rebuild);
+      }
+      setTimeout(function(){ map.invalidateSize(); rebuild(); }, 80);
+    }).catch(function(){ countEl.textContent = 'Map failed to load — check your connection'; });
+  }
+  function closeMap(){ view.classList.remove('open'); view.setAttribute('aria-hidden','true'); document.body.style.overflow = ''; }
+
+  document.getElementById('mapViewBtn').addEventListener('click', openMap);
+  document.getElementById('mapCloseBtn').addEventListener('click', closeMap);
+  document.getElementById('mapLocateBtn').addEventListener('click', function(){
+    if (!map || !navigator.geolocation){ countEl.textContent = 'Location not available'; return; }
+    countEl.textContent = 'Finding you…';
+    navigator.geolocation.getCurrentPosition(function(pos){
+      var ll = [pos.coords.latitude, pos.coords.longitude];
+      if (meMarker) map.removeLayer(meMarker);
+      meMarker = L.circleMarker(ll, { radius:8, color:'#2563eb', fillColor:'#3b82f6', fillOpacity:0.9, weight:2 }).addTo(map).bindPopup('You are here');
+      map.setView(ll, 15); rebuild();
+    }, function(){ countEl.textContent = 'Location unavailable (permission denied?)'; });
+  });
+  // Popup "View details" -> open the venue profile (ratings/comments)
+  document.addEventListener('click', function(e){
+    var b = e.target.closest && e.target.closest('[data-map-venue]');
+    if (b){ e.preventDefault(); closeMap(); location.hash = 'venue/' + b.getAttribute('data-map-venue'); }
+  });
+  document.addEventListener('keydown', function(e){ if (e.key === 'Escape' && view.classList.contains('open')) closeMap(); });
 })();
 </script>
 

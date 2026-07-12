@@ -8,3 +8,6 @@ WELLY_EVENT_SCAN_PROMPT.md
 
 # Local Netlify CLI state
 .netlify/
+
+# Geocoding cache (dev artifact; coords are merged into venues.json)
+geocode_cache.json

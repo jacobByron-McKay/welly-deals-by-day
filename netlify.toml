@@ -1,0 +1,8 @@
+# Static site (no build). Functions live in netlify/functions and handle the
+# ratings/comments writes so the Supabase secret key never touches the browser.
+[build]
+  publish = "."
+
+[functions]
+  directory = "netlify/functions"
+  node_bundler = "esbuild"
