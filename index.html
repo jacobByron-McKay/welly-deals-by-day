@@ -256,6 +256,74 @@
   .wn-fb { display:flex; align-items:center; justify-content:center; gap:8px; margin:4px; padding:11px; border-radius:9px; background:#1877f2; color:#fff; font-size:14px; font-weight:600; text-decoration:none; }
   .wn-fb:hover { filter:brightness(1.06); }
   .wn-fb svg { width:18px; height:18px; flex-shrink:0; }
+
+  /* ---------- Map popup contrast fix + "My plan" trip planner ---------- */
+  /* Leaflet ships `.leaflet-container a { color:#0078A8 }`, which outranks .map-popup-btn's own
+     colour on specificity and turned the popup CTA blue-on-accent (the barely-legible state).
+     Add-to-plan is now the primary popup CTA; View details drops to a readable outline button. */
+  .map-popup-plan { display:block; width:100%; box-sizing:border-box; margin:9px 0 0; padding:9px; font:inherit;
+    font-size:13px; font-weight:700; text-align:center; color:#fff; background:var(--accent); border:0;
+    border-radius:8px; cursor:pointer; }
+  .map-popup-plan:hover { filter:brightness(1.07); }
+  .map-popup-plan.added { background:#16a34a; }
+  a.map-popup-btn, .leaflet-popup-content a.map-popup-btn { display:block; margin-top:6px; text-align:center;
+    background:transparent; color:var(--accent); border:1px solid var(--accent); }
+
+  /* Subtle add-to-plan on deal cards + the deal detail view (stays out of the way) */
+  .wd-plan-add { background:none; border:0; padding:0; margin:0; font:inherit; font-size:12px; font-weight:600;
+    color:var(--ink-muted); cursor:pointer; display:inline-flex; align-items:center; gap:3px; }
+  .wd-plan-add:hover { color:var(--accent); }
+  .wd-plan-add.added { color:#16a34a; }
+  .wd-plan-add-detail { font-size:13px; padding:7px 12px; border:1px solid var(--border); border-radius:8px; color:var(--accent); }
+  .wd-plan-add-detail:hover { border-color:var(--accent); }
+  .wd-plan-add-detail.added { color:#16a34a; border-color:#16a34a; }
+
+  /* Floating launcher */
+  .wd-plan-fab { position:fixed; right:16px; bottom:16px; z-index:1200; display:none; align-items:center; gap:8px;
+    background:var(--accent); color:#fff; border:0; border-radius:999px; padding:11px 16px; font-size:14px;
+    font-weight:700; cursor:pointer; box-shadow:0 4px 16px rgba(0,0,0,0.24); }
+  .wd-plan-fab.show { display:inline-flex; }
+  .wd-plan-fab-count { background:#fff; color:var(--accent); border-radius:999px; min-width:20px; height:20px;
+    display:inline-flex; align-items:center; justify-content:center; font-size:12px; font-weight:800; padding:0 5px; }
+  .wd-plan-fab.bump { animation:wd-plan-bump .32s ease; }
+  @keyframes wd-plan-bump { 0%{ transform:scale(1); } 40%{ transform:scale(1.12); } 100%{ transform:scale(1); } }
+
+  /* Slide-in notepad */
+  .wd-plan-backdrop { position:fixed; inset:0; background:rgba(0,0,0,0.38); z-index:1300; opacity:0;
+    pointer-events:none; transition:opacity .2s; }
+  .wd-plan-backdrop.open { opacity:1; pointer-events:auto; }
+  .wd-plan-panel { position:fixed; top:0; right:0; height:100%; width:360px; max-width:90vw; z-index:1301;
+    background:var(--paper, #fff); box-shadow:-6px 0 24px rgba(0,0,0,0.2); transform:translateX(100%);
+    transition:transform .25s ease; display:flex; flex-direction:column; }
+  .wd-plan-panel.open { transform:translateX(0); }
+  .wd-plan-head { display:flex; align-items:center; gap:10px; padding:15px 16px; border-bottom:1px solid var(--border); }
+  .wd-plan-head h3 { font-size:17px; font-weight:800; margin:0; flex:1; }
+  .wd-plan-close { background:none; border:0; font-size:26px; line-height:1; color:var(--ink-muted); cursor:pointer; padding:0 4px; }
+  .wd-plan-list { flex:1; overflow-y:auto; padding:10px 12px; }
+  .wd-plan-empty { color:var(--ink-muted); font-size:14px; text-align:center; margin-top:40px; padding:0 24px; line-height:1.6; }
+  .wd-plan-item { display:flex; gap:8px; align-items:flex-start; background:var(--card, #fff); border:1px solid var(--border);
+    border-radius:10px; padding:10px; margin-bottom:9px; }
+  .wd-plan-item.dragging { opacity:0.4; }
+  .wd-plan-item-body { flex:1; min-width:0; }
+  .wd-plan-item-title { font-size:14px; font-weight:700; line-height:1.3; }
+  .wd-plan-item-meta { font-size:12px; color:var(--ink-muted); margin-top:3px; line-height:1.4; }
+  .wd-plan-leg { font-size:11px; color:var(--ink-muted); text-align:center; margin:-2px 6px 7px; letter-spacing:.1px; }
+  .wd-plan-move { display:flex; flex-direction:column; gap:1px; padding-top:1px; }
+  .wd-plan-move button, .wd-plan-remove { background:none; border:0; cursor:pointer; color:var(--ink-muted); line-height:1; }
+  .wd-plan-move button { font-size:12px; padding:2px 4px; }
+  .wd-plan-move button:hover, .wd-plan-remove:hover { color:var(--accent); }
+  .wd-plan-move button:disabled { opacity:0.22; cursor:default; }
+  .wd-plan-remove { font-size:19px; padding:0 4px; }
+  .wd-plan-remove:hover { color:#dc2626; }
+  .wd-plan-foot { border-top:1px solid var(--border); padding:12px; display:flex; flex-direction:column; gap:9px; }
+  .wd-plan-actions { display:flex; gap:8px; }
+  .wd-plan-btn { flex:1; padding:11px; border-radius:9px; font-size:14px; font-weight:700; cursor:pointer; border:1px solid var(--accent); }
+  .wd-plan-btn.primary { background:var(--accent); color:#fff; }
+  .wd-plan-btn.ghost { background:transparent; color:var(--accent); }
+  .wd-plan-btn:disabled { opacity:0.45; cursor:default; }
+  .wd-plan-clear { background:none; border:0; color:var(--ink-muted); font-size:12px; cursor:pointer; padding:2px; }
+  .wd-plan-clear:hover { color:#dc2626; }
+  @media (max-width:480px){ .wd-plan-panel { width:100%; max-width:100%; } }
 </style>
 </head>
 <body>
@@ -278,7 +346,7 @@
       <button id="submitDealBtn" class="text-xs font-medium px-3 py-1 rounded-full border" style="color:var(--accent);border-color:var(--accent);background:var(--card);cursor:pointer;margin-right:8px;">＋ Submit a deal</button>
       <button id="contactBtn" class="text-xs underline" style="color:var(--accent);background:none;border:none;cursor:pointer;">Contact</button>
       <div id="contactEmail" style="display:none;" class="text-xs mt-1" style="color:var(--ink-muted);">
-        <a href="mailto:jacobb334@gmail.com" style="color:var(--accent);">jacobb334@gmail.com</a>
+        <a href="mailto:local.deals.by.day@gmail.com" style="color:var(--accent);">local.deals.by.day@gmail.com</a>
       </div>
     </div>
   </div>
@@ -931,6 +999,7 @@ function renderCard(d) {
         ${(!d.app_required && d.app_note) ? `<p class="text-xs mt-1" style="color:var(--accent);" title="${d.app_note.replace(/"/g, '&quot;')}">&#127903; Free loyalty membership required for this price (app or web sign-up)</p>` : ""}
         <div class="flex items-center gap-3 mt-2 text-xs flex-wrap" style="color:var(--ink-muted);">
           <button type="button" class="wd-deal-rate" data-deal-open="${dealSlug(d)}" aria-label="Rate and review this deal">&#9733; Rate &amp; review</button>
+          <button type="button" class="wd-plan-add" data-plan-add="${dealSlug(d)}" data-plan-label-on="&#10003; In plan" data-plan-label-off="&#43; Plan" aria-label="Add this deal to your plan">&#43; Plan</button>
           ${dateTag}
           ${timeStr ? `<span>&#128336; ${timeStr}</span>` : ""}
           ${d.verified_date ? `<span>&middot; verified ${d.verified_date}</span>` : ""}
@@ -1259,6 +1328,7 @@ function renderDealDetail(slug) {
     <p class="vp-meta"><button type="button" class="wd-venue-link" data-venue-open="${venueSlug}">${d.venue}</button> &middot; ${suburbLabel(d.suburb)}</p>
     <p class="vp-when" style="margin-top:10px;">${when}${time ? " &middot; " + time : ""}</p>
     ${conf}
+    <div class="vp-actions"><button type="button" class="wd-plan-add wd-plan-add-detail" data-plan-add="${slug}" data-plan-label-on="&#10003; In your plan" data-plan-label-off="&#43; Add to plan" aria-label="Add this deal to your plan">&#43; Add to plan</button></div>
     ${d.desc ? `<p class="vp-deal-desc" style="font-size:14px;margin-top:8px;">${d.desc}</p>` : ""}
     <div class="vp-actions">
       ${d.source_url ? `<a class="vp-btn" href="${d.source_url}" target="_blank" rel="noopener">Source</a>` : ""}
@@ -1637,7 +1707,7 @@ loadData().then(() => {
       .catch(function(){
         form.style.display='none';
         successBox.style.display='block';
-        successBox.innerHTML = "That didn't send — please email jacobb334@gmail.com instead. Sorry!";
+        successBox.innerHTML = "That didn't send — please email local.deals.by.day@gmail.com instead. Sorry!";
       });
   });
 
@@ -2105,11 +2175,14 @@ loadData().then(() => {
   function popupHtml(name, deals){
     var v = VENUES_MAP[name] || {};
     var slug = v._slug || slugify(name);
-    var items = deals.slice(0,4).map(function(d){
+    var shown = deals.slice(0,4);
+    var items = shown.map(function(d){
       var t = (d.start && d.end) ? formatTime(d.start)+'–'+formatTime(d.end) : (d.start ? 'from '+formatTime(d.start) : '');
       return '<div class="map-popup-deal"><span class="map-popup-when">'+(d.day || 'Deal')+(t ? ' · '+t : '')+'</span><br>'+(d.title || '')+'</div>';
     }).join('');
+    var planSlugs = shown.map(function(d){ return dealSlug(d); }).join('|');
     return '<div class="map-popup-name">'+name+'</div>'+items+
+      '<button type="button" class="map-popup-plan" data-plan-add="'+planSlugs+'" data-plan-label-on="&#10003; Added to plan" data-plan-label-off="&#43; Add to plan">&#43; Add to plan</button>'+
       '<a class="map-popup-btn" data-map-venue="'+slug+'">View details &amp; rate &rarr;</a>';
   }
   function rebuild(){
@@ -2163,6 +2236,225 @@ loadData().then(() => {
     if (b){ e.preventDefault(); closeMap(); location.hash = 'venue/' + b.getAttribute('data-map-venue'); }
   });
   document.addEventListener('keydown', function(e){ if (e.key === 'Escape' && view.classList.contains('open')) closeMap(); });
+})();
+</script>
+
+<script>
+// ---------- "My plan" trip planner ----------
+// A self-contained itinerary builder. The "+ Add to plan" buttons on map popups, deal cards
+// and the deal-detail view push a deal (looked up by its slug via the global DEAL_SLUGS index)
+// into a localStorage-backed list. This slide-in notepad shows the plan, lets you reorder or
+// remove stops, then copy it as text or hand it to the phone's native share sheet
+// (Messenger, WhatsApp, SMS, ...). Reads the same globals the rest of the page declares.
+(function(){
+  var SITE_NAME = 'Welly Deals by Day';
+  var SITE_URL  = 'welly-deals-by-day.co.nz';
+  var STORE_KEY = 'wd_plan_v1';
+  var items = load();
+
+  function load(){ try { var a = JSON.parse(localStorage.getItem(STORE_KEY) || '[]'); return Array.isArray(a) ? a : []; } catch(e){ return []; } }
+  function save(){ try { localStorage.setItem(STORE_KEY, JSON.stringify(items)); } catch(e){} }
+
+  // Build a self-contained plan item from a deal slug, so the notepad and text export
+  // never need to re-hit the data files.
+  function itemFromSlug(slug){
+    var e = (typeof DEAL_SLUGS !== 'undefined') && DEAL_SLUGS[slug];
+    if (!e || !e.rep) return null;
+    var d = e.rep;
+    var when = (e.days && e.days.size) ? formatDayRange(e.days)
+             : (d.type === 'one-off' && d.date ? formatEventDate(d.date) : 'Every day');
+    var time = (d.start && d.end) ? formatTime(d.start) + '–' + formatTime(d.end)
+             : (d.start ? 'from ' + formatTime(d.start) : '');
+    var v = (typeof VENUES_MAP !== 'undefined') && VENUES_MAP[d.venue];
+    var lat = (v && typeof v.lat === 'number') ? v.lat : null;
+    var lng = (v && typeof v.lng === 'number') ? v.lng : null;
+    return { slug:slug, title:d.title || 'Deal', venue:d.venue || '', suburb:d.suburb || '', when:when, time:time, lat:lat, lng:lng };
+  }
+
+  function has(slug){ return items.some(function(x){ return x.slug === slug; }); }
+
+  function add(slugs){
+    var added = 0;
+    String(slugs).split('|').forEach(function(slug){
+      slug = slug.trim(); if (!slug || has(slug)) return;
+      var it = itemFromSlug(slug); if (!it) return;
+      items.push(it); added++;
+    });
+    if (added){ save(); render(); if (document.querySelector('.map-view.open')) bumpFab(); else openPanel(); }
+    refreshButtons();
+    return added;
+  }
+  function removeAt(i){ items.splice(i, 1); save(); render(); refreshButtons(); }
+  function move(i, dir){ var j = i + dir; if (j < 0 || j >= items.length) return; var t = items[i]; items[i] = items[j]; items[j] = t; save(); render(); }
+  function clearAll(){ items = []; save(); render(); refreshButtons(); }
+
+  var fab = document.createElement('button');
+  fab.type = 'button'; fab.className = 'wd-plan-fab';
+  fab.innerHTML = '&#128203; My plan <span class="wd-plan-fab-count">0</span>';
+
+  var backdrop = document.createElement('div'); backdrop.className = 'wd-plan-backdrop';
+  var panel = document.createElement('aside'); panel.className = 'wd-plan-panel'; panel.setAttribute('aria-hidden', 'true');
+  panel.innerHTML =
+    '<div class="wd-plan-head"><h3>My plan</h3><button type="button" class="wd-plan-close" aria-label="Close plan">&times;</button></div>' +
+    '<div class="wd-plan-list"></div>' +
+    '<div class="wd-plan-foot">' +
+      '<div class="wd-plan-actions">' +
+        '<button type="button" class="wd-plan-btn ghost" data-plan-copy>&#128203; Copy as text</button>' +
+        '<button type="button" class="wd-plan-btn primary" data-plan-share>&#8599; Share</button>' +
+      '</div>' +
+      '<button type="button" class="wd-plan-clear" data-plan-clearall>Clear plan</button>' +
+    '</div>';
+  document.body.appendChild(fab);
+  document.body.appendChild(backdrop);
+  document.body.appendChild(panel);
+
+  var listEl = panel.querySelector('.wd-plan-list');
+  var countEl = fab.querySelector('.wd-plan-fab-count');
+
+  function esc(s){ return String(s == null ? '' : s).replace(/[&<>"]/g, function(c){ return { '&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;' }[c]; }); }
+
+  // Between-stop travel estimate. Uses the lat/lng already in venues.json (no API call, no
+  // network) — straight-line distance x1.3 to approximate a street route, then simple walk/
+  // drive speeds. Runs only while the notepad is open, so it adds nothing to page load.
+  function coordsFor(it){
+    if (it && typeof it.lat === 'number' && typeof it.lng === 'number') return [it.lat, it.lng];
+    var v = (typeof VENUES_MAP !== 'undefined') && it && VENUES_MAP[it.venue];
+    if (v && typeof v.lat === 'number' && typeof v.lng === 'number') return [v.lat, v.lng];
+    return null;
+  }
+  function metresBetween(a, b){
+    var R = 6371000, toR = Math.PI / 180;
+    var dLat = (b[0] - a[0]) * toR, dLng = (b[1] - a[1]) * toR;
+    var s = Math.sin(dLat / 2) * Math.sin(dLat / 2) + Math.cos(a[0] * toR) * Math.cos(b[0] * toR) * Math.sin(dLng / 2) * Math.sin(dLng / 2);
+    return 2 * R * Math.asin(Math.sqrt(s));
+  }
+  function legInfo(a, b){
+    var ca = coordsFor(a), cb = coordsFor(b);
+    if (!ca || !cb) return null;
+    var straight = metresBetween(ca, cb);
+    if (straight < 25) return null;              // effectively the same spot
+    var route = straight * 1.3;                  // crow-flies -> approx walking/street route
+    var dist = route < 950 ? (Math.round(route / 50) * 50) + ' m' : (route / 1000).toFixed(1) + ' km';
+    return { walkMin: Math.max(1, Math.round(route / 80)), driveMin: Math.max(1, Math.round(route / 450)), dist: dist };
+  }
+  function legHtml(a, b){
+    var g = legInfo(a, b); if (!g) return '';
+    var txt = (g.walkMin <= 15)
+      ? '&#128694; ' + g.walkMin + ' min walk (' + g.dist + ') &middot; &#128663; ' + g.driveMin + ' min'
+      : '&#128663; ' + g.driveMin + ' min drive (' + g.dist + ')';
+    return '<div class="wd-plan-leg">' + txt + '</div>';
+  }
+  function legText(a, b){
+    var g = legInfo(a, b); if (!g) return '';
+    return (g.walkMin <= 15)
+      ? g.walkMin + ' min walk (' + g.dist + ') · ' + g.driveMin + ' min drive'
+      : g.driveMin + ' min drive (' + g.dist + ')';
+  }
+
+  function render(){
+    countEl.textContent = items.length;
+    fab.classList.toggle('show', items.length > 0);
+    var copyBtn = panel.querySelector('[data-plan-copy]'), shareBtn = panel.querySelector('[data-plan-share]'), clearBtn = panel.querySelector('[data-plan-clearall]');
+    var empty = items.length === 0;
+    copyBtn.disabled = empty; shareBtn.disabled = empty; clearBtn.style.display = empty ? 'none' : 'block';
+    if (empty){ listEl.innerHTML = '<p class="wd-plan-empty">Your plan is empty.<br>Open the map and tap <b>+ Add to plan</b> on a deal to start building a night out.</p>'; return; }
+    var html = '';
+    items.forEach(function(it, i){
+      var meta = [it.venue, it.suburb].filter(Boolean).join(' · ');
+      var when = [it.when, it.time].filter(Boolean).join(' · ');
+      html += '<div class="wd-plan-item" draggable="true" data-idx="' + i + '">' +
+        '<div class="wd-plan-move">' +
+          '<button type="button" data-plan-up aria-label="Move up"' + (i === 0 ? ' disabled' : '') + '>&#9650;</button>' +
+          '<button type="button" data-plan-down aria-label="Move down"' + (i === items.length - 1 ? ' disabled' : '') + '>&#9660;</button>' +
+        '</div>' +
+        '<div class="wd-plan-item-body"><div class="wd-plan-item-title">' + esc(it.title) + '</div>' +
+          '<div class="wd-plan-item-meta">' + esc(meta) + (when ? '<br>' + esc(when) : '') + '</div></div>' +
+        '<button type="button" class="wd-plan-remove" data-plan-remove aria-label="Remove from plan">&times;</button>' +
+      '</div>';
+      if (i < items.length - 1) html += legHtml(it, items[i + 1]);
+    });
+    listEl.innerHTML = html;
+  }
+
+  function planText(){
+    var lines = ['My ' + SITE_NAME + ' plan', ''];
+    items.forEach(function(it, i){
+      var where = [it.venue, it.suburb].filter(Boolean).join(', ');
+      var when = [it.when, it.time].filter(Boolean).join(' · ');
+      lines.push((i + 1) + '. ' + it.title + (where ? ' — ' + where : ''));
+      if (when) lines.push('   ' + when);
+      if (i < items.length - 1){ var leg = legText(it, items[i + 1]); if (leg) lines.push('   ↳ ' + leg); }
+    });
+    lines.push('', 'Found on ' + SITE_URL);
+    return lines.join('\n');
+  }
+
+  function refreshButtons(){
+    var nodes = document.querySelectorAll('[data-plan-add]');
+    for (var k = 0; k < nodes.length; k++){
+      var b = nodes[k];
+      var slugs = (b.getAttribute('data-plan-add') || '').split('|').map(function(s){ return s.trim(); }).filter(Boolean);
+      var allIn = slugs.length > 0 && slugs.every(has);
+      b.classList.toggle('added', allIn);
+      var on = b.getAttribute('data-plan-label-on'), off = b.getAttribute('data-plan-label-off');
+      if (on != null && off != null){ var want = allIn ? on : off; if (b.innerHTML !== want) b.innerHTML = want; }
+    }
+  }
+
+  function openPanel(){ panel.classList.add('open'); backdrop.classList.add('open'); panel.setAttribute('aria-hidden', 'false'); }
+  function closePanel(){ panel.classList.remove('open'); backdrop.classList.remove('open'); panel.setAttribute('aria-hidden', 'true'); }
+  function bumpFab(){ fab.classList.remove('bump'); void fab.offsetWidth; fab.classList.add('bump'); }
+
+  fab.addEventListener('click', openPanel);
+  backdrop.addEventListener('click', closePanel);
+  panel.querySelector('.wd-plan-close').addEventListener('click', closePanel);
+  document.addEventListener('keydown', function(e){ if (e.key === 'Escape' && panel.classList.contains('open')) closePanel(); });
+
+  // Delegated add-to-plan — works for Leaflet map popups too (they live in the DOM).
+  document.addEventListener('click', function(e){
+    var b = e.target.closest && e.target.closest('[data-plan-add]');
+    if (!b) return;
+    e.preventDefault(); e.stopPropagation();
+    var slugs = (b.getAttribute('data-plan-add') || '').split('|').map(function(s){ return s.trim(); }).filter(Boolean);
+    if (slugs.length > 0 && slugs.every(has)) openPanel();
+    else add(b.getAttribute('data-plan-add'));
+  });
+
+  listEl.addEventListener('click', function(e){
+    var item = e.target.closest('.wd-plan-item'); if (!item) return;
+    var i = +item.getAttribute('data-idx');
+    if (e.target.closest('[data-plan-remove]')) removeAt(i);
+    else if (e.target.closest('[data-plan-up]')) move(i, -1);
+    else if (e.target.closest('[data-plan-down]')) move(i, 1);
+  });
+
+  // Drag to reorder (desktop). Arrows above cover touch.
+  var dragFrom = null;
+  listEl.addEventListener('dragstart', function(e){ var it = e.target.closest('.wd-plan-item'); if (!it) return; dragFrom = +it.getAttribute('data-idx'); it.classList.add('dragging'); });
+  listEl.addEventListener('dragend', function(e){ var it = e.target.closest('.wd-plan-item'); if (it) it.classList.remove('dragging'); dragFrom = null; });
+  listEl.addEventListener('dragover', function(e){ e.preventDefault(); });
+  listEl.addEventListener('drop', function(e){ e.preventDefault(); var it = e.target.closest('.wd-plan-item'); if (it == null || dragFrom == null) return; var to = +it.getAttribute('data-idx'); if (to === dragFrom) return; var moved = items.splice(dragFrom, 1)[0]; items.splice(to, 0, moved); save(); render(); });
+
+  panel.querySelector('[data-plan-copy]').addEventListener('click', function(){ copyText(planText(), this); });
+  panel.querySelector('[data-plan-share]').addEventListener('click', function(){
+    var text = planText(), btn = this;
+    if (navigator.share){ navigator.share({ title: 'My ' + SITE_NAME + ' plan', text: text }).catch(function(){}); }
+    else copyText(text, btn);
+  });
+  panel.querySelector('[data-plan-clearall]').addEventListener('click', function(){ if (window.confirm('Clear your whole plan?')) clearAll(); });
+
+  function copyText(text, btn){
+    var flash = function(){ if (!btn) return; var o = btn.innerHTML; btn.innerHTML = 'Copied!'; setTimeout(function(){ btn.innerHTML = o; }, 1400); };
+    if (navigator.clipboard && navigator.clipboard.writeText){ navigator.clipboard.writeText(text).then(flash, function(){ fallbackCopy(text); flash(); }); }
+    else { fallbackCopy(text); flash(); }
+  }
+  function fallbackCopy(text){ var ta = document.createElement('textarea'); ta.value = text; ta.style.position = 'fixed'; ta.style.left = '-9999px'; document.body.appendChild(ta); ta.select(); try { document.execCommand('copy'); } catch(e){} document.body.removeChild(ta); }
+
+  render();
+  // Re-sync add-button state whenever the deal list or a modal re-renders.
+  new MutationObserver(function(){ refreshButtons(); }).observe(document.body, { childList:true, subtree:true });
+
+  window.WDPlan = { add:add, open:openPanel };
 })();
 </script>
 
