@@ -136,6 +136,19 @@
   #suburbBody.collapsed { max-height: 0; opacity: 0; }
   #filterToggle { display: none; }
   @media (max-width: 639px) { #filterToggle { display: flex; } }
+  /* With every filter section open the sticky bar can grow taller than a phone
+     screen. Sticky keeps it pinned at top:0, so it covered the whole viewport
+     and the deals below could never be scrolled to. Cap it and let it scroll
+     inside itself; 65% leaves roughly two cards of the list visible, so it
+     stays obvious that there is more to scroll to. */
+  @media (max-width: 639px) {
+    #filterBar {
+      max-height: 65vh;
+      max-height: 65dvh;
+      overflow-y: auto;
+      overscroll-behavior-y: contain;
+    }
+  }
   .sd-overlay { position:fixed; inset:0; background:rgba(11,20,32,0.55); display:none; align-items:flex-start; justify-content:center; padding:24px 16px; z-index:50; overflow-y:auto; }
   .sd-overlay.open { display:flex; }
   .sd-card { background:var(--card); width:100%; max-width:480px; border-radius:12px; padding:20px 20px 24px; position:relative; box-shadow:0 10px 40px rgba(22,38,58,0.25); }
@@ -693,10 +706,10 @@ let showSports        = true;    // (no sport events in Wellington data yet — 
 let showWorldCup      = true;    // (no World Cup events in Wellington data yet — kept for filter-logic safety)
 let showSeniorsOnly   = false;   // (no seniors deals in Wellington data — kept for filter-logic safety)
 let showKidsOnly      = false;   // when true, show only deals tagged kids: true
-// Club Rugby tab feature flag — OFF for now (launched with no fixtures yet). Flip to true to
-// bring the whole tab back (toggle + section) and promote it as a new feature. Everything else
-// stays wired; this is the only line to change.
-const CLUB_RUGBY_ENABLED = false;
+// Club Rugby tab feature flag. Live from 2026-07-15 for the 18 July Jubilee/Hardham/Ed Chaney/
+// HD Morgan semi-finals. Set back to false if the fixture list is ever empty again — the tab
+// hides itself entirely rather than showing an empty section.
+const CLUB_RUGBY_ENABLED = true;
 let showClubRugby     = false;   // Club Rugby tab — default OFF; reveals the Wellington Premier fixtures section
 let searchQuery       = "";      // live search string
 let DAILY_DEAL_KEYS   = new Set(); // populated after data load
@@ -812,13 +825,29 @@ function matchesSearch(item) {
 // ---------- SORT HELPERS ----------
 const CAT_ORDER_NORMAL = { food: 0, entertainment: 1, discount: 2, drinks: 3, happyhour: 4 };
 const CAT_ORDER_DAILY  = { happyhour: 0, food: 1, entertainment: 2, discount: 3, drinks: 4 };
+
+// A deal inherits its venue's Google rating. Venues with no rating on file sort
+// last within their category rather than being read as a zero-star venue.
+function dealRating(deal) {
+  const v = VENUES_MAP[deal.venue];
+  const r = v && v.google_rating;
+  return typeof r === "number" ? r : null;
+}
+function byRatingDesc(a, b) {
+  const ra = dealRating(a), rb = dealRating(b);
+  if (ra === rb) return 0;
+  if (ra === null) return 1;
+  if (rb === null) return -1;
+  return rb - ra;
+}
 function sortDeals(deals) {
   return [...deals].sort((a, b) => {
     const aDaily = DAILY_DEAL_KEYS.has(a.venue + '||' + a.title) ? 1 : 0;
     const bDaily = DAILY_DEAL_KEYS.has(b.venue + '||' + b.title) ? 1 : 0;
     if (aDaily !== bDaily) return aDaily - bDaily;
     const order = aDaily ? CAT_ORDER_DAILY : CAT_ORDER_NORMAL;
-    return (order[a.category] ?? 3) - (order[b.category] ?? 3);
+    const byCat = (order[a.category] ?? 3) - (order[b.category] ?? 3);
+    return byCat || byRatingDesc(a, b);
   });
 }
 function sortRugbyFirst(events) {
@@ -1119,7 +1148,9 @@ function renderClubRugby() {
     .filter(ev => ev.club_rugby && matchesSearch(ev))
     .sort((a, b) => {
       const da = a.date || "z", db = b.date || "z";
-      return da < db ? -1 : da > db ? 1 : 0;
+      if (da !== db) return da < db ? -1 : 1;
+      const ka = a.start || "zz", kb = b.start || "zz";   // earlier kick-off first, TBC last
+      return ka < kb ? -1 : ka > kb ? 1 : 0;
     });
   list.innerHTML = fixtures.length
     ? fixtures.map(renderRugbyCard).join("")
@@ -1299,7 +1330,6 @@ function renderDealDetail(slug) {
 
   const act = [];
   if (v.booking_url)     act.push(`<a class="vp-btn primary" href="${v.booking_url}" target="_blank" rel="noopener">Book a table</a>`);
-  if (v.google_maps_url) act.push(`<a class="vp-btn" href="${v.google_maps_url}" target="_blank" rel="noopener">&#128205; Map &amp; directions</a>`);
   if (v.website)         act.push(`<a class="vp-btn" href="${v.website}" target="_blank" rel="noopener">Website</a>`);
   if (v.facebook)        act.push(`<a class="vp-btn" href="${v.facebook}" target="_blank" rel="noopener">Facebook</a>`);
   if (v.instagram)       act.push(`<a class="vp-btn" href="${v.instagram}" target="_blank" rel="noopener">Instagram</a>`);
@@ -1331,8 +1361,9 @@ function renderDealDetail(slug) {
     <div class="vp-actions"><button type="button" class="wd-plan-add wd-plan-add-detail" data-plan-add="${slug}" data-plan-label-on="&#10003; In your plan" data-plan-label-off="&#43; Add to plan" aria-label="Add this deal to your plan">&#43; Add to plan</button></div>
     ${d.desc ? `<p class="vp-deal-desc" style="font-size:14px;margin-top:8px;">${d.desc}</p>` : ""}
     <div class="vp-actions">
+      ${v.google_maps_url ? `<a class="vp-btn primary" href="${v.google_maps_url}" target="_blank" rel="noopener">&#128205; Open in Google Maps</a>` : ""}
       ${d.source_url ? `<a class="vp-btn" href="${d.source_url}" target="_blank" rel="noopener">Source</a>` : ""}
-      ${v.booking_url ? `<a class="vp-btn primary" href="${v.booking_url}" target="_blank" rel="noopener">Book</a>` : ""}
+      ${v.booking_url ? `<a class="vp-btn" href="${v.booking_url}" target="_blank" rel="noopener">Book</a>` : ""}
     </div>
 
     <div class="vp-section-title">Rate this deal</div>
@@ -2070,6 +2101,8 @@ loadData().then(() => {
 // visitor opens the panel, and re-lights whenever a newer id appears. tag: "New" | "Added" | "Update".
 (function(){
   var SITE_UPDATES = [
+    { id:"2026-07-15-clubrugby",      date:"2026-07-15", tag:"New",   text:"Club Rugby is here — the new Club Rugby tab has every Wellington Premier and Premier 2 semi-final this Saturday 18 July, with grounds and kick-off times straight from the official WRFU draw. Top of the table meet at Trentham: Upper Hutt Rams v Petone, 2.45pm at NZCIS." },
+    { id:"2026-07-15-ranking",        date:"2026-07-15", tag:"Update", text:"Deals are now ordered by Google rating within each suburb and each section, so the best-rated spots come first. Opening a deal's details now links you straight to the venue on Google Maps." },
     { id:"2026-07-15-plan",           date:"2026-07-15", tag:"New",   text:"Plan your night out — tap “Add to plan” on any deal (from the map, a deal card, or its details) and it drops into a notepad you can reorder. It shows the walk or drive time between each stop, then you can copy the plan or share it to Messenger, WhatsApp, wherever." },
     { id:"2026-07-12-map",            date:"2026-07-12", tag:"New",   text:"New deals map — see every venue with a deal on a chosen day laid out on one map. Tap a pin for the deal, or use your location to spot what's near you." },
     { id:"2026-07-12-ratings",        date:"2026-07-12", tag:"New",   text:"You can now rate and review each deal — tap any deal card (or its “★ Rate & review”) to add a star rating or comment. No account needed." },
