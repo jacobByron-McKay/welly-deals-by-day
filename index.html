@@ -231,6 +231,16 @@
   .map-popup-add-one { display:block; margin:4px 0 2px; font-size:11px; font-weight:700; color:var(--accent);
                        background:var(--accent-soft); border:1px solid #bcddf0; border-radius:6px; padding:3px 8px; cursor:pointer; }
   .map-popup-add-one.added { background:#dcfce7; border-color:#86efac; color:#15803d; }
+  .map-popup-more { border-top:1px solid var(--border); margin-top:7px; padding-top:5px; }
+  .map-more-toggle { display:flex; align-items:center; justify-content:space-between; gap:6px; width:100%;
+                     background:none; border:0; padding:2px 0; cursor:pointer; font-size:11px; font-weight:700; color:var(--accent); }
+  .map-more-caret { transition:transform .15s ease; }
+  .map-popup-more.open .map-more-caret { transform:rotate(180deg); }
+  .map-more-list { margin-top:4px; max-height:40vh; overflow-y:auto; overscroll-behavior:contain; }
+  .map-more-pager { display:flex; align-items:center; justify-content:center; gap:10px; margin-top:5px; font-size:11px; color:var(--ink-muted); }
+  .map-more-pager button { background:none; border:1px solid var(--border); border-radius:5px; width:22px; height:20px;
+                           cursor:pointer; color:var(--accent); font-weight:700; line-height:1; }
+  .map-more-pager button:disabled { opacity:.3; cursor:default; }
   .map-pin-event-wrap { background:none; border:0; }
   .map-pin-event { width:22px; height:22px; border-radius:50%; background:#ea580c; color:#fff; border:2px solid #fff;
                    box-shadow:0 1px 4px rgba(0,0,0,.4); font-size:11px; line-height:18px; text-align:center; }
@@ -2158,7 +2168,7 @@ loadData().then(() => {
 // visitor opens the panel, and re-lights whenever a newer id appears. tag: "New" | "Added" | "Update".
 (function(){
   var SITE_UPDATES = [
-    { id:"2026-07-16-eventsplan",     date:"2026-07-16", tag:"New",   text:"Gigs and events can go in your plan — tap “+ Plan” on any event to build a night around it. Events now show on the deals map too, with their own orange pin, so you can spot a gig and find the deals a few minutes' walk away." },
+    { id:"2026-07-16-eventsplan",     date:"2026-07-16", tag:"New",   text:"Gigs and events can go in your plan — tap “+ Plan” on any event to build a night around it. Events now show on the deals map too, with their own orange pin, so you can spot a gig and find the deals a few minutes' walk away. Tap a venue's pin and open “more upcoming events here” to see everything else it has coming up." },
     { id:"2026-07-16-rugbyranks",     date:"2026-07-16", tag:"Update", text:"Club Rugby fixtures now show where each side finished the season — Upper Hutt Rams (2nd) v Petone (1st) — and are listed with the table-toppers' games first." },
     { id:"2026-07-15-clubrugby",      date:"2026-07-15", tag:"New",   text:"Club Rugby is here — the new Club Rugby tab has every Wellington Premier and Premier 2 semi-final this Saturday 18 July, with grounds and kick-off times straight from the official WRFU draw. Top of the table meet at Trentham: Upper Hutt Rams v Petone, 2.45pm at NZCIS." },
     { id:"2026-07-15-ranking",        date:"2026-07-15", tag:"Update", text:"Deals are now ordered by Google rating within each suburb and each section, so the best-rated spots come first. Opening a deal's details now links you straight to the venue on Google Maps." },
@@ -2241,7 +2251,7 @@ loadData().then(() => {
   var canvas = document.getElementById('mapCanvas');
   var daySel = document.getElementById('mapDaySelect');
   var countEl = document.getElementById('mapCount');
-  var map = null, cluster = null, meMarker = null;
+  var map = null, cluster = null, meMarker = null, openPopup = null;
 
   function loadCss(href){ return new Promise(function(res){ var l=document.createElement('link'); l.rel='stylesheet'; l.href=href; l.onload=res; l.onerror=res; document.head.appendChild(l); }); }
   function loadJs(src){ return new Promise(function(res,rej){ var s=document.createElement('script'); s.src=src; s.onload=res; s.onerror=rej; document.head.appendChild(s); }); }
@@ -2282,21 +2292,111 @@ loadData().then(() => {
     var d = new Date(iso + 'T00:00:00');
     return isNaN(d) ? null : DAYS[(d.getDay() + 6) % 7];
   }
+  // ---- Recurring (dateless) events: markets, monthly club nights, seasonal pop-ups ----
+  // These carry `days` (weekday names) plus a `recurrence` of "weekly" or "monthly". Monthly ones
+  // add `nth` — [1,3] for "1st & 3rd Thursday", ["last"] for "last Sunday of the month" — so a
+  // monthly night doesn't get claimed for every week. `runs_from`/`runs_to` bound seasonal runs
+  // (the school-holiday ice rink, the August festival pop-ups).
+  function inRunWindow(ev, iso){
+    if (ev.runs_from && iso < ev.runs_from) return false;
+    if (ev.runs_to && iso > ev.runs_to) return false;
+    return true;
+  }
+  function nthWeekdayOfMonth(iso){ return Math.floor((parseInt(iso.slice(8,10), 10) - 1) / 7) + 1; }
+  function isLastWeekdayOfMonth(iso){
+    var d = new Date(iso + 'T00:00:00'), m = d.getMonth();
+    d.setDate(d.getDate() + 7);
+    return d.getMonth() !== m;   // no same weekday left this month
+  }
+  function recurringRunsOn(ev, iso, dayName){
+    if (!ev.days || ev.days.indexOf(dayName) < 0) return false;
+    if (!inRunWindow(ev, iso)) return false;
+    if (ev.recurrence !== 'monthly') return true;
+    return (ev.nth || []).some(function(n){
+      return n === 'last' ? isLastWeekdayOfMonth(iso) : nthWeekdayOfMonth(iso) === n;
+    });
+  }
+
   // An event pins only on the day it actually happens, in the week it happens — the map answers
   // "what's on this Friday", so a gig three weeks out has no business showing under Friday.
   // The window is the same Mon–Sun week the deals list shows.
-  // Recurring events carry no date, so there is no day to place them on: they show only under
-  // "Every day" rather than being claimed for a weekday we don't know.
   function eventsForVenueOnDay(name, day){
     var out = [];
     (SPECIAL_EVENTS||[]).forEach(function(ev){
       if (ev.venue !== name || !eventIsPlannable(ev)) return;
-      if (!ev.date) { if (day === 'all') out.push(ev); return; }
+
+      if (!ev.date){
+        // No weekday on file (e.g. a run of "multiple dates"): can't place it on a day, so it
+        // stays under "Every day" — and only while it's in season.
+        if (!ev.days){
+          if (day === 'all' && WEEK_DATES.some(function(w){ return inRunWindow(ev, w.iso); })) out.push(ev);
+          return;
+        }
+        if (day === 'all'){
+          if (WEEK_DATES.some(function(w){ return recurringRunsOn(ev, w.iso, w.dayName); })) out.push(ev);
+          return;
+        }
+        var wd = WEEK_DATES.filter(function(x){ return x.dayName === day; })[0];
+        if (wd && recurringRunsOn(ev, wd.iso, wd.dayName)) out.push(ev);
+        return;
+      }
+
       if (!WEEK_ISO_SET.has(ev.date)) return;
       if (day === 'all' || weekdayOfISO(ev.date) === day) out.push(ev);
     });
     return out;
   }
+  // ---- "More upcoming events at this venue" ----
+  // The map popup only shows what's on the selected day, but a live-music venue may have a dozen
+  // gigs coming up. This lists the rest, paged, without leaving the map.
+  var MORE_PAGE_SIZE = 3;
+  function todayISOStr(){
+    var n = new Date();
+    return n.getFullYear() + '-' + String(n.getMonth()+1).padStart(2,'0') + '-' + String(n.getDate()).padStart(2,'0');
+  }
+  function upcomingEventsForVenue(name){
+    var today = todayISOStr();
+    return (SPECIAL_EVENTS||[]).filter(function(ev){
+      if (ev.venue !== name || !eventIsPlannable(ev)) return false;
+      if (!ev.date) return !ev.runs_to || ev.runs_to >= today;   // recurring: keep until its run ends
+      return ev.date >= today;
+    }).sort(function(a, b){
+      var da = a.date || '9999-99-99', db = b.date || '9999-99-99';   // undated (recurring) last
+      return da < db ? -1 : da > db ? 1 : 0;
+    });
+  }
+  function moreListHtml(name, excludeSlugs, page){
+    var rest = upcomingEventsForVenue(name).filter(function(ev){ return excludeSlugs.indexOf(eventSlug(ev)) < 0; });
+    if (!rest.length) return '';
+    var pages = Math.ceil(rest.length / MORE_PAGE_SIZE);
+    page = Math.max(0, Math.min(page, pages - 1));
+    var items = rest.slice(page * MORE_PAGE_SIZE, (page + 1) * MORE_PAGE_SIZE).map(function(ev){
+      var when = ev.date ? formatEventDate(ev.date) : 'Recurring';
+      var t = ev.start ? ' · from ' + formatTime(ev.start) : '';
+      return '<div class="map-popup-deal"><span class="map-popup-when map-popup-event">' + when + t + '</span><br>' + (ev.title || '') +
+        '<button type="button" class="map-popup-add-one" data-plan-add="' + eventSlug(ev) + '" data-plan-label-on="&#10003; In plan" data-plan-label-off="&#43; Plan">&#43; Plan</button></div>';
+    }).join('');
+    var pager = pages > 1
+      ? '<div class="map-more-pager">' +
+          '<button type="button" data-more-page="' + (page - 1) + '"' + (page === 0 ? ' disabled' : '') + ' aria-label="Previous events">&#8249;</button>' +
+          '<span>' + (page + 1) + ' / ' + pages + '</span>' +
+          '<button type="button" data-more-page="' + (page + 1) + '"' + (page === pages - 1 ? ' disabled' : '') + ' aria-label="More events">&#8250;</button>' +
+        '</div>'
+      : '';
+    return items + pager;
+  }
+  function moreSectionHtml(name, shownSlugs){
+    var count = upcomingEventsForVenue(name).filter(function(ev){ return shownSlugs.indexOf(eventSlug(ev)) < 0; }).length;
+    if (!count) return '';
+    var v = VENUES_MAP[name] || {};
+    return '<div class="map-popup-more" data-venue-more="' + (v._slug || slugify(name)) + '" data-more-exclude="' + shownSlugs.join('|') + '" data-more-page="0">' +
+      '<button type="button" class="map-more-toggle" data-more-toggle>' +
+        '<span>' + count + ' more upcoming event' + (count === 1 ? '' : 's') + ' here</span><span class="map-more-caret">&#9662;</span>' +
+      '</button>' +
+      '<div class="map-more-list" hidden></div>' +
+    '</div>';
+  }
+
   function popupHtml(name, deals, events){
     var v = VENUES_MAP[name] || {};
     var slug = v._slug || slugify(name);
@@ -2318,7 +2418,8 @@ loadData().then(() => {
     var dealBtn = shownDeals.length
       ? '<button type="button" class="map-popup-plan" data-plan-add="'+dealSlugs+'" data-plan-label-on="&#10003; Added to plan" data-plan-label-off="&#43; Add to plan">&#43; Add to plan</button>'
       : '';
-    return '<div class="map-popup-name">'+name+'</div>'+eventItems+dealItems+dealBtn+
+    var more = moreSectionHtml(name, shownEvents.map(function(ev){ return eventSlug(ev); }));
+    return '<div class="map-popup-name">'+name+'</div>'+eventItems+more+dealItems+dealBtn+
       '<a class="map-popup-btn" data-map-venue="'+slug+'">View details &amp; rate &rarr;</a>';
   }
   function rebuild(){
@@ -2338,6 +2439,8 @@ loadData().then(() => {
         ? L.marker([v.lat, v.lng], { icon: eventPin() })
         : L.marker([v.lat, v.lng]);
       m.bindPopup(popupHtml(name, deals, events));
+      m.on('popupopen',  function(e){ openPopup = e.popup; });
+      m.on('popupclose', function(){ openPopup = null; });
       cluster.addLayer(m);
     });
     countEl.textContent = n + ' venue' + (n === 1 ? '' : 's') + (day === 'all' ? '' : ' on ' + day);
@@ -2371,6 +2474,43 @@ loadData().then(() => {
     }, function(){ countEl.textContent = 'Location unavailable (permission denied?)'; });
   });
   // Popup "View details" -> open the venue profile (ratings/comments)
+  // "N more upcoming events here" — expand/collapse and page, in place, without closing the popup.
+  // Delegated because Leaflet builds popup DOM on open, long after this runs.
+  function renderMore(box){
+    var name = VENUE_SLUGS[box.getAttribute('data-venue-more')];
+    var exclude = (box.getAttribute('data-more-exclude') || '').split('|').filter(Boolean);
+    var page = parseInt(box.getAttribute('data-more-page'), 10) || 0;
+    box.querySelector('.map-more-list').innerHTML = moreListHtml(name, exclude, page);
+    // Expanding grows the popup, which can push its top off the map — Leaflet only auto-pans when a
+    // popup opens, not when its contents change. NOT popup.update(): that re-renders the popup from
+    // the HTML string it was bound with, throwing away the list we just injected and detaching these
+    // nodes. _adjustPan() re-pans only, reading the container's live height. It's private, but
+    // Leaflet is pinned to 1.9.4 above, and the guard degrades to "no re-pan" if it ever goes.
+    if (openPopup && openPopup._adjustPan) openPopup._adjustPan();
+  }
+  document.addEventListener('click', function(e){
+    if (!e.target.closest) return;
+    var toggle = e.target.closest('[data-more-toggle]');
+    if (toggle){
+      e.preventDefault();
+      var box = toggle.closest('.map-popup-more');
+      var list = box.querySelector('.map-more-list');
+      var opening = list.hidden;
+      if (opening) renderMore(box);
+      list.hidden = !opening;
+      box.classList.toggle('open', opening);
+      return;
+    }
+    var pageBtn = e.target.closest('[data-more-page]');
+    if (pageBtn){
+      e.preventDefault();
+      var box2 = pageBtn.closest('.map-popup-more');
+      box2.setAttribute('data-more-page', pageBtn.getAttribute('data-more-page'));
+      renderMore(box2);
+      return;
+    }
+  });
+
   document.addEventListener('click', function(e){
     var b = e.target.closest && e.target.closest('[data-map-venue]');
     if (b){ e.preventDefault(); closeMap(); location.hash = 'venue/' + b.getAttribute('data-map-venue'); }
