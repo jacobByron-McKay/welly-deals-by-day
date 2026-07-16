@@ -2277,23 +2277,23 @@ loadData().then(() => {
     });
     return _eventPin;
   }
-  function todayISO(){
-    var n = new Date();
-    return n.getFullYear() + '-' + String(n.getMonth()+1).padStart(2,'0') + '-' + String(n.getDate()).padStart(2,'0');
-  }
   // Date → weekday name, matching the DAYS array (which starts on Monday, unlike getDay()).
   function weekdayOfISO(iso){
     var d = new Date(iso + 'T00:00:00');
     return isNaN(d) ? null : DAYS[(d.getDay() + 6) % 7];
   }
-  // Upcoming events only — a gig that has been and gone is not a place you can plan to go.
-  // Undated (recurring) events have no weekday to match on, so they show under every filter.
+  // An event pins only on the day it actually happens, in the week it happens — the map answers
+  // "what's on this Friday", so a gig three weeks out has no business showing under Friday.
+  // The window is the same Mon–Sun week the deals list shows.
+  // Recurring events carry no date, so there is no day to place them on: they show only under
+  // "Every day" rather than being claimed for a weekday we don't know.
   function eventsForVenueOnDay(name, day){
-    var out = [], today = todayISO();
+    var out = [];
     (SPECIAL_EVENTS||[]).forEach(function(ev){
       if (ev.venue !== name || !eventIsPlannable(ev)) return;
-      if (ev.date && ev.date < today) return;
-      if (day === 'all' || !ev.date || weekdayOfISO(ev.date) === day) out.push(ev);
+      if (!ev.date) { if (day === 'all') out.push(ev); return; }
+      if (!WEEK_ISO_SET.has(ev.date)) return;
+      if (day === 'all' || weekdayOfISO(ev.date) === day) out.push(ev);
     });
     return out;
   }
