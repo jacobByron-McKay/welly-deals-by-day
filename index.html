@@ -226,7 +226,14 @@
   .map-popup-name { font-weight:700; font-size:14px; margin-bottom:4px; }
   .map-popup-deal { font-size:12px; line-height:1.4; margin:3px 0; }
   .map-popup-when { color:var(--accent); font-weight:600; }
+  .map-popup-event { color:#c2410c; }
   .map-popup-btn { display:inline-block; margin-top:7px; font-size:12px; font-weight:600; color:#fff; background:var(--accent); border-radius:7px; padding:5px 9px; text-decoration:none; cursor:pointer; }
+  .map-popup-add-one { display:block; margin:4px 0 2px; font-size:11px; font-weight:700; color:var(--accent);
+                       background:var(--accent-soft); border:1px solid #bcddf0; border-radius:6px; padding:3px 8px; cursor:pointer; }
+  .map-popup-add-one.added { background:#dcfce7; border-color:#86efac; color:#15803d; }
+  .map-pin-event-wrap { background:none; border:0; }
+  .map-pin-event { width:22px; height:22px; border-radius:50%; background:#ea580c; color:#fff; border:2px solid #fff;
+                   box-shadow:0 1px 4px rgba(0,0,0,.4); font-size:11px; line-height:18px; text-align:center; }
   /* Submit-a-deal: photo upload + correction autocomplete */
   .sd-photo-add { display:inline-flex; align-items:center; gap:6px; margin-top:8px; font-size:13px; font-weight:600; color:var(--accent); background:var(--accent-soft); border:1px solid #bcddf0; border-radius:8px; padding:7px 11px; cursor:pointer; }
   .sd-photo-add:hover { filter:brightness(0.98); }
@@ -548,6 +555,7 @@ let VENUES_MAP = {}; // venue name → venue record
 let DEALS_BY_VENUE = {}; // venue name → array of its deal records (all of them, unfiltered)
 const VENUE_SLUGS = {}; // slug → venue name (for the detail panel + #venue/<slug> deep-links)
 let DEAL_SLUGS = {};    // deal slug → { rep: record, days: Set } (per-deal detail + #deal/<slug> deep-links)
+let EVENT_SLUGS = {};   // event slug → { rep: record } (lets a special event go in My Plan, same as a deal)
 
 // ── Venue detail panel (Option A): ON. Venue names open the in-page profile,
 // which is where the anonymous star rating + comments live (loaded on open, so
@@ -1066,6 +1074,9 @@ function renderEventCard(ev) {
       <h4 class="font-semibold text-[15px] leading-snug">${ev.title}</h4>
       <p class="text-sm mt-1 leading-relaxed" style="color:var(--ink-muted);">${ev.desc}</p>
       <div class="flex items-center gap-3 mt-2 text-xs flex-wrap" style="color:var(--ink-muted);">
+        ${eventIsPlannable(ev)
+          ? `<button type="button" class="wd-plan-add" data-plan-add="${eventSlug(ev)}" data-plan-label-on="&#10003; In plan" data-plan-label-off="&#43; Plan" aria-label="Add this event to your plan">&#43; Plan</button>`
+          : ""}
         <span>&#128197; ${dateStr}</span>
         ${timeStr ? `<span>${timeStr}</span>` : ""}
         ${ev.source_url
@@ -1115,6 +1126,29 @@ function renderUpcoming(upcomingDeals) {
 // ---------- CLUB RUGBY TAB ----------
 // Fixtures tagged club_rugby:true in special_events.json. Shown only here (excluded from the
 // week view + Upcoming), independent of the suburb filter, and only when the tab is toggled on.
+// 1 → "1st", 2 → "2nd", 11 → "11th"
+function ordinal(n) {
+  if (typeof n !== "number") return "";
+  const rem100 = n % 100;
+  if (rem100 >= 11 && rem100 <= 13) return n + "th";
+  const suffix = { 1: "st", 2: "nd", 3: "rd" }[n % 10] || "th";
+  return n + suffix;
+}
+// Where each side finished the round robin, so the card shows what the fixture is worth.
+// Falls back to the plain title for any fixture without ranks on file.
+function rugbyTitle(ev) {
+  if (!ev.home || !ev.away || typeof ev.home_rank !== "number" || typeof ev.away_rank !== "number") return ev.title;
+  return `${ev.home} (${ordinal(ev.home_rank)}) vs ${ev.away} (${ordinal(ev.away_rank)})`;
+}
+// Sort key: Premier grade above Premier 2, then by the best-placed team in the fixture —
+// so the table-toppers' game leads. This deliberately overrides kick-off order.
+function rugbySortKey(ev) {
+  const grade = ev.grade === "Premier" ? 0 : 1;
+  const best = (typeof ev.home_rank === "number" && typeof ev.away_rank === "number")
+    ? Math.min(ev.home_rank, ev.away_rank) : 99;
+  return [grade, best];
+}
+
 function renderRugbyCard(ev) {
   const dateStr = ev.date ? formatEventDate(ev.date) : "Date TBC";
   const koStr   = ev.start ? `${formatTime(ev.start)} kickoff` : "";
@@ -1126,7 +1160,7 @@ function renderRugbyCard(ev) {
         <span class="cat-badge cat-sport-rugby px-2 py-0.5 rounded">${comp}</span>
         ${ev.round ? `<span class="text-xs" style="color:var(--ink-muted);">${ev.round}</span>` : ""}
       </div>
-      <h4 class="font-semibold text-[15px] leading-snug">${ev.title}</h4>
+      <h4 class="font-semibold text-[15px] leading-snug">${rugbyTitle(ev)}</h4>
       ${ev.desc ? `<p class="text-sm mt-1 leading-relaxed" style="color:var(--ink-muted);">${ev.desc}</p>` : ""}
       <div class="flex items-center gap-3 mt-2 text-xs flex-wrap" style="color:var(--ink-muted);">
         <span>&#128197; ${dateStr}</span>
@@ -1149,6 +1183,9 @@ function renderClubRugby() {
     .sort((a, b) => {
       const da = a.date || "z", db = b.date || "z";
       if (da !== db) return da < db ? -1 : 1;
+      const [ga, ba] = rugbySortKey(a), [gb, bb] = rugbySortKey(b);
+      if (ga !== gb) return ga - gb;
+      if (ba !== bb) return ba - bb;
       const ka = a.start || "zz", kb = b.start || "zz";   // earlier kick-off first, TBC last
       return ka < kb ? -1 : ka > kb ? 1 : 0;
     });
@@ -1211,6 +1248,19 @@ function dealSlug(d) {
   const vs = (VENUES_MAP[d.venue] && VENUES_MAP[d.venue]._slug) || slugify(d.venue);
   return (vs.slice(0, 48) + "-d-" + slugify(d.title || "deal").slice(0, 40) + "-" + hashStr(dealCollapseKey(d))).slice(0, 120);
 }
+
+// A special event's identity, mirroring dealSlug() so events can sit in My Plan next to deals.
+// The "-e-" infix keeps events in their own namespace, so an event and a deal at the same venue
+// with the same title can never collide.
+function eventCollapseKey(ev) {
+  return ["event", ev.title || "", ev.date || "", ev.start || "", ev.venue || ""].join("||");
+}
+function eventSlug(ev) {
+  const vs = (VENUES_MAP[ev.venue] && VENUES_MAP[ev.venue]._slug) || slugify(ev.venue || "event");
+  return (vs.slice(0, 48) + "-e-" + slugify(ev.title || "event").slice(0, 40) + "-" + hashStr(eventCollapseKey(ev))).slice(0, 120);
+}
+// Club rugby fixtures live only in their own tab and mostly have no venue record, so they stay out.
+function eventIsPlannable(ev) { return !ev.club_rugby; }
 
 // A Set of full day names → "Mon–Fri", "Sat, Sun", "Every day"
 function formatDayRange(daySet) {
@@ -1601,6 +1651,13 @@ loadData().then(() => {
     const s = dealSlug(d);
     if (!DEAL_SLUGS[s]) DEAL_SLUGS[s] = { rep: d, days: new Set() };
     if ((d.type || "weekly") === "weekly" && d.day) DEAL_SLUGS[s].days.add(d.day);
+  });
+
+  // Same for special events, so itemFromSlug() can resolve one into a plan stop.
+  EVENT_SLUGS = {};
+  SPECIAL_EVENTS.forEach(ev => {
+    if (!eventIsPlannable(ev)) return;
+    EVENT_SLUGS[eventSlug(ev)] = { rep: ev };
   });
 
   buildSuburbSelector();  // build region + suburb chips from the loaded data, then render
@@ -2101,6 +2158,8 @@ loadData().then(() => {
 // visitor opens the panel, and re-lights whenever a newer id appears. tag: "New" | "Added" | "Update".
 (function(){
   var SITE_UPDATES = [
+    { id:"2026-07-16-eventsplan",     date:"2026-07-16", tag:"New",   text:"Gigs and events can go in your plan — tap “+ Plan” on any event to build a night around it. Events now show on the deals map too, with their own orange pin, so you can spot a gig and find the deals a few minutes' walk away." },
+    { id:"2026-07-16-rugbyranks",     date:"2026-07-16", tag:"Update", text:"Club Rugby fixtures now show where each side finished the season — Upper Hutt Rams (2nd) v Petone (1st) — and are listed with the table-toppers' games first." },
     { id:"2026-07-15-clubrugby",      date:"2026-07-15", tag:"New",   text:"Club Rugby is here — the new Club Rugby tab has every Wellington Premier and Premier 2 semi-final this Saturday 18 July, with grounds and kick-off times straight from the official WRFU draw. Top of the table meet at Trentham: Upper Hutt Rams v Petone, 2.45pm at NZCIS." },
     { id:"2026-07-15-ranking",        date:"2026-07-15", tag:"Update", text:"Deals are now ordered by Google rating within each suburb and each section, so the best-rated spots come first. Opening a deal's details now links you straight to the venue on Google Maps." },
     { id:"2026-07-15-plan",           date:"2026-07-15", tag:"New",   text:"Plan your night out — tap “Add to plan” on any deal (from the map, a deal card, or its details) and it drops into a notepad you can reorder. It shows the walk or drive time between each stop, then you can copy the plan or share it to Messenger, WhatsApp, wherever." },
@@ -2206,17 +2265,60 @@ loadData().then(() => {
     });
     return out;
   }
-  function popupHtml(name, deals){
+  // Built on first use — L.divIcon does not exist until Leaflet has loaded.
+  var _eventPin = null;
+  function eventPin(){
+    if (!_eventPin) _eventPin = L.divIcon({
+      className: 'map-pin-event-wrap',
+      html: '<div class="map-pin-event">&#9733;</div>',
+      iconSize: [22, 22],
+      iconAnchor: [11, 11],
+      popupAnchor: [0, -11]
+    });
+    return _eventPin;
+  }
+  function todayISO(){
+    var n = new Date();
+    return n.getFullYear() + '-' + String(n.getMonth()+1).padStart(2,'0') + '-' + String(n.getDate()).padStart(2,'0');
+  }
+  // Date → weekday name, matching the DAYS array (which starts on Monday, unlike getDay()).
+  function weekdayOfISO(iso){
+    var d = new Date(iso + 'T00:00:00');
+    return isNaN(d) ? null : DAYS[(d.getDay() + 6) % 7];
+  }
+  // Upcoming events only — a gig that has been and gone is not a place you can plan to go.
+  // Undated (recurring) events have no weekday to match on, so they show under every filter.
+  function eventsForVenueOnDay(name, day){
+    var out = [], today = todayISO();
+    (SPECIAL_EVENTS||[]).forEach(function(ev){
+      if (ev.venue !== name || !eventIsPlannable(ev)) return;
+      if (ev.date && ev.date < today) return;
+      if (day === 'all' || !ev.date || weekdayOfISO(ev.date) === day) out.push(ev);
+    });
+    return out;
+  }
+  function popupHtml(name, deals, events){
     var v = VENUES_MAP[name] || {};
     var slug = v._slug || slugify(name);
-    var shown = deals.slice(0,4);
-    var items = shown.map(function(d){
+    var shownEvents = (events || []).slice(0,3);
+    var shownDeals  = (deals || []).slice(0,4);
+    // Each event is its own night out on its own date, so each gets its own button — bulk-adding
+    // three unrelated gigs because they share a venue is not a choice anyone means to make.
+    var eventItems = shownEvents.map(function(ev){
+      var t = ev.start ? ' · from ' + formatTime(ev.start) : '';
+      return '<div class="map-popup-deal"><span class="map-popup-when map-popup-event">'+(ev.date ? formatEventDate(ev.date) : 'Recurring')+t+'</span><br>'+(ev.title || '')+
+        '<button type="button" class="map-popup-add-one" data-plan-add="'+eventSlug(ev)+'" data-plan-label-on="&#10003; In plan" data-plan-label-off="&#43; Plan">&#43; Plan</button></div>';
+    }).join('');
+    // A venue's deals for the selected day are one coherent set, so they keep the single bulk button.
+    var dealItems = shownDeals.map(function(d){
       var t = (d.start && d.end) ? formatTime(d.start)+'–'+formatTime(d.end) : (d.start ? 'from '+formatTime(d.start) : '');
       return '<div class="map-popup-deal"><span class="map-popup-when">'+(d.day || 'Deal')+(t ? ' · '+t : '')+'</span><br>'+(d.title || '')+'</div>';
     }).join('');
-    var planSlugs = shown.map(function(d){ return dealSlug(d); }).join('|');
-    return '<div class="map-popup-name">'+name+'</div>'+items+
-      '<button type="button" class="map-popup-plan" data-plan-add="'+planSlugs+'" data-plan-label-on="&#10003; Added to plan" data-plan-label-off="&#43; Add to plan">&#43; Add to plan</button>'+
+    var dealSlugs = shownDeals.map(function(d){ return dealSlug(d); }).join('|');
+    var dealBtn = shownDeals.length
+      ? '<button type="button" class="map-popup-plan" data-plan-add="'+dealSlugs+'" data-plan-label-on="&#10003; Added to plan" data-plan-label-off="&#43; Add to plan">&#43; Add to plan</button>'
+      : '';
+    return '<div class="map-popup-name">'+name+'</div>'+eventItems+dealItems+dealBtn+
       '<a class="map-popup-btn" data-map-venue="'+slug+'">View details &amp; rate &rarr;</a>';
   }
   function rebuild(){
@@ -2228,10 +2330,14 @@ loadData().then(() => {
       var v = VENUES_MAP[name];
       if (typeof v.lat !== 'number' || typeof v.lng !== 'number') return;
       var deals = dealsForVenueOnDay(name, day);
-      if (!deals.length) return;
+      var events = eventsForVenueOnDay(name, day);
+      if (!deals.length && !events.length) return;
       n++;
-      var m = L.marker([v.lat, v.lng]);
-      m.bindPopup(popupHtml(name, deals));
+      // Venues that only have a gig/event on get their own pin, so the map reads at a glance.
+      var m = (events.length && !deals.length)
+        ? L.marker([v.lat, v.lng], { icon: eventPin() })
+        : L.marker([v.lat, v.lng]);
+      m.bindPopup(popupHtml(name, deals, events));
       cluster.addLayer(m);
     });
     countEl.textContent = n + ' venue' + (n === 1 ? '' : 's') + (day === 'all' ? '' : ' on ' + day);
@@ -2291,18 +2397,34 @@ loadData().then(() => {
 
   // Build a self-contained plan item from a deal slug, so the notepad and text export
   // never need to re-hit the data files.
+  function coordsOf(venueName){
+    var v = (typeof VENUES_MAP !== 'undefined') && VENUES_MAP[venueName];
+    return {
+      lat: (v && typeof v.lat === 'number') ? v.lat : null,
+      lng: (v && typeof v.lng === 'number') ? v.lng : null
+    };
+  }
   function itemFromSlug(slug){
     var e = (typeof DEAL_SLUGS !== 'undefined') && DEAL_SLUGS[slug];
-    if (!e || !e.rep) return null;
-    var d = e.rep;
-    var when = (e.days && e.days.size) ? formatDayRange(e.days)
-             : (d.type === 'one-off' && d.date ? formatEventDate(d.date) : 'Every day');
-    var time = (d.start && d.end) ? formatTime(d.start) + '–' + formatTime(d.end)
-             : (d.start ? 'from ' + formatTime(d.start) : '');
-    var v = (typeof VENUES_MAP !== 'undefined') && VENUES_MAP[d.venue];
-    var lat = (v && typeof v.lat === 'number') ? v.lat : null;
-    var lng = (v && typeof v.lng === 'number') ? v.lng : null;
-    return { slug:slug, title:d.title || 'Deal', venue:d.venue || '', suburb:d.suburb || '', when:when, time:time, lat:lat, lng:lng };
+    if (e && e.rep){
+      var d = e.rep;
+      var when = (e.days && e.days.size) ? formatDayRange(e.days)
+               : (d.type === 'one-off' && d.date ? formatEventDate(d.date) : 'Every day');
+      var time = (d.start && d.end) ? formatTime(d.start) + '–' + formatTime(d.end)
+               : (d.start ? 'from ' + formatTime(d.start) : '');
+      var c = coordsOf(d.venue);
+      return { slug:slug, title:d.title || 'Deal', venue:d.venue || '', suburb:d.suburb || '', when:when, time:time, lat:c.lat, lng:c.lng };
+    }
+    var x = (typeof EVENT_SLUGS !== 'undefined') && EVENT_SLUGS[slug];
+    if (x && x.rep){
+      var ev = x.rep;
+      var ewhen = ev.date ? formatEventDate(ev.date) : 'Recurring';
+      var etime = (ev.start && ev.end) ? formatTime(ev.start) + '–' + formatTime(ev.end)
+                : (ev.start ? 'from ' + formatTime(ev.start) : '');
+      var ec = coordsOf(ev.venue);
+      return { slug:slug, title:ev.title || 'Event', venue:ev.venue || '', suburb:ev.suburb || '', when:ewhen, time:etime, lat:ec.lat, lng:ec.lng };
+    }
+    return null;
   }
 
   function has(slug){ return items.some(function(x){ return x.slug === slug; }); }

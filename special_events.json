@@ -320,54 +320,6 @@
     "confidence": "high"
   },
   {
-    "venue": "Rosie's Red-Hot Cantina Wellington",
-    "suburb": "Waterfront",
-    "address": "4 Queens Wharf, Wellington Central",
-    "date": null,
-    "title": "Sunday Ink Sessions",
-    "desc": "Flash tattoos at Rosie's — $40 cash per tattoo. First come first served, 18+ for tattoos. Temp tatts for kids. All-day DJ. Last Sunday of every month, 2-6pm.",
-    "start": "14:00",
-    "end": "18:00",
-    "category": "entertainment",
-    "annual": false,
-    "source_url": "https://stargroup.nz/events/rosw-sunday-ink-sessions",
-    "source_quote": "Flash tattoo for just $40 cash. Last Sunday of every month at Rosie's. Tattoo sittings start at 2pm and run until 6pm.",
-    "verified_date": "2026-06-26",
-    "confidence": "high"
-  },
-  {
-    "venue": "Rosie's Red-Hot Cantina Wellington",
-    "suburb": "Waterfront",
-    "address": "4 Queens Wharf, Wellington Central",
-    "date": null,
-    "title": "Sunday Ink Sessions",
-    "desc": "Flash tattoos at Rosie's — $40 cash per tattoo. First come first served, 18+ for tattoos. Temp tatts for kids. All-day DJ. Last Sunday of every month, 2-6pm.",
-    "start": "14:00",
-    "end": "18:00",
-    "category": "entertainment",
-    "annual": false,
-    "source_url": "https://stargroup.nz/events/rosw-sunday-ink-sessions",
-    "source_quote": "Flash tattoo for just $40 cash. Last Sunday of every month at Rosie's. Tattoo sittings start at 2pm and run until 6pm.",
-    "verified_date": "2026-06-26",
-    "confidence": "high"
-  },
-  {
-    "venue": "Rosie's Red-Hot Cantina Wellington",
-    "suburb": "Waterfront",
-    "address": "4 Queens Wharf, Wellington Central",
-    "date": null,
-    "title": "Sunday Ink Sessions",
-    "desc": "Flash tattoos at Rosie's — $40 cash per tattoo. First come first served, 18+ for tattoos. Temp tatts for kids. All-day DJ. Last Sunday of every month, 2-6pm.",
-    "start": "14:00",
-    "end": "18:00",
-    "category": "entertainment",
-    "annual": false,
-    "source_url": "https://stargroup.nz/events/rosw-sunday-ink-sessions",
-    "source_quote": "Flash tattoo for just $40 cash. Last Sunday of every month at Rosie's. Tattoo sittings start at 2pm and run until 6pm.",
-    "verified_date": "2026-06-26",
-    "confidence": "high"
-  },
-  {
     "venue": "Charley Noble",
     "suburb": "Waterfront",
     "address": "Ground Huddart Parker Building, 1 Post Office Square, Wellington",
@@ -1041,7 +993,12 @@
     "source_url": "https://www.wrfu.co.nz/senior/draws-results",
     "source_quote": "Jubilee Cup - Preliminary Final 1 | Sat, Jul 18, 2026, 2:45 PM | Hutt Recreation Ground",
     "verified_date": "2026-07-15",
-    "confidence": "high"
+    "confidence": "high",
+    "home": "Hutt Old Boys Marist",
+    "away": "Tawa",
+    "home_rank": 4,
+    "away_rank": 3,
+    "grade": "Premier"
   },
   {
     "venue": null,
@@ -1061,7 +1018,12 @@
     "source_url": "https://www.wrfu.co.nz/senior/draws-results",
     "source_quote": "Jubilee Cup - Preliminary Final 2 | Sat, Jul 18, 2026, 2:45 PM | NZCIS",
     "verified_date": "2026-07-15",
-    "confidence": "high"
+    "confidence": "high",
+    "home": "Upper Hutt Rams",
+    "away": "Petone",
+    "home_rank": 2,
+    "away_rank": 1,
+    "grade": "Premier"
   },
   {
     "venue": null,
@@ -1081,7 +1043,12 @@
     "source_url": "https://www.wrfu.co.nz/senior/draws-results",
     "source_quote": "Hardham VC Memorial Cup - Semi-Final 1 | Sat, Jul 18, 2026, 2:45 PM | Nairnville Park",
     "verified_date": "2026-07-15",
-    "confidence": "high"
+    "confidence": "high",
+    "home": "Old Boys University",
+    "away": "Wellington Axemen",
+    "home_rank": 5,
+    "away_rank": 11,
+    "grade": "Premier"
   },
   {
     "venue": null,
@@ -1089,19 +1056,24 @@
     "address": null,
     "date": "2026-07-18",
     "title": "Paremata-Plimmerton vs Marist St Pat's",
-    "desc": "Wellington club rugby semi-final. Still to be confirmed by the WRFU - this fixture is not yet in the official draw. Check with the clubs before travelling.",
-    "start": null,
+    "desc": "Hardham VC Memorial Cup semi-final. Paremata-Plimmerton host Marist St Pat's at Ngati Toa Domain.",
+    "start": "14:45",
     "end": null,
     "category": "sport",
     "annual": false,
     "club_rugby": true,
     "competition": "Premier Men — Hardham Cup",
     "round": "Semi-final",
-    "ground": null,
-    "source_url": "https://clubrugby.nz/wp/2026/07/09/schedule-for-remainder-of-premier-and-premier-2-club-season-set-with-semis-and-final-on-18-and-25-july/",
-    "source_quote": "Wellington club rugby will resume on Saturday 18 July, with semi-finals in the Premier and Premier 2 grades",
-    "verified_date": "2026-07-15",
-    "confidence": "medium"
+    "ground": "Ngati Toa Domain, Porirua",
+    "source_url": "https://xplorer.rugby/wellington/fixtures-results",
+    "source_quote": "Hardham VC Memorial Cup - Semi-Final 2. Sat, Jul 18, 2026, 2:45 PM. Ngati Toa Domain 1.",
+    "verified_date": "2026-07-16",
+    "confidence": "high",
+    "home": "Paremata-Plimmerton",
+    "away": "Marist St Pat's",
+    "home_rank": 6,
+    "away_rank": 9,
+    "grade": "Premier"
   },
   {
     "venue": null,
@@ -1121,7 +1093,12 @@
     "source_url": "https://www.wrfu.co.nz/senior/draws-results",
     "source_quote": "Ed Chaney Cup - Preliminary Final 1 | Sat, Jul 18, 2026, 1:00 PM | Petone Recreation Ground",
     "verified_date": "2026-07-15",
-    "confidence": "high"
+    "confidence": "high",
+    "home": "Petone",
+    "away": "Marist St Pat's",
+    "home_rank": 1,
+    "away_rank": 3,
+    "grade": "Premier 2"
   },
   {
     "venue": null,
@@ -1141,7 +1118,12 @@
     "source_url": "https://www.wrfu.co.nz/senior/draws-results",
     "source_quote": "Ed Chaney Cup - Preliminary Final 2 | Sat, Jul 18, 2026, 1:00 PM | Hutt Recreation Ground",
     "verified_date": "2026-07-15",
-    "confidence": "high"
+    "confidence": "high",
+    "home": "Hutt Old Boys Marist",
+    "away": "Paremata-Plimmerton",
+    "home_rank": 2,
+    "away_rank": 4,
+    "grade": "Premier 2"
   },
   {
     "venue": null,
@@ -1161,7 +1143,12 @@
     "source_url": "https://www.wrfu.co.nz/senior/draws-results",
     "source_quote": "HD Morgan Memorial Cup - Semi-Final 1 | Sat, Jul 18, 2026, 1:00 PM | Lyndhurst Park",
     "verified_date": "2026-07-15",
-    "confidence": "high"
+    "confidence": "high",
+    "home": "Tawa",
+    "away": "Johnsonville",
+    "home_rank": 5,
+    "away_rank": 11,
+    "grade": "Premier 2"
   },
   {
     "venue": null,
@@ -1181,7 +1168,12 @@
     "source_url": "https://www.wrfu.co.nz/senior/draws-results",
     "source_quote": "HD Morgan Memorial Cup - Semi-Final 2 | Sat, Jul 18, 2026, 1:00 PM | Fraser Park",
     "verified_date": "2026-07-15",
-    "confidence": "high"
+    "confidence": "high",
+    "home": "Avalon",
+    "away": "Wellington Axemen",
+    "home_rank": 7,
+    "away_rank": 9,
+    "grade": "Premier 2"
   },
   {
     "venue": "Harbourside Market",
