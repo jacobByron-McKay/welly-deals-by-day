@@ -2704,7 +2704,26 @@ loadData().then(() => {
                .setLatLng([v.lat, v.lng]).setContent(html).openOn(map);
       openPopup = p;   // let the "more events" expander re-pan this popup too
       p.on('remove', function(){ if (openPopup === p) openPopup = null; });
+      // Fly in, then nudge so the whole card sits vertically centred. A Leaflet popup opens
+      // UPWARD from its pin, so with the pin at the map centre a tall card (e.g. Misu's four
+      // deals) runs off the top. Measure the card's real position after the fly and pan by the
+      // exact offset to centre it — self-correcting, no popup-height/zoom guesswork.
       map.flyTo([v.lat, v.lng], 17, { duration: 0.8 });   // bounded, cinematic zoom-in
+      // Then nudge so the whole card sits vertically centred. A Leaflet popup opens UPWARD from
+      // its pin, so with the pin centred a tall card (e.g. Misu's four deals) runs off the top.
+      // After the fly settles, measure the card's real position and pan by that exact offset —
+      // self-correcting, works at any final zoom. Two passes so the pan itself settles.
+      var passes = 0;
+      function centre(){
+        var pe = p.getElement();
+        if (pe){
+          var pr = pe.getBoundingClientRect(), mr = map.getContainer().getBoundingClientRect();
+          var dy = ((pr.top + pr.bottom) / 2) - ((mr.top + mr.bottom) / 2);
+          if (Math.abs(dy) > 10) map.panBy([0, dy], { animate: true, duration: 0.25 });
+        }
+        if (++passes < 2) setTimeout(centre, 320);
+      }
+      setTimeout(centre, 900);   // after the 0.8s fly has settled
     }
     function pick(name){ input.value = name; clearBtn.classList.add('show'); hideAc(); gotoVenue(name); }
 
