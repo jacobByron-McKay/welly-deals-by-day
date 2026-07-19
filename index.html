@@ -276,6 +276,26 @@
   .map-pin-event-wrap { background:none; border:0; }
   .map-pin-event { width:22px; height:22px; border-radius:50%; background:#ea580c; color:#fff; border:2px solid #fff;
                    box-shadow:0 1px 4px rgba(0,0,0,.4); font-size:11px; line-height:18px; text-align:center; }
+  /* Map venue search + autocomplete */
+  .map-search { position:relative; flex:1 1 190px; min-width:150px; max-width:280px; }
+  .map-search input { width:100%; box-sizing:border-box; font:inherit; font-size:16px; padding:7px 30px 7px 11px;
+                      border:1px solid var(--border); border-radius:8px; background:var(--card); color:var(--ink); outline:none; }
+  .map-search input:focus { border-color:var(--accent); }
+  .map-search-clear { position:absolute; right:8px; top:50%; transform:translateY(-50%); background:none; border:0;
+                      font-size:15px; line-height:1; color:var(--ink-muted); cursor:pointer; display:none; padding:2px; }
+  .map-search-clear.show { display:block; }
+  .map-ac { position:absolute; left:0; right:0; top:100%; margin-top:4px; background:var(--card); border:1px solid var(--border);
+            border-radius:8px; box-shadow:0 8px 24px rgba(22,38,58,0.18); max-height:280px; overflow-y:auto; z-index:1000; display:none; }
+  .map-ac.show { display:block; }
+  .map-ac-item { padding:8px 11px; font-size:13px; cursor:pointer; border-bottom:1px solid var(--border); color:var(--ink-muted); }
+  .map-ac-item:last-child { border-bottom:none; }
+  .map-ac-item.active, .map-ac-item:hover { background:var(--accent-soft); }
+  .map-ac-item b { color:var(--ink); font-weight:600; }
+  .map-ac-sub { font-size:11px; color:var(--ink-muted); margin-top:1px; }
+  .map-ac-none { padding:9px 11px; font-size:12px; color:var(--ink-muted); }
+  /* Deal cards read as tappable (whole card opens the deal's landing page) */
+  .deal-card { cursor:pointer; }
+  .deal-card button, .deal-card a { cursor:pointer; }
   /* Submit-a-deal: photo upload + correction autocomplete */
   .sd-photo-add { display:inline-flex; align-items:center; gap:6px; margin-top:8px; font-size:13px; font-weight:600; color:var(--accent); background:var(--accent-soft); border:1px solid #bcddf0; border-radius:8px; padding:7px 11px; cursor:pointer; }
   .sd-photo-add:hover { filter:brightness(0.98); }
@@ -1059,7 +1079,7 @@ function renderCard(d) {
     : "";
 
   return `
-    <article class="deal-card rounded-lg p-3 border" style="background:var(--card);border-color:var(--border);">
+    <article class="deal-card rounded-lg p-3 border" data-card-slug="${dealSlug(d)}" style="background:var(--card);border-color:var(--border);">
       <div class="flex-1 min-w-0">
         <div class="flex items-start gap-2 mb-1">
           <div class="flex items-center gap-2 flex-wrap flex-1 min-w-0">
@@ -1852,6 +1872,11 @@ loadData().then(() => {
 <div id="mapView" class="map-view" aria-hidden="true">
   <div class="map-bar">
     <span class="map-title">&#128506; Deals map</span>
+    <div class="map-search" id="mapSearchWrap">
+      <input id="mapSearchInput" type="text" placeholder="Search a venue on the map…" autocomplete="off" aria-label="Search a venue on the map">
+      <button type="button" id="mapSearchClear" class="map-search-clear" aria-label="Clear search">&#10005;</button>
+      <div id="mapSearchAc" class="map-ac" role="listbox"></div>
+    </div>
     <label class="map-day">Day
       <select id="mapDaySelect"></select>
     </label>
@@ -2051,10 +2076,17 @@ loadData().then(() => {
   // Open a deal or venue when its trigger is clicked (delegated so it survives re-renders).
   // Deal triggers are checked first; a venue-name link inside a deal detail still works.
   document.addEventListener('click', function(e){
-    var dt = e.target.closest && e.target.closest('[data-deal-open]');
+    if (!e.target.closest) return;
+    var dt = e.target.closest('[data-deal-open]');
     if (dt) { e.preventDefault(); location.hash = 'deal/' + dt.getAttribute('data-deal-open'); return; }
-    var t = e.target.closest && e.target.closest('[data-venue-open]');
-    if (t) { e.preventDefault(); location.hash = 'venue/' + t.getAttribute('data-venue-open'); }
+    var t = e.target.closest('[data-venue-open]');
+    if (t) { e.preventDefault(); location.hash = 'venue/' + t.getAttribute('data-venue-open'); return; }
+    // Tapping anywhere on a deal card (except its own buttons/links) opens the deal's landing page,
+    // which carries the prominent "Add to plan" action.
+    if (!e.target.closest('button, a, input, select, label, textarea')) {
+      var card = e.target.closest('.deal-card[data-card-slug]');
+      if (card) { location.hash = 'deal/' + card.getAttribute('data-card-slug'); }
+    }
   });
   if (closeBtn) closeBtn.addEventListener('click', clearHash);
   modal.addEventListener('click', function(e){ if (e.target === modal) clearHash(); });
@@ -2333,6 +2365,7 @@ loadData().then(() => {
   var daySel = document.getElementById('mapDaySelect');
   var countEl = document.getElementById('mapCount');
   var map = null, cluster = null, meMarker = null, openPopup = null;
+  var markers = {};   // venue name -> its current marker (rebuilt each day change; used by search)
 
   function loadCss(href){ return new Promise(function(res){ var l=document.createElement('link'); l.rel='stylesheet'; l.href=href; l.onload=res; l.onerror=res; document.head.appendChild(l); }); }
   function loadJs(src){ return new Promise(function(res,rej){ var s=document.createElement('script'); s.src=src; s.onload=res; s.onerror=rej; document.head.appendChild(s); }); }
@@ -2507,6 +2540,7 @@ loadData().then(() => {
     if (!map) return;
     if (cluster) cluster.clearLayers();
     else { cluster = L.markerClusterGroup({ maxClusterRadius: 45 }); map.addLayer(cluster); }
+    markers = {};
     var day = daySel.value, n = 0;
     Object.keys(VENUES_MAP).forEach(function(name){
       var v = VENUES_MAP[name];
@@ -2523,6 +2557,7 @@ loadData().then(() => {
       m.on('popupopen',  function(e){ openPopup = e.popup; });
       m.on('popupclose', function(){ openPopup = null; });
       cluster.addLayer(m);
+      markers[name] = m;
     });
     countEl.textContent = n + ' venue' + (n === 1 ? '' : 's') + (day === 'all' ? '' : ' on ' + day);
   }
@@ -2597,6 +2632,88 @@ loadData().then(() => {
     if (b){ e.preventDefault(); closeMap(); location.hash = 'venue/' + b.getAttribute('data-map-venue'); }
   });
   document.addEventListener('keydown', function(e){ if (e.key === 'Escape' && view.classList.contains('open')) closeMap(); });
+
+  // ---- Venue search on the map: type a name, jump to it and open its deals popup ----
+  (function(){
+    var input = document.getElementById('mapSearchInput');
+    var clearBtn = document.getElementById('mapSearchClear');
+    var acBox = document.getElementById('mapSearchAc');
+    if (!input || !acBox) return;
+    var items = [], active = -1;
+
+    // A venue only shows on the map if it has a deal or an upcoming event.
+    function hasPin(name){
+      return dealsForVenueOnDay(name, 'all').length > 0 || upcomingEventsForVenue(name).length > 0;
+    }
+    function search(q){
+      q = (q || '').trim().toLowerCase();
+      if (!q) return [];
+      var out = [];
+      Object.keys(VENUES_MAP).forEach(function(name){
+        var v = VENUES_MAP[name];
+        if (typeof v.lat !== 'number' || typeof v.lng !== 'number') return;
+        if (name.toLowerCase().indexOf(q) < 0) return;
+        out.push(name);
+      });
+      out = out.filter(hasPin);
+      out.sort(function(a, b){
+        var ap = a.toLowerCase().indexOf(q) === 0, bp = b.toLowerCase().indexOf(q) === 0;
+        if (ap !== bp) return ap ? -1 : 1;
+        return a < b ? -1 : 1;
+      });
+      return out.slice(0, 8);
+    }
+    function hideAc(){ acBox.classList.remove('show'); acBox.innerHTML = ''; active = -1; }
+    function renderAc(){
+      if (!items.length){ acBox.innerHTML = '<div class="map-ac-none">No matching venue with a deal on</div>'; acBox.classList.add('show'); return; }
+      acBox.innerHTML = items.map(function(name, i){
+        var v = VENUES_MAP[name] || {};
+        var sub = (typeof suburbLabel === 'function' ? suburbLabel(v.suburb) : (v.suburb || ''));
+        return '<div class="map-ac-item' + (i === active ? ' active' : '') + '" role="option" data-i="' + i + '">' +
+               '<b>' + name + '</b>' + (sub ? '<div class="map-ac-sub">' + sub + '</div>' : '') + '</div>';
+      }).join('');
+      acBox.classList.add('show');
+    }
+    function gotoVenue(name){
+      var v = VENUES_MAP[name];
+      if (!v || typeof v.lat !== 'number' || !map) return;
+      // The venue may not be pinned under the current day filter — switch to "Every day" so it always shows.
+      if (daySel.value !== 'all'){ daySel.value = 'all'; rebuild(); }
+      var m = markers[name];
+      var opened = false;
+      function reveal(){
+        if (opened || !m) return; opened = true;
+        // zoomToShowLayer un-clusters the pin if needed, then we open its popup.
+        if (cluster && cluster.zoomToShowLayer) cluster.zoomToShowLayer(m, function(){ m.openPopup(); });
+        else m.openPopup();
+      }
+      map.once('moveend', reveal);        // open as soon as the fly-to finishes
+      map.flyTo([v.lat, v.lng], 17, { duration: 0.8 });   // bounded, cinematic zoom-in
+      setTimeout(reveal, 1100);           // fallback if the view was already there (no moveend)
+    }
+    function pick(name){ input.value = name; clearBtn.classList.add('show'); hideAc(); gotoVenue(name); }
+
+    input.addEventListener('input', function(){
+      clearBtn.classList.toggle('show', !!input.value);
+      items = search(input.value); active = -1; renderAc();
+    });
+    input.addEventListener('keydown', function(e){
+      if (!acBox.classList.contains('show')) return;
+      if (e.key === 'ArrowDown'){ e.preventDefault(); active = Math.min(active + 1, items.length - 1); renderAc(); }
+      else if (e.key === 'ArrowUp'){ e.preventDefault(); active = Math.max(active - 1, 0); renderAc(); }
+      else if (e.key === 'Enter'){ e.preventDefault(); if (active >= 0 && items[active]) pick(items[active]); else if (items.length) pick(items[0]); }
+      else if (e.key === 'Escape'){ hideAc(); }
+    });
+    acBox.addEventListener('mousedown', function(e){
+      var it = e.target.closest && e.target.closest('.map-ac-item'); if (!it) return;
+      e.preventDefault();  // keep focus, beat the blur
+      var i = parseInt(it.getAttribute('data-i'), 10);
+      if (items[i]) pick(items[i]);
+    });
+    input.addEventListener('focus', function(){ if (input.value){ items = search(input.value); active = -1; renderAc(); } });
+    input.addEventListener('blur', function(){ setTimeout(hideAc, 150); });
+    clearBtn.addEventListener('click', function(){ input.value = ''; clearBtn.classList.remove('show'); hideAc(); input.focus(); });
+  })();
 })();
 </script>
 
