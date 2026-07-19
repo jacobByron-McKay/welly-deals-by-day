@@ -296,6 +296,17 @@
   /* Deal cards read as tappable (whole card opens the deal's landing page) */
   .deal-card { cursor:pointer; }
   .deal-card button, .deal-card a { cursor:pointer; }
+  /* Mobile: keep the map popup card legible and never taller than the screen — it scrolls
+     inside itself instead of running off the top, so you can read the whole thing without
+     needing to pinch-zoom (which would fight the map's own pinch-zoom). */
+  @media (max-width: 639px) {
+    .leaflet-popup-content { max-height: 58vh; overflow-y: auto; overscroll-behavior: contain; }
+    .map-popup-name { font-size: 15px; }
+    .map-popup-deal { font-size: 13px; }
+    .map-popup-when { font-size: 12px; }
+    .map-popup-add-one { font-size: 12px; padding: 5px 10px; }
+    .map-popup-btn { font-size: 13px; padding: 7px 12px; }
+  }
   /* Submit-a-deal: photo upload + correction autocomplete */
   .sd-photo-add { display:inline-flex; align-items:center; gap:6px; margin-top:8px; font-size:13px; font-weight:600; color:var(--accent); background:var(--accent-soft); border:1px solid #bcddf0; border-radius:8px; padding:7px 11px; cursor:pointer; }
   .sd-photo-add:hover { filter:brightness(0.98); }
