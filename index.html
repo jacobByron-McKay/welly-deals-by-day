@@ -2515,7 +2515,10 @@ loadData().then(() => {
     var v = VENUES_MAP[name] || {};
     var slug = v._slug || slugify(name);
     var shownEvents = (events || []).slice(0,3);
-    var shownDeals  = (deals || []).slice(0,4);
+    // Collapse a deal that runs several days (same title → same dealSlug) to one row, so the
+    // popup doesn't show the same deal repeated once per weekday.
+    var _seenDeal = {};
+    var shownDeals = (deals || []).filter(function(d){ var s = dealSlug(d); if (_seenDeal[s]) return false; _seenDeal[s] = true; return true; }).slice(0,4);
     // Each event is its own night out on its own date, so each gets its own button — bulk-adding
     // three unrelated gigs because they share a venue is not a choice anyone means to make.
     var eventItems = shownEvents.map(function(ev){
@@ -2523,17 +2526,16 @@ loadData().then(() => {
       return '<div class="map-popup-deal"><span class="map-popup-when map-popup-event">'+(ev.date ? formatEventDate(ev.date) : 'Recurring')+t+'</span><br>'+(ev.title || '')+
         '<button type="button" class="map-popup-add-one" data-plan-add="'+eventSlug(ev)+'" data-plan-label-on="&#10003; In plan" data-plan-label-off="&#43; Plan">&#43; Plan</button></div>';
     }).join('');
-    // A venue's deals for the selected day are one coherent set, so they keep the single bulk button.
+    // Each deal gets its OWN add button (like the events do) so you pick the one you want.
+    // A venue can run a different deal every day, and the old single bulk button dumped the
+    // whole week's deals into the plan at once.
     var dealItems = shownDeals.map(function(d){
       var t = (d.start && d.end) ? formatTime(d.start)+'–'+formatTime(d.end) : (d.start ? 'from '+formatTime(d.start) : '');
-      return '<div class="map-popup-deal"><span class="map-popup-when">'+(d.day || 'Deal')+(t ? ' · '+t : '')+'</span><br>'+(d.title || '')+'</div>';
+      return '<div class="map-popup-deal"><span class="map-popup-when">'+(d.day || 'Deal')+(t ? ' · '+t : '')+'</span><br>'+(d.title || '')+
+        '<button type="button" class="map-popup-add-one" data-plan-add="'+dealSlug(d)+'" data-plan-label-on="&#10003; In plan" data-plan-label-off="&#43; Plan">&#43; Plan</button></div>';
     }).join('');
-    var dealSlugs = shownDeals.map(function(d){ return dealSlug(d); }).join('|');
-    var dealBtn = shownDeals.length
-      ? '<button type="button" class="map-popup-plan" data-plan-add="'+dealSlugs+'" data-plan-label-on="&#10003; Added to plan" data-plan-label-off="&#43; Add to plan">&#43; Add to plan</button>'
-      : '';
     var more = moreSectionHtml(name, shownEvents.map(function(ev){ return eventSlug(ev); }));
-    return '<div class="map-popup-name">'+name+'</div>'+eventItems+more+dealItems+dealBtn+
+    return '<div class="map-popup-name">'+name+'</div>'+eventItems+more+dealItems+
       '<a class="map-popup-btn" data-map-venue="'+slug+'">View details &amp; rate &rarr;</a>';
   }
   function rebuild(){
