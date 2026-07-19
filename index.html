@@ -153,6 +153,17 @@
        under the keyboard. 16px stops the auto-zoom (accessibility-safe — the
        viewport tag still allows manual pinch-zoom). */
     #searchInput { font-size: 16px; }
+    /* While a field in the bar is focused, pin the bar with position:fixed so a
+       shrinking results list (render() runs on every keystroke) can't clamp the
+       scroll and drop the field down behind the keyboard. A spacer keeps the
+       list below from jumping. */
+    #filterBar.kb-pinned {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 40;
+    }
   }
   .sd-overlay { position:fixed; inset:0; background:rgba(11,20,32,0.55); display:none; align-items:flex-start; justify-content:center; padding:24px 16px; z-index:50; overflow-y:auto; }
   .sd-overlay.open { display:flex; }
@@ -1586,6 +1597,43 @@ document.querySelectorAll("[data-confidence]").forEach(btn => {
     input.value = "";
     clear.style.display = "none";
     render();
+  });
+})();
+
+// ---------- MOBILE KEYBOARD: keep the search field pinned while typing ----------
+// On phones the search box lives in a sticky top:0 bar. Typing calls render(),
+// which shrinks the results list; the page gets shorter, the browser clamps the
+// scroll back toward the top, and the sticky bar un-pins and drops down — pushing
+// the field below the keyboard/suggestion strip. While a field in the bar is
+// focused we pin the bar with position:fixed so it can't move, using a spacer of
+// equal height so the list below doesn't jump.
+(function () {
+  const bar = document.getElementById("filterBar");
+  if (!bar) return;
+  const isSmall = () => window.matchMedia("(max-width: 639px)").matches;
+  let spacer = null;
+
+  function pin() {
+    if (bar.classList.contains("kb-pinned")) return;
+    spacer = document.createElement("div");
+    spacer.style.height = bar.offsetHeight + "px";
+    spacer.setAttribute("data-kb-spacer", "");
+    bar.parentNode.insertBefore(spacer, bar.nextSibling);
+    bar.classList.add("kb-pinned");
+  }
+  function unpin() {
+    bar.classList.remove("kb-pinned");
+    if (spacer) { spacer.remove(); spacer = null; }
+  }
+
+  document.addEventListener("focusin", (e) => {
+    if (!isSmall() || !bar.contains(e.target) || e.target.tagName !== "INPUT") return;
+    pin();
+  });
+  document.addEventListener("focusout", (e) => {
+    if (!bar.contains(e.target)) return;
+    // Delay so tapping the clear (✕) button inside the bar doesn't unpin/repin.
+    setTimeout(() => { if (!bar.contains(document.activeElement)) unpin(); }, 100);
   });
 })();
 
