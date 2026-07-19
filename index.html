@@ -159,10 +159,12 @@
        list below from jumping. */
     #filterBar.kb-pinned {
       position: fixed;
-      top: 0;
       left: 0;
       right: 0;
       z-index: 40;
+      /* `top` is set inline by JS to the bar's current position on focus, so it
+         freezes where it already sits instead of jumping flush to the top (which
+         tucks behind Chrome's address bar on first tap). */
     }
   }
   .sd-overlay { position:fixed; inset:0; background:rgba(11,20,32,0.55); display:none; align-items:flex-start; justify-content:center; padding:24px 16px; z-index:50; overflow-y:auto; }
@@ -1615,14 +1617,23 @@ document.querySelectorAll("[data-confidence]").forEach(btn => {
 
   function pin() {
     if (bar.classList.contains("kb-pinned")) return;
+    // Freeze the bar where it currently sits, not at top:0 — on first tap (page
+    // not yet scrolled) top:0 lands behind Chrome's address bar. Cap it at 30%
+    // down so a tall header can never push it too low into the keyboard.
+    const t = Math.min(
+      Math.max(0, Math.round(bar.getBoundingClientRect().top)),
+      Math.round(window.innerHeight * 0.3)
+    );
     spacer = document.createElement("div");
     spacer.style.height = bar.offsetHeight + "px";
     spacer.setAttribute("data-kb-spacer", "");
     bar.parentNode.insertBefore(spacer, bar.nextSibling);
+    bar.style.top = t + "px";
     bar.classList.add("kb-pinned");
   }
   function unpin() {
     bar.classList.remove("kb-pinned");
+    bar.style.top = "";
     if (spacer) { spacer.remove(); spacer = null; }
   }
 
