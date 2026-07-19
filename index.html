@@ -2679,17 +2679,19 @@ loadData().then(() => {
       if (!v || typeof v.lat !== 'number' || !map) return;
       // The venue may not be pinned under the current day filter — switch to "Every day" so it always shows.
       if (daySel.value !== 'all'){ daySel.value = 'all'; rebuild(); }
-      var m = markers[name];
-      var opened = false;
-      function reveal(){
-        if (opened || !m) return; opened = true;
-        // zoomToShowLayer un-clusters the pin if needed, then we open its popup.
-        if (cluster && cluster.zoomToShowLayer) cluster.zoomToShowLayer(m, function(){ m.openPopup(); });
-        else m.openPopup();
-      }
-      map.once('moveend', reveal);        // open as soon as the fly-to finishes
+      var html = popupHtml(name, dealsForVenueOnDay(name, daySel.value), eventsForVenueOnDay(name, daySel.value));
+      // Open a MAP-owned popup right away (anchored to the venue), THEN zoom in. Two reasons
+      // this is bulletproof where the old code flickered / sometimes never opened:
+      //  1. It's not the clustered marker's popup, so markercluster re-clustering during the
+      //     zoom can't tear it off.
+      //  2. It opens synchronously — no dependency on a moveend that a mid-select rebuild()
+      //     could race or swallow. autoPan:false so it doesn't fight the flyTo; the popup is
+      //     pinned to the venue's coords, so the zoom-in lands it dead-centre and it stays.
+      var p = L.popup({ closeOnClick: false, autoPan: false, maxWidth: 280 })
+               .setLatLng([v.lat, v.lng]).setContent(html).openOn(map);
+      openPopup = p;   // let the "more events" expander re-pan this popup too
+      p.on('remove', function(){ if (openPopup === p) openPopup = null; });
       map.flyTo([v.lat, v.lng], 17, { duration: 0.8 });   // bounded, cinematic zoom-in
-      setTimeout(reveal, 1100);           // fallback if the view was already there (no moveend)
     }
     function pick(name){ input.value = name; clearBtn.classList.add('show'); hideAc(); gotoVenue(name); }
 
