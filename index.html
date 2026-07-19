@@ -153,15 +153,6 @@
        under the keyboard. 16px stops the auto-zoom (accessibility-safe — the
        viewport tag still allows manual pinch-zoom). */
     #searchInput { font-size: 16px; }
-    /* While the search field is focused, drop the sticky pin so the browser can
-       scroll the field clear of the on-screen keyboard. iOS Safari mis-paints
-       position:sticky elements once the keyboard opens, so a top-pinned search
-       box never gets auto-scrolled into view — un-sticking fixes that. */
-    #filterBar.kb-editing {
-      position: relative;
-      max-height: none;
-      overflow: visible;
-    }
   }
   .sd-overlay { position:fixed; inset:0; background:rgba(11,20,32,0.55); display:none; align-items:flex-start; justify-content:center; padding:24px 16px; z-index:50; overflow-y:auto; }
   .sd-overlay.open { display:flex; }
@@ -1595,50 +1586,6 @@ document.querySelectorAll("[data-confidence]").forEach(btn => {
     input.value = "";
     clear.style.display = "none";
     render();
-  });
-})();
-
-// ---------- MOBILE KEYBOARD FIX ----------
-// On phones, focusing the search box brings up the keyboard. Because the box
-// lives in a position:sticky top:0 bar, iOS can't scroll it clear of the
-// keyboard and it ends up hidden. While the field is focused we un-stick the
-// bar (via the .kb-editing class) and scroll the field to sit a third of the
-// way down the space the keyboard leaves, using the VisualViewport height so
-// we know where the keyboard actually is.
-(function() {
-  const bar = document.getElementById("filterBar");
-  if (!bar) return;
-  const isSmall = () => window.matchMedia("(max-width: 639px)").matches;
-
-  function bringIntoView(el) {
-    if (!document.contains(el)) return;
-    const vv = window.visualViewport;
-    const rect = el.getBoundingClientRect();
-    if (vv) {
-      const delta = rect.top - vv.height * 0.33; // a third down the visible area
-      if (Math.abs(delta) > 4) window.scrollBy({ top: delta, behavior: "smooth" });
-    } else {
-      el.scrollIntoView({ block: "center", behavior: "smooth" });
-    }
-  }
-
-  document.addEventListener("focusin", (e) => {
-    const el = e.target;
-    if (!isSmall() || !bar.contains(el) || el.tagName !== "INPUT") return;
-    bar.classList.add("kb-editing");
-    // Wait for the keyboard to finish animating in before measuring.
-    setTimeout(() => bringIntoView(el), 300);
-    if (window.visualViewport) {
-      window.visualViewport.addEventListener("resize", () => bringIntoView(el), { once: true });
-    }
-  });
-
-  document.addEventListener("focusout", (e) => {
-    if (!bar.contains(e.target)) return;
-    // Delay so tapping the clear (✕) button inside the bar doesn't thrash.
-    setTimeout(() => {
-      if (!bar.contains(document.activeElement)) bar.classList.remove("kb-editing");
-    }, 100);
   });
 })();
 
