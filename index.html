@@ -134,6 +134,20 @@
   /* suburb selector minimise (slide up) */
   #suburbBody { overflow: hidden; transition: max-height 0.25s ease, opacity 0.2s ease; max-height: 1200px; }
   #suburbBody.collapsed { max-height: 0; opacity: 0; }
+  /* Clear, easy-to-tap collapse controls for the suburb + filter sections. */
+  .min-btn {
+    display: inline-flex; align-items: center; gap: 0.3rem;
+    font-size: 0.8125rem; font-weight: 600; line-height: 1; white-space: nowrap;
+    padding: 0.4rem 0.75rem; border-radius: 9999px; cursor: pointer;
+    border: 1px solid var(--border); background: var(--card); color: var(--ink-muted);
+  }
+  .min-btn .x { font-size: 1.25em; font-weight: 800; line-height: 0; }
+  /* Open (close/minimise) state: filled accent so the X reads clearly as "tap to close". */
+  .min-btn.open { background: var(--accent); color: #fff; border-color: var(--accent); }
+  @media (max-width: 639px) {
+    /* A touch bigger on phones for an easy tap target. */
+    .min-btn { font-size: 0.875rem; padding: 0.5rem 0.9rem; }
+  }
   #filterToggle { display: none; }
   @media (max-width: 639px) { #filterToggle { display: flex; } }
   /* With every filter section open the sticky bar can grow taller than a phone
@@ -444,9 +458,8 @@
         <span class="text-sm font-bold flex items-center gap-1.5" style="color:var(--ink);">
           <span>&#128205;</span> Select your suburb/s
         </span>
-        <button id="filterToggle" class="items-center gap-1 text-xs font-medium px-3 py-1 rounded-full border shrink-0"
-                style="border-color:var(--border);color:var(--ink-muted);background:var(--card);">
-          More filters <span id="filterToggleIcon">▾</span>
+        <button id="filterToggle" class="min-btn shrink-0">
+          More filters <span id="filterToggleIcon" aria-hidden="true">&#9662;</span>
         </button>
       </div>
       <!-- Collapsible body: region row + suburb sub-rows (minimised via the button below) -->
@@ -462,8 +475,7 @@
       </div>
       <div class="flex items-center gap-2 mt-2">
         <p id="suburbHelp" class="text-xs" style="color:var(--ink-muted);">Central Wellington shows by default &mdash; tap a region to add its suburbs, then fine-tune below.</p>
-        <button id="suburbMinBtn" type="button" class="text-xs font-medium px-2.5 py-0.5 rounded-full border shrink-0"
-                style="border-color:var(--border);color:var(--ink-muted);background:var(--card);margin-left:auto;cursor:pointer;">Minimise &#9652;</button>
+        <button id="suburbMinBtn" type="button" class="min-btn open shrink-0" style="margin-left:auto;"><span class="x" aria-hidden="true">&#10005;</span> Minimise</button>
       </div>
     </div>
 
@@ -1513,7 +1525,10 @@ document.getElementById("suburbMinBtn").addEventListener("click", function() {
   const help = document.getElementById("suburbHelp");
   const collapsed = body.classList.toggle("collapsed");
   if (help) help.style.display = collapsed ? "none" : "";
-  this.innerHTML = collapsed ? "Show suburbs &#9662;" : "Minimise &#9652;";
+  this.classList.toggle("open", !collapsed);
+  this.innerHTML = collapsed
+    ? 'Show suburbs <span aria-hidden="true">&#9662;</span>'
+    : '<span class="x" aria-hidden="true">&#10005;</span> Minimise';
 });
 
 // Day (radio)
@@ -1658,7 +1673,6 @@ document.getElementById("contactBtn").addEventListener("click", function() {
 (function() {
   const toggle = document.getElementById("filterToggle");
   const rows   = document.getElementById("filterRows");
-  const icon   = document.getElementById("filterToggleIcon");
   if (!toggle || !rows) return;
 
   // On sm+ screens, always show filter rows regardless of collapsed state
@@ -1673,7 +1687,10 @@ document.getElementById("contactBtn").addEventListener("click", function() {
 
   toggle.addEventListener("click", () => {
     const isCollapsed = rows.classList.toggle("collapsed");
-    icon.textContent = isCollapsed ? "▾" : "▴";
+    toggle.classList.toggle("open", !isCollapsed);
+    toggle.innerHTML = isCollapsed
+      ? 'More filters <span aria-hidden="true">&#9662;</span>'
+      : '<span class="x" aria-hidden="true">&#10005;</span> Close filters';
   });
 
   // Update scroll-padding-top to match the actual filter bar height
