@@ -1277,7 +1277,9 @@ function formatTime(t) {
 function formatEventDate(iso) {
   if (!iso) return "";
   const d = new Date(iso + "T00:00:00");
-  return isNaN(d) ? iso : d.toLocaleDateString("en-NZ", { day:"numeric", month:"short", year:"numeric" });
+  // Include the weekday (e.g. "Fri, 25 Jul 2026") so a scheduled event reads at a glance the
+  // same way the weekly deals do — you can see which day it lands on.
+  return isNaN(d) ? iso : d.toLocaleDateString("en-NZ", { weekday:"short", day:"numeric", month:"short", year:"numeric" });
 }
 
 function formatMonthDay(md) {
