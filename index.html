@@ -417,6 +417,48 @@
   .wd-plan-clear { background:none; border:0; color:var(--ink-muted); font-size:12px; cursor:pointer; padding:2px; }
   .wd-plan-clear:hover { color:#dc2626; }
   @media (max-width:480px){ .wd-plan-panel { width:100%; max-width:100%; } }
+
+  /* ---------- WOAP Burgers (Burger Wellington) — warm amber accent, own tab ---------- */
+  .woap-badge { font-size:10px; font-weight:700; letter-spacing:0.04em; text-transform:uppercase; color:#fff; background:#b45309; padding:2px 7px; border-radius:999px; line-height:1.35; }
+  .woap-controls { display:flex; align-items:center; gap:8px; flex-wrap:wrap; margin-bottom:12px; }
+  .woap-controls label { font-size:12px; font-weight:600; color:var(--ink-muted); }
+  .woap-sort { font:inherit; font-size:13px; padding:6px 9px; border:1px solid var(--border); border-radius:8px; background:var(--card); color:var(--ink); }
+  .woap-tried-count { font-size:12px; font-weight:700; color:#b45309; margin-left:auto; }
+  .woap-card { border:1px solid var(--border); border-radius:10px; padding:12px 13px; margin-bottom:10px; background:var(--paper); }
+  .woap-card-head { display:flex; align-items:flex-start; gap:10px; }
+  .woap-thumb { width:60px; height:60px; object-fit:cover; border-radius:8px; border:1px solid var(--border); flex-shrink:0; }
+  .woap-card-body { flex:1; min-width:0; }
+  .woap-name { font-size:15px; font-weight:700; line-height:1.25; }
+  .woap-venue { font-size:12.5px; color:var(--ink-muted); margin-top:2px; }
+  .woap-meta { display:flex; align-items:center; gap:8px; flex-wrap:wrap; margin-top:5px; }
+  .woap-price { font-size:13px; font-weight:700; color:#b45309; }
+  .woap-diet { font-size:11px; font-weight:600; color:#2a6840; background:#e6f0e8; border-radius:6px; padding:2px 7px; }
+  .woap-avg { font-size:12px; font-weight:700; color:#b45309; }
+  .woap-avg-none { font-size:12px; color:var(--ink-muted); }
+  .woap-desc { font-size:13px; color:var(--ink); margin-top:8px; line-height:1.45; }
+  .woap-tried { display:inline-flex; align-items:center; gap:5px; margin-top:9px; font-size:12px; font-weight:600;
+    color:var(--ink-muted); background:var(--card); border:1px solid var(--border); border-radius:8px; padding:6px 11px; cursor:pointer; }
+  .woap-tried:hover { border-color:#b45309; color:#b45309; }
+  .woap-tried.on { background:#b45309; color:#fff; border-color:#b45309; }
+  .woap-review-open { margin-top:9px; margin-left:8px; font-size:12px; font-weight:600; color:var(--accent); background:none; border:0; cursor:pointer; }
+  .woap-review-open:hover { text-decoration:underline; }
+  .woap-social { margin-top:12px; padding-top:11px; border-top:1px dashed var(--border); display:none; }
+  .woap-social.open { display:block; }
+  .woap-photos { display:flex; gap:6px; flex-wrap:wrap; margin-bottom:10px; }
+  .woap-photos img { width:66px; height:66px; object-fit:cover; border-radius:7px; border:1px solid var(--border); }
+  .woap-photo-add { display:inline-flex; align-items:center; gap:6px; margin-top:8px; font-size:12.5px; font-weight:600; color:var(--accent); background:var(--accent-soft); border:1px solid #bcddf0; border-radius:8px; padding:6px 11px; cursor:pointer; }
+  .woap-photo-input { position:absolute; left:-9999px; width:1px; height:1px; opacity:0; }
+  .woap-photo-pending { display:none; align-items:center; gap:8px; margin-top:8px; }
+  .woap-photo-pending.show { display:flex; }
+  .woap-photo-pending img { width:40px; height:40px; object-fit:cover; border-radius:6px; border:1px solid var(--border); }
+  .woap-photo-pending span { font-size:11px; color:var(--ink-muted); }
+  .map-popup-woap { border-top:1px solid var(--border); margin-top:7px; padding-top:6px; }
+  .map-popup-woap-row { display:flex; align-items:center; gap:7px; margin:3px 0; }
+  .map-popup-woap-row img { width:34px; height:34px; object-fit:cover; border-radius:5px; border:1px solid var(--border); flex-shrink:0; }
+  .map-popup-woap-name { font-size:11.5px; line-height:1.3; }
+  .map-popup-woap-name b { color:#b45309; }
+  .map-pin-woap { width:22px; height:22px; border-radius:50%; background:#b45309; color:#fff; border:2px solid #fff;
+                  box-shadow:0 1px 4px rgba(0,0,0,.4); font-size:12px; line-height:18px; text-align:center; }
 </style>
 </head>
 <body>
@@ -597,6 +639,33 @@
   </div>
 </section>
 
+<!-- WOAP Burgers tab — NEW, default OFF. Its own toggle up top; the community leaderboard the
+     official festival does not run. Hidden entirely while WOAP_ENABLED is false. -->
+<div id="woapBar" class="max-w-4xl mx-auto px-4 pt-4">
+  <button id="woapToggle" type="button" aria-expanded="false"
+          class="w-full flex items-center justify-between gap-3 rounded-lg border px-4 py-2.5"
+          style="border-color:#f0d9b5;background:#fff4e6;color:#8a3d0a;cursor:pointer;">
+    <span class="flex items-center gap-2 text-sm font-semibold">
+      <span>&#127828;</span> Burger Wellington &mdash; WOAP 2026
+      <span class="woap-badge">NEW</span>
+    </span>
+    <span id="woapToggleState" class="text-xs font-medium px-2.5 py-0.5 rounded-full border shrink-0"
+          style="border-color:#e6c48f;background:#fff;">Show &#9662;</span>
+  </button>
+</div>
+
+<!-- WOAP Burgers section (revealed by the toggle above) -->
+<section class="max-w-4xl mx-auto px-4 pt-3" id="woapSection" style="display:none;">
+  <div class="rounded-lg border p-4" style="border-color:var(--border);background:var(--card);">
+    <div class="flex items-baseline gap-3 mb-1">
+      <h2 class="text-lg font-semibold tracking-tight">Burger Wellington</h2>
+      <span class="text-xs" style="color:var(--ink-muted);">Visa Wellington on a Plate &middot; 3&ndash;23 Aug 2026</span>
+    </div>
+    <p class="text-sm mb-4" style="color:var(--ink-muted);">Every festival burger, ranked by what Wellington actually thinks. Rate them, tick off the ones you have tried, and leave a photo and a review.</p>
+    <div id="woapList"></div>
+  </div>
+</section>
+
 <!-- Week view -->
 <main class="max-w-4xl mx-auto px-4 py-6" id="weekView"></main>
 
@@ -627,6 +696,7 @@ let DEALS_BY_VENUE = {}; // venue name → array of its deal records (all of the
 const VENUE_SLUGS = {}; // slug → venue name (for the detail panel + #venue/<slug> deep-links)
 let DEAL_SLUGS = {};    // deal slug → { rep: record, days: Set } (per-deal detail + #deal/<slug> deep-links)
 let EVENT_SLUGS = {};   // event slug → { rep: record } (lets a special event go in My Plan, same as a deal)
+let WOAP_BURGERS = [];  // Burger Wellington (WOAP) festival burgers — loaded from woap_burgers.json, shown only in the WOAP tab
 
 // ── Venue detail panel (Option A): ON. Venue names open the in-page profile,
 // which is where the anonymous star rating + comments live (loaded on open, so
@@ -680,7 +750,7 @@ const SUBURB_REGIONS = [
   ]},
   { region: "Western & Northern", label: "West & North", suburbs: [
     "Karori", "Makara", "Wilton", "Northland", "Johnsonville", "Khandallah",
-    "Ngaio", "Newlands", "Crofton Downs"
+    "Ngaio", "Newlands", "Crofton Downs", "Tawa"
   ]},
   { region: "Hutt Valley", label: "Hutt Valley", suburbs: [
     "Petone", "Lower Hutt", "Upper Hutt"
@@ -790,6 +860,14 @@ let showKidsOnly      = false;   // when true, show only deals tagged kids: true
 // hides itself entirely rather than showing an empty section.
 const CLUB_RUGBY_ENABLED = true;
 let showClubRugby     = false;   // Club Rugby tab — default OFF; reveals the Wellington Premier fixtures section
+// WOAP Burgers ("Burger Wellington") tab feature flag. Built for Visa Wellington on a Plate's
+// Burger Wellington festival, 3-23 August 2026. Kept DARK (false) until the real ~244-burger
+// dataset has been scraped into woap_burgers.json — while false, the toggle bar + section hide
+// themselves entirely and the burger data is never fetched. Flip to true to launch.
+const WOAP_ENABLED    = false;
+let showWoap          = false;   // WOAP tab — default OFF; reveals the Burger Wellington leaderboard
+let woapSort          = "rating"; // "rating" (community-ranked leaderboard) | "name" | "price"
+const WOAP_RATINGS    = {};      // burger slug → { avg, count }, batch-read from Supabase for the sort/leaderboard
 let searchQuery       = "";      // live search string
 let DAILY_DEAL_KEYS   = new Set(); // populated after data load
 
@@ -838,6 +916,13 @@ async function loadData() {
       venues.forEach(v => { VENUES_MAP[v.venue] = v; });
     }
   } catch (e) {}
+  // Burger Wellington data — only pulled when the tab is live, so a dark flag adds zero page weight.
+  if (WOAP_ENABLED) {
+    try {
+      const r = await fetch("woap_burgers.json", { cache: "no-cache" });
+      if (r.ok) WOAP_BURGERS = await r.json();
+    } catch (e) {}
+  }
 }
 
 // ---------- DEAL TYPE HELPERS ----------
@@ -1059,6 +1144,7 @@ function render() {
 
   renderUpcoming(upcomingDeals);
   renderClubRugby();
+  renderWoap();
 }
 
 function renderCard(d) {
@@ -1265,6 +1351,193 @@ function renderClubRugby() {
     : `<p class="text-sm italic" style="color:var(--ink-muted);">Finals draw to be confirmed &mdash; the Wellington Premier fixtures will appear here once locked in.</p>`;
 }
 
+// ---------- WOAP BURGERS (Burger Wellington) ----------
+// The whole feature is gated behind WOAP_ENABLED. renderWoap() is called from render() (so the
+// search box re-filters it) and from the tab toggle; it early-returns unless the flag is on and
+// the tab is open. Ratings/reviews reuse the exact anonymous Supabase path every deal uses.
+const WOAP_TRIED_KEY = 'wd_woap_tried_v1';   // device-local "tried" list (private, like My Plan)
+const WOAP_PHOTO_KEY = 'wd_woap_photos_v1';  // device-local cache of this device's submitted photos (data URLs), keyed by slug
+let woapRatingsLoaded = false;
+
+function woapTriedSet() {
+  try { const a = JSON.parse(localStorage.getItem(WOAP_TRIED_KEY) || '[]'); return new Set(Array.isArray(a) ? a : []); }
+  catch (e) { return new Set(); }
+}
+function woapTriedSave(set) { try { localStorage.setItem(WOAP_TRIED_KEY, JSON.stringify([...set])); } catch (e) {} }
+
+function woapLocalPhotos() {
+  try { const o = JSON.parse(localStorage.getItem(WOAP_PHOTO_KEY) || '{}'); return (o && typeof o === 'object') ? o : {}; }
+  catch (e) { return {}; }
+}
+function woapSaveLocalPhoto(slug, dataUrl) {
+  const o = woapLocalPhotos();
+  (o[slug] = o[slug] || []).push(dataUrl);
+  try { localStorage.setItem(WOAP_PHOTO_KEY, JSON.stringify(o)); } catch (e) {}
+}
+
+// Every image we can show for a burger: its official festival image, any maintainer-promoted
+// public photos, then this device's own just-submitted shots (immediate feedback before moderation).
+function woapImagesFor(b, slug) {
+  const out = [];
+  if (b.official_image) out.push(b.official_image);
+  if (Array.isArray(b.photos)) b.photos.forEach(p => { if (p) out.push(p); });
+  (woapLocalPhotos()[slug] || []).forEach(p => { if (p) out.push(p); });
+  return out;
+}
+
+function woapMatchesSearch(b) {
+  if (!searchQuery) return true;
+  const q = searchQuery.toLowerCase().trim();
+  const hay = [b.name, b.venue, b.suburb, b.desc, (b.dietary || []).join(' ')].filter(Boolean).join(' ').toLowerCase();
+  if (hay.includes(q)) return true;
+  const words = q.split(/\s+/).filter(w => w.length > 1);
+  return words.length > 1 && words.every(w => hay.includes(w));
+}
+
+// One batch read of the shared rating_summary view for every burger, so the leaderboard can sort
+// by community score without a request per card. Same view the per-deal star widget reads.
+function fetchWoapRatings() {
+  const slugs = WOAP_BURGERS.map(woapBurgerSlug);
+  if (!slugs.length) { woapRatingsLoaded = true; return Promise.resolve(); }
+  const q = 'rating_summary?venue_slug=in.(' + slugs.map(encodeURIComponent).join(',') + ')&select=venue_slug,avg_stars,num_ratings';
+  return fetch(SUPABASE_URL + '/rest/v1/' + q, { headers: { apikey: SUPABASE_KEY, Authorization: 'Bearer ' + SUPABASE_KEY } })
+    .then(r => r.ok ? r.json() : [])
+    .then(rows => { (rows || []).forEach(row => { WOAP_RATINGS[row.venue_slug] = { avg: Number(row.avg_stars) || 0, count: Number(row.num_ratings) || 0 }; }); })
+    .catch(() => {})
+    .then(() => { woapRatingsLoaded = true; });
+}
+
+function woapPriceNum(b) { const m = String(b.price || '').match(/[\d.]+/); return m ? parseFloat(m[0]) : Infinity; }
+
+function woapSorted(list) {
+  const arr = [...list];
+  if (woapSort === 'name')  return arr.sort((a, b) => (a.name || '').localeCompare(b.name || ''));
+  if (woapSort === 'price') return arr.sort((a, b) => woapPriceNum(a) - woapPriceNum(b));
+  // rating: highest community average first, then most-voted; unrated burgers sort last.
+  return arr.sort((a, b) => {
+    const ra = WOAP_RATINGS[woapBurgerSlug(a)] || { avg: 0, count: 0 };
+    const rb = WOAP_RATINGS[woapBurgerSlug(b)] || { avg: 0, count: 0 };
+    if (!ra.count !== !rb.count) return ra.count ? -1 : 1;
+    if (rb.avg !== ra.avg) return rb.avg - ra.avg;
+    return rb.count - ra.count;
+  });
+}
+
+function renderWoapCard(b) {
+  const slug = woapBurgerSlug(b);
+  const imgs = woapImagesFor(b, slug);
+  const tried = woapTriedSet().has(slug);
+  const r = WOAP_RATINGS[slug];
+  const avgHtml = (r && r.count)
+    ? `<span class="woap-avg">&#9733; ${r.avg.toFixed(1)} (${r.count})</span>`
+    : `<span class="woap-avg-none">No ratings yet</span>`;
+  const diet = (b.dietary || []).map(d => `<span class="woap-diet">${d}</span>`).join('');
+  const photosStrip = imgs.length ? `<div class="woap-photos">${imgs.map(src => `<img src="${src}" alt="" loading="lazy">`).join('')}</div>` : '';
+  return `
+    <article class="woap-card" data-woap-slug="${slug}">
+      <div class="woap-card-head">
+        ${imgs.length ? `<img class="woap-thumb" src="${imgs[0]}" alt="" loading="lazy">` : ''}
+        <div class="woap-card-body">
+          <div class="woap-name">${b.name}</div>
+          <div class="woap-venue">${b.venue}${b.suburb ? ' &middot; ' + suburbLabel(b.suburb) : ''}</div>
+          <div class="woap-meta">
+            ${b.price ? `<span class="woap-price">${b.price}</span>` : ''}
+            ${avgHtml}
+            ${diet}
+          </div>
+        </div>
+      </div>
+      ${b.desc ? `<p class="woap-desc">${b.desc}</p>` : ''}
+      <button type="button" class="woap-tried${tried ? ' on' : ''}" data-woap-tried="${slug}">${tried ? '&#10003; Tried it' : '&#43; Mark as tried'}</button>
+      <button type="button" class="woap-review-open" data-woap-review="${slug}">Rate &amp; review &rarr;</button>
+      <div class="woap-social" data-woap-social="${slug}">
+        ${photosStrip}
+        <label class="woap-photo-add" for="woap-photo-${slug}">&#128247; Add a photo</label>
+        <input class="woap-photo-input" type="file" id="woap-photo-${slug}" accept="image/*" data-woap-photo="${slug}">
+        <div class="woap-photo-pending" data-woap-pending="${slug}"><img alt=""><span></span></div>
+        <div class="vp-section-title">Rate this burger</div>
+        <div class="vr" data-vr-slug="${slug}">
+          <div class="vr-stars" role="radiogroup" aria-label="Rate this burger out of 5">
+            ${[1,2,3,4,5].map(i => `<button type="button" class="vr-star" data-star="${i}" aria-label="${i} star${i>1?'s':''}">&#9733;</button>`).join("")}
+          </div>
+          <div class="vr-summary" data-vr-summary>Loading…</div>
+        </div>
+        <div class="vp-section-title">Reviews</div>
+        <div class="vc" data-vc-slug="${slug}">
+          <div class="vc-list" data-vc-list><p class="sd-hint">Loading reviews…</p></div>
+          <form class="vc-form" data-vc-form>
+            <input type="text" class="vc-hp" name="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+            <textarea class="vc-input" data-vc-input maxlength="1000" rows="2" placeholder="Tried this burger? Leave a review — no account needed"></textarea>
+            <div class="vc-row">
+              <span class="vc-note" data-vc-note>Posts instantly &middot; be kind</span>
+              <button type="submit" class="vp-btn primary vc-submit">Post</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </article>`;
+}
+
+function renderWoap() {
+  const section = document.getElementById('woapSection');
+  const list = document.getElementById('woapList');
+  if (!section || !list) return;
+  if (!WOAP_ENABLED) { section.style.display = 'none'; return; }
+  section.style.display = showWoap ? '' : 'none';
+  if (!showWoap) return;
+
+  const paint = () => {
+    const shown = woapSorted(WOAP_BURGERS.filter(woapMatchesSearch));
+    const tried = woapTriedSet();
+    const triedShown = shown.filter(b => tried.has(woapBurgerSlug(b))).length;
+    list.innerHTML =
+      `<div class="woap-controls">
+        <label for="woapSort">Sort by</label>
+        <select class="woap-sort" id="woapSort">
+          <option value="rating"${woapSort === 'rating' ? ' selected' : ''}>Highest rated</option>
+          <option value="name"${woapSort === 'name' ? ' selected' : ''}>Name (A&ndash;Z)</option>
+          <option value="price"${woapSort === 'price' ? ' selected' : ''}>Price (low&ndash;high)</option>
+        </select>
+        <span class="woap-tried-count">You have tried ${triedShown} of ${shown.length}</span>
+      </div>` +
+      (shown.length
+        ? shown.map(renderWoapCard).join('')
+        : `<p class="text-sm italic" style="color:var(--ink-muted);">No burgers match your search.</p>`);
+    // Wire each card's reused rating + review widgets (the exact anonymous Supabase read/write path).
+    if (window.hydrateVenueSocial) {
+      list.querySelectorAll('.woap-card').forEach(card => window.hydrateVenueSocial(card));
+    }
+  };
+
+  if (!woapRatingsLoaded) {
+    if (!list.querySelector('.woap-card')) list.innerHTML = '<p class="text-sm italic" style="color:var(--ink-muted);">Loading burgers…</p>';
+    fetchWoapRatings().then(() => { if (showWoap) paint(); });
+    return;
+  }
+  paint();
+}
+
+// Update just one card's photo strip + thumbnail in place, so adding a photo does not tear down
+// the open rating/review widgets in that card.
+function refreshWoapCardPhotos(slug) {
+  const card = document.querySelector('.woap-card[data-woap-slug="' + slug + '"]');
+  if (!card) return;
+  const b = WOAP_BURGERS.find(x => woapBurgerSlug(x) === slug);
+  if (!b) return;
+  const imgs = woapImagesFor(b, slug);
+  const head = card.querySelector('.woap-card-head');
+  let thumb = card.querySelector('.woap-thumb');
+  if (imgs.length && !thumb && head) { thumb = document.createElement('img'); thumb.className = 'woap-thumb'; thumb.alt = ''; thumb.src = imgs[0]; head.insertBefore(thumb, head.firstChild); }
+  else if (imgs.length && thumb) { thumb.src = imgs[0]; }
+  const social = card.querySelector('.woap-social');
+  if (social) {
+    const stripHtml = imgs.map(src => '<img src="' + src + '" alt="" loading="lazy">').join('');
+    let strip = social.querySelector('.woap-photos');
+    if (strip) { strip.innerHTML = stripHtml; }
+    else if (imgs.length) { strip = document.createElement('div'); strip.className = 'woap-photos'; strip.innerHTML = stripHtml; social.insertBefore(strip, social.firstChild); }
+  }
+}
+
 // ---------- UTILS ----------
 function formatTime(t) {
   if (!t) return "";
@@ -1334,6 +1607,13 @@ function eventSlug(ev) {
 }
 // Club rugby fixtures live only in their own tab and mostly have no venue record, so they stay out.
 function eventIsPlannable(ev) { return !ev.club_rugby; }
+
+// A WOAP burger's ratings/comments bucket key. Same free-text venue_slug column, same anonymous
+// rate.js / comment.js path as every deal — the "woap-" prefix just namespaces burgers away from
+// deals (which carry "-d-") and events ("-e-") so nothing can collide in the shared Supabase.
+function woapBurgerSlug(b) {
+  return ("woap-" + slugify(b.name || "burger") + "-" + slugify(b.venue || "venue")).slice(0, 120);
+}
 
 // A Set of full day names → "Mon–Fri", "Sat, Sun", "Every day"
 function formatDayRange(daySet) {
@@ -1623,6 +1903,82 @@ if (!CLUB_RUGBY_ENABLED) {
   if (_crSec) _crSec.style.display = "none";
 }
 
+// WOAP Burgers tab toggle (default off)
+document.getElementById("woapToggle").addEventListener("click", function() {
+  showWoap = !showWoap;
+  this.setAttribute("aria-expanded", showWoap ? "true" : "false");
+  document.getElementById("woapToggleState").innerHTML = showWoap ? "Hide &#9652;" : "Show &#9662;";
+  if (showWoap) woapRatingsLoaded = false;   // re-pull the community leaderboard each time it opens
+  renderWoap();
+});
+// Feature flag off → hide the whole WOAP Burgers tab (toggle bar + section) at launch.
+if (!WOAP_ENABLED) {
+  const _woapBar = document.getElementById("woapBar");
+  const _woapSec = document.getElementById("woapSection");
+  if (_woapBar) _woapBar.style.display = "none";
+  if (_woapSec) _woapSec.style.display = "none";
+}
+
+// WOAP Burgers — sort control, "tried" tracker, review toggle and photo attach (delegated, since
+// the cards are rebuilt on every render). All no-ops unless a WOAP card is on the page.
+document.addEventListener("change", function(e) {
+  if (e.target && e.target.id === "woapSort") { woapSort = e.target.value; renderWoap(); return; }
+  const inp = e.target.closest && e.target.closest("[data-woap-photo]");
+  if (!inp) return;
+  const slug = inp.getAttribute("data-woap-photo");
+  const f = inp.files && inp.files[0];
+  if (!f) return;
+  const pending = document.querySelector('[data-woap-pending="' + slug + '"]');
+  const compress = window.wdCompressImage || function(x) { return Promise.resolve(x); };
+  compress(f).then(function(out) {
+    const reader = new FileReader();
+    reader.onload = function() {
+      const dataUrl = reader.result;
+      if (pending) { pending.querySelector("img").src = dataUrl; pending.querySelector("span").textContent = "Photo added to your review"; pending.classList.add("show"); }
+      woapSaveLocalPhoto(slug, dataUrl);
+      // Reuse the submit-a-deal image path: send the compressed photo to the moderated Netlify
+      // "woap-review" form so it can be promoted to a public burger photo. Silent on failure.
+      try {
+        const fd = new FormData();
+        fd.append("form-name", "woap-review");
+        fd.append("burger_slug", slug);
+        fd.append("photo", out, out.name || "burger.jpg");
+        fetch("/", { method: "POST", body: fd }).catch(function() {});
+      } catch (err) {}
+      refreshWoapCardPhotos(slug);
+    };
+    reader.readAsDataURL(out);
+  });
+  inp.value = "";
+});
+document.addEventListener("click", function(e) {
+  if (!e.target.closest) return;
+  const tb = e.target.closest("[data-woap-tried]");
+  if (tb) {
+    e.preventDefault();
+    const slug = tb.getAttribute("data-woap-tried");
+    const set = woapTriedSet();
+    if (set.has(slug)) { set.delete(slug); tb.classList.remove("on"); tb.innerHTML = "&#43; Mark as tried"; }
+    else { set.add(slug); tb.classList.add("on"); tb.innerHTML = "&#10003; Tried it"; }
+    woapTriedSave(set);
+    const countEl = document.querySelector(".woap-tried-count");
+    if (countEl) {
+      const cards = document.querySelectorAll("#woapList .woap-card");
+      let triedNow = 0;
+      cards.forEach(function(c) { if (set.has(c.getAttribute("data-woap-slug"))) triedNow++; });
+      countEl.textContent = "You have tried " + triedNow + " of " + cards.length;
+    }
+    return;
+  }
+  const rv = e.target.closest("[data-woap-review]");
+  if (rv) {
+    e.preventDefault();
+    const soc = document.querySelector('[data-woap-social="' + rv.getAttribute("data-woap-review") + '"]');
+    if (soc) soc.classList.toggle("open");
+    return;
+  }
+});
+
 // Confidence (radio)
 document.querySelectorAll("[data-confidence]").forEach(btn => {
   btn.addEventListener("click", () => {
@@ -1873,6 +2229,17 @@ loadData().then(() => {
   </div>
 </div>
 
+<!-- WOAP Burgers review photos — hidden static form so Netlify registers it at deploy time. The
+     JS photo control (in the WOAP tab, behind WOAP_ENABLED) POSTs the compressed image here, the
+     same in-browser-compress + Netlify Forms path the submit-a-deal photo upload uses. Written
+     reviews themselves go through the live comment.js path; this only carries the photo. -->
+<form name="woap-review" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" enctype="multipart/form-data" hidden>
+  <input type="hidden" name="form-name" value="woap-review">
+  <input name="bot-field">
+  <input type="text" name="burger_slug">
+  <input type="file" name="photo">
+</form>
+
 <!-- Venue detail panel -->
 <div class="sd-overlay" id="venueModal" role="dialog" aria-modal="true" aria-label="Venue details">
   <div class="sd-card vp-card">
@@ -1963,6 +2330,8 @@ loadData().then(() => {
       img.src = url;
     });
   }
+  // Shared so the WOAP Burgers review photo control reuses the exact same in-browser compression.
+  window.wdCompressImage = compressImage;
   function showPhoto(file){
     photoThumb.src = URL.createObjectURL(file);
     photoName.textContent = file.name + ' · ' + Math.round(file.size/1024) + ' KB';
@@ -2548,8 +2917,31 @@ loadData().then(() => {
         '<button type="button" class="map-popup-add-one" data-plan-add="'+dealSlug(d)+'" data-plan-label-on="&#10003; In plan" data-plan-label-off="&#43; Plan">&#43; Plan</button></div>';
     }).join('');
     var more = moreSectionHtml(name, shownEvents.map(function(ev){ return eventSlug(ev); }));
-    return '<div class="map-popup-name">'+name+'</div>'+eventItems+more+dealItems+
+    // Burger Wellington: when live, show this venue's festival burgers, with a thumbnail when one
+    // has an official image or a submitted photo. No-op while WOAP_ENABLED is false.
+    var woapHtml = '';
+    if (typeof WOAP_ENABLED !== 'undefined' && WOAP_ENABLED){
+      var burgers = (WOAP_BURGERS || []).filter(function(b){ return b.venue === name; });
+      if (burgers.length){
+        woapHtml = '<div class="map-popup-woap">' + burgers.map(function(b){
+          var bslug = woapBurgerSlug(b);
+          var imgs = woapImagesFor(b, bslug);
+          var thumb = imgs.length ? '<img src="'+imgs[0]+'" alt="">' : '';
+          return '<div class="map-popup-woap-row">'+thumb+'<span class="map-popup-woap-name"><b>&#127828; '+(b.name||'')+'</b>'+(b.price ? ' &middot; '+b.price : '')+'</span></div>';
+        }).join('') + '</div>';
+      }
+    }
+    return '<div class="map-popup-name">'+name+'</div>'+eventItems+more+dealItems+woapHtml+
       '<a class="map-popup-btn" data-map-venue="'+slug+'">View details &amp; rate &rarr;</a>';
+  }
+  var _woapPin = null;
+  function woapPin(){
+    if (!_woapPin) _woapPin = L.divIcon({
+      className: 'map-pin-event-wrap',
+      html: '<div class="map-pin-woap">&#127828;</div>',
+      iconSize: [22, 22], iconAnchor: [11, 11], popupAnchor: [0, -11]
+    });
+    return _woapPin;
   }
   function rebuild(){
     if (!map) return;
@@ -2574,6 +2966,25 @@ loadData().then(() => {
       cluster.addLayer(m);
       markers[name] = m;
     });
+    // Burger Wellington: pin any venue that has a festival burger but no deal/event pin yet, so a
+    // burger-only spot still appears on the map. Gated — nothing runs while WOAP_ENABLED is false.
+    if (typeof WOAP_ENABLED !== 'undefined' && WOAP_ENABLED){
+      (WOAP_BURGERS || []).forEach(function(b){
+        var name = b.venue;
+        if (markers[name]) return;   // already pinned; its burgers ride along in popupHtml
+        var v = VENUES_MAP[name];
+        var lat = (v && typeof v.lat === 'number') ? v.lat : (typeof b.lat === 'number' ? b.lat : null);
+        var lng = (v && typeof v.lng === 'number') ? v.lng : (typeof b.lng === 'number' ? b.lng : null);
+        if (lat == null || lng == null) return;
+        var m = L.marker([lat, lng], { icon: woapPin() });
+        m.bindPopup(popupHtml(name, [], []));
+        m.on('popupopen',  function(e){ openPopup = e.popup; });
+        m.on('popupclose', function(){ openPopup = null; });
+        cluster.addLayer(m);
+        markers[name] = m;
+        n++;
+      });
+    }
     countEl.textContent = n + ' venue' + (n === 1 ? '' : 's') + (day === 'all' ? '' : ' on ' + day);
   }
   function openMap(){
