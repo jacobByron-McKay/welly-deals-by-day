@@ -13420,5 +13420,31 @@
     "google_rating": 4.0,
     "google_maps_url": "https://www.google.com/maps/search/Olive+Grove+Cafe+%26+Gifts+Waikanae/",
     "notes": "Scanned 2026-07-22 (rescan): organic/fair-trade coffee cafe, also sells gifts/paintings on-site. Old website (olivegrovecafe.company.site) is dead/404, found via a fresh Google Maps + Facebook search not caught in the 2026-07-10 pass. FB page has no day-specific deals, just general promotion. No deals found."
+  },
+  {
+    "venue": "Greta Point Cafe",
+    "suburb": "Hataitai",
+    "address": "326 Evans Bay Parade, Hataitai, Wellington 6021",
+    "category_hint": "cafe",
+    "website": null,
+    "facebook": "https://www.facebook.com/profile.php?id=100058249876794",
+    "instagram": null,
+    "google_rating": 4.4,
+    "google_maps_url": "https://www.google.com/maps/search/Greta+Point+Cafe+Hataitai+Wellington",
+    "is_chain": false,
+    "notes": "NEW VENUE - discovered via Google Maps discovery pass, not previously on file. Waterfront cafe on Evans Bay Parade, address confirmed Hataitai suburb (multiple sources incl. own FB). Checked own FB search 'happy hour' -> only result is a 'Happy Hour is Back' post dated 15 July 2020 (Friday 4-8pm), far outside 12-month rule, not recorded. Checked 'special' -> only result is an old weekday breakfast-special post (no price, undated/old), not recorded. No qualifying deal found."
+  },
+  {
+    "venue": "Onepu (ONEPU Coffee & Icecream Shack)",
+    "suburb": "Lyall Bay",
+    "address": "226 Onepu Road, Lyall Bay, Wellington 6022",
+    "category_hint": "cafe",
+    "website": "https://onepu.co.nz",
+    "facebook": null,
+    "instagram": "https://www.instagram.com/onepu_lyallbay/",
+    "google_rating": 4.5,
+    "google_maps_url": "https://www.google.com/maps/search/Onepu+Coffee+Icecream+Shack+Lyall+Bay+Wellington",
+    "is_chain": false,
+    "notes": "NEW VENUE - discovered via Google Maps discovery pass, not previously on file. Small seaside coffee/icecream shack (coffee, toasties, real-fruit icecream, milkshakes), open 7 days 8am-3pm. IG bio and highlights checked (Giveaway, New drinks, Friday!!!, Coffee, Surf salad) - no day+time+price deal visible from profile-level scan. Facebook page exists ('Onepu | Wellington', ~1.1K followers) but exact URL/slug could not be resolved via search in this pass - flag for direct FB check next scan. No deal recorded this pass."
   }
 ]
