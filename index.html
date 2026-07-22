@@ -1048,9 +1048,13 @@ function dealPassesFilters(deal) {
   if (!showDailyDeals && DAILY_DEAL_KEYS.has(deal.venue + '||' + deal.title)) return false;
   if (showSeniorsOnly && !deal.seniors) return false;
   if (showKidsOnly && !deal.kids) return false;
-  if (chainFilter !== "all") {
+  {
     const v = VENUES_MAP[deal.venue];
-    const isChain = v ? !!v.is_chain : false;
+    const isChain    = v ? !!v.is_chain  : false;
+    const isBigChain = v ? !!v.big_chain : false;
+    // Massive national/international chains (KFC, Pizza Hut, Subway and the like) are hidden by
+    // default to keep the small-local focus. They surface only when the "Chain" filter is picked.
+    if (isBigChain && chainFilter !== "chain") return false;
     if (chainFilter === "chain"      && !isChain) return false;
     if (chainFilter === "standalone" &&  isChain) return false;
   }

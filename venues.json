@@ -3761,7 +3761,8 @@
     "google_maps_url": "https://www.google.com/maps/search/Pizza+Hut+Petone",
     "notes": "Scanned 2026-07-06: Website /order/deals — standing nationwide combo meal deals, always-available pricing, not day-specific — excluded. No deals or events found.",
     "lat": -41.225252,
-    "lng": 174.878844
+    "lng": 174.878844,
+    "big_chain": true
   },
   {
     "venue": "HELL Pizza - Petone",
@@ -3791,7 +3792,8 @@
     "google_maps_url": "https://www.google.com/maps/search/Domino's+Pizza+Petone",
     "notes": "Scanned 2026-07-06: Website — standing everyday combo pricing, not day-specific. No deals or events found.",
     "lat": -41.227163,
-    "lng": 174.883805
+    "lng": 174.883805,
+    "big_chain": true
   },
   {
     "venue": "Fish Boys",
@@ -5020,7 +5022,8 @@
     "google_maps_url": null,
     "notes": "Scanned 2026-07-07: national chain, app-based national deals only, no local standing deal. No deals.",
     "lat": -41.206156,
-    "lng": 174.908701
+    "lng": 174.908701,
+    "big_chain": true
   },
   {
     "venue": "Thai House Express Lower Hutt",
@@ -5645,7 +5648,8 @@
     "google_maps_url": null,
     "notes": "Scanned 2026-07-07: national chain, no local deals. No deals.",
     "lat": -41.124325,
-    "lng": 175.072869
+    "lng": 175.072869,
+    "big_chain": true
   },
   {
     "venue": "Domino's Pizza Upper Hutt",
@@ -5660,7 +5664,8 @@
     "google_maps_url": null,
     "notes": "Scanned 2026-07-07: national chain, no local deals. No deals.",
     "lat": -41.124908,
-    "lng": 175.065909
+    "lng": 175.065909,
+    "big_chain": true
   },
   {
     "venue": "HELL Pizza Upper Hutt",
@@ -6441,7 +6446,8 @@
     "google_maps_url": "https://www.google.com/maps/search/Muffin+Break+Johnsonville",
     "notes": "Scanned 2026-07-08: national chain. SuperGold Card holders get a small hot drink + muffin for $10 (confirmed via IG post tagging this branch, 24 Nov 2025) - recorded as a seniors discount, day:null. Other posts are seasonal muffin flavours/competitions, not day-specific deals.",
     "lat": -41.223773,
-    "lng": 174.806307
+    "lng": 174.806307,
+    "big_chain": true
   },
   {
     "venue": "Shan Lee Takeaways",
@@ -6516,7 +6522,8 @@
     "google_maps_url": "https://www.google.com/maps/search/Pizza+Hut+Johnsonville",
     "notes": "Scanned 2026-07-08: only generic nationwide online-order deals found (not day-specific, same everywhere in NZ) - fails local value test, not recorded.",
     "lat": -41.224124,
-    "lng": 174.807097
+    "lng": 174.807097,
+    "big_chain": true
   },
   {
     "venue": "Domino's Pizza Johnsonville",
@@ -6531,7 +6538,8 @@
     "google_maps_url": "https://www.google.com/maps/search/Domino%27s+Pizza+Johnsonville",
     "notes": "Scanned 2026-07-08: only generic nationwide online-order deals found; a 'Customer Appreciation Week' promo (12-18 Jan 2026) already elapsed - not recorded.",
     "lat": -41.224989,
-    "lng": 174.807497
+    "lng": 174.807497,
+    "big_chain": true
   },
   {
     "venue": "Subway",
@@ -6546,7 +6554,8 @@
     "google_maps_url": "https://www.google.com/maps/search/Subway+Johnsonville",
     "notes": "Scanned 2026-07-08: national chain-wide 'Sub of the Day' from $7.50 and $11.50 Value Combo confirmed on Subway NZ's own FB (applies all NZ stores incl. this one) - recorded as day:null.",
     "lat": -41.222729,
-    "lng": 174.807077
+    "lng": 174.807077,
+    "big_chain": true
   },
   {
     "venue": "BurgerFuel Johnsonville",
@@ -6983,7 +6992,8 @@
     "google_maps_url": "https://www.google.com/maps/search/Pizza+Hut+Northland",
     "notes": "Boundary case: real address is Northland, kept per the handoff's explicit 'optional Northland' allowance for Karori. National chain, only generic online-order deals found - not recorded.",
     "lat": -41.28316,
-    "lng": 174.757514
+    "lng": 174.757514,
+    "big_chain": true
   },
   {
     "venue": "Margot",
@@ -7374,7 +7384,8 @@
     "google_maps_url": "https://www.google.com/maps/search/Domino's+Pizza+Newtown+Wellington",
     "notes": "Scanned 2026-07-08: national chain, only rotating promo codes (not a stable recurring weekly deal) found - not recorded.",
     "lat": -41.316428,
-    "lng": 174.780826
+    "lng": 174.780826,
+    "big_chain": true
   },
   {
     "venue": "Planet Spice",
@@ -8233,7 +8244,8 @@
     "google_maps_url": "https://www.google.com/maps/search/Pizza+Hut+Kilbirnie+Wellington",
     "notes": "Scanned 2026-07-08: NZ-wide chain. Full Mon-Fri $10 Pizza of the Day lineup confirmed via own website/FB.",
     "lat": -41.318238,
-    "lng": 174.795974
+    "lng": 174.795974,
+    "big_chain": true
   },
   {
     "venue": "Domino's Pizza Kilbirnie",
@@ -8248,7 +8260,8 @@
     "google_maps_url": "https://www.google.com/maps/search/Domino's+Pizza+Kilbirnie+Wellington",
     "notes": "Scanned 2026-07-08: national chain, only rotating promo codes (not a stable recurring weekly deal) - not recorded, consistent with the Newtown branch finding.",
     "lat": -41.318395,
-    "lng": 174.796046
+    "lng": 174.796046,
+    "big_chain": true
   },
   {
     "venue": "Tong's Takeaway",
@@ -8323,7 +8336,8 @@
     "google_maps_url": "https://www.google.com/maps/search/KFC+Kilbirnie+Wellington",
     "notes": "Scanned 2026-07-08: NZ-wide chain. Zinger Monday, 2pc Tuesday, Wicked Wednesday confirmed via kfc.co.nz/coupons.",
     "lat": -41.31778,
-    "lng": 174.795864
+    "lng": 174.795864,
+    "big_chain": true
   },
   {
     "venue": "Subway Kilbirnie",
@@ -8338,7 +8352,8 @@
     "google_maps_url": "https://www.google.com/maps/search/Subway+Kilbirnie+Wellington",
     "notes": "Scanned 2026-07-08: NZ-wide chain. Everyday $6.80 6-inch sub+drink+cookie combo confirmed via own FB (note: 'Sub of the Day' price rotates and participation varies by store, so only the confirmed everyday combo was recorded).",
     "lat": -41.317663,
-    "lng": 174.794907
+    "lng": 174.794907,
+    "big_chain": true
   },
   {
     "venue": "The Larder",
@@ -8565,7 +8580,8 @@
     "google_maps_url": "https://www.google.com/maps/search/Domino's+Pizza+Miramar+Wellington",
     "notes": "Scanned 2026-07-08: national chain, only rotating promo codes - not recorded, consistent with other branches scanned.",
     "lat": -41.311542,
-    "lng": 174.816608
+    "lng": 174.816608,
+    "big_chain": true
   },
   {
     "venue": "The Bento Bar",
@@ -9828,7 +9844,8 @@
     "google_maps_url": "https://www.google.com/maps/search/Pizza+Hut+Waikanae",
     "notes": "Scanned 2026-07-10: National fast-food chain. Website ordering promos are generic/national, not tied to a specific day for this location - no qualifying weekly deal recorded.",
     "lat": -40.876962,
-    "lng": 175.065225
+    "lng": 175.065225,
+    "big_chain": true
   },
   {
     "venue": "Cobb & Co. Porirua",
@@ -10145,7 +10162,8 @@
     "google_maps_url": "https://www.google.com/maps/search/Domino%27s+Pizza+Porirua",
     "notes": "Scanned 2026-07-10: National chain; deals rotate via app/order-flow, not day-specific or store-verifiable.",
     "lat": -41.133864,
-    "lng": 174.8391
+    "lng": 174.8391,
+    "big_chain": true
   },
   {
     "venue": "Hell Pizza Porirua",
@@ -10356,7 +10374,8 @@
     "google_maps_url": "https://www.google.com/maps/search/North+City+Porirua",
     "notes": "Scanned 2026-07-10 (batch, light-touch): Confirmed via mall directory. Spice Traders individually checked - no Porirua-specific deal found. Remaining ~19 tenants are national/regional mall-chain outlets or small kiosks not individually deep-scanned across all 3 channels - flagged as a coverage gap.",
     "lat": -41.136527,
-    "lng": 174.838864
+    "lng": 174.838864,
+    "big_chain": true
   },
   {
     "venue": "Passo Pizza Pasta Caffe'",
@@ -10664,7 +10683,8 @@
     "google_maps_url": "https://www.google.com/maps/search/Domino%27s+Pizza+Paraparaumu",
     "notes": "Scanned 2026-07-10: /deals page 404'd; national codes only, not local/day-fixed. No qualifying deal found.",
     "lat": -40.921124,
-    "lng": 175.001978
+    "lng": 175.001978,
+    "big_chain": true
   },
   {
     "venue": "Hell Kapiti",
@@ -10694,7 +10714,8 @@
     "google_maps_url": "https://www.google.com/maps/search/Pizza+Hut+Kapiti+Paraparaumu",
     "notes": "Scanned 2026-07-10: Only nationwide online-ordering deals found, none local/day-fixed.",
     "lat": -40.906662,
-    "lng": 174.997962
+    "lng": 174.997962,
+    "big_chain": true
   },
   {
     "venue": "Burger Wisconsin Kapiti",
@@ -10722,7 +10743,8 @@
     "is_chain": true,
     "google_rating": 2.5,
     "google_maps_url": "https://www.google.com/maps/place/Burger+King+Paraparaumu",
-    "notes": "Scanned 2026-07-10: A dated review claims 'no longer here' but Google listing shows normal open hours (not flagged closed). No local deals found."
+    "notes": "Scanned 2026-07-10: A dated review claims 'no longer here' but Google listing shows normal open hours (not flagged closed). No local deals found.",
+    "big_chain": true
   },
   {
     "venue": "KFC (Coastlands)",
@@ -10735,7 +10757,8 @@
     "is_chain": true,
     "google_rating": null,
     "google_maps_url": "https://www.google.com/maps/search/KFC+Coastlands+Paraparaumu",
-    "notes": "Scanned 2026-07-10: National app-based deals rotate but are not local/day-fixed."
+    "notes": "Scanned 2026-07-10: National app-based deals rotate but are not local/day-fixed.",
+    "big_chain": true
   },
   {
     "venue": "Muffin Break (Coastlands)",
@@ -10748,7 +10771,8 @@
     "is_chain": true,
     "google_rating": null,
     "google_maps_url": "https://www.google.com/maps/search/Muffin+Break+Coastlands+Paraparaumu",
-    "notes": "Scanned 2026-07-10: National chain, no local deals surfaced."
+    "notes": "Scanned 2026-07-10: National chain, no local deals surfaced.",
+    "big_chain": true
   },
   {
     "venue": "Robert Harris (Coastlands)",
@@ -10800,7 +10824,8 @@
     "is_chain": true,
     "google_rating": null,
     "google_maps_url": "https://www.google.com/maps/search/Subway+Coastlands+Paraparaumu",
-    "notes": "Scanned 2026-07-10: National chain, no local deals surfaced."
+    "notes": "Scanned 2026-07-10: National chain, no local deals surfaced.",
+    "big_chain": true
   },
   {
     "venue": "Tank (Coastlands)",
@@ -12132,7 +12157,8 @@
     "google_maps_url": "https://www.google.com/maps/place/Domino%27s+Pizza+Otaki",
     "notes": "Scanned 2026-07-10: national chain, deals managed centrally, not scanned in venue-specific depth.",
     "lat": -40.762547,
-    "lng": 175.155492
+    "lng": 175.155492,
+    "big_chain": true
   },
   {
     "venue": "Dice Delicious Food",
@@ -12344,7 +12370,8 @@
     "notes": "Scanned 2026-07-10: national chain, app-wide promos not tied to a specific day for this store. No deal recorded.",
     "lat": -41.117766,
     "lng": 174.894085,
-    "geo_approx": true
+    "geo_approx": true,
+    "big_chain": true
   },
   {
     "venue": "Porirua (unnamed coffee kiosk)",
@@ -12631,7 +12658,8 @@
     "google_maps_url": "https://www.google.com/maps/place/Pizza+Hut+Mana",
     "notes": "Scanned 2026-07-10: national /deals page 404'd, no day-specific local deal found.",
     "lat": -41.101086,
-    "lng": 174.869568
+    "lng": 174.869568,
+    "big_chain": true
   },
   {
     "venue": "McDonald's Mana",
@@ -12647,7 +12675,8 @@
     "notes": "Scanned 2026-07-10: deals are app-based, no fixed day/time confirmed via own channels.",
     "lat": -41.102228,
     "lng": 174.869945,
-    "geo_approx": true
+    "geo_approx": true,
+    "big_chain": true
   },
   {
     "venue": "Omega 3 Seafoods",
