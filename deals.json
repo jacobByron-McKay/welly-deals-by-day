@@ -13429,5 +13429,42 @@
     "source_quote": "Here's what's on at Miramar in June! ... Wednesday Trivia from 7pm $5 tacos",
     "verified_date": "2026-07-22",
     "confidence": "medium"
+  },
+  {
+    "venue": "Jugnus Little India",
+    "suburb": "Paraparaumu Beach",
+    "address": "42 Marine Parade, Paraparaumu Beach 5032",
+    "day": null,
+    "date": null,
+    "month_day": null,
+    "type": "weekly",
+    "title": "SuperGold & Student Discount",
+    "desc": "5% off for SuperGold cardholders, 5% off for student ID holders. Every day, terms and conditions apply.",
+    "start": null,
+    "end": null,
+    "category": "discount",
+    "source_url": "https://www.jugnus.co.nz/",
+    "source_quote": "Jugnu's Special Offers: Super Gold Card: 5% Discount. Student ID: 5% Discount. T&Cs apply.",
+    "verified_date": "2026-07-22",
+    "confidence": "high",
+    "seniors": true
+  },
+  {
+    "venue": "Mediterranean Foods Trattoria & Deli, Kapiti",
+    "suburb": "Paraparaumu",
+    "address": "Coastlands Shoppingtown, Coastlands Parade, Paraparaumu",
+    "day": "Wednesday",
+    "date": null,
+    "month_day": null,
+    "type": "weekly",
+    "title": "Wednesday Pizza or Pasta Lunch Deal",
+    "desc": "Pizza or pasta with chips and a drink, $29, on Wednesdays. Sourced from a customer Google review (~1 year old); could not be independently confirmed on the venue's own specials site (mediterraneanfoodstrattoria.shop returned an error page on this visit) or social channels, so kept at medium confidence pending re-verification.",
+    "start": null,
+    "end": null,
+    "category": "food",
+    "source_url": "https://www.google.com/maps/search/Mediterranean+Foods+Trattoria+Kapiti+Coastlands",
+    "source_quote": "Such a good deal on a Wednesday. Pizza or paste with chips and a drink $29 bucks.",
+    "verified_date": "2026-07-22",
+    "confidence": "medium"
   }
 ]

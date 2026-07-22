@@ -13381,5 +13381,44 @@
     "google_rating": 4.3,
     "google_maps_url": "https://www.google.com/maps/search/Strathmore+Local+3+Strathmore+Avenue+Wellington",
     "is_chain": false
+  },
+  {
+    "venue": "The Jolly Pub & Kitchen Kapiti",
+    "suburb": "Paraparaumu Beach",
+    "address": "93 Mazengarb Road, Paraparaumu Beach 5032",
+    "category_hint": "bar-restaurant",
+    "website": "https://www.thejollypub.com/",
+    "facebook": null,
+    "instagram": null,
+    "google_rating": 4.4,
+    "google_maps_url": "https://www.google.com/maps/search/The+Jolly+Pub+%26+Kitchen+Kapiti",
+    "is_chain": false,
+    "notes": "Gastropub, 858 Google reviews, $30-80pp. Not previously on file despite being a well-established, well-reviewed venue on Mazengarb Rd. Website and a Facebook-page search turned up no day/time/price specials (booking-form site only, menu not itemised). Needs a proper FB/IG scan next pass - a page search for 'The Jolly Pub Kapiti' did not surface a matching Facebook page, may need to check for a differently-named handle. Ph 04 297 0815."
+  },
+  {
+    "venue": "Rata Cafe",
+    "suburb": "Karori",
+    "address": "53 Waiapu Road, Karori, Wellington 6012",
+    "category_hint": "cafe",
+    "website": "https://www.visitzealandia.com",
+    "facebook": null,
+    "instagram": null,
+    "is_chain": false,
+    "google_rating": 4.0,
+    "google_maps_url": "https://www.google.com/maps/place/Rata+Cafe/@-41.2908314,174.7534521,17z",
+    "notes": "Found 2026-07-22 via Google Maps discovery sweep, not previously on file. The cafe at Zealandia Te Māra a Tāne (fenced wildlife sanctuary), 53 Waiapu Rd. The cafe itself sits at the visitor centre/entrance and is accessible without paying full sanctuary admission. No FB/IG found; Zealandia's own website (visitzealandia.com) has no day-specific deals, specials, or discounts mentioned - just general opening hours (café 9am-4pm, kitchen closes 2pm). No deal recorded. Flagging for Jacob's judgement: it's a genuine walk-in cafe with its own address, but operationally tied to an admission-gated attraction rather than a standalone village-strip business - may or may not fit the site's usual venue profile."
+  },
+  {
+    "venue": "Olive Grove Cafe",
+    "suburb": "Waikanae",
+    "address": "16 Mahara Place, Waikanae 5036",
+    "category_hint": "cafe",
+    "website": null,
+    "facebook": "https://www.facebook.com/olivegrovecafenz",
+    "instagram": null,
+    "is_chain": false,
+    "google_rating": 4.0,
+    "google_maps_url": "https://www.google.com/maps/search/Olive+Grove+Cafe+%26+Gifts+Waikanae/",
+    "notes": "Scanned 2026-07-22 (rescan): organic/fair-trade coffee cafe, also sells gifts/paintings on-site. Old website (olivegrovecafe.company.site) is dead/404, found via a fresh Google Maps + Facebook search not caught in the 2026-07-10 pass. FB page has no day-specific deals, just general promotion. No deals found."
   }
 ]
