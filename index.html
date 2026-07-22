@@ -418,32 +418,63 @@
   .wd-plan-clear:hover { color:#dc2626; }
   @media (max-width:480px){ .wd-plan-panel { width:100%; max-width:100%; } }
 
-  /* ---------- WOAP Burgers (Burger Wellington) — warm amber accent, own tab ---------- */
-  .woap-badge { font-size:10px; font-weight:700; letter-spacing:0.04em; text-transform:uppercase; color:#fff; background:#b45309; padding:2px 7px; border-radius:999px; line-height:1.35; }
-  .woap-controls { display:flex; align-items:center; gap:8px; flex-wrap:wrap; margin-bottom:12px; }
-  .woap-controls label { font-size:12px; font-weight:600; color:var(--ink-muted); }
-  .woap-sort { font:inherit; font-size:13px; padding:6px 9px; border:1px solid var(--border); border-radius:8px; background:var(--card); color:var(--ink); }
-  .woap-tried-count { font-size:12px; font-weight:700; color:#b45309; margin-left:auto; }
+  /* ---------- WOAP Burgers (Burger Wellington) — festival RED accent, own tab ---------- */
+  /* Red so the tab jumps out when it goes live for the festival. --wr = WOAP red. */
+  #woapSection { --wr:#dc2626; --wr-dark:#b91c1c; --wr-deep:#991b1b; --wr-soft:#fef2f2; --wr-border:#fecaca; }
+  .woap-badge { font-size:10px; font-weight:700; letter-spacing:0.04em; text-transform:uppercase; color:#fff; background:#dc2626; padding:2px 7px; border-radius:999px; line-height:1.35; }
+  /* Map / Leaderboard segmented toggle */
+  .woap-viewtabs { display:inline-flex; gap:2px; padding:3px; border-radius:10px; background:var(--wr-soft); border:1px solid var(--wr-border); margin-bottom:14px; }
+  .woap-viewtab { font:inherit; font-size:13px; font-weight:700; padding:7px 15px; border:0; border-radius:8px; background:none; color:var(--wr-deep); cursor:pointer; display:inline-flex; align-items:center; gap:6px; }
+  .woap-viewtab.on { background:var(--wr); color:#fff; box-shadow:0 1px 3px rgba(220,38,38,.35); }
+  /* Leaderboard table */
+  .woap-lb-topline { display:flex; align-items:center; gap:8px; flex-wrap:wrap; margin-bottom:8px; }
+  .woap-tried-count { font-size:12px; font-weight:700; color:var(--wr-dark); margin-left:auto; }
+  .woap-lb { border:1px solid var(--border); border-radius:12px; overflow:hidden; }
+  .woap-lb-head { display:grid; grid-template-columns:34px 1fr 74px 74px; align-items:center; gap:6px; padding:9px 12px; background:var(--wr-soft); border-bottom:1px solid var(--wr-border); }
+  .woap-lb-head .woap-lb-h { font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:0.03em; color:var(--wr-deep); }
+  .woap-lb-sort { font:inherit; font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:0.03em; color:var(--wr-deep); background:none; border:0; cursor:pointer; padding:0; text-align:center; display:inline-flex; align-items:center; justify-content:center; gap:3px; width:100%; }
+  .woap-lb-sort.on { color:var(--wr); }
+  .woap-lb-sort .caret { font-size:9px; opacity:.85; }
+  .woap-lb-row { display:grid; grid-template-columns:34px 1fr 74px 74px; align-items:center; gap:6px; padding:9px 12px; border-top:1px solid var(--border); cursor:pointer; background:var(--paper); }
+  .woap-lb-row:first-child { border-top:0; }
+  .woap-lb-row:hover { background:var(--wr-soft); }
+  .woap-lb-row.open { background:var(--wr-soft); }
+  .woap-lb-rank { font-size:14px; font-weight:800; color:var(--wr-dark); text-align:center; }
+  .woap-lb-rank.top { color:var(--wr); }
+  .woap-lb-cell-main { display:flex; align-items:center; gap:9px; min-width:0; }
+  .woap-lb-thumb { width:42px; height:42px; object-fit:cover; border-radius:7px; border:1px solid var(--border); flex-shrink:0; background:var(--wr-soft); }
+  .woap-lb-txt { min-width:0; }
+  .woap-lb-name { font-size:13.5px; font-weight:700; line-height:1.2; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+  .woap-lb-venue { font-size:11.5px; color:var(--ink-muted); line-height:1.2; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+  .woap-lb-avg { font-size:14px; font-weight:800; color:var(--wr-dark); text-align:center; }
+  .woap-lb-avg small { display:block; font-size:9px; font-weight:600; color:var(--ink-muted); }
+  .woap-lb-avg.none { color:var(--ink-muted); font-weight:600; font-size:11px; }
+  .woap-lb-count { font-size:14px; font-weight:800; color:var(--ink); text-align:center; }
+  .woap-lb-detail { grid-column:1 / -1; display:none; padding-top:4px; }
+  .woap-lb-row.open + .woap-lb-detailrow { display:block; }
+  .woap-lb-detailrow { display:none; padding:0 12px 12px; border-top:1px solid var(--wr-border); background:var(--wr-soft); }
   .woap-card { border:1px solid var(--border); border-radius:10px; padding:12px 13px; margin-bottom:10px; background:var(--paper); }
+  .woap-card.bare { border:0; padding:12px 0 0; margin:0; background:none; }
   .woap-card-head { display:flex; align-items:flex-start; gap:10px; }
   .woap-thumb { width:60px; height:60px; object-fit:cover; border-radius:8px; border:1px solid var(--border); flex-shrink:0; }
   .woap-card-body { flex:1; min-width:0; }
   .woap-name { font-size:15px; font-weight:700; line-height:1.25; }
   .woap-venue { font-size:12.5px; color:var(--ink-muted); margin-top:2px; }
   .woap-meta { display:flex; align-items:center; gap:8px; flex-wrap:wrap; margin-top:5px; }
-  .woap-price { font-size:13px; font-weight:700; color:#b45309; }
+  .woap-price { font-size:13px; font-weight:700; color:var(--wr-dark); }
   .woap-diet { font-size:11px; font-weight:600; color:#2a6840; background:#e6f0e8; border-radius:6px; padding:2px 7px; }
-  .woap-avg { font-size:12px; font-weight:700; color:#b45309; }
+  .woap-avg { font-size:12px; font-weight:700; color:var(--wr-dark); }
   .woap-avg-none { font-size:12px; color:var(--ink-muted); }
   .woap-desc { font-size:13px; color:var(--ink); margin-top:8px; line-height:1.45; }
   .woap-tried { display:inline-flex; align-items:center; gap:5px; margin-top:9px; font-size:12px; font-weight:600;
     color:var(--ink-muted); background:var(--card); border:1px solid var(--border); border-radius:8px; padding:6px 11px; cursor:pointer; }
-  .woap-tried:hover { border-color:#b45309; color:#b45309; }
-  .woap-tried.on { background:#b45309; color:#fff; border-color:#b45309; }
+  .woap-tried:hover { border-color:var(--wr); color:var(--wr); }
+  .woap-tried.on { background:var(--wr); color:#fff; border-color:var(--wr); }
   .woap-review-open { margin-top:9px; margin-left:8px; font-size:12px; font-weight:600; color:var(--accent); background:none; border:0; cursor:pointer; }
   .woap-review-open:hover { text-decoration:underline; }
   .woap-social { margin-top:12px; padding-top:11px; border-top:1px dashed var(--border); display:none; }
   .woap-social.open { display:block; }
+  .woap-card.bare .woap-social { display:block; border-top:0; padding-top:0; margin-top:10px; }
   .woap-photos { display:flex; gap:6px; flex-wrap:wrap; margin-bottom:10px; }
   .woap-photos img { width:66px; height:66px; object-fit:cover; border-radius:7px; border:1px solid var(--border); }
   .woap-photo-add { display:inline-flex; align-items:center; gap:6px; margin-top:8px; font-size:12.5px; font-weight:600; color:var(--accent); background:var(--accent-soft); border:1px solid #bcddf0; border-radius:8px; padding:6px 11px; cursor:pointer; }
@@ -452,13 +483,28 @@
   .woap-photo-pending.show { display:flex; }
   .woap-photo-pending img { width:40px; height:40px; object-fit:cover; border-radius:6px; border:1px solid var(--border); }
   .woap-photo-pending span { font-size:11px; color:var(--ink-muted); }
+  /* Leaderboard's own dedicated burger map */
+  .woap-map-wrap { display:none; }
+  .woap-map-wrap.on { display:block; }
+  .woap-map { height:60vh; min-height:360px; border-radius:12px; border:1px solid var(--wr-border); overflow:hidden; }
+  .woap-map-note { font-size:12px; color:var(--ink-muted); margin-top:8px; }
   .map-popup-woap { border-top:1px solid var(--border); margin-top:7px; padding-top:6px; }
   .map-popup-woap-row { display:flex; align-items:center; gap:7px; margin:3px 0; }
   .map-popup-woap-row img { width:34px; height:34px; object-fit:cover; border-radius:5px; border:1px solid var(--border); flex-shrink:0; }
   .map-popup-woap-name { font-size:11.5px; line-height:1.3; }
-  .map-popup-woap-name b { color:#b45309; }
-  .map-pin-woap { width:22px; height:22px; border-radius:50%; background:#b45309; color:#fff; border:2px solid #fff;
+  .map-popup-woap-name b { color:#dc2626; }
+  .map-pin-woap { width:22px; height:22px; border-radius:50%; background:#dc2626; color:#fff; border:2px solid #fff;
                   box-shadow:0 1px 4px rgba(0,0,0,.4); font-size:12px; line-height:18px; text-align:center; }
+  /* Burger map popup (dedicated WOAP map) */
+  .wmp { min-width:170px; }
+  .wmp img { width:100%; height:96px; object-fit:cover; border-radius:6px; margin-bottom:6px; }
+  .wmp-name { font-size:13px; font-weight:700; color:var(--ink); line-height:1.25; }
+  .wmp-venue { font-size:11.5px; color:#555; margin-top:1px; }
+  .wmp-meta { font-size:12px; font-weight:700; color:#b91c1c; margin-top:4px; }
+  .wmp-open { display:inline-block; margin-top:7px; font-size:12px; font-weight:700; color:#fff !important; background:#dc2626; border-radius:7px; padding:5px 10px; cursor:pointer; text-decoration:none; }
+  .wmp-plan { display:inline-block; margin-top:7px; margin-right:6px; font-size:12px; font-weight:700; color:#b91c1c; background:#fff; border:1px solid #fecaca; border-radius:7px; padding:4px 9px; cursor:pointer; }
+  .wmp-plan.added { background:#dc2626; color:#fff; border-color:#dc2626; }
+  .woap-plan { margin-top:9px; margin-left:8px; }
 </style>
 </head>
 <body>
@@ -644,25 +690,36 @@
 <div id="woapBar" class="max-w-4xl mx-auto px-4 pt-4">
   <button id="woapToggle" type="button" aria-expanded="false"
           class="w-full flex items-center justify-between gap-3 rounded-lg border px-4 py-2.5"
-          style="border-color:#f0d9b5;background:#fff4e6;color:#8a3d0a;cursor:pointer;">
+          style="border-color:#fecaca;background:#fef2f2;color:#991b1b;cursor:pointer;">
     <span class="flex items-center gap-2 text-sm font-semibold">
       <span>&#127828;</span> Burger Wellington &mdash; WOAP 2026
       <span class="woap-badge">NEW</span>
     </span>
     <span id="woapToggleState" class="text-xs font-medium px-2.5 py-0.5 rounded-full border shrink-0"
-          style="border-color:#e6c48f;background:#fff;">Show &#9662;</span>
+          style="border-color:#fca5a5;background:#fff;">Show &#9662;</span>
   </button>
 </div>
 
 <!-- WOAP Burgers section (revealed by the toggle above) -->
 <section class="max-w-4xl mx-auto px-4 pt-3" id="woapSection" style="display:none;">
-  <div class="rounded-lg border p-4" style="border-color:var(--border);background:var(--card);">
+  <div class="rounded-lg border p-4" style="border-color:var(--wr-border);background:var(--card);">
     <div class="flex items-baseline gap-3 mb-1">
-      <h2 class="text-lg font-semibold tracking-tight">Burger Wellington</h2>
+      <h2 class="text-lg font-semibold tracking-tight" style="color:var(--wr-deep);">Burger Wellington</h2>
       <span class="text-xs" style="color:var(--ink-muted);">Visa Wellington on a Plate &middot; 3&ndash;23 Aug 2026</span>
     </div>
-    <p class="text-sm mb-4" style="color:var(--ink-muted);">Every festival burger, ranked by what Wellington actually thinks. Rate them, tick off the ones you have tried, and leave a photo and a review.</p>
-    <div id="woapList"></div>
+    <p class="text-sm mb-4" style="color:var(--ink-muted);">Every festival burger, ranked by what Wellington actually thinks. Find them on the map, rate the ones you have tried, and leave a photo and a review.</p>
+    <!-- Map / Leaderboard segmented toggle -->
+    <div class="woap-viewtabs" role="tablist" aria-label="Burger view">
+      <button type="button" class="woap-viewtab on" data-woap-view="board" role="tab" aria-selected="true">&#127942; Leaderboard</button>
+      <button type="button" class="woap-viewtab" data-woap-view="map" role="tab" aria-selected="false">&#128506; Map</button>
+    </div>
+    <!-- Leaderboard sub-view -->
+    <div id="woapBoard"></div>
+    <!-- Map sub-view (its own dedicated burger map; Leaflet loads lazily on first open) -->
+    <div id="woapMapWrap" class="woap-map-wrap">
+      <div id="woapMap" class="woap-map"></div>
+      <p class="woap-map-note" id="woapMapNote">All 244 festival burgers across Wellington. Tap a pin for the photo, price and rating.</p>
+    </div>
   </div>
 </section>
 
@@ -866,8 +923,9 @@ let showClubRugby     = false;   // Club Rugby tab — default OFF; reveals the 
 // themselves entirely and the burger data is never fetched. Flip to true to launch.
 const WOAP_ENABLED    = false;
 let showWoap          = false;   // WOAP tab — default OFF; reveals the Burger Wellington leaderboard
-let woapSort          = "rating"; // "rating" (community-ranked leaderboard) | "name" | "price"
-const WOAP_RATINGS    = {};      // burger slug → { avg, count }, batch-read from Supabase for the sort/leaderboard
+let woapView          = "board"; // "board" (leaderboard) | "map" (dedicated burger map)
+let woapLbSort        = "rating"; // leaderboard rank column: "rating" (avg stars) | "ratings" (number of ratings)
+const WOAP_RATINGS    = {};      // burger slug → { avg, count }, batch-read from Supabase for the leaderboard
 let searchQuery       = "";      // live search string
 let DAILY_DEAL_KEYS   = new Set(); // populated after data load
 
@@ -1413,21 +1471,27 @@ function fetchWoapRatings() {
 
 function woapPriceNum(b) { const m = String(b.price || '').match(/[\d.]+/); return m ? parseFloat(m[0]) : Infinity; }
 
-function woapSorted(list) {
+// Leaderboard ordering. Two rankable columns: average rating and number of ratings.
+// Either way, burgers with no ratings yet sort to the bottom (alphabetical among themselves).
+function woapLeaderboardSorted(list) {
   const arr = [...list];
-  if (woapSort === 'name')  return arr.sort((a, b) => (a.name || '').localeCompare(b.name || ''));
-  if (woapSort === 'price') return arr.sort((a, b) => woapPriceNum(a) - woapPriceNum(b));
-  // rating: highest community average first, then most-voted; unrated burgers sort last.
   return arr.sort((a, b) => {
     const ra = WOAP_RATINGS[woapBurgerSlug(a)] || { avg: 0, count: 0 };
     const rb = WOAP_RATINGS[woapBurgerSlug(b)] || { avg: 0, count: 0 };
-    if (!ra.count !== !rb.count) return ra.count ? -1 : 1;
-    if (rb.avg !== ra.avg) return rb.avg - ra.avg;
-    return rb.count - ra.count;
+    if (!ra.count !== !rb.count) return ra.count ? -1 : 1;         // rated ahead of unrated
+    if (!ra.count && !rb.count) return (a.name || '').localeCompare(b.name || '');
+    if (woapLbSort === 'ratings') {                                // rank by how many people rated
+      if (rb.count !== ra.count) return rb.count - ra.count;
+      if (rb.avg !== ra.avg) return rb.avg - ra.avg;
+    } else {                                                       // rank by average stars
+      if (rb.avg !== ra.avg) return rb.avg - ra.avg;
+      if (rb.count !== ra.count) return rb.count - ra.count;
+    }
+    return (a.name || '').localeCompare(b.name || '');
   });
 }
 
-function renderWoapCard(b) {
+function renderWoapCard(b, bare) {
   const slug = woapBurgerSlug(b);
   const imgs = woapImagesFor(b, slug);
   const tried = woapTriedSet().has(slug);
@@ -1437,8 +1501,10 @@ function renderWoapCard(b) {
     : `<span class="woap-avg-none">No ratings yet</span>`;
   const diet = (b.dietary || []).map(d => `<span class="woap-diet">${d}</span>`).join('');
   const photosStrip = imgs.length ? `<div class="woap-photos">${imgs.map(src => `<img src="${src}" alt="" loading="lazy">`).join('')}</div>` : '';
+  // bare = embedded in a leaderboard detail row: no card chrome, review widgets always open.
+  const reviewBtn = bare ? '' : `<button type="button" class="woap-review-open" data-woap-review="${slug}">Rate &amp; review &rarr;</button>`;
   return `
-    <article class="woap-card" data-woap-slug="${slug}">
+    <article class="woap-card${bare ? ' bare' : ''}" data-woap-slug="${slug}">
       <div class="woap-card-head">
         ${imgs.length ? `<img class="woap-thumb" src="${imgs[0]}" alt="" loading="lazy">` : ''}
         <div class="woap-card-body">
@@ -1453,8 +1519,9 @@ function renderWoapCard(b) {
       </div>
       ${b.desc ? `<p class="woap-desc">${b.desc}</p>` : ''}
       <button type="button" class="woap-tried${tried ? ' on' : ''}" data-woap-tried="${slug}">${tried ? '&#10003; Tried it' : '&#43; Mark as tried'}</button>
-      <button type="button" class="woap-review-open" data-woap-review="${slug}">Rate &amp; review &rarr;</button>
-      <div class="woap-social" data-woap-social="${slug}">
+      <button type="button" class="wd-plan-add woap-plan" data-plan-add="${slug}" data-plan-label-on="&#10003; In plan" data-plan-label-off="&#43; Plan" aria-label="Add this burger to your plan">&#43; Plan</button>
+      ${reviewBtn}
+      <div class="woap-social${bare ? ' open' : ''}" data-woap-social="${slug}">
         ${photosStrip}
         <label class="woap-photo-add" for="woap-photo-${slug}">&#128247; Add a photo</label>
         <input class="woap-photo-input" type="file" id="woap-photo-${slug}" accept="image/*" data-woap-photo="${slug}">
@@ -1482,39 +1549,96 @@ function renderWoapCard(b) {
     </article>`;
 }
 
+// A leaderboard row: rank, thumbnail + name/venue, average stars, number of ratings. Clicking it
+// expands the full rate/review/photo card below the row (built lazily on first open).
+function renderWoapRow(b, rank) {
+  const slug = woapBurgerSlug(b);
+  const imgs = woapImagesFor(b, slug);
+  const r = WOAP_RATINGS[slug] || { avg: 0, count: 0 };
+  const thumb = imgs.length ? `<img class="woap-lb-thumb" src="${imgs[0]}" alt="" loading="lazy">` : `<span class="woap-lb-thumb"></span>`;
+  const avgCell = r.count
+    ? `<span class="woap-lb-avg">${r.avg.toFixed(1)}<small>&#9733; avg</small></span>`
+    : `<span class="woap-lb-avg none">&mdash;</span>`;
+  const rankCls = rank <= 3 && r.count ? 'woap-lb-rank top' : 'woap-lb-rank';
+  return `
+    <div class="woap-lb-row" data-lb-row="${slug}">
+      <span class="${rankCls}">${r.count ? rank : ''}</span>
+      <div class="woap-lb-cell-main">
+        ${thumb}
+        <div class="woap-lb-txt">
+          <div class="woap-lb-name">${b.name}</div>
+          <div class="woap-lb-venue">${b.venue}${b.suburb ? ' &middot; ' + suburbLabel(b.suburb) : ''}</div>
+        </div>
+      </div>
+      ${avgCell}
+      <span class="woap-lb-count">${r.count || 0}</span>
+    </div>
+    <div class="woap-lb-detailrow" data-lb-detail="${slug}"></div>`;
+}
+
+function renderWoapBoard() {
+  const board = document.getElementById('woapBoard');
+  if (!board) return;
+  const shown = woapLeaderboardSorted(WOAP_BURGERS.filter(woapMatchesSearch));
+  const tried = woapTriedSet();
+  const triedShown = shown.filter(b => tried.has(woapBurgerSlug(b))).length;
+  const caret = '<span class="caret">&#9660;</span>';
+  board.innerHTML = shown.length
+    ? `<div class="woap-lb-topline">
+         <span class="woap-tried-count">You have tried ${triedShown} of ${shown.length}</span>
+       </div>
+       <div class="woap-lb">
+         <div class="woap-lb-head">
+           <span class="woap-lb-h" style="text-align:center;">#</span>
+           <span class="woap-lb-h">Burger</span>
+           <button type="button" class="woap-lb-sort${woapLbSort === 'rating' ? ' on' : ''}" data-lb-sort="rating">Avg${woapLbSort === 'rating' ? ' ' + caret : ''}</button>
+           <button type="button" class="woap-lb-sort${woapLbSort === 'ratings' ? ' on' : ''}" data-lb-sort="ratings">Ratings${woapLbSort === 'ratings' ? ' ' + caret : ''}</button>
+         </div>
+         ${shown.map((b, i) => renderWoapRow(b, i + 1)).join('')}
+       </div>`
+    : `<p class="text-sm italic" style="color:var(--ink-muted);">No burgers match your search.</p>`;
+}
+
+// Switch between the leaderboard and the map. The map's Leaflet instance builds on first open.
+function setWoapView(v) {
+  woapView = (v === 'map') ? 'map' : 'board';
+  document.querySelectorAll('.woap-viewtab').forEach(t => {
+    const on = t.getAttribute('data-woap-view') === woapView;
+    t.classList.toggle('on', on);
+    t.setAttribute('aria-selected', on ? 'true' : 'false');
+  });
+  const board = document.getElementById('woapBoard');
+  const mapWrap = document.getElementById('woapMapWrap');
+  if (board) board.style.display = woapView === 'board' ? '' : 'none';
+  if (mapWrap) mapWrap.classList.toggle('on', woapView === 'map');
+  if (woapView === 'map' && window.woapMap) window.woapMap.open();
+}
+
+// Open a burger straight from the map: jump to the leaderboard, expand its row, scroll to it.
+function openWoapBurger(slug) {
+  setWoapView('board');
+  const row = document.querySelector('[data-lb-row="' + slug + '"]');
+  if (!row) return;
+  if (!row.classList.contains('open')) row.click();
+  row.scrollIntoView({ behavior: 'smooth', block: 'center' });
+}
+
 function renderWoap() {
   const section = document.getElementById('woapSection');
-  const list = document.getElementById('woapList');
-  if (!section || !list) return;
+  const board = document.getElementById('woapBoard');
+  if (!section || !board) return;
   if (!WOAP_ENABLED) { section.style.display = 'none'; return; }
   section.style.display = showWoap ? '' : 'none';
   if (!showWoap) return;
+  setWoapView(woapView);
 
   const paint = () => {
-    const shown = woapSorted(WOAP_BURGERS.filter(woapMatchesSearch));
-    const tried = woapTriedSet();
-    const triedShown = shown.filter(b => tried.has(woapBurgerSlug(b))).length;
-    list.innerHTML =
-      `<div class="woap-controls">
-        <label for="woapSort">Sort by</label>
-        <select class="woap-sort" id="woapSort">
-          <option value="rating"${woapSort === 'rating' ? ' selected' : ''}>Highest rated</option>
-          <option value="name"${woapSort === 'name' ? ' selected' : ''}>Name (A&ndash;Z)</option>
-          <option value="price"${woapSort === 'price' ? ' selected' : ''}>Price (low&ndash;high)</option>
-        </select>
-        <span class="woap-tried-count">You have tried ${triedShown} of ${shown.length}</span>
-      </div>` +
-      (shown.length
-        ? shown.map(renderWoapCard).join('')
-        : `<p class="text-sm italic" style="color:var(--ink-muted);">No burgers match your search.</p>`);
-    // Wire each card's reused rating + review widgets (the exact anonymous Supabase read/write path).
-    if (window.hydrateVenueSocial) {
-      list.querySelectorAll('.woap-card').forEach(card => window.hydrateVenueSocial(card));
-    }
+    renderWoapBoard();
+    if (window.woapMap) window.woapMap.refresh();
   };
 
   if (!woapRatingsLoaded) {
-    if (!list.querySelector('.woap-card')) list.innerHTML = '<p class="text-sm italic" style="color:var(--ink-muted);">Loading burgers…</p>';
+    if (!board.querySelector('.woap-lb-row')) board.innerHTML = '<p class="text-sm italic" style="color:var(--ink-muted);">Loading burgers…</p>';
     fetchWoapRatings().then(() => { if (showWoap) paint(); });
     return;
   }
@@ -1923,10 +2047,9 @@ if (!WOAP_ENABLED) {
   if (_woapSec) _woapSec.style.display = "none";
 }
 
-// WOAP Burgers — sort control, "tried" tracker, review toggle and photo attach (delegated, since
-// the cards are rebuilt on every render). All no-ops unless a WOAP card is on the page.
+// WOAP Burgers — view toggle, leaderboard sort/expand, "tried" tracker, review toggle and photo
+// attach (all delegated, since the board is rebuilt on every render). No-ops unless the tab is open.
 document.addEventListener("change", function(e) {
-  if (e.target && e.target.id === "woapSort") { woapSort = e.target.value; renderWoap(); return; }
   const inp = e.target.closest && e.target.closest("[data-woap-photo]");
   if (!inp) return;
   const slug = inp.getAttribute("data-woap-photo");
@@ -1957,6 +2080,31 @@ document.addEventListener("change", function(e) {
 });
 document.addEventListener("click", function(e) {
   if (!e.target.closest) return;
+  // Map / Leaderboard view toggle
+  const vt = e.target.closest("[data-woap-view]");
+  if (vt) { setWoapView(vt.getAttribute("data-woap-view")); return; }
+  // Leaderboard column sort (Avg / Ratings)
+  const sc = e.target.closest("[data-lb-sort]");
+  if (sc) { woapLbSort = sc.getAttribute("data-lb-sort"); renderWoapBoard(); return; }
+  // Open a burger straight from a map popup
+  const mo = e.target.closest("[data-woap-open]");
+  if (mo) { e.preventDefault(); openWoapBurger(mo.getAttribute("data-woap-open")); return; }
+  // Expand / collapse a leaderboard row -> its full rate/review/photo card (built on first open)
+  const lr = e.target.closest("[data-lb-row]");
+  if (lr && !e.target.closest(".woap-lb-detailrow")) {
+    const slug = lr.getAttribute("data-lb-row");
+    const detail = document.querySelector('[data-lb-detail="' + slug + '"]');
+    const opening = !lr.classList.contains("open");
+    lr.classList.toggle("open", opening);
+    if (opening && detail && !detail.innerHTML.trim()) {
+      const b = WOAP_BURGERS.find(x => woapBurgerSlug(x) === slug);
+      if (b) {
+        detail.innerHTML = renderWoapCard(b, true);
+        if (window.hydrateVenueSocial) window.hydrateVenueSocial(detail);
+      }
+    }
+    return;
+  }
   const tb = e.target.closest("[data-woap-tried]");
   if (tb) {
     e.preventDefault();
@@ -1967,10 +2115,10 @@ document.addEventListener("click", function(e) {
     woapTriedSave(set);
     const countEl = document.querySelector(".woap-tried-count");
     if (countEl) {
-      const cards = document.querySelectorAll("#woapList .woap-card");
+      const total = document.querySelectorAll("#woapBoard .woap-lb-row").length;
       let triedNow = 0;
-      cards.forEach(function(c) { if (set.has(c.getAttribute("data-woap-slug"))) triedNow++; });
-      countEl.textContent = "You have tried " + triedNow + " of " + cards.length;
+      document.querySelectorAll("#woapBoard .woap-lb-row").forEach(function(c) { if (set.has(c.getAttribute("data-lb-row"))) triedNow++; });
+      countEl.textContent = "You have tried " + triedNow + " of " + total;
     }
     return;
   }
@@ -3213,7 +3361,29 @@ loadData().then(() => {
       var ec = coordsOf(ev.venue);
       return { slug:slug, title:ev.title || 'Event', venue:ev.venue || '', suburb:ev.suburb || '', when:ewhen, time:etime, lat:ec.lat, lng:ec.lng };
     }
+    // Burger Wellington burgers — a plan stop with the festival menu item, priced, meal window,
+    // and (flagged so the notepad + share text can append the live community rating) woap:true.
+    if (slug && slug.indexOf('woap-') === 0 && typeof WOAP_BURGERS !== 'undefined' && typeof woapBurgerSlug === 'function'){
+      var bb = WOAP_BURGERS.find(function(z){ return woapBurgerSlug(z) === slug; });
+      if (bb){
+        var bc = coordsOf(bb.venue);
+        var blat = (typeof bc.lat === 'number') ? bc.lat : (typeof bb.lat === 'number' ? bb.lat : null);
+        var blng = (typeof bc.lng === 'number') ? bc.lng : (typeof bb.lng === 'number' ? bb.lng : null);
+        var meal = [bb.lunch ? 'Lunch' : '', bb.dinner ? 'Dinner' : ''].filter(Boolean).join(' & ');
+        return { slug:slug, title:bb.name || 'Burger', venue:bb.venue || '', suburb:bb.suburb || '',
+                 when:'Burger Wellington' + (bb.price ? ' · ' + bb.price : ''), time:meal, lat:blat, lng:blng, woap:true };
+      }
+    }
     return null;
+  }
+
+  // A burger plan-stop's live community rating line, looked up at render/share time so it fills in
+  // once the ratings load (and once real votes exist). Empty for non-burger stops or unrated ones.
+  function woapRatingLine(it){
+    if (!it || !it.woap || typeof WOAP_RATINGS === 'undefined') return '';
+    var r = WOAP_RATINGS[it.slug];
+    if (r && r.count) return '★ ' + r.avg.toFixed(1) + ' (' + r.count + ' rating' + (r.count === 1 ? '' : 's') + ')';
+    return '';
   }
 
   function has(slug){ return items.some(function(x){ return x.slug === slug; }); }
@@ -3313,7 +3483,7 @@ loadData().then(() => {
           '<button type="button" data-plan-down aria-label="Move down"' + (i === items.length - 1 ? ' disabled' : '') + '>&#9660;</button>' +
         '</div>' +
         '<div class="wd-plan-item-body"><div class="wd-plan-item-title">' + esc(it.title) + '</div>' +
-          '<div class="wd-plan-item-meta">' + esc(meta) + (when ? '<br>' + esc(when) : '') + '</div></div>' +
+          '<div class="wd-plan-item-meta">' + esc(meta) + (when ? '<br>' + esc(when) : '') + (woapRatingLine(it) ? '<br>' + esc(woapRatingLine(it)) : '') + '</div></div>' +
         '<button type="button" class="wd-plan-remove" data-plan-remove aria-label="Remove from plan">&times;</button>' +
       '</div>';
       if (i < items.length - 1) html += legHtml(it, items[i + 1]);
@@ -3328,6 +3498,7 @@ loadData().then(() => {
       var when = [it.when, it.time].filter(Boolean).join(' · ');
       lines.push((i + 1) + '. ' + it.title + (where ? ' — ' + where : ''));
       if (when) lines.push('   ' + when);
+      var rline = woapRatingLine(it); if (rline) lines.push('   ' + rline);
       if (i < items.length - 1){ var leg = legText(it, items[i + 1]); if (leg) lines.push('   ↳ ' + leg); }
     });
     lines.push('', 'Found on ' + SITE_URL);
@@ -3400,6 +3571,71 @@ loadData().then(() => {
   new MutationObserver(function(){ refreshButtons(); }).observe(document.body, { childList:true, subtree:true });
 
   window.WDPlan = { add:add, open:openPanel };
+})();
+</script>
+
+<script>
+// Dedicated Burger Wellington map — its own Leaflet instance inside the WOAP tab, a red pin for
+// every festival burger. Leaflet loads lazily the first time the Map view is opened, so a dark
+// (or unopened) tab adds zero page weight. Reads the same globals the leaderboard uses.
+(function(){
+  var CDN = {
+    lcss:'https://unpkg.com/leaflet@1.9.4/dist/leaflet.css',
+    ljs: 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.js',
+    mcss1:'https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css',
+    mcss2:'https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css',
+    mjs: 'https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js'
+  };
+  var WGTN = [-41.2889, 174.7772];
+  var map = null, cluster = null, built = false, pin = null;
+  function loadCss(h){ return new Promise(function(res){ var l=document.createElement('link'); l.rel='stylesheet'; l.href=h; l.onload=res; l.onerror=res; document.head.appendChild(l); }); }
+  function loadJs(s){ return new Promise(function(res,rej){ var sc=document.createElement('script'); sc.src=s; sc.onload=res; sc.onerror=rej; document.head.appendChild(sc); }); }
+  function ensureLeaflet(){
+    if (window.L && window.L.markerClusterGroup) return Promise.resolve();
+    return Promise.all([loadCss(CDN.lcss), loadCss(CDN.mcss1), loadCss(CDN.mcss2)])
+      .then(function(){ return loadJs(CDN.ljs); }).then(function(){ return loadJs(CDN.mjs); });
+  }
+  function burgerPin(){ if(!pin) pin = L.divIcon({ className:'map-pin-event-wrap', html:'<div class="map-pin-woap">&#127828;</div>', iconSize:[22,22], iconAnchor:[11,11], popupAnchor:[0,-11] }); return pin; }
+  function esc(s){ return String(s==null?'':s).replace(/[&<>"]/g, function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]; }); }
+  function popupHtml(b){
+    var slug = woapBurgerSlug(b);
+    var imgs = (typeof woapImagesFor === 'function') ? woapImagesFor(b, slug) : (b.official_image ? [b.official_image] : []);
+    var r = (WOAP_RATINGS || {})[slug] || { avg:0, count:0 };
+    var img = imgs.length ? '<img src="'+imgs[0]+'" alt="">' : '';
+    var rating = r.count ? ('&#9733; '+r.avg.toFixed(1)+' ('+r.count+')') : 'No ratings yet';
+    return '<div class="wmp">'+img+
+      '<div class="wmp-name">'+esc(b.name)+'</div>'+
+      '<div class="wmp-venue">'+esc(b.venue)+(b.suburb ? ' &middot; '+esc(suburbLabel(b.suburb)) : '')+'</div>'+
+      '<div class="wmp-meta">'+(b.price ? esc(b.price)+' &middot; ' : '')+rating+'</div>'+
+      '<button type="button" class="wmp-plan" data-plan-add="'+slug+'" data-plan-label-on="&#10003; In plan" data-plan-label-off="&#43; Plan">&#43; Plan</button>'+
+      '<a class="wmp-open" data-woap-open="'+slug+'">Rate &amp; review &rarr;</a></div>';
+  }
+  function refresh(){
+    if (!built || !map) return;
+    cluster.clearLayers();
+    (WOAP_BURGERS || []).forEach(function(b){
+      var v = (VENUES_MAP || {})[b.venue];
+      var lat = (v && typeof v.lat === 'number') ? v.lat : (typeof b.lat === 'number' ? b.lat : null);
+      var lng = (v && typeof v.lng === 'number') ? v.lng : (typeof b.lng === 'number' ? b.lng : null);
+      if (lat == null || lng == null) return;
+      var m = L.marker([lat, lng], { icon: burgerPin() });
+      m.bindPopup(popupHtml(b));
+      cluster.addLayer(m);
+    });
+  }
+  function open(){
+    ensureLeaflet().then(function(){
+      var el = document.getElementById('woapMap'); if (!el) return;
+      if (!map){
+        map = L.map(el).setView(WGTN, 12);
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { maxZoom:19, attribution:'&copy; OpenStreetMap contributors' }).addTo(map);
+        cluster = L.markerClusterGroup({ maxClusterRadius:45 }); map.addLayer(cluster);
+        built = true; refresh();
+      }
+      setTimeout(function(){ map.invalidateSize(); }, 80);
+    }).catch(function(){ var n = document.getElementById('woapMapNote'); if (n) n.textContent = 'Map failed to load — check your connection.'; });
+  }
+  window.woapMap = { open: open, refresh: refresh };
 })();
 </script>
 
