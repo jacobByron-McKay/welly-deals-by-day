@@ -12491,5 +12491,41 @@
     "verified_date": "2026-07-10",
     "confidence": "high",
     "app_required": false
+  },
+  {
+    "venue": "Otto Champagneria & Beer Hall",
+    "suburb": "CBD (Lambton Quay)",
+    "address": "125 Featherston Street, Wellington",
+    "day": "Tuesday",
+    "date": null,
+    "month_day": null,
+    "type": "weekly",
+    "title": "Taittinger Tuesdays",
+    "desc": "$19 all day for a glass of Taittinger champagne.",
+    "start": "11:30",
+    "end": null,
+    "category": "drinks",
+    "source_url": "https://otto.thechampagneria.co.nz/",
+    "source_quote": "Taittinger Tuesdays - every Tuesday only $19 all day for a glass of Taittinger champagne",
+    "verified_date": "2026-07-22",
+    "confidence": "high"
+  },
+  {
+    "venue": "Otto Champagneria & Beer Hall",
+    "suburb": "CBD (Lambton Quay)",
+    "address": "125 Featherston Street, Wellington",
+    "day": "Wednesday",
+    "date": null,
+    "month_day": null,
+    "type": "weekly",
+    "title": "Burger & Beer Wednesday",
+    "desc": "A burger plus fries with a tap beer for $20, all day.",
+    "start": "11:30",
+    "end": null,
+    "category": "food",
+    "source_url": "https://otto.thechampagneria.co.nz/",
+    "source_quote": "BURGER & BEER - every Weds ALL DAY get a burger plus fries with a tap beer for only $20.",
+    "verified_date": "2026-07-22",
+    "confidence": "high"
   }
 ]

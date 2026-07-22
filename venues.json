@@ -12723,5 +12723,16 @@
     "notes": "Scanned 2026-07-10: no active Facebook or Instagram page found. No deals or events found on any channel.",
     "lat": -40.939253,
     "lng": 174.993066
+  },
+  {
+    "venue": "Otto Champagneria & Beer Hall",
+    "suburb": "CBD (Lambton Quay)",
+    "address": "125 Featherston Street, Wellington",
+    "category_hint": "bar-restaurant",
+    "website": "https://otto.thechampagneria.co.nz",
+    "facebook": "https://www.facebook.com/thechampagneria",
+    "instagram": "https://www.instagram.com/otto_beerhall",
+    "is_chain": false,
+    "google_maps_url": "https://www.google.com/maps/search/Otto+Champagneria+%26+Beer+Hall+125+Featherston+Street+Wellington"
   }
 ]
