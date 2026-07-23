@@ -636,6 +636,8 @@
           <button class="filter-chip active px-3 py-1 rounded-full text-sm border" id="dailyToggle"        style="border-color:var(--border);">Every Day</button>
           <span class="text-xs select-none" style="color:var(--border);">|</span>
           <button class="filter-chip        px-3 py-1 rounded-full text-sm border" id="kidsToggle"         style="border-color:var(--border);">Kids Deals</button>
+          <span class="text-xs select-none" style="color:var(--border);">|</span>
+          <button class="filter-chip        px-3 py-1 rounded-full text-sm border" id="cosyToggle"         style="border-color:var(--border);">Cosy</button>
         </div>
         <div class="flex items-center gap-2 flex-wrap">
           <span class="text-xs font-semibold uppercase tracking-wider shrink-0" style="color:var(--ink-muted);">Confidence</span>
@@ -912,6 +914,7 @@ let showSports        = true;    // (no sport events in Wellington data yet — 
 let showWorldCup      = true;    // (no World Cup events in Wellington data yet — kept for filter-logic safety)
 let showSeniorsOnly   = false;   // (no seniors deals in Wellington data — kept for filter-logic safety)
 let showKidsOnly      = false;   // when true, show only deals tagged kids: true
+let showCosyOnly      = false;   // "Cosy" filter — show only deals tagged cosy: true (warm feeds, treats, quizzes). Deep-linkable via ?cosy=1
 // Club Rugby tab feature flag. Live from 2026-07-15 for the 18 July Jubilee/Hardham/Ed Chaney/
 // HD Morgan semi-finals. Set back to false if the fixture list is ever empty again — the tab
 // hides itself entirely rather than showing an empty section.
@@ -1106,6 +1109,7 @@ function dealPassesFilters(deal) {
   if (!showDailyDeals && DAILY_DEAL_KEYS.has(deal.venue + '||' + deal.title)) return false;
   if (showSeniorsOnly && !deal.seniors) return false;
   if (showKidsOnly && !deal.kids) return false;
+  if (showCosyOnly && !deal.cosy) return false;
   {
     const v = VENUES_MAP[deal.venue];
     const isChain    = v ? !!v.is_chain  : false;
@@ -1151,6 +1155,7 @@ function render() {
     const dayEvents = SPECIAL_EVENTS.filter(ev =>
       ev.date && WEEK_DATES.some(w => w.dayName === day && w.iso === ev.date)
       && selectedSuburbs.has(ev.suburb)
+      && !showCosyOnly    // Cosy filter is deals-only; events don't carry a cosy tag
       && !ev.club_rugby   // club rugby fixtures live only in their own Club Rugby tab
       && (ev.category !== 'sport' || (ev.world_cup ? showWorldCup : showSports))
       && matchesSearch(ev)
@@ -1314,6 +1319,7 @@ function renderUpcoming(upcomingDeals) {
   const items = upcomingDeals.map(d => ({ ...d, _kind: "deal" }));
 
   SPECIAL_EVENTS.forEach(ev => {
+    if (showCosyOnly) return;    // Cosy filter is deals-only; events don't carry a cosy tag
     if (ev.club_rugby) return;   // club rugby fixtures live only in their own Club Rugby tab
     if (!selectedSuburbs.has(ev.suburb)) return;
     if (ev.category === 'sport' && !(ev.world_cup ? showWorldCup : showSports)) return;
@@ -2015,6 +2021,24 @@ document.getElementById("kidsToggle").addEventListener("click", function() {
   this.classList.toggle("active", showKidsOnly);
   render();
 });
+
+// Cosy toggle — warm feeds, treats and quiz nights. Also switched on by a ?cosy=1 deep link.
+document.getElementById("cosyToggle").addEventListener("click", function() {
+  showCosyOnly = !showCosyOnly;
+  this.classList.toggle("active", showCosyOnly);
+  render();
+});
+// Deep link: welly-deals-by-day.co.nz/?cosy=1 lands with the Cosy filter already on.
+(function() {
+  const wantsCosy = new URLSearchParams(location.search).get("cosy") === "1"
+                 || location.hash.replace("#", "") === "cosy";
+  if (wantsCosy) {
+    showCosyOnly = true;
+    const btn = document.getElementById("cosyToggle");
+    if (btn) btn.classList.add("active");
+    render();
+  }
+})();
 
 // Club Rugby tab toggle (default off)
 document.getElementById("clubRugbyToggle").addEventListener("click", function() {

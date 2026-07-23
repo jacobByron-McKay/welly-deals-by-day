@@ -35,7 +35,8 @@
     "source_quote": "2 for 1 Main Meal Mondays — Choose any two from our special 2 4 1 menu and get the cheaper one for free.",
     "verified_date": "2026-06-18",
     "confidence": "medium",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "The Bridge Bar & Restaurant",
@@ -54,7 +55,8 @@
     "source_quote": "MONDAYS - BOGOFF BURGERS: 2 for 1 on all burgers & sammies",
     "verified_date": "2026-06-18",
     "confidence": "high",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "The Bridge Bar & Restaurant",
@@ -73,7 +75,8 @@
     "source_quote": "WEDNESDAY NIGHT QUIZ: WEDNESDAYS FROM 6PM + Burger and a drink for $25!",
     "verified_date": "2026-06-18",
     "confidence": "high",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "The Bridge Bar & Restaurant",
@@ -111,7 +114,8 @@
     "source_quote": "SPECIALITY STEAK THURSDAY: THURSDAYS FROM 5PM | Price confirmed via WellingtonNZ Daily Dining Deals (wellingtonnz.com/visit/eat-and-drink/daily-dining-deals): 'Steak night from $13, with a range of cuts and sides.'",
     "verified_date": "2026-06-18",
     "confidence": "medium",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "The Bridge Bar & Restaurant",
@@ -187,7 +191,8 @@
     "source_quote": "MONDAY: 2-for-1 Burgers, All Day",
     "verified_date": "2026-06-18",
     "confidence": "high",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "Leroy's Dive Bar",
@@ -206,7 +211,8 @@
     "source_quote": "WEDNESDAY: Quiz Night from 6.30pm, Prizes to be won!",
     "verified_date": "2026-06-18",
     "confidence": "high",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "Leroy's Dive Bar",
@@ -225,7 +231,8 @@
     "source_quote": "THURSDAY: Spin The Wheel from 5pm — $20 Burger Takeover",
     "verified_date": "2026-06-18",
     "confidence": "high",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "Leroy's Dive Bar",
@@ -263,7 +270,8 @@
     "source_quote": "San Fran Music Quiz, hosted by the award-winning comedian Patch Lambert — weekly Tuesday quiz which runs live on MyQuiz.org at 8.30pm.",
     "verified_date": "2026-06-18",
     "confidence": "high",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "Havana Bar",
@@ -322,7 +330,8 @@
     "verified_date": "2026-06-18",
     "confidence": "high",
     "app_required": false,
-    "app_note": "Discounted price requires free Star Social loyalty membership (join via app store, Google Play, or web registration — app not mandatory); redeem via in-app QR code or by giving staff your phone number at checkout."
+    "app_note": "Discounted price requires free Star Social loyalty membership (join via app store, Google Play, or web registration — app not mandatory); redeem via in-app QR code or by giving staff your phone number at checkout.",
+    "cosy": true
   },
   {
     "venue": "Southern Cross Garden Bar Restaurant",
@@ -341,7 +350,8 @@
     "source_quote": "Weekly Pub Quiz at The Cross — Every Tuesday | 7pm",
     "verified_date": "2026-06-18",
     "confidence": "high",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "Southern Cross Garden Bar Restaurant",
@@ -361,7 +371,8 @@
     "verified_date": "2026-06-18",
     "confidence": "high",
     "app_required": false,
-    "app_note": "Discounted price requires free Star Social loyalty membership (join via app store, Google Play, or web registration — app not mandatory); redeem via in-app QR code or by giving staff your phone number at checkout."
+    "app_note": "Discounted price requires free Star Social loyalty membership (join via app store, Google Play, or web registration — app not mandatory); redeem via in-app QR code or by giving staff your phone number at checkout.",
+    "cosy": true
   },
   {
     "venue": "Southern Cross Garden Bar Restaurant",
@@ -381,7 +392,8 @@
     "verified_date": "2026-06-18",
     "confidence": "high",
     "app_required": false,
-    "app_note": "Discounted price requires free Star Social loyalty membership (join via app store, Google Play, or web registration — app not mandatory); redeem via in-app QR code or by giving staff your phone number at checkout."
+    "app_note": "Discounted price requires free Star Social loyalty membership (join via app store, Google Play, or web registration — app not mandatory); redeem via in-app QR code or by giving staff your phone number at checkout.",
+    "cosy": true
   },
   {
     "venue": "The Rogue & Vagabond",
@@ -400,7 +412,8 @@
     "source_quote": "$2 Taco Tuesdays! The Rogue & Vagabond.",
     "verified_date": "2026-06-18",
     "confidence": "medium",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "The Rogue & Vagabond",
@@ -419,7 +432,8 @@
     "source_quote": "$19-77 Punk Wing Wednesdays — 77c each or $19 for 12 and a pint. From 5pm until sold out.",
     "verified_date": "2026-06-18",
     "confidence": "high",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "Little Beer Quarter",
@@ -438,7 +452,8 @@
     "source_quote": "Pizza Mondays have had a slight adjustment! 🍕 Enjoy a glass of one of our house wines, or a pint of certain selected tap beer, with any pizza for just $30!",
     "verified_date": "2026-06-18",
     "confidence": "high",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "Little Beer Quarter",
@@ -457,7 +472,8 @@
     "source_quote": "Tuesdays - Nick Fone's LBQ Quiz. Every second Tuesday night from 8pm.",
     "verified_date": "2026-06-18",
     "confidence": "medium",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "Little Beer Quarter",
@@ -476,7 +492,8 @@
     "source_quote": "Wednesdays - Burger & Beer w/ Parrotdog = $30",
     "verified_date": "2026-06-18",
     "confidence": "medium",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "Little Beer Quarter",
@@ -554,7 +571,8 @@
     "verified_date": "2026-06-18",
     "confidence": "high",
     "app_required": false,
-    "app_note": "Discounted price requires free Star Social loyalty membership (join via app store, Google Play, or web registration — app not mandatory); redeem via in-app QR code or by giving staff your phone number at checkout."
+    "app_note": "Discounted price requires free Star Social loyalty membership (join via app store, Google Play, or web registration — app not mandatory); redeem via in-app QR code or by giving staff your phone number at checkout.",
+    "cosy": true
   },
   {
     "venue": "The Green Man Pub",
@@ -573,7 +591,8 @@
     "source_quote": "Weekly Pub Quiz at Green Man — Every Tuesday | 6pm",
     "verified_date": "2026-06-18",
     "confidence": "high",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "The Green Man Pub",
@@ -593,7 +612,8 @@
     "verified_date": "2026-06-18",
     "confidence": "high",
     "app_required": false,
-    "app_note": "Discounted price requires free Star Social loyalty membership (join via app store, Google Play, or web registration — app not mandatory); redeem via in-app QR code or by giving staff your phone number at checkout."
+    "app_note": "Discounted price requires free Star Social loyalty membership (join via app store, Google Play, or web registration — app not mandatory); redeem via in-app QR code or by giving staff your phone number at checkout.",
+    "cosy": true
   },
   {
     "venue": "The Green Man Pub",
@@ -613,7 +633,8 @@
     "verified_date": "2026-06-18",
     "confidence": "high",
     "app_required": false,
-    "app_note": "Discounted price requires free Star Social loyalty membership (join via app store, Google Play, or web registration — app not mandatory); redeem via in-app QR code or by giving staff your phone number at checkout."
+    "app_note": "Discounted price requires free Star Social loyalty membership (join via app store, Google Play, or web registration — app not mandatory); redeem via in-app QR code or by giving staff your phone number at checkout.",
+    "cosy": true
   },
   {
     "venue": "The Green Man Pub",
@@ -652,7 +673,8 @@
     "source_quote": "Sunday Roasts are back! For $35, you get the choice of Beef, Chicken, or Vege, followed by sides and a homemade Yorkshire pudding. If you're a Star social member then we'll take away $5 so you'll only spend $30 for this delicious meal!",
     "verified_date": "2026-06-18",
     "confidence": "high",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "Lola Rouge Restaurant & Bar",
@@ -785,7 +807,8 @@
     "source_quote": "Open late with $10 cheeseburgers & dogs after 10pm, $10 Fireball shots, and TWO happy hours (yep). 5-6pm + 9-10pm.",
     "verified_date": "2026-06-18",
     "confidence": "medium",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "Scopa",
@@ -804,7 +827,8 @@
     "source_quote": "MARGHI TUESDAY. Every Tuesday. $10 MARGHERITA Pizzas dine in + takeaway. 11:30 → 3PM",
     "verified_date": "2026-06-18",
     "confidence": "medium",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "1154 Pastaria",
@@ -823,7 +847,8 @@
     "source_quote": "$13 Mon - Fri 4pm - 6pm House-Made Fresh Pasta with Select Sauces Simple . Real . Deal .",
     "verified_date": "2026-06-18",
     "confidence": "high",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "1154 Pastaria",
@@ -842,7 +867,8 @@
     "source_quote": "$13 Mon - Fri 4pm - 6pm House-Made Fresh Pasta with Select Sauces Simple . Real . Deal .",
     "verified_date": "2026-06-18",
     "confidence": "high",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "1154 Pastaria",
@@ -861,7 +887,8 @@
     "source_quote": "$13 Mon - Fri 4pm - 6pm House-Made Fresh Pasta with Select Sauces Simple . Real . Deal .",
     "verified_date": "2026-06-18",
     "confidence": "high",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "1154 Pastaria",
@@ -880,7 +907,8 @@
     "source_quote": "$13 Mon - Fri 4pm - 6pm House-Made Fresh Pasta with Select Sauces Simple . Real . Deal .",
     "verified_date": "2026-06-18",
     "confidence": "high",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "1154 Pastaria",
@@ -899,7 +927,8 @@
     "source_quote": "$13 Mon - Fri 4pm - 6pm House-Made Fresh Pasta with Select Sauces Simple . Real . Deal .",
     "verified_date": "2026-06-18",
     "confidence": "high",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "1154 Pastaria",
@@ -918,7 +947,8 @@
     "source_quote": "MON & TUES FROM 4PM ADD A WINE & PANNA COTTA FOR $15",
     "verified_date": "2026-06-18",
     "confidence": "high",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "1154 Pastaria",
@@ -937,7 +967,8 @@
     "source_quote": "MON & TUES FROM 4PM ADD A WINE & PANNA COTTA FOR $15",
     "verified_date": "2026-06-18",
     "confidence": "high",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "Cuba St Tavern",
@@ -956,7 +987,8 @@
     "source_quote": "Tuesdays - $20 Curry Night",
     "verified_date": "2026-06-25",
     "confidence": "high",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "Cuba St Tavern",
@@ -1051,7 +1083,8 @@
     "source_quote": "The downstairs B & D bar (Basement and Dance) is open for Bingay on Wednesdays",
     "verified_date": "2026-06-25",
     "confidence": "high",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "Hotel Bristol",
@@ -1091,7 +1124,8 @@
     "verified_date": "2026-06-25",
     "confidence": "high",
     "app_required": false,
-    "app_note": "Discounted price requires free Star Social loyalty membership (join via app store, Google Play, or web registration — app not mandatory); redeem via in-app QR code or by giving staff your phone number at checkout."
+    "app_note": "Discounted price requires free Star Social loyalty membership (join via app store, Google Play, or web registration — app not mandatory); redeem via in-app QR code or by giving staff your phone number at checkout.",
+    "cosy": true
   },
   {
     "venue": "Hotel Bristol",
@@ -1111,7 +1145,8 @@
     "verified_date": "2026-06-25",
     "confidence": "high",
     "app_required": false,
-    "app_note": "Discounted price requires free Star Social loyalty membership (join via app store, Google Play, or web registration — app not mandatory); redeem via in-app QR code or by giving staff your phone number at checkout."
+    "app_note": "Discounted price requires free Star Social loyalty membership (join via app store, Google Play, or web registration — app not mandatory); redeem via in-app QR code or by giving staff your phone number at checkout.",
+    "cosy": true
   },
   {
     "venue": "Hotel Bristol",
@@ -1131,7 +1166,8 @@
     "verified_date": "2026-06-25",
     "confidence": "high",
     "app_required": false,
-    "app_note": "Discounted price requires free Star Social loyalty membership (join via app store, Google Play, or web registration — app not mandatory); redeem via in-app QR code or by giving staff your phone number at checkout."
+    "app_note": "Discounted price requires free Star Social loyalty membership (join via app store, Google Play, or web registration — app not mandatory); redeem via in-app QR code or by giving staff your phone number at checkout.",
+    "cosy": true
   },
   {
     "venue": "Hotel Bristol",
@@ -1150,7 +1186,8 @@
     "source_quote": "Weekly Pub Quiz at Hotel Bristol — Every Thursday | 7pm",
     "verified_date": "2026-06-25",
     "confidence": "high",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "Hotel Bristol",
@@ -1170,7 +1207,8 @@
     "verified_date": "2026-06-25",
     "confidence": "high",
     "app_required": false,
-    "app_note": "Discounted price requires free Star Social loyalty membership (join via app store, Google Play, or web registration — app not mandatory); redeem via in-app QR code or by giving staff your phone number at checkout."
+    "app_note": "Discounted price requires free Star Social loyalty membership (join via app store, Google Play, or web registration — app not mandatory); redeem via in-app QR code or by giving staff your phone number at checkout.",
+    "cosy": true
   },
   {
     "venue": "Hotel Bristol",
@@ -1230,7 +1268,8 @@
     "verified_date": "2026-06-25",
     "confidence": "high",
     "app_required": false,
-    "app_note": "Discounted price requires free Star Social loyalty membership (join via app store, Google Play, or web registration — app not mandatory); redeem via in-app QR code or by giving staff your phone number at checkout."
+    "app_note": "Discounted price requires free Star Social loyalty membership (join via app store, Google Play, or web registration — app not mandatory); redeem via in-app QR code or by giving staff your phone number at checkout.",
+    "cosy": true
   },
   {
     "venue": "Southern Cross Garden Bar Restaurant",
@@ -1289,7 +1328,8 @@
     "source_quote": "DEAL OF THE DAY! TUESDAY — ORIGINAL TIRAMISU OR VEGAN TIRAMISU $12. Available from 11am until close. While stocks last.",
     "verified_date": "2026-06-26",
     "confidence": "high",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "MISU",
@@ -1308,7 +1348,8 @@
     "source_quote": "DEAL OF THE DAY! WEDNESDAY — MANGO ROLL CAKE $9. Available from 11am until close. While stocks last.",
     "verified_date": "2026-06-26",
     "confidence": "high",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "MISU",
@@ -1327,7 +1368,8 @@
     "source_quote": "DEAL OF THE DAY! THURSDAY — BISCOFF MISU OR VEGAN BISCOFF TIRAMISU $12. Available from 11am until close. While stocks last.",
     "verified_date": "2026-06-26",
     "confidence": "high",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "MISU",
@@ -1346,7 +1388,8 @@
     "source_quote": "DEAL OF THE DAY! FRIDAY — SALTED CARAMEL CHEESECAKE $10. Available from 11am until close. While stocks last.",
     "verified_date": "2026-06-26",
     "confidence": "high",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "MISU",
@@ -1384,7 +1427,8 @@
     "source_quote": "DEAL OF THE DAY! SUNDAY — VEGAN CHEESECAKE (ANY) $10. Available from 11am until close. While stocks last.",
     "verified_date": "2026-06-26",
     "confidence": "high",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "MISU",
@@ -1536,7 +1580,8 @@
     "source_quote": "Every Wednesday we'll be doing a $10 dish! Available with any other purchase. Limit 1 per 4 guests.",
     "verified_date": "2026-06-26",
     "confidence": "high",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "The Welsh Dragon Bar",
@@ -1555,7 +1600,8 @@
     "source_quote": "SUNDAY ROAST | CINIO RHOST — Roast Beef $32. The jewel in our crown, world famous in New Zealand.",
     "verified_date": "2026-06-26",
     "confidence": "high",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "Kelburn Village Pub",
@@ -1575,7 +1621,8 @@
     "verified_date": "2026-07-22",
     "confidence": "high",
     "app_required": false,
-    "change_note": "Price increased from $12 to $15 per taco (was: 'Taco Tuesday + Quiz Night. Tacos $12 each. Weekly pub quiz from 7pm.', verified 2026-06-26)."
+    "change_note": "Price increased from $12 to $15 per taco (was: 'Taco Tuesday + Quiz Night. Tacos $12 each. Weekly pub quiz from 7pm.', verified 2026-06-26).",
+    "cosy": true
   },
   {
     "venue": "Kelburn Village Pub",
@@ -1595,7 +1642,8 @@
     "verified_date": "2026-07-22",
     "confidence": "high",
     "app_required": false,
-    "change_note": "Reconfirmed unchanged ($28 steak still current) via a dated FB post posted today; verified_date bumped from 2026-06-26."
+    "change_note": "Reconfirmed unchanged ($28 steak still current) via a dated FB post posted today; verified_date bumped from 2026-06-26.",
+    "cosy": true
   },
   {
     "venue": "Flamingo Joe's Bar & Eatery",
@@ -1672,7 +1720,8 @@
     "source_quote": "STEAK FRITES FRIDAYS Only $28 INCLUDES HOUSE WINE OR BEER, SOFT DRINK OR REGULAR COFFEE Available Every Friday 7am to 1:30pm",
     "verified_date": "2026-06-26",
     "confidence": "high",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "Shed 5",
@@ -1710,7 +1759,8 @@
     "source_quote": "$26 Lunch. Monday – Thursday: 11.30 am – 2.30 pm",
     "verified_date": "2026-06-26",
     "confidence": "high",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "BIN44 Restaurant & Bar",
@@ -1729,7 +1779,8 @@
     "source_quote": "$26 Lunch. Monday – Thursday: 11.30 am – 2.30 pm",
     "verified_date": "2026-06-26",
     "confidence": "high",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "BIN44 Restaurant & Bar",
@@ -1748,7 +1799,8 @@
     "source_quote": "$26 Lunch. Monday – Thursday: 11.30 am – 2.30 pm",
     "verified_date": "2026-06-26",
     "confidence": "high",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "BIN44 Restaurant & Bar",
@@ -1767,7 +1819,8 @@
     "source_quote": "$26 Lunch. Monday – Thursday: 11.30 am – 2.30 pm",
     "verified_date": "2026-06-26",
     "confidence": "high",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "St Johns Bar and Restaurant",
@@ -1824,7 +1877,8 @@
     "source_quote": "$35 with wine or beer | $30 with non-alcoholic drink. Weekday lunches, made easy!",
     "verified_date": "2026-06-26",
     "confidence": "high",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "St Johns Bar and Restaurant",
@@ -1843,7 +1897,8 @@
     "source_quote": "$35 with wine or beer | $30 with non-alcoholic drink. Weekday lunches, made easy!",
     "verified_date": "2026-06-26",
     "confidence": "high",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "St Johns Bar and Restaurant",
@@ -1862,7 +1917,8 @@
     "source_quote": "$35 with wine or beer | $30 with non-alcoholic drink. Weekday lunches, made easy!",
     "verified_date": "2026-06-26",
     "confidence": "high",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "St Johns Bar and Restaurant",
@@ -1881,7 +1937,8 @@
     "source_quote": "$35 with wine or beer | $30 with non-alcoholic drink. Weekday lunches, made easy!",
     "verified_date": "2026-06-26",
     "confidence": "high",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "St Johns Bar and Restaurant",
@@ -1900,7 +1957,8 @@
     "source_quote": "$35 with wine or beer | $30 with non-alcoholic drink. Weekday lunches, made easy!",
     "verified_date": "2026-06-26",
     "confidence": "high",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "St Johns Bar and Restaurant",
@@ -1919,7 +1977,8 @@
     "source_quote": "Join us every Tuesday for Steak Night. Choose between our 250g Rump for $29 or 250g Sirloin for $35.",
     "verified_date": "2026-06-26",
     "confidence": "high",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "Hippo Bar & Restaurant",
@@ -1938,7 +1997,8 @@
     "source_quote": "Hippo High Tea. Saturday & Sunday 1pm till 2:30pm. $75 pp.",
     "verified_date": "2026-06-26",
     "confidence": "high",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "Hippo Bar & Restaurant",
@@ -1957,7 +2017,8 @@
     "source_quote": "Hippo High Tea. Saturday & Sunday 1pm till 2:30pm. $75 pp.",
     "verified_date": "2026-06-26",
     "confidence": "high",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "Martha's Pantry",
@@ -1976,7 +2037,8 @@
     "source_quote": "Standard / Vegetarian High Tea $48 pp. Special Dietary (GF / DF / VG) $53 pp. Kid's standard. $35.",
     "verified_date": "2026-06-26",
     "confidence": "high",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "Martha's Pantry",
@@ -1995,7 +2057,8 @@
     "source_quote": "Standard / Vegetarian High Tea $48 pp. Special Dietary (GF / DF / VG) $53 pp. Kid's standard. $35.",
     "verified_date": "2026-06-26",
     "confidence": "high",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "Martha's Pantry",
@@ -2014,7 +2077,8 @@
     "source_quote": "Standard / Vegetarian High Tea $48 pp. Special Dietary (GF / DF / VG) $53 pp. Kid's standard. $35.",
     "verified_date": "2026-06-26",
     "confidence": "high",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "Martha's Pantry",
@@ -2033,7 +2097,8 @@
     "source_quote": "Standard / Vegetarian High Tea $48 pp. Special Dietary (GF / DF / VG) $53 pp. Kid's standard. $35.",
     "verified_date": "2026-06-26",
     "confidence": "high",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "Martha's Pantry",
@@ -2052,7 +2117,8 @@
     "source_quote": "Standard / Vegetarian High Tea $48 pp. Special Dietary (GF / DF / VG) $53 pp. Kid's standard. $35.",
     "verified_date": "2026-06-26",
     "confidence": "high",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "Nolita",
@@ -2090,7 +2156,8 @@
     "source_quote": "Sunday-Tuesday special: any burger + Estrella is $36! Served from 5pm.",
     "verified_date": "2026-06-26",
     "confidence": "high",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "El Matador",
@@ -2109,7 +2176,8 @@
     "source_quote": "Sunday-Tuesday special: any burger + Estrella is $36! Served from 5pm.",
     "verified_date": "2026-06-26",
     "confidence": "high",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "El Matador",
@@ -2128,7 +2196,8 @@
     "source_quote": "Sunday-Tuesday special: any burger + Estrella is $36! Served from 5pm.",
     "verified_date": "2026-06-26",
     "confidence": "high",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "El Matador",
@@ -2147,7 +2216,8 @@
     "source_quote": "Monday special: woodfired 300g Bife de Chorizo (sirloin steak), chimichurri, patatas & salad + a glass of delicious Malbec is $55. Served from 5pm.",
     "verified_date": "2026-06-26",
     "confidence": "high",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "El Matador",
@@ -2166,7 +2236,8 @@
     "source_quote": "$47 woodfired 300g Cuadril (rump steak), chimichurri, patatas & salad. Served from 5pm, every day!",
     "verified_date": "2026-06-26",
     "confidence": "high",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "Santeria Pizza And Pasta",
@@ -2185,7 +2256,8 @@
     "source_quote": "WEEKLY SPECIALS: MONDAY | $14 MARGHERITA PIZZA",
     "verified_date": "2026-06-26",
     "confidence": "high",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "Santeria Pizza And Pasta",
@@ -2204,7 +2276,8 @@
     "source_quote": "WEEKLY SPECIALS: TUESDAY | $20 PASTA NIGHT",
     "verified_date": "2026-06-26",
     "confidence": "high",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "Santeria Pizza And Pasta",
@@ -2261,7 +2334,8 @@
     "source_quote": "Happy Tuesday! Line up today includes Chicken, Bacon, Jalapeño Poppers as your special of the day. $14 Pie & Coffee Deal runs all week!",
     "verified_date": "2026-06-26",
     "confidence": "medium",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "Salut Pies",
@@ -2280,7 +2354,8 @@
     "source_quote": "Happy Tuesday! Line up today includes Chicken, Bacon, Jalapeño Poppers as your special of the day. $14 Pie & Coffee Deal runs all week!",
     "verified_date": "2026-06-26",
     "confidence": "medium",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "Salut Pies",
@@ -2299,7 +2374,8 @@
     "source_quote": "Happy Tuesday! Line up today includes Chicken, Bacon, Jalapeño Poppers as your special of the day. $14 Pie & Coffee Deal runs all week!",
     "verified_date": "2026-06-26",
     "confidence": "medium",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "Salut Pies",
@@ -2318,7 +2394,8 @@
     "source_quote": "Happy Tuesday! Line up today includes Chicken, Bacon, Jalapeño Poppers as your special of the day. $14 Pie & Coffee Deal runs all week!",
     "verified_date": "2026-06-26",
     "confidence": "medium",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "Salut Pies",
@@ -2337,7 +2414,8 @@
     "source_quote": "Happy Tuesday! Line up today includes Chicken, Bacon, Jalapeño Poppers as your special of the day. $14 Pie & Coffee Deal runs all week!",
     "verified_date": "2026-06-26",
     "confidence": "medium",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "Salut Pies",
@@ -2356,7 +2434,8 @@
     "source_quote": "Happy Tuesday! Line up today includes Chicken, Bacon, Jalapeño Poppers as your special of the day. $14 Pie & Coffee Deal runs all week!",
     "verified_date": "2026-06-26",
     "confidence": "medium",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "Creamy & Crunchy",
@@ -2375,7 +2454,8 @@
     "source_quote": "Est. 2024, Wellington NZ, Light roast coffee, Vegan food, Pie + drink $10",
     "verified_date": "2026-06-26",
     "confidence": "medium",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "Creamy & Crunchy",
@@ -2394,7 +2474,8 @@
     "source_quote": "Est. 2024, Wellington NZ, Light roast coffee, Vegan food, Pie + drink $10",
     "verified_date": "2026-06-26",
     "confidence": "medium",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "Creamy & Crunchy",
@@ -2413,7 +2494,8 @@
     "source_quote": "Est. 2024, Wellington NZ, Light roast coffee, Vegan food, Pie + drink $10",
     "verified_date": "2026-06-26",
     "confidence": "medium",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "Creamy & Crunchy",
@@ -2432,7 +2514,8 @@
     "source_quote": "Est. 2024, Wellington NZ, Light roast coffee, Vegan food, Pie + drink $10",
     "verified_date": "2026-06-26",
     "confidence": "medium",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "Creamy & Crunchy",
@@ -2451,7 +2534,8 @@
     "source_quote": "Est. 2024, Wellington NZ, Light roast coffee, Vegan food, Pie + drink $10",
     "verified_date": "2026-06-26",
     "confidence": "medium",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "Preservatorium Cafe",
@@ -2470,7 +2554,8 @@
     "source_quote": "Tuesday Burger Chicken, Avo, Cranberry, Aioli, Cheese and Fries $17.50",
     "verified_date": "2026-06-26",
     "confidence": "high",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "Preservatorium Cafe",
@@ -2508,7 +2593,8 @@
     "source_quote": "Friday Spacial Smashed Avo On Toast with Poached Eggs, Feta cheese and Dukkah $17.50",
     "verified_date": "2026-06-26",
     "confidence": "high",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "Hummingbird Restaurant & Lounge",
@@ -2527,7 +2613,8 @@
     "source_quote": "Tuesday is still our favourite day of the week with our $38 Steak and Wine Special",
     "verified_date": "2026-06-26",
     "confidence": "high",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "Faithful Flavours Cafe, Bakery, & Restaurant",
@@ -2584,7 +2671,8 @@
     "source_quote": "ALL YOU CAN EAT WINGS & FRIES Wednesdays – $29",
     "verified_date": "2026-06-26",
     "confidence": "high",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "Sweet Mother's Kitchen",
@@ -2603,7 +2691,8 @@
     "source_quote": "ALL YOU CAN EAT TACO!! $29 PER PERSON EVERY TUESDAY & THURSDAY 5PM-9PM WITH VEGAN, VEGETARIAN & PESCATARIAN OPTIONS AVAILABLE",
     "verified_date": "2026-06-26",
     "confidence": "high",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "Sweet Mother's Kitchen",
@@ -2622,7 +2711,8 @@
     "source_quote": "ALL YOU CAN EAT TACO!! $29 PER PERSON EVERY TUESDAY & THURSDAY 5PM-9PM WITH VEGAN, VEGETARIAN & PESCATARIAN OPTIONS AVAILABLE",
     "verified_date": "2026-06-26",
     "confidence": "high",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "Sweet Mother's Kitchen",
@@ -2641,7 +2731,8 @@
     "source_quote": "Taco Thursdays – $5 Tacos & $12 Margaritas",
     "verified_date": "2026-06-26",
     "confidence": "high",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "Sweet Mother's Kitchen",
@@ -2774,7 +2865,8 @@
     "source_quote": "Weekday Deal – $14 Po Boy + Curly Fries + Can drink $23",
     "verified_date": "2026-06-26",
     "confidence": "high",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "Sweet Mother's Kitchen",
@@ -2793,7 +2885,8 @@
     "source_quote": "Weekday Deal – $14 Po Boy + Curly Fries + Can drink $23",
     "verified_date": "2026-06-26",
     "confidence": "high",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "Sweet Mother's Kitchen",
@@ -2812,7 +2905,8 @@
     "source_quote": "Weekday Deal – $14 Po Boy + Curly Fries + Can drink $23",
     "verified_date": "2026-06-26",
     "confidence": "high",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "Sweet Mother's Kitchen",
@@ -2831,7 +2925,8 @@
     "source_quote": "Weekday Deal – $14 Po Boy + Curly Fries + Can drink $23",
     "verified_date": "2026-06-26",
     "confidence": "high",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "Sweet Mother's Kitchen",
@@ -2850,7 +2945,8 @@
     "source_quote": "Weekday Deal – $14 Po Boy + Curly Fries + Can drink $23",
     "verified_date": "2026-06-26",
     "confidence": "high",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "Lulu Bar & Restaurant",
@@ -3002,7 +3098,8 @@
     "source_quote": "$20 for any Burger & Fries",
     "verified_date": "2026-07-11",
     "confidence": "high",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "Sprig + Fern Thorndon",
@@ -3021,7 +3118,8 @@
     "source_quote": "$20 for any wood fired pizza",
     "verified_date": "2026-07-11",
     "confidence": "high",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "Sprig + Fern Thorndon",
@@ -3040,7 +3138,8 @@
     "source_quote": "$20 Fish + Chips all day!",
     "verified_date": "2026-07-11",
     "confidence": "high",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "Sprig + Fern Thorndon",
@@ -3059,7 +3158,8 @@
     "source_quote": "Charity Quiz Night. Prizes, Raffle, Good Times. Gold coin entry",
     "verified_date": "2026-07-11",
     "confidence": "high",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "The Ram",
@@ -3078,7 +3178,8 @@
     "source_quote": "$35 t-bone steak and chips, multiple sauce options",
     "verified_date": "2026-07-11",
     "confidence": "medium",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "Huxley's",
@@ -3098,7 +3199,8 @@
     "verified_date": "2026-06-26",
     "confidence": "high",
     "app_required": false,
-    "app_note": "Discounted price requires free Star Social loyalty membership (join via app store, Google Play, or web registration — app not mandatory); redeem via in-app QR code or by giving staff your phone number at checkout."
+    "app_note": "Discounted price requires free Star Social loyalty membership (join via app store, Google Play, or web registration — app not mandatory); redeem via in-app QR code or by giving staff your phone number at checkout.",
+    "cosy": true
   },
   {
     "venue": "Overcooked Cafe & Eatery",
@@ -3117,7 +3219,8 @@
     "source_quote": "WORLD CUP LUNCH SERIES 2026 ONLY $16.90 STAMP CARD COLLECT STAMPS EVERY MONDAY!",
     "verified_date": "2026-06-26",
     "confidence": "high",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "Juniper Gin Bar & Restaurant",
@@ -3136,7 +3239,8 @@
     "source_quote": "FREE fries with every gourmet burger Friday night special",
     "verified_date": "2026-06-26",
     "confidence": "high",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "The Old Bailey",
@@ -3269,7 +3373,8 @@
     "source_quote": "treat yourself to a juicy 200gm sirloin steak, served with crispy chips, fresh salad, and Café de Paris butter—all for just $27",
     "verified_date": "2026-06-26",
     "confidence": "high",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "The Old Bailey",
@@ -3288,7 +3393,8 @@
     "source_quote": "weekly rotating classic Sunday roast with all the trimmings (yes including yorkies!!) for $33, from 11.30am every week",
     "verified_date": "2026-06-26",
     "confidence": "high",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "Ernesto's Restaurant & Bar",
@@ -3307,7 +3413,8 @@
     "source_quote": "$25 LUNCH PROMO 12-3PM MONDAY - FRIDAY SPECIALS CHANGING DAILY! Available with any beverage purchase above $10.",
     "verified_date": "2026-06-26",
     "confidence": "high",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "Ernesto's Restaurant & Bar",
@@ -3326,7 +3433,8 @@
     "source_quote": "$25 LUNCH PROMO 12-3PM MONDAY - FRIDAY SPECIALS CHANGING DAILY! Available with any beverage purchase above $10.",
     "verified_date": "2026-06-26",
     "confidence": "high",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "Ernesto's Restaurant & Bar",
@@ -3345,7 +3453,8 @@
     "source_quote": "$25 LUNCH PROMO 12-3PM MONDAY - FRIDAY SPECIALS CHANGING DAILY! Available with any beverage purchase above $10.",
     "verified_date": "2026-06-26",
     "confidence": "high",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "Ernesto's Restaurant & Bar",
@@ -3364,7 +3473,8 @@
     "source_quote": "$25 LUNCH PROMO 12-3PM MONDAY - FRIDAY SPECIALS CHANGING DAILY! Available with any beverage purchase above $10.",
     "verified_date": "2026-06-26",
     "confidence": "high",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "Ernesto's Restaurant & Bar",
@@ -3383,7 +3493,8 @@
     "source_quote": "$25 LUNCH PROMO 12-3PM MONDAY - FRIDAY SPECIALS CHANGING DAILY! Available with any beverage purchase above $10.",
     "verified_date": "2026-06-26",
     "confidence": "high",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "Ernesto's Restaurant & Bar",
@@ -3516,7 +3627,8 @@
     "source_quote": "Our quizmistress Paula sets the best quiz in town... Teams of up to six; bring a team or come alone.",
     "verified_date": "2026-06-26",
     "confidence": "high",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "The Welsh Dragon Bar",
@@ -3687,7 +3799,8 @@
     "source_quote": "Three-course meal for $55 every Monday and Tuesday evening.",
     "verified_date": "2026-07-03",
     "confidence": "high",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "Fratelli",
@@ -3706,7 +3819,8 @@
     "source_quote": "Three-course meal for $55 every Monday and Tuesday evening.",
     "verified_date": "2026-07-03",
     "confidence": "high",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "Master Kong",
@@ -3725,7 +3839,8 @@
     "source_quote": "$5 bao from 3pm to 5pm with any drink purchased.",
     "verified_date": "2026-07-03",
     "confidence": "high",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "Master Kong",
@@ -3744,7 +3859,8 @@
     "source_quote": "$1 chicken wings with any drink purchased from 3pm to 5pm.",
     "verified_date": "2026-07-03",
     "confidence": "high",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "Master Kong",
@@ -3763,7 +3879,8 @@
     "source_quote": "$2 dumplings with any drink purchased 3pm to 5pm.",
     "verified_date": "2026-07-03",
     "confidence": "high",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "The Crab Shack",
@@ -3801,7 +3918,8 @@
     "source_quote": "Buy one, get one half price on tacos, from 3pm to 6pm.",
     "verified_date": "2026-07-03",
     "confidence": "high",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "The Crab Shack",
@@ -3839,7 +3957,8 @@
     "source_quote": "Buy one get one free fish and chips, from 3pm to 6pm.",
     "verified_date": "2026-07-03",
     "confidence": "high",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "The Crab Shack",
@@ -3858,7 +3977,8 @@
     "source_quote": "Order two main meals and get a free corn chip platter to share, from 3pm to 6pm.",
     "verified_date": "2026-07-03",
     "confidence": "high",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "The Crab Shack",
@@ -4048,7 +4168,8 @@
     "source_quote": "$15 margarita pizzas from 11:30am to 3pm.",
     "verified_date": "2026-07-03",
     "confidence": "high",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "Bambina Pizzeria Waterfront",
@@ -4067,7 +4188,8 @@
     "source_quote": "$15 chef's special pizza from 11:30am to 3pm.",
     "verified_date": "2026-07-03",
     "confidence": "high",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "Bambina Pizzeria Waterfront",
@@ -4086,7 +4208,8 @@
     "source_quote": "Two-for-one pizzas from 4pm.",
     "verified_date": "2026-07-03",
     "confidence": "high",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "Bambina Pizzeria Waterfront",
@@ -4105,7 +4228,8 @@
     "source_quote": "Two-for-one pizzas from 4pm.",
     "verified_date": "2026-07-03",
     "confidence": "high",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "Bambina Pizzeria Waterfront",
@@ -4124,7 +4248,8 @@
     "source_quote": "Free fries with any pizza.",
     "verified_date": "2026-07-03",
     "confidence": "high",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "Bambina Pizzeria Waterfront",
@@ -4143,7 +4268,8 @@
     "source_quote": "Family deal: two pizzas, two soft drinks, and fries for $50.",
     "verified_date": "2026-07-03",
     "confidence": "high",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "Duke of Wellington",
@@ -4162,7 +4288,8 @@
     "source_quote": "Special burger of the week and fries for $20; add a soft drink or half pint.",
     "verified_date": "2026-07-03",
     "confidence": "high",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "Eva Pub",
@@ -4200,7 +4327,8 @@
     "source_quote": "Half-price nachos.",
     "verified_date": "2026-07-03",
     "confidence": "high",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "Eva Pub",
@@ -4219,7 +4347,8 @@
     "source_quote": "Pizza and a beer jug for $30.",
     "verified_date": "2026-07-03",
     "confidence": "high",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "Flying Burrito Brothers",
@@ -4257,7 +4386,8 @@
     "source_quote": "When an adult purchases a meal over $20, a child's main is $9.99.",
     "verified_date": "2026-07-03",
     "confidence": "high",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "Rock Yard",
@@ -4295,7 +4425,8 @@
     "source_quote": "Burger and beer for $28.",
     "verified_date": "2026-07-03",
     "confidence": "high",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "Heyday Brewery & Bar",
@@ -4314,7 +4445,8 @@
     "source_quote": "Burger and beer for $28.",
     "verified_date": "2026-07-03",
     "confidence": "high",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "Heyday Brewery & Bar",
@@ -4333,7 +4465,8 @@
     "source_quote": "Two burgers for $35.",
     "verified_date": "2026-07-03",
     "confidence": "high",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "Mexico Wellington",
@@ -4352,7 +4485,8 @@
     "source_quote": "Bottomless tacos $40 per person.",
     "verified_date": "2026-07-03",
     "confidence": "high",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "Mexico Wellington",
@@ -4390,7 +4524,8 @@
     "source_quote": "Two-for-one hotdogs.",
     "verified_date": "2026-07-03",
     "confidence": "high",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "The Residence",
@@ -4409,7 +4544,8 @@
     "source_quote": "Two-for-one hotdogs.",
     "verified_date": "2026-07-03",
     "confidence": "high",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "The Bond Sports Bar",
@@ -4428,7 +4564,8 @@
     "source_quote": "$19 all you can eat Hell Pizza from 5:30pm to 8pm.",
     "verified_date": "2026-07-03",
     "confidence": "high",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "Waitoa Victoria St",
@@ -4447,7 +4584,8 @@
     "source_quote": "$2.50 chicken wings with any drink between 5-8:30pm. Minimum of 2 wings per order.",
     "verified_date": "2026-07-03",
     "confidence": "high",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "Waitoa Victoria St",
@@ -4485,7 +4623,8 @@
     "source_quote": "Waitoa Jug and 2-person Nyonya Platter for $45. Available 3-8:30pm.",
     "verified_date": "2026-07-03",
     "confidence": "high",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "Waitoa Victoria St",
@@ -4504,7 +4643,8 @@
     "source_quote": "Bottomless snacks for $7. Includes selected potato chips, corn chips, and popcorn with M&Ms.",
     "verified_date": "2026-07-03",
     "confidence": "high",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "Waitoa Victoria St",
@@ -4523,7 +4663,8 @@
     "source_quote": "Bottomless snacks for $7. Includes selected potato chips, corn chips, and popcorn with M&Ms.",
     "verified_date": "2026-07-03",
     "confidence": "high",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "Waitoa Victoria St",
@@ -4542,7 +4683,8 @@
     "source_quote": "Bottomless snacks for $7. Includes selected potato chips, corn chips, and popcorn with M&Ms.",
     "verified_date": "2026-07-03",
     "confidence": "high",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "Waitoa Victoria St",
@@ -4561,7 +4703,8 @@
     "source_quote": "Bottomless snacks for $7. Includes selected potato chips, corn chips, and popcorn with M&Ms.",
     "verified_date": "2026-07-03",
     "confidence": "high",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "Waitoa Victoria St",
@@ -4580,7 +4723,8 @@
     "source_quote": "Bottomless snacks for $7. Includes selected potato chips, corn chips, and popcorn with M&Ms.",
     "verified_date": "2026-07-03",
     "confidence": "high",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "Waitoa Victoria St",
@@ -4599,7 +4743,8 @@
     "source_quote": "Bottomless snacks for $7. Includes selected potato chips, corn chips, and popcorn with M&Ms.",
     "verified_date": "2026-07-03",
     "confidence": "high",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "Waitoa Victoria St",
@@ -4618,7 +4763,8 @@
     "source_quote": "Bottomless snacks for $7. Includes selected potato chips, corn chips, and popcorn with M&Ms.",
     "verified_date": "2026-07-03",
     "confidence": "high",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "Mama Brown",
@@ -4656,7 +4802,8 @@
     "source_quote": "A classic burger and fries for $15.",
     "verified_date": "2026-07-03",
     "confidence": "high",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "The Little Waffle Shop",
@@ -4675,7 +4822,8 @@
     "source_quote": "$6 waffle of the week.",
     "verified_date": "2026-07-03",
     "confidence": "high",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "Glou Glou",
@@ -4694,7 +4842,8 @@
     "source_quote": "Evening wine bar $49 Feed Me dinner — chef's selection of 6-8 dishes per guest.",
     "verified_date": "2026-07-03",
     "confidence": "high",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "Glou Glou",
@@ -4713,7 +4862,8 @@
     "source_quote": "Evening wine bar $49 Feed Me dinner — chef's selection of 6-8 dishes per guest.",
     "verified_date": "2026-07-03",
     "confidence": "high",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "Glou Glou",
@@ -4732,7 +4882,8 @@
     "source_quote": "Evening wine bar $49 Feed Me dinner — chef's selection of 6-8 dishes per guest.",
     "verified_date": "2026-07-03",
     "confidence": "high",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "Glou Glou",
@@ -4751,7 +4902,8 @@
     "source_quote": "Evening wine bar $49 Feed Me dinner — chef's selection of 6-8 dishes per guest.",
     "verified_date": "2026-07-03",
     "confidence": "high",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "Glou Glou",
@@ -4770,7 +4922,8 @@
     "source_quote": "30% off selected pastries every day after 2pm.",
     "verified_date": "2026-07-03",
     "confidence": "high",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "Glou Glou",
@@ -4789,7 +4942,8 @@
     "source_quote": "30% off selected pastries every day after 2pm.",
     "verified_date": "2026-07-03",
     "confidence": "high",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "Glou Glou",
@@ -4808,7 +4962,8 @@
     "source_quote": "30% off selected pastries every day after 2pm.",
     "verified_date": "2026-07-03",
     "confidence": "high",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "Glou Glou",
@@ -4827,7 +4982,8 @@
     "source_quote": "30% off selected pastries every day after 2pm.",
     "verified_date": "2026-07-03",
     "confidence": "high",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "Glou Glou",
@@ -4846,7 +5002,8 @@
     "source_quote": "30% off selected pastries every day after 2pm.",
     "verified_date": "2026-07-03",
     "confidence": "high",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "Glou Glou",
@@ -4865,7 +5022,8 @@
     "source_quote": "30% off selected pastries every day after 2pm.",
     "verified_date": "2026-07-03",
     "confidence": "high",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "Glou Glou",
@@ -4884,7 +5042,8 @@
     "source_quote": "30% off selected pastries every day after 2pm.",
     "verified_date": "2026-07-03",
     "confidence": "high",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "BL3",
@@ -4903,7 +5062,8 @@
     "source_quote": "Two-for-one pizzas from 5pm to 10pm.",
     "verified_date": "2026-07-03",
     "confidence": "high",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "QT Wellington (Gallery Lounge)",
@@ -4941,7 +5101,8 @@
     "source_quote": "$9.99 hamburgers after 8pm.",
     "verified_date": "2026-07-03",
     "confidence": "high",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "Burger Liquor",
@@ -4960,7 +5121,8 @@
     "source_quote": "$9.99 hamburgers after 8pm.",
     "verified_date": "2026-07-03",
     "confidence": "high",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "Mr Go's",
@@ -4979,7 +5141,8 @@
     "source_quote": "All bao buns $7 before 6pm. Daily happy hour 12pm to 6pm: $12 popcorn chicken, popcorn tofu, or pork dumplings.",
     "verified_date": "2026-07-03",
     "confidence": "high",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "Mr Go's",
@@ -4998,7 +5161,8 @@
     "source_quote": "All bao buns $7 before 6pm. Daily happy hour 12pm to 6pm: $12 popcorn chicken, popcorn tofu, or pork dumplings.",
     "verified_date": "2026-07-03",
     "confidence": "high",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "Mr Go's",
@@ -5017,7 +5181,8 @@
     "source_quote": "All bao buns $7 before 6pm. Daily happy hour 12pm to 6pm: $12 popcorn chicken, popcorn tofu, or pork dumplings.",
     "verified_date": "2026-07-03",
     "confidence": "high",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "Mr Go's",
@@ -5036,7 +5201,8 @@
     "source_quote": "All bao buns $7 before 6pm. Daily happy hour 12pm to 6pm: $12 popcorn chicken, popcorn tofu, or pork dumplings.",
     "verified_date": "2026-07-03",
     "confidence": "high",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "Mr Go's",
@@ -5055,7 +5221,8 @@
     "source_quote": "All bao buns $7 before 6pm. Daily happy hour 12pm to 6pm: $12 popcorn chicken, popcorn tofu, or pork dumplings.",
     "verified_date": "2026-07-03",
     "confidence": "high",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "Mr Go's",
@@ -5074,7 +5241,8 @@
     "source_quote": "All bao buns $7 before 6pm. Daily happy hour 12pm to 6pm: $12 popcorn chicken, popcorn tofu, or pork dumplings.",
     "verified_date": "2026-07-03",
     "confidence": "high",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "Mr Go's",
@@ -5093,7 +5261,8 @@
     "source_quote": "All bao buns $7 before 6pm. Daily happy hour 12pm to 6pm: $12 popcorn chicken, popcorn tofu, or pork dumplings.",
     "verified_date": "2026-07-03",
     "confidence": "high",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "Best Ugly Bagels (Swan Lane)",
@@ -5112,7 +5281,8 @@
     "source_quote": "Happy Days combo — a bagel with any spread and a hot coffee for $12.90, Monday to Friday.",
     "verified_date": "2026-07-03",
     "confidence": "high",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "Best Ugly Bagels (Swan Lane)",
@@ -5131,7 +5301,8 @@
     "source_quote": "Happy Days combo — a bagel with any spread and a hot coffee for $12.90, Monday to Friday.",
     "verified_date": "2026-07-03",
     "confidence": "high",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "Best Ugly Bagels (Swan Lane)",
@@ -5150,7 +5321,8 @@
     "source_quote": "Happy Days combo — a bagel with any spread and a hot coffee for $12.90, Monday to Friday.",
     "verified_date": "2026-07-03",
     "confidence": "high",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "Best Ugly Bagels (Swan Lane)",
@@ -5169,7 +5341,8 @@
     "source_quote": "Happy Days combo — a bagel with any spread and a hot coffee for $12.90, Monday to Friday.",
     "verified_date": "2026-07-03",
     "confidence": "high",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "Best Ugly Bagels (Swan Lane)",
@@ -5188,7 +5361,8 @@
     "source_quote": "Happy Days combo — a bagel with any spread and a hot coffee for $12.90, Monday to Friday.",
     "verified_date": "2026-07-03",
     "confidence": "high",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "Best Ugly Bagels (Featherston St)",
@@ -5207,7 +5381,8 @@
     "source_quote": "Happy Days combo — a bagel with any spread and a hot coffee for $12.90, Monday to Friday.",
     "verified_date": "2026-07-03",
     "confidence": "high",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "Best Ugly Bagels (Featherston St)",
@@ -5226,7 +5401,8 @@
     "source_quote": "Happy Days combo — a bagel with any spread and a hot coffee for $12.90, Monday to Friday.",
     "verified_date": "2026-07-03",
     "confidence": "high",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "Best Ugly Bagels (Featherston St)",
@@ -5245,7 +5421,8 @@
     "source_quote": "Happy Days combo — a bagel with any spread and a hot coffee for $12.90, Monday to Friday.",
     "verified_date": "2026-07-03",
     "confidence": "high",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "Best Ugly Bagels (Featherston St)",
@@ -5264,7 +5441,8 @@
     "source_quote": "Happy Days combo — a bagel with any spread and a hot coffee for $12.90, Monday to Friday.",
     "verified_date": "2026-07-03",
     "confidence": "high",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "Best Ugly Bagels (Featherston St)",
@@ -5283,7 +5461,8 @@
     "source_quote": "Happy Days combo — a bagel with any spread and a hot coffee for $12.90, Monday to Friday.",
     "verified_date": "2026-07-03",
     "confidence": "high",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "Respawn Esports Centre",
@@ -5302,7 +5481,8 @@
     "source_quote": "Daily lunch special from 12pm to 2pm — buy a standard burger and add fries and a drink for $1.",
     "verified_date": "2026-07-03",
     "confidence": "high",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "Respawn Esports Centre",
@@ -5321,7 +5501,8 @@
     "source_quote": "Daily lunch special from 12pm to 2pm — buy a standard burger and add fries and a drink for $1.",
     "verified_date": "2026-07-03",
     "confidence": "high",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "Respawn Esports Centre",
@@ -5340,7 +5521,8 @@
     "source_quote": "Daily lunch special from 12pm to 2pm — buy a standard burger and add fries and a drink for $1.",
     "verified_date": "2026-07-03",
     "confidence": "high",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "Respawn Esports Centre",
@@ -5359,7 +5541,8 @@
     "source_quote": "Daily lunch special from 12pm to 2pm — buy a standard burger and add fries and a drink for $1.",
     "verified_date": "2026-07-03",
     "confidence": "high",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "Respawn Esports Centre",
@@ -5378,7 +5561,8 @@
     "source_quote": "Daily lunch special from 12pm to 2pm — buy a standard burger and add fries and a drink for $1.",
     "verified_date": "2026-07-03",
     "confidence": "high",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "Respawn Esports Centre",
@@ -5397,7 +5581,8 @@
     "source_quote": "Daily lunch special from 12pm to 2pm — buy a standard burger and add fries and a drink for $1.",
     "verified_date": "2026-07-03",
     "confidence": "high",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "Respawn Esports Centre",
@@ -5416,7 +5601,8 @@
     "source_quote": "Daily lunch special from 12pm to 2pm — buy a standard burger and add fries and a drink for $1.",
     "verified_date": "2026-07-03",
     "confidence": "high",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "Frankie's Bar + Eatery",
@@ -5435,7 +5621,8 @@
     "source_quote": "Margherita pizza and two margarita cocktails for $40.",
     "verified_date": "2026-07-03",
     "confidence": "high",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "Frankie's Bar + Eatery",
@@ -5454,7 +5641,8 @@
     "source_quote": "Burger and any house wine for $25.",
     "verified_date": "2026-07-03",
     "confidence": "high",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "Frankie's Bar + Eatery",
@@ -5473,7 +5661,8 @@
     "source_quote": "Two-for-one desserts.",
     "verified_date": "2026-07-03",
     "confidence": "high",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "Frankie's Bar + Eatery",
@@ -5492,7 +5681,8 @@
     "source_quote": "Steak with fries and eggs for $35.",
     "verified_date": "2026-07-03",
     "confidence": "high",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "Frankie's Bar + Eatery",
@@ -5511,7 +5701,8 @@
     "source_quote": "Half-price pizzas and burgers.",
     "verified_date": "2026-07-03",
     "confidence": "high",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "Astoria Espresso & Wine Bar",
@@ -5530,7 +5721,8 @@
     "source_quote": "$12 for a margherita pizza from 5pm.",
     "verified_date": "2026-07-03",
     "confidence": "high",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "The Shepherds Arms Hotel",
@@ -5549,7 +5741,8 @@
     "source_quote": "Two-for-one tacos.",
     "verified_date": "2026-07-03",
     "confidence": "high",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "The Shepherds Arms Hotel",
@@ -5568,7 +5761,8 @@
     "source_quote": "$20 burger and fries.",
     "verified_date": "2026-07-03",
     "confidence": "high",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "The Shepherds Arms Hotel",
@@ -5587,7 +5781,8 @@
     "source_quote": "$20 chicken schnitzel with fries and coleslaw.",
     "verified_date": "2026-07-03",
     "confidence": "high",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "The Old Quarter",
@@ -5606,7 +5801,8 @@
     "source_quote": "$14 for any Bao and beer or bubbles.",
     "verified_date": "2026-07-03",
     "confidence": "high",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "The Arborist Rooftop Bar",
@@ -5644,7 +5840,8 @@
     "source_quote": "Burger and beer for $25.",
     "verified_date": "2026-07-03",
     "confidence": "high",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "The Arborist Rooftop Bar",
@@ -5663,7 +5860,8 @@
     "source_quote": "A margherita pizza and a frozen margarita for $20.",
     "verified_date": "2026-07-03",
     "confidence": "high",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "The Arborist Rooftop Bar",
@@ -5682,7 +5880,8 @@
     "source_quote": "$15 Burgers.",
     "verified_date": "2026-07-03",
     "confidence": "high",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "The Arborist Rooftop Bar",
@@ -5720,7 +5919,8 @@
     "source_quote": "Two-for-one desserts.",
     "verified_date": "2026-07-03",
     "confidence": "high",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "The Arborist Rooftop Bar",
@@ -5777,7 +5977,8 @@
     "source_quote": "$19 tarakihi with chips and slaw, available 12pm to 3pm.",
     "verified_date": "2026-07-03",
     "confidence": "high",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "Dockside Restaurant & Bar",
@@ -5796,7 +5997,8 @@
     "source_quote": "250g sirloin steak with truffle butter, beef jus, and chips for $25.",
     "verified_date": "2026-07-03",
     "confidence": "high",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "HIDEOUT",
@@ -5815,7 +6017,8 @@
     "source_quote": "Bao and a beer for $14.",
     "verified_date": "2026-07-03",
     "confidence": "high",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "HIDEOUT",
@@ -5834,7 +6037,8 @@
     "source_quote": "Any six dumplings and wine for $18.",
     "verified_date": "2026-07-03",
     "confidence": "high",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "HIDEOUT",
@@ -5948,7 +6152,8 @@
     "source_quote": "Build your own nachos from $4, then add toppings to your liking.",
     "verified_date": "2026-07-03",
     "confidence": "high",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "The Bridge Bar & Restaurant",
@@ -6005,7 +6210,8 @@
     "source_quote": "Grab two-for-one desserts.",
     "verified_date": "2026-07-03",
     "confidence": "high",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "The Green Man Pub",
@@ -6024,7 +6230,8 @@
     "source_quote": "$25 steak and fries.",
     "verified_date": "2026-07-03",
     "confidence": "high",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "The Green Man Pub",
@@ -6043,7 +6250,8 @@
     "source_quote": "$15 loaded fries.",
     "verified_date": "2026-07-03",
     "confidence": "high",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "The Green Man Pub",
@@ -6062,7 +6270,8 @@
     "source_quote": "$25 burger and fries until 9pm.",
     "verified_date": "2026-07-03",
     "confidence": "high",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "The Green Man Pub",
@@ -6081,7 +6290,8 @@
     "source_quote": "Fish and chips for $20.",
     "verified_date": "2026-07-03",
     "confidence": "high",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "Caffe L'affare",
@@ -6119,7 +6329,8 @@
     "source_quote": "Two-for-one nachos from 5pm.",
     "verified_date": "2026-07-03",
     "confidence": "high",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "J J Murphy & Co.",
@@ -6138,7 +6349,8 @@
     "source_quote": "Two-for-one pizzas.",
     "verified_date": "2026-07-03",
     "confidence": "high",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "J J Murphy & Co.",
@@ -6157,7 +6369,8 @@
     "source_quote": "$20 rump steak and fries.",
     "verified_date": "2026-07-03",
     "confidence": "high",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "J J Murphy & Co.",
@@ -6176,7 +6389,8 @@
     "source_quote": "Two-for-one burgers.",
     "verified_date": "2026-07-03",
     "confidence": "high",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "J J Murphy & Co.",
@@ -6195,7 +6409,8 @@
     "source_quote": "$25 roast.",
     "verified_date": "2026-07-03",
     "confidence": "high",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "BIN44 Restaurant & Bar",
@@ -6252,7 +6467,8 @@
     "source_quote": "$24 mezze plate from 12 to 4pm with your choice of lamb, tahr, steak or falafel.",
     "verified_date": "2026-07-03",
     "confidence": "high",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "Kisa",
@@ -6271,7 +6487,8 @@
     "source_quote": "$24 mezze plate from 12 to 4pm with your choice of lamb, tahr, steak or falafel.",
     "verified_date": "2026-07-03",
     "confidence": "high",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "Kisa",
@@ -6290,7 +6507,8 @@
     "source_quote": "$24 mezze plate from 12 to 4pm with your choice of lamb, tahr, steak or falafel.",
     "verified_date": "2026-07-03",
     "confidence": "high",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "Kisa",
@@ -6309,7 +6527,8 @@
     "source_quote": "$24 mezze plate from 12 to 4pm with your choice of lamb, tahr, steak or falafel.",
     "verified_date": "2026-07-03",
     "confidence": "high",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "Kisa",
@@ -6328,7 +6547,8 @@
     "source_quote": "$24 mezze plate from 12 to 4pm with your choice of lamb, tahr, steak or falafel.",
     "verified_date": "2026-07-03",
     "confidence": "high",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "The Rogue & Vagabond",
@@ -6347,7 +6567,8 @@
     "source_quote": "Any burger with shoestring fries for $17. Add a pint for $8 (pints $13 or under) from 12 to 3pm.",
     "verified_date": "2026-07-03",
     "confidence": "high",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "The Rogue & Vagabond",
@@ -6366,7 +6587,8 @@
     "source_quote": "Any burger with shoestring fries for $17. Add a pint for $8 (pints $13 or under) from 12 to 3pm.",
     "verified_date": "2026-07-03",
     "confidence": "high",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "The Rogue & Vagabond",
@@ -6480,7 +6702,8 @@
     "source_quote": "2-4-1 chicken parmi all day Thursday.",
     "verified_date": "2026-07-03",
     "confidence": "high",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "The Junction",
@@ -6632,7 +6855,8 @@
     "source_quote": "Burger and beer for $30.",
     "verified_date": "2026-07-03",
     "confidence": "high",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "Dirty Little Secret",
@@ -6803,7 +7027,8 @@
     "source_quote": "$22 Fish and Chips",
     "verified_date": "2026-07-06",
     "confidence": "high",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "Gear Street Union",
@@ -6879,7 +7104,8 @@
     "source_quote": "2-4-1 Burger Night from 4pm",
     "verified_date": "2026-07-06",
     "confidence": "high",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "Seashore Cabaret",
@@ -6917,7 +7143,8 @@
     "source_quote": "2-4-1 Dessert Night from 4pm",
     "verified_date": "2026-07-06",
     "confidence": "high",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "The Chopstick Table",
@@ -6974,7 +7201,8 @@
     "source_quote": "Buy 2 Mains Get One Free Entree",
     "verified_date": "2026-07-06",
     "confidence": "high",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "Sabaidee Pah Khao Lao Restaurant",
@@ -7012,7 +7240,8 @@
     "source_quote": "Platter Saturday — Platter One $62 or Platter Two $62",
     "verified_date": "2026-07-06",
     "confidence": "medium",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "Sabaidee Pah Khao Lao Restaurant",
@@ -7031,7 +7260,8 @@
     "source_quote": "3 lunch specials, all $20",
     "verified_date": "2026-07-06",
     "confidence": "medium",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "The Lucky Cat",
@@ -7050,7 +7280,8 @@
     "source_quote": "$5 Bao Buns",
     "verified_date": "2026-07-06",
     "confidence": "high",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "The Lucky Cat",
@@ -7069,7 +7300,8 @@
     "source_quote": "Wings and Tins — $14.99 wings + tin of beer",
     "verified_date": "2026-07-06",
     "confidence": "high",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "The Lucky Cat",
@@ -7126,7 +7358,8 @@
     "source_quote": "This week at the Sprig + Fern Petone — Quiz Night",
     "verified_date": "2026-07-06",
     "confidence": "high",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "Sprig + Fern Petone",
@@ -7221,7 +7454,8 @@
     "source_quote": "2 for 1 Desserts (Conditions Apply)",
     "verified_date": "2026-07-06",
     "confidence": "high",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "The Speight's Ale House Petone",
@@ -7240,7 +7474,8 @@
     "source_quote": "$20 Burgers",
     "verified_date": "2026-07-06",
     "confidence": "high",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "The Speight's Ale House Petone",
@@ -7259,7 +7494,8 @@
     "source_quote": "Quiz Night – 7:00pm",
     "verified_date": "2026-07-06",
     "confidence": "high",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "The Speight's Ale House Petone",
@@ -7297,7 +7533,8 @@
     "source_quote": "$1 Chicken Wings",
     "verified_date": "2026-07-06",
     "confidence": "high",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "The Speight's Ale House Petone",
@@ -7354,7 +7591,8 @@
     "source_quote": "Sunday Family Roast (serves 4) $99",
     "verified_date": "2026-07-06",
     "confidence": "high",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "Baylands Brewery Ltd",
@@ -7373,7 +7611,8 @@
     "source_quote": "Thursday is chicken burger night. Choose any of our chicken burgers with fries for just $20.",
     "verified_date": "2026-07-06",
     "confidence": "high",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "Comes & Goes",
@@ -7411,7 +7650,8 @@
     "source_quote": "Thursday – Sweet Night — 2 for 1 desserts",
     "verified_date": "2026-07-06",
     "confidence": "high",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "Comes & Goes",
@@ -7430,7 +7670,8 @@
     "source_quote": "Friday – Steak Night — $35 Steak Combo + FREE fries",
     "verified_date": "2026-07-06",
     "confidence": "high",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "Comes & Goes",
@@ -7468,7 +7709,8 @@
     "source_quote": "SENIOR WEDNESDAY PREVIEWS",
     "verified_date": "2026-07-06",
     "confidence": "high",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "Kitchen Manthra",
@@ -7487,7 +7729,8 @@
     "source_quote": "FB post 3 Jul 2026",
     "verified_date": "2026-07-07",
     "confidence": "high",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "Kitchen Manthra",
@@ -7525,7 +7768,8 @@
     "source_quote": "Daily Deals: $20 Schnitzel. Every Tuesday, all day.",
     "verified_date": "2026-07-07",
     "confidence": "high",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "Brew'd Boulcott",
@@ -7544,7 +7788,8 @@
     "source_quote": "Daily Deals: $20 Burger. Every Wednesday, all day.",
     "verified_date": "2026-07-07",
     "confidence": "high",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "Brew'd Boulcott",
@@ -7563,7 +7808,8 @@
     "source_quote": "Daily Deals: $25 Steak Frites. Every Thursday, all day.",
     "verified_date": "2026-07-07",
     "confidence": "high",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "Brew'd Boulcott",
@@ -7582,7 +7828,8 @@
     "source_quote": "Daily Deals: $20 Fish & Chips. Every Friday, until 2pm.",
     "verified_date": "2026-07-07",
     "confidence": "high",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "Brew'd Boulcott",
@@ -7620,7 +7867,8 @@
     "source_quote": "FB post 1 Apr 2026: \"WEDNESDAY 8BALL POOL COMP Starts 7pm-7:30pm Entry fee $10 Possible Buy In\"",
     "verified_date": "2026-07-07",
     "confidence": "high",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "Stokes Valley Memorial RSA",
@@ -7639,7 +7887,8 @@
     "source_quote": "Google review: \"Great blackboard meals on Friday nights for $20, desserts $6\"",
     "verified_date": "2026-07-07",
     "confidence": "medium",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "Event Cinemas Queensgate",
@@ -7658,7 +7907,8 @@
     "source_quote": "Cinebuzz Half Price Tuesday",
     "verified_date": "2026-07-07",
     "confidence": "high",
-    "app_required": true
+    "app_required": true,
+    "cosy": true
   },
   {
     "venue": "Event Cinemas Queensgate",
@@ -7715,7 +7965,8 @@
     "source_quote": "FREE EVERY SUNDAY FOR 12 YEARS OLD AND UNDER — ORDER 1 ADULT MAIN AND GET 1 KIDS MEAL FREE",
     "verified_date": "2026-07-07",
     "confidence": "high",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "Tuatara Tap Room",
@@ -7734,7 +7985,8 @@
     "source_quote": "Weekly Pub Quiz at Tuatara Tap Room. Every Wednesday | 6:30pm",
     "verified_date": "2026-07-07",
     "confidence": "high",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "The Tote",
@@ -7886,7 +8138,8 @@
     "source_quote": "Enjoy a meal from our delicious Midday Menu for just $19 - available every weekday from 11am to 3pm",
     "verified_date": "2026-07-07",
     "confidence": "high",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "The Tote",
@@ -7905,7 +8158,8 @@
     "source_quote": "Enjoy a meal from our delicious Midday Menu for just $19 - available every weekday from 11am to 3pm",
     "verified_date": "2026-07-07",
     "confidence": "high",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "The Tote",
@@ -7924,7 +8178,8 @@
     "source_quote": "Enjoy a meal from our delicious Midday Menu for just $19 - available every weekday from 11am to 3pm",
     "verified_date": "2026-07-07",
     "confidence": "high",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "The Tote",
@@ -7943,7 +8198,8 @@
     "source_quote": "Enjoy a meal from our delicious Midday Menu for just $19 - available every weekday from 11am to 3pm",
     "verified_date": "2026-07-07",
     "confidence": "high",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "The Tote",
@@ -7962,7 +8218,8 @@
     "source_quote": "Enjoy a meal from our delicious Midday Menu for just $19 - available every weekday from 11am to 3pm",
     "verified_date": "2026-07-07",
     "confidence": "high",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "The Tote",
@@ -7981,7 +8238,8 @@
     "source_quote": "Enjoy any two mains or pizzas for $40! Available venue-wide from 12pm till late",
     "verified_date": "2026-07-07",
     "confidence": "high",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "The Tote",
@@ -8000,7 +8258,8 @@
     "source_quote": "Join us every Tuesday from 7:00 PM for some good old-fashioned fun",
     "verified_date": "2026-07-07",
     "confidence": "high",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "The Tote",
@@ -8038,7 +8297,8 @@
     "source_quote": "Enjoy 2-4-1 pizzas every Wednesday at The Tote! From 5pm every week",
     "verified_date": "2026-07-07",
     "confidence": "high",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "The Tote",
@@ -8057,7 +8317,8 @@
     "source_quote": "Enjoy a delicious parma served with chips and salad for $20. Available from 4pm till late",
     "verified_date": "2026-07-07",
     "confidence": "high",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "The Tote",
@@ -8133,7 +8394,8 @@
     "source_quote": "300gm rump steak with fries, salad, PLUS a handle of beer of glass of house wine - all for just $25!",
     "verified_date": "2026-07-07",
     "confidence": "high",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "The Tote",
@@ -8171,7 +8433,8 @@
     "source_quote": "Monday Night Special! ... Chicken OR Beef Schnitzel ... for just $25.99",
     "verified_date": "2026-07-07",
     "confidence": "high",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "7 Bar & Restaurant",
@@ -8190,7 +8453,8 @@
     "source_quote": "STEAK TUESDAY AT 7 BAR - Sirloin $26.99 | Scotch $31.99 Both served with chips, salad & gravy",
     "verified_date": "2026-07-07",
     "confidence": "high",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "Rimutaka Tavern",
@@ -8227,7 +8491,8 @@
     "source_url": "https://www.1841.co.nz/",
     "source_quote": "MONDAY TWO FOR ONE MAINS ... Buy one main meal and get your second main meal of equal or lesser value FREE. From 5pm. Special conditions apply.",
     "verified_date": "2026-07-08",
-    "confidence": "high"
+    "confidence": "high",
+    "cosy": true
   },
   {
     "venue": "1841 Bar and Restaurant",
@@ -8245,7 +8510,8 @@
     "source_url": "https://www.1841.co.nz/",
     "source_quote": "TUESDAY Tuesday Steakout 400g Ironside Sirloin & ANY tap beer for just $35 From 5pm. Special conditions apply.",
     "verified_date": "2026-07-08",
-    "confidence": "high"
+    "confidence": "high",
+    "cosy": true
   },
   {
     "venue": "1841 Bar and Restaurant",
@@ -8263,7 +8529,8 @@
     "source_url": "https://www.1841.co.nz/",
     "source_quote": "WEDNESDAY QUIZ NIGHT Are you smart enough? Join us for pre-quiz dinner and drinks. FREE entry, WIN food & beverage vouchers! 7:30pm start. Bookings recommended.",
     "verified_date": "2026-07-08",
-    "confidence": "high"
+    "confidence": "high",
+    "cosy": true
   },
   {
     "venue": "1841 Bar and Restaurant",
@@ -8281,7 +8548,8 @@
     "source_url": "https://www.1841.co.nz/",
     "source_quote": "THURSDAY TIGHTARSE THURSDAY $29 Main Meals. From 5pm. Special conditions may apply. Live Music 7pm-9pm",
     "verified_date": "2026-07-08",
-    "confidence": "high"
+    "confidence": "high",
+    "cosy": true
   },
   {
     "venue": "1841 Bar and Restaurant",
@@ -8353,7 +8621,8 @@
     "source_url": "https://www.1841.co.nz/",
     "source_quote": "SATURDAY WEEKEND ROAST Only $27.50! Available Friday, Saturday and Sunday from 5pm until sold out.",
     "verified_date": "2026-07-08",
-    "confidence": "high"
+    "confidence": "high",
+    "cosy": true
   },
   {
     "venue": "1841 Bar and Restaurant",
@@ -8371,7 +8640,8 @@
     "source_url": "https://www.1841.co.nz/",
     "source_quote": "SATURDAY WEEKEND ROAST Only $27.50! Available Friday, Saturday and Sunday from 5pm until sold out.",
     "verified_date": "2026-07-08",
-    "confidence": "high"
+    "confidence": "high",
+    "cosy": true
   },
   {
     "venue": "1841 Bar and Restaurant",
@@ -8389,7 +8659,8 @@
     "source_url": "https://www.1841.co.nz/",
     "source_quote": "SATURDAY WEEKEND ROAST Only $27.50! Available Friday, Saturday and Sunday from 5pm until sold out.",
     "verified_date": "2026-07-08",
-    "confidence": "high"
+    "confidence": "high",
+    "cosy": true
   },
   {
     "venue": "Kaimak Johnsonville",
@@ -8407,7 +8678,8 @@
     "source_url": "https://www.facebook.com/61573304353191/photos/-our-new-loyalty-cards-are-here-love-kaimak-now-were-giving-back-%EF%B8%8Fcollect-10-sta/122163690578776811/",
     "source_quote": "Our New Loyalty Cards Are Here! Love Kaimak? Now we're giving back! Collect 10 stamps and enjoy a FREE small kebab on us!",
     "verified_date": "2026-07-08",
-    "confidence": "medium"
+    "confidence": "medium",
+    "cosy": true
   },
   {
     "venue": "The Inn Keeper of Johnsonville",
@@ -8443,7 +8715,8 @@
     "source_url": "https://www.theinnkeeper.co.nz/whats-on",
     "source_quote": "TUESDAY: 2 FOR 1 BURGERS",
     "verified_date": "2026-07-08",
-    "confidence": "high"
+    "confidence": "high",
+    "cosy": true
   },
   {
     "venue": "The Inn Keeper of Johnsonville",
@@ -8461,7 +8734,8 @@
     "source_url": "https://www.theinnkeeper.co.nz/whats-on",
     "source_quote": "THURSDAY: $34.00 STEAK AND BEER OR WINE",
     "verified_date": "2026-07-22",
-    "confidence": "high"
+    "confidence": "high",
+    "cosy": true
   },
   {
     "venue": "The Inn Keeper of Johnsonville",
@@ -8534,7 +8808,8 @@
     "source_quote": "Pensioner Tuesday Every Tuesday 11am - 2pm. $14* Selected meals at Vista Café & Bistro for all Gold Card holders every. Non club members welcome!",
     "verified_date": "2026-07-08",
     "confidence": "high",
-    "seniors": true
+    "seniors": true,
+    "cosy": true
   },
   {
     "venue": "Johnsonville Club Inc",
@@ -8552,7 +8827,8 @@
     "source_url": "https://www.instagram.com/p/DagmLJjD8hO/",
     "source_quote": "Wednesday Midweek Social Night ... Join us for Poker Night. $20 Buy-In. Names from 7:25pm. Play starts at 7:30pm.",
     "verified_date": "2026-07-08",
-    "confidence": "high"
+    "confidence": "high",
+    "cosy": true
   },
   {
     "venue": "Johnsonville Club Inc",
@@ -8570,7 +8846,8 @@
     "source_url": "https://jclub.co.nz/events/",
     "source_quote": "Coggie's Quiz Last Wednesday of every month 7pm - 9.30pm $25 per team",
     "verified_date": "2026-07-08",
-    "confidence": "high"
+    "confidence": "high",
+    "cosy": true
   },
   {
     "venue": "Johnsonville Club Inc",
@@ -8606,7 +8883,8 @@
     "source_url": "https://jclub.co.nz/events/",
     "source_quote": "Quiz Night Every Thursday except last Thursday of the month 6.30pm - 7.30pm FREE ENTRY - register your team with our friendly Bar Staff or give us a call on 04 939 8233. GREAT PRIZES!!",
     "verified_date": "2026-07-08",
-    "confidence": "high"
+    "confidence": "high",
+    "cosy": true
   },
   {
     "venue": "Johnsonville Club Inc",
@@ -8678,7 +8956,8 @@
     "source_url": "https://www.instagram.com/p/DOpZwehCIr8/",
     "source_quote": "Friday Fun Quiz - 5:30pm. A quick and fun quiz before the rugby begins. No phones allowed!",
     "verified_date": "2026-07-08",
-    "confidence": "high"
+    "confidence": "high",
+    "cosy": true
   },
   {
     "venue": "Johnsonville Club Inc",
@@ -8714,7 +8993,8 @@
     "source_url": "https://www.instagram.com/p/DaGvWmmjcyf/",
     "source_quote": "Famous Steak Night from 5:00pm ... Steak, Chips & Salad w/ House Drink. Sundays 5pm-7.30pm.",
     "verified_date": "2026-07-08",
-    "confidence": "high"
+    "confidence": "high",
+    "cosy": true
   },
   {
     "venue": "Refresh Espresso",
@@ -8751,7 +9031,8 @@
     "source_quote": "All SuperGold Card Holders get a small hot drink and muffin for only $10 from @muffinbreaknz. Head down to Muffin Break Johnsonville.",
     "verified_date": "2026-07-08",
     "confidence": "high",
-    "seniors": true
+    "seniors": true,
+    "cosy": true
   },
   {
     "venue": "Sal's Authentic New York Pizza - Johnsonville",
@@ -8769,7 +9050,8 @@
     "source_url": "https://www.instagram.com/salspizzanz/",
     "source_quote": "$5 Slice of the Day: Monday - Sal's Famous Pepperoni. Sal's Slice of the Day is available in-store only during store operating hours.",
     "verified_date": "2026-07-08",
-    "confidence": "high"
+    "confidence": "high",
+    "cosy": true
   },
   {
     "venue": "Sal's Authentic New York Pizza - Johnsonville",
@@ -8787,7 +9069,8 @@
     "source_url": "https://www.instagram.com/salspizzanz/",
     "source_quote": "Every Tuesday grab a slice of Sal's Cheese Pizza for just $5! PLUS add on any Pepsi 330ml Drink for just $2.50.",
     "verified_date": "2026-07-08",
-    "confidence": "high"
+    "confidence": "high",
+    "cosy": true
   },
   {
     "venue": "Sal's Authentic New York Pizza - Johnsonville",
@@ -8805,7 +9088,8 @@
     "source_url": "https://www.instagram.com/salspizzanz/",
     "source_quote": "Sal's is serving up something special every weekday from 11am until 4pm with Sal's Slice of the Day for just $5!",
     "verified_date": "2026-07-08",
-    "confidence": "high"
+    "confidence": "high",
+    "cosy": true
   },
   {
     "venue": "Sal's Authentic New York Pizza - Johnsonville",
@@ -8823,7 +9107,8 @@
     "source_url": "https://www.instagram.com/salspizzanz/",
     "source_quote": "Sal's is serving up something special every weekday from 11am until 4pm with Sal's Slice of the Day for just $5!",
     "verified_date": "2026-07-08",
-    "confidence": "high"
+    "confidence": "high",
+    "cosy": true
   },
   {
     "venue": "Sal's Authentic New York Pizza - Johnsonville",
@@ -8841,7 +9126,8 @@
     "source_url": "https://www.instagram.com/salspizzanz/",
     "source_quote": "Sal's is serving up something special every weekday from 11am until 4pm with Sal's Slice of the Day for just $5!",
     "verified_date": "2026-07-08",
-    "confidence": "high"
+    "confidence": "high",
+    "cosy": true
   },
   {
     "venue": "Subway",
@@ -8877,7 +9163,8 @@
     "source_url": "https://www.facebook.com/subwaynz",
     "source_quote": "Craving something that hits the spot? Grab a $11.50 Value Combo: Six Inch sub, drink & cookie.",
     "verified_date": "2026-07-08",
-    "confidence": "high"
+    "confidence": "high",
+    "cosy": true
   },
   {
     "venue": "Tandoori Dhaba",
@@ -8913,7 +9200,8 @@
     "source_url": "https://www.instagram.com/p/DUZcGxGAYjI/",
     "source_quote": "Sunday Steak Night: Only $25! ... Every Sunday.",
     "verified_date": "2026-07-08",
-    "confidence": "high"
+    "confidence": "high",
+    "cosy": true
   },
   {
     "venue": "Rock Salt Bar and Grill",
@@ -8931,7 +9219,8 @@
     "source_url": "https://www.firsttable.co.nz",
     "source_quote": "Book a First Table for dinner at Rock Salt Bar & Grill and you'll get 50% off the food bill for two, three or four diners!",
     "verified_date": "2026-07-08",
-    "confidence": "high"
+    "confidence": "high",
+    "cosy": true
   },
   {
     "venue": "The Pickle Jar",
@@ -8949,7 +9238,8 @@
     "source_url": "https://www.believeitornot.co.nz/findaquiz",
     "source_quote": "Pickle Jar, Karori Tuesdays, 7pm",
     "verified_date": "2026-07-08",
-    "confidence": "high"
+    "confidence": "high",
+    "cosy": true
   },
   {
     "venue": "The Pickle Jar",
@@ -8967,7 +9257,8 @@
     "source_url": "https://www.instagram.com/thepicklejarkarori/",
     "source_quote": "$19 Steak Night. Wednesday night is Steak Night at The Pickle Jar. From 5pm our Sirloin Steak is just $19! 250gm sirloin steak, chargrilled to your liking.",
     "verified_date": "2026-07-08",
-    "confidence": "high"
+    "confidence": "high",
+    "cosy": true
   },
   {
     "venue": "The Pickle Jar",
@@ -8985,7 +9276,8 @@
     "source_url": "https://www.facebook.com/thepicklejarkarori",
     "source_quote": "Thursday night is burger night at The Pickle Jar - buy any burger, including this week's special, from 5.00pm, and your first drink is on us!",
     "verified_date": "2026-07-08",
-    "confidence": "high"
+    "confidence": "high",
+    "cosy": true
   },
   {
     "venue": "The Pickle Jar",
@@ -9003,7 +9295,8 @@
     "source_url": "https://www.facebook.com/thepicklejarkarori",
     "source_quote": "This Friday at The Pickle Jar: Apricot and prosciutto stuffed chicken thigh with roast apricot, roast parsnip puree and miso glaze. $32.",
     "verified_date": "2026-07-08",
-    "confidence": "high"
+    "confidence": "high",
+    "cosy": true
   },
   {
     "venue": "Karori Taphouse",
@@ -9021,7 +9314,8 @@
     "source_url": "https://www.instagram.com/karori_taphouse/",
     "source_quote": "GEE QUIZ WEEKLY QUIZ AT KARORI TAPHOUSE TUESDAYS FROM 7PM. Gather your team for fun and prizes! FREE ENTRY | ALL WELCOME",
     "verified_date": "2026-07-08",
-    "confidence": "high"
+    "confidence": "high",
+    "cosy": true
   },
   {
     "venue": "Karori Taphouse",
@@ -9039,7 +9333,8 @@
     "source_url": "https://www.instagram.com/p/DaOkmeZgp8g/",
     "source_quote": "Midweek made easy! From midday today, enjoy Any 2 Mains for just $49.50 at Karori Taphouse! ... Available from midday - bring a friend, bring your appetite.",
     "verified_date": "2026-07-08",
-    "confidence": "high"
+    "confidence": "high",
+    "cosy": true
   },
   {
     "venue": "Karori Taphouse",
@@ -9057,7 +9352,8 @@
     "source_url": "https://www.instagram.com/karori_taphouse/",
     "source_quote": "2 FOR 1 BURGER DAY. Today's the day... 2 for 1 burgers are on at Karori Taphouse from midday! Two-for-one offer applies to burgers of equal or lesser value.",
     "verified_date": "2026-07-08",
-    "confidence": "high"
+    "confidence": "high",
+    "cosy": true
   },
   {
     "venue": "Te Kororia",
@@ -9075,7 +9371,8 @@
     "source_url": "https://www.facebook.com/TeKororia",
     "source_quote": "In case you missed it last week - Kids Eat Free on Wednesdays! Warm up your Wednesdays this winter at Te Korōria Café. When a caregiver spends $26 or more...",
     "verified_date": "2026-07-08",
-    "confidence": "high"
+    "confidence": "high",
+    "cosy": true
   },
   {
     "venue": "Te Kororia",
@@ -9112,7 +9409,8 @@
     "source_url": "https://www.instagram.com/marsdenvillagecafe/",
     "source_quote": "Treat yourself every Tuesday at Marsden Village Cafe with our delicious Tuesday Special: Freshly baked scone + regular coffee for just $9",
     "verified_date": "2026-07-08",
-    "confidence": "high"
+    "confidence": "high",
+    "cosy": true
   },
   {
     "venue": "Bebemos",
@@ -9130,7 +9428,8 @@
     "source_url": "https://bebemos.co.nz/",
     "source_quote": "Taco Tuesday! All Day. $5 per taco.",
     "verified_date": "2026-07-08",
-    "confidence": "high"
+    "confidence": "high",
+    "cosy": true
   },
   {
     "venue": "Bebemos",
@@ -9148,7 +9447,8 @@
     "source_url": "https://bebemos.co.nz/",
     "source_quote": "Thursday - Burger & Beer $30",
     "verified_date": "2026-07-08",
-    "confidence": "high"
+    "confidence": "high",
+    "cosy": true
   },
   {
     "venue": "Bebemos",
@@ -9220,7 +9520,8 @@
     "source_url": "https://www.officebar.co.nz/",
     "source_quote": "Wednesday Quiz Night ... Join us at Office Bar for our weekly quiz night!",
     "verified_date": "2026-07-08",
-    "confidence": "high"
+    "confidence": "high",
+    "cosy": true
   },
   {
     "venue": "Barrel Brothers at Newtown",
@@ -9292,7 +9593,8 @@
     "source_url": "https://www.facebook.com/medifoodsnewtown",
     "source_quote": "Metre Pizza Monday is here! A whole metre of pizza, loaded with your favourite toppings, for just $85.",
     "verified_date": "2026-07-08",
-    "confidence": "high"
+    "confidence": "high",
+    "cosy": true
   },
   {
     "venue": "Baobab Café",
@@ -9346,7 +9648,8 @@
     "source_url": "https://www.facebook.com/SalsNYpizza",
     "source_quote": "Every Friday grab a slice of Sal's Meatball Pizza for just $5! PLUS add on any Pepsi 330ml Drink for just $2.50!",
     "verified_date": "2026-07-08",
-    "confidence": "high"
+    "confidence": "high",
+    "cosy": true
   },
   {
     "venue": "Sal's Authentic NY Pizza Newtown",
@@ -9400,7 +9703,8 @@
     "source_url": "https://www.facebook.com/StPierresSushi",
     "source_quote": "Get your sushi fix ALL WEEK for just $8.40! Our Sushi Value of the Day changes daily, so there's always a new flavour to enjoy!",
     "verified_date": "2026-07-08",
-    "confidence": "high"
+    "confidence": "high",
+    "cosy": true
   },
   {
     "venue": "St Pierres Sushi (Newtown)",
@@ -9419,7 +9723,8 @@
     "source_quote": "$2 for any size Miso Soup ... Only for Gold Card members.",
     "verified_date": "2026-07-08",
     "confidence": "high",
-    "seniors": true
+    "seniors": true,
+    "cosy": true
   },
   {
     "venue": "Pho Viet Street Food Newtown",
@@ -9455,7 +9760,8 @@
     "source_url": "https://www.wellingtonnz.com/visit/eat-and-drink/daily-dining-deals",
     "source_quote": "$15 pizza night from 5:30pm to 9pm.",
     "verified_date": "2026-07-08",
-    "confidence": "high"
+    "confidence": "high",
+    "cosy": true
   },
   {
     "venue": "Moon",
@@ -9473,7 +9779,8 @@
     "source_url": "https://www.wellingtonnz.com/visit/eat-and-drink/daily-dining-deals",
     "source_quote": "$15 Yoko Ono margherita pizzas and $5 fries, everyday from 5pm to 7pm.",
     "verified_date": "2026-07-08",
-    "confidence": "high"
+    "confidence": "high",
+    "cosy": true
   },
   {
     "venue": "The Blue Belle Cafe",
@@ -9528,7 +9835,8 @@
     "source_url": "https://www.firsttable.co.nz/wellington/island-bay",
     "source_quote": "Book a First Table for lunch or dinner at Double Vision Brewing - DUB HUB Island Bay and you'll get 50% off the food bill for two, three or four diners!",
     "verified_date": "2026-07-08",
-    "confidence": "high"
+    "confidence": "high",
+    "cosy": true
   },
   {
     "venue": "Double Vision Brewing - DUB HUB Island Bay",
@@ -9546,7 +9854,8 @@
     "source_url": "https://www.findaquiz.co.nz/venues/wellington",
     "source_quote": "Double Vision Brewing. Bar & Grill. On Wednesday at 7.00pm.",
     "verified_date": "2026-07-08",
-    "confidence": "high"
+    "confidence": "high",
+    "cosy": true
   },
   {
     "venue": "Island Bay Bar",
@@ -9600,7 +9909,8 @@
     "source_url": "https://www.facebook.com/burgerwisconsin",
     "source_quote": "Meat free Monday. Vegan and Vege burgers at $12. Burger Wisconsin Islandbay.",
     "verified_date": "2026-07-08",
-    "confidence": "high"
+    "confidence": "high",
+    "cosy": true
   },
   {
     "venue": "Burger Wisconsin",
@@ -9618,7 +9928,8 @@
     "source_url": "https://www.instagram.com/mybwburger/",
     "source_quote": "It's Chook Tuesday. Grab a Cabbie for $12.",
     "verified_date": "2026-07-08",
-    "confidence": "high"
+    "confidence": "high",
+    "cosy": true
   },
   {
     "venue": "Burger Wisconsin",
@@ -9636,7 +9947,8 @@
     "source_url": "https://www.instagram.com/mybwburger/",
     "source_quote": "Got beef? We've got mid week beef. Grab a Great American for $12 today.",
     "verified_date": "2026-07-08",
-    "confidence": "high"
+    "confidence": "high",
+    "cosy": true
   },
   {
     "venue": "Burger Wisconsin",
@@ -9654,7 +9966,8 @@
     "source_url": "https://www.instagram.com/mybwburger/",
     "source_quote": "PSA: 2 Sides for $10 today, it's Sideshow Thursday. Excludes Southern [Fried Chicken].",
     "verified_date": "2026-07-08",
-    "confidence": "high"
+    "confidence": "high",
+    "cosy": true
   },
   {
     "venue": "Burger Wisconsin",
@@ -9690,7 +10003,8 @@
     "source_url": "https://thebotanistlyallbay.co.nz",
     "source_quote": "Thursday Burger & a Beverage $20! Any house beer, wine or juice plus any burger for only $20, incl fries.",
     "verified_date": "2026-07-08",
-    "confidence": "high"
+    "confidence": "high",
+    "cosy": true
   },
   {
     "venue": "The Botanist",
@@ -9762,7 +10076,8 @@
     "source_url": "https://www.wellingtonnz.com/visit/eat-and-drink/daily-dining-deals",
     "source_quote": "Thursday kick-starter — free-range eggs on ciabatta with a regular coffee for $15 from 7am to 9am.",
     "verified_date": "2026-07-08",
-    "confidence": "high"
+    "confidence": "high",
+    "cosy": true
   },
   {
     "venue": "Maranui Cafe",
@@ -9816,7 +10131,8 @@
     "source_url": "https://www.wellingtonnz.com/visit/eat-and-drink/daily-dining-deals",
     "source_quote": "Wednesday Winning — $12 chicken burger, $20 core range jugs.",
     "verified_date": "2026-07-08",
-    "confidence": "high"
+    "confidence": "high",
+    "cosy": true
   },
   {
     "venue": "Parrotdog Brewery & Bar",
@@ -9834,7 +10150,8 @@
     "source_url": "https://www.wellingtonnz.com/visit/eat-and-drink/daily-dining-deals",
     "source_quote": "Thursday Ribs — $12 ribs and chips, $20 core range jugs.",
     "verified_date": "2026-07-08",
-    "confidence": "high"
+    "confidence": "high",
+    "cosy": true
   },
   {
     "venue": "Parrotdog Brewery & Bar",
@@ -9852,7 +10169,8 @@
     "source_url": "https://www.wellingtonnz.com/visit/eat-and-drink/daily-dining-deals",
     "source_quote": "Loaded Fry-day — $12 rotating loaded fries.",
     "verified_date": "2026-07-08",
-    "confidence": "high"
+    "confidence": "high",
+    "cosy": true
   },
   {
     "venue": "Kopi Kadai",
@@ -9888,7 +10206,8 @@
     "source_url": "https://www.facebook.com/hyderabadihousekilbirnienz",
     "source_quote": "Our Kilbirnie Branch is serving up delicious Chicken, Lamb & Veg Biryani for just $10! Offer Available ONLY at our Kilbirnie Branch.",
     "verified_date": "2026-07-08",
-    "confidence": "high"
+    "confidence": "high",
+    "cosy": true
   },
   {
     "venue": "Hyderabadi House Kilbirnie",
@@ -9906,7 +10225,8 @@
     "source_url": "https://www.facebook.com/hyderabadihousekilbirnienz",
     "source_quote": "Our Kilbirnie Branch is serving up delicious Chicken, Lamb & Veg Biryani for just $10! Offer Available ONLY at our Kilbirnie Branch.",
     "verified_date": "2026-07-08",
-    "confidence": "high"
+    "confidence": "high",
+    "cosy": true
   },
   {
     "venue": "Hyderabadi House Kilbirnie",
@@ -9924,7 +10244,8 @@
     "source_url": "https://www.facebook.com/hyderabadihousekilbirnienz",
     "source_quote": "Our Kilbirnie Branch is serving up delicious Chicken, Lamb & Veg Biryani for just $10! Offer Available ONLY at our Kilbirnie Branch.",
     "verified_date": "2026-07-08",
-    "confidence": "high"
+    "confidence": "high",
+    "cosy": true
   },
   {
     "venue": "St Pierres Sushi & Bento Bowl (Kilbirnie)",
@@ -9942,7 +10263,8 @@
     "source_url": "https://www.facebook.com/StPierresSushi",
     "source_quote": "Get your sushi fix ALL WEEK for just $8.40! Our Sushi Value of the Day changes daily, so there's always a new flavour to enjoy!",
     "verified_date": "2026-07-08",
-    "confidence": "high"
+    "confidence": "high",
+    "cosy": true
   },
   {
     "venue": "St Pierres Sushi & Bento Bowl (Kilbirnie)",
@@ -9961,7 +10283,8 @@
     "source_quote": "$2 for any size Miso Soup ... Only for Gold Card members.",
     "verified_date": "2026-07-08",
     "confidence": "high",
-    "seniors": true
+    "seniors": true,
+    "cosy": true
   },
   {
     "venue": "Turbo Bar",
@@ -9997,7 +10320,8 @@
     "source_url": "https://www.pizzahut.co.nz/order/pizzas/pizza-of-the-day-monday",
     "source_quote": "Monday: Loaded Hawaiian Pizza of the Day $10 (Pick Up Only) @ Pizza Hut App!",
     "verified_date": "2026-07-08",
-    "confidence": "high"
+    "confidence": "high",
+    "cosy": true
   },
   {
     "venue": "Pizza Hut Kilbirnie",
@@ -10015,7 +10339,8 @@
     "source_url": "https://www.pizzahut.co.nz/order/pizzas/pizza-of-the-day-tuesday",
     "source_quote": "Tuesday: Meat Lovers Pizza of the Day $10 (Pick Up Only).",
     "verified_date": "2026-07-08",
-    "confidence": "high"
+    "confidence": "high",
+    "cosy": true
   },
   {
     "venue": "Pizza Hut Kilbirnie",
@@ -10033,7 +10358,8 @@
     "source_url": "https://www.pizzahut.co.nz/order/pizzas/pizza-of-the-day-wednesday-super-supreme",
     "source_quote": "Pizza Of The day WEDNESDAY - Super Supreme.",
     "verified_date": "2026-07-08",
-    "confidence": "high"
+    "confidence": "high",
+    "cosy": true
   },
   {
     "venue": "Pizza Hut Kilbirnie",
@@ -10051,7 +10377,8 @@
     "source_url": "https://www.pizzahut.co.nz/order/pizzas/pizza-of-the-day-thursday",
     "source_quote": "Pizza Of The Day THURSDAY - Apricot Chicken Deluxe.",
     "verified_date": "2026-07-08",
-    "confidence": "high"
+    "confidence": "high",
+    "cosy": true
   },
   {
     "venue": "Pizza Hut Kilbirnie",
@@ -10069,7 +10396,8 @@
     "source_url": "https://www.pizzahut.co.nz/order/pizzas/pizza-of-the-day-friday",
     "source_quote": "Pizza Of The Day FRIDAY - BBQ Chicken & Bacon Deluxe.",
     "verified_date": "2026-07-08",
-    "confidence": "high"
+    "confidence": "high",
+    "cosy": true
   },
   {
     "venue": "KFC Kilbirnie",
@@ -10087,7 +10415,8 @@
     "source_url": "https://kfc.co.nz/coupons",
     "source_quote": "Zinger Mondays: 2 Zinger Burgers for $14.99 (App exclusive).",
     "verified_date": "2026-07-08",
-    "confidence": "high"
+    "confidence": "high",
+    "cosy": true
   },
   {
     "venue": "KFC Kilbirnie",
@@ -10105,7 +10434,8 @@
     "source_url": "https://kfc.co.nz/coupons",
     "source_quote": "2pc Tuesdays, $4.49.",
     "verified_date": "2026-07-08",
-    "confidence": "high"
+    "confidence": "high",
+    "cosy": true
   },
   {
     "venue": "KFC Kilbirnie",
@@ -10123,7 +10453,8 @@
     "source_url": "https://kfc.co.nz/coupons",
     "source_quote": "Wicked_Wing_Wednesdays ... Wicked Wings unlocked for $2 each.",
     "verified_date": "2026-07-08",
-    "confidence": "high"
+    "confidence": "high",
+    "cosy": true
   },
   {
     "venue": "Subway Kilbirnie",
@@ -10141,7 +10472,8 @@
     "source_url": "https://www.facebook.com/subwaynz",
     "source_quote": "$6.80 for a 6-inch sub of your choice, a 16oz drink AND a cookie?! ... Available everyday, anytime at your nearest Subway.",
     "verified_date": "2026-07-08",
-    "confidence": "high"
+    "confidence": "high",
+    "cosy": true
   },
   {
     "venue": "Park Kitchen",
@@ -10159,7 +10491,8 @@
     "source_url": "https://www.wellingtonnz.com/visit/eat-and-drink/daily-dining-deals",
     "source_quote": "Two-for-one pizza from 5pm until close, dine-in only.",
     "verified_date": "2026-07-08",
-    "confidence": "high"
+    "confidence": "high",
+    "cosy": true
   },
   {
     "venue": "Park Kitchen",
@@ -10177,7 +10510,8 @@
     "source_url": "https://www.wellingtonnz.com/visit/eat-and-drink/daily-dining-deals",
     "source_quote": "Taco Tuesday — $17 taco plates and $15 margaritas from 5pm until close, dine-in only.",
     "verified_date": "2026-07-08",
-    "confidence": "high"
+    "confidence": "high",
+    "cosy": true
   },
   {
     "venue": "Park Kitchen",
@@ -10195,7 +10529,8 @@
     "source_url": "https://www.wellingtonnz.com/visit/eat-and-drink/daily-dining-deals",
     "source_quote": "Steak Night — 250g striploin served with fries and mushroom sauce for $27. From 5pm until close, dine-in only.",
     "verified_date": "2026-07-08",
-    "confidence": "high"
+    "confidence": "high",
+    "cosy": true
   },
   {
     "venue": "Park Kitchen",
@@ -10232,7 +10567,8 @@
     "source_url": "https://www.facebook.com/cafepolomiramar",
     "source_quote": "Beat the Winter Blues with our new lunchtime set menus From 1 July, we'll be offering delicious two and three course set [menus].",
     "verified_date": "2026-07-08",
-    "confidence": "high"
+    "confidence": "high",
+    "cosy": true
   },
   {
     "venue": "Shaina's Place",
@@ -10304,7 +10640,8 @@
     "source_url": "https://www.1852.co.nz",
     "source_quote": "O for Awesome Quiz Night ... FREE entry, WIN food & beverage vouchers! 7pm kick off.",
     "verified_date": "2026-07-08",
-    "confidence": "high"
+    "confidence": "high",
+    "cosy": true
   },
   {
     "venue": "1852 Pub & Kitchen",
@@ -10322,7 +10659,8 @@
     "source_url": "https://www.1852.co.nz",
     "source_quote": "Midweek Steakout. 400g sirloin, rustic cut chips, 1852 slaw, garlic butter, an egg and any tap beer for just $35!",
     "verified_date": "2026-07-08",
-    "confidence": "high"
+    "confidence": "high",
+    "cosy": true
   },
   {
     "venue": "1852 Pub & Kitchen",
@@ -10340,7 +10678,8 @@
     "source_url": "https://www.1852.co.nz",
     "source_quote": "TIGHTARSE THURSDAY. $29 Main Meals. From 5pm.",
     "verified_date": "2026-07-08",
-    "confidence": "high"
+    "confidence": "high",
+    "cosy": true
   },
   {
     "venue": "1852 Pub & Kitchen",
@@ -10358,7 +10697,8 @@
     "source_url": "https://www.1852.co.nz",
     "source_quote": "241 PIZZAS. Buy one pizza and receive another pizza of equal or lesser value for FREE. One pizza per bum on seat. From 5pm every Friday.",
     "verified_date": "2026-07-08",
-    "confidence": "high"
+    "confidence": "high",
+    "cosy": true
   },
   {
     "venue": "1852 Pub & Kitchen",
@@ -10376,7 +10716,8 @@
     "source_url": "https://www.1852.co.nz",
     "source_quote": "WEEKEND ROAST. Only $27.50. Available Friday, Saturday and Sunday from 5pm until sold out.",
     "verified_date": "2026-07-08",
-    "confidence": "high"
+    "confidence": "high",
+    "cosy": true
   },
   {
     "venue": "1852 Pub & Kitchen",
@@ -10394,7 +10735,8 @@
     "source_url": "https://www.1852.co.nz",
     "source_quote": "WEEKEND ROAST. Only $27.50. Available Friday, Saturday and Sunday from 5pm until sold out.",
     "verified_date": "2026-07-08",
-    "confidence": "high"
+    "confidence": "high",
+    "cosy": true
   },
   {
     "venue": "1852 Pub & Kitchen",
@@ -10430,7 +10772,8 @@
     "source_url": "https://www.1852.co.nz",
     "source_quote": "WEEKEND ROAST. Only $27.50. Available Friday, Saturday and Sunday from 5pm until sold out.",
     "verified_date": "2026-07-08",
-    "confidence": "high"
+    "confidence": "high",
+    "cosy": true
   },
   {
     "venue": "1852 Pub & Kitchen",
@@ -10485,7 +10828,8 @@
     "source_url": "https://www.facebook.com/bogartspizzeria",
     "source_quote": "Tuesday = Savings! Get 20% OFF your favourite pizzas — online orders only.",
     "verified_date": "2026-07-08",
-    "confidence": "high"
+    "confidence": "high",
+    "cosy": true
   },
   {
     "venue": "The Realm Hataitai",
@@ -10503,7 +10847,8 @@
     "source_url": "https://therealm.co.nz/events/kids-eat-free/",
     "source_quote": "Kids eat free every Monday! ... Offer available in the bistro all day Monday.",
     "verified_date": "2026-07-08",
-    "confidence": "high"
+    "confidence": "high",
+    "cosy": true
   },
   {
     "venue": "The Realm Hataitai",
@@ -10521,7 +10866,8 @@
     "source_url": "https://therealm.co.nz/events/steak-night/",
     "source_quote": "What could be better than enjoying a steak with salad for $20? Every Tuesday at The Realm from 12pm-2pm and 5pm-8pm.",
     "verified_date": "2026-07-08",
-    "confidence": "high"
+    "confidence": "high",
+    "cosy": true
   },
   {
     "venue": "The Realm Hataitai",
@@ -10539,7 +10885,8 @@
     "source_url": "https://therealm.co.nz/events/2-for-1-pizza-wednesday/",
     "source_quote": "Every Wednesday from 12pm, choose two of our delicious pizzas and enjoy them for the price of one... Available 5pm - 8:30pm in the bistro.",
     "verified_date": "2026-07-08",
-    "confidence": "high"
+    "confidence": "high",
+    "cosy": true
   },
   {
     "venue": "The Realm Hataitai",
@@ -10557,7 +10904,8 @@
     "source_url": "https://therealm.co.nz/events/burger-night/",
     "source_quote": "Grab a pal and head down to the bistro from 5pm - 9pm to get any two burgers with fries for $35.",
     "verified_date": "2026-07-08",
-    "confidence": "high"
+    "confidence": "high",
+    "cosy": true
   },
   {
     "venue": "The Realm Hataitai",
@@ -10575,7 +10923,8 @@
     "source_url": "https://therealm.co.nz/events/quiz/",
     "source_quote": "Our Hataitai famous Thursday quiz is here every week! Join us from 7:00PM for a night of prizes, great food, and good old-fashioned fun.",
     "verified_date": "2026-07-08",
-    "confidence": "high"
+    "confidence": "high",
+    "cosy": true
   },
   {
     "venue": "The Realm Hataitai",
@@ -10593,7 +10942,8 @@
     "source_url": "https://therealm.co.nz/events/fish-and-chips-friday/",
     "source_quote": "Enjoy two pieces of golden fish, with a scoop of chips and your choice of Macs Gold, Speights Gold, or a glass of house wine to wash it all down, for just $25. Available from 5pm - 8:30pm.",
     "verified_date": "2026-07-08",
-    "confidence": "high"
+    "confidence": "high",
+    "cosy": true
   },
   {
     "venue": "The Realm Hataitai",
@@ -10629,7 +10979,8 @@
     "source_url": "https://therealm.co.nz/events/express-lunch/",
     "source_quote": "Every weekday, join us for The Realm's Express Lunch Menu, with all meals only $18.",
     "verified_date": "2026-07-08",
-    "confidence": "high"
+    "confidence": "high",
+    "cosy": true
   },
   {
     "venue": "The Realm Hataitai",
@@ -10737,7 +11088,8 @@
     "source_url": "https://therealm.co.nz/events/sunday-roast/",
     "source_quote": "Every Sunday at The Realm - a succulent Sunday Roast with all the trimmings. From 4pm every week.",
     "verified_date": "2026-07-08",
-    "confidence": "medium"
+    "confidence": "medium",
+    "cosy": true
   },
   {
     "venue": "Waitoa Social Club",
@@ -10755,7 +11107,8 @@
     "source_url": "https://waitoabeer.co.nz/pages/hataitai",
     "source_quote": "Quiz Night. Friends, craft brews, and the ultimate quiz challenge... Wednesday, 6.30pm.",
     "verified_date": "2026-07-08",
-    "confidence": "high"
+    "confidence": "high",
+    "cosy": true
   },
   {
     "venue": "Coolsville Cafe",
@@ -10773,7 +11126,8 @@
     "source_url": "https://www.facebook.com/coolsvillecafe",
     "source_quote": "Get your start-of-the-week sugar fix with our brownie and coffee combo $10* - every Monday!",
     "verified_date": "2026-07-08",
-    "confidence": "high"
+    "confidence": "high",
+    "cosy": true
   },
   {
     "venue": "Coolsville Cafe",
@@ -10791,7 +11145,8 @@
     "source_url": "https://www.instagram.com/coolsvillecafe/",
     "source_quote": "Since we've been doing Scone + Coffee deal on a Wednesday for awhile now.",
     "verified_date": "2026-07-08",
-    "confidence": "high"
+    "confidence": "high",
+    "cosy": true
   },
   {
     "venue": "Coolsville Cafe",
@@ -10809,7 +11164,8 @@
     "source_url": "https://www.instagram.com/coolsvillecafe/",
     "source_quote": "The Beer on Fridays is our Swifty. A different beer is an extra $2.",
     "verified_date": "2026-07-08",
-    "confidence": "medium"
+    "confidence": "medium",
+    "cosy": true
   },
   {
     "venue": "HELL Pizza Hataitai",
@@ -10845,7 +11201,8 @@
     "source_url": "https://sprigandfernberhampore.co.nz/",
     "source_quote": "Our Tuesday night quiz is a great night out with friends and family. 7pm start. Bookings recommended.",
     "verified_date": "2026-07-22",
-    "confidence": "high"
+    "confidence": "high",
+    "cosy": true
   },
   {
     "venue": "Sprig + Fern Berhampore",
@@ -10899,7 +11256,8 @@
     "source_url": "https://www.instagram.com/rogueburgernz/",
     "source_quote": "Our ever popular student deal is BACK! That's one Rogue cheeseburger OR veggie burger + fries for just $15!",
     "verified_date": "2026-07-08",
-    "confidence": "high"
+    "confidence": "high",
+    "cosy": true
   },
   {
     "venue": "Rogue Burger",
@@ -10917,7 +11275,8 @@
     "source_url": "https://www.instagram.com/rogueburgernz/",
     "source_quote": "Our ever popular student deal is BACK! That's one Rogue cheeseburger OR veggie burger + fries for just $15!",
     "verified_date": "2026-07-08",
-    "confidence": "high"
+    "confidence": "high",
+    "cosy": true
   },
   {
     "venue": "Arcimboldi",
@@ -10989,7 +11348,8 @@
     "source_url": "https://www.arcimboldi.net",
     "source_quote": "HALF PRICE MUFFINS! WED-SUN 3:00-4:00. Afternoon tea muffin treat. Until stocks last.",
     "verified_date": "2026-07-08",
-    "confidence": "high"
+    "confidence": "high",
+    "cosy": true
   },
   {
     "venue": "Arcimboldi",
@@ -11007,7 +11367,8 @@
     "source_url": "https://www.arcimboldi.net",
     "source_quote": "HALF PRICE MUFFINS! WED-SUN 3:00-4:00. Afternoon tea muffin treat. Until stocks last.",
     "verified_date": "2026-07-08",
-    "confidence": "high"
+    "confidence": "high",
+    "cosy": true
   },
   {
     "venue": "Arcimboldi",
@@ -11025,7 +11386,8 @@
     "source_url": "https://www.arcimboldi.net",
     "source_quote": "HALF PRICE MUFFINS! WED-SUN 3:00-4:00. Afternoon tea muffin treat. Until stocks last.",
     "verified_date": "2026-07-08",
-    "confidence": "high"
+    "confidence": "high",
+    "cosy": true
   },
   {
     "venue": "Arcimboldi",
@@ -11043,7 +11405,8 @@
     "source_url": "https://www.arcimboldi.net",
     "source_quote": "HALF PRICE MUFFINS! WED-SUN 3:00-4:00. Afternoon tea muffin treat. Until stocks last.",
     "verified_date": "2026-07-08",
-    "confidence": "high"
+    "confidence": "high",
+    "cosy": true
   },
   {
     "venue": "Arcimboldi",
@@ -11061,7 +11424,8 @@
     "source_url": "https://www.arcimboldi.net",
     "source_quote": "HALF PRICE MUFFINS! WED-SUN 3:00-4:00. Afternoon tea muffin treat. Until stocks last.",
     "verified_date": "2026-07-08",
-    "confidence": "high"
+    "confidence": "high",
+    "cosy": true
   },
   {
     "venue": "Arcimboldi",
@@ -11098,7 +11462,8 @@
     "source_url": "https://www.facebook.com/huckleandco",
     "source_quote": "Enjoy these tasty deals: Lunch Time Special 11:00AM to 3:00PM only - $10 Fish with Chips & Salad - $10 Calamari Strips & Potato Scallops.",
     "verified_date": "2026-07-08",
-    "confidence": "high"
+    "confidence": "high",
+    "cosy": true
   },
   {
     "venue": "Khandallah Trading Company",
@@ -11134,7 +11499,8 @@
     "source_url": "https://stargroup.nz/venues/khandallah-trading-company",
     "source_quote": "$20 Schnitzel. Every Tuesday, all day.",
     "verified_date": "2026-07-08",
-    "confidence": "high"
+    "confidence": "high",
+    "cosy": true
   },
   {
     "venue": "Khandallah Trading Company",
@@ -11152,7 +11518,8 @@
     "source_url": "https://stargroup.nz/venues/khandallah-trading-company",
     "source_quote": "Weekly Pub Quiz at Khandallah. Every Tuesday | 7pm.",
     "verified_date": "2026-07-08",
-    "confidence": "high"
+    "confidence": "high",
+    "cosy": true
   },
   {
     "venue": "Khandallah Trading Company",
@@ -11170,7 +11537,8 @@
     "source_url": "https://stargroup.nz/venues/khandallah-trading-company",
     "source_quote": "$20 Burger. Every Wednesday, all day.",
     "verified_date": "2026-07-08",
-    "confidence": "high"
+    "confidence": "high",
+    "cosy": true
   },
   {
     "venue": "Khandallah Trading Company",
@@ -11188,7 +11556,8 @@
     "source_url": "https://stargroup.nz/venues/khandallah-trading-company",
     "source_quote": "$25 Steak Frites. Every Thursday, all day.",
     "verified_date": "2026-07-08",
-    "confidence": "high"
+    "confidence": "high",
+    "cosy": true
   },
   {
     "venue": "Khandallah Trading Company",
@@ -11206,7 +11575,8 @@
     "source_url": "https://stargroup.nz/venues/khandallah-trading-company",
     "source_quote": "$20 Fish & Chips. Every Friday, until 2pm.",
     "verified_date": "2026-07-08",
-    "confidence": "high"
+    "confidence": "high",
+    "cosy": true
   },
   {
     "venue": "Khandallah Trading Company",
@@ -11260,7 +11630,8 @@
     "source_url": "https://www.instagram.com/rocksalt.newlands/",
     "source_quote": "Sunday Steak Night: Only $25! ... Every Sunday Rocksalt, Newlands.",
     "verified_date": "2026-07-08",
-    "confidence": "high"
+    "confidence": "high",
+    "cosy": true
   },
   {
     "venue": "Delhi7 Indian Restaurant and Bar",
@@ -11278,7 +11649,8 @@
     "source_url": "https://www.facebook.com/delhi7northland",
     "source_quote": "Unlimited weekend Indian breakfast buffet for $19.99, every Saturday and Sunday, 10:30 AM - 1:30 PM.",
     "verified_date": "2026-07-08",
-    "confidence": "medium"
+    "confidence": "medium",
+    "cosy": true
   },
   {
     "venue": "Delhi7 Indian Restaurant and Bar",
@@ -11296,7 +11668,8 @@
     "source_url": "https://www.facebook.com/delhi7northland",
     "source_quote": "Unlimited weekend Indian breakfast buffet for $19.99, every Saturday and Sunday, 10:30 AM - 1:30 PM.",
     "verified_date": "2026-07-08",
-    "confidence": "medium"
+    "confidence": "medium",
+    "cosy": true
   },
   {
     "venue": "Burger Wisconsin Northland",
@@ -11352,7 +11725,8 @@
     "source_quote": "Thursday Nights 6 pm in the restaurant. Come along and have some fun at our regular Quiz evenings.",
     "verified_date": "2026-07-10",
     "confidence": "high",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "Abandoned Taproom (Abandoned Brewery Porirua)",
@@ -11371,7 +11745,8 @@
     "source_quote": "02 THURS QUIZ NIGHT! 6:30PM HOSTED BY LOCAL COMEDIAN AGGIE WIDFELOT",
     "verified_date": "2026-07-10",
     "confidence": "high",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "Metro Sports Bar Porirua",
@@ -11390,7 +11765,8 @@
     "source_quote": "START AT 7PM BUY IN $20 POKER NIGHT Every Thursday",
     "verified_date": "2026-07-10",
     "confidence": "high",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "New Paradise Porirua",
@@ -11409,7 +11785,8 @@
     "source_quote": "WEDNESDAY BIRYANI BLISS Indulge in the rich, aromatic flavors of our Chettinad Chicken Biryani or go veggie for just $10.99!",
     "verified_date": "2026-07-10",
     "confidence": "high",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "New Paradise Porirua",
@@ -11447,7 +11824,8 @@
     "source_quote": "UNLIMITED BUFFET FRI-SAT ONLY ... ADULTS $25.99 KIDS (6-13YEARS) $15.99 5:00 PM-8:30 PM KIDS UNDER 5 EAT FREE!",
     "verified_date": "2026-07-10",
     "confidence": "high",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "RE Burger Porirua",
@@ -11466,7 +11844,8 @@
     "source_quote": "Just here making your Tuesday decision easy. CHEAPSKATE CHEWSDAY. Any Burg, Side of Fries and 420ml of Fizz for $19.90",
     "verified_date": "2026-07-10",
     "confidence": "medium",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "RE Burger Petone",
@@ -11485,7 +11864,8 @@
     "source_quote": "CHEAPSKATE CHEWSDAY. Any Burg, Side of Fries and 420ml of Fizz for $19.90",
     "verified_date": "2026-07-11",
     "confidence": "medium",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "Hell Pizza Porirua",
@@ -11504,7 +11884,8 @@
     "source_quote": "Use code TUESDAY when you spend $25, and we'll take care of the rest mortal. Save $9.",
     "verified_date": "2026-07-10",
     "confidence": "high",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "Meltdown Burgers",
@@ -11523,7 +11904,8 @@
     "source_quote": "Buy one Smash Fry… get one free. Every Tuesday.",
     "verified_date": "2026-07-10",
     "confidence": "high",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "Meltdown Burgers",
@@ -11542,7 +11924,8 @@
     "source_quote": "Wavy Wednesday 2 for $24! ($17 & under range)",
     "verified_date": "2026-07-10",
     "confidence": "high",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "Get Fixed Bicycle Cafe (Kai Tahi)",
@@ -11580,7 +11963,8 @@
     "source_quote": "UNLIMITED BUFFET FRI-SAT ONLY ... ADULTS $25.99 KIDS (6-13YEARS) $15.99 5:00 PM-8:30 PM KIDS UNDER 5 EAT FREE!",
     "verified_date": "2026-07-10",
     "confidence": "high",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "The Black Stag",
@@ -11618,7 +12002,8 @@
     "source_quote": "Pint & Slice Deal - Every Day | $15 from 4-7 PM",
     "verified_date": "2026-07-10",
     "confidence": "medium",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "The Black Stag",
@@ -11656,7 +12041,8 @@
     "source_quote": "Quiz Night - Thursday | From 7 PM",
     "verified_date": "2026-07-10",
     "confidence": "medium",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "Duncan's Brewing Co.",
@@ -11713,7 +12099,8 @@
     "source_quote": "Did you know? We offer Gold Card discounts every Tuesday! Enjoy 10% off your meal - it's our little way of saying thank you.",
     "verified_date": "2026-07-10",
     "confidence": "high",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "The Pinetree Arms",
@@ -11770,7 +12157,8 @@
     "source_quote": "Tuesday: ... Quiz from 7.15pm",
     "verified_date": "2026-07-10",
     "confidence": "high",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "Light House Cinema, Pauatahanui",
@@ -11789,7 +12177,8 @@
     "source_quote": "$12.50 tickets. All films on Mondays.",
     "verified_date": "2026-07-10",
     "confidence": "high",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "Light House Cinema, Pauatahanui",
@@ -11808,7 +12197,8 @@
     "source_quote": "$13.50 tickets. All films on Tuesdays.",
     "verified_date": "2026-07-10",
     "confidence": "high",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "Light House Cinema, Pauatahanui",
@@ -11884,7 +12274,8 @@
     "source_quote": "Every Tuesday morning at 10.30am at Petone, Cuba and Pauatahanui, Mum, Dad or Nana are invited to come and enjoy a film with their baby. All 2D tickets are $14 ($13 for Light Club members)",
     "verified_date": "2026-07-10",
     "confidence": "high",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "Finn's Paekakariki",
@@ -11903,7 +12294,8 @@
     "source_quote": "It's June next week! And that always means one thing at Finn's - quiz night on the first Tuesday. Get a team together and get on down for a 7:30pm start. Gold coin entry. Prizes to be won.",
     "verified_date": "2026-07-10",
     "confidence": "high",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "Vintage Village Cafe",
@@ -11922,7 +12314,8 @@
     "source_quote": "Early Bird Special | 8:00 AM - 11:00 AM Enjoy any regular hot drink - coffee, tea, or hot chocolate PLUS a freshly baked Cheese Scone or... for just $8.",
     "verified_date": "2026-07-10",
     "confidence": "high",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "Boundary Tap & Kitchen",
@@ -11941,7 +12334,8 @@
     "source_quote": "TUESDAY IS QUIZ NIGHT ... Teams must register by 6:30pm. Quiz starts at 7:15pm, finishes at 9:30pm. Zero cost to enter, just book in your team",
     "verified_date": "2026-07-10",
     "confidence": "high",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "Curry Lounge",
@@ -11960,7 +12354,8 @@
     "source_quote": "LUNCH SPECIAL: Any Vegetable Curry: $16.00. Chicken Curry: $17.00. Lamb Curry: $18.00. Seafood Curry: $20.00. Includes rice and plain naan",
     "verified_date": "2026-07-10",
     "confidence": "high",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "Courtyard on Margaret",
@@ -11999,7 +12394,8 @@
     "verified_date": "2026-07-22",
     "confidence": "high",
     "app_required": false,
-    "change_reason": "Upgraded medium -> high. The 2026-07-10 scan sourced this from undated photos. This rescan found a dated Facebook post from 2026-06-20 (within the last 12 months) with the same menu/pricing shown in a clear photo, clearing the confidence bar for high."
+    "change_reason": "Upgraded medium -> high. The 2026-07-10 scan sourced this from undated photos. This rescan found a dated Facebook post from 2026-06-20 (within the last 12 months) with the same menu/pricing shown in a clear photo, clearing the confidence bar for high.",
+    "cosy": true
   },
   {
     "venue": "Reds Cafe",
@@ -12056,7 +12452,8 @@
     "source_quote": "Weekly Pub Quiz at The Co-Op | Every Monday | 7:30pm",
     "verified_date": "2026-07-10",
     "confidence": "high",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "Hey Coastie",
@@ -12075,7 +12472,8 @@
     "source_quote": "COASTIE QUIZ NIGHT @ HEY COASTIE THURS 28TH MAY 6PM TEAMS OF UP TO 6 PRIZES TO BE WON",
     "verified_date": "2026-07-10",
     "confidence": "high",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "Hey Coastie",
@@ -12113,7 +12511,8 @@
     "source_quote": "Friday Special. Ruby's Home Made Corn Fritters. Corn Fritters $22. Add any Regular Coffee $3.5 Extra.",
     "verified_date": "2026-07-10",
     "confidence": "high",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "Sandbar Pub",
@@ -12151,7 +12550,8 @@
     "source_quote": "tuesday $14 Pizza* ... available from 5pm* T&C apply",
     "verified_date": "2026-07-10",
     "confidence": "high",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "Sandbar Pub",
@@ -12170,7 +12570,8 @@
     "source_quote": "wednesday $17 Ribs 'n' Fries* ... available from 5pm* T&C apply",
     "verified_date": "2026-07-10",
     "confidence": "high",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "Sandbar Pub",
@@ -12189,7 +12590,8 @@
     "source_quote": "thursday Steak & Fries w/ House Drink $19* ... available from 5pm* T&C apply",
     "verified_date": "2026-07-10",
     "confidence": "high",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "Sandbar Pub",
@@ -12208,7 +12610,8 @@
     "source_quote": "friday Fish 'n' Chips w/ House Drink $16* ... available from 5pm* T&C apply",
     "verified_date": "2026-07-10",
     "confidence": "high",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "Sandbar Pub",
@@ -12227,7 +12630,8 @@
     "source_quote": "saturday Burger 'n' Fries $16* ... available from 5pm* T&C apply",
     "verified_date": "2026-07-10",
     "confidence": "high",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "Sandbar Pub",
@@ -12246,7 +12650,8 @@
     "source_quote": "sunday Roast $16* ... available from 5pm* T&C apply",
     "verified_date": "2026-07-10",
     "confidence": "high",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "Sandbar Pub",
@@ -12303,7 +12708,8 @@
     "source_quote": "Quiz Night. Every Second Tuesday. 7pm. Quiz Master Ian Klinac",
     "verified_date": "2026-07-10",
     "confidence": "high",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "Burger Wisconsin Mana",
@@ -12322,7 +12728,8 @@
     "source_quote": "MEAT FREE MONDAY $12 Vegetarian Burgers",
     "verified_date": "2026-07-10",
     "confidence": "high",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "Burger Wisconsin Mana",
@@ -12341,7 +12748,8 @@
     "source_quote": "CHOOK TUESDAY $12 Cabbie Burgers",
     "verified_date": "2026-07-10",
     "confidence": "high",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "Burger Wisconsin Mana",
@@ -12360,7 +12768,8 @@
     "source_quote": "MID WEEK BEEF $12 Great American Burgers",
     "verified_date": "2026-07-10",
     "confidence": "high",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "Burger Wisconsin Mana",
@@ -12379,7 +12788,8 @@
     "source_quote": "SIDESHOW THURSDAY $10 for any two sides (excludes Southern Fried Chicken)",
     "verified_date": "2026-07-10",
     "confidence": "high",
-    "app_required": false
+    "app_required": false,
+    "cosy": true
   },
   {
     "venue": "Burger Wisconsin Mana",
@@ -12472,7 +12882,8 @@
     "source_url": "https://otto.thechampagneria.co.nz/",
     "source_quote": "BURGER & BEER - every Weds ALL DAY get a burger plus fries with a tap beer for only $20.",
     "verified_date": "2026-07-22",
-    "confidence": "high"
+    "confidence": "high",
+    "cosy": true
   },
   {
     "venue": "The Glasshouse Bar",
@@ -12490,7 +12901,8 @@
     "source_url": "https://www.facebook.com/theglasshousebar",
     "source_quote": "Karaoke on Saturdays only, starting this weekend. See you there! (page bio: only bar in Upper Hutt open late Friday & Saturday nights). Recent post 19 Jul 2026: What a great Karaoke Night at Glasshouse!",
     "verified_date": "2026-07-22",
-    "confidence": "high"
+    "confidence": "high",
+    "cosy": true
   },
   {
     "venue": "Curry Pot Indian Restaurant",
@@ -12508,7 +12920,8 @@
     "source_url": "https://currypot.nz/lunch-menu/",
     "source_quote": "THALI SPECIAL (CHICKEN/VEGETARIAN) $17.00 ... BUTTER CHICKEN $14.50 ... CHICKEN TIKKA MASALA $14.50",
     "verified_date": "2026-07-22",
-    "confidence": "medium"
+    "confidence": "medium",
+    "cosy": true
   },
   {
     "venue": "Curry Heaven",
@@ -12526,7 +12939,8 @@
     "source_url": "https://www.curryheaven.co.nz/menu",
     "source_quote": "Lunch Menu ... Lunch : Mon - Sat: 11:30 AM - 2:30 PM ... Sunday: Closed",
     "verified_date": "2026-07-22",
-    "confidence": "medium"
+    "confidence": "medium",
+    "cosy": true
   },
   {
     "venue": "The Borough",
@@ -12562,7 +12976,8 @@
     "source_url": "https://stargroup.nz/venues/the-borough",
     "source_quote": "$20 Schnitzel - Every Tuesday, all day.",
     "verified_date": "2026-07-22",
-    "confidence": "high"
+    "confidence": "high",
+    "cosy": true
   },
   {
     "venue": "The Borough",
@@ -12580,7 +12995,8 @@
     "source_url": "https://stargroup.nz/venues/the-borough",
     "source_quote": "$20 Burger - Every Wednesday, all day.",
     "verified_date": "2026-07-22",
-    "confidence": "high"
+    "confidence": "high",
+    "cosy": true
   },
   {
     "venue": "The Borough",
@@ -12598,7 +13014,8 @@
     "source_url": "https://stargroup.nz/venues/the-borough",
     "source_quote": "Weekly Pub Quiz at The Borough - Every Wednesday | 7pm",
     "verified_date": "2026-07-22",
-    "confidence": "high"
+    "confidence": "high",
+    "cosy": true
   },
   {
     "venue": "The Borough",
@@ -12616,7 +13033,8 @@
     "source_url": "https://stargroup.nz/venues/the-borough",
     "source_quote": "$25 Steak Frites - Every Thursday, all day.",
     "verified_date": "2026-07-22",
-    "confidence": "high"
+    "confidence": "high",
+    "cosy": true
   },
   {
     "venue": "The Borough",
@@ -12634,7 +13052,8 @@
     "source_url": "https://stargroup.nz/venues/the-borough",
     "source_quote": "$20 Fish & Chips - Every Friday, until 2pm.",
     "verified_date": "2026-07-22",
-    "confidence": "high"
+    "confidence": "high",
+    "cosy": true
   },
   {
     "venue": "The Borough",
@@ -12725,7 +13144,8 @@
     "source_url": "https://www.facebook.com/thecrookedelm",
     "source_quote": "It's time! Quiz Night is back Tuesday | 6:30pm kickoff. Bookings are essential and spots go fast - lock in your table online or give us a call!",
     "verified_date": "2026-07-22",
-    "confidence": "high"
+    "confidence": "high",
+    "cosy": true
   },
   {
     "venue": "The Crooked Elm",
@@ -12797,7 +13217,8 @@
     "source_url": "https://www.bedrocksbar.co.nz/",
     "source_quote": "Tuesday - Poker. Join our poker night and compete against other players. Register easily through facebook.",
     "verified_date": "2026-07-22",
-    "confidence": "medium"
+    "confidence": "medium",
+    "cosy": true
   },
   {
     "venue": "Bedrocks Bar",
@@ -12833,7 +13254,8 @@
     "source_url": "https://www.facebook.com/stokesvalleycossieclub",
     "source_quote": "Quiz night every Wednesday, Texas Holdem, Club draw, raffles.",
     "verified_date": "2026-07-22",
-    "confidence": "medium"
+    "confidence": "medium",
+    "cosy": true
   },
   {
     "venue": "Stokes Valley Cosmopolitan Club",
@@ -12869,7 +13291,8 @@
     "source_url": "https://www.facebook.com/stokesvalleycossieclub",
     "source_quote": "Friday night we have Club draw again which is $400, karaoke with Matt.",
     "verified_date": "2026-07-22",
-    "confidence": "medium"
+    "confidence": "medium",
+    "cosy": true
   },
   {
     "venue": "The Jetty",
@@ -12887,7 +13310,8 @@
     "source_url": "https://www.instagram.com/p/DbBlSieSIvo/",
     "source_quote": "WEDNESDAY: East Side Menu - starter + main $28. Asian fusion vibes!",
     "verified_date": "2026-07-22",
-    "confidence": "high"
+    "confidence": "high",
+    "cosy": true
   },
   {
     "venue": "The Jetty",
@@ -12905,7 +13329,8 @@
     "source_url": "https://www.instagram.com/p/DbBlSieSIvo/",
     "source_quote": "FRIDAY: It's steak night! $28 for a juicy steak meal served with chips and salad.",
     "verified_date": "2026-07-22",
-    "confidence": "high"
+    "confidence": "high",
+    "cosy": true
   },
   {
     "venue": "The Jetty",
@@ -12923,7 +13348,8 @@
     "source_url": "https://www.instagram.com/p/DbBlSieSIvo/",
     "source_quote": "SUNDAY: $13 starters and $23 mains - 5pm-7pm",
     "verified_date": "2026-07-22",
-    "confidence": "high"
+    "confidence": "high",
+    "cosy": true
   },
   {
     "venue": "The Jetty",
@@ -12959,7 +13385,8 @@
     "source_url": "https://www.instagram.com/p/DbBlSieSIvo/",
     "source_quote": "THURSDAY: Mistress Viv is back for Beats By Bingo ... Musical Bingo! Time: 7:00pm - 9:00pm, R18 Show, $15 + ticketing fees via Eventfinda",
     "verified_date": "2026-07-22",
-    "confidence": "medium"
+    "confidence": "medium",
+    "cosy": true
   },
   {
     "venue": "Blend N Brew Bar Porirua",
@@ -13049,7 +13476,8 @@
     "source_url": "https://stargroup.nz/venues/whitby-co-op",
     "source_quote": "$20 Schnitzel - Every Tuesday, all day.",
     "verified_date": "2026-07-22",
-    "confidence": "high"
+    "confidence": "high",
+    "cosy": true
   },
   {
     "venue": "The Co-Op Kitchen & Bar",
@@ -13067,7 +13495,8 @@
     "source_url": "https://stargroup.nz/venues/whitby-co-op",
     "source_quote": "$20 Burger - Every Wednesday, all day.",
     "verified_date": "2026-07-22",
-    "confidence": "high"
+    "confidence": "high",
+    "cosy": true
   },
   {
     "venue": "The Co-Op Kitchen & Bar",
@@ -13085,7 +13514,8 @@
     "source_url": "https://stargroup.nz/venues/whitby-co-op",
     "source_quote": "$25 Steak Frites - Every Thursday, all day.",
     "verified_date": "2026-07-22",
-    "confidence": "high"
+    "confidence": "high",
+    "cosy": true
   },
   {
     "venue": "The Co-Op Kitchen & Bar",
@@ -13103,7 +13533,8 @@
     "source_url": "https://stargroup.nz/venues/whitby-co-op",
     "source_quote": "$20 Fish & Chips - Every Friday, until 2pm.",
     "verified_date": "2026-07-22",
-    "confidence": "high"
+    "confidence": "high",
+    "cosy": true
   },
   {
     "venue": "The Co-Op Kitchen & Bar",
@@ -13157,7 +13588,8 @@
     "source_url": "https://www.facebook.com/DaysBayPavilion",
     "source_quote": "WEDNESDAY SPECIAL LARGE PIZZA FROM 4.30PM $15",
     "verified_date": "2026-07-22",
-    "confidence": "high"
+    "confidence": "high",
+    "cosy": true
   },
   {
     "venue": "Days Bay Pavilion",
@@ -13175,7 +13607,8 @@
     "source_url": "https://www.facebook.com/DaysBayPavilion",
     "source_quote": "THURSDAY SPECIAL BURGER & FRIES from 4.30pm $15 all burgers served with fries",
     "verified_date": "2026-07-22",
-    "confidence": "high"
+    "confidence": "high",
+    "cosy": true
   },
   {
     "venue": "Days Bay Pavilion",
@@ -13193,7 +13626,8 @@
     "source_url": "https://www.facebook.com/DaysBayPavilion",
     "source_quote": "FRIDAY SPECIAL FISH & CHIPS FROM 4.30PM $18 two beer battered fish, steak fries, homemade tartare sauce and fresh salad",
     "verified_date": "2026-07-22",
-    "confidence": "high"
+    "confidence": "high",
+    "cosy": true
   },
   {
     "venue": "Days Bay Pavilion",
@@ -13229,7 +13663,8 @@
     "source_url": "https://www.facebook.com/DaysBayPavilion",
     "source_quote": "SATURDAY SPECIAL STEAK DINNER FROM 4.30PM $25 250gm sirloin steak served with fried eggs, salad, gravy, hollandaise and steak fries",
     "verified_date": "2026-07-22",
-    "confidence": "high"
+    "confidence": "high",
+    "cosy": true
   },
   {
     "venue": "Days Bay Pavilion",
@@ -13266,7 +13701,8 @@
     "source_url": "https://www.supergold.govt.nz/",
     "source_quote": "20% off Main Meals | O'Malleys Bar & Kitchen. Gold Card Meals available 11:30am - 5:30pm. Gold Card Meals are a smaller portion to our normal main meal options.",
     "verified_date": "2026-07-22",
-    "confidence": "medium"
+    "confidence": "medium",
+    "cosy": true
   },
   {
     "venue": "Naenae Hotel",
@@ -13284,7 +13720,8 @@
     "source_url": "https://www.naenaehotel.co.nz/",
     "source_quote": "We have quiz night every Wednesday from 7pm.",
     "verified_date": "2026-07-22",
-    "confidence": "high"
+    "confidence": "high",
+    "cosy": true
   },
   {
     "venue": "The Victoria Tavern, Petone",
@@ -13320,7 +13757,8 @@
     "source_url": "https://www.instagram.com/thevictoriatavernpetone/",
     "source_quote": "Finish off the week with our Sunday special! Just $29 for roast beef sirloin",
     "verified_date": "2026-07-22",
-    "confidence": "medium"
+    "confidence": "medium",
+    "cosy": true
   },
   {
     "venue": "Strathmore Local",
@@ -13338,7 +13776,8 @@
     "source_url": "https://www.facebook.com/profile.php?id=100063690337447",
     "source_quote": "Its our meal deal tonight - Two Mains for $29. Offer starts at 5pm. Pick and choose from the Mains menu.",
     "verified_date": "2026-07-22",
-    "confidence": "medium"
+    "confidence": "medium",
+    "cosy": true
   },
   {
     "venue": "Strathmore Local",
@@ -13356,7 +13795,8 @@
     "source_url": "https://www.facebook.com/profile.php?id=100063690337447",
     "source_quote": "Quiz is back 7pm tonight!! ... Believe It Or Not Quiz Nights - Hosting at these fine venues this week: Tuesday: Strathmore Local Restaurant and Bar",
     "verified_date": "2026-07-22",
-    "confidence": "medium"
+    "confidence": "medium",
+    "cosy": true
   },
   {
     "venue": "Double Vision Brewing (Miramar)",
@@ -13374,7 +13814,8 @@
     "source_url": "https://www.instagram.com/doublevisionbrewing/",
     "source_quote": "Here's what's on at Miramar in June! ... Wednesday Trivia from 7pm $5 tacos",
     "verified_date": "2026-07-22",
-    "confidence": "medium"
+    "confidence": "medium",
+    "cosy": true
   },
   {
     "venue": "Jugnus Little India",
@@ -13411,7 +13852,8 @@
     "source_url": "https://www.google.com/maps/search/Mediterranean+Foods+Trattoria+Kapiti+Coastlands",
     "source_quote": "Such a good deal on a Wednesday. Pizza or paste with chips and a drink $29 bucks.",
     "verified_date": "2026-07-22",
-    "confidence": "medium"
+    "confidence": "medium",
+    "cosy": true
   },
   {
     "venue": "Kelburn Village Pub",
@@ -13429,7 +13871,8 @@
     "source_url": "https://www.facebook.com/Kelburnvillagepub",
     "source_quote": "WEEKLY SPECIAL ... Thursday 2 Pizzas for $40",
     "verified_date": "2026-07-22",
-    "confidence": "high"
+    "confidence": "high",
+    "cosy": true
   },
   {
     "venue": "Kelburn Village Pub",
@@ -13447,7 +13890,8 @@
     "source_url": "https://www.facebook.com/Kelburnvillagepub",
     "source_quote": "SUNDAY SPECIAL ROAST $28",
     "verified_date": "2026-07-22",
-    "confidence": "high"
+    "confidence": "high",
+    "cosy": true
   },
   {
     "venue": "The Backbencher Gastropub",
@@ -13465,7 +13909,8 @@
     "source_url": "https://static1.squarespace.com/static/647fd43193051a053449e4a7/t/68e32c2aac57c96b620b7a85/1759718442180/lobbyists+combo.pdf",
     "source_quote": "THE $25 LOBBYISTS LUNCHTIME COMBO 12PM-2PM WEEKDAYS CHOOSE YOUR MEAL CHOOSE YOUR BEVERAGE",
     "verified_date": "2026-07-22",
-    "confidence": "high"
+    "confidence": "high",
+    "cosy": true
   },
   {
     "venue": "The Backbencher Gastropub",
@@ -13483,7 +13928,8 @@
     "source_url": "https://static1.squarespace.com/static/647fd43193051a053449e4a7/t/68e32c2aac57c96b620b7a85/1759718442180/lobbyists+combo.pdf",
     "source_quote": "THE $25 LOBBYISTS LUNCHTIME COMBO 12PM-2PM WEEKDAYS CHOOSE YOUR MEAL CHOOSE YOUR BEVERAGE",
     "verified_date": "2026-07-22",
-    "confidence": "high"
+    "confidence": "high",
+    "cosy": true
   },
   {
     "venue": "The Backbencher Gastropub",
@@ -13501,7 +13947,8 @@
     "source_url": "https://static1.squarespace.com/static/647fd43193051a053449e4a7/t/68e32c2aac57c96b620b7a85/1759718442180/lobbyists+combo.pdf",
     "source_quote": "THE $25 LOBBYISTS LUNCHTIME COMBO 12PM-2PM WEEKDAYS CHOOSE YOUR MEAL CHOOSE YOUR BEVERAGE",
     "verified_date": "2026-07-22",
-    "confidence": "high"
+    "confidence": "high",
+    "cosy": true
   },
   {
     "venue": "The Backbencher Gastropub",
@@ -13519,7 +13966,8 @@
     "source_url": "https://static1.squarespace.com/static/647fd43193051a053449e4a7/t/68e32c2aac57c96b620b7a85/1759718442180/lobbyists+combo.pdf",
     "source_quote": "THE $25 LOBBYISTS LUNCHTIME COMBO 12PM-2PM WEEKDAYS CHOOSE YOUR MEAL CHOOSE YOUR BEVERAGE",
     "verified_date": "2026-07-22",
-    "confidence": "high"
+    "confidence": "high",
+    "cosy": true
   },
   {
     "venue": "The Backbencher Gastropub",
@@ -13537,7 +13985,8 @@
     "source_url": "https://static1.squarespace.com/static/647fd43193051a053449e4a7/t/68e32c2aac57c96b620b7a85/1759718442180/lobbyists+combo.pdf",
     "source_quote": "THE $25 LOBBYISTS LUNCHTIME COMBO 12PM-2PM WEEKDAYS CHOOSE YOUR MEAL CHOOSE YOUR BEVERAGE",
     "verified_date": "2026-07-22",
-    "confidence": "high"
+    "confidence": "high",
+    "cosy": true
   },
   {
     "venue": "Dillingers Brasserie & Bar",
@@ -13555,7 +14004,8 @@
     "source_url": "https://stargroup.nz/venues/dillingers",
     "source_quote": "Weekly Pub Quiz at Dillinger's - Every Tuesday | 5:30pm",
     "verified_date": "2026-07-22",
-    "confidence": "high"
+    "confidence": "high",
+    "cosy": true
   },
   {
     "venue": "Dillingers Brasserie & Bar",
@@ -13645,7 +14095,8 @@
     "source_url": "https://stargroup.nz/venues/bethel-woods",
     "source_quote": "Weekly Pub Quiz at Bethel Woods - Every Tuesday | 6:30pm",
     "verified_date": "2026-07-22",
-    "confidence": "high"
+    "confidence": "high",
+    "cosy": true
   },
   {
     "venue": "Little Beer Quarter",
@@ -13664,6 +14115,7 @@
     "source_quote": "The LBQ Sunday Roast - Every Sunday from 4:30pm till it runs out. Roast meat, seasonal vegetables, & house-made Yorkshire puddings, served with North End Iron Sands infused gravy... $25, or $30 with a pint of North End hand-pull beer.",
     "verified_date": "2026-07-22",
     "confidence": "high",
-    "change_note": "PRICE CHANGE: was $24 (verified_date 2026-06-18), now $25 (or $30 with a pint) per the venue's own current website. Update the existing record rather than adding a duplicate."
+    "change_note": "PRICE CHANGE: was $24 (verified_date 2026-06-18), now $25 (or $30 with a pint) per the venue's own current website. Update the existing record rather than adding a duplicate.",
+    "cosy": true
   }
 ]
