@@ -3979,5 +3979,396 @@
     "source_quote": "Paint and Gin Weekend Afternoon - The Great Wave, The Bond Store, Paraparaumu, Kapiti Coast, Sat 29 Aug 4:00pm",
     "verified_date": "2026-07-25",
     "confidence": "high"
+  },
+  {
+    "venue": "Zone Blue Run Club",
+    "suburb": "Waterfront",
+    "address": "5 Queens Wharf, Wellington",
+    "date": null,
+    "title": "Zone Blue Run Club",
+    "desc": "Free social run club on the Wellington waterfront, open to all fitness levels.",
+    "start": "17:30",
+    "end": null,
+    "category": "entertainment",
+    "annual": false,
+    "source_url": "https://www.instagram.com/p/DbMzs9SGOwH/",
+    "source_quote": "ZONE BLUE RUN CLUB ALL LEVELS WELCOME TUESDAYS - 5:30PM SHED 1",
+    "verified_date": "2026-07-26",
+    "confidence": "high",
+    "days": [
+      "Tuesday"
+    ],
+    "recurrence": "weekly",
+    "club": true
+  },
+  {
+    "venue": "Wellington City Book Club",
+    "suburb": "Mt Victoria",
+    "address": "10 Kent Terrace, Mount Victoria, Wellington",
+    "date": null,
+    "title": "Wellington City Book Club",
+    "desc": "Book club discussion evening with a $1 koha entry, open to readers of all experience levels.",
+    "start": "18:45",
+    "end": null,
+    "category": "entertainment",
+    "annual": false,
+    "source_url": "https://www.instagram.com/p/DbMzs9SGOwH/",
+    "source_quote": "WELLINGTON CITY BOOK CLUB $1 Koha Next Meeting - Thursday 6 August - 6:45pm EMBASSY THEATRE RSVP Required",
+    "verified_date": "2026-07-26",
+    "confidence": "high",
+    "days": [
+      "Thursday"
+    ],
+    "recurrence": "monthly",
+    "nth": [
+      1
+    ],
+    "club": true
+  },
+  {
+    "venue": "Wellington Tramping and Mountaineering Club",
+    "suburb": "Mt Victoria",
+    "address": "4 Moncrieff Street, Mount Victoria, Wellington",
+    "date": null,
+    "title": "WTMC Club Night",
+    "desc": "Tramping and mountaineering club night with trip talks and gear swaps, doors open 6:30pm for a 7pm start, roughly once a month; $100 annual membership.",
+    "start": "18:30",
+    "end": null,
+    "category": "entertainment",
+    "annual": false,
+    "source_url": "https://wtmc.org.nz/club-nights/",
+    "source_quote": "Week 1 (Wednesday) - Club nights: Held at the TTC Hall, 4 Moncrieff Street, Mt Victoria. Doors open 6:30pm for a 7pm start.",
+    "verified_date": "2026-07-26",
+    "confidence": "medium",
+    "days": [
+      "Wednesday"
+    ],
+    "recurrence": "monthly",
+    "club": true
+  },
+  {
+    "venue": "Wellington Film Society",
+    "suburb": "Mt Victoria",
+    "address": "10 Kent Terrace, Mount Victoria, Wellington",
+    "date": null,
+    "title": "Wellington Film Society Screening",
+    "desc": "Member film screenings typically held on Monday evenings at 6pm and 8:30pm, $120 annual membership.",
+    "start": "18:00",
+    "end": null,
+    "category": "entertainment",
+    "annual": false,
+    "source_url": "https://www.instagram.com/p/DbMzs9SGOwH/",
+    "source_quote": "WELLINGTON FILM SOCIETY $120 ANNUAL MEMBERSHIP TYPICALLY MONDAYS 6PM & 8:30PM THE EMBASSY THEATRE",
+    "verified_date": "2026-07-26",
+    "confidence": "medium",
+    "days": [
+      "Monday"
+    ],
+    "recurrence": "weekly",
+    "club": true
+  },
+  {
+    "venue": "Wellington Photographic Society",
+    "suburb": "Mt Victoria",
+    "address": "4 Moncrieff Street, Mount Victoria, Wellington",
+    "date": null,
+    "title": "Wellington Photographic Society Meeting",
+    "desc": "Photography club meeting with talks and discussion, usually twice a month; $90 individual membership.",
+    "start": "19:30",
+    "end": null,
+    "category": "entertainment",
+    "annual": false,
+    "source_url": "https://www.instagram.com/p/DbMzs9SGOwH/",
+    "source_quote": "WELLINGTON PHOTOGRAPHIC SOCIETY $90 INDIVIDUAL USUALLY TWO THURSDAY MEETINGS EACH MONTH - 7:30pm",
+    "verified_date": "2026-07-26",
+    "confidence": "high",
+    "days": [
+      "Thursday"
+    ],
+    "recurrence": "monthly",
+    "nth": [
+      2,
+      4
+    ],
+    "club": true
+  },
+  {
+    "venue": "Scrabble Wellington",
+    "suburb": "Thorndon",
+    "address": "112 Tinakori Road, Thorndon, Wellington",
+    "date": null,
+    "title": "Scrabble Wellington Club Night",
+    "desc": "Casual scrabble club night open to players of all levels.",
+    "start": "19:00",
+    "end": null,
+    "category": "entertainment",
+    "annual": false,
+    "source_url": "https://www.instagram.com/p/DbMzs9SGOwH/",
+    "source_quote": "SCRABBLE WELLINGTON THURSDAYS - 7PM VICTORIA BRIDGE CLUB 112 TINAKORI ROAD",
+    "verified_date": "2026-07-26",
+    "confidence": "high",
+    "days": [
+      "Thursday"
+    ],
+    "recurrence": "weekly",
+    "club": true
+  },
+  {
+    "venue": "Wellington Harrier Athletic Club",
+    "suburb": "Newtown",
+    "address": "317 Mansfield Street, Newtown, Wellington",
+    "date": null,
+    "title": "Wellington Harrier Athletic Club Run",
+    "desc": "Weekly social running club session at Newtown Park, open to all abilities.",
+    "start": "08:30",
+    "end": "10:30",
+    "category": "entertainment",
+    "annual": false,
+    "source_url": "https://www.instagram.com/p/DbMzs9SGOwH/",
+    "source_quote": "WELLINGTON HARRIER ATHLETIC CLUB WEEKLY SATURDAY 8:30AM-10:30AM NEWTOWN PARK",
+    "verified_date": "2026-07-26",
+    "confidence": "high",
+    "days": [
+      "Saturday"
+    ],
+    "recurrence": "weekly",
+    "club": true
+  },
+  {
+    "venue": "Wellington Chess Club",
+    "suburb": "Thorndon",
+    "address": "17 Tinakori Road, Thorndon, Wellington",
+    "date": null,
+    "title": "Wellington Chess Club Night",
+    "desc": "Casual chess club night open to players of all levels.",
+    "start": "19:30",
+    "end": null,
+    "category": "entertainment",
+    "annual": false,
+    "source_url": "https://www.instagram.com/p/DbMzs9SGOwH/",
+    "source_quote": "WELLINGTON CHESS CLUB THURSDAYS - 7:30PM WELLINGTON BRIDGE CLUB 17 TINAKORI ROAD",
+    "verified_date": "2026-07-26",
+    "confidence": "high",
+    "days": [
+      "Thursday"
+    ],
+    "recurrence": "weekly",
+    "club": true
+  },
+  {
+    "venue": "Wellington Astronomical Society",
+    "suburb": "Kelburn",
+    "address": "40 Salamanca Road, Kelburn, Wellington",
+    "date": null,
+    "title": "Wellington Astronomical Society Monthly Meeting",
+    "desc": "Monthly astronomy talks and meeting at Space Place, held on the first Tuesday of the month except January, full membership from $37 a year.",
+    "start": "19:30",
+    "end": null,
+    "category": "entertainment",
+    "annual": false,
+    "source_url": "https://www.was.org.nz/monthly-meetings/",
+    "source_quote": "Society Monthly Meetings 1st Tuesday of month. Beginning at 7:30pm. Exploration Room at Space Place (Carter Observatory), 40 Salamanca Road, Kelburn, Wellington.",
+    "verified_date": "2026-07-26",
+    "confidence": "high",
+    "days": [
+      "Tuesday"
+    ],
+    "recurrence": "monthly",
+    "nth": [
+      1
+    ],
+    "club": true
+  },
+  {
+    "venue": "Wellington Go Club",
+    "suburb": "Kelburn",
+    "address": "Cotton Building, Victoria University of Wellington, Kelburn Parade, Kelburn, Wellington",
+    "date": null,
+    "title": "Wellington Go Club",
+    "desc": "Weekly go board game club session, free to attend and open to beginners and experienced players.",
+    "start": "17:30",
+    "end": "21:00",
+    "category": "entertainment",
+    "annual": false,
+    "source_url": "https://wellingtongoclub.nz",
+    "source_quote": "The Wellington Go Club meets on Tuesdays from 5:30pm till 9pm, at Victoria University of Wellington, Room 350 in the Cotton Building. Free to attend and players welcome.",
+    "verified_date": "2026-07-26",
+    "confidence": "high",
+    "days": [
+      "Tuesday"
+    ],
+    "recurrence": "weekly",
+    "club": true
+  },
+  {
+    "venue": "VUW Games Club",
+    "suburb": "Kelburn",
+    "address": "Student Union Building, Victoria University of Wellington, Kelburn Parade, Kelburn, Wellington",
+    "date": null,
+    "title": "VUW Games Club Board Game Night",
+    "desc": "Weekly board game meetup open to all, running from mid-afternoon into the evening.",
+    "start": "16:00",
+    "end": null,
+    "category": "entertainment",
+    "annual": false,
+    "source_url": "https://www.facebook.com/VUWGamesClub",
+    "source_quote": "We meet every Tuesday, from 4PM till late in SU217/218 (next to the Bubble) in the Student Union Building on Kelburn Campus.",
+    "verified_date": "2026-07-26",
+    "confidence": "medium",
+    "days": [
+      "Tuesday"
+    ],
+    "recurrence": "weekly",
+    "club": true
+  },
+  {
+    "venue": "Te Ngakau Civic Square",
+    "suburb": "Waterfront",
+    "address": "Te Ngakau Civic Square, Wellington",
+    "date": null,
+    "title": "Rounds in the Square",
+    "desc": "Free open-air community round-singing session, no experience or booking needed, held in the library instead if the weather is bad.",
+    "start": "13:00",
+    "end": "14:00",
+    "category": "entertainment",
+    "annual": false,
+    "source_url": "https://www.facebook.com/roundsinthesquare",
+    "source_quote": "Rounds in the Square will be held on the first Sunday of each month at 1pm in Te Ngakau Civic Square.",
+    "verified_date": "2026-07-26",
+    "confidence": "high",
+    "days": [
+      "Sunday"
+    ],
+    "recurrence": "monthly",
+    "nth": [
+      1
+    ],
+    "club": true
+  },
+  {
+    "venue": "Wellington City Chorus",
+    "suburb": "Thorndon",
+    "address": "17 Tinakori Road, Thorndon, Wellington",
+    "date": null,
+    "title": "Wellington City Chorus Rehearsal",
+    "desc": "Open barbershop chorus rehearsal, new members always welcome, no audition needed to visit.",
+    "start": "19:00",
+    "end": "21:30",
+    "category": "entertainment",
+    "annual": false,
+    "source_url": "https://www.wellingtoncitychorus.org",
+    "source_quote": "Rehearsals Every Monday 7pm at Wellington Bridge Club 17 Tinakori Rd.",
+    "verified_date": "2026-07-26",
+    "confidence": "high",
+    "days": [
+      "Monday"
+    ],
+    "recurrence": "weekly",
+    "club": true
+  },
+  {
+    "venue": "Cantoris Choir",
+    "suburb": "CBD (Lambton Quay)",
+    "address": "211 Willis Street, Wellington",
+    "date": null,
+    "title": "Cantoris Choir Rehearsal",
+    "desc": "Community choir rehearsal, new members always welcomed.",
+    "start": "19:30",
+    "end": "21:30",
+    "category": "entertainment",
+    "annual": false,
+    "source_url": "https://www.cantoris.net.nz/sing-with-us/",
+    "source_quote": "Cantoris rehearses weekly on Wednesdays from 7:30pm-9:30pm, at St. Peter's on Willis on 211 Willis Street; new members are always welcomed.",
+    "verified_date": "2026-07-26",
+    "confidence": "high",
+    "days": [
+      "Wednesday"
+    ],
+    "recurrence": "weekly",
+    "club": true
+  },
+  {
+    "venue": "Wellington Runners and Walkers",
+    "suburb": "Kilbirnie",
+    "address": "72 Kemp Street, Kilbirnie, Wellington",
+    "date": null,
+    "title": "Wellington Runners and Walkers",
+    "desc": "Free casual social walking and running group with a different route each week, all fitness levels welcome.",
+    "start": "08:00",
+    "end": null,
+    "category": "entertainment",
+    "annual": false,
+    "source_url": "https://wellyrunwalk.org.nz/weekly-meetup/",
+    "source_quote": "We meet every Sunday morning upstairs at the Akau Tangi Sports Centre (formerly known as the ASB Centre) in Kilbirnie at 8:00 AM.",
+    "verified_date": "2026-07-26",
+    "confidence": "high",
+    "days": [
+      "Sunday"
+    ],
+    "recurrence": "weekly",
+    "club": true
+  },
+  {
+    "venue": "Stitch N Bitch Wellington",
+    "suburb": "Te Aro (South of Ghuznee St)",
+    "address": "39 Abel Smith St, Te Aro, Wellington 6011",
+    "date": null,
+    "title": "Stitch N Bitch Wellington",
+    "desc": "Weekly knitting, crochet and stitching group open to all, held at the pub.",
+    "start": "19:00",
+    "end": "21:00",
+    "category": "entertainment",
+    "annual": false,
+    "source_url": "https://www.eventfinda.co.nz/stitch-bitch/wellington",
+    "source_quote": "We knit, crochet, felt and stitch, on Monday nights (7.00pm -9.00pm) at the Southern Cross pub in Wellington.",
+    "verified_date": "2026-07-26",
+    "confidence": "high",
+    "days": [
+      "Monday"
+    ],
+    "recurrence": "weekly",
+    "club": true
+  },
+  {
+    "venue": "El Barrio Latino Bar",
+    "suburb": "CBD (Cuba Street Area)",
+    "address": "35 Dixon Street, Te Aro, Wellington 6011",
+    "date": null,
+    "title": "Mundo Lingo Wellington Language Exchange",
+    "desc": "Weekly multilingual language exchange evening, open to everyone wanting to practise a language and meet people.",
+    "start": "19:00",
+    "end": null,
+    "category": "entertainment",
+    "annual": false,
+    "source_url": "https://www.facebook.com/MundoLingoWellington",
+    "source_quote": "We meet Thursday 7pm at El Barrio for our weekly multi-lingual language exchange.",
+    "verified_date": "2026-07-26",
+    "confidence": "high",
+    "days": [
+      "Thursday"
+    ],
+    "recurrence": "weekly",
+    "club": true
+  },
+  {
+    "venue": "Waitangi parkrun",
+    "suburb": "Waterfront",
+    "address": "Waitangi Park, Herd Street, Te Aro, Wellington 6011",
+    "date": null,
+    "title": "Waitangi parkrun",
+    "desc": "Free timed weekly 5km run or walk, open to everyone and free to join.",
+    "start": "08:00",
+    "end": null,
+    "category": "entertainment",
+    "annual": false,
+    "source_url": "https://www.parkrun.co.nz/waitangi/",
+    "source_quote": "The event takes place at Waitangi Park, Herd Street, Te Aro, Wellington 6011 every Saturday at 8:00am.",
+    "verified_date": "2026-07-26",
+    "confidence": "high",
+    "days": [
+      "Saturday"
+    ],
+    "recurrence": "weekly",
+    "club": true
   }
 ]

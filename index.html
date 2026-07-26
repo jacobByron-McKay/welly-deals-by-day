@@ -131,6 +131,18 @@
   /* mobile filter collapse */
   #filterRows { overflow: hidden; }
   #filterRows.collapsed { display: none; }
+  /* Bottom-right "Close filters". With every section open the panel runs past a
+     phone screen, so the dismiss control belongs where you finish reading it
+     rather than back up at the top of the suburb box. Mobile only, like #filterToggle. */
+  .filter-close-row { display: none; justify-content: flex-end; padding-top: 0.35rem; }
+  @media (max-width: 639px) { .filter-close-row { display: flex; } }
+  #filterCloseBtn {
+    display: inline-flex; align-items: center; gap: 0.3rem;
+    font-size: 0.875rem; font-weight: 600; line-height: 1; white-space: nowrap;
+    padding: 0.5rem 0.9rem; border-radius: 9999px; cursor: pointer;
+    border: 1px solid var(--accent); background: var(--accent); color: #fff;
+  }
+  #filterCloseBtn .x { font-size: 1.25em; font-weight: 800; line-height: 0; }
   /* suburb selector minimise (slide up) */
   #suburbBody { overflow: hidden; transition: max-height 0.25s ease, opacity 0.2s ease; max-height: 1200px; }
   #suburbBody.collapsed { max-height: 0; opacity: 0; }
@@ -420,7 +432,7 @@
 
   /* ---------- WOAP Burgers (Burger Wellington) — festival RED accent, own tab ---------- */
   /* Red so the tab jumps out when it goes live for the festival. --wr = WOAP red. */
-  #woapSection { --wr:#dc2626; --wr-dark:#b91c1c; --wr-deep:#991b1b; --wr-soft:#fef2f2; --wr-border:#fecaca; }
+  #woapView { --wr:#dc2626; --wr-dark:#b91c1c; --wr-deep:#991b1b; --wr-soft:#fef2f2; --wr-border:#fecaca; }
   .woap-badge { font-size:10px; font-weight:700; letter-spacing:0.04em; text-transform:uppercase; color:#fff; background:#dc2626; padding:2px 7px; border-radius:999px; line-height:1.35; }
   /* Map / Leaderboard segmented toggle */
   .woap-viewtabs { display:inline-flex; gap:2px; padding:3px; border-radius:10px; background:var(--wr-soft); border:1px solid var(--wr-border); margin-bottom:14px; }
@@ -501,10 +513,38 @@
   .wmp-name { font-size:13px; font-weight:700; color:var(--ink); line-height:1.25; }
   .wmp-venue { font-size:11.5px; color:#555; margin-top:1px; }
   .wmp-meta { font-size:12px; font-weight:700; color:#b91c1c; margin-top:4px; }
-  .wmp-open { display:inline-block; margin-top:7px; font-size:12px; font-weight:700; color:#fff !important; background:#dc2626; border-radius:7px; padding:5px 10px; cursor:pointer; text-decoration:none; }
+  .wmp-open { display:inline-block; margin-top:7px; font:inherit; font-size:12px; font-weight:700; color:#fff !important; background:#dc2626; border:0; border-radius:7px; padding:6px 11px; cursor:pointer; text-decoration:none; }
   .wmp-plan { display:inline-block; margin-top:7px; margin-right:6px; font-size:12px; font-weight:700; color:#b91c1c; background:#fff; border:1px solid #fecaca; border-radius:7px; padding:4px 9px; cursor:pointer; }
   .wmp-plan.added { background:#dc2626; color:#fff; border-color:#dc2626; }
   .woap-plan { margin-top:9px; margin-left:8px; }
+  /* Burgers full-screen overlay: its own map with the leaderboard as a panel on top */
+  .woap-view { position:fixed; inset:0; z-index:70; background:var(--paper); display:none; flex-direction:column; }
+  .woap-view.open { display:flex; }
+  .woap-view-bar { display:flex; align-items:center; gap:10px; padding:10px 14px; background:#fef2f2; border-bottom:1px solid #fecaca; flex-wrap:wrap; }
+  .woap-view-title { font-weight:700; font-size:15px; color:#991b1b; display:inline-flex; align-items:center; gap:6px; }
+  .woap-view-close { margin-left:auto; background:none; border:0; font-size:26px; line-height:1; color:#991b1b; cursor:pointer; padding:0 4px; }
+  .woap-view-body { position:relative; flex:1; min-height:0; }
+  .woap-view-body #woapMap { position:absolute; inset:0; height:auto; min-height:0; border:0; border-radius:0; }
+  .woap-board-panel { position:absolute; z-index:500; top:10px; left:10px; right:10px; bottom:10px; background:var(--paper);
+                      border:1px solid var(--wr-border); border-radius:12px; box-shadow:0 10px 30px rgba(0,0,0,.18);
+                      overflow-y:auto; overscroll-behavior:contain; padding:12px 12px 16px; }
+  .woap-board-panel.hidden { display:none; }
+  .woap-board-panel-note { font-size:12px; color:var(--ink-muted); margin:0 0 10px; }
+  @media (min-width:760px){ .woap-board-panel { left:auto; right:16px; top:16px; bottom:16px; width:440px; } }
+  /* Minimise (collapse) button on an expanded leaderboard row */
+  .woap-card.bare { position:relative; }
+  .woap-lb-min { position:absolute; top:4px; right:0; z-index:3; display:inline-flex; align-items:center; gap:4px;
+                 font-size:12px; font-weight:700; color:var(--wr-dark); background:#fff; border:1px solid var(--wr-border);
+                 border-radius:999px; padding:5px 12px; cursor:pointer; box-shadow:0 1px 3px rgba(0,0,0,.09); }
+  .woap-lb-min:hover { border-color:var(--wr); color:var(--wr); }
+  /* Ordinary deals map: burger on/off toggle (top-left Leaflet control) */
+  .map-burger-toggle { background:#fff; border:1px solid #fecaca; border-radius:8px; box-shadow:0 1px 4px rgba(0,0,0,.28);
+                       padding:7px 11px; font:inherit; font-size:12px; font-weight:700; color:#b91c1c; cursor:pointer;
+                       display:inline-flex; align-items:center; gap:6px; }
+  .map-burger-toggle.on { background:#dc2626; color:#fff; border-color:#dc2626; }
+  /* Burger rows inside a venue popup are tappable buttons that open the burger's card */
+  .map-popup-woap-row { width:100%; text-align:left; background:none; border:0; cursor:pointer; font:inherit; }
+  .map-popup-woap-row:hover .map-popup-woap-name b { text-decoration:underline; }
 </style>
 </head>
 <body>
@@ -524,6 +564,7 @@
     </div>
     <div class="text-right shrink-0 pt-1">
       <button id="mapViewBtn" class="text-xs font-medium px-3 py-1 rounded-full border" style="color:#fff;border-color:var(--accent);background:var(--accent);cursor:pointer;margin-right:8px;">&#128506; Map</button>
+      <button id="woapViewBtn" class="text-xs font-medium px-3 py-1 rounded-full border" style="color:#fff;border-color:#dc2626;background:#dc2626;cursor:pointer;margin-right:8px;">&#127828; WOAP Burgers</button>
       <button id="submitDealBtn" class="text-xs font-medium px-3 py-1 rounded-full border" style="color:var(--accent);border-color:var(--accent);background:var(--card);cursor:pointer;margin-right:8px;">＋ Submit a deal</button>
       <button id="contactBtn" class="text-xs underline" style="color:var(--accent);background:none;border:none;cursor:pointer;">Contact</button>
       <div id="contactEmail" style="display:none;" class="text-xs mt-1" style="color:var(--ink-muted);">
@@ -588,12 +629,13 @@
           <span class="text-xs font-semibold uppercase tracking-wide shrink-0" style="color:var(--ink-muted);">Region</span>
           <span id="regionRow" class="flex items-center gap-2 flex-wrap"></span>
           <button id="allWgtnBtn" class="px-3 py-1 rounded-full text-sm border shrink-0" style="border-color:var(--border);color:var(--ink-muted);background:var(--card);" title="Select every Wellington suburb we cover">All Wellington</button>
+          <button id="clearSuburbsBtn" class="px-3 py-1 rounded-full text-sm border shrink-0" style="border-color:var(--border);color:var(--ink-muted);background:var(--card);" title="Turn every suburb off so one tap picks just the one you want">Clear all</button>
         </div>
         <!-- Suburb sub-rows (second tier) — one row per active region, built in JS -->
         <div id="suburbRows" class="mt-2 space-y-2"></div>
       </div>
       <div class="flex items-center gap-2 mt-2">
-        <p id="suburbHelp" class="text-xs" style="color:var(--ink-muted);">Central Wellington shows by default &mdash; tap a region to add its suburbs, then fine-tune below.</p>
+        <p id="suburbHelp" class="text-xs" style="color:var(--ink-muted);">Central Wellington shows by default &mdash; tap a region to add its suburbs, or hit Clear all and pick just the ones you want.</p>
         <button id="suburbMinBtn" type="button" class="min-btn open shrink-0" style="margin-left:auto;"><span class="x" aria-hidden="true">&#10005;</span> Minimise</button>
       </div>
     </div>
@@ -646,6 +688,11 @@
         </div>
       </div>
 
+
+      <div class="filter-close-row">
+        <button id="filterCloseBtn" type="button"><span class="x" aria-hidden="true">&#10005;</span> Close filters</button>
+      </div>
+
     </div><!-- /filterRows -->
   </div>
 </div>
@@ -687,10 +734,10 @@
   </div>
 </section>
 
-<!-- WOAP Burgers tab — NEW, default OFF. Its own toggle up top; the community leaderboard the
-     official festival does not run. Hidden entirely while WOAP_ENABLED is false. -->
+<!-- WOAP Burgers entry — NEW. A red bar plus the "WOAP Burgers" button in the header both open the
+     dedicated burgers overlay below. Hidden entirely while WOAP_ENABLED is false. -->
 <div id="woapBar" class="max-w-4xl mx-auto px-4 pt-4">
-  <button id="woapToggle" type="button" aria-expanded="false"
+  <button id="woapToggle" type="button"
           class="w-full flex items-center justify-between gap-3 rounded-lg border px-4 py-2.5"
           style="border-color:#fecaca;background:#fef2f2;color:#991b1b;cursor:pointer;">
     <span class="flex items-center gap-2 text-sm font-semibold">
@@ -698,32 +745,33 @@
       <span class="woap-badge">NEW</span>
     </span>
     <span id="woapToggleState" class="text-xs font-medium px-2.5 py-0.5 rounded-full border shrink-0"
-          style="border-color:#fca5a5;background:#fff;">Show &#9662;</span>
+          style="border-color:#fca5a5;background:#fff;">Open &#9656;</span>
   </button>
 </div>
 
-<!-- WOAP Burgers section (revealed by the toggle above) -->
-<section class="max-w-4xl mx-auto px-4 pt-3" id="woapSection" style="display:none;">
-  <div class="rounded-lg border p-4" style="border-color:var(--wr-border);background:var(--card);">
-    <div class="flex items-baseline gap-3 mb-1">
-      <h2 class="text-lg font-semibold tracking-tight" style="color:var(--wr-deep);">Burger Wellington</h2>
-      <span class="text-xs" style="color:var(--ink-muted);">Visa Wellington on a Plate &middot; 3&ndash;23 Aug 2026</span>
-    </div>
-    <p class="text-sm mb-4" style="color:var(--ink-muted);">Every festival burger, ranked by what Wellington actually thinks. Find them on the map, rate the ones you have tried, and leave a photo and a review.</p>
-    <!-- Map / Leaderboard segmented toggle -->
+<!-- WOAP Burgers overlay: a dedicated full-screen view with its own Leaflet burger map (red pins,
+     all 244) and the community leaderboard shown as a panel ON TOP of that map. Separate Leaflet
+     instance from the ordinary deals map, so the two never clash. -->
+<div id="woapView" class="woap-view" aria-hidden="true">
+  <div class="woap-view-bar">
+    <span class="woap-view-title">&#127828; Burger Wellington &middot; WOAP 2026</span>
     <div class="woap-viewtabs" role="tablist" aria-label="Burger view">
       <button type="button" class="woap-viewtab on" data-woap-view="board" role="tab" aria-selected="true">&#127942; Leaderboard</button>
       <button type="button" class="woap-viewtab" data-woap-view="map" role="tab" aria-selected="false">&#128506; Map</button>
     </div>
-    <!-- Leaderboard sub-view -->
-    <div id="woapBoard"></div>
-    <!-- Map sub-view (its own dedicated burger map; Leaflet loads lazily on first open) -->
-    <div id="woapMapWrap" class="woap-map-wrap">
-      <div id="woapMap" class="woap-map"></div>
-      <p class="woap-map-note" id="woapMapNote">All 244 festival burgers across Wellington. Tap a pin for the photo, price and rating.</p>
-    </div>
+    <button id="woapCloseBtn" type="button" class="woap-view-close" aria-label="Close burgers">&times;</button>
   </div>
-</section>
+  <div class="woap-view-body">
+    <!-- Base layer: the dedicated burger map (Leaflet loads lazily on first open) -->
+    <div id="woapMap" class="woap-map"></div>
+    <!-- Overlay panel: the leaderboard, sitting on top of the map -->
+    <div id="woapBoardPanel" class="woap-board-panel">
+      <p class="woap-board-panel-note">Every festival burger, ranked by what Wellington actually thinks. Tap a burger to rate it, leave a photo and a review &mdash; or hit <b>Map</b> above to see all 244 on the map.</p>
+      <div id="woapBoard"></div>
+    </div>
+    <p class="woap-map-note" id="woapMapNote" style="display:none;"></p>
+  </div>
+</div>
 
 <!-- Week view -->
 <main class="max-w-4xl mx-auto px-4 py-6" id="weekView"></main>
@@ -901,10 +949,13 @@ function updateSelectorUI() {
     const anySel = conf.suburbs.some(s => selectedSuburbs.has(s));
     rb.classList.toggle("active", anySel);
   });
+  // With nothing selected (after "Clear all") every row stays on show — otherwise the
+  // chips vanish and there is no single suburb left to tap.
+  const noneSelected = selectedSuburbs.size === 0;
   document.querySelectorAll("[data-region-row]").forEach(row => {
     const conf   = SUBURB_REGIONS.find(r => r.region === row.dataset.regionRow) || { suburbs: [] };
     const anySel = conf.suburbs.some(s => selectedSuburbs.has(s));
-    row.style.display = anySel ? "" : "none";
+    row.style.display = (anySel || noneSelected) ? "" : "none";
   });
 }
 const selectedCategories = new Set(Object.keys(CAT_LABELS));
@@ -1512,8 +1563,11 @@ function renderWoapCard(b, bare) {
   const photosStrip = imgs.length ? `<div class="woap-photos">${imgs.map(src => `<img src="${src}" alt="" loading="lazy">`).join('')}</div>` : '';
   // bare = embedded in a leaderboard detail row: no card chrome, review widgets always open.
   const reviewBtn = bare ? '' : `<button type="button" class="woap-review-open" data-woap-review="${slug}">Rate &amp; review &rarr;</button>`;
+  // In the leaderboard (bare), a light, easily-tappable minimise button collapses the open row.
+  const minBtn = bare ? `<button type="button" class="woap-lb-min" data-lb-collapse="${slug}" aria-label="Collapse this burger">&times; Minimise</button>` : '';
   return `
     <article class="woap-card${bare ? ' bare' : ''}" data-woap-slug="${slug}">
+      ${minBtn}
       <div class="woap-card-head">
         ${imgs.length ? `<img class="woap-thumb" src="${imgs[0]}" alt="" loading="lazy">` : ''}
         <div class="woap-card-body">
@@ -1608,37 +1662,79 @@ function renderWoapBoard() {
     : `<p class="text-sm italic" style="color:var(--ink-muted);">No burgers match your search.</p>`;
 }
 
-// Switch between the leaderboard and the map. The map's Leaflet instance builds on first open.
+// Switch between the leaderboard panel and the full map inside the burgers overlay. The burger map
+// is always mounted underneath; "board" simply shows the leaderboard panel on top of it, "map"
+// hides that panel to reveal the whole map. The map's Leaflet instance builds on first open.
 function setWoapView(v) {
   woapView = (v === 'map') ? 'map' : 'board';
-  document.querySelectorAll('.woap-viewtab').forEach(t => {
+  document.querySelectorAll('#woapView .woap-viewtab').forEach(t => {
     const on = t.getAttribute('data-woap-view') === woapView;
     t.classList.toggle('on', on);
     t.setAttribute('aria-selected', on ? 'true' : 'false');
   });
-  const board = document.getElementById('woapBoard');
-  const mapWrap = document.getElementById('woapMapWrap');
-  if (board) board.style.display = woapView === 'board' ? '' : 'none';
-  if (mapWrap) mapWrap.classList.toggle('on', woapView === 'map');
-  if (woapView === 'map' && window.woapMap) window.woapMap.open();
+  const panel = document.getElementById('woapBoardPanel');
+  if (panel) panel.classList.toggle('hidden', woapView !== 'board');
+  // Build/size the base map whenever the overlay is showing (behind the panel in board view too,
+  // so switching to Map is instant and the leaderboard clearly sits on top of a live map).
+  if (window.woapMap) window.woapMap.open();
 }
 
-// Open a burger straight from the map: jump to the leaderboard, expand its row, scroll to it.
+// Open the burgers overlay (from the header button, the red bar, or a burger link on either map).
+function openWoapView() {
+  if (!WOAP_ENABLED) return;
+  const view = document.getElementById('woapView');
+  if (!view) return;
+  showWoap = true;
+  view.classList.add('open');
+  view.setAttribute('aria-hidden', 'false');
+  document.body.style.overflow = 'hidden';
+  woapRatingsLoaded = false;   // re-pull the community leaderboard each time it opens
+  renderWoap();
+}
+function closeWoapView() {
+  const view = document.getElementById('woapView');
+  if (!view) return;
+  showWoap = false;
+  view.classList.remove('open');
+  view.setAttribute('aria-hidden', 'true');
+  document.body.style.overflow = '';
+}
+
+// Open one burger's full card straight from a map popup: make sure the overlay is open, show the
+// leaderboard panel, expand that burger's row and scroll to it WITHIN the panel. No page-level
+// navigation or scroll here — that is what used to bump mobile users back to the top of the page.
 function openWoapBurger(slug) {
+  // If the tap came from the ordinary deals map, close that map first so the burgers overlay is on top.
+  if (typeof window.__wdCloseDealsMap === 'function') window.__wdCloseDealsMap();
+  if (!showWoap) openWoapView();
   setWoapView('board');
-  const row = document.querySelector('[data-lb-row="' + slug + '"]');
-  if (!row) return;
-  if (!row.classList.contains('open')) row.click();
-  row.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  const finish = () => {
+    const row = document.querySelector('[data-lb-row="' + slug + '"]');
+    if (!row) return;
+    const detail = document.querySelector('[data-lb-detail="' + slug + '"]');
+    if (!row.classList.contains('open')) {
+      row.classList.add('open');
+      if (detail && !detail.innerHTML.trim()) {
+        const b = WOAP_BURGERS.find(x => woapBurgerSlug(x) === slug);
+        if (b) {
+          detail.innerHTML = renderWoapCard(b, true);
+          if (window.hydrateVenueSocial) window.hydrateVenueSocial(detail);
+        }
+      }
+    }
+    // Scroll inside the panel (not the page) so the opened card lands in view.
+    requestAnimationFrame(() => { try { row.scrollIntoView({ block: 'center' }); } catch (e) {} });
+  };
+  // The board may still be loading its ratings the first time the overlay opens; wait for the rows.
+  if (document.querySelector('[data-lb-row="' + slug + '"]')) finish();
+  else fetchWoapRatings().then(() => { renderWoapBoard(); finish(); });
 }
 
 function renderWoap() {
-  const section = document.getElementById('woapSection');
+  const view = document.getElementById('woapView');
   const board = document.getElementById('woapBoard');
-  if (!section || !board) return;
-  if (!WOAP_ENABLED) { section.style.display = 'none'; return; }
-  section.style.display = showWoap ? '' : 'none';
-  if (!showWoap) return;
+  if (!view || !board) return;
+  if (!WOAP_ENABLED || !showWoap) return;
   setWoapView(woapView);
 
   const paint = () => {
@@ -1969,6 +2065,14 @@ document.getElementById("allWgtnBtn").addEventListener("click", () => {
   render();
 });
 
+// "Clear all" — empty the suburb selection in one tap so the next tap picks exactly one
+// suburb. With nothing selected updateSelectorUI keeps every suburb row on show.
+document.getElementById("clearSuburbsBtn").addEventListener("click", () => {
+  selectedSuburbs.clear();
+  updateSelectorUI();
+  render();
+});
+
 // Minimise / expand the suburb selector body (region + suburb rows) to reclaim screen space.
 document.getElementById("suburbMinBtn").addEventListener("click", function() {
   const body = document.getElementById("suburbBody");
@@ -2058,20 +2162,22 @@ if (!CLUB_RUGBY_ENABLED) {
   if (_crSec) _crSec.style.display = "none";
 }
 
-// WOAP Burgers tab toggle (default off)
-document.getElementById("woapToggle").addEventListener("click", function() {
-  showWoap = !showWoap;
-  this.setAttribute("aria-expanded", showWoap ? "true" : "false");
-  document.getElementById("woapToggleState").innerHTML = showWoap ? "Hide &#9652;" : "Show &#9662;";
-  if (showWoap) woapRatingsLoaded = false;   // re-pull the community leaderboard each time it opens
-  renderWoap();
+// WOAP Burgers — both entry points (the red bar and the header "WOAP Burgers" button) open the
+// dedicated burgers overlay; the × in the overlay bar and Escape close it.
+document.getElementById("woapToggle").addEventListener("click", openWoapView);
+var _woapHeaderBtn = document.getElementById("woapViewBtn");
+if (_woapHeaderBtn) _woapHeaderBtn.addEventListener("click", openWoapView);
+var _woapCloseBtn = document.getElementById("woapCloseBtn");
+if (_woapCloseBtn) _woapCloseBtn.addEventListener("click", closeWoapView);
+document.addEventListener("keydown", function(e) {
+  if (e.key === "Escape" && showWoap) closeWoapView();
 });
-// Feature flag off → hide the whole WOAP Burgers tab (toggle bar + section) at launch.
+// Feature flag off → hide the whole WOAP Burgers feature (entry bar, header button, overlay) at launch.
 if (!WOAP_ENABLED) {
-  const _woapBar = document.getElementById("woapBar");
-  const _woapSec = document.getElementById("woapSection");
-  if (_woapBar) _woapBar.style.display = "none";
-  if (_woapSec) _woapSec.style.display = "none";
+  ["woapBar", "woapViewBtn", "woapView"].forEach(function(id) {
+    var el = document.getElementById(id);
+    if (el) el.style.display = "none";
+  });
 }
 
 // WOAP Burgers — view toggle, leaderboard sort/expand, "tried" tracker, review toggle and photo
@@ -2116,6 +2222,15 @@ document.addEventListener("click", function(e) {
   // Open a burger straight from a map popup
   const mo = e.target.closest("[data-woap-open]");
   if (mo) { e.preventDefault(); openWoapBurger(mo.getAttribute("data-woap-open")); return; }
+  // Minimise (collapse) an expanded leaderboard row from its top-right button
+  const mn = e.target.closest("[data-lb-collapse]");
+  if (mn) {
+    e.preventDefault();
+    const slug = mn.getAttribute("data-lb-collapse");
+    const row = document.querySelector('[data-lb-row="' + slug + '"]');
+    if (row) { row.classList.remove("open"); row.scrollIntoView({ block: "nearest" }); }
+    return;
+  }
   // Expand / collapse a leaderboard row -> its full rate/review/photo card (built on first open)
   const lr = e.target.closest("[data-lb-row]");
   if (lr && !e.target.closest(".woap-lb-detailrow")) {
@@ -2253,13 +2368,18 @@ document.getElementById("contactBtn").addEventListener("click", function() {
   applyCollapse();
   window.addEventListener("resize", applyCollapse);
 
-  toggle.addEventListener("click", () => {
-    const isCollapsed = rows.classList.toggle("collapsed");
-    toggle.classList.toggle("open", !isCollapsed);
-    toggle.innerHTML = isCollapsed
-      ? 'More filters <span aria-hidden="true">&#9662;</span>'
-      : '<span class="x" aria-hidden="true">&#10005;</span> Close filters';
-  });
+  // The top control opens the panel; closing happens from the button pinned to the
+  // bottom-right of the panel, which is where your thumb lands after scrolling it.
+  function setOpen(open) {
+    rows.classList.toggle("collapsed", !open);
+    toggle.classList.toggle("open", open);
+    toggle.innerHTML = open
+      ? 'Filters <span aria-hidden="true">&#9652;</span>'
+      : 'More filters <span aria-hidden="true">&#9662;</span>';
+  }
+  toggle.addEventListener("click", () => setOpen(rows.classList.contains("collapsed")));
+  const closeBtn = document.getElementById("filterCloseBtn");
+  if (closeBtn) closeBtn.addEventListener("click", () => setOpen(false));
 
   // Update scroll-padding-top to match the actual filter bar height
   function updateScrollPadding() {
@@ -2611,7 +2731,15 @@ loadData().then(() => {
   var body  = document.getElementById('venueProfileBody');
   var closeBtn = document.getElementById('venueClose');
 
+  // Where the list was scrolled to when the panel opened. Closing the panel clears the
+  // hash, and clearing a hash sends the browser to the top of the page — so put the list
+  // back where it was. Plain in-memory variable: no storage, no cookie, nothing to load.
+  var listScrollY = null;
+
   function show(html){
+    if (!modal.classList.contains('open')) {
+      listScrollY = window.pageYOffset || document.documentElement.scrollTop || 0;
+    }
     body.innerHTML = html;
     modal.classList.add('open');
     document.body.style.overflow = 'hidden';
@@ -2619,8 +2747,16 @@ loadData().then(() => {
     if (window.hydrateVenueSocial) window.hydrateVenueSocial(body);
   }
   function hide(){
+    var wasOpen = modal.classList.contains('open');
     modal.classList.remove('open');
     document.body.style.overflow = '';
+    if (wasOpen && listScrollY !== null) {
+      var y = listScrollY;
+      listScrollY = null;
+      window.scrollTo(0, y);
+      // The hash-clear jump can land a frame later, so re-assert once after paint.
+      requestAnimationFrame(function(){ window.scrollTo(0, y); });
+    }
   }
   function syncFromHash(){
     var md = location.hash.match(/^#deal\/(.+)$/);
@@ -3106,13 +3242,17 @@ loadData().then(() => {
           var bslug = woapBurgerSlug(b);
           var imgs = woapImagesFor(b, bslug);
           var thumb = imgs.length ? '<img src="'+imgs[0]+'" alt="">' : '';
-          return '<div class="map-popup-woap-row">'+thumb+'<span class="map-popup-woap-name"><b>&#127828; '+(b.name||'')+'</b>'+(b.price ? ' &middot; '+b.price : '')+'</span></div>';
+          // Tappable: opens the burger's card in the burgers overlay — works whether or not burger
+          // pins are toggled on for this map, so a venue's burger is always reachable from its popup.
+          return '<button type="button" class="map-popup-woap-row" data-woap-open="'+bslug+'">'+thumb+'<span class="map-popup-woap-name"><b>&#127828; '+(b.name||'')+'</b>'+(b.price ? ' &middot; '+b.price : '')+' &rarr;</span></button>';
         }).join('') + '</div>';
       }
     }
     return '<div class="map-popup-name">'+name+'</div>'+eventItems+more+dealItems+woapHtml+
       '<a class="map-popup-btn" data-map-venue="'+slug+'">View details &amp; rate &rarr;</a>';
   }
+  // Ordinary deals map shows NO burgers by default; the top-left toggle turns burger pins on/off.
+  var showBurgersOnDealsMap = false;
   var _woapPin = null;
   function woapPin(){
     if (!_woapPin) _woapPin = L.divIcon({
@@ -3146,8 +3286,9 @@ loadData().then(() => {
       markers[name] = m;
     });
     // Burger Wellington: pin any venue that has a festival burger but no deal/event pin yet, so a
-    // burger-only spot still appears on the map. Gated — nothing runs while WOAP_ENABLED is false.
-    if (typeof WOAP_ENABLED !== 'undefined' && WOAP_ENABLED){
+    // burger-only spot still appears on the map. Off by default — only when the burger toggle is on
+    // (and never while WOAP_ENABLED is false). A venue's burgers still surface inside its own popup.
+    if (typeof WOAP_ENABLED !== 'undefined' && WOAP_ENABLED && showBurgersOnDealsMap){
       (WOAP_BURGERS || []).forEach(function(b){
         var name = b.venue;
         if (markers[name]) return;   // already pinned; its burgers ride along in popupHtml
@@ -3172,15 +3313,40 @@ loadData().then(() => {
     countEl.textContent = 'Loading map…';
     ensureLeaflet().then(function(){
       if (!map){
-        map = L.map(canvas).setView(WGTN, 13);
+        // Zoom moves to the top-right so the burger toggle can own the top-left corner.
+        map = L.map(canvas, { zoomControl: false }).setView(WGTN, 13);
+        L.control.zoom({ position: 'topright' }).addTo(map);
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { maxZoom: 19, attribution: '&copy; OpenStreetMap contributors' }).addTo(map);
         buildDaySelect();
         daySel.addEventListener('change', rebuild);
+        // Top-left toggle: turn festival burger pins on/off. Off by default (no burgers on the deals map).
+        if (typeof WOAP_ENABLED !== 'undefined' && WOAP_ENABLED){
+          var BurgerToggle = L.Control.extend({
+            options: { position: 'topleft' },
+            onAdd: function(){
+              var b = L.DomUtil.create('button', 'map-burger-toggle');
+              b.type = 'button';
+              b.innerHTML = '&#127828; Burgers: off';
+              b.setAttribute('aria-pressed', 'false');
+              L.DomEvent.disableClickPropagation(b);
+              L.DomEvent.on(b, 'click', function(){
+                showBurgersOnDealsMap = !showBurgersOnDealsMap;
+                b.classList.toggle('on', showBurgersOnDealsMap);
+                b.setAttribute('aria-pressed', showBurgersOnDealsMap ? 'true' : 'false');
+                b.innerHTML = '&#127828; Burgers: ' + (showBurgersOnDealsMap ? 'on' : 'off');
+                rebuild();
+              });
+              return b;
+            }
+          });
+          map.addControl(new BurgerToggle());
+        }
       }
       setTimeout(function(){ map.invalidateSize(); rebuild(); }, 80);
     }).catch(function(){ countEl.textContent = 'Map failed to load — check your connection'; });
   }
   function closeMap(){ view.classList.remove('open'); view.setAttribute('aria-hidden','true'); document.body.style.overflow = ''; }
+  window.__wdCloseDealsMap = function(){ if (view.classList.contains('open')) closeMap(); };
 
   document.getElementById('mapViewBtn').addEventListener('click', openMap);
   document.getElementById('mapCloseBtn').addEventListener('click', closeMap);
@@ -3635,7 +3801,7 @@ loadData().then(() => {
       '<div class="wmp-venue">'+esc(b.venue)+(b.suburb ? ' &middot; '+esc(suburbLabel(b.suburb)) : '')+'</div>'+
       '<div class="wmp-meta">'+(b.price ? esc(b.price)+' &middot; ' : '')+rating+'</div>'+
       '<button type="button" class="wmp-plan" data-plan-add="'+slug+'" data-plan-label-on="&#10003; In plan" data-plan-label-off="&#43; Plan">&#43; Plan</button>'+
-      '<a class="wmp-open" data-woap-open="'+slug+'">Rate &amp; review &rarr;</a></div>';
+      '<button type="button" class="wmp-open" data-woap-open="'+slug+'">Rate &amp; review &rarr;</button></div>';
   }
   function refresh(){
     if (!built || !map) return;
