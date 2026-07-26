@@ -14,7 +14,9 @@
     "lunch": true,
     "dinner": false,
     "official_image": "woap-images/0800-the-word-zephyr-cafe.jpg",
-    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/CRM06250-2-260416-140007.jpg"
+    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/CRM06250-2-260416-140007.jpg",
+    "google_rating": 4.6,
+    "google_reviews": null
   },
   {
     "name": "3 Little Pigs Story",
@@ -33,7 +35,9 @@
     "lunch": false,
     "dinner": true,
     "official_image": "woap-images/3-little-pigs-story-wildfire-churrascaria.jpg",
-    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/WWBW2026-260415-205210.png"
+    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/WWBW2026-260415-205210.png",
+    "google_rating": null,
+    "google_reviews": null
   },
   {
     "name": "Above The Rest",
@@ -50,7 +54,9 @@
     "lunch": false,
     "dinner": true,
     "official_image": "woap-images/above-the-rest-everybody-eats-cliftons.jpg",
-    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/Untitled-design--2--260429-155430.png"
+    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/Untitled-design--2--260429-155430.png",
+    "google_rating": null,
+    "google_reviews": null
   },
   {
     "name": "Aegean Melt",
@@ -67,7 +73,9 @@
     "lunch": true,
     "dinner": true,
     "official_image": "woap-images/aegean-melt-the-borough.jpg",
-    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/TB-Burger-260508-135755.jpg"
+    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/TB-Burger-260508-135755.jpg",
+    "google_rating": 4.1,
+    "google_reviews": null
   },
   {
     "name": "āe, it's Vegan",
@@ -90,7 +98,9 @@
     "lunch": true,
     "dinner": false,
     "official_image": "woap-images/e-it-s-vegan-puku-pies-kai-lyall-bay.jpg",
-    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/IMG_9397-260515-140209.jpg"
+    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/IMG_9397-260515-140209.jpg",
+    "google_rating": 4.5,
+    "google_reviews": null
   },
   {
     "name": "After Service",
@@ -107,7 +117,9 @@
     "lunch": true,
     "dinner": true,
     "official_image": "woap-images/after-service-portlander-bar-and-grill.jpg",
-    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/Untitled-design-260415-182447.jpg"
+    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/Untitled-design-260415-182447.jpg",
+    "google_rating": null,
+    "google_reviews": null
   },
   {
     "name": "Al Caprawn",
@@ -126,7 +138,9 @@
     "lunch": true,
     "dinner": true,
     "official_image": "woap-images/al-caprawn-charley-noble-eatery-bar.jpg",
-    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/20260610_142046-260610-130417.jpg"
+    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/20260610_142046-260610-130417.jpg",
+    "google_rating": 4.5,
+    "google_reviews": null
   },
   {
     "name": "A Little Bit Cheeky",
@@ -145,7 +159,9 @@
     "lunch": true,
     "dinner": false,
     "official_image": "woap-images/a-little-bit-cheeky-twenty-eight.jpg",
-    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/IMG_5694-260521-103527.jpg"
+    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/IMG_5694-260521-103527.jpg",
+    "google_rating": null,
+    "google_reviews": null
   },
   {
     "name": "A Little Less Conversation",
@@ -162,7 +178,9 @@
     "lunch": true,
     "dinner": true,
     "official_image": "woap-images/a-little-less-conversation-the-tasting-room.jpg",
-    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/DSC_3592-260331-155626.jpg"
+    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/DSC_3592-260331-155626.jpg",
+    "google_rating": 4.4,
+    "google_reviews": null
   },
   {
     "name": "Al Pastor Mastor",
@@ -181,7 +199,9 @@
     "lunch": true,
     "dinner": true,
     "official_image": "woap-images/al-pastor-mastor-superfina.jpg",
-    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/Superfina-WOAP-2-260415-200128.jpeg"
+    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/Superfina-WOAP-2-260415-200128.jpeg",
+    "google_rating": null,
+    "google_reviews": null
   },
   {
     "name": "Alpha Bravo Charlie",
@@ -200,7 +220,9 @@
     "lunch": true,
     "dinner": true,
     "official_image": "woap-images/alpha-bravo-charlie-dockside-restaurant-bar.jpg",
-    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/DS-Woap-burger-2026-260414-165737.jpg"
+    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/DS-Woap-burger-2026-260414-165737.jpg",
+    "google_rating": 4.3,
+    "google_reviews": null
   },
   {
     "name": "AVPSBBORCAMPB",
@@ -217,7 +239,9 @@
     "lunch": false,
     "dinner": true,
     "official_image": "woap-images/avpsbborcampb-moon-bar.jpg",
-    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/moon_woap-2-260429-205834.jpg"
+    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/moon_woap-2-260429-205834.jpg",
+    "google_rating": null,
+    "google_reviews": null
   },
   {
     "name": "A Waffle Lot",
@@ -236,7 +260,9 @@
     "lunch": true,
     "dinner": false,
     "official_image": "woap-images/a-waffle-lot-rosetta-cafe.jpg",
-    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/KCDC_WOAPBURGERSHOOT_HIRES-78-260522-120727.jpeg"
+    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/KCDC_WOAPBURGERSHOOT_HIRES-78-260522-120727.jpeg",
+    "google_rating": 4.5,
+    "google_reviews": null
   },
   {
     "name": "Ayam Mouthcracker",
@@ -253,7 +279,9 @@
     "lunch": true,
     "dinner": true,
     "official_image": "woap-images/ayam-mouthcracker-master-kong.jpg",
-    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/MK-Burger-260508-133741.jpg"
+    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/MK-Burger-260508-133741.jpg",
+    "google_rating": 4.4,
+    "google_reviews": null
   },
   {
     "name": "Ayam What I Am",
@@ -273,7 +301,9 @@
     "lunch": true,
     "dinner": true,
     "official_image": "woap-images/ayam-what-i-am-chapman-taylor-s-cafe-inn.jpg",
-    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/WOAP-EDIT-260605-103611.jpeg"
+    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/WOAP-EDIT-260605-103611.jpeg",
+    "google_rating": null,
+    "google_reviews": null
   },
   {
     "name": "Bao Wow",
@@ -290,7 +320,9 @@
     "lunch": true,
     "dinner": true,
     "official_image": "woap-images/bao-wow-hideout.jpg",
-    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/43989-260429-161903.jpg"
+    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/43989-260429-161903.jpg",
+    "google_rating": 4.4,
+    "google_reviews": null
   },
   {
     "name": "Beef There, Done That",
@@ -307,7 +339,9 @@
     "lunch": true,
     "dinner": true,
     "official_image": "woap-images/beef-there-done-that-sandbar-mana.jpg",
-    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/WOAP-2026---Sandbar-260520-072502.jpg"
+    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/WOAP-2026---Sandbar-260520-072502.jpg",
+    "google_rating": null,
+    "google_reviews": null
   },
   {
     "name": "Best Kept Secret",
@@ -324,7 +358,9 @@
     "lunch": true,
     "dinner": true,
     "official_image": "woap-images/best-kept-secret-whitby-co-op-kitchen-bar.jpg",
-    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/WOAP-2026---Co-op-260520-070711.jpg"
+    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/WOAP-2026---Co-op-260520-070711.jpg",
+    "google_rating": null,
+    "google_reviews": null
   },
   {
     "name": "Bird is the Word",
@@ -344,7 +380,9 @@
     "lunch": true,
     "dinner": false,
     "official_image": "woap-images/bird-is-the-word-scorch-o-rama.jpg",
-    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/Screenshot-2026-06-02-141634-260602-121650.png"
+    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/Screenshot-2026-06-02-141634-260602-121650.png",
+    "google_rating": null,
+    "google_reviews": null
   },
   {
     "name": "Birria On The Beach",
@@ -361,7 +399,9 @@
     "lunch": true,
     "dinner": true,
     "official_image": "woap-images/birria-on-the-beach-hey-coastie.jpg",
-    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/HCMar2026-23-260611-121017.jpg"
+    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/HCMar2026-23-260611-121017.jpg",
+    "google_rating": 4.1,
+    "google_reviews": null
   },
   {
     "name": "Bisque Anyone?",
@@ -378,7 +418,9 @@
     "lunch": true,
     "dinner": true,
     "official_image": "woap-images/bisque-anyone-the-victoria-tavern.jpg",
-    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/2026-WOAP-The-Vic-Burger-260429-080957.jpg"
+    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/2026-WOAP-The-Vic-Burger-260429-080957.jpg",
+    "google_rating": 4.3,
+    "google_reviews": null
   },
   {
     "name": "Bite and Tell",
@@ -395,7 +437,9 @@
     "lunch": true,
     "dinner": true,
     "official_image": "woap-images/bite-and-tell-double-vision-brewing.jpg",
-    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/Bite---Tell-260429-185502.jpg"
+    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/Bite---Tell-260429-185502.jpg",
+    "google_rating": 4.8,
+    "google_reviews": null
   },
   {
     "name": "BLT Italiano",
@@ -412,7 +456,9 @@
     "lunch": true,
     "dinner": true,
     "official_image": "woap-images/blt-italiano-rizzo-s-pizzeria-kitchen.jpg",
-    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/RPK-Burger-260508-133924.jpg"
+    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/RPK-Burger-260508-133924.jpg",
+    "google_rating": null,
+    "google_reviews": null
   },
   {
     "name": "Blue Smoke Union",
@@ -431,7 +477,9 @@
     "lunch": true,
     "dinner": true,
     "official_image": "woap-images/blue-smoke-union-grazie-lower-hutt.jpg",
-    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/GRAZIE-Lower-Hutt--260518-115957.jpg"
+    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/GRAZIE-Lower-Hutt--260518-115957.jpg",
+    "google_rating": null,
+    "google_reviews": null
   },
   {
     "name": "Boca a Boca",
@@ -448,7 +496,9 @@
     "lunch": false,
     "dinner": true,
     "official_image": "woap-images/boca-a-boca-el-matador.jpg",
-    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/Burger-Welly-260414-123741.jpeg"
+    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/Burger-Welly-260414-123741.jpeg",
+    "google_rating": 4.5,
+    "google_reviews": null
   },
   {
     "name": "Boeuf à l'orange",
@@ -468,7 +518,9 @@
     "lunch": true,
     "dinner": true,
     "official_image": "woap-images/boeuf-l-orange-apach.jpg",
-    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/Visa-WOAP-2026-260501-115120.jpg"
+    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/Visa-WOAP-2026-260501-115120.jpg",
+    "google_rating": null,
+    "google_reviews": null
   },
   {
     "name": "Bombay Hook Bite",
@@ -485,7 +537,9 @@
     "lunch": true,
     "dinner": true,
     "official_image": "woap-images/bombay-hook-bite-the-jolly-pub-kitchen.jpg",
-    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/KCDC_WOAPBURGERSHOOT_HIRES-13-260522-121039.jpeg"
+    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/KCDC_WOAPBURGERSHOOT_HIRES-13-260522-121039.jpeg",
+    "google_rating": 4.4,
+    "google_reviews": null
   },
   {
     "name": "Borderline Brunch",
@@ -504,7 +558,9 @@
     "lunch": true,
     "dinner": false,
     "official_image": "woap-images/borderline-brunch-neo-caf-eatery.jpg",
-    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/WOAP-26-9686-260415-193915.jpg"
+    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/WOAP-26-9686-260415-193915.jpg",
+    "google_rating": null,
+    "google_reviews": null
   },
   {
     "name": "Boss Level",
@@ -521,7 +577,9 @@
     "lunch": true,
     "dinner": true,
     "official_image": "woap-images/boss-level-garage-project-leeds-street.jpg",
-    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/20200110-IMG_0954-260429-141124.jpg"
+    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/20200110-IMG_0954-260429-141124.jpg",
+    "google_rating": null,
+    "google_reviews": null
   },
   {
     "name": "Bovine Meets Coastline",
@@ -540,7 +598,9 @@
     "lunch": true,
     "dinner": true,
     "official_image": "woap-images/bovine-meets-coastline-pravda-caf-and-grill.jpg",
-    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/WOAP-2026-Burger-Pic-260610-142051.jpg"
+    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/WOAP-2026-Burger-Pic-260610-142051.jpg",
+    "google_rating": null,
+    "google_reviews": null
   },
   {
     "name": "Broadcaster",
@@ -557,7 +617,9 @@
     "lunch": true,
     "dinner": true,
     "official_image": "woap-images/broadcaster-double-vision-brewing-island-bay.jpg",
-    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/Broadcaster--2-260605-103046.png"
+    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/Broadcaster--2-260605-103046.png",
+    "google_rating": null,
+    "google_reviews": null
   },
   {
     "name": "Buck Yeah, Clive!",
@@ -576,7 +638,9 @@
     "lunch": true,
     "dinner": true,
     "official_image": "woap-images/buck-yeah-clive-caf-polo.jpg",
-    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/image0--4--260604-100230.jpeg"
+    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/image0--4--260604-100230.jpeg",
+    "google_rating": null,
+    "google_reviews": null
   },
   {
     "name": "Bulgogi from the Seoul",
@@ -593,7 +657,9 @@
     "lunch": true,
     "dinner": true,
     "official_image": "woap-images/bulgogi-from-the-seoul-koko-s-kitchen.jpg",
-    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/WOAP-2026---Koko-Kitchen-260520-072243.jpg"
+    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/WOAP-2026---Koko-Kitchen-260520-072243.jpg",
+    "google_rating": null,
+    "google_reviews": null
   },
   {
     "name": "Burga' Alla Vodka",
@@ -612,7 +678,9 @@
     "lunch": true,
     "dinner": true,
     "official_image": "woap-images/burga-alla-vodka-1154-pastaria.jpg",
-    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/WOAP-2026-Burger-1154-Pastaria-03-260512-082116.jpg"
+    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/WOAP-2026-Burger-1154-Pastaria-03-260512-082116.jpg",
+    "google_rating": 4.4,
+    "google_reviews": null
   },
   {
     "name": "Cacciatore Amore",
@@ -631,7 +699,9 @@
     "lunch": true,
     "dinner": true,
     "official_image": "woap-images/cacciatore-amore-scopa.jpg",
-    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/WOAP-2026-Burger-Scopa-03-260512-082204.jpg"
+    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/WOAP-2026-Burger-Scopa-03-260512-082204.jpg",
+    "google_rating": 4.4,
+    "google_reviews": null
   },
   {
     "name": "Cafreal Talks",
@@ -648,7 +718,9 @@
     "lunch": true,
     "dinner": true,
     "official_image": "woap-images/cafreal-talks-pango-pearl.jpg",
-    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/1000014548-260429-210658.jpg"
+    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/1000014548-260429-210658.jpg",
+    "google_rating": null,
+    "google_reviews": null
   },
   {
     "name": "Cali's Calling",
@@ -665,7 +737,9 @@
     "lunch": true,
     "dinner": true,
     "official_image": "woap-images/cali-s-calling-rosie-s-red-hot-cantina-taco-joint.jpg",
-    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/ROS-Burger-260508-133814.jpg"
+    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/ROS-Burger-260508-133814.jpg",
+    "google_rating": null,
+    "google_reviews": null
   },
   {
     "name": "Ceylon Stacker",
@@ -682,7 +756,9 @@
     "lunch": true,
     "dinner": false,
     "official_image": "woap-images/ceylon-stacker-t-lounge-by-dilmah.jpg",
-    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/00146-260415-135845.jpg"
+    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/00146-260415-135845.jpg",
+    "google_rating": null,
+    "google_reviews": null
   },
   {
     "name": "Charred & Dangerous",
@@ -701,7 +777,9 @@
     "lunch": true,
     "dinner": true,
     "official_image": "woap-images/charred-dangerous-archie-brothers.jpg",
-    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/Burger-Solo-260411-091811.jpg"
+    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/Burger-Solo-260411-091811.jpg",
+    "google_rating": null,
+    "google_reviews": null
   },
   {
     "name": "Chef's Kiss",
@@ -718,7 +796,9 @@
     "lunch": true,
     "dinner": true,
     "official_image": "woap-images/chef-s-kiss-re-burger-wellington.jpg",
-    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/REBurger_2026-7-260602-125231.jpg"
+    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/REBurger_2026-7-260602-125231.jpg",
+    "google_rating": null,
+    "google_reviews": null
   },
   {
     "name": "Chiang Mai Firecracker",
@@ -737,7 +817,9 @@
     "lunch": true,
     "dinner": true,
     "official_image": "woap-images/chiang-mai-firecracker-khao-soi.jpg",
-    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/KhaoSoiBurger_2026-8-260605-104012.jpg"
+    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/KhaoSoiBurger_2026-8-260605-104012.jpg",
+    "google_rating": null,
+    "google_reviews": null
   },
   {
     "name": "Chicharrón Pa’ Ti",
@@ -754,7 +836,9 @@
     "lunch": true,
     "dinner": true,
     "official_image": "woap-images/chicharr-n-pa-ti-viva-mexico-newtown.jpg",
-    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/IMG_1992--1--260430-125544.jpeg"
+    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/IMG_1992--1--260430-125544.jpeg",
+    "google_rating": 4.6,
+    "google_reviews": null
   },
   {
     "name": "Chicken Go Brrr",
@@ -774,7 +858,9 @@
     "lunch": true,
     "dinner": true,
     "official_image": "woap-images/chicken-go-brrr-ngon-restaurant.jpg",
-    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/IMG_5515-260412-083325.jpeg"
+    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/IMG_5515-260412-083325.jpeg",
+    "google_rating": null,
+    "google_reviews": null
   },
   {
     "name": "Chicky Piggie",
@@ -793,7 +879,9 @@
     "lunch": true,
     "dinner": false,
     "official_image": "woap-images/chicky-piggie-stillwater-eatery.jpg",
-    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/Screenshot-2026-06-08-103936-260608-084042.png"
+    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/Screenshot-2026-06-08-103936-260608-084042.png",
+    "google_rating": null,
+    "google_reviews": null
   },
   {
     "name": "Chilli-butter-beef",
@@ -813,7 +901,9 @@
     "lunch": true,
     "dinner": false,
     "official_image": "woap-images/chilli-butter-beef-pickle-pie.jpg",
-    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/Pickle-and-pie-burger-260606-210651.png"
+    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/Pickle-and-pie-burger-260606-210651.png",
+    "google_rating": null,
+    "google_reviews": null
   },
   {
     "name": "Chop 'n' Dip",
@@ -830,7 +920,9 @@
     "lunch": true,
     "dinner": true,
     "official_image": "woap-images/chop-n-dip-boneface-brewing-co.jpg",
-    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/IMG_3114-260609-085149.jpeg"
+    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/IMG_3114-260609-085149.jpeg",
+    "google_rating": null,
+    "google_reviews": null
   },
   {
     "name": "Choriqueso Mexican",
@@ -849,7 +941,9 @@
     "lunch": true,
     "dinner": true,
     "official_image": "woap-images/choriqueso-mexican-juniper-restaurant-bar.jpg",
-    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/QEsn_lN9-260605-120305.jpg"
+    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/QEsn_lN9-260605-120305.jpg",
+    "google_rating": null,
+    "google_reviews": null
   },
   {
     "name": "Classified Leak",
@@ -866,7 +960,9 @@
     "lunch": true,
     "dinner": true,
     "official_image": "woap-images/classified-leak-the-backbencher.jpg",
-    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/WOAP-26-260415-133903.jpg"
+    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/WOAP-26-260415-133903.jpg",
+    "google_rating": 4.1,
+    "google_reviews": null
   },
   {
     "name": "Cluck and Tell",
@@ -883,7 +979,9 @@
     "lunch": true,
     "dinner": false,
     "official_image": "woap-images/cluck-and-tell-little-manila.jpg",
-    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/WOAP-Sticky-Chicken-Burger-w-Fries-260605-103225.png"
+    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/WOAP-Sticky-Chicken-Burger-w-Fries-260605-103225.png",
+    "google_rating": null,
+    "google_reviews": null
   },
   {
     "name": "CMC Stacker",
@@ -902,7 +1000,9 @@
     "lunch": true,
     "dinner": true,
     "official_image": "woap-images/cmc-stacker-chicken-man.jpg",
-    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/WOAP-2026---Chicken-Man-260520-070531.jpg"
+    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/WOAP-2026---Chicken-Man-260520-070531.jpg",
+    "google_rating": null,
+    "google_reviews": null
   },
   {
     "name": "Coastal Crackle",
@@ -919,7 +1019,9 @@
     "lunch": true,
     "dinner": true,
     "official_image": "woap-images/coastal-crackle-seashore-cabaret-cafe.jpg",
-    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/WOAP-1-260525-114036.png"
+    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/WOAP-1-260525-114036.png",
+    "google_rating": 4.5,
+    "google_reviews": null
   },
   {
     "name": "Cornered Seamus",
@@ -936,7 +1038,9 @@
     "lunch": true,
     "dinner": true,
     "official_image": "woap-images/cornered-seamus-the-speight-s-ale-house.jpg",
-    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/2026-WOAP-Ale-House-Burger-260429-082740.jpg"
+    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/2026-WOAP-Ale-House-Burger-260429-082740.jpg",
+    "google_rating": 4.3,
+    "google_reviews": null
   },
   {
     "name": "Cosmic Kaleido-Kraut",
@@ -953,7 +1057,9 @@
     "lunch": true,
     "dinner": true,
     "official_image": "woap-images/cosmic-kaleido-kraut-bethel-woods.jpg",
-    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/Bethel-Woods-Burger-260508-122508.jpg"
+    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/Bethel-Woods-Burger-260508-122508.jpg",
+    "google_rating": 4.2,
+    "google_reviews": null
   },
   {
     "name": "Cray Cray",
@@ -970,7 +1076,9 @@
     "lunch": true,
     "dinner": true,
     "official_image": "woap-images/cray-cray-the-dumpling-company.jpg",
-    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/tempImageDmjAoN-260415-205341.jpg"
+    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/tempImageDmjAoN-260415-205341.jpg",
+    "google_rating": null,
+    "google_reviews": null
   },
   {
     "name": "Crispy Business",
@@ -987,7 +1095,9 @@
     "lunch": true,
     "dinner": false,
     "official_image": "woap-images/crispy-business-boss-bagels.jpg",
-    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/Crispy-Business---Bpss-Bagels-260420-081849.jpg"
+    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/Crispy-Business---Bpss-Bagels-260420-081849.jpg",
+    "google_rating": null,
+    "google_reviews": null
   },
   {
     "name": "Crouching Tiger",
@@ -1006,7 +1116,9 @@
     "lunch": true,
     "dinner": true,
     "official_image": "woap-images/crouching-tiger-dragons-chinese-restaurant.jpg",
-    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/DragonRestaurantBurger_2026-7-260602-133456.jpg"
+    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/DragonRestaurantBurger_2026-7-260602-133456.jpg",
+    "google_rating": null,
+    "google_reviews": null
   },
   {
     "name": "Dinamico",
@@ -1026,7 +1138,9 @@
     "lunch": true,
     "dinner": false,
     "official_image": "woap-images/dinamico-puro-chile.jpg",
-    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/IMG_3068-260604-170918.png"
+    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/IMG_3068-260604-170918.png",
+    "google_rating": null,
+    "google_reviews": null
   },
   {
     "name": "Dirty Chook",
@@ -1045,7 +1159,9 @@
     "lunch": true,
     "dinner": true,
     "official_image": "woap-images/dirty-chook-te-aro-brewing-taproom-restaurant.jpg",
-    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/Woap-260606-210559.jpg"
+    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/Woap-260606-210559.jpg",
+    "google_rating": null,
+    "google_reviews": null
   },
   {
     "name": "Donut Wanna Miss This",
@@ -1062,7 +1178,9 @@
     "lunch": true,
     "dinner": true,
     "official_image": "woap-images/donut-wanna-miss-this-dirty-little-secret.jpg",
-    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/Dirty-Little-Secret-HERO-260518-123429.jpg"
+    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/Dirty-Little-Secret-HERO-260518-123429.jpg",
+    "google_rating": 4.3,
+    "google_reviews": null
   },
   {
     "name": "Double-Cross",
@@ -1079,7 +1197,9 @@
     "lunch": true,
     "dinner": true,
     "official_image": "woap-images/double-cross-dillinger-s.jpg",
-    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/Dillinger-s-Burger-260508-124312.jpg"
+    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/Dillinger-s-Burger-260508-124312.jpg",
+    "google_rating": 4.3,
+    "google_reviews": null
   },
   {
     "name": "Dublin Drip",
@@ -1096,7 +1216,9 @@
     "lunch": true,
     "dinner": true,
     "official_image": "woap-images/dublin-drip-the-green-man-pub.jpg",
-    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/Green-Man-Burger-260508-124931.jpg"
+    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/Green-Man-Burger-260508-124931.jpg",
+    "google_rating": 4.2,
+    "google_reviews": null
   },
   {
     "name": "Ducky Dip",
@@ -1115,7 +1237,9 @@
     "lunch": false,
     "dinner": true,
     "official_image": "woap-images/ducky-dip-hummingbird-eatery-and-lounge-bar.jpg",
-    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/Hummingbird-Burger-WOAP-2026-260501-143142.jpg"
+    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/Hummingbird-Burger-WOAP-2026-260501-143142.jpg",
+    "google_rating": null,
+    "google_reviews": null
   },
   {
     "name": "El Pepinillos",
@@ -1134,7 +1258,9 @@
     "lunch": true,
     "dinner": true,
     "official_image": "woap-images/el-pepinillos-the-pickle-jar.jpg",
-    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/WOAP-2026-placeholder-260415-122224.jpeg"
+    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/WOAP-2026-placeholder-260415-122224.jpeg",
+    "google_rating": 4.5,
+    "google_reviews": null
   },
   {
     "name": "El Pollo Sucio",
@@ -1151,7 +1277,9 @@
     "lunch": true,
     "dinner": true,
     "official_image": "woap-images/el-pollo-sucio-thunderbird-caf.jpg",
-    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/IMG_6877-260602-115647.jpg"
+    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/IMG_6877-260602-115647.jpg",
+    "google_rating": null,
+    "google_reviews": null
   },
   {
     "name": "Ferry Tale",
@@ -1168,7 +1296,9 @@
     "lunch": true,
     "dinner": true,
     "official_image": "woap-images/ferry-tale-interislander-ferry.jpg",
-    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/WOAP_Internal-comms_burger-only-260722-102022.jpg"
+    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/WOAP_Internal-comms_burger-only-260722-102022.jpg",
+    "google_rating": null,
+    "google_reviews": null
   },
   {
     "name": "FFS!",
@@ -1187,7 +1317,9 @@
     "lunch": true,
     "dinner": true,
     "official_image": "woap-images/ffs-glou-glou.jpg",
-    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/IMG_7303-260415-195058.jpg"
+    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/IMG_7303-260415-195058.jpg",
+    "google_rating": 4.5,
+    "google_reviews": null
   },
   {
     "name": "Filthy Rich",
@@ -1206,7 +1338,9 @@
     "lunch": true,
     "dinner": true,
     "official_image": "woap-images/filthy-rich-dirty-burger-upper-hutt.jpg",
-    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/Filthy-Rich-260605-112311.jpg"
+    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/Filthy-Rich-260605-112311.jpg",
+    "google_rating": null,
+    "google_reviews": null
   },
   {
     "name": "Fire Bird",
@@ -1226,7 +1360,9 @@
     "lunch": true,
     "dinner": true,
     "official_image": "woap-images/fire-bird-soul-shack.jpg",
-    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/IMG_2390-260430-150357.jpeg"
+    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/IMG_2390-260430-150357.jpeg",
+    "google_rating": null,
+    "google_reviews": null
   },
   {
     "name": "Get Smashed",
@@ -1243,7 +1379,9 @@
     "lunch": true,
     "dinner": false,
     "official_image": "woap-images/get-smashed-l-affare.jpg",
-    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/022A9177-260414-070752.jpg"
+    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/022A9177-260414-070752.jpg",
+    "google_rating": null,
+    "google_reviews": null
   },
   {
     "name": "Giardino",
@@ -1260,7 +1398,9 @@
     "lunch": false,
     "dinner": true,
     "official_image": "woap-images/giardino-grazie-wellington.jpg",
-    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/Grazie-Wellington-260518-120044.jpg"
+    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/Grazie-Wellington-260518-120044.jpg",
+    "google_rating": null,
+    "google_reviews": null
   },
   {
     "name": "Gift of the Gab",
@@ -1277,7 +1417,9 @@
     "lunch": true,
     "dinner": true,
     "official_image": "woap-images/gift-of-the-gab-jj-murphy-co.jpg",
-    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/JJMurphy-Co_11-260525-140846.jpeg"
+    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/JJMurphy-Co_11-260525-140846.jpeg",
+    "google_rating": 4.2,
+    "google_reviews": null
   },
   {
     "name": "GOAT Royale",
@@ -1298,7 +1440,9 @@
     "lunch": true,
     "dinner": false,
     "official_image": "woap-images/goat-royale-le-ciel-bakery.jpg",
-    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/189ED689-724C-4440-8E6D-4D597096D247-260429-084725.png"
+    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/189ED689-724C-4440-8E6D-4D597096D247-260429-084725.png",
+    "google_rating": null,
+    "google_reviews": null
   },
   {
     "name": "Gochu Bro",
@@ -1315,7 +1459,9 @@
     "lunch": true,
     "dinner": true,
     "official_image": "woap-images/gochu-bro-the-karaage-kid.jpg",
-    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/Gochu-Bro-260605-112406.jpg"
+    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/Gochu-Bro-260605-112406.jpg",
+    "google_rating": 4.6,
+    "google_reviews": null
   },
   {
     "name": "Gossip Grill",
@@ -1334,7 +1480,9 @@
     "lunch": true,
     "dinner": true,
     "official_image": "woap-images/gossip-grill-whitby-s-restaurant-bar.jpg",
-    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/IMG_3152-260610-145007.jpeg"
+    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/IMG_3152-260610-145007.jpeg",
+    "google_rating": null,
+    "google_reviews": null
   },
   {
     "name": "Gossip Town",
@@ -1351,7 +1499,9 @@
     "lunch": true,
     "dinner": true,
     "official_image": "woap-images/gossip-town-d4-on-featherston.jpg",
-    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/WOAP-26-260428-105123.png"
+    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/WOAP-26-260428-105123.png",
+    "google_rating": null,
+    "google_reviews": null
   },
   {
     "name": "Grandma's Secret",
@@ -1368,7 +1518,9 @@
     "lunch": true,
     "dinner": true,
     "official_image": "woap-images/grandma-s-secret-saigon-taste.jpg",
-    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/R0003279-260429-182550.jpeg"
+    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/R0003279-260429-182550.jpeg",
+    "google_rating": null,
+    "google_reviews": null
   },
   {
     "name": "Green Eggs and Hamburger",
@@ -1387,7 +1539,9 @@
     "lunch": true,
     "dinner": true,
     "official_image": "woap-images/green-eggs-and-hamburger-burger-liquor.jpg",
-    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/BL_woap_26-copy-260429-201526.jpg"
+    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/BL_woap_26-copy-260429-201526.jpg",
+    "google_rating": 4.6,
+    "google_reviews": null
   },
   {
     "name": "Hao Good",
@@ -1404,7 +1558,9 @@
     "lunch": false,
     "dinner": true,
     "official_image": "woap-images/hao-good-lucky8.jpg",
-    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/IMG_3701-260721-165118.jpeg"
+    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/IMG_3701-260721-165118.jpeg",
+    "google_rating": null,
+    "google_reviews": null
   },
   {
     "name": "Hard To Beet",
@@ -1421,7 +1577,9 @@
     "lunch": true,
     "dinner": true,
     "official_image": "woap-images/hard-to-beet-khandallah-trading-company.jpg",
-    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/KTC-Burger-260508-130329.jpg"
+    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/KTC-Burger-260508-130329.jpg",
+    "google_rating": 4.2,
+    "google_reviews": null
   },
   {
     "name": "Hash-it Out",
@@ -1438,7 +1596,9 @@
     "lunch": true,
     "dinner": true,
     "official_image": "woap-images/hash-it-out-st-johns-bar-eatery.jpg",
-    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/St-Johns-HERO-260518-123741.jpg"
+    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/St-Johns-HERO-260518-123741.jpg",
+    "google_rating": null,
+    "google_reviews": null
   },
   {
     "name": "Heard it Through the LambVine",
@@ -1457,7 +1617,9 @@
     "lunch": true,
     "dinner": false,
     "official_image": "woap-images/heard-it-through-the-lambvine-caf-medici.jpg",
-    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/IMG_7125-260424-085004.jpeg"
+    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/IMG_7125-260424-085004.jpeg",
+    "google_rating": null,
+    "google_reviews": null
   },
   {
     "name": "Heard it Thru...",
@@ -1476,7 +1638,9 @@
     "lunch": true,
     "dinner": true,
     "official_image": "woap-images/heard-it-thru-lucky.jpg",
-    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/BW-2026-I-Heard-It-Thru----260429-153916.jpg"
+    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/BW-2026-I-Heard-It-Thru----260429-153916.jpg",
+    "google_rating": null,
+    "google_reviews": null
   },
   {
     "name": "Heard It Thru The Grain Brine",
@@ -1493,7 +1657,9 @@
     "lunch": true,
     "dinner": true,
     "official_image": "woap-images/heard-it-thru-the-grain-brine-fork-brewer.jpg",
-    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/WOAP-Burger-Picture-1-260415-185614.jpg"
+    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/WOAP-Burger-Picture-1-260415-185614.jpg",
+    "google_rating": null,
+    "google_reviews": null
   },
   {
     "name": "Heart-a-Stack",
@@ -1510,7 +1676,9 @@
     "lunch": true,
     "dinner": true,
     "official_image": "woap-images/heart-a-stack-baylands-brewery-taproom.jpg",
-    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/WOAP-260415-140505.jpg"
+    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/WOAP-260415-140505.jpg",
+    "google_rating": null,
+    "google_reviews": null
   },
   {
     "name": "Hellfire",
@@ -1529,7 +1697,9 @@
     "lunch": false,
     "dinner": true,
     "official_image": "woap-images/hellfire-choice-bros.jpg",
-    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/Hellfire-burger-FINAL-260413-105818.png"
+    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/Hellfire-burger-FINAL-260413-105818.png",
+    "google_rating": null,
+    "google_reviews": null
   },
   {
     "name": "Herd It Here First",
@@ -1548,7 +1718,9 @@
     "lunch": true,
     "dinner": true,
     "official_image": "woap-images/herd-it-here-first-bin44-restaurant-bar.jpg",
-    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/Bin44-WOAP-burger-2026-260414-163241.jpg"
+    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/Bin44-WOAP-burger-2026-260414-163241.jpg",
+    "google_rating": 4,
+    "google_reviews": null
   },
   {
     "name": "Hey Hey",
@@ -1565,7 +1737,9 @@
     "lunch": true,
     "dinner": false,
     "official_image": "woap-images/hey-hey-puku-pies-kai-johnsonville.jpg",
-    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/IMG_9584-260515-141728.jpg"
+    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/IMG_9584-260515-141728.jpg",
+    "google_rating": 4.5,
+    "google_reviews": null
   },
   {
     "name": "Hey Honey Bun",
@@ -1585,7 +1759,9 @@
     "lunch": true,
     "dinner": true,
     "official_image": "woap-images/hey-honey-bun-where-s-charlie.jpg",
-    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/6f98acce-3613-49ab-a0fb-eb5dbd3c78ba-260504-130212.jpeg"
+    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/6f98acce-3613-49ab-a0fb-eb5dbd3c78ba-260504-130212.jpeg",
+    "google_rating": 4.2,
+    "google_reviews": null
   },
   {
     "name": "Holy Cheesus",
@@ -1602,7 +1778,9 @@
     "lunch": true,
     "dinner": false,
     "official_image": "woap-images/holy-cheesus-lustre-kitchen-and-dining.jpg",
-    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/IMG_3161-260610-194115.jpeg"
+    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/IMG_3161-260610-194115.jpeg",
+    "google_rating": 5,
+    "google_reviews": null
   },
   {
     "name": "Holy Kra-Poww",
@@ -1621,7 +1799,9 @@
     "lunch": true,
     "dinner": true,
     "official_image": "woap-images/holy-kra-poww-tuk-tuk-thai-kitchen.jpg",
-    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/WOAP-2026---Tuk-Tuk-Thai-260520-073041.jpg"
+    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/WOAP-2026---Tuk-Tuk-Thai-260520-073041.jpg",
+    "google_rating": 4.5,
+    "google_reviews": null
   },
   {
     "name": "Hooked",
@@ -1638,7 +1818,9 @@
     "lunch": true,
     "dinner": false,
     "official_image": "woap-images/hooked-tot.jpg",
-    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/Official-TotōCafeWOAPBurger2026-260529-101726.jpg"
+    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/Official-TotōCafeWOAPBurger2026-260529-101726.jpg",
+    "google_rating": null,
+    "google_reviews": null
   },
   {
     "name": "Hot Gossip",
@@ -1655,7 +1837,9 @@
     "lunch": true,
     "dinner": true,
     "official_image": "woap-images/hot-gossip-foxglove-bar-kitchen.jpg",
-    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/Foxglove-Burger-260508-124659.jpg"
+    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/Foxglove-Burger-260508-124659.jpg",
+    "google_rating": 4.3,
+    "google_reviews": null
   },
   {
     "name": "Hot Tip",
@@ -1672,7 +1856,9 @@
     "lunch": true,
     "dinner": true,
     "official_image": "woap-images/hot-tip-hotel-catalina.jpg",
-    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/IMG_9708-260515-124332.jpg"
+    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/IMG_9708-260515-124332.jpg",
+    "google_rating": 4.2,
+    "google_reviews": null
   },
   {
     "name": "Hot Tip French Dip",
@@ -1689,7 +1875,9 @@
     "lunch": true,
     "dinner": true,
     "official_image": "woap-images/hot-tip-french-dip-southern-cross.jpg",
-    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/SC-Burger-260508-135513.jpg"
+    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/SC-Burger-260508-135513.jpg",
+    "google_rating": 4.2,
+    "google_reviews": null
   },
   {
     "name": "How You Doin'",
@@ -1706,7 +1894,9 @@
     "lunch": true,
     "dinner": true,
     "official_image": "woap-images/how-you-doin-leroy-s-bar.jpg",
-    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/WOAP-2026-marketing-photo-260415-144434.jpg"
+    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/WOAP-2026-marketing-photo-260415-144434.jpg",
+    "google_rating": null,
+    "google_reviews": null
   },
   {
     "name": "It's all in the Delivery",
@@ -1725,7 +1915,9 @@
     "lunch": true,
     "dinner": false,
     "official_image": "woap-images/it-s-all-in-the-delivery-food-envy.jpg",
-    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/IMG_3587-260716-142941.jpeg"
+    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/IMG_3587-260716-142941.jpeg",
+    "google_rating": null,
+    "google_reviews": null
   },
   {
     "name": "Jakarta Meets Tokyo",
@@ -1742,7 +1934,9 @@
     "lunch": true,
     "dinner": true,
     "official_image": "woap-images/jakarta-meets-tokyo-peloton-bar-eatery.jpg",
-    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/Untitled-design--1--260414-095038.jpg"
+    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/Untitled-design--1--260414-095038.jpg",
+    "google_rating": null,
+    "google_reviews": null
   },
   {
     "name": "Jerk Gone Berserk",
@@ -1759,7 +1953,9 @@
     "lunch": true,
     "dinner": true,
     "official_image": "woap-images/jerk-gone-berserk-brew-d-boulcott.jpg",
-    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/Brew-d-Burger-260508-124119.jpg"
+    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/Brew-d-Burger-260508-124119.jpg",
+    "google_rating": null,
+    "google_reviews": null
   },
   {
     "name": "Joe Told Me",
@@ -1776,7 +1972,9 @@
     "lunch": true,
     "dinner": true,
     "official_image": "woap-images/joe-told-me-flamingo-joe-s.jpg",
-    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/Flamingo-Joe-s-Burger-260508-122335.jpg"
+    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/Flamingo-Joe-s-Burger-260508-122335.jpg",
+    "google_rating": 4.2,
+    "google_reviews": null
   },
   {
     "name": "Juicy Gossip",
@@ -1796,7 +1994,9 @@
     "lunch": true,
     "dinner": true,
     "official_image": "woap-images/juicy-gossip-re-burger-kapiti.jpg",
-    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/KCDC---WOAP---AMENDED-EDITS--21-260522-121903.jpeg"
+    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/KCDC---WOAP---AMENDED-EDITS--21-260522-121903.jpeg",
+    "google_rating": 4.7,
+    "google_reviews": null
   },
   {
     "name": "Kahawai Connection",
@@ -1815,7 +2015,9 @@
     "lunch": true,
     "dinner": true,
     "official_image": "woap-images/kahawai-connection-beach-house-and-kiosk.jpg",
-    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/93aaae7e-cc1b-4574-819f-e62387b95bcc-260429-145508.jpg"
+    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/93aaae7e-cc1b-4574-819f-e62387b95bcc-260429-145508.jpg",
+    "google_rating": null,
+    "google_reviews": null
   },
   {
     "name": "Kai-Kōrero",
@@ -1832,7 +2034,9 @@
     "lunch": true,
     "dinner": false,
     "official_image": "woap-images/kai-k-rero-te-papa-caf.jpg",
-    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/TePapaBurger_2026-11-260602-125940.jpg"
+    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/TePapaBurger_2026-11-260602-125940.jpg",
+    "google_rating": null,
+    "google_reviews": null
   },
   {
     "name": "Kampung Kick",
@@ -1851,7 +2055,9 @@
     "lunch": true,
     "dinner": true,
     "official_image": "woap-images/kampung-kick-kanama-kopi-kadai.jpg",
-    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/IMG_2509-260605-121942.jpeg"
+    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/IMG_2509-260605-121942.jpeg",
+    "google_rating": null,
+    "google_reviews": null
   },
   {
     "name": "Kashmiri Velvet",
@@ -1870,7 +2076,9 @@
     "lunch": true,
     "dinner": false,
     "official_image": "woap-images/kashmiri-velvet-vintage-village-cafe.jpg",
-    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/KCDC---WOAP---AMENDED-EDITS--16--1--260522-121414.jpeg"
+    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/KCDC---WOAP---AMENDED-EDITS--16--1--260522-121414.jpeg",
+    "google_rating": 4.3,
+    "google_reviews": null
   },
   {
     "name": "Katsu Me Outside",
@@ -1887,7 +2095,9 @@
     "lunch": true,
     "dinner": true,
     "official_image": "woap-images/katsu-me-outside-monsoon-poon.jpg",
-    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/DSC09197-260605-122137.jpeg"
+    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/DSC09197-260605-122137.jpeg",
+    "google_rating": null,
+    "google_reviews": null
   },
   {
     "name": "Kerabu and Tell!",
@@ -1908,7 +2118,9 @@
     "lunch": true,
     "dinner": true,
     "official_image": "woap-images/kerabu-and-tell-macha-jom-tapau.jpg",
-    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/1000144623-260428-215050.jpg"
+    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/1000144623-260428-215050.jpg",
+    "google_rating": null,
+    "google_reviews": null
   },
   {
     "name": "KimCheek",
@@ -1927,7 +2139,9 @@
     "lunch": true,
     "dinner": false,
     "official_image": "woap-images/kimcheek-flight-coffee-hangar.jpg",
-    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/Landscape-Edit-2---65-Real-260518-074207.png"
+    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/Landscape-Edit-2---65-Real-260518-074207.png",
+    "google_rating": 4.6,
+    "google_reviews": null
   },
   {
     "name": "Kimchi Fire",
@@ -1947,7 +2161,9 @@
     "lunch": true,
     "dinner": false,
     "official_image": "woap-images/kimchi-fire-haha-chicken.jpg",
-    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/IMG_3171-260612-071419.jpeg"
+    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/IMG_3171-260612-071419.jpeg",
+    "google_rating": null,
+    "google_reviews": null
   },
   {
     "name": "Kiss my Rump Cap!",
@@ -1966,7 +2182,9 @@
     "lunch": true,
     "dinner": false,
     "official_image": "woap-images/kiss-my-rump-cap-nara.jpg",
-    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/WOAP-2026-cropped-260507-122805.jpg"
+    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/WOAP-2026-cropped-260507-122805.jpg",
+    "google_rating": 4.7,
+    "google_reviews": null
   },
   {
     "name": "Kuchikomi",
@@ -1985,7 +2203,9 @@
     "lunch": false,
     "dinner": true,
     "official_image": "woap-images/kuchikomi-dragonfly.jpg",
-    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/IMG_1909-260414-120810.jpeg"
+    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/IMG_1909-260414-120810.jpeg",
+    "google_rating": 4.6,
+    "google_reviews": null
   },
   {
     "name": "Lamb and Loaded",
@@ -2002,7 +2222,9 @@
     "lunch": true,
     "dinner": true,
     "official_image": "woap-images/lamb-and-loaded-good-day.jpg",
-    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/Untitled-design--2--260414-100153.jpg"
+    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/Untitled-design--2--260414-100153.jpg",
+    "google_rating": null,
+    "google_reviews": null
   },
   {
     "name": "Lamb-da Rassa Pao",
@@ -2021,7 +2243,9 @@
     "lunch": true,
     "dinner": true,
     "official_image": "woap-images/lamb-da-rassa-pao-bellbird-eatery.jpg",
-    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/image00002-260429-184046.jpeg"
+    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/image00002-260429-184046.jpeg",
+    "google_rating": null,
+    "google_reviews": null
   },
   {
     "name": "Lamb Royale",
@@ -2040,7 +2264,9 @@
     "lunch": true,
     "dinner": true,
     "official_image": "woap-images/lamb-royale-sunday-cantina.jpg",
-    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/SundayCantina_210526-12-260602-125117.jpg"
+    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/SundayCantina_210526-12-260602-125117.jpg",
+    "google_rating": 4.4,
+    "google_reviews": null
   },
   {
     "name": "La Mortadella",
@@ -2057,7 +2283,9 @@
     "lunch": true,
     "dinner": true,
     "official_image": "woap-images/la-mortadella-huxley-s.jpg",
-    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/HUX-Burger-260508-125547.jpg"
+    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/HUX-Burger-260508-125547.jpg",
+    "google_rating": 4.5,
+    "google_reviews": null
   },
   {
     "name": "Le Ganh",
@@ -2074,7 +2302,9 @@
     "lunch": true,
     "dinner": true,
     "official_image": "woap-images/le-ganh-pho-sho-porirua.jpg",
-    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/WOAP-2026---Pho-Sho-260520-072423.jpg"
+    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/WOAP-2026---Pho-Sho-260520-072423.jpg",
+    "google_rating": null,
+    "google_reviews": null
   },
   {
     "name": "Little Titai",
@@ -2093,7 +2323,9 @@
     "lunch": true,
     "dinner": true,
     "official_image": "woap-images/little-titai-t-bay-cafe.jpg",
-    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/WOAP-2026---T-Bay-Cafe-260520-072909.jpg"
+    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/WOAP-2026---T-Bay-Cafe-260520-072909.jpg",
+    "google_rating": 4.7,
+    "google_reviews": null
   },
   {
     "name": "Local Jerk",
@@ -2110,7 +2342,9 @@
     "lunch": true,
     "dinner": true,
     "official_image": "woap-images/local-jerk-abandoned-petone.jpg",
-    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/WOAP-1-260429-205519.jpg"
+    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/WOAP-1-260429-205519.jpg",
+    "google_rating": null,
+    "google_reviews": null
   },
   {
     "name": "Loose Lips Cherry Kiss",
@@ -2127,7 +2361,9 @@
     "lunch": true,
     "dinner": true,
     "official_image": "woap-images/loose-lips-cherry-kiss-loosies-superette.jpg",
-    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/LOO-Burger-260508-133713.jpg"
+    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/LOO-Burger-260508-133713.jpg",
+    "google_rating": 4.7,
+    "google_reviews": null
   },
   {
     "name": "Loose Lips Sink Chips",
@@ -2144,7 +2380,9 @@
     "lunch": true,
     "dinner": true,
     "official_image": "woap-images/loose-lips-sink-chips-little-beer-quarter.jpg",
-    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/LBQ-Burger-260415-101639.png"
+    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/LBQ-Burger-260415-101639.png",
+    "google_rating": 4.6,
+    "google_reviews": null
   },
   {
     "name": "Loud Mouth",
@@ -2164,7 +2402,9 @@
     "lunch": true,
     "dinner": true,
     "official_image": "woap-images/loud-mouth-the-crooked-elm.jpg",
-    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/IMG_3163-260611-134533.jpeg"
+    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/IMG_3163-260611-134533.jpeg",
+    "google_rating": null,
+    "google_reviews": null
   },
   {
     "name": "Mare & Monti",
@@ -2183,7 +2423,9 @@
     "lunch": true,
     "dinner": true,
     "official_image": "woap-images/mare-monti-passo-pizza-pasta-caffe.jpg",
-    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/KCDC_WOAPBURGERSHOOT_HIRES-28-260611-063202.jpeg"
+    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/KCDC_WOAPBURGERSHOOT_HIRES-28-260611-063202.jpeg",
+    "google_rating": 4.5,
+    "google_reviews": null
   },
   {
     "name": "Marites",
@@ -2200,7 +2442,9 @@
     "lunch": true,
     "dinner": true,
     "official_image": "woap-images/marites-lazy-juan.jpg",
-    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/IMG_4361-260428-145929.jpeg"
+    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/IMG_4361-260428-145929.jpeg",
+    "google_rating": null,
+    "google_reviews": null
   },
   {
     "name": "Masala Mauler",
@@ -2217,7 +2461,9 @@
     "lunch": true,
     "dinner": true,
     "official_image": "woap-images/masala-mauler-volco-egmont-street.jpg",
-    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/IMG_3603-260717-131638.jpeg"
+    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/IMG_3603-260717-131638.jpeg",
+    "google_rating": null,
+    "google_reviews": null
   },
   {
     "name": "Messy Mouth",
@@ -2237,7 +2483,9 @@
     "lunch": true,
     "dinner": true,
     "official_image": "woap-images/messy-mouth-forage-kitchen-bar.jpg",
-    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/IMG_7854-260415-081739.jpg"
+    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/IMG_7854-260415-081739.jpg",
+    "google_rating": null,
+    "google_reviews": null
   },
   {
     "name": "Milanesa Madness",
@@ -2254,7 +2502,9 @@
     "lunch": true,
     "dinner": true,
     "official_image": "woap-images/milanesa-madness-union-square.jpg",
-    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/IMG-20260408-WA0019--1--260429-130120.jpg"
+    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/IMG-20260408-WA0019--1--260429-130120.jpg",
+    "google_rating": 4.2,
+    "google_reviews": null
   },
   {
     "name": "Military Secrets",
@@ -2271,7 +2521,9 @@
     "lunch": true,
     "dinner": true,
     "official_image": "woap-images/military-secrets-k-chicken.jpg",
-    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/07d58caf-44e7-4bfc-a734-2090add49ac3-260611-071939.jpeg"
+    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/07d58caf-44e7-4bfc-a734-2090add49ac3-260611-071939.jpeg",
+    "google_rating": null,
+    "google_reviews": null
   },
   {
     "name": "Mixed Messages",
@@ -2288,7 +2540,9 @@
     "lunch": true,
     "dinner": true,
     "official_image": "woap-images/mixed-messages-the-malthouse.jpg",
-    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/20260408_162822--1--260420-115624.jpg"
+    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/20260408_162822--1--260420-115624.jpg",
+    "google_rating": 4.5,
+    "google_reviews": null
   },
   {
     "name": "Momo Memory",
@@ -2307,7 +2561,9 @@
     "lunch": true,
     "dinner": true,
     "official_image": "woap-images/momo-memory-frankie-s-bar-eatery.jpg",
-    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/Burger-final-260428-142859.jpg"
+    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/Burger-final-260428-142859.jpg",
+    "google_rating": 4.2,
+    "google_reviews": null
   },
   {
     "name": "More Than Words",
@@ -2327,7 +2583,9 @@
     "lunch": true,
     "dinner": true,
     "official_image": "woap-images/more-than-words-the-junction.jpg",
-    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/1-260428-091043.png"
+    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/1-260428-091043.png",
+    "google_rating": 5,
+    "google_reviews": null
   },
   {
     "name": "Mouthful of Flavour",
@@ -2344,7 +2602,9 @@
     "lunch": true,
     "dinner": true,
     "official_image": "woap-images/mouthful-of-flavour-gear-street-union.jpg",
-    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/GSU-Burger-260508-140321.jpg"
+    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/GSU-Burger-260508-140321.jpg",
+    "google_rating": 4.6,
+    "google_reviews": null
   },
   {
     "name": "My Preciouuusss",
@@ -2363,7 +2623,9 @@
     "lunch": true,
     "dinner": true,
     "official_image": "woap-images/my-preciouuusss-beach-babylon.jpg",
-    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/C33E0002-04EC-424F-B8AB-A6CC728BF151-260518-124445.jpeg"
+    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/C33E0002-04EC-424F-B8AB-A6CC728BF151-260518-124445.jpeg",
+    "google_rating": null,
+    "google_reviews": null
   },
   {
     "name": "Nazakat‑e‑Boti",
@@ -2382,7 +2644,9 @@
     "lunch": true,
     "dinner": true,
     "official_image": "woap-images/nazakat-e-boti-oak-vine-restaurant.jpg",
-    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/IMG_3085-260605-154236.jpeg"
+    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/IMG_3085-260605-154236.jpeg",
+    "google_rating": 4.5,
+    "google_reviews": null
   },
   {
     "name": "New Dynasty",
@@ -2401,7 +2665,9 @@
     "lunch": true,
     "dinner": true,
     "official_image": "woap-images/new-dynasty-horseshoe-taproom.jpg",
-    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/WOAP-burger-2-260408-155003.jpg"
+    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/WOAP-burger-2-260408-155003.jpg",
+    "google_rating": null,
+    "google_reviews": null
   },
   {
     "name": "Nice 'n' Shrimple",
@@ -2418,7 +2684,9 @@
     "lunch": true,
     "dinner": true,
     "official_image": "woap-images/nice-n-shrimple-thistle-inn.jpg",
-    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/WOAP-Burger-26-260411-080348.png"
+    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/WOAP-Burger-26-260411-080348.png",
+    "google_rating": null,
+    "google_reviews": null
   },
   {
     "name": "No Glove, No Love",
@@ -2437,7 +2705,9 @@
     "lunch": true,
     "dinner": true,
     "official_image": "woap-images/no-glove-no-love-dirty-burger-petone.jpg",
-    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/No-Glove-No-love-BEST-260605-112339.jpg"
+    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/No-Glove-No-love-BEST-260605-112339.jpg",
+    "google_rating": 4.4,
+    "google_reviews": null
   },
   {
     "name": "Off the Record",
@@ -2454,7 +2724,9 @@
     "lunch": true,
     "dinner": false,
     "official_image": "woap-images/off-the-record-caucus-restaurant.jpg",
-    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/Screenshot-2026-06-05-102639-260605-082710.png"
+    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/Screenshot-2026-06-05-102639-260605-082710.png",
+    "google_rating": null,
+    "google_reviews": null
   },
   {
     "name": "Oink Royale",
@@ -2471,7 +2743,9 @@
     "lunch": true,
     "dinner": true,
     "official_image": "woap-images/oink-royale-hei-restaurant.jpg",
-    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/image3-260608-092504.jpeg"
+    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/image3-260608-092504.jpeg",
+    "google_rating": 4.6,
+    "google_reviews": null
   },
   {
     "name": "Onion Breath",
@@ -2490,7 +2764,9 @@
     "lunch": true,
     "dinner": true,
     "official_image": "woap-images/onion-breath-chouchou.jpg",
-    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/Edit---WOAP-Burg-26-260713-082658.png"
+    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/Edit---WOAP-Burg-26-260713-082658.png",
+    "google_rating": null,
+    "google_reviews": null
   },
   {
     "name": "Paua Pavarotti",
@@ -2507,7 +2783,9 @@
     "lunch": true,
     "dinner": true,
     "official_image": "woap-images/paua-pavarotti-wellington-seamarket-porirua.jpg",
-    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/WOAP-2026---Wellington-Seamarket---Porirua-260520-073117.jpg"
+    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/WOAP-2026---Wellington-Seamarket---Porirua-260520-073117.jpg",
+    "google_rating": null,
+    "google_reviews": null
   },
   {
     "name": "PB&J Brisket",
@@ -2524,7 +2802,9 @@
     "lunch": false,
     "dinner": true,
     "official_image": "woap-images/pb-j-brisket-the-angus-restaurant-and-bar.jpg",
-    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/PB-J-Brisket-Burger-260414-160233.jpeg"
+    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/PB-J-Brisket-Burger-260414-160233.jpeg",
+    "google_rating": 4.7,
+    "google_reviews": null
   },
   {
     "name": "Petite Yarn",
@@ -2544,7 +2824,9 @@
     "lunch": true,
     "dinner": true,
     "official_image": "woap-images/petite-yarn-d-j-vu.jpg",
-    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/WOAP-burger-260606-202957.jpg"
+    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/WOAP-burger-260606-202957.jpg",
+    "google_rating": null,
+    "google_reviews": null
   },
   {
     "name": "Pho-Chick Sakes",
@@ -2561,7 +2843,9 @@
     "lunch": true,
     "dinner": true,
     "official_image": "woap-images/pho-chick-sakes-pho-viet-street-food.jpg",
-    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/PhoVietBurger_2026-2-260608-083003.jpg"
+    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/PhoVietBurger_2026-2-260608-083003.jpg",
+    "google_rating": 4.4,
+    "google_reviews": null
   },
   {
     "name": "Pig in the Hen House",
@@ -2578,7 +2862,9 @@
     "lunch": true,
     "dinner": true,
     "official_image": "woap-images/pig-in-the-hen-house-the-tote.jpg",
-    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/The-Tote-HERO-260518-123932.jpg"
+    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/The-Tote-HERO-260518-123932.jpg",
+    "google_rating": null,
+    "google_reviews": null
   },
   {
     "name": "Plum't-based",
@@ -2601,7 +2887,9 @@
     "lunch": true,
     "dinner": false,
     "official_image": "woap-images/plum-t-based-vonuts.jpg",
-    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/1000070489-260415-161407.png"
+    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/1000070489-260415-161407.png",
+    "google_rating": null,
+    "google_reviews": null
   },
   {
     "name": "Pō Kawakawa Ana",
@@ -2623,7 +2911,9 @@
     "lunch": true,
     "dinner": true,
     "official_image": "woap-images/p-kawakawa-ana-the-botanist.jpg",
-    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/Botanist-WOAP-1-260415-213614.jpeg"
+    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/Botanist-WOAP-1-260415-213614.jpeg",
+    "google_rating": 4.3,
+    "google_reviews": null
   },
   {
     "name": "Porko Rokko",
@@ -2642,7 +2932,9 @@
     "lunch": true,
     "dinner": true,
     "official_image": "woap-images/porko-rokko-mediterranean-foods-trattoria-and-deli.jpg",
-    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/PXL_20260415_012420634-2-260415-145304.jpg"
+    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/PXL_20260415_012420634-2-260415-145304.jpg",
+    "google_rating": null,
+    "google_reviews": null
   },
   {
     "name": "Pork Punisher",
@@ -2659,7 +2951,9 @@
     "lunch": true,
     "dinner": false,
     "official_image": "woap-images/pork-punisher-volco-the-terrace.jpg",
-    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/IMG_7544-260504-102809.jpeg"
+    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/IMG_7544-260504-102809.jpeg",
+    "google_rating": null,
+    "google_reviews": null
   },
   {
     "name": "Porteña!",
@@ -2678,7 +2972,9 @@
     "lunch": true,
     "dinner": true,
     "official_image": "woap-images/porte-a-one80-restaurant.jpg",
-    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/IMG_20260428_151846-260428-171307.jpg"
+    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/IMG_20260428_151846-260428-171307.jpg",
+    "google_rating": null,
+    "google_reviews": null
   },
   {
     "name": "Ram Rod",
@@ -2695,7 +2991,9 @@
     "lunch": true,
     "dinner": true,
     "official_image": "woap-images/ram-rod-panhead-tasting-room-upper-hutt.jpg",
-    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/Panhead_Burger-12-260708-092416.jpg"
+    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/Panhead_Burger-12-260708-092416.jpg",
+    "google_rating": null,
+    "google_reviews": null
   },
   {
     "name": "Read All About It",
@@ -2712,7 +3010,9 @@
     "lunch": true,
     "dinner": true,
     "official_image": "woap-images/read-all-about-it-the-featherston-city-tavern.jpg",
-    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/FEA-WOAP-Burger--26-copy-260414-124946.jpg"
+    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/FEA-WOAP-Burger--26-copy-260414-124946.jpg",
+    "google_rating": null,
+    "google_reviews": null
   },
   {
     "name": "reduX-Tudo",
@@ -2731,7 +3031,9 @@
     "lunch": true,
     "dinner": true,
     "official_image": "woap-images/redux-tudo-bebemos.jpg",
-    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/IMG_9601-260415-142615.jpg"
+    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/IMG_9601-260415-142615.jpg",
+    "google_rating": 4.4,
+    "google_reviews": null
   },
   {
     "name": "Rumour Has it",
@@ -2751,7 +3053,9 @@
     "lunch": true,
     "dinner": false,
     "official_image": "woap-images/rumour-has-it-kakariki-coffee.jpg",
-    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/1000018170-260411-235025.jpg"
+    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/1000018170-260411-235025.jpg",
+    "google_rating": 4.7,
+    "google_reviews": null
   },
   {
     "name": "Saigon Shaking",
@@ -2770,7 +3074,9 @@
     "lunch": true,
     "dinner": true,
     "official_image": "woap-images/saigon-shaking-saigon-delights.jpg",
-    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/63a42a8a-a6e0-4fc6-a91b-760c61710242-260401-214337.jpg"
+    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/63a42a8a-a6e0-4fc6-a91b-760c61710242-260401-214337.jpg",
+    "google_rating": null,
+    "google_reviews": null
   },
   {
     "name": "Saigon Sizzle",
@@ -2789,7 +3095,9 @@
     "lunch": true,
     "dinner": true,
     "official_image": "woap-images/saigon-sizzle-rock-yard-restaurant.jpg",
-    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/IMG_5230-260415-212203.jpeg"
+    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/IMG_5230-260415-212203.jpeg",
+    "google_rating": 4.7,
+    "google_reviews": null
   },
   {
     "name": "Saint Pattie",
@@ -2808,7 +3116,9 @@
     "lunch": true,
     "dinner": true,
     "official_image": "woap-images/saint-pattie-o-malleys-bar-kitchen.jpg",
-    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/O-Malleys-16-260521-135030.png"
+    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/O-Malleys-16-260521-135030.png",
+    "google_rating": 4.7,
+    "google_reviews": null
   },
   {
     "name": "Sambal Whisper",
@@ -2827,7 +3137,9 @@
     "lunch": true,
     "dinner": false,
     "official_image": "woap-images/sambal-whisper-pandan-asian-cuisine.jpg",
-    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/IMG_3146-260415-085732.png"
+    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/IMG_3146-260415-085732.png",
+    "google_rating": null,
+    "google_reviews": null
   },
   {
     "name": "Say Less Espresso",
@@ -2846,7 +3158,9 @@
     "lunch": false,
     "dinner": true,
     "official_image": "woap-images/say-less-espresso-the-library.jpg",
-    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/LIB0038-WOAP-hero-burger_vf1-260522-145423.png"
+    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/LIB0038-WOAP-hero-burger_vf1-260522-145423.png",
+    "google_rating": 4.5,
+    "google_reviews": null
   },
   {
     "name": "Say No More",
@@ -2865,7 +3179,9 @@
     "lunch": true,
     "dinner": true,
     "official_image": "woap-images/say-no-more-waterfront-bar-kitchen.jpg",
-    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/KCDC---WOAP---AMENDED-EDITS--3-260522-121523.jpeg"
+    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/KCDC---WOAP---AMENDED-EDITS--3-260522-121523.jpeg",
+    "google_rating": 4.3,
+    "google_reviews": null
   },
   {
     "name": "Schnitzel Von Crumb",
@@ -2884,7 +3200,9 @@
     "lunch": true,
     "dinner": true,
     "official_image": "woap-images/schnitzel-von-crumb-arcimboldi.jpg",
-    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/IMG_9236-260415-185757.jpg"
+    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/IMG_9236-260415-185757.jpg",
+    "google_rating": 4.6,
+    "google_reviews": null
   },
   {
     "name": "Seaside Sichuan Deluxe",
@@ -2901,7 +3219,9 @@
     "lunch": true,
     "dinner": true,
     "official_image": "woap-images/seaside-sichuan-deluxe-little-sprig.jpg",
-    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/New-woap-260429-182217.jpg"
+    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/New-woap-260429-182217.jpg",
+    "google_rating": 4.7,
+    "google_reviews": null
   },
   {
     "name": "Second Mention",
@@ -2918,7 +3238,9 @@
     "lunch": true,
     "dinner": true,
     "official_image": "woap-images/second-mention-intercontinental-hotel-wellington.jpg",
-    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/GPO-and-Lobby--1--260430-104947.jpg"
+    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/GPO-and-Lobby--1--260430-104947.jpg",
+    "google_rating": null,
+    "google_reviews": null
   },
   {
     "name": "Secret de Polishinelle",
@@ -2937,7 +3259,9 @@
     "lunch": true,
     "dinner": false,
     "official_image": "woap-images/secret-de-polishinelle-the-polish-sausage-company.jpg",
-    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/PolishSausageCompany-highresolution-3-260426-171040.jpg"
+    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/PolishSausageCompany-highresolution-3-260426-171040.jpg",
+    "google_rating": null,
+    "google_reviews": null
   },
   {
     "name": "Secret Kawakawa Stash",
@@ -2954,7 +3278,9 @@
     "lunch": false,
     "dinner": true,
     "official_image": "woap-images/secret-kawakawa-stash-el-barrio.jpg",
-    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/IMG_20260429_144137476-260429-143403.jpg"
+    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/IMG_20260429_144137476-260429-143403.jpg",
+    "google_rating": null,
+    "google_reviews": null
   },
   {
     "name": "Seekh No Further",
@@ -2971,7 +3297,9 @@
     "lunch": true,
     "dinner": true,
     "official_image": "woap-images/seekh-no-further-masala-cafe-bar.jpg",
-    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/D75_2855-260407-194703.jpeg"
+    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/D75_2855-260407-194703.jpeg",
+    "google_rating": null,
+    "google_reviews": null
   },
   {
     "name": "Seoul Fire",
@@ -2990,7 +3318,9 @@
     "lunch": true,
     "dinner": true,
     "official_image": "woap-images/seoul-fire-platform-145.jpg",
-    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/seoul-fire145-260505-175439.png"
+    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/seoul-fire145-260505-175439.png",
+    "google_rating": null,
+    "google_reviews": null
   },
   {
     "name": "Sheik Whispered",
@@ -3009,7 +3339,9 @@
     "lunch": false,
     "dinner": true,
     "official_image": "woap-images/sheik-whispered-jugnu-s-little-india.jpg",
-    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/Copy-of-Jugnu-s-Little-India---vertical-260610-150046.jpeg"
+    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/Copy-of-Jugnu-s-Little-India---vertical-260610-150046.jpeg",
+    "google_rating": 4.7,
+    "google_reviews": null
   },
   {
     "name": "Silent Treatment",
@@ -3029,7 +3361,9 @@
     "lunch": false,
     "dinner": true,
     "official_image": "woap-images/silent-treatment-rock-salt-bar-grill.jpg",
-    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/IMG_5758-2-260428-215113.jpeg"
+    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/IMG_5758-2-260428-215113.jpeg",
+    "google_rating": null,
+    "google_reviews": null
   },
   {
     "name": "Sip 'n' Slider",
@@ -3046,7 +3380,9 @@
     "lunch": false,
     "dinner": true,
     "official_image": "woap-images/sip-n-slider-bar-up-rosella.jpg",
-    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/IMG_5118-2-260518-111335.jpg"
+    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/IMG_5118-2-260518-111335.jpg",
+    "google_rating": null,
+    "google_reviews": null
   },
   {
     "name": "Smoke and Tell",
@@ -3066,7 +3402,9 @@
     "lunch": true,
     "dinner": true,
     "official_image": "woap-images/smoke-and-tell-keihei-chicken.jpg",
-    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/1777956243756--1--260528-134801.png"
+    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/1777956243756--1--260528-134801.png",
+    "google_rating": null,
+    "google_reviews": null
   },
   {
     "name": "Smoke 'n' Mirrors",
@@ -3086,7 +3424,9 @@
     "lunch": true,
     "dinner": true,
     "official_image": "woap-images/smoke-n-mirrors-otto-champagneria-and-beer-hall.jpg",
-    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/Otto-WOAP-260415-215805.jpeg"
+    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/Otto-WOAP-260415-215805.jpeg",
+    "google_rating": null,
+    "google_reviews": null
   },
   {
     "name": "Smokey Sunset",
@@ -3103,7 +3443,9 @@
     "lunch": true,
     "dinner": true,
     "official_image": "woap-images/smokey-sunset-shed-22.jpg",
-    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/SHE-Burger-260508-135542.jpg"
+    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/SHE-Burger-260508-135542.jpg",
+    "google_rating": null,
+    "google_reviews": null
   },
   {
     "name": "Smoky Pineapple Supreme",
@@ -3122,7 +3464,9 @@
     "lunch": true,
     "dinner": true,
     "official_image": "woap-images/smoky-pineapple-supreme-samick-cafe-bar.jpg",
-    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/WhatsApp-Image-2026-04-29-at-12-23-24-PM-260429-112221.jpeg"
+    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/WhatsApp-Image-2026-04-29-at-12-23-24-PM-260429-112221.jpeg",
+    "google_rating": 4.6,
+    "google_reviews": null
   },
   {
     "name": "Speak No Evil",
@@ -3139,7 +3483,9 @@
     "lunch": true,
     "dinner": true,
     "official_image": "woap-images/speak-no-evil-gorilla-burger-petone.jpg",
-    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/Gorilla-Burger-260508-124851.jpg"
+    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/Gorilla-Burger-260508-124851.jpg",
+    "google_rating": null,
+    "google_reviews": null
   },
   {
     "name": "Spicy Talk",
@@ -3159,7 +3505,9 @@
     "lunch": true,
     "dinner": true,
     "official_image": "woap-images/spicy-talk-chow.jpg",
-    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/CHW0089-WOAP-Hero-Image_vf2-pdf-260522-150454.png"
+    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/CHW0089-WOAP-Hero-Image_vf2-pdf-260522-150454.png",
+    "google_rating": 4.2,
+    "google_reviews": null
   },
   {
     "name": "Spilling the Beans",
@@ -3179,7 +3527,9 @@
     "lunch": true,
     "dinner": true,
     "official_image": "woap-images/spilling-the-beans-get-fixed-bicycle-cafe-panhead-bar.jpg",
-    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/WOAP-2026---Get-Fixed-260520-071304.jpg"
+    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/WOAP-2026---Get-Fixed-260520-071304.jpg",
+    "google_rating": null,
+    "google_reviews": null
   },
   {
     "name": "Spill the Bun",
@@ -3199,7 +3549,9 @@
     "lunch": true,
     "dinner": true,
     "official_image": "woap-images/spill-the-bun-the-lab-victoria-street-precinct.jpg",
-    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/1000036518-260501-213125.jpg"
+    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/1000036518-260501-213125.jpg",
+    "google_rating": null,
+    "google_reviews": null
   },
   {
     "name": "Spill The Sauce",
@@ -3219,7 +3571,9 @@
     "lunch": false,
     "dinner": true,
     "official_image": "woap-images/spill-the-sauce-lola-rouge-restaurant-bar.jpg",
-    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/Image-for-submssion-260422-091420.jpg"
+    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/Image-for-submssion-260422-091420.jpg",
+    "google_rating": 4.1,
+    "google_reviews": null
   },
   {
     "name": "Spill the T-G",
@@ -3236,7 +3590,9 @@
     "lunch": true,
     "dinner": true,
     "official_image": "woap-images/spill-the-t-g-two-grey.jpg",
-    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/Two-Grey-260430-104551.jpg"
+    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/Two-Grey-260430-104551.jpg",
+    "google_rating": null,
+    "google_reviews": null
   },
   {
     "name": "Squeal the Deal",
@@ -3255,7 +3611,9 @@
     "lunch": true,
     "dinner": true,
     "official_image": "woap-images/squeal-the-deal-the-old-quarter.jpg",
-    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/TheOldQuarterBurger_210526-8-260602-125602.jpg"
+    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/TheOldQuarterBurger_210526-8-260602-125602.jpg",
+    "google_rating": 4.6,
+    "google_reviews": null
   },
   {
     "name": "Sticky Strike",
@@ -3274,7 +3632,9 @@
     "lunch": true,
     "dinner": true,
     "official_image": "woap-images/sticky-strike-the-lanes-bar-bowling.jpg",
-    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/WOAP2026-260415-143530.jpg"
+    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/WOAP2026-260415-143530.jpg",
+    "google_rating": null,
+    "google_reviews": null
   },
   {
     "name": "Stokes Valley Beast",
@@ -3291,7 +3651,9 @@
     "lunch": true,
     "dinner": true,
     "official_image": "woap-images/stokes-valley-beast-the-hardware-bar-and-restaurant.jpg",
-    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/IMG_8597-260602-124935.jpeg"
+    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/IMG_8597-260602-124935.jpeg",
+    "google_rating": null,
+    "google_reviews": null
   },
   {
     "name": "Story Teller",
@@ -3308,7 +3670,9 @@
     "lunch": true,
     "dinner": true,
     "official_image": "woap-images/story-teller-tuatara-tap-room.jpg",
-    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/TT-Burger-260508-140744.jpg"
+    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/TT-Burger-260508-140744.jpg",
+    "google_rating": null,
+    "google_reviews": null
   },
   {
     "name": "Stout & About",
@@ -3325,7 +3689,9 @@
     "lunch": true,
     "dinner": true,
     "official_image": "woap-images/stout-about-the-old-bailey.jpg",
-    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/The-Old-Bailey-HERO-260518-123824.jpg"
+    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/The-Old-Bailey-HERO-260518-123824.jpg",
+    "google_rating": 4.3,
+    "google_reviews": null
   },
   {
     "name": "Sunday Secret",
@@ -3342,7 +3708,9 @@
     "lunch": true,
     "dinner": false,
     "official_image": "woap-images/sunday-secret-harbourside-market.jpg",
-    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/Sunday-Secret-260605-112517.jpg"
+    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/Sunday-Secret-260605-112517.jpg",
+    "google_rating": null,
+    "google_reviews": null
   },
   {
     "name": "Talk Birdy to Me",
@@ -3359,7 +3727,9 @@
     "lunch": true,
     "dinner": true,
     "official_image": "woap-images/talk-birdy-to-me-the-white-swan-country-hotel.jpg",
-    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/Screenshot-2026-04-15-at-12-09-14-PM-260415-105432.png"
+    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/Screenshot-2026-04-15-at-12-09-14-PM-260415-105432.png",
+    "google_rating": 4.2,
+    "google_reviews": null
   },
   {
     "name": "Talk of the Tide",
@@ -3376,7 +3746,9 @@
     "lunch": true,
     "dinner": true,
     "official_image": "woap-images/talk-of-the-tide-the-jetty-plimmerton.jpg",
-    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/WOAP-2026---The-Jetty-260520-072951.jpg"
+    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/WOAP-2026---The-Jetty-260520-072951.jpg",
+    "google_rating": 4.7,
+    "google_reviews": null
   },
   {
     "name": "Talk Tikka To Me",
@@ -3396,7 +3768,9 @@
     "lunch": true,
     "dinner": false,
     "official_image": "woap-images/talk-tikka-to-me-smith-the-grocer.jpg",
-    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/WOAP-Burger-2026-260608-092006.jpg"
+    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/WOAP-Burger-2026-260608-092006.jpg",
+    "google_rating": 4.4,
+    "google_reviews": null
   },
   {
     "name": "Tang65",
@@ -3415,7 +3789,9 @@
     "lunch": true,
     "dinner": false,
     "official_image": "woap-images/tang65-tutaki-cafe.jpg",
-    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/TUTAKI-Cafe--260518-120122.jpg"
+    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/TUTAKI-Cafe--260518-120122.jpg",
+    "google_rating": null,
+    "google_reviews": null
   },
   {
     "name": "Tell Your Friends",
@@ -3432,7 +3808,9 @@
     "lunch": true,
     "dinner": true,
     "official_image": "woap-images/tell-your-friends-meltdown-burgers.jpg",
-    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/WOAP-2026---Meltdown-260520-072304.jpg"
+    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/WOAP-2026---Meltdown-260520-072304.jpg",
+    "google_rating": 4,
+    "google_reviews": null
   },
   {
     "name": "Teriyaki Heatwave",
@@ -3449,7 +3827,9 @@
     "lunch": true,
     "dinner": false,
     "official_image": "woap-images/teriyaki-heatwave-yoshi-sushi-bento.jpg",
-    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/03_06_2026-Yoshi-Sushi-WOAP-burger-photo-A-Teriyaki-Heatwave-20260603_170617-1--260606-195447.jpg"
+    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/03_06_2026-Yoshi-Sushi-WOAP-burger-photo-A-Teriyaki-Heatwave-20260603_170617-1--260606-195447.jpg",
+    "google_rating": null,
+    "google_reviews": null
   },
   {
     "name": "That's Amore",
@@ -3466,7 +3846,9 @@
     "lunch": true,
     "dinner": false,
     "official_image": "woap-images/that-s-amore-wellington-seamarket-lambton-quay.jpg",
-    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/IMG_2074-260604-105831.jpg"
+    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/IMG_2074-260604-105831.jpg",
+    "google_rating": null,
+    "google_reviews": null
   },
   {
     "name": "T H Chicken",
@@ -3483,7 +3865,9 @@
     "lunch": true,
     "dinner": true,
     "official_image": "woap-images/t-h-chicken-the-empire.jpg",
-    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/WOAP-BURGER-PIC-2026--260429-190721.jpg"
+    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/WOAP-BURGER-PIC-2026--260429-190721.jpg",
+    "google_rating": null,
+    "google_reviews": null
   },
   {
     "name": "The 60gram Rumour",
@@ -3500,7 +3884,9 @@
     "lunch": true,
     "dinner": false,
     "official_image": "woap-images/the-60gram-rumour-columbus-coffee-porirua.jpg",
-    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/WOAP-2026---Columbus-Coffee-260520-070619.jpg"
+    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/WOAP-2026---Columbus-Coffee-260520-070619.jpg",
+    "google_rating": 4.2,
+    "google_reviews": null
   },
   {
     "name": "The Big Boil Up",
@@ -3519,7 +3905,9 @@
     "lunch": true,
     "dinner": true,
     "official_image": "woap-images/the-big-boil-up-the-crab-shack.jpg",
-    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/IMG_5495CCCC-260429-160301.jpg"
+    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/IMG_5495CCCC-260429-160301.jpg",
+    "google_rating": 4.3,
+    "google_reviews": null
   },
   {
     "name": "The B.P.M",
@@ -3539,7 +3927,9 @@
     "lunch": true,
     "dinner": true,
     "official_image": "woap-images/the-b-p-m-qt-wellington.jpg",
-    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/QT_APRIL_2026_063_small-260429-090629.jpg"
+    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/QT_APRIL_2026_063_small-260429-090629.jpg",
+    "google_rating": 4.5,
+    "google_reviews": null
   },
   {
     "name": "The Bula Bird",
@@ -3556,7 +3946,9 @@
     "lunch": false,
     "dinner": true,
     "official_image": "woap-images/the-bula-bird-lulu-bar.jpg",
-    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/LuluMar2026-10-260414-090140.jpg"
+    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/LuluMar2026-10-260414-090140.jpg",
+    "google_rating": 4.4,
+    "google_reviews": null
   },
   {
     "name": "The buzz",
@@ -3576,7 +3968,9 @@
     "lunch": true,
     "dinner": false,
     "official_image": "woap-images/the-buzz-gemini-cafe-eatery.jpg",
-    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/IMG_5971--1--260605-090923.jpeg"
+    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/IMG_5971--1--260605-090923.jpeg",
+    "google_rating": 4.7,
+    "google_reviews": null
   },
   {
     "name": "The Dirty Peri Chicken",
@@ -3593,7 +3987,9 @@
     "lunch": true,
     "dinner": true,
     "official_image": "woap-images/the-dirty-peri-chicken-7-bar-and-eatery.jpg",
-    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/Screenshot-2026-06-02-152412-260602-132440.png"
+    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/Screenshot-2026-06-02-152412-260602-132440.png",
+    "google_rating": null,
+    "google_reviews": null
   },
   {
     "name": "The Egg That Cheated",
@@ -3612,7 +4008,9 @@
     "lunch": true,
     "dinner": true,
     "official_image": "woap-images/the-egg-that-cheated-mexico.jpg",
-    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/WOAP-pic-15-260505-105031.jpg"
+    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/WOAP-pic-15-260505-105031.jpg",
+    "google_rating": 4.1,
+    "google_reviews": null
   },
   {
     "name": "The Emerald Thai Tale",
@@ -3629,7 +4027,9 @@
     "lunch": true,
     "dinner": true,
     "official_image": "woap-images/the-emerald-thai-tale-phuthai-esarn-restaurant.jpg",
-    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/IMG_3898-260429-190034.jpeg"
+    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/IMG_3898-260429-190034.jpeg",
+    "google_rating": null,
+    "google_reviews": null
   },
   {
     "name": "The French Connection",
@@ -3646,7 +4046,9 @@
     "lunch": true,
     "dinner": true,
     "official_image": "woap-images/the-french-connection-arborist-rooftop-bar-eatery.jpg",
-    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/ARBMar2026-5--1--260414-084541.jpg"
+    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/ARBMar2026-5--1--260414-084541.jpg",
+    "google_rating": null,
+    "google_reviews": null
   },
   {
     "name": "The G.O.A.T",
@@ -3663,7 +4065,9 @@
     "lunch": true,
     "dinner": true,
     "official_image": "woap-images/the-g-o-a-t-paraparaumu-beach-bowling-club.jpg",
-    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/KCDC_WOAPBURGERSHOOT_HIRES-2-260522-120244.jpeg"
+    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/KCDC_WOAPBURGERSHOOT_HIRES-2-260522-120244.jpeg",
+    "google_rating": null,
+    "google_reviews": null
   },
   {
     "name": "The Gossip Chick",
@@ -3682,7 +4086,9 @@
     "lunch": true,
     "dinner": true,
     "official_image": "woap-images/the-gossip-chick-columbus-coffee-wellington-cbd.jpg",
-    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/WOAP-Gossip-Chick-260415-081530.jpeg"
+    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/WOAP-Gossip-Chick-260415-081530.jpeg",
+    "google_rating": 4.2,
+    "google_reviews": null
   },
   {
     "name": "The Grand Prawn Star",
@@ -3699,7 +4105,9 @@
     "lunch": true,
     "dinner": true,
     "official_image": "woap-images/the-grand-prawn-star-the-grand.jpg",
-    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/AEC70EE4-DF84-487F-8300-3C1E771AA479-260605-101228.png"
+    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/AEC70EE4-DF84-487F-8300-3C1E771AA479-260605-101228.png",
+    "google_rating": 4.2,
+    "google_reviews": null
   },
   {
     "name": "The Grapevine",
@@ -3718,7 +4126,9 @@
     "lunch": true,
     "dinner": true,
     "official_image": "woap-images/the-grapevine-parrotdog-bar.jpg",
-    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/IMG_3594-260717-074354.jpeg"
+    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/IMG_3594-260717-074354.jpeg",
+    "google_rating": null,
+    "google_reviews": null
   },
   {
     "name": "The Hidden Embers",
@@ -3735,7 +4145,9 @@
     "lunch": true,
     "dinner": true,
     "official_image": "woap-images/the-hidden-embers-eva-pub.jpg",
-    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/IMG_20260429_143551801-260429-143859.jpg"
+    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/IMG_20260429_143551801-260429-143859.jpg",
+    "google_rating": 4.3,
+    "google_reviews": null
   },
   {
     "name": "The HogFather",
@@ -3754,7 +4166,9 @@
     "lunch": true,
     "dinner": true,
     "official_image": "woap-images/the-hogfather-sweet-mother-s-kitchen.jpg",
-    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/Port-2026-woap-260605-093638.jpg"
+    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/Port-2026-woap-260605-093638.jpg",
+    "google_rating": 4.2,
+    "google_reviews": null
   },
   {
     "name": "The KC Smokehouse",
@@ -3773,7 +4187,9 @@
     "lunch": true,
     "dinner": true,
     "official_image": "woap-images/the-kc-smokehouse-winner-winner.jpg",
-    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/IMG_6820-260429-152345.jpeg"
+    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/IMG_6820-260429-152345.jpeg",
+    "google_rating": null,
+    "google_reviews": null
   },
   {
     "name": "The Meatballer",
@@ -3793,7 +4209,9 @@
     "lunch": true,
     "dinner": false,
     "official_image": "woap-images/the-meatballer-dough-bakery.jpg",
-    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/IMG_4937-260606-211351.jpeg"
+    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/IMG_4937-260606-211351.jpeg",
+    "google_rating": 4.4,
+    "google_reviews": null
   },
   {
     "name": "The Misinformation",
@@ -3810,7 +4228,9 @@
     "lunch": true,
     "dinner": false,
     "official_image": "woap-images/the-misinformation-the-coffee-cart.jpg",
-    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/WOAP-2026---Elsdon-Coffee-Cart-260520-073213.jpg"
+    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/WOAP-2026---Elsdon-Coffee-Cart-260520-073213.jpg",
+    "google_rating": null,
+    "google_reviews": null
   },
   {
     "name": "The Penh Parma",
@@ -3829,7 +4249,9 @@
     "lunch": true,
     "dinner": true,
     "official_image": "woap-images/the-penh-parma-mr-go-s.jpg",
-    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/Mr-Go-s-Burger-Photo-260520-110339.jpg"
+    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/Mr-Go-s-Burger-Photo-260520-110339.jpg",
+    "google_rating": 4.6,
+    "google_reviews": null
   },
   {
     "name": "The Pickle Prince",
@@ -3848,7 +4270,9 @@
     "lunch": true,
     "dinner": true,
     "official_image": "woap-images/the-pickle-prince-kisa.jpg",
-    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/_DSC8624-260608-130610.jpg"
+    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/_DSC8624-260608-130610.jpg",
+    "google_rating": 4.7,
+    "google_reviews": null
   },
   {
     "name": "The Porkshire",
@@ -3865,7 +4289,9 @@
     "lunch": true,
     "dinner": true,
     "official_image": "woap-images/the-porkshire-gibbons-hotel.jpg",
-    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/Gibbons-Hotel-HERO-260518-123527.jpg"
+    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/Gibbons-Hotel-HERO-260518-123527.jpg",
+    "google_rating": null,
+    "google_reviews": null
   },
   {
     "name": "The Rice Age 2",
@@ -3886,7 +4312,9 @@
     "lunch": true,
     "dinner": true,
     "official_image": "woap-images/the-rice-age-2-the-bento-bar.jpg",
-    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/TheRiceAge2---C-260429-212749.png"
+    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/TheRiceAge2---C-260429-212749.png",
+    "google_rating": 5,
+    "google_reviews": null
   },
   {
     "name": "The Root of all Evil",
@@ -3905,7 +4333,9 @@
     "lunch": true,
     "dinner": true,
     "official_image": "woap-images/the-root-of-all-evil-panhead-tory-street.jpg",
-    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/DSC_3487-260415-134011.jpg"
+    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/DSC_3487-260415-134011.jpg",
+    "google_rating": null,
+    "google_reviews": null
   },
   {
     "name": "The Rumour Mill",
@@ -3922,7 +4352,9 @@
     "lunch": true,
     "dinner": false,
     "official_image": "woap-images/the-rumour-mill-peppermill-cafe.jpg",
-    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/WOAP-2026---Peppermill-260520-072356.jpg"
+    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/WOAP-2026---Peppermill-260520-072356.jpg",
+    "google_rating": null,
+    "google_reviews": null
   },
   {
     "name": "The Serious Hui",
@@ -3939,7 +4371,9 @@
     "lunch": true,
     "dinner": false,
     "official_image": "woap-images/the-serious-hui-puku-pies-kai-cbd.jpg",
-    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/IMG_9476-260515-135616.jpg"
+    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/IMG_9476-260515-135616.jpg",
+    "google_rating": 4.7,
+    "google_reviews": null
   },
   {
     "name": "The Sicilian Cowboy",
@@ -3958,7 +4392,9 @@
     "lunch": true,
     "dinner": true,
     "official_image": "woap-images/the-sicilian-cowboy-ombra.jpg",
-    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/Ombra-Burger-Photo-260520-110213.jpg"
+    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/Ombra-Burger-Photo-260520-110213.jpg",
+    "google_rating": 4.6,
+    "google_reviews": null
   },
   {
     "name": "The Silence of the Lambs",
@@ -3975,7 +4411,9 @@
     "lunch": true,
     "dinner": true,
     "official_image": "woap-images/the-silence-of-the-lambs-jano-bistro.jpg",
-    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/IMG_7972-260602-151318.jpeg"
+    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/IMG_7972-260602-151318.jpeg",
+    "google_rating": null,
+    "google_reviews": null
   },
   {
     "name": "The Silent Catch",
@@ -3992,7 +4430,9 @@
     "lunch": true,
     "dinner": true,
     "official_image": "woap-images/the-silent-catch-mt-vic-chippery.jpg",
-    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/1000031682-260405-181935.png"
+    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/1000031682-260405-181935.png",
+    "google_rating": null,
+    "google_reviews": null
   },
   {
     "name": "The Southerly Stack",
@@ -4011,7 +4451,9 @@
     "lunch": true,
     "dinner": true,
     "official_image": "woap-images/the-southerly-stack-social-corner.jpg",
-    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/IMG_5914-260606-204701.jpeg"
+    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/IMG_5914-260606-204701.jpeg",
+    "google_rating": null,
+    "google_reviews": null
   },
   {
     "name": "The Street Whisper",
@@ -4030,7 +4472,9 @@
     "lunch": true,
     "dinner": true,
     "official_image": "woap-images/the-street-whisper-sushil-s-musclechef-caf.jpg",
-    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/WOAP-2026---Sushil--260520-072602.jpg"
+    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/WOAP-2026---Sushil--260520-072602.jpg",
+    "google_rating": null,
+    "google_reviews": null
   },
   {
     "name": "The Tony",
@@ -4047,7 +4491,9 @@
     "lunch": true,
     "dinner": true,
     "official_image": "woap-images/the-tony-wellington-seamarket-cuba-street.jpg",
-    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/IMG_2046--1--260604-110025.jpg"
+    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/IMG_2046--1--260604-110025.jpg",
+    "google_rating": null,
+    "google_reviews": null
   },
   {
     "name": "The Umami Kiwi on Featherston",
@@ -4067,7 +4513,9 @@
     "lunch": true,
     "dinner": true,
     "official_image": "woap-images/the-umami-kiwi-on-featherston-vivant-restaurant.jpg",
-    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/IMG_1081-260428-140032.jpeg"
+    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/IMG_1081-260428-140032.jpeg",
+    "google_rating": null,
+    "google_reviews": null
   },
   {
     "name": "The Wagyu Affair",
@@ -4084,7 +4532,9 @@
     "lunch": true,
     "dinner": true,
     "official_image": "woap-images/the-wagyu-affair-boundary-tap-kitchen.jpg",
-    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/KCDC---WOAP---AMENDED-EDITS--7-260522-120935.jpeg"
+    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/KCDC---WOAP---AMENDED-EDITS--7-260522-120935.jpeg",
+    "google_rating": 4.2,
+    "google_reviews": null
   },
   {
     "name": "Tongue in Cheek",
@@ -4103,7 +4553,9 @@
     "lunch": true,
     "dinner": true,
     "official_image": "woap-images/tongue-in-cheek-the-bridge.jpg",
-    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/IMG_1178-260415-165418.jpg"
+    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/IMG_1178-260415-165418.jpg",
+    "google_rating": 4.6,
+    "google_reviews": null
   },
   {
     "name": "Tongue Thai’d",
@@ -4122,7 +4574,9 @@
     "lunch": false,
     "dinner": true,
     "official_image": "woap-images/tongue-thai-d-gear-homestead-venue-and-bar.jpg",
-    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/WOAP-2026---Gear-Homestead-260520-071237.jpg"
+    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/WOAP-2026---Gear-Homestead-260520-071237.jpg",
+    "google_rating": null,
+    "google_reviews": null
   },
   {
     "name": "Tongue Twister",
@@ -4139,7 +4593,9 @@
     "lunch": true,
     "dinner": true,
     "official_image": "woap-images/tongue-twister-coene-s-bar-eatery.jpg",
-    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/Coenes-Burger-260508-124232.jpg"
+    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/Coenes-Burger-260508-124232.jpg",
+    "google_rating": 4.3,
+    "google_reviews": null
   },
   {
     "name": "Triple B Revival",
@@ -4158,7 +4614,9 @@
     "lunch": true,
     "dinner": true,
     "official_image": "woap-images/triple-b-revival-ernesto-s-cocina-cubana.jpg",
-    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/IMG_2814-260511-122004.jpeg"
+    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/IMG_2814-260511-122004.jpeg",
+    "google_rating": 4.5,
+    "google_reviews": null
   },
   {
     "name": "Tropic Like it's Hot",
@@ -4175,7 +4633,9 @@
     "lunch": true,
     "dinner": true,
     "official_image": "woap-images/tropic-like-it-s-hot-hotel-bristol.jpg",
-    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/HB-Burger-260508-125051.jpg"
+    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/HB-Burger-260508-125051.jpg",
+    "google_rating": 4.2,
+    "google_reviews": null
   },
   {
     "name": "Tu Meke",
@@ -4192,7 +4652,9 @@
     "lunch": true,
     "dinner": false,
     "official_image": "woap-images/tu-meke-puku-pies-kai-petone.jpg",
-    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/IMG_9547--1--260515-141916.jpg"
+    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/IMG_9547--1--260515-141916.jpg",
+    "google_rating": 4.5,
+    "google_reviews": null
   },
   {
     "name": "Tūmeke Waha",
@@ -4211,7 +4673,9 @@
     "lunch": true,
     "dinner": true,
     "official_image": "woap-images/t-meke-waha-the-innkeeper.jpg",
-    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/Untitled-design--1--260311-133620.png"
+    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/Untitled-design--1--260311-133620.png",
+    "google_rating": 4.1,
+    "google_reviews": null
   },
   {
     "name": "Turon-Me-On",
@@ -4233,7 +4697,9 @@
     "lunch": true,
     "dinner": true,
     "official_image": "woap-images/turon-me-on-zelati-dessert-cafe-porirua.jpg",
-    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/IMG-20260527-WA0031--1--260527-141610.png"
+    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/IMG-20260527-WA0031--1--260527-141610.png",
+    "google_rating": null,
+    "google_reviews": null
   },
   {
     "name": "Vadazing",
@@ -4250,7 +4716,9 @@
     "lunch": false,
     "dinner": true,
     "official_image": "woap-images/vadazing-whiskey-lima-golf.jpg",
-    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/Untitled-design-260414-094320.jpg"
+    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/Untitled-design-260414-094320.jpg",
+    "google_rating": null,
+    "google_reviews": null
   },
   {
     "name": "Veni, Vidi, Vidi",
@@ -4272,7 +4740,9 @@
     "lunch": true,
     "dinner": true,
     "official_image": "woap-images/veni-vidi-vidi-nolita.jpg",
-    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/Nolita-Woap-2-260415-220647.jpeg"
+    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/Nolita-Woap-2-260415-220647.jpeg",
+    "google_rating": 4.5,
+    "google_reviews": null
   },
   {
     "name": "Viva Voce",
@@ -4289,7 +4759,9 @@
     "lunch": true,
     "dinner": true,
     "official_image": "woap-images/viva-voce-cuba-street-tavern.jpg",
-    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/Viva-voce-burger-260415-111952.png"
+    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/Viva-voce-burger-260415-111952.png",
+    "google_rating": null,
+    "google_reviews": null
   },
   {
     "name": "Waffle On",
@@ -4309,7 +4781,9 @@
     "lunch": true,
     "dinner": false,
     "official_image": "woap-images/waffle-on-two-fat-chefs.jpg",
-    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/KCDC---WOAP---AMENDED-EDITS--1-260522-121322.jpeg"
+    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/KCDC---WOAP---AMENDED-EDITS--1-260522-121322.jpeg",
+    "google_rating": 4.7,
+    "google_reviews": null
   },
   {
     "name": "Wham Bam Thank You Lamb",
@@ -4328,7 +4802,9 @@
     "lunch": true,
     "dinner": true,
     "official_image": "woap-images/wham-bam-thank-you-lamb-sprig-fern-tawa.jpg",
-    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/WOAP-BURGER-260605-090321.jpeg"
+    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/WOAP-BURGER-260605-090321.jpeg",
+    "google_rating": null,
+    "google_reviews": null
   },
   {
     "name": "What's the buzz?",
@@ -4345,7 +4821,9 @@
     "lunch": true,
     "dinner": true,
     "official_image": "woap-images/what-s-the-buzz-elemental-eats.jpg",
-    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/WOAP-2026---Elemental-Eats-260520-070746.jpg"
+    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/WOAP-2026---Elemental-Eats-260520-070746.jpg",
+    "google_rating": null,
+    "google_reviews": null
   },
   {
     "name": "When Hanoi met Busan",
@@ -4366,7 +4844,9 @@
     "lunch": true,
     "dinner": true,
     "official_image": "woap-images/when-hanoi-met-busan-madama-butterfly.jpg",
-    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/Burger-WOAP-2026-260501-125723.jpeg"
+    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/Burger-WOAP-2026-260501-125723.jpeg",
+    "google_rating": null,
+    "google_reviews": null
   },
   {
     "name": "Whisper in the Wind",
@@ -4385,7 +4865,9 @@
     "lunch": true,
     "dinner": true,
     "official_image": "woap-images/whisper-in-the-wind-duke-of-wellington.jpg",
-    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/Hero-Shot-with-Fries-260413-114535.jpg"
+    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/Hero-Shot-with-Fries-260413-114535.jpg",
+    "google_rating": 4.2,
+    "google_reviews": null
   },
   {
     "name": "Word on the Strait",
@@ -4405,7 +4887,9 @@
     "lunch": true,
     "dinner": true,
     "official_image": "woap-images/word-on-the-strait-bluebridge-cook-strait-ferries.jpg",
-    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/IMG_4793-260415-121454.jpg"
+    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/IMG_4793-260415-121454.jpg",
+    "google_rating": null,
+    "google_reviews": null
   },
   {
     "name": "Word on the Street Benedict",
@@ -4422,7 +4906,9 @@
     "lunch": true,
     "dinner": true,
     "official_image": "woap-images/word-on-the-street-benedict-cable-top-eatery.jpg",
-    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/Woap-1-260702-151706.jpeg"
+    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/Woap-1-260702-151706.jpeg",
+    "google_rating": 4.3,
+    "google_reviews": null
   },
   {
     "name": "Yea Buoy Slider",
@@ -4442,6 +4928,8 @@
     "lunch": true,
     "dinner": true,
     "official_image": "woap-images/yea-buoy-slider-graze-wine-bar.jpg",
-    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/Graze-Wine-Bar---Yeah-Buoy-Slider-260429-151242.jpg"
+    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/Graze-Wine-Bar---Yeah-Buoy-Slider-260429-151242.jpg",
+    "google_rating": 4.9,
+    "google_reviews": null
   }
 ]

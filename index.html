@@ -447,12 +447,12 @@
   .woap-lb-topline { display:flex; align-items:center; gap:8px; flex-wrap:wrap; margin-bottom:8px; }
   .woap-tried-count { font-size:12px; font-weight:700; color:var(--wr-dark); margin-left:auto; }
   .woap-lb { border:1px solid var(--border); border-radius:12px; overflow:hidden; }
-  .woap-lb-head { display:grid; grid-template-columns:34px 1fr 74px 74px; align-items:center; gap:6px; padding:9px 12px; background:var(--wr-soft); border-bottom:1px solid var(--wr-border); }
+  .woap-lb-head { display:grid; grid-template-columns:30px 1fr 56px 56px 56px; align-items:center; gap:6px; padding:9px 12px; background:var(--wr-soft); border-bottom:1px solid var(--wr-border); }
   .woap-lb-head .woap-lb-h { font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:0.03em; color:var(--wr-deep); }
   .woap-lb-sort { font:inherit; font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:0.03em; color:var(--wr-deep); background:none; border:0; cursor:pointer; padding:0; text-align:center; display:inline-flex; align-items:center; justify-content:center; gap:3px; width:100%; }
   .woap-lb-sort.on { color:var(--wr); }
   .woap-lb-sort .caret { font-size:9px; opacity:.85; }
-  .woap-lb-row { display:grid; grid-template-columns:34px 1fr 74px 74px; align-items:center; gap:6px; padding:9px 12px; border-top:1px solid var(--border); cursor:pointer; background:var(--paper); }
+  .woap-lb-row { display:grid; grid-template-columns:30px 1fr 56px 56px 56px; align-items:center; gap:6px; padding:9px 12px; border-top:1px solid var(--border); cursor:pointer; background:var(--paper); }
   .woap-lb-row:first-child { border-top:0; }
   .woap-lb-row:hover { background:var(--wr-soft); }
   .woap-lb-row.open { background:var(--wr-soft); }
@@ -467,6 +467,9 @@
   .woap-lb-avg small { display:block; font-size:9px; font-weight:600; color:var(--ink-muted); }
   .woap-lb-avg.none { color:var(--ink-muted); font-weight:600; font-size:11px; }
   .woap-lb-count { font-size:14px; font-weight:800; color:var(--ink); text-align:center; }
+  .woap-lb-google { font-size:13.5px; font-weight:800; color:var(--wr-dark); text-align:center; }
+  .woap-lb-google small { display:block; font-size:9px; font-weight:600; color:var(--ink-muted); }
+  .woap-lb-google.none { color:var(--ink-muted); font-weight:600; font-size:11px; }
   .woap-lb-detail { grid-column:1 / -1; display:none; padding-top:4px; }
   .woap-lb-row.open + .woap-lb-detailrow { display:block; }
   .woap-lb-detailrow { display:none; padding:0 12px 12px; border-top:1px solid var(--wr-border); background:var(--wr-soft); }
@@ -998,7 +1001,10 @@ let showClubRugby     = false;   // Club Rugby tab — default OFF; reveals the 
 const WOAP_ENABLED    = true;
 let showWoap          = false;   // WOAP tab — default OFF; reveals the Burger Wellington leaderboard
 let woapView          = "board"; // "board" (leaderboard) | "map" (dedicated burger map)
-let woapLbSort        = "rating"; // leaderboard rank column: "rating" (avg stars) | "ratings" (number of ratings)
+// Default leaderboard rank column. 'google' = Google rating, 'rating' = user star-rating average.
+// Flip this one line to 'rating' once enough user ratings accrue to make the "best burger rating" the default.
+const WOAP_DEFAULT_SORT = 'google';
+let woapLbSort        = WOAP_DEFAULT_SORT; // active leaderboard rank column: "google" (Google rating) | "rating" (avg stars) | "ratings" (number of ratings)
 const WOAP_RATINGS    = {};      // burger slug → { avg, count }, batch-read from Supabase for the leaderboard
 let searchQuery       = "";      // live search string
 let DAILY_DEAL_KEYS   = new Set(); // populated after data load
@@ -1576,8 +1582,18 @@ function woapPriceNum(b) { const m = String(b.price || '').match(/[\d.]+/); retu
 
 // Leaderboard ordering. Two rankable columns: average rating and number of ratings.
 // Either way, burgers with no ratings yet sort to the bottom (alphabetical among themselves).
+function woapGoogleRating(b) { return (typeof b.google_rating === 'number') ? b.google_rating : null; }
+
 function woapLeaderboardSorted(list) {
   const arr = [...list];
+  if (woapLbSort === 'google') {                                   // rank by Google rating
+    return arr.sort((a, b) => {
+      const ga = woapGoogleRating(a), gb = woapGoogleRating(b);
+      if ((ga === null) !== (gb === null)) return ga === null ? 1 : -1;  // rated ahead of unrated (unrated last)
+      if (ga !== null && gb !== null && gb !== ga) return gb - ga;
+      return (a.name || '').localeCompare(b.name || '');
+    });
+  }
   return arr.sort((a, b) => {
     const ra = WOAP_RATINGS[woapBurgerSlug(a)] || { avg: 0, count: 0 };
     const rb = WOAP_RATINGS[woapBurgerSlug(b)] || { avg: 0, count: 0 };
@@ -1665,10 +1681,16 @@ function renderWoapRow(b, rank) {
   const avgCell = r.count
     ? `<span class="woap-lb-avg">${r.avg.toFixed(1)}<small>&#9733; avg</small></span>`
     : `<span class="woap-lb-avg none">&mdash;</span>`;
-  const rankCls = rank <= 3 && r.count ? 'woap-lb-rank top' : 'woap-lb-rank';
+  const g = woapGoogleRating(b);
+  const googleCell = (g !== null)
+    ? `<span class="woap-lb-google">${g.toFixed(1)}<small>&#9733; Google</small></span>`
+    : `<span class="woap-lb-google none">&mdash;</span>`;
+  // A row is "ranked" (shows a rank number) when it has a value for whatever the board is sorted by.
+  const ranked = woapLbSort === 'google' ? (g !== null) : !!r.count;
+  const rankCls = rank <= 3 && ranked ? 'woap-lb-rank top' : 'woap-lb-rank';
   return `
     <div class="woap-lb-row" data-lb-row="${slug}">
-      <span class="${rankCls}">${r.count ? rank : ''}</span>
+      <span class="${rankCls}">${ranked ? rank : ''}</span>
       <div class="woap-lb-cell-main">
         ${thumb}
         <div class="woap-lb-txt">
@@ -1676,6 +1698,7 @@ function renderWoapRow(b, rank) {
           <div class="woap-lb-venue">${b.venue}${b.suburb ? ' &middot; ' + suburbLabel(b.suburb) : ''}</div>
         </div>
       </div>
+      ${googleCell}
       ${avgCell}
       <span class="woap-lb-count">${r.count || 0}</span>
     </div>
@@ -1697,6 +1720,7 @@ function renderWoapBoard() {
          <div class="woap-lb-head">
            <span class="woap-lb-h" style="text-align:center;">#</span>
            <span class="woap-lb-h">Burger</span>
+           <button type="button" class="woap-lb-sort${woapLbSort === 'google' ? ' on' : ''}" data-lb-sort="google">Google${woapLbSort === 'google' ? ' ' + caret : ''}</button>
            <button type="button" class="woap-lb-sort${woapLbSort === 'rating' ? ' on' : ''}" data-lb-sort="rating">Avg${woapLbSort === 'rating' ? ' ' + caret : ''}</button>
            <button type="button" class="woap-lb-sort${woapLbSort === 'ratings' ? ' on' : ''}" data-lb-sort="ratings">Ratings${woapLbSort === 'ratings' ? ' ' + caret : ''}</button>
          </div>
