@@ -89,6 +89,11 @@
   .filter-chip { transition: all 0.15s ease; }
   .filter-chip.active { background: var(--ink); color: var(--paper); border-color: var(--ink); }
   .filter-chip:not(.active):hover { border-color: var(--ink); }
+  /* Clubs filter — a distinct purple accent so the new feature reads as its own thing, on or off. */
+  #clubsToggle { border-color: #7c3aed; color: #7c3aed; font-weight: 600; }
+  #clubsToggle:hover { border-color: #6d28d9; }
+  #clubsToggle.active { background: #7c3aed; color: #fff; border-color: #7c3aed; }
+  #clearAllFiltersBtn:hover { border-color: var(--accent); color: var(--accent); }
   .region-chip { transition: all 0.15s ease; }
   .region-chip.active { background: var(--accent); color: #fff; border-color: var(--accent) !important; }
   .region-chip:not(.active):hover { border-color: var(--accent); color: var(--accent); }
@@ -680,6 +685,8 @@
           <button class="filter-chip        px-3 py-1 rounded-full text-sm border" id="kidsToggle"         style="border-color:var(--border);">Kids Deals</button>
           <span class="text-xs select-none" style="color:var(--border);">|</span>
           <button class="filter-chip        px-3 py-1 rounded-full text-sm border" id="cosyToggle"         style="border-color:var(--border);">Cosy</button>
+          <span class="text-xs select-none" style="color:var(--border);">|</span>
+          <button class="filter-chip        px-3 py-1 rounded-full text-sm border" id="clubsToggle" title="Show Wellington's social clubs — chess, run clubs, book clubs, choirs and more — grouped by the day they meet">&#128101; Clubs</button>
         </div>
         <div class="flex items-center gap-2 flex-wrap">
           <span class="text-xs font-semibold uppercase tracking-wider shrink-0" style="color:var(--ink-muted);">Confidence</span>
@@ -688,6 +695,15 @@
         </div>
       </div>
 
+      <!-- Full reset — distinct from the suburb-only "Clear all" chip above. One tap restores the
+           exact fresh-page-load state: default region/suburbs, day All, all categories, venue
+           toggles, confidence All, search cleared, and the Clubs filter back off. -->
+      <div class="flex items-center justify-end pt-1">
+        <button id="clearAllFiltersBtn" type="button"
+                class="px-3 py-1 rounded-full text-sm border font-semibold"
+                style="border-color:var(--accent);color:var(--accent);background:var(--card);"
+                title="Reset every filter back to the default view">&#8635; Clear all filters</button>
+      </div>
 
       <div class="filter-close-row">
         <button id="filterCloseBtn" type="button"><span class="x" aria-hidden="true">&#10005;</span> Close filters</button>
@@ -969,6 +985,7 @@ let showWorldCup      = true;    // (no World Cup events in Wellington data yet 
 let showSeniorsOnly   = false;   // (no seniors deals in Wellington data — kept for filter-logic safety)
 let showKidsOnly      = false;   // when true, show only deals tagged kids: true
 let showCosyOnly      = false;   // "Cosy" filter — show only deals tagged cosy: true (warm feeds, treats, quizzes). Deep-linkable via ?cosy=1
+let showClubs         = false;   // "Clubs" filter — default OFF. club:true records stay hidden everywhere until switched on, then list under the weekday they meet
 // Club Rugby tab feature flag. Live from 2026-07-15 for the 18 July Jubilee/Hardham/Ed Chaney/
 // HD Morgan semi-finals. Set back to false if the fixture list is ever empty again — the tab
 // hides itself entirely rather than showing an empty section.
@@ -1151,6 +1168,19 @@ function groupEvents(events) {
   return groups;
 }
 
+// Social clubs (chess, run clubs, book clubs, choirs) are dateless recurring events tagged
+// club:true. They stay hidden everywhere until the Clubs filter is switched on; when on, each
+// lists under the weekday it meets so the whole club scene is browsable by day. Monthly clubs
+// (e.g. a first-Thursday book club) still appear under their weekday rather than being gated to
+// the single week their monthly meeting lands in — the filter is about showing every club that
+// meets on a given day, not just this week's occurrence.
+function clubMeetsOnDay(ev, dayName) {
+  return !!ev.club && Array.isArray(ev.days) && ev.days.indexOf(dayName) >= 0;
+}
+function sortByTitle(list) {
+  return [...list].sort((a, b) => (a.title || "").localeCompare(b.title || ""));
+}
+
 // ---------- FILTER ----------
 function dealPassesFilters(deal) {
   if (!selectedSuburbs.has(deal.suburb)) return false;
@@ -1209,12 +1239,19 @@ function render() {
     const dayEvents = SPECIAL_EVENTS.filter(ev =>
       ev.date && WEEK_DATES.some(w => w.dayName === day && w.iso === ev.date)
       && selectedSuburbs.has(ev.suburb)
+      && !ev.club         // clubs are handled separately below (their own toggle + placement)
       && !showCosyOnly    // Cosy filter is deals-only; events don't carry a cosy tag
       && !ev.club_rugby   // club rugby fixtures live only in their own Club Rugby tab
       && (ev.category !== 'sport' || (ev.world_cup ? showWorldCup : showSports))
       && matchesSearch(ev)
     );
-    const totalItems = dayDeals.length + dayEvents.length;
+    // Social clubs: only when the Clubs filter is on. Shown across all suburbs (browse every club
+    // that meets that day), independent of the suburb selection, grouped under their meeting day.
+    const dayClubs = showClubs
+      ? sortByTitle(SPECIAL_EVENTS.filter(ev =>
+          ev.club && clubMeetsOnDay(ev, day) && !showCosyOnly && matchesSearch(ev)))
+      : [];
+    const totalItems = dayDeals.length + dayEvents.length + dayClubs.length;
     const isToday = day === today;
 
     return `
@@ -1232,7 +1269,7 @@ function render() {
         <div class="px-4 pb-4 space-y-2">
           ${totalItems === 0
             ? `<div class="text-sm italic py-3" style="color:var(--ink-muted);">Nothing on ${day} matching your filters.</div>`
-            : (() => {
+            : ((dayDeals.length + dayEvents.length) === 0 ? "" : (() => {
                 const activeSuburbs = SUBURB_ORDER.filter(s => selectedSuburbs.has(s));
                 let cards;
                 if (activeSuburbs.length > 1) {
@@ -1257,7 +1294,11 @@ function render() {
                   cards = [...pinned.map(renderCard), ...food.map(renderCard), ...sortRugbyFirst(groupEvents(dayEvents)).map(renderEventCard), ...rest.map(renderCard)];
                 }
                 return cards.join("");
-              })()
+              })())
+              + (dayClubs.length
+                  ? `<div class="text-xs font-semibold uppercase tracking-wider pt-1 pb-0.5" style="color:#7c3aed;">&#128101; Clubs</div>`
+                    + dayClubs.map(renderEventCard).join("")
+                  : "")
           }
         </div>
       </section>`;
@@ -1327,6 +1368,7 @@ function renderCard(d) {
 }
 
 function sportBadge(ev) {
+  if (ev.club) return `<span class="cat-badge px-2 py-0.5 rounded" style="background:#7c3aed;color:#fff;">&#128101; Club</span>`;
   if (ev.world_cup) return `<span class="cat-badge cat-sport-football px-2 py-0.5 rounded">&#127942; World Cup</span>`;
   if (ev.sport === 'Rugby Union') return `<span class="cat-badge cat-sport-rugby px-2 py-0.5 rounded">Rugby Union</span>`;
   if (ev.sport === 'Football')   return `<span class="cat-badge cat-sport-football px-2 py-0.5 rounded">Football</span>`;
@@ -1374,6 +1416,7 @@ function renderUpcoming(upcomingDeals) {
 
   SPECIAL_EVENTS.forEach(ev => {
     if (showCosyOnly) return;    // Cosy filter is deals-only; events don't carry a cosy tag
+    if (ev.club) return;         // social clubs live only in the day-grouped view under the Clubs filter
     if (ev.club_rugby) return;   // club rugby fixtures live only in their own Club Rugby tab
     if (!selectedSuburbs.has(ev.suburb)) return;
     if (ev.category === 'sport' && !(ev.world_cup ? showWorldCup : showSports)) return;
@@ -2146,6 +2189,60 @@ document.getElementById("cosyToggle").addEventListener("click", function() {
     render();
   }
 })();
+
+// Clubs toggle (default off) — reveals the social clubs, grouped under the day each one meets.
+document.getElementById("clubsToggle").addEventListener("click", function() {
+  showClubs = !showClubs;
+  this.classList.toggle("active", showClubs);
+  render();
+});
+
+// "Clear all filters" — full reset to the exact fresh-page-load state, in one tap. Distinct from
+// the suburb-only "Clear all" chip, which only empties the suburb selection.
+function resetAllFilters() {
+  // Region + suburbs → default (mirrors the load-time narrowing to suburbs that have data).
+  selectedSuburbs.clear();
+  DEFAULT_SUBURBS.forEach(s => selectedSuburbs.add(s));
+  const present = computePresentSuburbs();
+  [...selectedSuburbs].forEach(s => { if (!present.has(s)) selectedSuburbs.delete(s); });
+  if (selectedSuburbs.size === 0) DEFAULT_SUBURBS.forEach(s => { if (present.has(s)) selectedSuburbs.add(s); });
+  updateSelectorUI();
+
+  // Day → All
+  selectedDay = "all";
+  document.querySelectorAll("[data-day]").forEach(b => b.classList.toggle("active", b.dataset.day === "all"));
+
+  // Category → every category on
+  selectedCategories.clear();
+  Object.keys(CAT_LABELS).forEach(c => selectedCategories.add(c));
+  document.querySelectorAll("[data-category]").forEach(b => b.classList.add("active"));
+
+  // Venue type → All; Confidence → All
+  chainFilter = "all";
+  document.querySelectorAll("[data-chain]").forEach(b => b.classList.toggle("active", b.dataset.chain === "all"));
+  confidenceFilter = "all";
+  document.querySelectorAll("[data-confidence]").forEach(b => b.classList.toggle("active", b.dataset.confidence === "all"));
+
+  // Venue toggles → defaults (Every Day on; Kids/Cosy/Clubs off)
+  showDailyDeals = true;
+  document.getElementById("dailyToggle").classList.add("active");
+  showKidsOnly = false;
+  document.getElementById("kidsToggle").classList.remove("active");
+  showCosyOnly = false;
+  document.getElementById("cosyToggle").classList.remove("active");
+  showClubs = false;
+  document.getElementById("clubsToggle").classList.remove("active");
+
+  // Search → cleared
+  searchQuery = "";
+  const si = document.getElementById("searchInput");
+  const sc = document.getElementById("searchClear");
+  if (si) si.value = "";
+  if (sc) sc.style.display = "none";
+
+  render();
+}
+document.getElementById("clearAllFiltersBtn").addEventListener("click", resetAllFilters);
 
 // Club Rugby tab toggle (default off)
 document.getElementById("clubRugbyToggle").addEventListener("click", function() {
@@ -3135,6 +3232,7 @@ loadData().then(() => {
     var out = [];
     (SPECIAL_EVENTS||[]).forEach(function(ev){
       if (ev.venue !== name || !eventIsPlannable(ev)) return;
+      if (ev.club && !showClubs) return;   // social clubs pin only when the Clubs filter is on
 
       if (!ev.date){
         // No weekday on file (e.g. a run of "multiple dates"): can't place it on a day, so it
@@ -3169,6 +3267,7 @@ loadData().then(() => {
     var today = todayISOStr();
     return (SPECIAL_EVENTS||[]).filter(function(ev){
       if (ev.venue !== name || !eventIsPlannable(ev)) return false;
+      if (ev.club && !showClubs) return false;   // social clubs listed only when the Clubs filter is on
       if (!ev.date) return !ev.runs_to || ev.runs_to >= today;   // recurring: keep until its run ends
       return ev.date >= today;
     }).sort(function(a, b){
