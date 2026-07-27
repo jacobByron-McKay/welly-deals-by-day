@@ -10,6 +10,17 @@
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
   gtag('config', 'G-33GXVNEQKG');
+
+  // Fire-and-forget event tracking. Deliberately deferred to the next tick so it can never sit in the
+  // click path of a button — the user's action completes and repaints first, the ping goes out after.
+  // Silently no-ops if gtag is missing (adblockers), and can never throw into a caller's handler.
+  function wdTrack(name, params){
+    try {
+      setTimeout(function(){
+        try { if (window.gtag) gtag('event', name, params || {}); } catch (_) {}
+      }, 0);
+    } catch (_) {}
+  }
 </script>
 <!-- ============================================================================
      ⚠️  SEO — DO NOT LOSE "WELLINGTON"  (read before touching meta/title/content)
@@ -2016,6 +2027,7 @@ function renderVenueProfile(name) {
 function renderDealDetail(slug) {
   const entry = DEAL_SLUGS[slug];
   if (!entry) return `<p class="sd-hint">Sorry — that deal could not be found.</p>`;
+  wdTrack('deal_view', { item_slug: slug });
   const d = entry.rep;
   const v = VENUES_MAP[d.venue] || {};
   const catLabel = CAT_LABELS[d.category] || d.category;
@@ -3442,6 +3454,7 @@ loadData().then(() => {
     view.classList.add('open'); view.setAttribute('aria-hidden','false');
     document.body.style.overflow = 'hidden';
     countEl.textContent = 'Loading map…';
+    wdTrack('map_open');
     ensureLeaflet().then(function(){
       if (!map){
         // Zoom moves to the top-right so the burger toggle can own the top-left corner.
@@ -3857,7 +3870,10 @@ loadData().then(() => {
     e.preventDefault(); e.stopPropagation();
     var slugs = (b.getAttribute('data-plan-add') || '').split('|').map(function(s){ return s.trim(); }).filter(Boolean);
     if (slugs.length > 0 && slugs.every(has)) openPanel();
-    else add(b.getAttribute('data-plan-add'));
+    else {
+      add(b.getAttribute('data-plan-add'));
+      wdTrack('plan_add', { item_slug: b.getAttribute('data-plan-add') });
+    }
   });
 
   listEl.addEventListener('click', function(e){
@@ -3875,11 +3891,12 @@ loadData().then(() => {
   listEl.addEventListener('dragover', function(e){ e.preventDefault(); });
   listEl.addEventListener('drop', function(e){ e.preventDefault(); var it = e.target.closest('.wd-plan-item'); if (it == null || dragFrom == null) return; var to = +it.getAttribute('data-idx'); if (to === dragFrom) return; var moved = items.splice(dragFrom, 1)[0]; items.splice(to, 0, moved); save(); render(); });
 
-  panel.querySelector('[data-plan-copy]').addEventListener('click', function(){ copyText(planText(), this); });
+  panel.querySelector('[data-plan-copy]').addEventListener('click', function(){ copyText(planText(), this); wdTrack('plan_share', { method: 'copy' }); });
   panel.querySelector('[data-plan-share]').addEventListener('click', function(){
     var text = planText(), btn = this;
     if (navigator.share){ navigator.share({ title: 'My ' + SITE_NAME + ' plan', text: text }).catch(function(){}); }
     else copyText(text, btn);
+    wdTrack('plan_share', { method: navigator.share ? 'native' : 'copy', stops: items.length });
   });
   panel.querySelector('[data-plan-clearall]').addEventListener('click', function(){ if (window.confirm('Clear your whole plan?')) clearAll(); });
 
