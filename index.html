@@ -1333,8 +1333,11 @@ function renderCard(d) {
     : "";
 
   const venue = VENUES_MAP[d.venue] || {};
-  const venueName = (VENUE_PANEL_ENABLED && venue._slug)
-    ? `<button type="button" class="wd-venue-link" data-venue-open="${venue._slug}">${d.venue}</button>`
+  // The venue name is a real link to the generated /venue/<slug>.html page, so crawlers,
+  // no-JS visitors and open-in-new-tab all reach it. With the panel on, the delegated
+  // click handler intercepts a plain left click and opens the in-page profile instead.
+  const venueName = venue._slug
+    ? `<a class="wd-venue-link" href="/venue/${venue._slug}.html"${VENUE_PANEL_ENABLED ? ` data-venue-open="${venue._slug}"` : ''}>${d.venue}</a>`
     : venue.google_maps_url
       ? `<a href="${venue.google_maps_url}" target="_blank" rel="noopener"
             style="color:inherit;text-decoration:underline;text-underline-offset:2px;">${d.venue}</a>`
@@ -2058,7 +2061,7 @@ function renderDealDetail(slug) {
   return `
     <p class="dd-head"><span class="cat-badge cat-${d.category} px-2 py-0.5 rounded">${catLabel}</span></p>
     <h2 class="vp-name">${d.title}</h2>
-    <p class="vp-meta"><button type="button" class="wd-venue-link" data-venue-open="${venueSlug}">${d.venue}</button> &middot; ${suburbLabel(d.suburb)}</p>
+    <p class="vp-meta"><a class="wd-venue-link" href="/venue/${venueSlug}.html" data-venue-open="${venueSlug}">${d.venue}</a> &middot; ${suburbLabel(d.suburb)}</p>
     <p class="vp-when" style="margin-top:10px;">${when}${time ? " &middot; " + time : ""}</p>
     ${conf}
     <div class="vp-actions"><button type="button" class="wd-plan-add wd-plan-add-detail" data-plan-add="${slug}" data-plan-label-on="&#10003; In your plan" data-plan-label-off="&#43; Add to plan" aria-label="Add this deal to your plan">&#43; Add to plan</button></div>
@@ -2898,7 +2901,12 @@ loadData().then(() => {
     var dt = e.target.closest('[data-deal-open]');
     if (dt) { e.preventDefault(); location.hash = 'deal/' + dt.getAttribute('data-deal-open'); return; }
     var t = e.target.closest('[data-venue-open]');
-    if (t) { e.preventDefault(); location.hash = 'venue/' + t.getAttribute('data-venue-open'); return; }
+    if (t) {
+      // A modified click on the venue's /venue/<slug>.html link belongs to the browser
+      // (new tab, new window, save target) — only a plain left click opens the panel.
+      if (t.tagName === 'A' && (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || e.button > 0)) return;
+      e.preventDefault(); location.hash = 'venue/' + t.getAttribute('data-venue-open'); return;
+    }
     // Tapping anywhere on a deal card (except its own buttons/links) opens the deal's landing page,
     // which carries the prominent "Add to plan" action.
     if (!e.target.closest('button, a, input, select, label, textarea')) {
