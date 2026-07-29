@@ -540,6 +540,20 @@
   .woap-card.bare .woap-social { display:block; border-top:0; padding-top:0; margin-top:10px; }
   .woap-photos { display:flex; gap:6px; flex-wrap:wrap; margin-bottom:10px; }
   .woap-photos img { width:66px; height:66px; object-fit:cover; border-radius:7px; border:1px solid var(--border); }
+  /* Burger photos are tap-to-enlarge. The thumbs are deliberately small (the card is a rating
+     widget, not a gallery), so the full shot lives in a lightbox rather than inline. */
+  .woap-card .woap-thumb, .woap-photos img { cursor:zoom-in; }
+  .woap-card .woap-thumb:hover, .woap-photos img:hover { border-color:var(--wr); }
+  /* z-index must clear the plan panel (1301), the highest layer on the page. */
+  .woap-lightbox { position:fixed; inset:0; z-index:1400; display:none; align-items:center; justify-content:center;
+                   background:rgba(9,14,22,0.88); padding:20px; cursor:zoom-out; }
+  .woap-lightbox.open { display:flex; }
+  .woap-lightbox img { max-width:100%; max-height:100%; width:auto; height:auto; border-radius:10px;
+                       box-shadow:0 10px 40px rgba(0,0,0,0.5); cursor:default; }
+  .woap-lightbox-close { position:absolute; top:14px; right:14px; width:42px; height:42px; border-radius:999px;
+                         border:1px solid rgba(255,255,255,0.5); background:rgba(0,0,0,0.4); color:#fff;
+                         font-size:22px; font-weight:700; line-height:1; cursor:pointer; }
+  .woap-lightbox-close:hover { background:rgba(0,0,0,0.65); }
   .woap-photo-add { display:inline-flex; align-items:center; gap:6px; margin-top:8px; font-size:12.5px; font-weight:600; color:var(--accent); background:var(--accent-soft); border:1px solid #bcddf0; border-radius:8px; padding:6px 11px; cursor:pointer; }
   .woap-photo-input { position:absolute; left:-9999px; width:1px; height:1px; opacity:0; }
   .woap-photo-pending { display:none; align-items:center; gap:8px; margin-top:8px; }
@@ -879,6 +893,13 @@
     </div>
     <p class="woap-map-note" id="woapMapNote" style="display:none;"></p>
   </div>
+</div>
+
+<!-- Enlarged burger photo. One shared lightbox for every burger thumb and community photo, at the
+     top level of the body so it is never clipped by the burgers overlay or a scrolling card. -->
+<div id="woapLightbox" class="woap-lightbox" role="dialog" aria-modal="true" aria-label="Enlarged burger photo">
+  <button type="button" class="woap-lightbox-close" id="woapLightboxClose" aria-label="Close photo">&#10005;</button>
+  <img id="woapLightboxImg" src="" alt="Enlarged burger photo">
 </div>
 
 <!-- Week view -->
@@ -1748,7 +1769,12 @@ function renderWoapCard(b, bare) {
     ? `<span class="woap-avg">&#9733; ${r.avg.toFixed(1)} (${r.count})</span>`
     : `<span class="woap-avg-none">No ratings yet</span>`;
   const diet = (b.dietary || []).map(d => `<span class="woap-diet">${d}</span>`).join('');
-  const photosStrip = imgs.length ? `<div class="woap-photos">${imgs.map(src => `<img src="${src}" alt="" loading="lazy">`).join('')}</div>` : '';
+  // imgs[0] is already shown as the header thumb, so the strip below carries only the community
+  // photos — otherwise the official festival image renders twice on one open leaderboard row.
+  // Today every burger has exactly one official image and no public photos, so the strip is empty
+  // until user uploads land; then it fills with those and only those.
+  const stripImgs = imgs.slice(1);
+  const photosStrip = stripImgs.length ? `<div class="woap-photos">${stripImgs.map(src => `<img src="${src}" alt="Burger photo — tap to enlarge" loading="lazy">`).join('')}</div>` : '';
   // bare = embedded in a leaderboard detail row: no card chrome, review widgets always open.
   const reviewBtn = bare ? '' : `<button type="button" class="woap-review-open" data-woap-review="${slug}">Rate &amp; review &rarr;</button>`;
   // In the leaderboard (bare), a light, easily-tappable minimise button collapses the open row.
@@ -2065,10 +2091,12 @@ function refreshWoapCardPhotos(slug) {
   else if (imgs.length && thumb) { thumb.src = imgs[0]; }
   const social = card.querySelector('.woap-social');
   if (social) {
-    const stripHtml = imgs.map(src => '<img src="' + src + '" alt="" loading="lazy">').join('');
+    // Same rule as renderWoapCard: imgs[0] is the header thumb, so the strip is the rest only.
+    const stripImgs = imgs.slice(1);
+    const stripHtml = stripImgs.map(src => '<img src="' + src + '" alt="Burger photo — tap to enlarge" loading="lazy">').join('');
     let strip = social.querySelector('.woap-photos');
     if (strip) { strip.innerHTML = stripHtml; }
-    else if (imgs.length) { strip = document.createElement('div'); strip.className = 'woap-photos'; strip.innerHTML = stripHtml; social.insertBefore(strip, social.firstChild); }
+    else if (stripImgs.length) { strip = document.createElement('div'); strip.className = 'woap-photos'; strip.innerHTML = stripHtml; social.insertBefore(strip, social.firstChild); }
   }
 }
 
@@ -2579,6 +2607,40 @@ document.addEventListener("change", function(e) {
   });
   inp.value = "";
 });
+// Enlarged-photo lightbox. Opens from any burger thumb or community photo; closes on the X, on the
+// backdrop, or on Escape. Checked before the row handlers below so tapping the photo inside an open
+// leaderboard row enlarges it instead of collapsing the row.
+function openWoapPhoto(src) {
+  const box = document.getElementById("woapLightbox");
+  const img = document.getElementById("woapLightboxImg");
+  if (!box || !img || !src) return;
+  img.src = src;
+  box.classList.add("open");
+}
+function closeWoapPhoto() {
+  const box = document.getElementById("woapLightbox");
+  const img = document.getElementById("woapLightboxImg");
+  if (!box || !box.classList.contains("open")) return;
+  box.classList.remove("open");
+  if (img) img.src = "";          // drop the (possibly data-URL sized) image from memory
+}
+document.addEventListener("click", function(e) {
+  if (!e.target.closest) return;
+  // Close: the X, or anywhere on the backdrop (the image itself keeps the box open).
+  if (e.target.closest("#woapLightboxClose")) { closeWoapPhoto(); return; }
+  if (e.target.id === "woapLightbox") { closeWoapPhoto(); return; }
+  const zoom = e.target.closest(".woap-card .woap-thumb, .woap-photos img");
+  if (zoom) { e.preventDefault(); e.stopPropagation(); openWoapPhoto(zoom.currentSrc || zoom.src); return; }
+}, true);
+// Capture phase + stopPropagation: with the lightbox open, Escape must close only the photo, not
+// the whole burgers overlay (whose own Escape handler listens on document in the bubble phase).
+document.addEventListener("keydown", function(e) {
+  if (e.key !== "Escape") return;
+  const box = document.getElementById("woapLightbox");
+  if (!box || !box.classList.contains("open")) return;
+  e.stopPropagation();
+  closeWoapPhoto();
+}, true);
 document.addEventListener("click", function(e) {
   if (!e.target.closest) return;
   // Map / Leaderboard view toggle
