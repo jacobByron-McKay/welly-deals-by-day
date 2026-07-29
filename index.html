@@ -509,9 +509,8 @@
   }
   /* Multi-dimension rating block: an overall score plus optional price / quality / quantity stars. */
   .woap-rate { display:flex; flex-direction:column; gap:10px; }
-  .woap-rate-row { display:grid; grid-template-columns:88px minmax(0,1fr); align-items:center; gap:8px; }
+  .woap-rate-row { display:grid; grid-template-columns:70px minmax(0,1fr); align-items:center; gap:8px; }
   .woap-rate-label { font-size:12.5px; font-weight:700; color:var(--ink); line-height:1.25; }
-  .woap-rate-label small { display:block; font-size:10.5px; font-weight:600; color:var(--ink-muted); }
   .woap-rate-row.sub .vr-star { font-size:21px; }
   .woap-rate-row.sub .vr-summary { font-size:12px; }
   .woap-rate-note { font-size:11.5px; color:var(--ink-muted); margin:9px 0 0; }
@@ -1060,10 +1059,10 @@ const WOAP_RATINGS    = {};      // rating bucket slug → { avg, count }, batch
 // slug with a suffix. The backend only ever sees another free-text venue_slug, so there is no
 // schema change and rate.js / comment.js are untouched.
 const WOAP_DIMS = [
-  { key:'overall',  suffix:'',           label:'Overall',  col:'Avg',     hint:'the burger all round' },
-  { key:'price',    suffix:'--price',    label:'Price',    col:'Price',   hint:'worth what you paid' },
-  { key:'quality',  suffix:'--quality',  label:'Quality',  col:'Quality', hint:'how well it was made' },
-  { key:'quantity', suffix:'--quantity', label:'Quantity', col:'Qty',     hint:'how much you got' }
+  { key:'overall',  suffix:'',           label:'Overall',  col:'Avg' },
+  { key:'price',    suffix:'--price',    label:'Price',    col:'Price' },
+  { key:'quality',  suffix:'--quality',  label:'Quality',  col:'Quality' },
+  { key:'quantity', suffix:'--quantity', label:'Quantity', col:'Qty' }
 ];
 let searchQuery       = "";      // live search string
 let DAILY_DEAL_KEYS   = new Set(); // populated after data load
@@ -1689,7 +1688,7 @@ function woapRateRowHtml(b, dim) {
   const sub = dim.key !== 'overall';
   return `
         <div class="woap-rate-row${sub ? ' sub' : ''}">
-          <span class="woap-rate-label">${dim.label}<small>${dim.hint}</small></span>
+          <span class="woap-rate-label">${dim.label}</span>
           <div class="vr" data-vr-slug="${s}"${sub ? ' data-vr-empty="Not rated yet"' : ''}>
             <div class="vr-stars" role="radiogroup" aria-label="Rate ${dim.label.toLowerCase()} out of 5">
               ${[1,2,3,4,5].map(i => `<button type="button" class="vr-star" data-star="${i}" aria-label="${i} star${i>1?'s':''} for ${dim.label.toLowerCase()}">&#9733;</button>`).join("")}
