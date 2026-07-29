@@ -377,6 +377,9 @@
   .wn-fb { display:flex; align-items:center; justify-content:center; gap:8px; margin:4px; padding:11px; border-radius:9px; background:#1877f2; color:#fff; font-size:14px; font-weight:600; text-decoration:none; }
   .wn-fb:hover { filter:brightness(1.06); }
   .wn-fb svg { width:18px; height:18px; flex-shrink:0; }
+  .wn-ig { display:flex; align-items:center; justify-content:center; gap:8px; margin:4px; padding:11px; border-radius:9px; background:linear-gradient(45deg,#f09433,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888); color:#fff; font-size:14px; font-weight:600; text-decoration:none; }
+  .wn-ig:hover { filter:brightness(1.06); }
+  .wn-ig svg { width:18px; height:18px; flex-shrink:0; }
 
   /* ---------- Map popup contrast fix + "My plan" trip planner ---------- */
   /* Leaflet ships `.leaflet-container a { color:#0078A8 }`, which outranks .map-popup-btn's own
@@ -454,19 +457,33 @@
   .woap-viewtabs { display:inline-flex; gap:2px; padding:3px; border-radius:10px; background:var(--wr-soft); border:1px solid var(--wr-border); margin-bottom:14px; }
   .woap-viewtab { font:inherit; font-size:13px; font-weight:700; padding:7px 15px; border:0; border-radius:8px; background:none; color:var(--wr-deep); cursor:pointer; display:inline-flex; align-items:center; gap:6px; }
   .woap-viewtab.on { background:var(--wr); color:#fff; box-shadow:0 1px 3px rgba(220,38,38,.35); }
-  /* Leaderboard table */
+  /* Leaderboard table. More ranking columns than fit on a phone, so the table scrolls sideways:
+     rank + burger name stay pinned on the left, Price / Quality / Qty sit off to the right. */
   .woap-lb-topline { display:flex; align-items:center; gap:8px; flex-wrap:wrap; margin-bottom:8px; }
   .woap-tried-count { font-size:12px; font-weight:700; color:var(--wr-dark); margin-left:auto; }
+  .woap-lb-hint { font-size:11px; font-weight:600; color:var(--wr-deep); background:var(--wr-soft);
+                  border:1px solid var(--wr-border); border-radius:999px; padding:3px 9px; }
   .woap-lb { border:1px solid var(--border); border-radius:12px; overflow:hidden; }
-  .woap-lb-head { display:grid; grid-template-columns:30px 1fr 56px 56px 56px; align-items:center; gap:6px; padding:9px 12px; background:var(--wr-soft); border-bottom:1px solid var(--wr-border); }
+  .woap-lb-scroll { overflow-x:auto; overflow-y:hidden; overscroll-behavior-x:contain; -webkit-overflow-scrolling:touch; }
+  .woap-lb-head, .woap-lb-row { display:grid; grid-template-columns:42px minmax(0,1fr) 64px 64px 64px 64px 64px 64px;
+                                align-items:center; min-width:586px; }
+  .woap-lb-head { padding:9px 0; background:var(--wr-soft); border-bottom:1px solid var(--wr-border); }
   .woap-lb-head .woap-lb-h { font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:0.03em; color:var(--wr-deep); }
-  .woap-lb-sort { font:inherit; font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:0.03em; color:var(--wr-deep); background:none; border:0; cursor:pointer; padding:0; text-align:center; display:inline-flex; align-items:center; justify-content:center; gap:3px; width:100%; }
+  .woap-lb-sort { font:inherit; font-size:10.5px; font-weight:700; text-transform:uppercase; letter-spacing:0.02em; color:var(--wr-deep); background:none; border:0; cursor:pointer; padding:0 3px; text-align:center; display:inline-flex; align-items:center; justify-content:center; gap:3px; width:100%; }
   .woap-lb-sort.on { color:var(--wr); }
   .woap-lb-sort .caret { font-size:9px; opacity:.85; }
-  .woap-lb-row { display:grid; grid-template-columns:30px 1fr 56px 56px 56px; align-items:center; gap:6px; padding:9px 12px; border-top:1px solid var(--border); cursor:pointer; background:var(--paper); }
+  .woap-lb-row { padding:9px 0; border-top:1px solid var(--border); cursor:pointer; background:var(--paper); }
   .woap-lb-row:first-child { border-top:0; }
   .woap-lb-row:hover { background:var(--wr-soft); }
   .woap-lb-row.open { background:var(--wr-soft); }
+  /* The two pinned columns need their own opaque backing or the scrolled metric columns show
+     through them. background:inherit tracks the row's own hover/open colour automatically. */
+  .woap-lb-head > :nth-child(1), .woap-lb-row > .woap-lb-rank {
+    position:sticky; left:0; z-index:2; background:inherit; padding-left:12px; box-sizing:border-box; }
+  .woap-lb-head > :nth-child(2), .woap-lb-row > .woap-lb-cell-main {
+    position:sticky; left:42px; z-index:2; background:inherit; padding-right:10px; box-sizing:border-box;
+    box-shadow:7px 0 7px -7px rgba(0,0,0,.22); }
+  .woap-lb-head > :last-child, .woap-lb-row > :last-child { padding-right:12px; box-sizing:border-box; }
   .woap-lb-rank { font-size:14px; font-weight:800; color:var(--wr-dark); text-align:center; }
   .woap-lb-rank.top { color:var(--wr); }
   .woap-lb-cell-main { display:flex; align-items:center; gap:9px; min-width:0; }
@@ -474,16 +491,30 @@
   .woap-lb-txt { min-width:0; }
   .woap-lb-name { font-size:13.5px; font-weight:700; line-height:1.2; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
   .woap-lb-venue { font-size:11.5px; color:var(--ink-muted); line-height:1.2; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
-  .woap-lb-avg { font-size:14px; font-weight:800; color:var(--wr-dark); text-align:center; }
-  .woap-lb-avg small { display:block; font-size:9px; font-weight:600; color:var(--ink-muted); }
-  .woap-lb-avg.none { color:var(--ink-muted); font-weight:600; font-size:11px; }
+  .woap-lb-avg, .woap-lb-dim { font-size:14px; font-weight:800; color:var(--wr-dark); text-align:center; }
+  .woap-lb-avg small, .woap-lb-dim small { display:block; font-size:9px; font-weight:600; color:var(--ink-muted); }
+  .woap-lb-avg.none, .woap-lb-dim.none { color:var(--ink-muted); font-weight:600; font-size:11px; }
   .woap-lb-count { font-size:14px; font-weight:800; color:var(--ink); text-align:center; }
   .woap-lb-google { font-size:13.5px; font-weight:800; color:var(--wr-dark); text-align:center; }
   .woap-lb-google small { display:block; font-size:9px; font-weight:600; color:var(--ink-muted); }
   .woap-lb-google.none { color:var(--ink-muted); font-weight:600; font-size:11px; }
-  .woap-lb-detail { grid-column:1 / -1; display:none; padding-top:4px; }
+  /* Sticky so an expanded card stays put while the table behind it is scrolled sideways. */
   .woap-lb-row.open + .woap-lb-detailrow { display:block; }
-  .woap-lb-detailrow { display:none; padding:0 12px 12px; border-top:1px solid var(--wr-border); background:var(--wr-soft); }
+  .woap-lb-detailrow { display:none; position:sticky; left:0; padding:0 12px 12px; border-top:1px solid var(--wr-border); background:var(--wr-soft); }
+  /* A rating just landed: outline the row for a beat so you can see where it moved to. */
+  .woap-lb-row.flash { animation:woapFlash 1.3s ease-out; }
+  @keyframes woapFlash {
+    0%, 20% { box-shadow:inset 0 0 0 2px var(--wr); }
+    100%    { box-shadow:inset 0 0 0 2px rgba(220,38,38,0); }
+  }
+  /* Multi-dimension rating block: an overall score plus optional price / quality / quantity stars. */
+  .woap-rate { display:flex; flex-direction:column; gap:10px; }
+  .woap-rate-row { display:grid; grid-template-columns:88px minmax(0,1fr); align-items:center; gap:8px; }
+  .woap-rate-label { font-size:12.5px; font-weight:700; color:var(--ink); line-height:1.25; }
+  .woap-rate-label small { display:block; font-size:10.5px; font-weight:600; color:var(--ink-muted); }
+  .woap-rate-row.sub .vr-star { font-size:21px; }
+  .woap-rate-row.sub .vr-summary { font-size:12px; }
+  .woap-rate-note { font-size:11.5px; color:var(--ink-muted); margin:9px 0 0; }
   .woap-card { border:1px solid var(--border); border-radius:10px; padding:12px 13px; margin-bottom:10px; background:var(--paper); }
   .woap-card.bare { border:0; padding:12px 0 0; margin:0; background:none; }
   .woap-card-head { display:flex; align-items:flex-start; gap:10px; }
@@ -544,7 +575,10 @@
   .woap-view-close { margin-left:auto; background:none; border:0; font-size:26px; line-height:1; color:#991b1b; cursor:pointer; padding:0 4px; }
   .woap-view-body { position:relative; flex:1; min-height:0; }
   .woap-view-body #woapMap { position:absolute; inset:0; height:auto; min-height:0; border:0; border-radius:0; }
-  .woap-board-panel { position:absolute; z-index:500; top:10px; left:10px; right:10px; bottom:10px; background:var(--paper);
+  /* z-index must beat Leaflet's own .leaflet-top (1000) or the map's +/- zoom buttons punch a hole
+     through the top-left corner of the leaderboard. Switching to Map hides the panel, so the zoom
+     control is back the moment you actually need it. */
+  .woap-board-panel { position:absolute; z-index:1100; top:10px; left:10px; right:10px; bottom:10px; background:var(--paper);
                       border:1px solid var(--wr-border); border-radius:12px; box-shadow:0 10px 30px rgba(0,0,0,.18);
                       overflow-y:auto; overscroll-behavior:contain; padding:12px 12px 16px; }
   .woap-board-panel.hidden { display:none; }
@@ -613,6 +647,10 @@
       <a class="wn-fb" href="https://www.facebook.com/profile.php?id=61591850849329" target="_blank" rel="noopener">
         <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M24 12.07C24 5.4 18.63 0 12 0S0 5.4 0 12.07C0 18.1 4.39 23.1 10.13 24v-8.44H7.08v-3.49h3.05V9.41c0-3.02 1.79-4.69 4.53-4.69 1.31 0 2.68.24 2.68.24v2.97h-1.51c-1.49 0-1.95.93-1.95 1.88v2.26h3.32l-.53 3.49h-2.79V24C19.61 23.1 24 18.1 24 12.07z"/></svg>
         Follow on Facebook for all updates
+      </a>
+      <a class="wn-ig" href="https://www.instagram.com/welly_deals_by_day/" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41-.56-.22-.96-.48-1.38-.9-.42-.42-.68-.82-.9-1.38-.16-.42-.36-1.06-.41-2.23-.06-1.27-.07-1.65-.07-4.85s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41 1.27-.06 1.65-.07 4.85-.07M12 0C8.74 0 8.33.01 7.05.07 5.78.13 4.9.33 4.14.63c-.79.3-1.46.72-2.13 1.38C1.35 2.68.93 3.35.63 4.14.33 4.9.13 5.78.07 7.05.01 8.33 0 8.74 0 12s.01 3.67.07 4.95c.06 1.27.26 2.15.56 2.91.3.79.72 1.46 1.38 2.13.67.66 1.34 1.08 2.13 1.38.76.3 1.64.5 2.91.56C8.33 23.99 8.74 24 12 24s3.67-.01 4.95-.07c1.27-.06 2.15-.26 2.91-.56.79-.3 1.46-.72 2.13-1.38.66-.67 1.08-1.34 1.38-2.13.3-.76.5-1.64.56-2.91.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.06-1.27-.26-2.15-.56-2.91-.3-.79-.72-1.46-1.38-2.13C21.32 1.35 20.65.93 19.86.63c-.76-.3-1.64-.5-2.91-.56C15.67.01 15.26 0 12 0z"/><path d="M12 5.84A6.16 6.16 0 1 0 18.16 12 6.16 6.16 0 0 0 12 5.84zM12 16a4 4 0 1 1 4-4 4 4 0 0 1-4 4z"/><circle cx="18.41" cy="5.59" r="1.44"/></svg>
+        Follow on Instagram
       </a>
     </div>
   </div>
@@ -1015,8 +1053,18 @@ let woapView          = "board"; // "board" (leaderboard) | "map" (dedicated bur
 // Default leaderboard rank column. 'google' = Google rating, 'rating' = user star-rating average.
 // Flip this one line to 'rating' once enough user ratings accrue to make the "best burger rating" the default.
 const WOAP_DEFAULT_SORT = 'google';
-let woapLbSort        = WOAP_DEFAULT_SORT; // active leaderboard rank column: "google" (Google rating) | "rating" (avg stars) | "ratings" (number of ratings)
-const WOAP_RATINGS    = {};      // burger slug → { avg, count }, batch-read from Supabase for the leaderboard
+let woapLbSort        = WOAP_DEFAULT_SORT; // active leaderboard rank column: "google" | "rating" (overall avg) | "ratings" (vote count) | "price" | "quality" | "quantity"
+const WOAP_RATINGS    = {};      // rating bucket slug → { avg, count }, batch-read from Supabase for the leaderboard
+// The things you can score a burger on. "overall" deliberately keeps the original bare slug, so
+// every rating already collected still counts as the overall score; the rest hang off that same
+// slug with a suffix. The backend only ever sees another free-text venue_slug, so there is no
+// schema change and rate.js / comment.js are untouched.
+const WOAP_DIMS = [
+  { key:'overall',  suffix:'',           label:'Overall',  col:'Avg',     hint:'the burger all round' },
+  { key:'price',    suffix:'--price',    label:'Price',    col:'Price',   hint:'worth what you paid' },
+  { key:'quality',  suffix:'--quality',  label:'Quality',  col:'Quality', hint:'how well it was made' },
+  { key:'quantity', suffix:'--quantity', label:'Quantity', col:'Qty',     hint:'how much you got' }
+];
 let searchQuery       = "";      // live search string
 let DAILY_DEAL_KEYS   = new Set(); // populated after data load
 
@@ -1582,9 +1630,11 @@ function woapMatchesSearch(b) {
 // One batch read of the shared rating_summary view for every burger, so the leaderboard can sort
 // by community score without a request per card. Same view the per-deal star widget reads.
 function fetchWoapRatings() {
-  const slugs = WOAP_BURGERS.map(woapBurgerSlug);
-  if (!slugs.length) { woapRatingsLoaded = true; return Promise.resolve(); }
-  const q = 'rating_summary?venue_slug=in.(' + slugs.map(encodeURIComponent).join(',') + ')&select=venue_slug,avg_stars,num_ratings';
+  if (!WOAP_BURGERS.length) { woapRatingsLoaded = true; return Promise.resolve(); }
+  // A prefix match rather than a list of every slug: burger buckets all start "woap-", and so do
+  // their per-dimension buckets, so one short request pulls the whole board (all four dimensions)
+  // instead of a ~15KB URL listing 244 slugs that would then need repeating per dimension.
+  const q = 'rating_summary?venue_slug=like.woap-*&select=venue_slug,avg_stars,num_ratings&limit=2000';
   return fetch(SUPABASE_URL + '/rest/v1/' + q, { headers: { apikey: SUPABASE_KEY, Authorization: 'Bearer ' + SUPABASE_KEY } })
     .then(r => r.ok ? r.json() : [])
     .then(rows => { (rows || []).forEach(row => { WOAP_RATINGS[row.venue_slug] = { avg: Number(row.avg_stars) || 0, count: Number(row.num_ratings) || 0 }; }); })
@@ -1594,9 +1644,15 @@ function fetchWoapRatings() {
 
 function woapPriceNum(b) { const m = String(b.price || '').match(/[\d.]+/); return m ? parseFloat(m[0]) : Infinity; }
 
-// Leaderboard ordering. Two rankable columns: average rating and number of ratings.
-// Either way, burgers with no ratings yet sort to the bottom (alphabetical among themselves).
+// Leaderboard ordering. Rankable columns: Google rating, overall average, number of ratings, and
+// one per extra dimension (price / quality / quantity). Whichever is active, burgers with nothing
+// in that column sort to the bottom (alphabetical among themselves) rather than counting as zero.
 function woapGoogleRating(b) { return (typeof b.google_rating === 'number') ? b.google_rating : null; }
+
+// Which rating bucket a given sort column reads. 'rating' and 'ratings' are both the overall one.
+function woapSortDim(sort) {
+  return (sort === 'rating' || sort === 'ratings') ? 'overall' : sort;
+}
 
 function woapLeaderboardSorted(list) {
   const arr = [...list];
@@ -1608,9 +1664,10 @@ function woapLeaderboardSorted(list) {
       return (a.name || '').localeCompare(b.name || '');
     });
   }
+  const dim = woapSortDim(woapLbSort);
   return arr.sort((a, b) => {
-    const ra = WOAP_RATINGS[woapBurgerSlug(a)] || { avg: 0, count: 0 };
-    const rb = WOAP_RATINGS[woapBurgerSlug(b)] || { avg: 0, count: 0 };
+    const ra = woapDimRating(a, dim);
+    const rb = woapDimRating(b, dim);
     if (!ra.count !== !rb.count) return ra.count ? -1 : 1;         // rated ahead of unrated
     if (!ra.count && !rb.count) return (a.name || '').localeCompare(b.name || '');
     if (woapLbSort === 'ratings') {                                // rank by how many people rated
@@ -1622,6 +1679,24 @@ function woapLeaderboardSorted(list) {
     }
     return (a.name || '').localeCompare(b.name || '');
   });
+}
+
+// One dimension's star row inside a burger card. Each is an ordinary .vr widget on its own slug,
+// so they all ride the exact same anonymous rate.js path — and each is independent, which is the
+// point: score a burger overall only, or on price and nothing else, whatever you feel like.
+function woapRateRowHtml(b, dim) {
+  const s = woapDimSlug(b, dim.key);
+  const sub = dim.key !== 'overall';
+  return `
+        <div class="woap-rate-row${sub ? ' sub' : ''}">
+          <span class="woap-rate-label">${dim.label}<small>${dim.hint}</small></span>
+          <div class="vr" data-vr-slug="${s}"${sub ? ' data-vr-empty="Not rated yet"' : ''}>
+            <div class="vr-stars" role="radiogroup" aria-label="Rate ${dim.label.toLowerCase()} out of 5">
+              ${[1,2,3,4,5].map(i => `<button type="button" class="vr-star" data-star="${i}" aria-label="${i} star${i>1?'s':''} for ${dim.label.toLowerCase()}">&#9733;</button>`).join("")}
+            </div>
+            <div class="vr-summary" data-vr-summary>Loading…</div>
+          </div>
+        </div>`;
 }
 
 function renderWoapCard(b, bare) {
@@ -1663,12 +1738,8 @@ function renderWoapCard(b, bare) {
         <input class="woap-photo-input" type="file" id="woap-photo-${slug}" accept="image/*" data-woap-photo="${slug}">
         <div class="woap-photo-pending" data-woap-pending="${slug}"><img alt=""><span></span></div>
         <div class="vp-section-title">Rate this burger</div>
-        <div class="vr" data-vr-slug="${slug}">
-          <div class="vr-stars" role="radiogroup" aria-label="Rate this burger out of 5">
-            ${[1,2,3,4,5].map(i => `<button type="button" class="vr-star" data-star="${i}" aria-label="${i} star${i>1?'s':''}">&#9733;</button>`).join("")}
-          </div>
-          <div class="vr-summary" data-vr-summary>Loading…</div>
-        </div>
+        <div class="woap-rate">${WOAP_DIMS.map(d => woapRateRowHtml(b, d)).join("")}</div>
+        <p class="woap-rate-note">Score as many or as few as you like &mdash; overall on its own is plenty.</p>
         <div class="vp-section-title">Reviews</div>
         <div class="vc" data-vc-slug="${slug}">
           <div class="vc-list" data-vc-list><p class="sd-hint">Loading reviews…</p></div>
@@ -1685,26 +1756,53 @@ function renderWoapCard(b, bare) {
     </article>`;
 }
 
-// A leaderboard row: rank, thumbnail + name/venue, average stars, number of ratings. Clicking it
-// expands the full rate/review/photo card below the row (built lazily on first open).
-function renderWoapRow(b, rank) {
+// One metric cell for an extra rating dimension (price / quality / quantity).
+function woapDimCell(b, dimKey, unit) {
+  const r = woapDimRating(b, dimKey);
+  return r.count
+    ? `<span class="woap-lb-dim">${r.avg.toFixed(1)}<small>&#9733; ${unit}</small></span>`
+    : `<span class="woap-lb-dim none">&mdash;</span>`;
+}
+
+// The six metric cells, in column order. Kept separate from the row so a live rating can repaint
+// just these — leaving the thumbnail <img> alone, which would otherwise flicker on every reload.
+function woapMetricCells(b) {
+  const r = WOAP_RATINGS[woapBurgerSlug(b)] || { avg: 0, count: 0 };
+  const g = woapGoogleRating(b);
+  return [
+    (g !== null)
+      ? `<span class="woap-lb-google">${g.toFixed(1)}<small>&#9733; Google</small></span>`
+      : `<span class="woap-lb-google none">&mdash;</span>`,
+    r.count
+      ? `<span class="woap-lb-avg">${r.avg.toFixed(1)}<small>&#9733; avg</small></span>`
+      : `<span class="woap-lb-avg none">&mdash;</span>`,
+    `<span class="woap-lb-count">${r.count || 0}</span>`,
+    woapDimCell(b, 'price', 'price'),
+    woapDimCell(b, 'quality', 'qual'),
+    woapDimCell(b, 'quantity', 'qty')
+  ];
+}
+
+// A row shows a rank number only when it has a value in whatever column the board is sorted by;
+// everything else sits in the unranked tail with a blank rank.
+function woapRankInfo(b, rank) {
+  const ranked = woapLbSort === 'google'
+    ? (woapGoogleRating(b) !== null)
+    : !!woapDimRating(b, woapSortDim(woapLbSort)).count;
+  return {
+    text: ranked ? String(rank) : '',
+    cls: (rank <= 3 && ranked) ? 'woap-lb-rank top' : 'woap-lb-rank'
+  };
+}
+
+// The inside of a leaderboard row: rank, thumbnail + name/venue, then every metric column.
+function woapRowInnerHtml(b, rank) {
   const slug = woapBurgerSlug(b);
   const imgs = woapImagesFor(b, slug);
-  const r = WOAP_RATINGS[slug] || { avg: 0, count: 0 };
   const thumb = imgs.length ? `<img class="woap-lb-thumb" src="${imgs[0]}" alt="" loading="lazy">` : `<span class="woap-lb-thumb"></span>`;
-  const avgCell = r.count
-    ? `<span class="woap-lb-avg">${r.avg.toFixed(1)}<small>&#9733; avg</small></span>`
-    : `<span class="woap-lb-avg none">&mdash;</span>`;
-  const g = woapGoogleRating(b);
-  const googleCell = (g !== null)
-    ? `<span class="woap-lb-google">${g.toFixed(1)}<small>&#9733; Google</small></span>`
-    : `<span class="woap-lb-google none">&mdash;</span>`;
-  // A row is "ranked" (shows a rank number) when it has a value for whatever the board is sorted by.
-  const ranked = woapLbSort === 'google' ? (g !== null) : !!r.count;
-  const rankCls = rank <= 3 && ranked ? 'woap-lb-rank top' : 'woap-lb-rank';
+  const ri = woapRankInfo(b, rank);
   return `
-    <div class="woap-lb-row" data-lb-row="${slug}">
-      <span class="${rankCls}">${ranked ? rank : ''}</span>
+      <span class="${ri.cls}">${ri.text}</span>
       <div class="woap-lb-cell-main">
         ${thumb}
         <div class="woap-lb-txt">
@@ -1712,9 +1810,14 @@ function renderWoapRow(b, rank) {
           <div class="woap-lb-venue">${b.venue}${b.suburb ? ' &middot; ' + suburbLabel(b.suburb) : ''}</div>
         </div>
       </div>
-      ${googleCell}
-      ${avgCell}
-      <span class="woap-lb-count">${r.count || 0}</span>
+      ${woapMetricCells(b).join('')}`;
+}
+
+// A leaderboard row plus the (initially empty) detail row that expands beneath it on click.
+function renderWoapRow(b, rank) {
+  const slug = woapBurgerSlug(b);
+  return `
+    <div class="woap-lb-row" data-lb-row="${slug}">${woapRowInnerHtml(b, rank)}
     </div>
     <div class="woap-lb-detailrow" data-lb-detail="${slug}"></div>`;
 }
@@ -1726,21 +1829,98 @@ function renderWoapBoard() {
   const tried = woapTriedSet();
   const triedShown = shown.filter(b => tried.has(woapBurgerSlug(b))).length;
   const caret = '<span class="caret">&#9660;</span>';
+  const sortBtn = (key, label) =>
+    `<button type="button" class="woap-lb-sort${woapLbSort === key ? ' on' : ''}" data-lb-sort="${key}">${label}${woapLbSort === key ? ' ' + caret : ''}</button>`;
   board.innerHTML = shown.length
     ? `<div class="woap-lb-topline">
+         <span class="woap-lb-hint">Swipe the table &rarr; for price, quality &amp; quantity</span>
          <span class="woap-tried-count">You have tried ${triedShown} of ${shown.length}</span>
        </div>
-       <div class="woap-lb">
+       <div class="woap-lb"><div class="woap-lb-scroll">
          <div class="woap-lb-head">
            <span class="woap-lb-h" style="text-align:center;">#</span>
            <span class="woap-lb-h">Burger</span>
-           <button type="button" class="woap-lb-sort${woapLbSort === 'google' ? ' on' : ''}" data-lb-sort="google">Google${woapLbSort === 'google' ? ' ' + caret : ''}</button>
-           <button type="button" class="woap-lb-sort${woapLbSort === 'rating' ? ' on' : ''}" data-lb-sort="rating">Avg${woapLbSort === 'rating' ? ' ' + caret : ''}</button>
-           <button type="button" class="woap-lb-sort${woapLbSort === 'ratings' ? ' on' : ''}" data-lb-sort="ratings">Ratings${woapLbSort === 'ratings' ? ' ' + caret : ''}</button>
+           ${sortBtn('google', 'Google')}${sortBtn('rating', 'Avg')}${sortBtn('ratings', 'Votes')}${sortBtn('price', 'Price')}${sortBtn('quality', 'Quality')}${sortBtn('quantity', 'Qty')}
          </div>
          ${shown.map((b, i) => renderWoapRow(b, i + 1)).join('')}
-       </div>`
+       </div></div>`
     : `<p class="text-sm italic" style="color:var(--ink-muted);">No burgers match your search.</p>`;
+}
+
+// ---------- LIVE LEADERBOARD ----------
+// Called the moment a rating is saved anywhere in the burgers overlay (see the ratings widget in
+// the RATINGS + COMMENTS block). Rather than re-rendering the board — which would destroy the card
+// the user is standing in, mid-review — this repaints each row's cells in place and then physically
+// moves the row nodes into their new order. The expanded card and its live widgets ride along.
+function woapApplyRating(slug, avg, count) {
+  if (!slug) return;
+  WOAP_RATINGS[slug] = { avg: Number(avg) || 0, count: Number(count) || 0 };
+  const base = slug.split('--')[0];   // dimension slugs hang off the burger's own slug
+
+  // The open card's own header shows the overall average; keep it honest.
+  const card = document.querySelector('.woap-card[data-woap-slug="' + base + '"]');
+  const r0 = WOAP_RATINGS[base];
+  if (card && r0 && r0.count) {
+    const el = card.querySelector('.woap-avg, .woap-avg-none');
+    if (el) { el.className = 'woap-avg'; el.innerHTML = '&#9733; ' + r0.avg.toFixed(1) + ' (' + r0.count + ')'; }
+  }
+
+  const scroll = document.querySelector('#woapBoard .woap-lb-scroll');
+  if (!scroll) return;
+  const b0 = WOAP_BURGERS.find(x => woapBurgerSlug(x) === base);
+  const row = scroll.querySelector('[data-lb-row="' + base + '"]');
+  if (!b0 || !row) return;
+
+  // Only this burger's numbers changed, so only its metric cells are rewritten. Rebuilding all 244
+  // rows costs ~400ms of layout on a phone, which is exactly the beat that has to feel instant.
+  const cells = woapMetricCells(b0);
+  for (let i = 0; i < cells.length; i++) {
+    const cell = row.children[i + 2];                            // 0 = rank, 1 = name, then metrics
+    if (cell) cell.outerHTML = cells[i];
+  }
+
+  // Only one burger's sort key moved, so every other row keeps its relative order: lift this row
+  // (and the card expanded under it) out and drop it back in at its new index. Two node moves.
+  const shown = woapLeaderboardSorted(WOAP_BURGERS.filter(woapMatchesSearch));
+  const newIndex = shown.findIndex(x => woapBurgerSlug(x) === base);
+  const detail = scroll.querySelector('[data-lb-detail="' + base + '"]');
+  const oldIndex = [...scroll.querySelectorAll('.woap-lb-row')].indexOf(row);
+  if (newIndex >= 0 && newIndex !== oldIndex) {
+    const active = document.activeElement;
+    row.remove();
+    if (detail) detail.remove();
+    const rest = scroll.querySelectorAll('.woap-lb-row');
+    const anchor = rest[newIndex] || null;
+    if (anchor) scroll.insertBefore(row, anchor);
+    else scroll.appendChild(row);
+    if (detail) scroll.insertBefore(detail, row.nextSibling);
+    // Re-parenting blurs whatever was focused, so hand focus back where it was.
+    if (active && active !== document.body && document.contains(active)) {
+      try { active.focus({ preventScroll: true }); } catch (e) {}
+    }
+  }
+  // Renumber. woapSetRank only writes when a value actually differs, so the untouched tail is free.
+  const rowsNow = scroll.querySelectorAll('.woap-lb-row');
+  shown.forEach((b, i) => {
+    const el = rowsNow[i] && rowsNow[i].firstElementChild;
+    if (!el) return;
+    const ri = woapRankInfo(b, i + 1);
+    if (el.textContent !== ri.text) el.textContent = ri.text;
+    if (el.className !== ri.cls) el.className = ri.cls;
+  });
+
+  // Drop the class now and re-add it on a later task. The usual `void offsetWidth` trick to restart a
+  // CSS animation forces a synchronous layout of the whole table — ~100ms on a phone, paid inside the
+  // tap handler. A timeout (rather than requestAnimationFrame) because rAF is throttled to nothing in
+  // a backgrounded or occluded tab, which would silently cost the flash and the scroll-into-view.
+  row.classList.remove('flash');
+  setTimeout(() => {
+    row.classList.add('flash');
+    try { row.scrollIntoView({ block: 'center', inline: 'nearest', behavior: 'smooth' }); } catch (e) {}
+  }, 16);
+  // Map popups quote the average too, but rebuilding 244 markers now would stall the very tap this
+  // is meant to make feel instant — flag it and let the map catch up when it is next shown.
+  if (window.woapMap && window.woapMap.markStale) window.woapMap.markStale();
 }
 
 // Switch between the leaderboard panel and the full map inside the burgers overlay. The burger map
@@ -1926,8 +2106,20 @@ function eventIsPlannable(ev) { return !ev.club_rugby; }
 // rate.js / comment.js path as every deal — the "woap-" prefix just namespaces burgers away from
 // deals (which carry "-d-") and events ("-e-") so nothing can collide in the shared Supabase.
 function woapBurgerSlug(b) {
-  return ("woap-" + slugify(b.name || "burger") + "-" + slugify(b.venue || "venue")).slice(0, 120);
+  return ("woap-" + (slugify(b.name || "") || "burger") + "-" + (slugify(b.venue || "") || "venue")).slice(0, 120);
 }
+
+// The bucket a single rating dimension writes to. "overall" is the bare burger slug (so ratings
+// collected before price/quality/quantity existed still read as the overall score); the others
+// append a "--<dim>" suffix, which slugify() can never produce, so nothing can collide.
+// The base is trimmed to leave room for the suffix because rate.js hard-truncates at 120 chars.
+function woapDimSlug(b, dimKey) {
+  const dim = WOAP_DIMS.find(d => d.key === dimKey);
+  const suffix = (dim && dim.suffix) || "";
+  const base = woapBurgerSlug(b);
+  return suffix ? base.slice(0, 120 - suffix.length) + suffix : base;
+}
+function woapDimRating(b, dimKey) { return WOAP_RATINGS[woapDimSlug(b, dimKey)] || { avg: 0, count: 0 }; }
 
 // A Set of full day names → "Mon–Fri", "Sat, Sun", "Every day"
 function formatDayRange(daySet) {
@@ -2967,12 +3159,15 @@ loadData().then(() => {
       b.classList.toggle('on', Number(b.dataset.star) <= value);
     });
   }
-  function summaryText(avg, count){
-    if (!count) return 'No ratings yet — tap a star to be the first';
+  // data-vr-empty lets a widget shorten its own empty state — the burger card stacks four of these,
+  // and the full "tap a star to be the first" line four times over just reads as noise.
+  function summaryText(avg, count, emptyText){
+    if (!count) return emptyText || 'No ratings yet — tap a star to be the first';
     return '<b>' + avg.toFixed(1) + '</b> &#9733; (' + count + ' rating' + (count === 1 ? '' : 's') + ')';
   }
   function hydrateRating(wrap){
     var slug = wrap.dataset.vrSlug;
+    var empty = wrap.dataset.vrEmpty || '';
     var summary = wrap.querySelector('[data-vr-summary]');
     var stars = wrap.querySelectorAll('.vr-star');
     var mine = Number(localStorage.getItem('wd_vote_' + slug) || 0);
@@ -2981,7 +3176,7 @@ loadData().then(() => {
     sbGet('rating_summary?venue_slug=eq.' + encodeURIComponent(slug) + '&select=avg_stars,num_ratings')
       .then(function(rows){
         if (rows && rows[0]) { state.avg = Number(rows[0].avg_stars) || 0; state.count = Number(rows[0].num_ratings) || 0; }
-        summary.innerHTML = summaryText(state.avg, state.count);
+        summary.innerHTML = summaryText(state.avg, state.count, empty);
         paintStars(wrap, mine || Math.round(state.avg));
         if (mine) wrap.classList.add('voted');
       });
@@ -3000,7 +3195,12 @@ loadData().then(() => {
         }).then(function(r){ return r.json(); }).then(function(res){
           if (res && res.ok) {
             state.avg = res.avg; state.count = res.count;
-            summary.innerHTML = summaryText(res.avg, res.count) + ' &middot; <span class="vr-yours">you: ' + val + '&#9733;</span>';
+            mine = val;   // so leaving the stars settles back on YOUR score, not the crowd's
+            summary.innerHTML = summaryText(res.avg, res.count, empty) + ' &middot; <span class="vr-yours">you: ' + val + '&#9733;</span>';
+            // Burger ratings feed the WOAP leaderboard — re-rank it on the spot.
+            if (slug.indexOf('woap-') === 0 && typeof woapApplyRating === 'function') {
+              woapApplyRating(slug, res.avg, res.count);
+            }
           } else { summary.innerHTML = 'Could not save — try again'; }
         }).catch(function(){ summary.innerHTML = 'Could not save — try again'; });
       });
@@ -3050,7 +3250,9 @@ loadData().then(() => {
   }
 
   window.hydrateVenueSocial = function(container){
-    var vr = container.querySelector('[data-vr-slug]'); if (vr) hydrateRating(vr);
+    // querySelectorAll, not querySelector: a burger card carries one widget per rating dimension
+    // (overall / price / quality / quantity). Deal and venue panels still have exactly one.
+    container.querySelectorAll('[data-vr-slug]').forEach(hydrateRating);
     var vc = container.querySelector('[data-vc-slug]'); if (vc) hydrateComments(vc);
   };
 })();
@@ -3119,6 +3321,7 @@ loadData().then(() => {
 // visitor opens the panel, and re-lights whenever a newer id appears. tag: "New" | "Added" | "Update".
 (function(){
   var SITE_UPDATES = [
+    { id:"2026-07-29-burgerscores", date:"2026-07-29", tag:"New",   text:"Burger Wellington ratings go deeper. As well as an overall score you can now rate a burger on price, quality and quantity — do all four or just the one you care about. The leaderboard has a ranking column for each: swipe the table sideways to see them. Every score you give re-ranks the board right there and then." },
     { id:"2026-07-16-eventsplan",     date:"2026-07-16", tag:"New",   text:"Gigs and events can go in your plan — tap “+ Plan” on any event to build a night around it. Events now show on the deals map too, with their own orange pin, so you can spot a gig and find the deals a few minutes' walk away. Tap a venue's pin and open “more upcoming events here” to see everything else it has coming up." },
     { id:"2026-07-16-rugbyranks",     date:"2026-07-16", tag:"Update", text:"Club Rugby fixtures now show where each side finished the season — Upper Hutt Rams (2nd) v Petone (1st) — and are listed with the table-toppers' games first." },
     { id:"2026-07-15-clubrugby",      date:"2026-07-15", tag:"New",   text:"Club Rugby is here — the new Club Rugby tab has every Wellington Premier and Premier 2 semi-final this Saturday 18 July, with grounds and kick-off times straight from the official WRFU draw. Top of the table meet at Trentham: Upper Hutt Rams v Petone, 2.45pm at NZCIS." },
@@ -3964,6 +4167,11 @@ loadData().then(() => {
       cluster.addLayer(m);
     });
   }
+  // A rating changes what one popup says, but refresh() rebuilds all 244 markers — ~300ms, which is
+  // far too expensive to pay on every star tap while the leaderboard is what's actually on screen.
+  // So a rating only marks the map stale; the rebuild happens next time the map is shown.
+  var stale = false;
+  function markStale(){ stale = true; }
   function open(){
     ensureLeaflet().then(function(){
       var el = document.getElementById('woapMap'); if (!el) return;
@@ -3971,12 +4179,14 @@ loadData().then(() => {
         map = L.map(el).setView(WGTN, 12);
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { maxZoom:19, attribution:'&copy; OpenStreetMap contributors' }).addTo(map);
         cluster = L.markerClusterGroup({ maxClusterRadius:45 }); map.addLayer(cluster);
-        built = true; refresh();
+        built = true; stale = false; refresh();
+      } else if (stale) {
+        stale = false; refresh();
       }
       setTimeout(function(){ map.invalidateSize(); }, 80);
     }).catch(function(){ var n = document.getElementById('woapMapNote'); if (n) n.textContent = 'Map failed to load — check your connection.'; });
   }
-  window.woapMap = { open: open, refresh: refresh };
+  window.woapMap = { open: open, refresh: refresh, markStale: markStale };
 })();
 </script>
 
