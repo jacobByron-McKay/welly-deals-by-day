@@ -508,11 +508,13 @@
     100%    { box-shadow:inset 0 0 0 2px rgba(220,38,38,0); }
   }
   /* Multi-dimension rating block: an overall score plus optional price / quality / quantity stars. */
-  .woap-rate { display:flex; flex-direction:column; gap:10px; }
-  .woap-rate-row { display:grid; grid-template-columns:70px minmax(0,1fr); align-items:center; gap:8px; }
+  .woap-rate { display:flex; flex-direction:column; gap:8px; }
+  /* padding, not just gap: a bare 26px star row is well under a comfortable thumb target. */
+  .woap-rate-row { display:grid; grid-template-columns:70px minmax(0,1fr); align-items:center; gap:8px; padding:4px 0; }
   .woap-rate-label { font-size:12.5px; font-weight:700; color:var(--ink); line-height:1.25; }
-  .woap-rate-row.sub .vr-star { font-size:21px; }
-  .woap-rate-row.sub .vr-summary { font-size:12px; }
+  /* All four rows share the full-size stars. The sub-dimensions were shrunk only to buy room for
+     the explainer text under each label; with that gone they can be as big (and as tappable) as
+     Overall, which also keeps the block roughly the height it was before. */
   .woap-rate-note { font-size:11.5px; color:var(--ink-muted); margin:9px 0 0; }
   .woap-card { border:1px solid var(--border); border-radius:10px; padding:12px 13px; margin-bottom:10px; background:var(--paper); }
   .woap-card.bare { border:0; padding:12px 0 0; margin:0; background:none; }
