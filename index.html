@@ -573,7 +573,19 @@
   .woap-view.open { display:flex; }
   .woap-view-bar { display:flex; align-items:center; gap:10px; padding:10px 14px; background:#fef2f2; border-bottom:1px solid #fecaca; flex-wrap:wrap; }
   .woap-view-title { font-weight:700; font-size:15px; color:#991b1b; display:inline-flex; align-items:center; gap:6px; }
-  .woap-view-close { margin-left:auto; background:none; border:0; font-size:26px; line-height:1; color:#991b1b; cursor:pointer; padding:0 4px; }
+  .woap-view-back { font:inherit; font-size:12.5px; font-weight:700; color:#991b1b; background:#fff;
+                    border:1px solid #fecaca; border-radius:999px; padding:6px 13px; cursor:pointer;
+                    display:inline-flex; align-items:center; gap:5px; flex-shrink:0; }
+  .woap-view-back:hover { border-color:#dc2626; color:#dc2626; }
+  /* The view tabs sit against the bar's own bottom edge here, so they don't need the panel's margin. */
+  .woap-view-bar .woap-viewtabs { margin-bottom:0; margin-left:auto; }
+  /* On a phone the bar is the only thing between the top of the screen and the leaderboard, so keep
+     it to two lines: drop the "· WOAP 2026" tail so the back button and title share the first one. */
+  @media (max-width:430px){
+    .woap-view-title-sub { display:none; }
+    .woap-view-bar { padding:8px 12px; gap:8px; }
+    .woap-view-title { font-size:14px; }
+  }
   .woap-view-body { position:relative; flex:1; min-height:0; }
   .woap-view-body #woapMap { position:absolute; inset:0; height:auto; min-height:0; border:0; border-radius:0; }
   /* z-index must beat Leaflet's own .leaflet-top (1000) or the map's +/- zoom buttons punch a hole
@@ -616,11 +628,15 @@
       <p class="text-sm mt-0.5" style="color:var(--ink-muted);">Central Wellington's recurring specials and events, all in one place.</p>
       <p class="text-xs mt-1" style="color:var(--ink-muted);"><span id="dealCount">—</span> deals &middot; updated weekly</p>
     </div>
-    <div class="text-right shrink-0 pt-1">
-      <button id="mapViewBtn" class="text-xs font-medium px-3 py-1 rounded-full border" style="color:#fff;border-color:var(--accent);background:var(--accent);cursor:pointer;margin-right:8px;">&#128506; Map</button>
-      <button id="woapViewBtn" class="text-xs font-medium px-3 py-1 rounded-full border" style="color:#fff;border-color:#dc2626;background:#dc2626;cursor:pointer;margin-right:8px;">&#127828; WOAP Burgers</button>
-      <button id="submitDealBtn" class="text-xs font-medium px-3 py-1 rounded-full border" style="color:var(--accent);border-color:var(--accent);background:var(--card);cursor:pointer;margin-right:8px;">＋ Submit a deal</button>
-      <button id="contactBtn" class="text-xs underline" style="color:var(--accent);background:none;border:none;cursor:pointer;">Contact</button>
+    <!-- These four buttons used to sit in a shrink-0 block that could not wrap, so on a phone the
+         header forced the whole page ~120px wider than the screen. The page was then horizontally
+         scrollable, which made the centred content look shoved left with a dead gap on the right.
+         Wrapping instead of overflowing is the fix; nothing else on the page overflows. -->
+    <div class="pt-1 flex flex-wrap justify-end items-start gap-2">
+      <button id="mapViewBtn" class="text-xs font-medium px-3 py-1 rounded-full border" style="color:#fff;border-color:var(--accent);background:var(--accent);cursor:pointer;">&#128506; Map</button>
+      <button id="woapViewBtn" class="text-xs font-medium px-3 py-1 rounded-full border" style="color:#fff;border-color:#dc2626;background:#dc2626;cursor:pointer;">&#127828; WOAP Burgers</button>
+      <button id="submitDealBtn" class="text-xs font-medium px-3 py-1 rounded-full border" style="color:var(--accent);border-color:var(--accent);background:var(--card);cursor:pointer;">＋ Submit a deal</button>
+      <button id="contactBtn" class="text-xs underline self-center" style="color:var(--accent);background:none;border:none;cursor:pointer;">Contact</button>
       <div id="contactEmail" style="display:none;" class="text-xs mt-1" style="color:var(--ink-muted);">
         <a href="mailto:local.deals.by.day@gmail.com" style="color:var(--accent);">local.deals.by.day@gmail.com</a>
       </div>
@@ -823,12 +839,15 @@
      instance from the ordinary deals map, so the two never clash. -->
 <div id="woapView" class="woap-view" aria-hidden="true">
   <div class="woap-view-bar">
-    <span class="woap-view-title">&#127828; Burger Wellington &middot; WOAP 2026</span>
+    <!-- A labelled way back rather than a bare X: it was not obvious that the X returned you to the
+         deals site rather than closing something inside the burgers view. Top-left, where a back
+         control belongs. Escape still closes it too. -->
+    <button id="woapCloseBtn" type="button" class="woap-view-back">&larr; Welly Deals</button>
+    <span class="woap-view-title">&#127828; Burger Wellington<span class="woap-view-title-sub"> &middot; WOAP 2026</span></span>
     <div class="woap-viewtabs" role="tablist" aria-label="Burger view">
       <button type="button" class="woap-viewtab on" data-woap-view="board" role="tab" aria-selected="true">&#127942; Leaderboard</button>
       <button type="button" class="woap-viewtab" data-woap-view="map" role="tab" aria-selected="false">&#128506; Map</button>
     </div>
-    <button id="woapCloseBtn" type="button" class="woap-view-close" aria-label="Close burgers">&times;</button>
   </div>
   <div class="woap-view-body">
     <!-- Base layer: the dedicated burger map (Leaflet loads lazily on first open) -->
