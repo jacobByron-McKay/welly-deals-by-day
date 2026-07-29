@@ -608,6 +608,21 @@
                        padding:7px 11px; font:inherit; font-size:12px; font-weight:700; color:#b91c1c; cursor:pointer;
                        display:inline-flex; align-items:center; gap:6px; }
   .map-burger-toggle.on { background:#dc2626; color:#fff; border-color:#dc2626; }
+  /* Burgers map: the mirror image — turn the ordinary deal and event pins on over the burgers.
+     Stacked in the top-left, so the burgers map moves its zoom control to the right like the
+     deals map does. Same pill shape as the burger toggle above, in each layer's own colour. */
+  .map-layer-toggle { display:block; background:#fff; border:1px solid var(--border); border-radius:8px;
+                      box-shadow:0 1px 4px rgba(0,0,0,.28); padding:7px 11px; font:inherit; font-size:12px;
+                      font-weight:700; color:var(--ink-muted); cursor:pointer; margin-bottom:6px;
+                      white-space:nowrap; text-align:left; min-width:104px; }
+  .map-layer-toggle.deals.on { background:var(--accent); color:#fff; border-color:var(--accent); }
+  .map-layer-toggle.events.on { background:#ea7317; color:#fff; border-color:#ea7317; }
+  /* A burger's popup gains this block when its venue also has a deal or gig on and that layer is
+     toggled on. Those venues get no separate pin of their own — it would land on the exact same
+     coordinates as the burger pin and one of the two would be unreachable at full zoom. */
+  .wmp-also { margin-top:8px; padding-top:8px; border-top:1px solid var(--border); }
+  .wmp-also-head { font-size:11px; font-weight:700; color:var(--ink-muted); text-transform:uppercase;
+                   letter-spacing:.04em; margin-bottom:4px; }
   /* Burger rows inside a venue popup are tappable buttons that open the burger's card */
   .map-popup-woap-row { width:100%; text-align:left; background:none; border:0; cursor:pointer; font:inherit; }
   .map-popup-woap-row:hover .map-popup-woap-name b { text-decoration:underline; }
@@ -3341,6 +3356,7 @@ loadData().then(() => {
 // visitor opens the panel, and re-lights whenever a newer id appears. tag: "New" | "Added" | "Update".
 (function(){
   var SITE_UPDATES = [
+    { id:"2026-07-29-burgermaplayers", date:"2026-07-29", tag:"New", text:"The burgers map now shows the rest of the city too. Hit “Deals” or “Events” in the top left and every venue with a deal on, or a gig coming up, pins alongside the burgers — so you can line up a burger and work out what else is on within a couple of streets. Where a burger venue has its own deals, they show inside the burger's pin." },
     { id:"2026-07-29-burgerscores", date:"2026-07-29", tag:"New",   text:"Burger Wellington ratings go deeper. As well as an overall score you can now rate a burger on price, quality and quantity — do all four or just the one you care about. The leaderboard has a ranking column for each: swipe the table sideways to see them. Every score you give re-ranks the board right there and then." },
     { id:"2026-07-16-eventsplan",     date:"2026-07-16", tag:"New",   text:"Gigs and events can go in your plan — tap “+ Plan” on any event to build a night around it. Events now show on the deals map too, with their own orange pin, so you can spot a gig and find the deals a few minutes' walk away. Tap a venue's pin and open “more upcoming events here” to see everything else it has coming up." },
     { id:"2026-07-16-rugbyranks",     date:"2026-07-16", tag:"Update", text:"Club Rugby fixtures now show where each side finished the season — Upper Hutt Rams (2nd) v Petone (1st) — and are listed with the table-toppers' games first." },
@@ -3715,6 +3731,28 @@ loadData().then(() => {
   function closeMap(){ view.classList.remove('open'); view.setAttribute('aria-hidden','true'); document.body.style.overflow = ''; }
   window.__wdCloseDealsMap = function(){ if (view.classList.contains('open')) closeMap(); };
 
+  // ---- Shared with the burger map (the WOAP overlay's own Leaflet instance) ----
+  // The burgers map can turn deal and event pins on, and those pins must look and behave exactly
+  // like the ones on this map. Rather than reimplement popupHtml over there (two copies that would
+  // drift apart the first time a popup gains a field), export the pieces. All the popup's controls
+  // — + Plan, View details, the "more events here" pager — are delegated on document, so they work
+  // unchanged inside the other map.
+  window.__wdVenuePins = function(day){
+    var out = [];
+    Object.keys(VENUES_MAP).forEach(function(name){
+      var v = VENUES_MAP[name];
+      if (typeof v.lat !== 'number' || typeof v.lng !== 'number') return;
+      var deals = dealsForVenueOnDay(name, day);
+      var events = eventsForVenueOnDay(name, day);
+      if (!deals.length && !events.length) return;
+      out.push({ name: name, lat: v.lat, lng: v.lng, deals: deals, events: events });
+    });
+    return out;
+  };
+  window.__wdVenuePopupHtml = popupHtml;
+  window.__wdEventPin = eventPin;                       // Leaflet must be loaded before calling
+  window.__wdSetOpenPopup = function(p){ openPopup = p; };   // keeps _adjustPan working off-map
+
   document.getElementById('mapViewBtn').addEventListener('click', openMap);
   document.getElementById('mapCloseBtn').addEventListener('click', closeMap);
   document.getElementById('mapLocateBtn').addEventListener('click', function(){
@@ -3767,7 +3805,15 @@ loadData().then(() => {
 
   document.addEventListener('click', function(e){
     var b = e.target.closest && e.target.closest('[data-map-venue]');
-    if (b){ e.preventDefault(); closeMap(); location.hash = 'venue/' + b.getAttribute('data-map-venue'); }
+    if (b){
+      e.preventDefault();
+      closeMap();
+      // The same popup can now be open on the burgers map, and that overlay (z-index 70) sits above
+      // the venue modal (z-index 50) — so leaving it open would send the modal behind it.
+      var wv = document.getElementById('woapView');
+      if (wv && wv.classList.contains('open') && typeof closeWoapView === 'function') closeWoapView();
+      location.hash = 'venue/' + b.getAttribute('data-map-venue');
+    }
   });
   document.addEventListener('keydown', function(e){ if (e.key === 'Escape' && view.classList.contains('open')) closeMap(); });
 
@@ -4172,19 +4218,121 @@ loadData().then(() => {
       '<div class="wmp-venue">'+esc(b.venue)+(b.suburb ? ' &middot; '+esc(suburbLabel(b.suburb)) : '')+'</div>'+
       '<div class="wmp-meta">'+(b.price ? esc(b.price)+' &middot; ' : '')+rating+'</div>'+
       '<button type="button" class="wmp-plan" data-plan-add="'+slug+'" data-plan-label-on="&#10003; In plan" data-plan-label-off="&#43; Plan">&#43; Plan</button>'+
-      '<button type="button" class="wmp-open" data-woap-open="'+slug+'">Rate &amp; review &rarr;</button></div>';
+      '<button type="button" class="wmp-open" data-woap-open="'+slug+'">Rate &amp; review &rarr;</button>'+
+      alsoHereHtml(b.venue)+'</div>';
+  }
+
+  // ---- Deal + event layers over the burger map -------------------------------------------------
+  // Off by default: the burgers map is for burgers. Turn one or both on and the venue's ordinary
+  // deals and gigs pin alongside, so you can see what else is on around a burger you fancy.
+  // Every day of the week is shown rather than one day at a time — each row is labelled with its
+  // own day, and a burger crawl gets planned across the week, not just tonight.
+  var showDeals = false, showEvents = false;
+  var pins = null;          // built once, on the first toggle: [{name,lat,lng,deals,events,marker}]
+  var byVenue = {};         // venue name -> pin, for the burger popups' "also here" block
+  var onMap = [];           // the venue markers currently in the cluster
+  var burgerVenues = {};    // venues that already carry a burger pin
+
+  function alsoHereHtml(venue){
+    var p = byVenue[venue];
+    if (!p) return '';
+    var deals  = showDeals  ? p.deals  : [];
+    var events = showEvents ? p.events : [];
+    if (!deals.length && !events.length) return '';
+    var inner = window.__wdVenuePopupHtml(venue, deals, events);
+    // Drop the venue-name heading, the "View details" footer and the venue's burger list — the
+    // burger popup above already names the venue and is itself one of those burgers, and its own
+    // "Rate & review" button is the action that belongs here.
+    var box = document.createElement('div');
+    box.innerHTML = inner;
+    var head = box.querySelector('.map-popup-name'); if (head) head.remove();
+    var foot = box.querySelector('.map-popup-btn');  if (foot) foot.remove();
+    var bl   = box.querySelector('.map-popup-woap'); if (bl)   bl.remove();
+    var label = (deals.length && events.length) ? 'Also on here' : (deals.length ? 'Deals here' : 'On here');
+    return '<div class="wmp-also"><div class="wmp-also-head">'+label+'</div>'+box.innerHTML+'</div>';
+  }
+
+  function ensurePins(){
+    if (pins) return;
+    burgerVenues = {};
+    (WOAP_BURGERS || []).forEach(function(b){ burgerVenues[b.venue] = true; });
+    pins = [];
+    (window.__wdVenuePins ? window.__wdVenuePins('all') : []).forEach(function(p){
+      byVenue[p.name] = p;
+      // A venue that already has a burger pin gets no second pin — it would sit on the identical
+      // coordinates and hide one of the two. Its deals ride along inside the burger's popup.
+      if (burgerVenues[p.name]) return;
+      var eventOnly = !p.deals.length;
+      var m = L.marker([p.lat, p.lng], eventOnly ? { icon: window.__wdEventPin() } : {});
+      // Bound as a function, not a string: the popup must show only the layers that are switched on
+      // at the moment it opens, and toggling is not allowed to cost a marker rebuild.
+      m.bindPopup(function(){
+        return window.__wdVenuePopupHtml(p.name, showDeals ? p.deals : [], showEvents ? p.events : []);
+      });
+      m.on('popupopen',  function(e){ if (window.__wdSetOpenPopup) window.__wdSetOpenPopup(e.popup); });
+      m.on('popupclose', function(){ if (window.__wdSetOpenPopup) window.__wdSetOpenPopup(null); });
+      p.marker = m;
+      pins.push(p);
+    });
+  }
+  function wanted(p){ return (showDeals && p.deals.length) || (showEvents && p.events.length); }
+  // Add and remove only what actually changed. Toggling then costs ~10-25ms rather than rebuilding
+  // the whole cluster, which is what makes it feel like a switch instead of a page load.
+  function syncLayers(){
+    if (!built || !map) return;
+    ensurePins();
+    var next = pins.filter(wanted);
+    var nextSet = new Set(next.map(function(p){ return p.marker; }));
+    var drop = onMap.filter(function(m){ return !nextSet.has(m); });
+    var have = new Set(onMap);
+    var add  = next.map(function(p){ return p.marker; }).filter(function(m){ return !have.has(m); });
+    if (drop.length) cluster.removeLayers(drop);
+    if (add.length)  cluster.addLayers(add);
+    onMap = next.map(function(p){ return p.marker; });
   }
   function refresh(){
     if (!built || !map) return;
     cluster.clearLayers();
+    onMap = [];
     (WOAP_BURGERS || []).forEach(function(b){
       var v = (VENUES_MAP || {})[b.venue];
       var lat = (v && typeof v.lat === 'number') ? v.lat : (typeof b.lat === 'number' ? b.lat : null);
       var lng = (v && typeof v.lng === 'number') ? v.lng : (typeof b.lng === 'number' ? b.lng : null);
       if (lat == null || lng == null) return;
       var m = L.marker([lat, lng], { icon: burgerPin() });
-      m.bindPopup(popupHtml(b));
+      m.bindPopup(function(){ return popupHtml(b); });
       cluster.addLayer(m);
+    });
+    syncLayers();   // clearLayers() drops the venue pins too, so put back whatever is switched on
+  }
+  function addToggles(){
+    var defs = [
+      { key:'deals',  cls:'deals',  label:'Deals',  get:function(){ return showDeals; },  set:function(v){ showDeals = v; } },
+      { key:'events', cls:'events', label:'Events', get:function(){ return showEvents; }, set:function(v){ showEvents = v; } }
+    ];
+    defs.forEach(function(d){
+      var Ctl = L.Control.extend({
+        options: { position: 'topleft' },
+        onAdd: function(){
+          var b = L.DomUtil.create('button', 'map-layer-toggle ' + d.cls);
+          b.type = 'button';
+          var paint = function(){
+            b.classList.toggle('on', d.get());
+            b.setAttribute('aria-pressed', d.get() ? 'true' : 'false');
+            b.textContent = d.label + ': ' + (d.get() ? 'on' : 'off');
+          };
+          paint();
+          L.DomEvent.disableClickPropagation(b);
+          L.DomEvent.on(b, 'click', function(){
+            d.set(!d.get());
+            paint();
+            syncLayers();
+            wdTrack('woap_map_layer', { layer: d.key, on: d.get() });
+          });
+          return b;
+        }
+      });
+      map.addControl(new Ctl());
     });
   }
   // A rating changes what one popup says, but refresh() rebuilds all 244 markers — ~300ms, which is
@@ -4196,10 +4344,14 @@ loadData().then(() => {
     ensureLeaflet().then(function(){
       var el = document.getElementById('woapMap'); if (!el) return;
       if (!map){
-        map = L.map(el).setView(WGTN, 12);
+        // Zoom moves to the top-right so the Deals/Events toggles can own the top-left corner,
+        // matching the deals map's burger toggle.
+        map = L.map(el, { zoomControl:false }).setView(WGTN, 12);
+        L.control.zoom({ position:'topright' }).addTo(map);
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { maxZoom:19, attribution:'&copy; OpenStreetMap contributors' }).addTo(map);
         cluster = L.markerClusterGroup({ maxClusterRadius:45 }); map.addLayer(cluster);
         built = true; stale = false; refresh();
+        addToggles();
       } else if (stale) {
         stale = false; refresh();
       }
