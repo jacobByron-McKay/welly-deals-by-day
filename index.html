@@ -89,6 +89,12 @@
     --accent: #1d6fa3;
     --accent-soft: #e6f1f8;
     --border: #dfe5ec;
+    /* Deliberately darker than --border. A listing card is white on near-white paper,
+       so a hairline --border edge was invisible and the gap between two cards read as
+       ordinary line spacing - a visitor misread a deal as belonging to the venue named
+       in the NEXT card (reported on Facebook, 26 Jul 2026). --border stays as-is for
+       chips, rules and inputs. */
+    --card-edge: #c3cdda;
     --today: #fff4d6;
     --today-border: #e6c65c;
   }
@@ -109,7 +115,9 @@
   .region-chip.active { background: var(--accent); color: #fff; border-color: var(--accent) !important; }
   .region-chip:not(.active):hover { border-color: var(--accent); color: var(--accent); }
   .day-section.today { background: var(--today); border-left: 3px solid var(--today-border); }
-  .deal-card { transition: transform 0.1s ease, box-shadow 0.1s ease; }
+  /* One listing = one clearly bounded block. The resting shadow lifts the card off the paper
+     so where a listing starts and stops is obvious without a separator rule between them. */
+  .deal-card { transition: transform 0.1s ease, box-shadow 0.1s ease; box-shadow: 0 1px 2px rgba(22,38,58,0.06); }
   .deal-card:hover { transform: translateY(-1px); box-shadow: 0 4px 12px rgba(22,38,58,0.08); }
   .cat-badge { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.04em; }
   .cat-food         { background: #fef3e2; color: #8a5a1a; }
@@ -1392,7 +1400,7 @@ function render() {
             ${totalItems} deal${totalItems === 1 ? "" : "s"}
           </span>
         </div>
-        <div class="px-4 pb-4 space-y-2">
+        <div class="px-4 pb-4 space-y-3">
           ${totalItems === 0
             ? `<div class="text-sm italic py-3" style="color:var(--ink-muted);">Nothing on ${day} matching your filters.</div>`
             : ((dayDeals.length + dayEvents.length) === 0 ? "" : (() => {
@@ -1467,7 +1475,7 @@ function renderCard(d) {
     : "";
 
   return `
-    <article class="deal-card rounded-lg p-3 border" data-card-slug="${dealSlug(d)}" style="background:var(--card);border-color:var(--border);">
+    <article class="deal-card rounded-lg p-3 border" data-card-slug="${dealSlug(d)}" style="background:var(--card);border-color:var(--card-edge);">
       <div class="flex-1 min-w-0">
         <div class="flex items-start gap-2 mb-1">
           <div class="flex items-center gap-2 flex-wrap flex-1 min-w-0">
@@ -1514,7 +1522,7 @@ function renderEventCard(ev) {
     ? `${ev.venues.length} venues: ${ev.venues.join(', ')}`
     : ev.venue;
   return `
-    <article class="deal-card rounded-lg p-3 border mb-2" style="background:var(--card);border-color:var(--border);">
+    <article class="deal-card rounded-lg p-3 border mb-2" style="background:var(--card);border-color:var(--card-edge);">
       <div class="flex items-center gap-2 flex-wrap mb-1">
         ${sportBadge(ev)}
         <span class="text-xs" style="color:var(--ink-muted);">${venueLabel} &middot; ${suburbLabel(ev.suburb)}</span>
@@ -1606,7 +1614,7 @@ function renderRugbyCard(ev) {
   const comp    = ev.competition || "Wellington Premier";
   const ground  = ev.ground || ev.address || "";
   return `
-    <article class="deal-card rounded-lg p-3 border mb-2" style="background:var(--paper);border-color:var(--border);">
+    <article class="deal-card rounded-lg p-3 border mb-2" style="background:var(--paper);border-color:var(--card-edge);">
       <div class="flex items-center gap-2 flex-wrap mb-1">
         <span class="cat-badge cat-sport-rugby px-2 py-0.5 rounded">${comp}</span>
         ${ev.round ? `<span class="text-xs" style="color:var(--ink-muted);">${ev.round}</span>` : ""}
