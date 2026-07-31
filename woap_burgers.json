@@ -214,7 +214,7 @@
     "dietary": [
       "NF"
     ],
-    "desc": "Smashed beef patty, with pulled BBQ pork, sweet and spicy pickles, house-pickled red cabbage, Wild Chef hash sticks, and sriracha mayo in an Arobake brioche bun, with mac 'n' cheese.",
+    "desc": "Angus beef patty, with BBQ pulled pork, sweet and spicy pickles, house-pickled red cabbage, and sriracha mayo in an Arobake brioche bun, with mac 'n' cheese and Wild Chef hash sticks.",
     "lat": -41.2843513,
     "lng": 174.7790069,
     "lunch": true,
@@ -914,7 +914,7 @@
     "beer_match": null,
     "beer_match_price": null,
     "dietary": [],
-    "desc": "Low and slow SJ Firewood Manuka smoked beef brisket, with smoked provolone cheese, Southern spiced onion rings, trio of house pickles in a Dough Bakery honey-glazed brown butter brioche bun, with cheesy Tex-Mex tots.",
+    "desc": "Low and slow SJ Firewood Manuka smoked beef brisket, with smoked provolone cheese, Southern spiced onion rings, trio of house pickles in a brioche bun, with cheesy Tex-Mex tots.",
     "lat": -41.1291819,
     "lng": 175.06741699999998,
     "lunch": true,
@@ -977,7 +977,7 @@
     "lat": -41.2096302,
     "lng": 174.9044134,
     "lunch": true,
-    "dinner": false,
+    "dinner": true,
     "official_image": "woap-images/cluck-and-tell-little-manila.jpg",
     "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/WOAP-Sticky-Chicken-Burger-w-Fries-260605-103225.png",
     "google_rating": null,
@@ -1638,7 +1638,7 @@
     "lunch": true,
     "dinner": true,
     "official_image": "woap-images/heard-it-thru-lucky.jpg",
-    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/BW-2026-I-Heard-It-Thru----260429-153916.jpg",
+    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/IMG_3799-260730-080421.jpeg",
     "google_rating": null,
     "google_reviews": null
   },
@@ -1900,9 +1900,9 @@
   },
   {
     "name": "It's all in the Delivery",
-    "venue": "Food Envy",
+    "venue": "Food Envy via Delivereasy",
     "suburb": "Te Aro",
-    "address": "25a Tennyson Street",
+    "address": "Only available via the Delivereasy app",
     "price": "$20",
     "beer_match": null,
     "beer_match_price": null,
@@ -1914,7 +1914,7 @@
     "lng": 174.7813828,
     "lunch": true,
     "dinner": false,
-    "official_image": "woap-images/it-s-all-in-the-delivery-food-envy.jpg",
+    "official_image": "woap-images/it-s-all-in-the-delivery-food-envy-via-delivereasy.jpg",
     "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/IMG_3587-260716-142941.jpeg",
     "google_rating": null,
     "google_reviews": null
@@ -2133,13 +2133,13 @@
     "dietary": [
       "NF"
     ],
-    "desc": "Slow-cooked pork cheek, with pickled red cabbage, American cheese, and kimchi mayonnaise in a Brezelmania brioche bun.",
+    "desc": "Panko crusted slow-cooked pork cheek patty, with iceberg lettuce, pickled red cabbage, American cheese, and kimchi mayonnaise in a Brezelmania brioche bun.",
     "lat": -41.29103020000001,
     "lng": 174.77394789999994,
     "lunch": true,
     "dinner": false,
     "official_image": "woap-images/kimcheek-flight-coffee-hangar.jpg",
-    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/Landscape-Edit-2---65-Real-260518-074207.png",
+    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/IMG_3825-260731-092935.png",
     "google_rating": 4.6,
     "google_reviews": null
   },
@@ -2613,7 +2613,7 @@
     "address": "232 Oriental Parade",
     "price": "$27",
     "beer_match": "Naughty Haze (Hazy IPA)",
-    "beer_match_price": 36.0,
+    "beer_match_price": 37.0,
     "dietary": [
       "NF"
     ],
@@ -2905,7 +2905,7 @@
       "VG",
       "NF"
     ],
-    "desc": "Beer-battered kūmara fritter and Mushroom House oyster mushroom scallops, with foraged kawakawa and Granny Smith coleslaw, iceberg lettuce, fruju citrus chutney, and kiwi onion dip in a Little Bread Loaf rēwena bun, with fairy bread chips and marmite gravy.",
+    "desc": "L&P-battered kūmara fritter and Mushroom House oyster mushroom \"scallops\", with foraged kawakawa and Granny Smith coleslaw, iceberg lettuce, kiwi and green apple chutney, and Kiwi onion dip in a Cottage Lane potato bun, with fairy bread-salted chips and marmite gravy.",
     "lat": -41.32891,
     "lng": 174.795534,
     "lunch": true,
@@ -3230,7 +3230,7 @@
     "address": "2 Grey Street",
     "price": "$29",
     "beer_match": "Tinyken (Non-Alc Hazy IPA)",
-    "beer_match_price": 48.0,
+    "beer_match_price": 41.0,
     "dietary": [],
     "desc": "Wagyu menchi katsu, with soy-mirin cured egg yolk, wong bok coleslaw, kewpie curry mayonnaise, and caviar in a Brezelmania bun.",
     "lat": -41.2846596,
@@ -3257,7 +3257,7 @@
     "lat": -41.3275762,
     "lng": 174.8000926,
     "lunch": true,
-    "dinner": false,
+    "dinner": true,
     "official_image": "woap-images/secret-de-polishinelle-the-polish-sausage-company.jpg",
     "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/PolishSausageCompany-highresolution-3-260426-171040.jpg",
     "google_rating": null,
@@ -3418,7 +3418,7 @@
       "V",
       "NF"
     ],
-    "desc": "Mushroom House oyster mushroom smash patty, with Kāpiti smoked pimento cheese, fried green tomato, maple bacon, tobacco onion, bourbon BBQ glaze, rocket, and moonshine mayonnaise in a Cottage Lane potato bun, with speakeasy spud skins and garlic salt.",
+    "desc": "Mushroom House oyster mushroom smash patty, with Kāpiti smoked pimento cheese, pickled green tomato, maple facon, tobacco onion, bourbon BBQ glaze, rocket, and moonshine mayonnaise in a Cottage Lane potato bun, with speakeasy spud skins and garlic salt.",
     "lat": -41.2826528,
     "lng": 174.7775732,
     "lunch": true,
@@ -3584,7 +3584,7 @@
     "beer_match": "Tinyken (Non-Alc Hazy IPA)",
     "beer_match_price": 38.0,
     "dietary": [],
-    "desc": "Smashed beef patty, with whipped onion dip, Swiss cheese, fenugreek pickles, and smoked burger sauce in a Brezelmania bun.",
+    "desc": "Smashed beef patty, with whipped onion dip, Swiss cheese, pickled chilli smash, fenugreek pickles, and smoked burger sauce in a Brezelmania bun.",
     "lat": -41.28467,
     "lng": 174.77669319999995,
     "lunch": true,
@@ -3846,7 +3846,7 @@
     "lunch": true,
     "dinner": false,
     "official_image": "woap-images/that-s-amore-wellington-seamarket-lambton-quay.jpg",
-    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/IMG_2074-260604-105831.jpg",
+    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/IMG_3832-260731-114452.png",
     "google_rating": null,
     "google_reviews": null
   },
@@ -4240,9 +4240,7 @@
     "price": "$25",
     "beer_match": "Loud & Clear (DDH Bright IPA)",
     "beer_match_price": 36.0,
-    "dietary": [
-      "NF"
-    ],
+    "dietary": [],
     "desc": "Chicken parmigiana, with Cambodian tuk trey ping poh tomato, mozzarella, and smoked mayonnaise in a Wellington Sourdough potato bun.",
     "lat": -41.2923265,
     "lng": 174.7773662,
@@ -4440,7 +4438,7 @@
     "suburb": "Wellington CBD",
     "address": "18 Willeston Street",
     "price": "$30",
-    "beer_match": "Naughty Hopper (IPA)",
+    "beer_match": "Chillax (XPA)",
     "beer_match_price": 40.0,
     "dietary": [
       "NF"
@@ -4485,7 +4483,7 @@
     "beer_match": null,
     "beer_match_price": null,
     "dietary": [],
-    "desc": "Wellington Seamarket Cook Strait caught crumbed fish fillet, with sliced salmon sashimi, lettuce, American cheese, and tartare sauce in a Dough Bakery potato bun.",
+    "desc": "Wellington Seamarket Cook Strait caught crumbed fish fillet, with sliced Salmon sashimi, coleslaw, cheese, and tartare sauce in a Dough Bakery potato bun.",
     "lat": -41.2955617,
     "lng": 174.7742896,
     "lunch": true,
@@ -4614,7 +4612,7 @@
     "lunch": true,
     "dinner": true,
     "official_image": "woap-images/triple-b-revival-ernesto-s-cocina-cubana.jpg",
-    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/IMG_2814-260511-122004.jpeg",
+    "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/IMG_3835-260731-123230.jpeg",
     "google_rating": 4.5,
     "google_reviews": null
   },
@@ -4721,7 +4719,7 @@
     "google_reviews": null
   },
   {
-    "name": "Veni, Vidi, Vidi",
+    "name": "Veni, Vidi, Vici",
     "venue": "Nolita",
     "suburb": "Te Aro",
     "address": "203 Cuba Street",
@@ -4739,7 +4737,7 @@
     "lng": 174.774874,
     "lunch": true,
     "dinner": true,
-    "official_image": "woap-images/veni-vidi-vidi-nolita.jpg",
+    "official_image": "woap-images/veni-vidi-vici-nolita.jpg",
     "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/Nolita-Woap-2-260415-220647.jpeg",
     "google_rating": 4.5,
     "google_reviews": null
