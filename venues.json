@@ -3566,7 +3566,8 @@
     "google_maps_url": "https://www.google.com/maps/search/Petone+Working+Men's+Club",
     "notes": "Scanned 2026-07-06: Own website /events page — 6 dated upcoming live-entertainment events found (10-25 Jul 2026). Bistro menu is standard, daily specials only on in-venue blackboard (not digitally confirmable). Facebook (6.2K followers) — mostly members-only gated content, no additional public deals. Instagram — not found.",
     "lat": -41.221134,
-    "lng": 174.882835
+    "lng": 174.882835,
+    "club_venue": true
   },
   {
     "venue": "Caffiend",
@@ -4547,7 +4548,7 @@
   },
   {
     "venue": "Stokes Valley Memorial RSA",
-    "suburb": "Lower Hutt",
+    "suburb": "Stokes Valley",
     "address": "21 Hawthorn Cres, Stokes Valley, Lower Hutt",
     "category_hint": "bar-restaurant",
     "website": null,
@@ -4558,7 +4559,8 @@
     "google_maps_url": null,
     "notes": "Scanned 2026-07-07: FB (111 followers) no own-channel deal post; Google review (medium confidence) mentions Friday blackboard meal — see deals.",
     "lat": -41.171137,
-    "lng": 174.984293
+    "lng": 174.984293,
+    "club_venue": true
   },
   {
     "venue": "Hutt Park Hotel Sports Bar",
@@ -5920,7 +5922,8 @@
     "google_maps_url": null,
     "notes": "Scanned 2026-07-07: private members' club ($40/yr); one-off dated events (not recurring weekly); Arcadia restaurant + Sports Bar, no discount deals found. No deals.",
     "lat": -41.12232,
-    "lng": 175.072091
+    "lng": 175.072091,
+    "club_venue": true
   },
   {
     "venue": "Upper Hutt Bakery",
@@ -6224,7 +6227,7 @@
   },
   {
     "venue": "Stokes Valley Cosmopolitan Club",
-    "suburb": "Lower Hutt",
+    "suburb": "Stokes Valley",
     "address": "35-37 George St, Stokes Valley, Lower Hutt",
     "category_hint": "club",
     "website": "https://svcc.org.nz",
@@ -6233,9 +6236,11 @@
     "is_chain": false,
     "google_rating": null,
     "google_maps_url": null,
-    "notes": "Scanned 2026-07-07: private members social club, website unreachable, FB (436 followers) not deeply checked. No deals found.",
+    "notes": "PERMANENTLY CLOSED. Served its last beer 9 Apr 2019 (Stuff) after debt and declining membership; NZ Gazette notice 18 May 2021 records liquidation and removal from the Incorporated Societies register. No Google Maps listing exists. Confirmed by Maps sweep 2026-08-02. The 3 deals on file are stale and are now suppressed by the frontend's closed-venue guard.",
     "lat": -41.166263,
-    "lng": 174.982394
+    "lng": 174.982394,
+    "status": "closed",
+    "club_venue": true
   },
   {
     "venue": "1841 Bar and Restaurant",
@@ -6385,7 +6390,8 @@
     "google_maps_url": "https://www.google.com/maps/search/Johnsonville+Club+Inc",
     "notes": "Scanned 2026-07-08: Extensive deals from website Events page + Instagram (very active, posts daily). 11 deal records captured - Pensioner Tuesday, Wed Poker/Coggie's Quiz(monthly)/Housie(monthly), Thu Quiz Night + Membership Draw, Fri Happy Hour + Fun Quiz, Sat Membership Draw, Sun Happy Hour + Steak Night. Also runs sports screenings (All Blacks tests) - excluded per TV-screening rule.",
     "lat": -41.22293,
-    "lng": 174.807957
+    "lng": 174.807957,
+    "club_venue": true
   },
   {
     "venue": "Zampelles Cafe Johnsonville",
@@ -6647,21 +6653,6 @@
     "notes": "Boundary case: real address is Paparangi (adjoins Johnsonville, not explicitly named in the handoff's optional-holding list which only mentioned Newlands/Churton Park) - included in the same spirit, flag for Claude Code/user review at merge. Genuine Wednesday Chole Bhature & Amritsari Kulcha special confirmed via own FB video (5pm-8pm), exact price not visible in the graphic - recorded at medium confidence.",
     "lat": -41.213861,
     "lng": 174.817705
-  },
-  {
-    "venue": "Rock Salt Bar and Grill",
-    "suburb": "Johnsonville",
-    "address": "1 Newlands Road, Newlands, Wellington 6037 (Capital Lodge Motor Inn)",
-    "category_hint": "restaurant",
-    "website": "https://www.rocksalt.nz",
-    "facebook": "https://www.facebook.com/RockSaltBarAndGrill",
-    "instagram": "https://www.instagram.com/rocksalt.newlands/",
-    "is_chain": false,
-    "google_rating": 4.7,
-    "google_maps_url": "https://www.google.com/maps/search/Rock+Salt+Bar+and+Grill+Newlands",
-    "notes": "Boundary case: real address is Newlands - included per the handoff's explicit 'optional Newlands' allowance. Sunday Steak Night $25 confirmed via own IG (most recent post, supersedes an older 'Classic Sunday Roast $35/$30' graphic also found - only the newer one recorded). Also has an ongoing First Table 50% off food bill deal (2-4 diners, earliest booking).",
-    "lat": -41.230473,
-    "lng": 174.810996
   },
   {
     "venue": "The Pickle Jar",
@@ -8911,7 +8902,8 @@
     "google_maps_url": "https://www.google.com/maps/search/Waitoa+Social+Club+Hataitai+Wellington",
     "notes": "Scanned 2026-07-08: micro-brewery/bar chain (also Victoria St, Khandallah - relevant for the tier-2 Khandallah scan). Wednesday 6:30pm quiz night confirmed via own website.",
     "lat": -41.303894,
-    "lng": 174.794154
+    "lng": 174.794154,
+    "club_venue": true
   },
   {
     "venue": "Coolsville Cafe",
@@ -9784,7 +9776,8 @@
     "google_maps_url": "https://www.google.com/maps/search/Waikanae+Chartered+Club",
     "notes": "Scanned 2026-07-10: Website lists Quiz Night Thursdays 6pm (recorded as deal). Also lists Housie Thursdays 1pm and 8-ball club nights Tue/Fri - no price/value stated so left out per rules.",
     "lat": -40.877993,
-    "lng": 175.065816
+    "lng": 175.065816,
+    "club_venue": true
   },
   {
     "venue": "Kuen Loong Takeaway",
@@ -10372,10 +10365,11 @@
     "is_chain": true,
     "google_rating": null,
     "google_maps_url": "https://www.google.com/maps/search/North+City+Porirua",
-    "notes": "Scanned 2026-07-10 (batch, light-touch): Confirmed via mall directory. Spice Traders individually checked - no Porirua-specific deal found. Remaining ~19 tenants are national/regional mall-chain outlets or small kiosks not individually deep-scanned across all 3 channels - flagged as a coverage gap.",
+    "notes": "Scanned 2026-07-10 (batch, light-touch): Confirmed via mall directory. Spice Traders individually checked - no Porirua-specific deal found. Remaining ~19 tenants are national/regional mall-chain outlets or small kiosks not individually deep-scanned across all 3 channels - flagged as a coverage gap.Not a single venue: this record lumped ~20 unrelated food-court tenants (incl. McDonald's, Starbucks, Pita Pit) into one entry, which also breaches the no-massive-chains ethos. Ghosted 2026-08-02 so the frontend excludes it. Split into individual independent venues if Porirua CBD is rescanned.",
     "lat": -41.136527,
     "lng": 174.838864,
-    "big_chain": true
+    "big_chain": true,
+    "status": "ghost"
   },
   {
     "venue": "Passo Pizza Pasta Caffe'",
@@ -11121,7 +11115,8 @@
     "google_maps_url": "https://www.google.com/maps/place/Club+Vista",
     "notes": "Scanned 2026-07-10: Paraparaumu RSA. Website What's On page confirms Monday Cards (500) 1pm and Tuesday Quiz Night 7:15pm.",
     "lat": -40.893718,
-    "lng": 174.979671
+    "lng": 174.979671,
+    "club_venue": true
   },
   {
     "venue": "Maclean Street Fish Supply",
@@ -12402,7 +12397,8 @@
     "google_maps_url": "https://www.google.com/maps/search/Whitby+Bowling+Club+Porirua",
     "notes": "Scanned 2026-07-10: member-facing site, no public day+time+price deal or open-night confirmed. No deals or events found.",
     "lat": -41.116805,
-    "lng": 174.895141
+    "lng": 174.895141,
+    "club_venue": true
   },
   {
     "venue": "Long Beach Tavern",
@@ -12508,7 +12504,8 @@
     "google_maps_url": "https://www.google.com/maps/search/Waikanae+Boating+Club/",
     "notes": "Scanned 2026-07-10: members-only club, not open to the public. Past quiz nights found but none confirmed within the current 12-month window with a specific recurring day.",
     "lat": -40.865026,
-    "lng": 175.01825
+    "lng": 175.01825,
+    "club_venue": true
   },
   {
     "venue": "Little Green Olive",
@@ -12736,7 +12733,8 @@
     "google_maps_url": "https://www.google.com/maps/place/Raumati+Social+Club",
     "notes": "Scanned 2026-07-10: live music venue with frequent gigs but no fixed recurring weekly night/price - FB Events tab has two dated upcoming shows.",
     "lat": -40.936325,
-    "lng": 174.977646
+    "lng": 174.977646,
+    "club_venue": true
   },
   {
     "venue": "Raumati Southend Takeaways",
@@ -13065,16 +13063,18 @@
   },
   {
     "venue": "The Hardware Bar & Restaurant",
-    "suburb": "Lower Hutt",
+    "suburb": "Stokes Valley",
     "address": "8 Evans Street, Stokes Valley, Lower Hutt 5019",
     "category_hint": "bar-restaurant",
-    "website": "https://www.thehardwarepub.com/",
+    "website": "https://thehardwarepub.com",
     "facebook": null,
     "instagram": null,
-    "google_rating": 4.1,
+    "google_rating": 4.4,
     "google_maps_url": "https://www.google.com/maps/search/The+Hardware+Bar+8+Evans+St+Lower+Hutt",
     "is_chain": false,
-    "notes": "Traditional steakhouse / bar / gaming lounge in Stokes Valley. Restaurant open Tue-Sun dinner 5-8:30pm, Fri-Sun also 11am-2pm lunch; bar open daily. 198+ Google reviews. Website lists no weekly day+time+price deal; no locatable NZ Facebook page found to scan. Steak-night potential but unconfirmed - flag for a phone/on-site check (04 563 5060)."
+    "notes": "Gastropub: restaurant, bar and gaming. 4.4 from 319 reviews (was 4.1/198). Restaurant Tue-Sun dinner 5-8:30pm, Fri-Sun lunch 11am-2pm; bar daily. Ph 04 563 5060. Re-tagged Lower Hutt -> Stokes Valley and coords backfilled 2026-08-02; previously had null lat/lng so it never rendered a map pin. Steak-night potential still unconfirmed - PRIORITY phone/on-site check.",
+    "lat": -41.1745325,
+    "lng": 174.9813917
   },
   {
     "venue": "The Angus Restaurant and Bar (Carnmore Hotel Lower Hutt)",
@@ -14539,7 +14539,8 @@
     "google_maps_url": "https://www.google.com/maps/place/South+Wairarapa+Workingmen's+Club/@-41.0805761,175.4600066,17z",
     "notes": "Scanned 2026-07-24: members' club with TAB, pool/snooker, darts. Quiz nights found in search results are one-off charity fundraisers (e.g. Wai Wheels quiz on Pet Day, Greytown RSA happy hour fundraiser from Sept 2024) rather than a standing weekly quiz/happy hour - excluded.",
     "lat": -41.0805761,
-    "lng": 175.4600066
+    "lng": 175.4600066,
+    "club_venue": true
   },
   {
     "venue": "Simplicity Restaurant",
@@ -14749,7 +14750,8 @@
     "google_maps_url": "https://www.google.com/maps/place/Club+Carterton/@-41.0236439,175.5270897,17z",
     "notes": "Scanned 2026-07-25: RSA-affiliated club. Hosts a Wednesday Quiz Night ($5pp) and a Monday Night Buffet ($20pp/$12 kids, 5.30-6.45pm) but both are confirmed to run roughly MONTHLY at irregular dates (a post apologised 'no buffet in March, next one is April') - cadence too irregular to encode reliably as a dated weekly/monthly record, so not added. Genuine value (day+time+price) exists; flagging for a future pass once a fixed date pattern can be confirmed.",
     "lat": -41.0236439,
-    "lng": 175.5270897
+    "lng": 175.5270897,
+    "club_venue": true
   },
   {
     "venue": "HOP & VINE",
@@ -14975,5 +14977,188 @@
     "notes": "Scanned 2026-07-25: Chinese takeaway/fish and chips. No FB presence found, no deal confirmable. Nil deal.",
     "lat": -41.1168098,
     "lng": 175.3236763
+  },
+  {
+    "venue": "The Bakehouse",
+    "suburb": "Stokes Valley",
+    "address": "6 Oates St, Stokes Valley, Lower Hutt 5019",
+    "category_hint": "cafe",
+    "website": null,
+    "facebook": null,
+    "instagram": null,
+    "is_chain": false,
+    "google_rating": 4.6,
+    "google_maps_url": null,
+    "notes": "Added by Google Maps discovery sweep 2026-08-02. Bakery/cafe, 171 reviews. Ph 04 563 9072.",
+    "lat": -41.1735412,
+    "lng": 174.9808948
+  },
+  {
+    "venue": "Kebab Point",
+    "suburb": "Stokes Valley",
+    "address": "3 Scott Ct, Stokes Valley, Lower Hutt 5019",
+    "category_hint": "takeaway",
+    "website": null,
+    "facebook": null,
+    "instagram": null,
+    "is_chain": false,
+    "google_rating": 4.8,
+    "google_maps_url": null,
+    "notes": "Added by Google Maps discovery sweep 2026-08-02. Kebab takeaway, 83 reviews. Highest-rated eatery in the suburb.",
+    "lat": -41.1741097,
+    "lng": 174.9815454
+  },
+  {
+    "venue": "Stokes Valley Fish Supply",
+    "suburb": "Stokes Valley",
+    "address": "198 Stokes Valley Rd, Stokes Valley, Lower Hutt 5019",
+    "category_hint": "takeaway",
+    "website": null,
+    "facebook": null,
+    "instagram": null,
+    "is_chain": false,
+    "google_rating": 4.2,
+    "google_maps_url": null,
+    "notes": "Added by Google Maps discovery sweep 2026-08-02. Fish and chips, 174 reviews. Ph 04 563 7022.",
+    "lat": -41.1742095,
+    "lng": 174.9817504
+  },
+  {
+    "venue": "Fung Wah Takeaways",
+    "suburb": "Stokes Valley",
+    "address": "188 Stokes Valley Rd, Stokes Valley, Lower Hutt 5019",
+    "category_hint": "takeaway",
+    "website": null,
+    "facebook": null,
+    "instagram": null,
+    "is_chain": false,
+    "google_rating": 3.8,
+    "google_maps_url": null,
+    "notes": "Added by Google Maps discovery sweep 2026-08-02. 69 reviews. Ph 04 563 9433.",
+    "lat": -41.1737679,
+    "lng": 174.9818107
+  },
+  {
+    "venue": "The Island Food Catering Company",
+    "suburb": "Stokes Valley",
+    "address": "45 Stokes Valley Road, Stokes Valley, Lower Hutt 5019",
+    "category_hint": "cafe",
+    "website": null,
+    "facebook": null,
+    "instagram": null,
+    "is_chain": false,
+    "google_rating": 4.7,
+    "google_maps_url": null,
+    "notes": "Added by Google Maps discovery sweep 2026-08-02. Caterer plus shop; opened a new Island Food Cafe at no. 47 around May/June 2026 (no separate Maps listing). DEAL LEAD: their own FB/IG show hot-food pricing (Moussaka $7, Burger $6, Slice $3.50, Egg Sandwich). Ph 022 070 0296.",
+    "lat": -41.1634916,
+    "lng": 174.9840351
+  },
+  {
+    "venue": "Ming Takeaways",
+    "suburb": "Stokes Valley",
+    "address": "351 Stokes Valley Rd, Stokes Valley, Lower Hutt 5019",
+    "category_hint": "takeaway",
+    "website": null,
+    "facebook": null,
+    "instagram": null,
+    "is_chain": false,
+    "google_rating": 4.2,
+    "google_maps_url": null,
+    "notes": "Added by Google Maps discovery sweep 2026-08-02. 126 reviews. Bottom end of Stokes Valley Rd.",
+    "lat": -41.1836891,
+    "lng": 174.9827925
+  },
+  {
+    "venue": "Tummy Treat (Indian Cuisine)",
+    "suburb": "Stokes Valley",
+    "address": "41 Glen Road, Stokes Valley, Lower Hutt 5019",
+    "category_hint": "takeaway",
+    "website": null,
+    "facebook": null,
+    "instagram": null,
+    "is_chain": false,
+    "google_rating": 4.7,
+    "google_maps_url": null,
+    "notes": "Added by Google Maps discovery sweep 2026-08-02. Indian, dine-in also available, 147 reviews. Ph 04 210 1485. Glen Rd cluster, never previously scanned.",
+    "lat": -41.1714482,
+    "lng": 174.9864945
+  },
+  {
+    "venue": "Stokes Valley Football Club",
+    "suburb": "Stokes Valley",
+    "address": "319 George St, Stokes Valley, Lower Hutt 5019",
+    "category_hint": "club",
+    "website": null,
+    "facebook": null,
+    "instagram": null,
+    "is_chain": false,
+    "google_rating": 4.4,
+    "google_maps_url": null,
+    "notes": "Added by Google Maps discovery sweep 2026-08-02. Sports club with a bar, 44 reviews. Opens 5pm Wed.",
+    "lat": -41.1793807,
+    "lng": 174.9801385,
+    "club_venue": true
+  },
+  {
+    "venue": "Stokes Valley Rugby Football Club",
+    "suburb": "Stokes Valley",
+    "address": "235 George St, Stokes Valley, Lower Hutt 5019",
+    "category_hint": "club",
+    "website": null,
+    "facebook": null,
+    "instagram": null,
+    "is_chain": false,
+    "google_rating": 4.2,
+    "google_maps_url": null,
+    "notes": "Added by Google Maps discovery sweep 2026-08-02. Rugby club, 31 reviews.",
+    "lat": -41.176118,
+    "lng": 174.9797946,
+    "club_venue": true
+  },
+  {
+    "venue": "Stokes Valley Bowling Club",
+    "suburb": "Stokes Valley",
+    "address": "50-40 Horoeka St, Stokes Valley, Lower Hutt 5019",
+    "category_hint": "club",
+    "website": null,
+    "facebook": null,
+    "instagram": null,
+    "is_chain": false,
+    "google_rating": 4.5,
+    "google_maps_url": null,
+    "notes": "Added by Google Maps discovery sweep 2026-08-02. Bowls club, 29 reviews. Ph 04 939 0239. Opens 3pm Mon.",
+    "lat": -41.1729927,
+    "lng": 174.9900512,
+    "club_venue": true
+  },
+  {
+    "venue": "Kōraunui Stokes Valley Neighbourhood Hub",
+    "suburb": "Stokes Valley",
+    "address": "184 Stokes Valley Rd, Stokes Valley, Lower Hutt 5019",
+    "category_hint": "activity",
+    "website": null,
+    "facebook": null,
+    "instagram": null,
+    "is_chain": false,
+    "google_rating": 4.6,
+    "google_maps_url": null,
+    "notes": "Added by Google Maps discovery sweep 2026-08-02. Library and community events venue, 151 reviews. Ph 04 562 9050. EVENTS LEAD for special_events.json.",
+    "lat": -41.1735327,
+    "lng": 174.9818246
+  },
+  {
+    "venue": "John's Kitchen (Stokes Valley)",
+    "suburb": "Stokes Valley",
+    "address": "43 Stokes Valley Road, Stokes Valley, Lower Hutt 5019",
+    "category_hint": "takeaway",
+    "website": null,
+    "facebook": null,
+    "instagram": null,
+    "is_chain": false,
+    "google_rating": 4.2,
+    "google_maps_url": null,
+    "notes": "Chinese takeaway, 147 reviews. Added by Maps sweep 2026-08-02. Name disambiguated with the suburb because an unrelated \"John's Kitchen\" already exists in Upper Hutt - bare duplicate venue names silently collide in the frontend's VENUES_MAP.",
+    "lat": -41.163522,
+    "lng": 174.9840747
   }
 ]

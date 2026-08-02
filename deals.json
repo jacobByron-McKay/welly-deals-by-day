@@ -7592,7 +7592,7 @@
   },
   {
     "venue": "Stokes Valley Memorial RSA",
-    "suburb": "Lower Hutt",
+    "suburb": "Stokes Valley",
     "address": "21 Hawthorn Cres, Stokes Valley, Lower Hutt",
     "day": "Friday",
     "date": null,
@@ -8906,8 +8906,8 @@
   },
   {
     "venue": "Rock Salt Bar and Grill",
-    "suburb": "Johnsonville",
-    "address": "1 Newlands Road, Newlands, Wellington 6037",
+    "suburb": "Newlands",
+    "address": "1 Newlands Rd, Newlands, Wellington 6037",
     "day": "Sunday",
     "date": null,
     "month_day": null,
@@ -8925,8 +8925,8 @@
   },
   {
     "venue": "Rock Salt Bar and Grill",
-    "suburb": "Johnsonville",
-    "address": "1 Newlands Road, Newlands, Wellington 6037",
+    "suburb": "Newlands",
+    "address": "1 Newlands Rd, Newlands, Wellington 6037",
     "day": null,
     "date": null,
     "month_day": null,
@@ -11335,25 +11335,6 @@
     "confidence": "high"
   },
   {
-    "venue": "Rock Salt Bar and Grill",
-    "suburb": "Newlands",
-    "address": "1 Newlands Rd, Newlands, Wellington 6037",
-    "day": "Sunday",
-    "date": null,
-    "month_day": null,
-    "type": "weekly",
-    "title": "Sunday Steak Night",
-    "desc": "Steak night, $25.",
-    "start": null,
-    "end": null,
-    "category": "food",
-    "source_url": "https://www.instagram.com/rocksalt.newlands/",
-    "source_quote": "Sunday Steak Night: Only $25! ... Every Sunday Rocksalt, Newlands.",
-    "verified_date": "2026-07-08",
-    "confidence": "high",
-    "cosy": true
-  },
-  {
     "venue": "Delhi7 Indian Restaurant and Bar",
     "suburb": "Northland",
     "address": "66 Northland Rd, Northland, Wellington 6012",
@@ -12960,7 +12941,7 @@
   },
   {
     "venue": "Stokes Valley Cosmopolitan Club",
-    "suburb": "Lower Hutt",
+    "suburb": "Stokes Valley",
     "address": "35-37 George St, Stokes Valley, Lower Hutt",
     "day": "Wednesday",
     "date": null,
@@ -12979,7 +12960,7 @@
   },
   {
     "venue": "Stokes Valley Cosmopolitan Club",
-    "suburb": "Lower Hutt",
+    "suburb": "Stokes Valley",
     "address": "35-37 George St, Stokes Valley, Lower Hutt",
     "day": "Thursday",
     "date": null,
@@ -12997,7 +12978,7 @@
   },
   {
     "venue": "Stokes Valley Cosmopolitan Club",
-    "suburb": "Lower Hutt",
+    "suburb": "Stokes Valley",
     "address": "35-37 George St, Stokes Valley, Lower Hutt",
     "day": "Friday",
     "date": null,
