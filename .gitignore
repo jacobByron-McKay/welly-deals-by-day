@@ -11,3 +11,9 @@ WELLY_EVENT_SCAN_PROMPT.md
 
 # Geocoding cache (dev artifact; coords are merged into venues.json)
 geocode_cache.json
+
+# Venue outreach working files — contain scraped business contact details.
+# This repo's publish dir is the repo ROOT, so anything committed here is publicly
+# fetchable at welly-deals-by-day.co.nz/<file>. These must never be committed.
+woap_outreach.json
+WOAP_VENUE_OUTREACH.md

@@ -537,6 +537,11 @@
   .woap-avg { font-size:12px; font-weight:700; color:var(--wr-dark); }
   .woap-avg-none { font-size:12px; color:var(--ink-muted); }
   .woap-desc { font-size:13px; color:var(--ink); margin-top:8px; line-height:1.45; }
+  /* Link through to the venue's own listing on visawoap.com — requested by WOAP so visitors get the
+     authoritative, venue-maintained detail. Sits on its own line above the action buttons. */
+  .woap-official { display:block; font-size:12px; font-weight:600; color:var(--wr);
+    text-decoration:none; margin:8px 0 2px; }
+  .woap-official:hover { text-decoration:underline; }
   .woap-tried { display:inline-flex; align-items:center; gap:5px; margin-top:9px; font-size:12px; font-weight:600;
     color:var(--ink-muted); background:var(--card); border:1px solid var(--border); border-radius:8px; padding:6px 11px; cursor:pointer; }
   .woap-tried:hover { border-color:var(--wr); color:var(--wr); }
@@ -618,6 +623,10 @@
                       overflow-y:auto; overscroll-behavior:contain; padding:12px 12px 16px; }
   .woap-board-panel.hidden { display:none; }
   .woap-board-panel-note { font-size:12px; color:var(--ink-muted); margin:0 0 10px; }
+  /* Independence disclaimer required by Visa WOAP — quiet but genuinely legible, not hidden. */
+  .woap-disclaimer { font-size:11px; line-height:1.5; color:var(--ink-muted); margin:0 0 12px;
+    padding:8px 10px; border:1px solid var(--border); border-radius:8px; background:var(--paper); }
+  .woap-disclaimer a { color:var(--wr); text-decoration:underline; }
   @media (min-width:760px){ .woap-board-panel { left:auto; right:16px; top:16px; bottom:16px; width:440px; } }
   /* Minimise (collapse) button on an expanded leaderboard row */
   .woap-card.bare { position:relative; }
@@ -897,6 +906,10 @@
     <!-- Overlay panel: the leaderboard, sitting on top of the map -->
     <div id="woapBoardPanel" class="woap-board-panel">
       <p class="woap-board-panel-note">Every festival burger, ranked by what Wellington actually thinks. Tap a burger to rate it, leave a photo and a review &mdash; or hit <b>Map</b> above to see all 244 on the map.</p>
+      <!-- Independence disclaimer — wording supplied by Visa Wellington On a Plate (Eleanor Stewart,
+           Wellington Culinary Events Trust, 2026-08-02) and used verbatim at their request. Do not
+           reword without checking with them first. -->
+      <p class="woap-disclaimer">This leaderboard is independently run and is not affiliated with Visa Wellington On a Plate. It is not used to determine the five Burger Wellington finalists. To have your rating count towards finalist selection and go in the draw to win the official Rate &amp; Win prize pack, please submit your rating via the official <a href="https://visawoap.com/rateandwin" target="_blank" rel="noopener">Visa Wellington On a Plate website</a>.</p>
       <div id="woapBoard"></div>
     </div>
     <p class="woap-map-note" id="woapMapNote" style="display:none;"></p>
@@ -1803,6 +1816,7 @@ function renderWoapCard(b, bare) {
         </div>
       </div>
       ${b.desc ? `<p class="woap-desc">${b.desc}</p>` : ''}
+      ${b.woap_url ? `<a class="woap-official" href="${b.woap_url}" target="_blank" rel="noopener">Official Burger Wellington listing &rarr;</a>` : ''}
       <button type="button" class="woap-tried${tried ? ' on' : ''}" data-woap-tried="${slug}">${tried ? '&#10003; Tried it' : '&#43; Mark as tried'}</button>
       <button type="button" class="wd-plan-add woap-plan" data-plan-add="${slug}" data-plan-label-on="&#10003; In plan" data-plan-label-off="&#43; Plan" aria-label="Add this burger to your plan">&#43; Plan</button>
       ${reviewBtn}
@@ -2880,6 +2894,16 @@ loadData().then(() => {
   buildSuburbSelector();  // build region + suburb chips from the loaded data, then render
   render();
   document.dispatchEvent(new Event('venuedata-ready')); // lets a #venue/<slug> deep-link open on load
+
+  // Deep link straight to the Burger Wellington leaderboard: /?burgers=1 or /#burgers.
+  // Added for the 2026 venue outreach — every venue is emailed a link that must land ON the
+  // leaderboard, not on the deals homepage with the burgers tab still shut. Runs here, after
+  // loadData(), because openWoapView() renders from WOAP_BURGERS.
+  if (WOAP_ENABLED) {
+    const wantsBurgers = new URLSearchParams(location.search).get("burgers") === "1"
+                      || location.hash.replace("#", "") === "burgers";
+    if (wantsBurgers) openWoapView();
+  }
 }); // re-renders once data is loaded
 </script>
 
