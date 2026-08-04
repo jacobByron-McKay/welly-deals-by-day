@@ -1134,7 +1134,11 @@ let showWoap          = false;   // WOAP tab — default OFF; reveals the Burger
 let woapView          = "board"; // "board" (leaderboard) | "map" (dedicated burger map)
 // Default leaderboard rank column. 'google' = Google rating, 'rating' = user star-rating average.
 // Flip this one line to 'rating' once enough user ratings accrue to make the "best burger rating" the default.
-const WOAP_DEFAULT_SORT = 'google';
+// Default rank column. Changed from 'google' to 'rating' on 2026-08-05: the point of the
+// board is what Wellington thinks of the BURGER, and Google's star is a rating of the VENUE,
+// which is a different thing. 'rating' sorts by community average, rated ahead of unrated,
+// vote count as the tiebreak.
+const WOAP_DEFAULT_SORT = 'rating';
 let woapLbSort        = WOAP_DEFAULT_SORT; // active leaderboard rank column: "google" | "rating" (overall avg) | "ratings" (vote count) | "price" | "quality" | "quantity"
 const WOAP_RATINGS    = {};      // rating bucket slug → { avg, count }, batch-read from Supabase for the leaderboard
 // The things you can score a burger on. "overall" deliberately keeps the original bare slug, so
