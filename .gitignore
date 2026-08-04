@@ -17,3 +17,6 @@ geocode_cache.json
 # fetchable at welly-deals-by-day.co.nz/<file>. These must never be committed.
 woap_outreach.json
 WOAP_VENUE_OUTREACH.md
+woap_messages.json
+woap_sent.json
+woap_needs_review.json
