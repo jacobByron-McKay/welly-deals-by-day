@@ -618,9 +618,13 @@
   /* z-index must beat Leaflet's own .leaflet-top (1000) or the map's +/- zoom buttons punch a hole
      through the top-left corner of the leaderboard. Switching to Map hides the panel, so the zoom
      control is back the moment you actually need it. */
+  /* overflow-anchor:none — a rating re-ranks the board, which yanks rows out from above the current
+     scroll offset. The browser's own scroll anchoring guesses at a correction for that and guesses
+     wrong here (measured: it pushed the reader ~9,000px away from the card they were rating in).
+     woapApplyRating() does the correction itself, exactly, so the browser must keep its hands off. */
   .woap-board-panel { position:absolute; z-index:1100; top:10px; left:10px; right:10px; bottom:10px; background:var(--paper);
                       border:1px solid var(--wr-border); border-radius:12px; box-shadow:0 10px 30px rgba(0,0,0,.18);
-                      overflow-y:auto; overscroll-behavior:contain; padding:12px 12px 16px; }
+                      overflow-y:auto; overscroll-behavior:contain; overflow-anchor:none; padding:12px 12px 16px; }
   .woap-board-panel.hidden { display:none; }
   .woap-board-panel-note { font-size:12px; color:var(--ink-muted); margin:0 0 10px; }
   /* Independence disclaimer required by Visa WOAP — quiet but genuinely legible, not hidden. */
@@ -1940,10 +1944,22 @@ function renderWoapBoard() {
 }
 
 // ---------- LIVE LEADERBOARD ----------
+// The element that actually scrolls vertically around a leaderboard row — today the board panel
+// (#woapBoardPanel), but found by walking up rather than by id so a future layout change can't
+// silently turn the scroll correction in woapApplyRating() into a no-op.
+function woapScrollerFor(el) {
+  for (let n = el.parentElement; n && n !== document.body; n = n.parentElement) {
+    const ov = getComputedStyle(n).overflowY;
+    if ((ov === 'auto' || ov === 'scroll') && n.scrollHeight > n.clientHeight + 1) return n;
+  }
+  return document.scrollingElement || document.documentElement;
+}
+
 // Called the moment a rating is saved anywhere in the burgers overlay (see the ratings widget in
 // the RATINGS + COMMENTS block). Rather than re-rendering the board — which would destroy the card
 // the user is standing in, mid-review — this repaints each row's cells in place and then physically
-// moves the row nodes into their new order. The expanded card and its live widgets ride along.
+// moves the row nodes into their new order. The expanded card and its live widgets ride along,
+// and the reader's scroll position is held still throughout.
 function woapApplyRating(slug, avg, count) {
   if (!slug) return;
   WOAP_RATINGS[slug] = { avg: Number(avg) || 0, count: Number(count) || 0 };
@@ -1963,6 +1979,14 @@ function woapApplyRating(slug, avg, count) {
   const row = scroll.querySelector('[data-lb-row="' + base + '"]');
   if (!b0 || !row) return;
 
+  // ---- Hold the reader's place across the re-rank (see the correction at the end of this fn) ----
+  // Measure BEFORE anything is touched. Anchor on the expanded card rather than the slim row: the
+  // star that was just tapped lives inside the card, and that is what has to stay under the thumb.
+  const detail = scroll.querySelector('[data-lb-detail="' + base + '"]');
+  const anchorEl = (row.classList.contains('open') && detail && detail.innerHTML.trim()) ? detail : row;
+  const scroller = woapScrollerFor(row);
+  const anchorTop = anchorEl.getBoundingClientRect().top;
+
   // Only this burger's numbers changed, so only its metric cells are rewritten. Rebuilding all 244
   // rows costs ~400ms of layout on a phone, which is exactly the beat that has to feel instant.
   const cells = woapMetricCells(b0);
@@ -1975,7 +1999,6 @@ function woapApplyRating(slug, avg, count) {
   // (and the card expanded under it) out and drop it back in at its new index. Two node moves.
   const shown = woapLeaderboardSorted(WOAP_BURGERS.filter(woapMatchesSearch));
   const newIndex = shown.findIndex(x => woapBurgerSlug(x) === base);
-  const detail = scroll.querySelector('[data-lb-detail="' + base + '"]');
   const oldIndex = [...scroll.querySelectorAll('.woap-lb-row')].indexOf(row);
   if (newIndex >= 0 && newIndex !== oldIndex) {
     const active = document.activeElement;
@@ -2001,15 +2024,28 @@ function woapApplyRating(slug, avg, count) {
     if (el.className !== ri.cls) el.className = ri.cls;
   });
 
-  // Drop the class now and re-add it on a later task. The usual `void offsetWidth` trick to restart a
-  // CSS animation forces a synchronous layout of the whole table — ~100ms on a phone, paid inside the
-  // tap handler. A timeout (rather than requestAnimationFrame) because rAF is throttled to nothing in
-  // a backgrounded or occluded tab, which would silently cost the flash and the scroll-into-view.
+  // ---- Put the reader back exactly where they were ----
+  // A first 5-star vote can lift a burger from #180 to #10, which tears ~170 rows out from above the
+  // current scroll offset. Nothing here should follow the row: the reader is standing inside its card,
+  // very possibly mid-way through rating price/quality/quantity or typing a review. This used to end
+  // with row.scrollIntoView({block:'center'}), which chased the row to its new rank and dumped the
+  // reader at the top of the board — reported in the Burger Wellington group as "after entering any
+  // rating it scrolls to the top once saved, quite user unfriendly".
+  // Reading the rect here forces layout, so the measurement already reflects the re-order above.
+  // scrollTop clamps itself at both ends, so a burger promoted to the very top of a 244-row board
+  // simply lands as close to where it was as the remaining content allows.
+  if (scroller) {
+    const drift = anchorEl.getBoundingClientRect().top - anchorTop;
+    if (drift) scroller.scrollTop += drift;
+  }
+
+  // Flash the row where it now sits, so the new rank is visible without moving anyone. Drop the class
+  // now and re-add it on a later task: the usual `void offsetWidth` trick to restart a CSS animation
+  // forces a synchronous layout of the whole table — ~100ms on a phone, paid inside the tap handler.
+  // A timeout rather than requestAnimationFrame, because rAF is throttled to nothing in a backgrounded
+  // or occluded tab, which would silently cost the flash.
   row.classList.remove('flash');
-  setTimeout(() => {
-    row.classList.add('flash');
-    try { row.scrollIntoView({ block: 'center', inline: 'nearest', behavior: 'smooth' }); } catch (e) {}
-  }, 16);
+  setTimeout(() => { row.classList.add('flash'); }, 16);
   // Map popups quote the average too, but rebuilding 244 markers now would stall the very tap this
   // is meant to make feel instant — flag it and let the map catch up when it is next shown.
   if (window.woapMap && window.woapMap.markStale) window.woapMap.markStale();
@@ -3459,6 +3495,7 @@ loadData().then(() => {
 // visitor opens the panel, and re-lights whenever a newer id appears. tag: "New" | "Added" | "Update".
 (function(){
   var SITE_UPDATES = [
+    { id:"2026-08-05-ratingscroll", date:"2026-08-05", tag:"Update", text:"Fixed: rating a burger no longer throws you back to the top of the leaderboard. Your score still re-ranks the board on the spot, but the card you are in now stays exactly where it is, so you can score price, quality and quantity one after the other without losing your place. Thanks to Pei-Ying in the Burger Wellington group for flagging it." },
     { id:"2026-08-01-refresh", date:"2026-08-01", tag:"Update", text:"Central city refresh — re-checked the 45 busiest venues around Cuba Street, Courtenay Place and Te Aro, added Burger Wellington event picks, and cleared out a handful of deals that had quietly changed or ended." },
     { id:"2026-07-30-burgermaplayers", date:"2026-07-30", tag:"New", text:"The burgers map now shows the rest of the city too. Hit “Deals” or “Events” in the top left and every venue with a deal on, or a gig coming up, pins alongside the burgers — so you can line up a burger and work out what else is on within a couple of streets. A day picker appears with them if you only want one night's worth, and the burgers stay put whichever day you pick. Where a burger venue has its own deals, they show inside the burger's pin." },
     { id:"2026-07-29-burgerscores", date:"2026-07-29", tag:"New",   text:"Burger Wellington ratings go deeper. As well as an overall score you can now rate a burger on price, quality and quantity — do all four or just the one you care about. The leaderboard has a ranking column for each: swipe the table sideways to see them. Every score you give re-ranks the board right there and then." },
