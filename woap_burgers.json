@@ -17,7 +17,10 @@
   "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/CRM06250-2-260416-140007.jpg",
   "google_rating": 4.6,
   "google_reviews": null,
-  "woap_url": "https://visawoap.com/venue/zephyr-cafe/7067?type=burger"
+  "woap_url": "https://visawoap.com/venue/zephyr-cafe/7067?type=burger",
+  "photos": [
+   "woap-images/0800-the-word-zephyr-cafe-venue.jpg"
+  ]
  },
  {
   "name": "3 Little Pigs Story",
@@ -225,8 +228,8 @@
    "NF"
   ],
   "desc": "Angus beef patty, with BBQ pulled pork, sweet and spicy pickles, house-pickled red cabbage, and sriracha mayo in an Arobake brioche bun, with mac 'n' cheese and Wild Chef hash sticks.",
-  "lat": -41.2843513,
-  "lng": 174.7790069,
+  "lat": -41.2846194,
+  "lng": 174.7795302,
   "lunch": true,
   "dinner": true,
   "official_image": "woap-images/alpha-bravo-charlie-dockside-restaurant-bar.jpg",
@@ -275,7 +278,10 @@
   "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/KCDC_WOAPBURGERSHOOT_HIRES-78-260522-120727.jpeg",
   "google_rating": 4.5,
   "google_reviews": null,
-  "woap_url": "https://visawoap.com/venue/rosetta-cafe/7074?type=burger"
+  "woap_url": "https://visawoap.com/venue/rosetta-cafe/7074?type=burger",
+  "photos": [
+   "woap-images/a-waffle-lot-rosetta-cafe-venue.jpg"
+  ]
  },
  {
   "name": "Ayam Mouthcracker",
@@ -650,7 +656,10 @@
   "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/Broadcaster--2-260605-103046.png",
   "google_rating": null,
   "google_reviews": null,
-  "woap_url": "https://visawoap.com/venue/double-vision-brewing-island-bay/6943?type=burger"
+  "woap_url": "https://visawoap.com/venue/double-vision-brewing-island-bay/6943?type=burger",
+  "photos": [
+   "woap-images/broadcaster-double-vision-brewing-island-bay-venue.jpg"
+  ]
  },
  {
   "name": "Buck Yeah, Clive!",
@@ -714,7 +723,10 @@
   "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/WOAP-2026-Burger-1154-Pastaria-03-260512-082116.jpg",
   "google_rating": 4.4,
   "google_reviews": null,
-  "woap_url": "https://visawoap.com/venue/1154-pastaria/6937?type=burger"
+  "woap_url": "https://visawoap.com/venue/1154-pastaria/6937?type=burger",
+  "photos": [
+   "woap-images/burga-alla-vodka-1154-pastaria-venue.jpg"
+  ]
  },
  {
   "name": "Cacciatore Amore",
@@ -990,7 +1002,10 @@
   "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/QEsn_lN9-260605-120305.jpg",
   "google_rating": null,
   "google_reviews": null,
-  "woap_url": "https://visawoap.com/venue/juniper-restaurant-bar/7044?type=burger"
+  "woap_url": "https://visawoap.com/venue/juniper-restaurant-bar/7044?type=burger",
+  "photos": [
+   "woap-images/choriqueso-mexican-juniper-restaurant-bar-venue.jpg"
+  ]
  },
  {
   "name": "Classified Leak",
@@ -1010,7 +1025,8 @@
   "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/WOAP-26-260415-133903.jpg",
   "google_rating": 4.1,
   "google_reviews": null,
-  "woap_url": "https://visawoap.com/venue/the-backbencher/6991?type=burger"
+  "woap_url": "https://visawoap.com/venue/the-backbencher/6991?type=burger",
+  "image_source": "venue-supplied"
  },
  {
   "name": "Cluck and Tell",
@@ -3033,7 +3049,8 @@
   "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/1000070489-260415-161407.png",
   "google_rating": null,
   "google_reviews": null,
-  "woap_url": "https://visawoap.com/venue/vonuts/7020?type=burger"
+  "woap_url": "https://visawoap.com/venue/vonuts/7020?type=burger",
+  "image_source": "venue-supplied"
  },
  {
   "name": "Pō Kawakawa Ana",
@@ -3273,7 +3290,10 @@
   "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/O-Malleys-16-260521-135030.png",
   "google_rating": 4.7,
   "google_reviews": null,
-  "woap_url": "https://visawoap.com/venue/o-malleys-bar-kitchen/6871?type=burger"
+  "woap_url": "https://visawoap.com/venue/o-malleys-bar-kitchen/6871?type=burger",
+  "photos": [
+   "woap-images/saint-pattie-o-malleys-bar-kitchen-venue.jpg"
+  ]
  },
  {
   "name": "Sambal Whisper",
@@ -4019,7 +4039,10 @@
   "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/03_06_2026-Yoshi-Sushi-WOAP-burger-photo-A-Teriyaki-Heatwave-20260603_170617-1--260606-195447.jpg",
   "google_rating": null,
   "google_reviews": null,
-  "woap_url": "https://visawoap.com/venue/yoshi-sushi-bento/7058?type=burger"
+  "woap_url": "https://visawoap.com/venue/yoshi-sushi-bento/7058?type=burger",
+  "photos": [
+   "woap-images/teriyaki-heatwave-yoshi-sushi-bento-venue.jpg"
+  ]
  },
  {
   "name": "That's Amore",
