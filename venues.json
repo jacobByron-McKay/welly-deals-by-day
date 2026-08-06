@@ -1274,7 +1274,10 @@
   "is_chain": false,
   "google_rating": 4.3,
   "google_maps_url": "https://www.google.com/maps/search/Dockside+Restaurant+%26+Bar+Queens+Wharf+Wellington",
-  "notes": "Scanned 2026-06-26: Website (dockside.co.nz): no deals page, directs to Facebook for offers. Facebook (docksidenz, ID 100053110944455): search results not rendering (image-heavy). Instagram (@dockside_nz): Weekly Specials highlight 6w old (active); feed confirms $39 breadboard+wines for 2 (Thu 12-5pm); Hump Day Happy Hour Wed 4-6pm 25% off beverages (also confirmed via PDF snippet); Friday Happy Hour 4-6pm noted but no price confirmed. Also Pol Roger Fridays mentioned in bio (no price found). Recorded: Thursday breadboard deal + Hump Day Happy Hour."
+  "notes": "Scanned 2026-06-26: Website (dockside.co.nz): no deals page, directs to Facebook for offers. Facebook (docksidenz, ID 100053110944455): search results not rendering (image-heavy). Instagram (@dockside_nz): Weekly Specials highlight 6w old (active); feed confirms $39 breadboard+wines for 2 (Thu 12-5pm); Hump Day Happy Hour Wed 4-6pm 25% off beverages (also confirmed via PDF snippet); Friday Happy Hour 4-6pm noted but no price confirmed. Also Pol Roger Fridays mentioned in bio (no price found). Recorded: Thursday breadboard deal + Hump Day Happy Hour.",
+  "lat": -41.2846194,
+  "lng": 174.7795302,
+  "geocode_source": "OSM Nominatim, 2026-08-06"
  },
  {
   "venue": "WOLF by Foxglove",
@@ -10980,7 +10983,10 @@
   "is_chain": false,
   "google_rating": 4.1,
   "google_maps_url": "https://www.google.com/maps/place/The+Pinetree+Arms",
-  "notes": "Scanned 2026-07-10: Sports bar with TAB/gaming/pool/darts. Facebook confirmed Karaoke Night every Saturday 7:30pm."
+  "notes": "Scanned 2026-07-10: Sports bar with TAB/gaming/pool/darts. Facebook confirmed Karaoke Night every Saturday 7:30pm.",
+  "lat": -40.8943593,
+  "lng": 174.9812919,
+  "geocode_source": "OSM Nominatim, 2026-08-06"
  },
  {
   "venue": "RE Burger Kapiti",
@@ -12760,7 +12766,10 @@
   "facebook": "https://www.facebook.com/thechampagneria",
   "instagram": "https://www.instagram.com/otto_beerhall",
   "is_chain": false,
-  "google_maps_url": "https://www.google.com/maps/search/Otto+Champagneria+%26+Beer+Hall+125+Featherston+Street+Wellington"
+  "google_maps_url": "https://www.google.com/maps/search/Otto+Champagneria+%26+Beer+Hall+125+Featherston+Street+Wellington",
+  "lat": -41.2826529,
+  "lng": 174.7775733,
+  "geocode_source": "OSM Nominatim, 2026-08-06"
  },
  {
   "venue": "Araucaria",
@@ -12799,7 +12808,10 @@
   "google_rating": 4.1,
   "google_maps_url": "https://www.google.com/maps/place/The+Borough/@-41.1708471,174.8250564,17z",
   "is_chain": false,
-  "notes": "Tawa community cafe/restaurant/bar. Owned by Star Group (same group as Rosie's Red-Hot Cantina Wellington already on the site). Ph 04 232 7308. Full daily-deals slate on own website."
+  "notes": "Tawa community cafe/restaurant/bar. Owned by Star Group (same group as Rosie's Red-Hot Cantina Wellington already on the site). Ph 04 232 7308. Full daily-deals slate on own website.",
+  "lat": -41.1707463,
+  "lng": 174.8251105,
+  "geocode_source": "OSM Nominatim, 2026-08-06"
  },
  {
   "venue": "Sprig + Fern Tavern Tawa",
@@ -13229,7 +13241,10 @@
   "instagram": "https://www.instagram.com/omalleysbarandkitchen/",
   "google_rating": 4.7,
   "google_maps_url": "https://www.google.com/maps/search/?api=1&query=O%27Malleys+Bar+%26+Kitchen+Days+Bay",
-  "is_chain": false
+  "is_chain": false,
+  "lat": -41.2823378,
+  "lng": 174.9064418,
+  "geocode_source": "OSM Nominatim, 2026-08-06"
  },
  {
   "venue": "Days Bay Pavilion",
@@ -13241,7 +13256,10 @@
   "instagram": "https://www.instagram.com/daysbaypavilion/",
   "google_rating": 4.4,
   "google_maps_url": "https://www.google.com/maps/search/?api=1&query=Days+Bay+Pavilion+Eastbourne",
-  "is_chain": false
+  "is_chain": false,
+  "lat": -41.2774445,
+  "lng": 174.9051856,
+  "geocode_source": "OSM Nominatim, 2026-08-06"
  },
  {
   "venue": "Hive Cafe",
@@ -13361,7 +13379,10 @@
   "instagram": "https://www.instagram.com/naenaehotel/",
   "google_rating": 4.0,
   "google_maps_url": "https://www.google.com/maps/search/?api=1&query=Naenae+Hotel+Vogel+St",
-  "is_chain": false
+  "is_chain": false,
+  "lat": -41.1994304,
+  "lng": 174.9468563,
+  "geocode_source": "OSM Nominatim, 2026-08-06"
  },
  {
   "venue": "Olympic Hotel",
@@ -13409,7 +13430,10 @@
   "instagram": null,
   "google_rating": 4.3,
   "google_maps_url": "https://www.google.com/maps/search/Strathmore+Local+3+Strathmore+Avenue+Wellington",
-  "is_chain": false
+  "is_chain": false,
+  "lat": -41.3251314,
+  "lng": 174.8207938,
+  "geocode_source": "OSM Nominatim, 2026-08-06"
  },
  {
   "venue": "The Jolly Pub & Kitchen Kapiti",

@@ -469,9 +469,32 @@
      rank + burger name stay pinned on the left, Price / Quality / Qty sit off to the right. */
   .woap-lb-topline { display:flex; align-items:center; gap:8px; flex-wrap:wrap; margin-bottom:8px; }
   .woap-tried-count { font-size:12px; font-weight:700; color:var(--wr-dark); margin-left:auto; }
-  .woap-lb-hint { font-size:11px; font-weight:600; color:var(--wr-deep); background:var(--wr-soft);
-                  border:1px solid var(--wr-border); border-radius:999px; padding:3px 9px; }
-  .woap-lb { border:1px solid var(--border); border-radius:12px; overflow:hidden; }
+  /* This was a passive text pill and read as decoration, so people never found the three extra
+     rankable columns off to the right. It is now the control itself: tapping it scrolls the table
+     across. Labelled beats a bare chevron — it says what is over there, and sitting above the table
+     it cannot cover a column header the way a floating button did. */
+  .woap-lb-hint { font:inherit; font-size:11px; font-weight:700; color:var(--wr-deep);
+                  background:var(--wr-soft); border:1px solid var(--wr-border); border-radius:999px;
+                  padding:4px 10px; cursor:pointer; display:inline-flex; align-items:center; gap:5px; }
+  .woap-lb-hint:hover { background:var(--wr-border); }
+  .woap-lb-hint:focus-visible { outline:2px solid var(--wr-deep); outline-offset:2px; }
+  .woap-lb-hint-arrow { display:inline-block; font-size:13px; line-height:1;
+                        animation:woapNudge 1.9s ease-in-out 3; }
+  /* Once you have scrolled to the last column there is nothing left to point at. Toggled from JS
+     because the hint sits in .woap-lb-topline, a sibling BEFORE the table, so no CSS combinator
+     can reach it from the scroller's state. */
+  .woap-lb-hint.at-end { opacity:.45; }
+  .woap-lb-hint.at-end .woap-lb-hint-arrow { animation:none; }
+  @keyframes woapNudge { 0%,100% { transform:translateX(0); } 50% { transform:translateX(3px); } }
+  @media (prefers-reduced-motion: reduce) { .woap-lb-hint-arrow { animation:none; } }
+  .woap-lb { border:1px solid var(--border); border-radius:12px; overflow:hidden; position:relative; }
+  /* A fade on the right edge, proving the table continues rather than just ending. Deliberately
+     pointer-events:none and behind nothing — it only tints, so no header or cell becomes
+     unreadable. Driven by .has-more, so it disappears at the last column. */
+  .woap-lb-fade { position:absolute; top:0; right:0; bottom:0; width:44px; pointer-events:none;
+                  opacity:0; transition:opacity .18s ease;
+                  background:linear-gradient(to right, rgba(255,255,255,0), var(--paper) 78%); }
+  .woap-lb.has-more .woap-lb-fade { opacity:1; }
   .woap-lb-scroll { overflow-x:auto; overflow-y:hidden; overscroll-behavior-x:contain; -webkit-overflow-scrolling:touch; }
   .woap-lb-head, .woap-lb-row { display:grid; grid-template-columns:42px minmax(0,1fr) 64px 64px 64px 64px 64px 64px;
                                 align-items:center; min-width:586px; }
@@ -497,7 +520,14 @@
   .woap-lb-cell-main { display:flex; align-items:center; gap:9px; min-width:0; }
   .woap-lb-thumb { width:42px; height:42px; object-fit:cover; border-radius:7px; border:1px solid var(--border); flex-shrink:0; background:var(--wr-soft); }
   .woap-lb-txt { min-width:0; }
-  .woap-lb-name { font-size:13.5px; font-weight:700; line-height:1.2; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+  /* Two lines rather than an ellipsis. The name column is pinned and deliberately narrow so the
+     metric columns have room to scroll, which cut most names mid-word ("Whisper in th…"). Clamping
+     at two lines shows nearly every name in full WITHOUT changing any column width, so the sticky
+     pinning and horizontal scroll behave exactly as before. The 42px thumbnail still sets the row
+     height, so single-line rows are unchanged. */
+  .woap-lb-name { font-size:13.5px; font-weight:700; line-height:1.2; overflow:hidden;
+                  display:-webkit-box; -webkit-line-clamp:2; line-clamp:2; -webkit-box-orient:vertical;
+                  overflow-wrap:anywhere; }
   .woap-lb-venue { font-size:11.5px; color:var(--ink-muted); line-height:1.2; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
   .woap-lb-avg, .woap-lb-dim { font-size:14px; font-weight:800; color:var(--wr-dark); text-align:center; }
   .woap-lb-avg small, .woap-lb-dim small { display:block; font-size:9px; font-weight:600; color:var(--ink-muted); }
@@ -672,7 +702,7 @@
 
 <!-- Info banner -->
 <div class="text-xs text-center py-1.5 px-4" style="background:#e6f1f8;border-bottom:1px solid #bcddf0;color:#0f3d5c;">
-  733 deals across 226 venues &middot; Central Wellington, the eastern bays, Petone &amp; the Hutt Valley, Tawa, Porirua &amp; the Kāpiti Coast &middot; Updated August 2026
+  736 deals across 227 venues &middot; Central Wellington, the eastern bays, Petone &amp; the Hutt Valley, Tawa, Porirua &amp; the Kāpiti Coast &middot; Updated August 2026
 </div>
 
 <!-- Header -->
@@ -1744,6 +1774,29 @@ function woapSortDim(sort) {
   return (sort === 'rating' || sort === 'ratings') ? 'overall' : sort;
 }
 
+// Bayesian shrinkage for the average-star columns. Straight averages let one 5.0 vote outrank a 4.8
+// from fifty people, which is the wrong answer the moment real ratings arrive. Each burger's average
+// is pulled toward the global mean by a prior worth WOAP_PRIOR_VOTES votes, so a rating only moves a
+// burger as far as its evidence justifies. The DISPLAYED "5.0 avg" stays the true average — this
+// changes the ORDER only, never the number shown.
+const WOAP_PRIOR_VOTES = 5;
+
+// Mean of every rated burger's average in this dimension — the value a burger with no votes would
+// be assumed to sit at. Falls back to 4 (mid-high, matching how people actually rate) if nothing
+// is rated yet, so an empty board doesn't collapse to zero.
+function woapGlobalMean(dim) {
+  let sum = 0, n = 0;
+  for (const b of WOAP_BURGERS) {
+    const r = woapDimRating(b, dim);
+    if (r.count) { sum += r.avg; n++; }
+  }
+  return n ? sum / n : 4;
+}
+
+function woapBayesScore(r, mean) {
+  return (WOAP_PRIOR_VOTES * mean + r.count * r.avg) / (WOAP_PRIOR_VOTES + r.count);
+}
+
 function woapLeaderboardSorted(list) {
   const arr = [...list];
   if (woapLbSort === 'google') {                                   // rank by Google rating
@@ -1755,6 +1808,7 @@ function woapLeaderboardSorted(list) {
     });
   }
   const dim = woapSortDim(woapLbSort);
+  const mean = woapGlobalMean(dim);
   return arr.sort((a, b) => {
     const ra = woapDimRating(a, dim);
     const rb = woapDimRating(b, dim);
@@ -1763,8 +1817,10 @@ function woapLeaderboardSorted(list) {
     if (woapLbSort === 'ratings') {                                // rank by how many people rated
       if (rb.count !== ra.count) return rb.count - ra.count;
       if (rb.avg !== ra.avg) return rb.avg - ra.avg;
-    } else {                                                       // rank by average stars
-      if (rb.avg !== ra.avg) return rb.avg - ra.avg;
+    } else {                                                       // rank by average stars, vote-weighted
+      const sa = woapBayesScore(ra, mean), sb = woapBayesScore(rb, mean);
+      if (sb !== sa) return sb - sa;
+      if (rb.avg !== ra.avg) return rb.avg - ra.avg;               // identical evidence: true average
       if (rb.count !== ra.count) return rb.count - ra.count;
     }
     return (a.name || '').localeCompare(b.name || '');
@@ -1929,7 +1985,8 @@ function renderWoapBoard() {
     `<button type="button" class="woap-lb-sort${woapLbSort === key ? ' on' : ''}" data-lb-sort="${key}">${label}${woapLbSort === key ? ' ' + caret : ''}</button>`;
   board.innerHTML = shown.length
     ? `<div class="woap-lb-topline">
-         <span class="woap-lb-hint">Swipe the table &rarr; for price, quality &amp; quantity</span>
+         <button type="button" class="woap-lb-hint" data-lb-more
+                 aria-label="Scroll the table right to the price, quality and quantity columns">More columns: price, quality &amp; qty <span class="woap-lb-hint-arrow">&#8594;</span></button>
          <span class="woap-tried-count">You have tried ${triedShown} of ${shown.length}</span>
        </div>
        <div class="woap-lb"><div class="woap-lb-scroll">
@@ -1939,8 +1996,56 @@ function renderWoapBoard() {
            ${sortBtn('google', 'Google')}${sortBtn('rating', 'Avg')}${sortBtn('ratings', 'Votes')}${sortBtn('price', 'Price')}${sortBtn('quality', 'Quality')}${sortBtn('quantity', 'Qty')}
          </div>
          ${shown.map((b, i) => renderWoapRow(b, i + 1)).join('')}
-       </div></div>`
+       </div>
+       <div class="woap-lb-fade" aria-hidden="true"></div>
+       </div>`
     : `<p class="text-sm italic" style="color:var(--ink-muted);">No burgers match your search.</p>`;
+  woapBindScrollCue();
+}
+
+// Animates scrollLeft by hand over ~260ms. scrollBy({behavior:'smooth'}) is NOT used: it silently
+// no-ops in some browsers/environments (verified here — 'auto' moved, 'smooth' did nothing), which
+// made the button look broken. A rAF tween always moves, and honours reduced-motion by jumping.
+function woapTweenScrollX(sc, delta) {
+  const max = sc.scrollWidth - sc.clientWidth;
+  const from = sc.scrollLeft;
+  const to = Math.max(0, Math.min(max, from + delta));
+  if (to === from) return;
+  if (matchMedia('(prefers-reduced-motion: reduce)').matches) { sc.scrollLeft = to; return; }
+  const t0 = performance.now(), dur = 260;
+  (function step(now) {
+    const p = Math.min(1, (now - t0) / dur);
+    sc.scrollLeft = from + (to - from) * (1 - Math.pow(1 - p, 3));   // ease-out cubic
+    if (p < 1) requestAnimationFrame(step);
+  })(t0);
+}
+
+// Shows the edge fade only while there is actually more table to the right, and re-checks on
+// scroll and resize. Re-bound after every board render because renderWoapBoard replaces innerHTML.
+function woapBindScrollCue() {
+  const wrap = document.querySelector('#woapBoard .woap-lb');
+  if (!wrap) return;
+  const sc = wrap.querySelector('.woap-lb-scroll');
+  if (!sc) return;
+  const hint = document.querySelector('#woapBoard .woap-lb-hint');
+  // Bound directly rather than delegated from document: a handler between the pill and document
+  // calls stopPropagation, so a bubble-phase document listener never sees this click. The pill is
+  // rebuilt on every board render, and so is this binding.
+  if (hint) hint.addEventListener('click', function (e) {
+    e.preventDefault();
+    woapTweenScrollX(sc, Math.max(140, sc.clientWidth * 0.7));
+  });
+  const update = () => {
+    const more = sc.scrollWidth - sc.clientWidth - sc.scrollLeft > 8;
+    wrap.classList.toggle('has-more', more);
+    if (hint) hint.classList.toggle('at-end', !more);
+  };
+  sc.addEventListener('scroll', update, { passive: true });
+  window.addEventListener('resize', update);
+  update();
+  // The panel can be laid out at zero width on open; re-measure once it has real dimensions.
+  requestAnimationFrame(update);
+  setTimeout(update, 250);
 }
 
 // ---------- LIVE LEADERBOARD ----------
