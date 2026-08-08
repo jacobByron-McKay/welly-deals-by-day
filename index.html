@@ -917,6 +917,13 @@
     <span id="woapToggleState" class="text-xs font-medium px-2.5 py-0.5 rounded-full border shrink-0"
           style="border-color:#fca5a5;background:#fff;">Open &#9656;</span>
   </button>
+  <!-- A real crawlable <a> to the static burger pages. The button above opens a JS overlay, which
+       Google cannot follow and cannot index as its own URL, so without this link the whole
+       /burger-wellington-2026/ set is orphaned: in the sitemap but with no path in from the site.
+       It also genuinely helps a reader who wants prices and ingredients without the map loading. -->
+  <p class="mt-1.5 text-xs" style="color:#991b1b;">
+    <a href="/burger-wellington-2026/" class="underline">Browse all 244 burgers &mdash; prices, ingredients and beer matches</a>
+  </p>
 </div>
 
 <!-- WOAP Burgers overlay: a dedicated full-screen view with its own Leaflet burger map (red pins,
@@ -3045,9 +3052,28 @@ loadData().then(() => {
   // leaderboard, not on the deals homepage with the burgers tab still shut. Runs here, after
   // loadData(), because openWoapView() renders from WOAP_BURGERS.
   if (WOAP_ENABLED) {
-    const wantsBurgers = new URLSearchParams(location.search).get("burgers") === "1"
-                      || location.hash.replace("#", "") === "burgers";
-    if (wantsBurgers) openWoapView();
+    const qs = new URLSearchParams(location.search);
+    // ?burger=<slug> lands on ONE burger, expanded. This is what every static page under
+    // /burger-wellington-2026/ links back to, so a visitor arriving from Google on
+    // "<burger name> wellington" gets that burger's card, not a 244-row board to scroll.
+    // The static slug omits the "woap-" prefix that woapBurgerSlug() adds for the ratings key.
+    const one = qs.get("burger");
+    if (one) {
+      const slug = "woap-" + one.replace(/^woap-/, "");
+      openWoapView();
+      // renderWoap() paints "Loading burgers…" first and only builds the rows once
+      // fetchWoapRatings() resolves. Calling openWoapBurger() before that paint expands a row
+      // that is then thrown away by the repaint, so wait for the row to exist. Once it does the
+      // paint has already run and cannot run again (woapRatingsLoaded is set), so it sticks.
+      let tries = 0;
+      (function waitForRow() {
+        if (document.querySelector('[data-lb-row="' + slug + '"]')) { openWoapBurger(slug); return; }
+        if (++tries < 80) setTimeout(waitForRow, 100);   // ~8s, then give up and leave the board open
+      })();
+    } else if (qs.get("burgers") === "1" || location.hash.replace("#", "") === "burgers") {
+      openWoapView();
+      if (qs.get("view") === "map") setWoapView("map");
+    }
   }
 }); // re-renders once data is loaded
 </script>

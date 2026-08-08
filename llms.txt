@@ -1,0 +1,60 @@
+# Welly Deals by Day
+
+> An independent, free guide to weekly deals, happy hours, quiz nights and events across greater Wellington, New Zealand - central Wellington, Te Aro, Cuba St, Courtenay Place, Lambton Quay, the waterfront, Petone, Lower Hutt, Upper Hutt, Porirua and the Kapiti Coast. Community-rated, no account needed, no paid placement.
+
+Run by one Wellingtonian. Deals are verified against the venue's own website, Facebook or Instagram before publishing, and re-checked on a 10-14 day cycle. Nothing is auto-scraped into the site unchecked.
+
+## Burger Wellington 2026
+Every burger in the Burger Wellington competition (part of Visa Wellington On a Plate, 3-23 August 2026), ranked by public rating rather than critic pick. 244 burgers, 244 venues, 49 suburbs. Largest: Te Aro (76), Wellington CBD (56), Petone (10), Porirua Central (10), Hutt Central (6), Paraparaumu Beach (6). Median price $27 (range $8.88-$45).
+
+- [Burger Wellington 2026 - all 244 burgers, ranked](https://welly-deals-by-day.co.nz/burger-wellington-2026/): the full list with price, venue, suburb, ingredients, beer match and dietary flags for every burger.
+- [Live burger leaderboard](https://welly-deals-by-day.co.nz/?burgers=1): interactive, community-rated, sortable by overall rating, price, quality and portion size.
+- [0800 THE WORD - Zephyr Cafe, Te Aro, $19](https://welly-deals-by-day.co.nz/burger-wellington-2026/0800-the-word-zephyr-cafe.html)
+- [3 Little Pigs Story - Wildfire Churrascaria, Te Aro, $22](https://welly-deals-by-day.co.nz/burger-wellington-2026/3-little-pigs-story-wildfire-churrascaria.html)
+- [Above The Rest - Everybody Eats @ Cliftons, Wellington CBD, $25](https://welly-deals-by-day.co.nz/burger-wellington-2026/above-the-rest-everybody-eats-cliftons.html)
+- [Aegean Melt - The Borough, Tawa, $29](https://welly-deals-by-day.co.nz/burger-wellington-2026/aegean-melt-the-borough.html)
+- [āe, it's Vegan - Puku Pies & Kai (Lyall Bay), Lyall Bay, $16](https://welly-deals-by-day.co.nz/burger-wellington-2026/e-it-s-vegan-puku-pies-and-kai-lyall-bay.html)
+- [After Service - Portlander Bar and Grill, Wellington CBD, $35](https://welly-deals-by-day.co.nz/burger-wellington-2026/after-service-portlander-bar-and-grill.html)
+- [Al Caprawn - Charley Noble Eatery & Bar, Wellington CBD, $31](https://welly-deals-by-day.co.nz/burger-wellington-2026/al-caprawn-charley-noble-eatery-and-bar.html)
+- [A Little Bit Cheeky - Twenty Eight, Lower Hutt, $29](https://welly-deals-by-day.co.nz/burger-wellington-2026/a-little-bit-cheeky-twenty-eight.html)
+- [A Little Less Conversation - The Tasting Room, Te Aro, $30](https://welly-deals-by-day.co.nz/burger-wellington-2026/a-little-less-conversation-the-tasting-room.html)
+- [Al Pastor Mastor - Superfina, Te Aro, $27](https://welly-deals-by-day.co.nz/burger-wellington-2026/al-pastor-mastor-superfina.html)
+- [Alpha Bravo Charlie - Dockside Restaurant & Bar, Wellington CBD, $25](https://welly-deals-by-day.co.nz/burger-wellington-2026/alpha-bravo-charlie-dockside-restaurant-and-bar.html)
+- [AVPSBBORCAMPB - Moon Bar, Newtown, $24](https://welly-deals-by-day.co.nz/burger-wellington-2026/avpsbborcampb-moon-bar.html)
+- [A Waffle Lot - Rosetta Cafe, Raumati Beach, $28](https://welly-deals-by-day.co.nz/burger-wellington-2026/a-waffle-lot-rosetta-cafe.html)
+- [Ayam Mouthcracker - Master Kong, Wellington CBD, $28](https://welly-deals-by-day.co.nz/burger-wellington-2026/ayam-mouthcracker-master-kong.html)
+- [Ayam What I Am - Chapman Taylor's Cafe & Inn, Thorndon, $30](https://welly-deals-by-day.co.nz/burger-wellington-2026/ayam-what-i-am-chapman-taylor-s-cafe-and-inn.html)
+- [Bao Wow - Hideout, Te Aro, $19](https://welly-deals-by-day.co.nz/burger-wellington-2026/bao-wow-hideout.html)
+- [Beef There, Done That - Sandbar Mana, Mana, $28](https://welly-deals-by-day.co.nz/burger-wellington-2026/beef-there-done-that-sandbar-mana.html)
+- [Best Kept Secret - Whitby Co-Op Kitchen & Bar, Whitby, $28](https://welly-deals-by-day.co.nz/burger-wellington-2026/best-kept-secret-whitby-co-op-kitchen-and-bar.html)
+- [Bird is the Word - Scorch-O-Rama, Karaka Bays, $30](https://welly-deals-by-day.co.nz/burger-wellington-2026/bird-is-the-word-scorch-o-rama.html)
+- [Birria On The Beach - Hey Coastie, Waikanae Beach, $34](https://welly-deals-by-day.co.nz/burger-wellington-2026/birria-on-the-beach-hey-coastie.html)
+- [Bisque Anyone? - The Victoria Tavern, Petone, $34](https://welly-deals-by-day.co.nz/burger-wellington-2026/bisque-anyone-the-victoria-tavern.html)
+- [Bite and Tell - Double Vision Brewing, Miramar, $23](https://welly-deals-by-day.co.nz/burger-wellington-2026/bite-and-tell-double-vision-brewing.html)
+- [BLT Italiano - Rizzo's Pizzeria & Kitchen, Alicetown, $25](https://welly-deals-by-day.co.nz/burger-wellington-2026/blt-italiano-rizzo-s-pizzeria-and-kitchen.html)
+- [Blue Smoke Union - Grazie - Lower Hutt, Hutt Central, $32](https://welly-deals-by-day.co.nz/burger-wellington-2026/blue-smoke-union-grazie-lower-hutt.html)
+- [Boca a Boca - El Matador, Wellington CBD, $29](https://welly-deals-by-day.co.nz/burger-wellington-2026/boca-a-boca-el-matador.html)
+- [Boeuf à l'orange - Apachè, Te Aro, $27](https://welly-deals-by-day.co.nz/burger-wellington-2026/boeuf-l-orange-apach.html)
+- [Bombay Hook Bite - The Jolly Pub & Kitchen, Paraparaumu Beach, $27](https://welly-deals-by-day.co.nz/burger-wellington-2026/bombay-hook-bite-the-jolly-pub-and-kitchen.html)
+- [Borderline Brunch - Neo Café & Eatery, Wellington CBD, $23](https://welly-deals-by-day.co.nz/burger-wellington-2026/borderline-brunch-neo-caf-and-eatery.html)
+- [Boss Level - Garage Project - Leeds Street, Te Aro, $25](https://welly-deals-by-day.co.nz/burger-wellington-2026/boss-level-garage-project-leeds-street.html)
+- [Bovine Meets Coastline - Pravda Café and Grill, Te Aro, $34](https://welly-deals-by-day.co.nz/burger-wellington-2026/bovine-meets-coastline-pravda-caf-and-grill.html)
+- [Broadcaster - Double Vision Brewing - Island Bay, Island Bay, $32](https://welly-deals-by-day.co.nz/burger-wellington-2026/broadcaster-double-vision-brewing-island-bay.html)
+- [Buck Yeah, Clive! - Café Polo, Miramar, $29](https://welly-deals-by-day.co.nz/burger-wellington-2026/buck-yeah-clive-caf-polo.html)
+- [Bulgogi from the Seoul - Koko's Kitchen, Porirua Central, $21](https://welly-deals-by-day.co.nz/burger-wellington-2026/bulgogi-from-the-seoul-koko-s-kitchen.html)
+- [Burga' Alla Vodka - 1154 Pastaria, Wellington CBD, $29](https://welly-deals-by-day.co.nz/burger-wellington-2026/burga-alla-vodka-1154-pastaria.html)
+- [Cacciatore Amore - Scopa, Te Aro, $32](https://welly-deals-by-day.co.nz/burger-wellington-2026/cacciatore-amore-scopa.html)
+- [Cafreal Talks - Pango Pearl, Elderslea, $22](https://welly-deals-by-day.co.nz/burger-wellington-2026/cafreal-talks-pango-pearl.html)
+- [Cali's Calling - Rosie's Red-Hot Cantina & Taco Joint, Wellington CBD, $30](https://welly-deals-by-day.co.nz/burger-wellington-2026/cali-s-calling-rosie-s-red-hot-cantina-and-taco-joint.html)
+- [Ceylon Stacker - t Lounge by Dilmah, Wellington CBD, $32](https://welly-deals-by-day.co.nz/burger-wellington-2026/ceylon-stacker-t-lounge-by-dilmah.html)
+- [Charred & Dangerous - Archie Brothers, Wellington CBD, $28](https://welly-deals-by-day.co.nz/burger-wellington-2026/charred-and-dangerous-archie-brothers.html)
+- [Chef's Kiss - RE Burger - Wellington, Te Aro, $24](https://welly-deals-by-day.co.nz/burger-wellington-2026/chef-s-kiss-re-burger-wellington.html)
+- ...and 204 more, all linked from the hub page above.
+
+## The deals site
+- [Deals by day](https://welly-deals-by-day.co.nz/): the whole week of Wellington deals, filterable by suburb, day and category.
+- [Sitemap](https://welly-deals-by-day.co.nz/sitemap.xml): every venue page.
+- [Burger sitemap](https://welly-deals-by-day.co.nz/sitemap-burgers.xml): every Burger Wellington 2026 page.
+
+## Attribution
+If you cite this data, please credit "Welly Deals by Day (welly-deals-by-day.co.nz)". Burger details are as published by Visa Wellington On a Plate; ratings are from this site's own community and are independent of the official finalist judging.

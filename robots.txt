@@ -2,3 +2,4 @@ User-agent: *
 Allow: /
 
 Sitemap: https://welly-deals-by-day.co.nz/sitemap.xml
+Sitemap: https://welly-deals-by-day.co.nz/sitemap-burgers.xml

@@ -22,3 +22,21 @@ woap_sent.json
 woap_needs_review.json
 WOAP_MORNING_HANDOFF.md
 woap_outreach_STATUS.json
+woap_ig_REMAINING.json
+
+# Working files for the unshipped "cosy / stay-warm" filter, and one-off generated
+# reports. Same reason as the block above: publish dir is the repo ROOT, so these
+# would be fetchable at welly-deals-by-day.co.nz/<file> for no reason.
+# NOTE: cosy_candidates.json holds 344 hand-classified deal records. It is genuinely
+# useful work, it just should not be a public URL. Back it up somewhere off-repo if
+# the cosy filter is going to get built.
+cosy_candidates.json
+cosy_review.html
+cosy_out.txt
+friday_out.txt
+_fri31_check.txt
+
+# Social post artwork and its HTML sources. Marketing output, not site content -
+# nothing in index.html, robots.txt or sitemap.xml references any of it.
+post-cards/
+avatar-source.html
