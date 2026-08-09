@@ -42,3 +42,6 @@ _fri31_check.txt
 # nothing in index.html, robots.txt or sitemap.xml references any of it.
 post-cards/
 avatar-source.html
+
+# Dev-only mobile viewport harness (iframe). Never part of the deployed site.
+_mobile-harness.html

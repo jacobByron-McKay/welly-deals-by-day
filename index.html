@@ -579,12 +579,17 @@
   .woap-venue-maps { color:inherit; text-decoration:underline; text-decoration-style:dotted;
     text-underline-offset:2px; }
   .woap-venue-maps:hover, .woap-venue-maps:focus-visible { color:var(--wr); text-decoration-style:solid; }
+  /* In the expanded card this is the primary, unambiguous way to reach Maps, and on a phone it is
+     the one people will actually aim at rather than the small venue name in the row. Measured at
+     390px it came out 18px tall as a bare inline-block, so it carries its own padding, and a
+     40px minimum on touch where there is no cursor to aim with. */
+  .woap-maps-btn { display:flex; align-items:center; font-size:12px; font-weight:600; color:var(--wr);
+    text-decoration:none; margin:6px 0 0; padding:7px 0; }
+  .woap-maps-btn:hover { text-decoration:underline; }
   @media (hover:none) {
     .woap-venue-maps { display:inline-block; padding:4px 0; text-decoration-style:solid; }
+    .woap-maps-btn { min-height:40px; }
   }
-  .woap-maps-btn { display:block; font-size:12px; font-weight:600; color:var(--wr);
-    text-decoration:none; margin:8px 0 2px; }
-  .woap-maps-btn:hover { text-decoration:underline; }
   .woap-tried { display:inline-flex; align-items:center; gap:5px; margin-top:9px; font-size:12px; font-weight:600;
     color:var(--ink-muted); background:var(--card); border:1px solid var(--border); border-radius:8px; padding:6px 11px; cursor:pointer; }
   .woap-tried:hover { border-color:var(--wr); color:var(--wr); }
