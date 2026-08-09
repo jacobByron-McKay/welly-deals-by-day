@@ -23,6 +23,8 @@ woap_needs_review.json
 WOAP_MORNING_HANDOFF.md
 woap_outreach_STATUS.json
 woap_ig_REMAINING.json
+WOAP_REPLIES_AUDIT.md
+WOAP_REPLY_DRAFTS.md
 
 # Working files for the unshipped "cosy / stay-warm" filter, and one-off generated
 # reports. Same reason as the block above: publish dir is the repo ROOT, so these

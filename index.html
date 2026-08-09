@@ -572,6 +572,19 @@
   .woap-official { display:block; font-size:12px; font-weight:600; color:var(--wr);
     text-decoration:none; margin:8px 0 2px; }
   .woap-official:hover { text-decoration:underline; }
+  /* Venue name as a Google Maps link. Keeps the muted venue colour so it does not shout over the
+     burger name, but carries a dotted underline so it reads as tappable. It lives inside the
+     clickable leaderboard row, so it needs its own generous hit area on touch: the row is only
+     ~40px tall, and a bare inline link inside it is an easy miss. */
+  .woap-venue-maps { color:inherit; text-decoration:underline; text-decoration-style:dotted;
+    text-underline-offset:2px; }
+  .woap-venue-maps:hover, .woap-venue-maps:focus-visible { color:var(--wr); text-decoration-style:solid; }
+  @media (hover:none) {
+    .woap-venue-maps { display:inline-block; padding:4px 0; text-decoration-style:solid; }
+  }
+  .woap-maps-btn { display:block; font-size:12px; font-weight:600; color:var(--wr);
+    text-decoration:none; margin:8px 0 2px; }
+  .woap-maps-btn:hover { text-decoration:underline; }
   .woap-tried { display:inline-flex; align-items:center; gap:5px; margin-top:9px; font-size:12px; font-weight:600;
     color:var(--ink-muted); background:var(--card); border:1px solid var(--border); border-radius:8px; padding:6px 11px; cursor:pointer; }
   .woap-tried:hover { border-color:var(--wr); color:var(--wr); }
@@ -1745,6 +1758,28 @@ function woapImagesFor(b, slug) {
   return out;
 }
 
+// Google Maps link for a burger's venue.
+// Prefer the venue's own recorded listing URL, which points at the real Maps place. Only 61 of the
+// 244 burger venues exist in venues.json with a google_maps_url, so the rest fall back to a Maps
+// search on "<venue>, <address>" — that resolves to the business listing, not a bare dropped pin,
+// because every burger record carries a full street address. Never returns null: a burger with no
+// address at all still gets a name search, which is better than a dead plain-text venue name.
+function woapMapsUrl(b) {
+  const v = (typeof VENUES_MAP !== 'undefined' && VENUES_MAP[b.venue]) || null;
+  if (v && v.google_maps_url) return v.google_maps_url;
+  const parts = [b.venue, b.address, b.suburb, 'Wellington New Zealand'].filter(Boolean);
+  return 'https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent(parts.join(', '));
+}
+
+// The venue name rendered as a Maps link. data-woap-maps marks it so the leaderboard's row-click
+// handler lets the click through to the link instead of swallowing it to expand the row.
+function woapVenueLinkHtml(b, cls) {
+  const label = b.venue + (b.suburb ? ' &middot; ' + suburbLabel(b.suburb) : '');
+  const v = b.venue.replace(/"/g, '&quot;');
+  return `<a class="${cls}" data-woap-maps data-woap-venue="${v}" href="${woapMapsUrl(b)}"
+             target="_blank" rel="noopener" title="Open ${v} in Google Maps">${label}</a>`;
+}
+
 function woapMatchesSearch(b) {
   if (!searchQuery) return true;
   const q = searchQuery.toLowerCase().trim();
@@ -1878,7 +1913,7 @@ function renderWoapCard(b, bare) {
         ${imgs.length ? `<img class="woap-thumb" src="${imgs[0]}" alt="" loading="lazy">` : ''}
         <div class="woap-card-body">
           <div class="woap-name">${b.name}</div>
-          <div class="woap-venue">${b.venue}${b.suburb ? ' &middot; ' + suburbLabel(b.suburb) : ''}</div>
+          <div class="woap-venue">${woapVenueLinkHtml(b, 'woap-venue-maps')}</div>
           <div class="woap-meta">
             ${b.price ? `<span class="woap-price">${b.price}</span>` : ''}
             ${avgHtml}
@@ -1887,6 +1922,7 @@ function renderWoapCard(b, bare) {
         </div>
       </div>
       ${b.desc ? `<p class="woap-desc">${b.desc}</p>` : ''}
+      <a class="woap-maps-btn" data-woap-maps data-woap-venue="${b.venue.replace(/"/g, '&quot;')}" href="${woapMapsUrl(b)}" target="_blank" rel="noopener">&#128205; Open in Google Maps</a>
       ${b.woap_url ? `<a class="woap-official" href="${b.woap_url}" target="_blank" rel="noopener">Official Burger Wellington listing &rarr;</a>` : ''}
       <button type="button" class="woap-tried${tried ? ' on' : ''}" data-woap-tried="${slug}">${tried ? '&#10003; Tried it' : '&#43; Mark as tried'}</button>
       <button type="button" class="wd-plan-add woap-plan" data-plan-add="${slug}" data-plan-label-on="&#10003; In plan" data-plan-label-off="&#43; Plan" aria-label="Add this burger to your plan">&#43; Plan</button>
@@ -1966,7 +2002,7 @@ function woapRowInnerHtml(b, rank) {
         ${thumb}
         <div class="woap-lb-txt">
           <div class="woap-lb-name">${b.name}</div>
-          <div class="woap-lb-venue">${b.venue}${b.suburb ? ' &middot; ' + suburbLabel(b.suburb) : ''}</div>
+          <div class="woap-lb-venue">${woapVenueLinkHtml(b, 'woap-venue-maps')}</div>
         </div>
       </div>
       ${woapMetricCells(b).join('')}`;
@@ -2833,6 +2869,18 @@ document.addEventListener("click", function(e) {
     const slug = mn.getAttribute("data-lb-collapse");
     const row = document.querySelector('[data-lb-row="' + slug + '"]');
     if (row) { row.classList.remove("open"); row.scrollIntoView({ block: "nearest" }); }
+    return;
+  }
+  // A venue Maps link sits inside the clickable leaderboard row. Let the browser follow it rather
+  // than letting the row handler below swallow the click and merely expand the row.
+  const ml = e.target.closest("[data-woap-maps]");
+  if (ml) {
+    // The board can render before venues.json resolves, so at render time VENUES_MAP is often still
+    // empty and the href falls back to a Maps *search*. By click time the venue data is always in,
+    // so upgrade to the venue's exact recorded listing URL if we now have one. The search URL stays
+    // as the rendered href, which is what crawlers and no-JS visitors get, and it does resolve.
+    const rec = VENUES_MAP[ml.getAttribute("data-woap-venue")];
+    if (rec && rec.google_maps_url && ml.href.indexOf("maps/search") > -1) ml.href = rec.google_maps_url;
     return;
   }
   // Expand / collapse a leaderboard row -> its full rate/review/photo card (built on first open)
