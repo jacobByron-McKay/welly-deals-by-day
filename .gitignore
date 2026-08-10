@@ -45,3 +45,10 @@ avatar-source.html
 
 # Dev-only mobile viewport harness (iframe). Never part of the deployed site.
 _mobile-harness.html
+WOAP_FOLLOWUP_WORKLIST.md
+WOAP_OVERNIGHT_HANDOFF.md
+_contact_state.json
+_recovered_socials.json
+_web_targets.json
+_web_scraped_socials.json
+_socials_recovered_merged.json
