@@ -9,6 +9,12 @@
     --accent: #1d6fa3;
     --accent-soft: #e6f1f8;
     --border: #dfe5ec;
+    /* Deliberately darker than --border. A listing card is white on near-white paper,
+       so a hairline --border edge was invisible and the gap between two cards read as
+       ordinary line spacing - a visitor misread a deal as belonging to the venue named
+       in the NEXT card (reported on Facebook, 26 Jul 2026). --border stays as-is for
+       chips, rules and inputs. */
+    --card-edge: #c3cdda;
     --today: #fff4d6;
     --today-border: #e6c65c;
   }

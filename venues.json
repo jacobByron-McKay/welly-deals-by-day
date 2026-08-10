@@ -15184,5 +15184,53 @@
   "notes": "Chinese takeaway, 147 reviews. Added by Maps sweep 2026-08-02. Name disambiguated with the suburb because an unrelated \"John's Kitchen\" already exists in Upper Hutt - bare duplicate venue names silently collide in the frontend's VENUES_MAP.",
   "lat": -41.163522,
   "lng": 174.9840747
+ },
+ {
+  "venue": "Teddy's Tacos",
+  "suburb": "CBD (Cuba Street Area)",
+  "address": "50 Cuba Street, Te Aro, Wellington 6011",
+  "category_hint": "bar-restaurant",
+  "website": null,
+  "facebook": null,
+  "instagram": "https://www.instagram.com/teddystacosnz/",
+  "is_chain": false,
+  "google_rating": 4.8,
+  "google_reviews": 66,
+  "google_maps_url": "https://www.google.com/maps/search/Teddy%27s+Tacos+50+Cuba+Street+Wellington",
+  "lat": -41.2906423,
+  "lng": 174.7770097,
+  "notes": "Taproom & taqueria. Added 2026-08-11 from an owner submit-a-deal form. Coordinates from Nominatim structured lookup, house number 50 verified; the first Nominatim result was 50 Cuba St PETONE and was rejected."
+ },
+ {
+  "venue": "Amador",
+  "suburb": "CBD (Lambton Quay)",
+  "address": "Upstairs, 80A Willis Street, Wellington Central, Wellington 6011",
+  "category_hint": "bar-restaurant",
+  "website": "https://www.amador.co.nz",
+  "facebook": null,
+  "instagram": null,
+  "is_chain": false,
+  "google_rating": null,
+  "google_reviews": null,
+  "google_maps_url": "https://www.google.com/maps/search/Amador+80A+Willis+Street+Wellington",
+  "lat": -41.288172,
+  "lng": 174.7751085,
+  "notes": "Bar and cafe upstairs at 80A Willis St. Added 2026-08-11 from an owner submission (josh@amador.co.nz). Shares the 80A Willis building with Amor."
+ },
+ {
+  "venue": "Amor",
+  "suburb": "CBD (Lambton Quay)",
+  "address": "Kiosk 3, Press Hall, 80A Willis Street, Wellington Central, Wellington 6011",
+  "category_hint": "cafe",
+  "website": "https://www.amoreats.co.nz",
+  "facebook": null,
+  "instagram": null,
+  "is_chain": false,
+  "google_rating": null,
+  "google_reviews": null,
+  "google_maps_url": "https://www.google.com/maps/search/Amor+Press+Hall+80A+Willis+Street+Wellington",
+  "lat": -41.288172,
+  "lng": 174.7751085,
+  "notes": "Kiosk in Press Hall. Added 2026-08-11 from an owner submission (josh@amador.co.nz). Same building as Amador, coordinates shared per the complex-mates rule."
  }
 ]
