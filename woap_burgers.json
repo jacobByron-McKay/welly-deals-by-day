@@ -2251,7 +2251,11 @@
   "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/1000144623-260428-215050.jpg",
   "google_rating": null,
   "google_reviews": null,
-  "woap_url": "https://visawoap.com/venue/macha-jom-tapau/6901?type=burger"
+  "woap_url": "https://visawoap.com/venue/macha-jom-tapau/6901?type=burger",
+  "photos": [
+   "woap-images/kerabu-and-tell-macha-jom-tapau-venue.jpg"
+  ],
+  "image_source": "venue-supplied"
  },
  {
   "name": "KimCheek",
