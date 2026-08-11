@@ -52,3 +52,14 @@ _recovered_socials.json
 _web_targets.json
 _web_scraped_socials.json
 _socials_recovered_merged.json
+_fb_batch1.json
+_fb_sent_log.json
+
+# Marketing strategy working docs (WOAP 2026). Same reason as the blocks above:
+# the publish dir is the repo ROOT, so these would be fetchable at
+# welly-deals-by-day.co.nz/<file>. They hold campaign plans and outreach strategy.
+WOAP_REEL_PACK_2026-08-11.md
+WOAP_STATS_REEL_2026-08-11.md
+_fb_sent_log_pageattempt.json
+_discover_*.json
+_discovered_out_*.json

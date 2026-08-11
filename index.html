@@ -3555,8 +3555,20 @@ loadData().then(() => {
             state.avg = res.avg; state.count = res.count;
             mine = val;   // so leaving the stars settles back on YOUR score, not the crowd's
             summary.innerHTML = summaryText(res.avg, res.count, empty) + ' &middot; <span class="vr-yours">you: ' + val + '&#9733;</span>';
+            // Fires only on a CONFIRMED save, so the count can never run ahead of the database.
+            // A burger writes to "woap-<burger>-<venue>" with an optional "--<dim>" suffix; overall
+            // is the bare slug. Splitting on that lets us see whether people score the sub-dimensions
+            // at all, which is the open question about the four-star-row design.
+            var isBurger = slug.indexOf('woap-') === 0;
+            var dimMatch = slug.match(/--(price|quality|quantity)$/);
+            wdTrack('rating_submit', {
+              item_slug: slug,
+              stars: val,
+              kind: isBurger ? 'burger' : 'venue',
+              dimension: isBurger ? (dimMatch ? dimMatch[1] : 'overall') : 'venue'
+            });
             // Burger ratings feed the WOAP leaderboard — re-rank it on the spot.
-            if (slug.indexOf('woap-') === 0 && typeof woapApplyRating === 'function') {
+            if (isBurger && typeof woapApplyRating === 'function') {
               woapApplyRating(slug, res.avg, res.count);
             }
           } else { summary.innerHTML = 'Could not save — try again'; }
