@@ -679,13 +679,64 @@
      woapApplyRating() does the correction itself, exactly, so the browser must keep its hands off. */
   .woap-board-panel { position:absolute; z-index:1100; top:10px; left:10px; right:10px; bottom:10px; background:var(--paper);
                       border:1px solid var(--wr-border); border-radius:12px; box-shadow:0 10px 30px rgba(0,0,0,.18);
-                      overflow-y:auto; overscroll-behavior:contain; overflow-anchor:none; padding:12px 12px 16px; }
+                      overflow-y:auto; overscroll-behavior:contain; overflow-anchor:none; padding:0 12px 16px; }
+  /* padding-top is 0 and the sticky search supplies its own 12px instead. A scroll container's own
+     top padding sits INSIDE the scrollport, so it pushes a `top:0` sticky child down by that much
+     and leaves a strip of rows scrolling through the gap above it. */
   .woap-board-panel.hidden { display:none; }
   .woap-board-panel-note { font-size:12px; color:var(--ink-muted); margin:0 0 10px; }
   /* Independence disclaimer required by Visa WOAP — quiet but genuinely legible, not hidden. */
   .woap-disclaimer { font-size:11px; line-height:1.5; color:var(--ink-muted); margin:0 0 12px;
     padding:8px 10px; border:1px solid var(--border); border-radius:8px; background:var(--paper); }
   .woap-disclaimer a { color:var(--wr); text-decoration:underline; }
+  /* Burger search. Pinned to the top of the leaderboard panel rather than sitting statically above
+     the intro note: the panel is the scroller, so a static field is 200 rows behind you by the time
+     you want it. The negative margins bleed it over the panel's own 12px padding, so rows can't
+     show through the gap beside it while they scroll under. */
+  .woap-search { position:sticky; top:0; z-index:5; margin:0 -12px 10px; padding:12px 12px 9px;
+                 background:var(--paper); border-bottom:1px solid var(--wr-border); }
+  .woap-search-field { position:relative; display:block; }
+  .woap-search-icon { position:absolute; left:11px; top:50%; transform:translateY(-50%);
+                 font-size:13px; line-height:1; pointer-events:none; opacity:.6; }
+  /* 16px on the input itself is not a style choice: below 16px, iOS Safari zooms the whole overlay
+     on focus and the reader lands in a zoomed leaderboard they then have to pinch back out of. */
+  .woap-search-input { width:100%; box-sizing:border-box; font:inherit; font-size:16px; line-height:1.25;
+                 padding:9px 36px 9px 32px; border:1px solid var(--wr-border); border-radius:999px;
+                 background:#fff; color:var(--ink); outline:none; }
+  .woap-search-input::placeholder { color:var(--ink-muted); }
+  .woap-search-input:focus { border-color:var(--wr); box-shadow:0 0 0 3px var(--wr-soft); }
+  /* Sized as a deliberate 36x36 hit area rather than letting padding decide it. At 13px the glyph's
+     own box is about 30x33, which clears the WCAG minimum but is a mean target for a thumb on the
+     one control whose whole job is undoing a mistyped search. */
+  .woap-search-clear { position:absolute; right:3px; top:50%; transform:translateY(-50%); display:none;
+                 width:36px; height:36px; align-items:center; justify-content:center;
+                 font:inherit; font-size:13px; line-height:1; color:var(--ink-muted); background:none;
+                 border:0; border-radius:999px; padding:0; cursor:pointer; }
+  .woap-search.has-text .woap-search-clear { display:flex; }
+  .woap-search-clear:hover { color:var(--wr); }
+  .woap-search-count { display:none; margin:7px 3px 0; font-size:11.5px; font-weight:700; color:var(--wr-deep); }
+  /* Two separate states on purpose. The clear x tracks "there are characters in the field", so a
+     field holding only spaces can still be emptied in one tap. The count tracks "there is a query
+     that actually filters", so whitespace alone does not announce a pointless "244 of 244". */
+  .woap-search.has-query .woap-search-count { display:block; }
+  /* An empty result has to offer the way out. Before this, a search with no hits left the reader on
+     a bare "no burgers match" with no field in sight to explain or undo it. */
+  .woap-search-empty { margin:16px 3px; font-size:13.5px; color:var(--ink-muted); }
+  .woap-search-empty button { font:inherit; font-size:13.5px; font-weight:700; color:var(--wr);
+                 background:none; border:0; padding:0; text-decoration:underline; cursor:pointer; }
+  /* Map view: the same query filters the pins, so it has to be visible and clearable from there too,
+     or the map silently hides 230 burgers with nothing on screen saying why. */
+  .woap-map-filter { position:absolute; z-index:1100; top:10px; left:50%; transform:translateX(-50%);
+                 display:none; align-items:center; gap:8px; max-width:calc(100% - 20px);
+                 background:#fff; border:1px solid var(--wr-border); border-radius:999px;
+                 padding:6px 7px 6px 14px; box-shadow:0 2px 10px rgba(0,0,0,.16);
+                 font-size:12px; font-weight:700; color:var(--wr-deep); }
+  .woap-map-filter.on { display:flex; }
+  .woap-map-filter-text { overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+  .woap-map-filter button { font:inherit; font-size:12px; font-weight:700; color:var(--wr-deep);
+                 background:var(--wr-soft); border:0; border-radius:999px; padding:5px 10px;
+                 cursor:pointer; flex-shrink:0; }
+  .woap-map-filter button:hover { background:var(--wr-border); }
   @media (min-width:760px){ .woap-board-panel { left:auto; right:16px; top:16px; bottom:16px; width:440px; } }
   /* Minimise (collapse) button on an expanded leaderboard row */
   .woap-card.bare { position:relative; }
@@ -967,16 +1018,45 @@
     </div>
   </div>
   <div class="woap-view-body">
-    <!-- Base layer: the dedicated burger map (Leaflet loads lazily on first open) -->
-    <div id="woapMap" class="woap-map"></div>
-    <!-- Overlay panel: the leaderboard, sitting on top of the map -->
+    <!-- The leaderboard panel is FIRST in the DOM even though the map is painted underneath it.
+         Both are position:absolute with the panel's z-index set explicitly, so source order changes
+         nothing visually — but it changes tab order, which is the whole point. With the map first,
+         Leaflet's ~38 focusable marker icons sat between the back button and this search field, so
+         reaching the search by keyboard took 41 tab stops. Now it takes three. Switching to Map view
+         hides this panel entirely, so the map is first again exactly when it should be. -->
     <div id="woapBoardPanel" class="woap-board-panel">
+      <!-- Burger search. First thing in the panel and sticky, so it is on screen both when the
+           leaderboard opens and 200 rows down it. Lives OUTSIDE #woapBoard on purpose: the board's
+           innerHTML is replaced on every keystroke, which would blow away focus and the caret if
+           the field were inside it. -->
+      <div class="woap-search" id="woapSearchWrap">
+        <!-- A div, not a label: a <button> inside a <label> gets the label's own activation
+             behaviour forwarded onto the input, so the clear × would fire twice. The input carries
+             its own aria-label, so nothing is lost. -->
+        <div class="woap-search-field">
+          <span class="woap-search-icon" aria-hidden="true">&#128269;</span>
+          <input id="woapSearchInput" class="woap-search-input" type="text" autocomplete="off"
+                 placeholder="Search burgers, venues, suburbs, ingredients&hellip;"
+                 aria-label="Search the Burger Wellington leaderboard">
+          <button type="button" id="woapSearchClear" class="woap-search-clear" aria-label="Clear burger search">&#10005;</button>
+        </div>
+        <p class="woap-search-count" id="woapSearchCount" role="status" aria-live="polite"></p>
+      </div>
       <p class="woap-board-panel-note">Every festival burger, ranked by what Wellington actually thinks. Tap a burger to rate it, leave a photo and a review &mdash; or hit <b>Map</b> above to see all 244 on the map.</p>
       <!-- Independence disclaimer — wording supplied by Visa Wellington On a Plate (Eleanor Stewart,
            Wellington Culinary Events Trust, 2026-08-02) and used verbatim at their request. Do not
            reword without checking with them first. -->
       <p class="woap-disclaimer">This leaderboard is independently run and is not affiliated with Visa Wellington On a Plate. It is not used to determine the five Burger Wellington finalists. To have your rating count towards finalist selection and go in the draw to win the official Rate &amp; Win prize pack, please submit your rating via the official <a href="https://visawoap.com/rateandwin" target="_blank" rel="noopener">Visa Wellington On a Plate website</a>.</p>
       <div id="woapBoard"></div>
+    </div>
+    <!-- Base layer: the dedicated burger map (Leaflet loads lazily on first open). Painted beneath
+         the panel above via z-index, not source order — see the note at the top of this block. -->
+    <div id="woapMap" class="woap-map"></div>
+    <!-- Shown only in Map view while a search is live, because the query filters the pins too and a
+         map quietly missing 230 of its 244 burgers needs to say so. -->
+    <div class="woap-map-filter" id="woapMapFilter">
+      <span class="woap-map-filter-text" id="woapMapFilterText"></span>
+      <button type="button" id="woapMapFilterClear">Clear</button>
     </div>
     <p class="woap-map-note" id="woapMapNote" style="display:none;"></p>
   </div>
@@ -1198,6 +1278,17 @@ let showClubRugby     = false;   // Club Rugby tab — default OFF; reveals the 
 const WOAP_ENABLED    = true;
 let showWoap          = false;   // WOAP tab — default OFF; reveals the Burger Wellington leaderboard
 let woapView          = "board"; // "board" (leaderboard) | "map" (dedicated burger map)
+// The burgers overlay has its OWN search, deliberately separate from the deals-page searchQuery.
+// It used to share it, which meant a leftover deals search ("quiz night") silently emptied the
+// leaderboard the next time you opened it — and because the overlay is full-screen, the field that
+// caused it was hidden underneath, so there was no way to see or clear it. Two views, two queries.
+let woapSearchQuery   = "";
+// Keystrokes are debounced into one render. A board render rebuilds all 244 rows and their
+// thumbnails, measured at 500-640ms on this desktop for a one-character query — per keystroke that
+// makes the field itself lag seconds behind the typing. Rendering only once the typing pauses keeps
+// the field instant; the render that does run is no dearer than opening the board in the first place.
+let _woapSearchTimer  = null;
+let _woapFocusBeforeOpen = null;   // element focus returns to when the burgers overlay closes
 // Default leaderboard rank column. 'google' = Google rating, 'rating' = user star-rating average.
 // Flip this one line to 'rating' once enough user ratings accrue to make the "best burger rating" the default.
 // Default rank column. Changed from 'google' to 'rating' on 2026-08-05: the point of the
@@ -1799,11 +1890,54 @@ function woapIsOwnerPhoto(src) {
   return /-venue(-\d+)?\.[a-z]+$/i.test(String(src || ''));
 }
 
+// The festival tags the data with codes, not words. Nobody searches "VG" — they search "vegan", and
+// before this that returned the two burgers with the word in their description instead of the five
+// actually tagged vegan. Both forms go into the haystack.
+const WOAP_DIET_WORDS = {
+  VG: 'vegan', V: 'vegetarian veggie', GF: 'gluten free gluten-free',
+  DF: 'dairy free dairy-free', NF: 'nut free nut-free', H: 'halal'
+};
+
+// Lowercase AND strip macrons/accents, so the spelling a phone keyboard produces finds the burger
+// that is spelled properly. 106 of the 244 burgers carry a macron or an accent somewhere: "pōneke"
+// alone is on 37, "kāpiti" 22, "jalapeño" 19, "kūmara" 15, "café" 8, "pāua" 4. Matching only the
+// exact glyphs meant typing "kapiti" — which is what most people can actually type — found a
+// fraction of the Kāpiti burgers. Folding both sides means either spelling finds all of them, and
+// the properly macronised text still displays untouched; this only ever affects matching.
+// U+0300 to U+036F: the combining diacritical marks that NFD splits a macron or an accent into.
+// Built from char codes rather than written as a literal character class, because a bare combining
+// mark in source has no base character to sit on — it renders as a floating accent over whatever
+// precedes it, and any editor or encoding round-trip can silently mangle it into a class that
+// matches nothing. This way the source stays plain ASCII and the intent is legible.
+const WOAP_DIACRITICS = new RegExp('[' + String.fromCharCode(0x300) + '-' + String.fromCharCode(0x36f) + ']', 'g');
+
+function woapFold(s) {
+  return String(s == null ? '' : s).toLowerCase().normalize('NFD').replace(WOAP_DIACRITICS, '');
+}
+
+// Cached per burger: the haystack is rebuilt on every keystroke otherwise, 244 string joins a
+// character. The dataset is static once loaded, so building it once is safe.
+const _woapHayCache = new WeakMap();
+function woapHaystack(b) {
+  let hay = _woapHayCache.get(b);
+  if (hay === undefined) {
+    const diet = (b.dietary || []).map(d => d + ' ' + (WOAP_DIET_WORDS[String(d).toUpperCase()] || '')).join(' ');
+    hay = woapFold([b.name, b.venue, b.suburb, b.address, b.desc, b.beer_match, diet]
+      .filter(Boolean).join(' '));
+    _woapHayCache.set(b, hay);
+  }
+  return hay;
+}
+
 function woapMatchesSearch(b) {
-  if (!searchQuery) return true;
-  const q = searchQuery.toLowerCase().trim();
-  const hay = [b.name, b.venue, b.suburb, b.desc, (b.dietary || []).join(' ')].filter(Boolean).join(' ').toLowerCase();
+  if (!woapSearchQuery) return true;
+  // Folded the same way the haystack is, so "paua" and "pāua" are the same query.
+  const q = woapFold(woapSearchQuery).trim();
+  if (!q) return true;
+  const hay = woapHaystack(b);
   if (hay.includes(q)) return true;
+  // Multi-word queries match in any order ("cheeky twenty eight", "petone vegan"), so the reader
+  // does not have to guess the exact phrasing on the card.
   const words = q.split(/\s+/).filter(w => w.length > 1);
   return words.length > 1 && words.every(w => hay.includes(w));
 }
@@ -2070,8 +2204,44 @@ function renderWoapBoard() {
        </div>
        <div class="woap-lb-fade" aria-hidden="true"></div>
        </div>`
-    : `<p class="text-sm italic" style="color:var(--ink-muted);">No burgers match your search.</p>`;
+    : `<p class="woap-search-empty">No burgers match <b>${woapEsc(woapSearchQuery)}</b>.
+         <button type="button" data-woap-search-clear>Show all 244 burgers</button></p>`;
   woapBindScrollCue();
+  woapPaintSearchChrome(shown.length);
+}
+
+function woapEsc(s) {
+  return String(s == null ? '' : s).replace(/[&<>"]/g, c => ({ '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;' }[c]));
+}
+
+// Keeps everything that reports the search state in step: the count under the field, the clear ×,
+// and the chip over the map. Called from the board render so a filter can never be in force with
+// nothing on screen saying so.
+function woapPaintSearchChrome(shownCount) {
+  const wrap  = document.getElementById('woapSearchWrap');
+  const count = document.getElementById('woapSearchCount');
+  const chip  = document.getElementById('woapMapFilter');
+  const chipT = document.getElementById('woapMapFilterText');
+  const on    = !!woapSearchQuery.trim();
+  const total = WOAP_BURGERS.length;
+  if (wrap) {
+    wrap.classList.toggle('has-query', on);
+    wrap.classList.toggle('has-text', !!woapSearchQuery.length);
+  }
+  if (count) count.textContent = on ? `${shownCount} of ${total} burgers` : '';
+  if (chip)  chip.classList.toggle('on', on && woapView === 'map');
+  if (chipT) chipT.textContent = on ? `${shownCount} of ${total} · "${woapSearchQuery.trim()}"` : '';
+}
+
+// Single entry point for changing the query, so the input, the board, the map pins and the chip can
+// never drift apart — whichever of them triggered the change.
+function woapSetSearch(q) {
+  clearTimeout(_woapSearchTimer);   // a discrete clear/preset beats any keystroke still in flight
+  woapSearchQuery = q || '';
+  const input = document.getElementById('woapSearchInput');
+  if (input && input.value !== woapSearchQuery) input.value = woapSearchQuery;
+  renderWoapBoard();
+  if (window.woapMap && window.woapMap.refresh) window.woapMap.refresh();
 }
 
 // Animates scrollLeft by hand over ~260ms. scrollBy({behavior:'smooth'}) is NOT used: it silently
@@ -2093,9 +2263,15 @@ function woapTweenScrollX(sc, delta) {
 
 // Shows the edge fade only while there is actually more table to the right, and re-checks on
 // scroll and resize. Re-bound after every board render because renderWoapBoard replaces innerHTML.
+let _woapCueResize = null;   // the one window-resize handler the scroll cue is allowed to have
 function woapBindScrollCue() {
   const wrap = document.querySelector('#woapBoard .woap-lb');
-  if (!wrap) return;
+  // Empty search result: there is no table to cue, so retire the handler from the last one rather
+  // than leaving it bound to a table that no longer exists.
+  if (!wrap) {
+    if (_woapCueResize) { window.removeEventListener('resize', _woapCueResize); _woapCueResize = null; }
+    return;
+  }
   const sc = wrap.querySelector('.woap-lb-scroll');
   if (!sc) return;
   const hint = document.querySelector('#woapBoard .woap-lb-hint');
@@ -2112,6 +2288,11 @@ function woapBindScrollCue() {
     if (hint) hint.classList.toggle('at-end', !more);
   };
   sc.addEventListener('scroll', update, { passive: true });
+  // The scroll listener dies with the element it is bound to, but a window listener does not: every
+  // board render used to leave another one behind, each holding its own detached 244-row table
+  // alive. A sort click leaked one; searching leaks one per render. Drop the previous one first.
+  if (_woapCueResize) window.removeEventListener('resize', _woapCueResize);
+  _woapCueResize = update;
   window.addEventListener('resize', update);
   update();
   // The panel can be laid out at zero width on open; re-measure once it has real dimensions.
@@ -2239,6 +2420,9 @@ function setWoapView(v) {
   });
   const panel = document.getElementById('woapBoardPanel');
   if (panel) panel.classList.toggle('hidden', woapView !== 'board');
+  // The map chip belongs to map view only — the board shows the live query in the field itself.
+  const chip = document.getElementById('woapMapFilter');
+  if (chip) chip.classList.toggle('on', !!woapSearchQuery.trim() && woapView === 'map');
   // Build/size the base map whenever the overlay is showing (behind the panel in board view too,
   // so switching to Map is instant and the leaderboard clearly sits on top of a live map).
   if (window.woapMap) window.woapMap.open();
@@ -2255,6 +2439,13 @@ function openWoapView() {
   document.body.style.overflow = 'hidden';
   woapRatingsLoaded = false;   // re-pull the community leaderboard each time it opens
   renderWoap();
+  // Move focus into the overlay. Without this it stays on whichever button opened it — an element
+  // now covered by a full-screen view — so a keyboard user tabs blindly through the entire deals
+  // page underneath before ever reaching the burger search. The back button rather than the search
+  // field on purpose: focusing a text input here would throw up the phone keyboard on open.
+  _woapFocusBeforeOpen = document.activeElement;
+  const back = document.getElementById('woapCloseBtn');
+  if (back) { try { back.focus({ preventScroll: true }); } catch (e) { back.focus(); } }
 }
 function closeWoapView() {
   const view = document.getElementById('woapView');
@@ -2263,6 +2454,13 @@ function closeWoapView() {
   view.classList.remove('open');
   view.setAttribute('aria-hidden', 'true');
   document.body.style.overflow = '';
+  // Hand focus back where it came from, so closing does not dump a keyboard user at the top of the
+  // document. Guarded on still being in the DOM: a re-render can replace the node that opened this.
+  const back = _woapFocusBeforeOpen;
+  _woapFocusBeforeOpen = null;
+  if (back && back !== document.body && document.contains(back)) {
+    try { back.focus({ preventScroll: true }); } catch (e) {}
+  }
 }
 
 // Open one burger's full card straight from a map popup: make sure the overlay is open, show the
@@ -2273,6 +2471,11 @@ function openWoapBurger(slug) {
   if (typeof window.__wdCloseDealsMap === 'function') window.__wdCloseDealsMap();
   if (!showWoap) openWoapView();
   setWoapView('board');
+  // A live search would leave this burger filtered out of the board, so the row we are about to
+  // scroll to would not exist and the tap would do nothing. Being sent to a specific burger beats
+  // holding the filter, so drop it.
+  const target = WOAP_BURGERS.find(x => woapBurgerSlug(x) === slug);
+  if (woapSearchQuery && target && !woapMatchesSearch(target)) woapSetSearch('');
   const finish = () => {
     const row = document.querySelector('[data-lb-row="' + slug + '"]');
     if (!row) return;
@@ -2806,6 +3009,29 @@ if (_woapCloseBtn) _woapCloseBtn.addEventListener("click", closeWoapView);
 document.addEventListener("keydown", function(e) {
   if (e.key === "Escape" && showWoap) closeWoapView();
 });
+
+// ---------- BURGER SEARCH ----------
+(function () {
+  const input = document.getElementById("woapSearchInput");
+  if (!input) return;
+  input.addEventListener("input", function () {
+    clearTimeout(_woapSearchTimer);
+    _woapSearchTimer = setTimeout(function () { woapSetSearch(input.value); }, 150);
+  });
+  // Enter would otherwise submit nothing and, on a phone, is the natural "done" key — swallow it and
+  // drop the keyboard so the reader sees the results they just filtered to.
+  input.addEventListener("keydown", function (e) {
+    // Flush any debounced keystroke first, so Enter shows the results for what is actually typed.
+    if (e.key === "Enter") { e.preventDefault(); woapSetSearch(input.value); input.blur(); return; }
+    // Escape inside the field clears the search instead of closing the whole overlay, which is what
+    // the reader means by it here. Only falls through to closing once the field is already empty.
+    if (e.key === "Escape" && input.value) { e.stopPropagation(); woapSetSearch(""); }
+  });
+  const clear = document.getElementById("woapSearchClear");
+  if (clear) clear.addEventListener("click", function () { woapSetSearch(""); input.focus(); });
+  const mapClear = document.getElementById("woapMapFilterClear");
+  if (mapClear) mapClear.addEventListener("click", function () { woapSetSearch(""); });
+})();
 // Feature flag off → hide the whole WOAP Burgers feature (entry bar, header button, overlay) at launch.
 if (!WOAP_ENABLED) {
   ["woapBar", "woapViewBtn", "woapView"].forEach(function(id) {
@@ -2884,6 +3110,9 @@ document.addEventListener("click", function(e) {
   // Map / Leaderboard view toggle
   const vt = e.target.closest("[data-woap-view]");
   if (vt) { setWoapView(vt.getAttribute("data-woap-view")); return; }
+  // "Show all 244 burgers" on the empty-search state
+  const clr = e.target.closest("[data-woap-search-clear]");
+  if (clr) { woapSetSearch(""); const si = document.getElementById("woapSearchInput"); if (si) si.focus(); return; }
   // Leaderboard column sort (Avg / Ratings)
   const sc = e.target.closest("[data-lb-sort]");
   if (sc) { woapLbSort = sc.getAttribute("data-lb-sort"); renderWoapBoard(); return; }
@@ -4661,7 +4890,9 @@ loadData().then(() => {
     if (!built || !map) return;
     cluster.clearLayers();
     onMap = [];
-    (WOAP_BURGERS || []).forEach(function(b){
+    // Same filter the leaderboard uses, so searching "vegan" or "petone" narrows the map as well
+    // as the board rather than the two views disagreeing about what is on.
+    (WOAP_BURGERS || []).filter(woapMatchesSearch).forEach(function(b){
       var v = (VENUES_MAP || {})[b.venue];
       var lat = (v && typeof v.lat === 'number') ? v.lat : (typeof b.lat === 'number' ? b.lat : null);
       var lng = (v && typeof v.lng === 'number') ? v.lng : (typeof b.lng === 'number' ? b.lng : null);
