@@ -600,7 +600,14 @@
   .woap-social.open { display:block; }
   .woap-card.bare .woap-social { display:block; border-top:0; padding-top:0; margin-top:10px; }
   .woap-photos { display:flex; gap:6px; flex-wrap:wrap; margin-bottom:10px; }
-  .woap-photos img { width:66px; height:66px; object-fit:cover; border-radius:7px; border:1px solid var(--border); }
+  .woap-photos img { width:66px; height:66px; object-fit:cover; border-radius:7px; border:1px solid var(--border); display:block; }
+  .woap-photo { margin:0; position:relative; line-height:0; }
+  /* "Owner" marks a photo the venue sent in themselves. Small, sits on the image rather than
+     stealing a row, and uses the accent so it reads as a label not a caption. */
+  .woap-photo.owner img { border-color:var(--wr); }
+  .woap-photo figcaption { position:absolute; left:0; right:0; bottom:0; font-size:8.5px;
+    font-weight:700; letter-spacing:.03em; text-transform:uppercase; text-align:center;
+    color:#fff; background:rgba(0,0,0,.62); padding:2px 0; border-radius:0 0 6px 6px; line-height:1.3; }
   /* Burger photos are tap-to-enlarge. The thumbs are deliberately small (the card is a rating
      widget, not a gallery), so the full shot lives in a lightbox rather than inline. */
   .woap-card .woap-thumb, .woap-photos img { cursor:zoom-in; }
@@ -1785,6 +1792,13 @@ function woapVenueLinkHtml(b, cls) {
              target="_blank" rel="noopener" title="Open ${v} in Google Maps">${label}</a>`;
 }
 
+// A photo the venue supplied, as opposed to a customer upload. Every venue-supplied file in
+// woap-images/ is saved with a `-venue` suffix, so that is the marker. Kept as one function so the
+// convention lives in a single place if it ever changes to a real data field.
+function woapIsOwnerPhoto(src) {
+  return /-venue(-\d+)?\.[a-z]+$/i.test(String(src || ''));
+}
+
 function woapMatchesSearch(b) {
   if (!searchQuery) return true;
   const q = searchQuery.toLowerCase().trim();
@@ -1906,7 +1920,16 @@ function renderWoapCard(b, bare) {
   // Today every burger has exactly one official image and no public photos, so the strip is empty
   // until user uploads land; then it fills with those and only those.
   const stripImgs = imgs.slice(1);
-  const photosStrip = stripImgs.length ? `<div class="woap-photos">${stripImgs.map(src => `<img src="${src}" alt="Burger photo — tap to enlarge" loading="lazy">`).join('')}</div>` : '';
+  // Photos the venue sent us themselves are badged "Owner" so a reader can tell them apart from a
+  // punter's snap. The marker is the `-venue` filename suffix, which is the convention already used
+  // for every venue-supplied file in woap-images/ — see woapIsOwnerPhoto().
+  const photosStrip = stripImgs.length
+    ? `<div class="woap-photos">${stripImgs.map(src =>
+        `<figure class="woap-photo${woapIsOwnerPhoto(src) ? ' owner' : ''}">
+           <img src="${src}" alt="Burger photo — tap to enlarge" loading="lazy">
+           ${woapIsOwnerPhoto(src) ? '<figcaption>Owner</figcaption>' : ''}
+         </figure>`).join('')}</div>`
+    : '';
   // bare = embedded in a leaderboard detail row: no card chrome, review widgets always open.
   const reviewBtn = bare ? '' : `<button type="button" class="woap-review-open" data-woap-review="${slug}">Rate &amp; review &rarr;</button>`;
   // In the leaderboard (bare), a light, easily-tappable minimise button collapses the open row.

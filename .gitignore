@@ -63,3 +63,9 @@ WOAP_STATS_REEL_2026-08-11.md
 _fb_sent_log_pageattempt.json
 _discover_*.json
 _discovered_out_*.json
+WOAP_RATING_LINKS.csv
+_discovered_merged.json
+_email_replies.json
+_email_replies_log.json
+_photo_targets.json
+_venue_photos/
