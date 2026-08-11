@@ -236,7 +236,12 @@
   "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/DS-Woap-burger-2026-260414-165737.jpg",
   "google_rating": 4.3,
   "google_reviews": null,
-  "woap_url": "https://visawoap.com/venue/dockside-restaurant-bar/6730?type=burger"
+  "woap_url": "https://visawoap.com/venue/dockside-restaurant-bar/6730?type=burger",
+  "photos": [
+   "woap-images/alpha-bravo-charlie-dockside-restaurant-bar-venue.jpg",
+   "woap-images/alpha-bravo-charlie-dockside-restaurant-bar-venue-2.jpg"
+  ],
+  "image_source": "venue-supplied"
  },
  {
   "name": "AVPSBBORCAMPB",
@@ -1716,7 +1721,11 @@
   "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/IMG_7125-260424-085004.jpeg",
   "google_rating": null,
   "google_reviews": null,
-  "woap_url": "https://visawoap.com/venue/cafe-medici/6877?type=burger"
+  "woap_url": "https://visawoap.com/venue/cafe-medici/6877?type=burger",
+  "photos": [
+   "woap-images/heard-it-through-the-lambvine-caf-medici-venue.jpg"
+  ],
+  "image_source": "venue-supplied"
  },
  {
   "name": "Heard it Thru...",
@@ -2665,7 +2674,11 @@
   "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/07d58caf-44e7-4bfc-a734-2090add49ac3-260611-071939.jpeg",
   "google_rating": null,
   "google_reviews": null,
-  "woap_url": "https://visawoap.com/venue/k-chicken/7081?type=burger"
+  "woap_url": "https://visawoap.com/venue/k-chicken/7081?type=burger",
+  "photos": [
+   "woap-images/military-secrets-k-chicken-venue.jpg"
+  ],
+  "image_source": "venue-supplied"
  },
  {
   "name": "Mixed Messages",
@@ -3790,7 +3803,8 @@
   "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/Two-Grey-260430-104551.jpg",
   "google_rating": null,
   "google_reviews": null,
-  "woap_url": "https://visawoap.com/venue/two-grey/6915?type=burger"
+  "woap_url": "https://visawoap.com/venue/two-grey/6915?type=burger",
+  "photo_credit": "Two Grey"
  },
  {
   "name": "Squeal the Deal",
@@ -5107,7 +5121,11 @@
   "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/Burger-WOAP-2026-260501-125723.jpeg",
   "google_rating": null,
   "google_reviews": null,
-  "woap_url": "https://visawoap.com/venue/madama-butterfly/6990?type=burger"
+  "woap_url": "https://visawoap.com/venue/madama-butterfly/6990?type=burger",
+  "photos": [
+   "woap-images/when-hanoi-met-busan-madama-butterfly-venue.jpg"
+  ],
+  "image_source": "venue-supplied"
  },
  {
   "name": "Whisper in the Wind",
