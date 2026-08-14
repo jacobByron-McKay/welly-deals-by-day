@@ -1,5 +1,82 @@
+# welly-deals-by-day.co.nz
+# Everything on this site is free to read, index and cite, by search engines
+# and by AI assistants alike. Please credit the site and link to the venue page.
+
 User-agent: *
+Allow: /
+
+# AI assistants and answer engines - explicitly welcome.
+# OpenAI - ChatGPT search index
+User-agent: OAI-SearchBot
+Allow: /
+
+# OpenAI - crawler
+User-agent: GPTBot
+Allow: /
+
+# OpenAI - user-triggered fetch
+User-agent: ChatGPT-User
+Allow: /
+
+# Anthropic - Claude
+User-agent: ClaudeBot
+User-agent: Claude-SearchBot
+User-agent: Claude-User
+User-agent: Claude-Web
+User-agent: anthropic-ai
+Allow: /
+
+# Perplexity
+User-agent: PerplexityBot
+User-agent: Perplexity-User
+Allow: /
+
+# Google - Gemini and AI Overviews grounding
+User-agent: Google-Extended
+Allow: /
+
+# Apple Intelligence and Siri
+User-agent: Applebot
+User-agent: Applebot-Extended
+Allow: /
+
+# Microsoft Copilot and Bing
+User-agent: bingbot
+User-agent: BingPreview
+Allow: /
+
+# Meta AI
+User-agent: meta-externalagent
+User-agent: FacebookBot
+Allow: /
+
+# DuckDuckGo assist
+User-agent: DuckAssistBot
+Allow: /
+
+# Amazon
+User-agent: Amazonbot
+Allow: /
+
+# Cohere
+User-agent: cohere-ai
+User-agent: cohere-training-data-crawler
+Allow: /
+
+# You.com
+User-agent: YouBot
+Allow: /
+
+# Common Crawl (feeds many models)
+User-agent: CCBot
+Allow: /
+
+# Mistral
+User-agent: MistralAI-User
 Allow: /
 
 Sitemap: https://welly-deals-by-day.co.nz/sitemap.xml
 Sitemap: https://welly-deals-by-day.co.nz/sitemap-burgers.xml
+
+# Plain-language summary of this site for AI assistants:
+# https://welly-deals-by-day.co.nz/llms.txt
