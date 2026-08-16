@@ -787,7 +787,7 @@
     <div>
       <h1 class="text-2xl font-semibold tracking-tight">Welly Deals, by Day</h1>
       <p class="text-sm mt-0.5" style="color:var(--ink-muted);">Central Wellington's recurring specials and events, all in one place.</p>
-      <p class="text-xs mt-1" style="color:var(--ink-muted);"><span id="dealCount">—</span> deals &middot; updated weekly</p>
+      <p class="text-xs mt-1" style="color:var(--ink-muted);"><span id="dealCount">—</span> <span id="dealCountLabel">deals</span> &middot; updated weekly</p>
     </div>
     <!-- These four buttons used to sit in a shrink-0 block that could not wrap, so on a phone the
          header forced the whole page ~120px wider than the screen. The page was then horizontally
@@ -872,6 +872,22 @@
       <div class="flex items-center gap-2 mt-2">
         <p id="suburbHelp" class="text-xs" style="color:var(--ink-muted);">Central Wellington shows by default &mdash; tap a region to add its suburbs, or hit Clear all and pick just the ones you want.</p>
         <button id="suburbMinBtn" type="button" class="min-btn open shrink-0" style="margin-left:auto;"><span class="x" aria-hidden="true">&#10005;</span> Minimise</button>
+      </div>
+    </div>
+
+    <!-- Quick view switcher. Asked for on the Tauranga launch post: a reader wanted to scan the
+         events on a day without scrolling past every food deal. Deliberately sits ABOVE
+         "More filters" so it is one tap away on mobile, rather than buried in the Category row
+         (which only ever filtered deals, never events). -->
+    <div class="rounded-lg border px-3 py-2.5" style="border-color:#f0cdb4;background:#fdf3ec;">
+      <div class="flex items-center gap-2 flex-wrap">
+        <span class="text-sm font-bold flex items-center gap-1.5 shrink-0" style="color:var(--ink);">
+          <span>&#128065;</span> Show
+        </span>
+        <button class="filter-chip active px-3 py-1 rounded-full text-sm border" data-view="all"    style="border-color:var(--border);">Everything</button>
+        <button class="filter-chip        px-3 py-1 rounded-full text-sm border" data-view="food"   style="border-color:var(--border);">Food only</button>
+        <button class="filter-chip        px-3 py-1 rounded-full text-sm border" data-view="drinks" style="border-color:var(--border);">Drinks only</button>
+        <button class="filter-chip        px-3 py-1 rounded-full text-sm border" data-view="events" style="border-color:var(--border);">Events only</button>
       </div>
     </div>
 
@@ -1255,6 +1271,7 @@ function updateSelectorUI() {
   });
 }
 const selectedCategories = new Set(Object.keys(CAT_LABELS));
+let viewMode          = "all";   // "all" | "food" | "drinks" | "events" — the Show switcher
 let selectedDay       = "all";   // "all" or a DAYS string
 let chainFilter       = "all";   // "all" | "standalone" | "chain"
 let confidenceFilter  = "all";   // "all" | "high"
@@ -1490,7 +1507,27 @@ function sortByTitle(list) {
 }
 
 // ---------- FILTER ----------
+// The Show switcher. "food"/"drinks" narrow the deals AND drop the events; "events" drops
+// every deal. Anything else leaves both alone.
+function eventsAllowed() { return viewMode === "all" || viewMode === "events"; }
+
+// Every place an event can surface (week view + Upcoming) runs through this, so the two can
+// never drift apart again. The guards below are this site's originals, moved not changed.
+function eventPassesFilters(ev) {
+  if (!eventsAllowed()) return false;
+  if (showCosyOnly) return false;      // Cosy filter is deals-only; events carry no cosy tag
+  if (ev.club) return false;           // social clubs live only in the day-grouped Clubs stream
+  if (ev.club_rugby) return false;     // club rugby fixtures live only in their own tab
+  if (!selectedSuburbs.has(ev.suburb)) return false;
+  if (ev.category === 'sport' && !(ev.world_cup ? showWorldCup : showSports)) return false;
+  if (!matchesSearch(ev)) return false;
+  return true;
+}
+
 function dealPassesFilters(deal) {
+  if (viewMode === "events") return false;
+  if (viewMode === "food"   && deal.category !== "food") return false;
+  if (viewMode === "drinks" && deal.category !== "drinks" && deal.category !== "happyhour") return false;
   if (!selectedSuburbs.has(deal.suburb)) return false;
   if (!selectedCategories.has(deal.category)) return false;
   if (confidenceFilter === "high" && deal.confidence !== "high") return false;
@@ -1522,7 +1559,13 @@ function render() {
   const view  = document.getElementById("weekView");
 
   const filtered = DEALS.filter(dealPassesFilters);
-  document.getElementById("dealCount").textContent = filtered.length;
+  // In "Events only" the headline number has to count events, or it reads "0 deals"
+  // over a full page of events.
+  const headlineCount = viewMode === "events"
+    ? SPECIAL_EVENTS.filter(ev => ev.date && WEEK_ISO_SET.has(ev.date) && eventPassesFilters(ev)).length
+    : filtered.length;
+  document.getElementById("dealCount").textContent = headlineCount;
+  document.getElementById("dealCountLabel").textContent = viewMode === "events" ? "events" : "deals";
 
   if (selectedSuburbs.size === 0) {
     view.innerHTML = `<div class="text-center py-16" style="color:var(--ink-muted);">Select at least one suburb to see deals.</div>`;
@@ -1546,16 +1589,11 @@ function render() {
     // Special events that fall on this day in the current week
     const dayEvents = SPECIAL_EVENTS.filter(ev =>
       ev.date && WEEK_DATES.some(w => w.dayName === day && w.iso === ev.date)
-      && selectedSuburbs.has(ev.suburb)
-      && !ev.club         // clubs are handled separately below (their own toggle + placement)
-      && !showCosyOnly    // Cosy filter is deals-only; events don't carry a cosy tag
-      && !ev.club_rugby   // club rugby fixtures live only in their own Club Rugby tab
-      && (ev.category !== 'sport' || (ev.world_cup ? showWorldCup : showSports))
-      && matchesSearch(ev)
+      && eventPassesFilters(ev)
     );
     // Social clubs: only when the Clubs filter is on. Shown across all suburbs (browse every club
     // that meets that day), independent of the suburb selection, grouped under their meeting day.
-    const dayClubs = showClubs
+    const dayClubs = (showClubs && eventsAllowed())
       ? sortByTitle(SPECIAL_EVENTS.filter(ev =>
           ev.club && clubMeetsOnDay(ev, day) && !showCosyOnly && matchesSearch(ev)))
       : [];
@@ -1571,7 +1609,7 @@ function render() {
           ${isToday ? `<span class="text-xs font-semibold uppercase tracking-wider px-2 py-0.5 rounded"
                             style="background:var(--today-border);color:#6b4e00;">Today</span>` : ""}
           <span class="text-xs ml-auto" style="color:var(--ink-muted);">
-            ${totalItems} deal${totalItems === 1 ? "" : "s"}
+            ${totalItems} ${viewMode === "events" ? "event" : "deal"}${totalItems === 1 ? "" : "s"}
           </span>
         </div>
         <div class="px-4 pb-4 space-y-3">
@@ -1726,12 +1764,7 @@ function renderUpcoming(upcomingDeals) {
   const items = upcomingDeals.map(d => ({ ...d, _kind: "deal" }));
 
   SPECIAL_EVENTS.forEach(ev => {
-    if (showCosyOnly) return;    // Cosy filter is deals-only; events don't carry a cosy tag
-    if (ev.club) return;         // social clubs live only in the day-grouped view under the Clubs filter
-    if (ev.club_rugby) return;   // club rugby fixtures live only in their own Club Rugby tab
-    if (!selectedSuburbs.has(ev.suburb)) return;
-    if (ev.category === 'sport' && !(ev.world_cup ? showWorldCup : showSports)) return;
-    if (!matchesSearch(ev)) return;
+    if (!eventPassesFilters(ev)) return;
     // Include if upcoming (future date) or undated/recurring
     if (!ev.date || ev.date >= WEEK_START) {
       // Exclude events already shown in the week view
@@ -2868,6 +2901,16 @@ document.getElementById("suburbMinBtn").addEventListener("click", function() {
     : '<span class="x" aria-hidden="true">&#10005;</span> Minimise';
 });
 
+// Show switcher (radio)
+document.querySelectorAll("[data-view]").forEach(btn => {
+  btn.addEventListener("click", () => {
+    viewMode = btn.dataset.view;
+    document.querySelectorAll("[data-view]").forEach(b => b.classList.remove("active"));
+    btn.classList.add("active");
+    render();
+  });
+});
+
 // Day (radio)
 document.querySelectorAll("[data-day]").forEach(btn => {
   btn.addEventListener("click", () => {
@@ -3943,6 +3986,7 @@ loadData().then(() => {
 // visitor opens the panel, and re-lights whenever a newer id appears. tag: "New" | "Added" | "Update".
 (function(){
   var SITE_UPDATES = [
+    { id:"2026-08-17-showfilter", date:"2026-08-17", tag:"New", text:"New Show row at the top of the filters. Tap Events only to see just the events and activities on a day, or Food only and Drinks only to skip straight to the eating and drinking. Suggested by a reader on Facebook, and it works the same way on every one of our city sites." },
     { id:"2026-08-05-ratingscroll", date:"2026-08-05", tag:"Update", text:"Fixed: rating a burger no longer throws you back to the top of the leaderboard. Your score still re-ranks the board on the spot, but the card you are in now stays exactly where it is, so you can score price, quality and quantity one after the other without losing your place. Thanks to Pei-Ying in the Burger Wellington group for flagging it." },
     { id:"2026-08-01-refresh", date:"2026-08-01", tag:"Update", text:"Central city refresh — re-checked the 45 busiest venues around Cuba Street, Courtenay Place and Te Aro, added Burger Wellington event picks, and cleared out a handful of deals that had quietly changed or ended." },
     { id:"2026-07-30-burgermaplayers", date:"2026-07-30", tag:"New", text:"The burgers map now shows the rest of the city too. Hit “Deals” or “Events” in the top left and every venue with a deal on, or a gig coming up, pins alongside the burgers — so you can line up a burger and work out what else is on within a couple of streets. A day picker appears with them if you only want one night's worth, and the burgers stay put whichever day you pick. Where a burger venue has its own deals, they show inside the burger's pin." },
