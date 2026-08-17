@@ -1102,6 +1102,10 @@
 
 <!-- Footer -->
 <footer class="max-w-4xl mx-auto px-4 py-8 text-center text-xs" style="color:var(--ink-muted);">
+  <!-- Crawlable links into the static day/category hub pages (node generate-hubs.mjs). These exist so search engines and AI crawlers, which
+       mostly do not run JavaScript, can reach the deal data at all: the list above is rendered client-side from deals.json. -->
+  <p data-hub-links class="mb-2">Browse by day: <a href="/monday-deals/" style="text-decoration:underline;">Monday</a> &middot; <a href="/tuesday-deals/" style="text-decoration:underline;">Tuesday</a> &middot; <a href="/wednesday-deals/" style="text-decoration:underline;">Wednesday</a> &middot; <a href="/thursday-deals/" style="text-decoration:underline;">Thursday</a> &middot; <a href="/friday-deals/" style="text-decoration:underline;">Friday</a> &middot; <a href="/saturday-deals/" style="text-decoration:underline;">Saturday</a> &middot; <a href="/sunday-deals/" style="text-decoration:underline;">Sunday</a>
+     &middot; <a href="/happy-hours/" style="text-decoration:underline;">Happy hours</a> &middot; <a href="/quiz-nights/" style="text-decoration:underline;">Quiz nights</a></p>
   <p>Spotted a deal or event we're missing, or one that's changed? Use the Contact button above.</p>
   <p class="mt-1">Wellington Deals, by Day &middot; Central Wellington</p>
 </footer>

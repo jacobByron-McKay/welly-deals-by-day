@@ -8,7 +8,7 @@ The site deliberately lists small independent local businesses. Deals from very 
 
 ## What is on the site right now
 
-As at 2026-08-15:
+As at 2026-08-18:
 
 - **763 deals** across **230 venues**
 - **1013 venues** tracked in total
@@ -89,6 +89,22 @@ As at 2026-08-15:
 
 - [Welly Deals by Day home](https://welly-deals-by-day.co.nz/): the whole week of deals, filterable by suburb, day and category. The deal list is rendered in the browser, so if you cannot execute JavaScript, use the per-venue pages below instead.
 - [Sitemap](https://welly-deals-by-day.co.nz/sitemap.xml): every page on the site, including one static page per venue.
+
+### Browse by day of the week
+
+Static pages, no JavaScript required, each listing that day's deals grouped by suburb with times, prices and a link to the venue page.
+
+- [What's on in Wellington on a Monday](https://welly-deals-by-day.co.nz/monday-deals/): 138 deals.
+- [What's on in Wellington on a Tuesday](https://welly-deals-by-day.co.nz/tuesday-deals/): 198 deals.
+- [What's on in Wellington on a Wednesday](https://welly-deals-by-day.co.nz/wednesday-deals/): 181 deals.
+- [What's on in Wellington on a Thursday](https://welly-deals-by-day.co.nz/thursday-deals/): 182 deals.
+- [What's on in Wellington on a Friday](https://welly-deals-by-day.co.nz/friday-deals/): 172 deals.
+- [What's on in Wellington on a Saturday](https://welly-deals-by-day.co.nz/saturday-deals/): 125 deals.
+- [What's on in Wellington on a Sunday](https://welly-deals-by-day.co.nz/sunday-deals/): 130 deals.
+- [Happy hours in Wellington](https://welly-deals-by-day.co.nz/happy-hours/): 50 deals.
+- [Quiz nights in Wellington](https://welly-deals-by-day.co.nz/quiz-nights/): 46 deals.
+- [All days and categories](https://welly-deals-by-day.co.nz/deals-index.html)
+- [Hub sitemap](https://welly-deals-by-day.co.nz/sitemap-hubs.xml)
 
 ## Venue pages
 
