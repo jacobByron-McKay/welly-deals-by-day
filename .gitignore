@@ -78,3 +78,8 @@ REEL0_SHOOT_SHEET.md
 WOAP_HANDOFF_2026-08-12.md
 REEL0_EDIT_PLAN.md
 REEL_POSTING_METHOD.md
+
+# WOAP photo-permission audit working files (18 Aug 2026). Same reason as the blocks
+# above: publish dir is the repo ROOT, so these would be fetchable at
+# welly-deals-by-day.co.nz/woap_audit/<file>. They hold venue contact/reply state.
+woap_audit/

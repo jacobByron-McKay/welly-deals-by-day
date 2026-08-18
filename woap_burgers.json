@@ -42,7 +42,12 @@
   "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/WWBW2026-260415-205210.png",
   "google_rating": null,
   "google_reviews": null,
-  "woap_url": "https://visawoap.com/venue/wildfire-churrascaria/7052?type=burger"
+  "woap_url": "https://visawoap.com/venue/wildfire-churrascaria/7052?type=burger",
+  "photos": [
+   "woap-images/3-little-pigs-story-wildfire-churrascaria-venue.jpg",
+   "woap-images/3-little-pigs-story-wildfire-churrascaria-venue-2.jpg"
+  ],
+  "image_source": "venue-supplied"
  },
  {
   "name": "Above The Rest",
@@ -3376,7 +3381,11 @@
   "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/KCDC---WOAP---AMENDED-EDITS--3-260522-121523.jpeg",
   "google_rating": 4.3,
   "google_reviews": null,
-  "woap_url": "https://visawoap.com/venue/waterfront-bar-kitchen/6731?type=burger"
+  "woap_url": "https://visawoap.com/venue/waterfront-bar-kitchen/6731?type=burger",
+  "photos": [
+   "woap-images/say-no-more-waterfront-bar-kitchen-venue.jpg"
+  ],
+  "image_source": "venue-supplied"
  },
  {
   "name": "Schnitzel Von Crumb",
@@ -3438,7 +3447,9 @@
   "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/GPO-and-Lobby--1--260430-104947.jpg",
   "google_rating": null,
   "google_reviews": null,
-  "woap_url": "https://visawoap.com/venue/intercontinental-hotel-wellington/6916?type=burger"
+  "woap_url": "https://visawoap.com/venue/intercontinental-hotel-wellington/6916?type=burger",
+  "photo_credit": "InterContinental Wellington",
+  "image_source": "official-credited"
  },
  {
   "name": "Secret de Polishinelle",
