@@ -724,6 +724,57 @@
   .woap-search-empty { margin:16px 3px; font-size:13.5px; color:var(--ink-muted); }
   .woap-search-empty button { font:inherit; font-size:13.5px; font-weight:700; color:var(--wr);
                  background:none; border:0; padding:0; text-decoration:underline; cursor:pointer; }
+  /* ---------- Burger randomiser ----------
+     A way into the 244 that is not "read the leaderboard top down". Burger Wellington's real value
+     to a venue is exposure it would never otherwise get, and the board's own ranking works against
+     that: the same handful of rated burgers sit at the top and everything else is invisible. This
+     picks from the whole shown set with a flat probability, so an unrated burger in Paraparaumu is
+     exactly as likely as the leader. */
+  .woap-dice { margin-top:9px; display:flex; align-items:center; gap:9px; flex-wrap:wrap; }
+  .woap-dice-btn { font:inherit; font-size:13px; font-weight:700; color:#fff; background:var(--wr);
+                 border:1px solid var(--wr); border-radius:999px; padding:8px 15px; cursor:pointer;
+                 display:inline-flex; align-items:center; gap:7px; box-shadow:0 1px 3px rgba(220,38,38,.32); }
+  .woap-dice-btn:hover { background:var(--wr-dark); border-color:var(--wr-dark); }
+  .woap-dice-btn:focus-visible { outline:2px solid var(--wr-deep); outline-offset:2px; }
+  .woap-dice-btn[disabled] { opacity:.75; cursor:default; }
+  .woap-dice-face { display:inline-block; font-size:15px; line-height:1; }
+  .woap-dice-btn.rolling .woap-dice-face { animation:woapRoll .45s linear infinite; }
+  @keyframes woapRoll { to { transform:rotate(360deg); } }
+  @media (prefers-reduced-motion: reduce) { .woap-dice-btn.rolling .woap-dice-face { animation:none; } }
+  .woap-dice-hint { font-size:11.5px; color:var(--ink-muted); }
+  /* The result. Lives directly under the sticky search block so it is on screen the moment it
+     lands, whatever the reader had scrolled to. */
+  .woap-pick { display:none; margin:0 0 12px; border:1px solid var(--wr-border); border-radius:12px;
+                 background:var(--wr-soft); padding:12px; position:relative; }
+  .woap-pick.on { display:block; animation:woapPickIn .32s ease-out; }
+  @keyframes woapPickIn { from { opacity:0; transform:translateY(-6px); } to { opacity:1; transform:none; } }
+  @media (prefers-reduced-motion: reduce) { .woap-pick.on { animation:none; } }
+  .woap-pick-kicker { font-size:10px; font-weight:700; letter-spacing:.05em; text-transform:uppercase;
+                 color:var(--wr-deep); margin:0 0 7px; }
+  .woap-pick-head { display:flex; gap:11px; align-items:flex-start; }
+  .woap-pick-thumb { width:74px; height:74px; flex:0 0 74px; object-fit:cover; border-radius:9px;
+                 background:#fff; border:1px solid var(--wr-border); }
+  .woap-pick-body { min-width:0; }
+  .woap-pick-name { font-size:16px; font-weight:800; line-height:1.25; color:var(--ink); }
+  .woap-pick-venue { font-size:13px; margin-top:2px; }
+  .woap-pick-venue a { color:var(--wr-deep); font-weight:700; text-decoration:underline; }
+  .woap-pick-meta { margin-top:6px; display:flex; align-items:center; gap:7px; flex-wrap:wrap;
+                 font-size:12px; font-weight:700; color:var(--wr-dark); }
+  .woap-pick-desc { margin:10px 0 0; font-size:12.5px; line-height:1.5; color:var(--ink-muted); }
+  .woap-pick-actions { margin-top:11px; display:flex; gap:8px; flex-wrap:wrap; }
+  .woap-pick-actions a, .woap-pick-actions button { font:inherit; font-size:13px; font-weight:700;
+                 border-radius:9px; padding:9px 13px; cursor:pointer; text-decoration:none;
+                 display:inline-flex; align-items:center; gap:6px; }
+  .woap-pick-maps { background:var(--wr); color:#fff; border:1px solid var(--wr); }
+  .woap-pick-maps:hover { background:var(--wr-dark); }
+  .woap-pick-open { background:#fff; color:var(--wr-deep); border:1px solid var(--wr-border); }
+  .woap-pick-again { background:#fff; color:var(--wr-deep); border:1px solid var(--wr-border); }
+  .woap-pick-open:hover, .woap-pick-again:hover { background:var(--wr-border); }
+  .woap-pick-close { position:absolute; top:6px; right:6px; width:30px; height:30px; display:flex;
+                 align-items:center; justify-content:center; font:inherit; font-size:14px;
+                 line-height:1; color:var(--wr-deep); background:none; border:0; border-radius:999px;
+                 padding:0; cursor:pointer; }
+  .woap-pick-close:hover { background:var(--wr-border); }
   /* Map view: the same query filters the pins, so it has to be visible and clearable from there too,
      or the map silently hides 230 burgers with nothing on screen saying why. */
   .woap-map-filter { position:absolute; z-index:1100; top:10px; left:50%; transform:translateX(-50%);
@@ -1057,7 +1108,16 @@
           <button type="button" id="woapSearchClear" class="woap-search-clear" aria-label="Clear burger search">&#10005;</button>
         </div>
         <p class="woap-search-count" id="woapSearchCount" role="status" aria-live="polite"></p>
+        <!-- Burger randomiser. Sits with the search because they are the two ways of choosing:
+             "I know what I want" and "surprise me". -->
+        <div class="woap-dice">
+          <button type="button" id="woapDiceBtn" class="woap-dice-btn">
+            <span class="woap-dice-face" aria-hidden="true">&#127922;</span> Pick me a random burger
+          </button>
+          <span class="woap-dice-hint">Go somewhere new</span>
+        </div>
       </div>
+      <div class="woap-pick" id="woapPick" role="status" aria-live="polite"></div>
       <p class="woap-board-panel-note">Every festival burger, ranked by what Wellington actually thinks. Tap a burger to rate it, leave a photo and a review &mdash; or hit <b>Map</b> above to see all 244 on the map.</p>
       <!-- Independence disclaimer — wording supplied by Visa Wellington On a Plate (Eleanor Stewart,
            Wellington Culinary Events Trust, 2026-08-02) and used verbatim at their request. Do not
@@ -2535,6 +2595,94 @@ function openWoapBurger(slug) {
   else fetchWoapRatings().then(() => { renderWoapBoard(); finish(); });
 }
 
+// ---------- BURGER RANDOMISER ----------
+// A second way into the 244 that is not "read the leaderboard from the top". The board's own
+// ranking works against the thing the festival is actually good for: a venue that would never
+// otherwise get this traffic. The rated burgers sit at the top and everything below is invisible.
+// This picks flat across the whole shown set, so an unrated burger in Paraparaumu is exactly as
+// likely as the leader.
+const WOAP_ROLL_MS = 700;      // how long the shuffle runs before it settles
+let woapLastPick = null;       // slug of the previous result, so two rolls never land the same
+let _woapRolling = false;
+
+// Respects a live search (rolling within "vegan" is a reasonable thing to want) but falls back to
+// the whole board if the query matches nothing, so the button can never be a no-op.
+function woapDicePool() {
+  const pool = WOAP_BURGERS.filter(woapMatchesSearch);
+  return pool.length ? pool : WOAP_BURGERS;
+}
+
+function woapRollDice() {
+  if (_woapRolling) return;
+  const panel = document.getElementById('woapPick');
+  const btn = document.getElementById('woapDiceBtn');
+  if (!panel || !WOAP_BURGERS.length) return;
+  let pool = woapDicePool();
+  // Never hand back the same burger twice running. With 244 in the pool a repeat reads as a broken
+  // button, not as luck — and it is the one outcome nobody believes was random.
+  if (pool.length > 1 && woapLastPick) {
+    const trimmed = pool.filter(x => woapBurgerSlug(x) !== woapLastPick);
+    if (trimmed.length) pool = trimmed;
+  }
+  const pick = pool[Math.floor(Math.random() * pool.length)];
+  woapLastPick = woapBurgerSlug(pick);
+  if (matchMedia('(prefers-reduced-motion: reduce)').matches) { woapPaintPick(pick); return; }
+  _woapRolling = true;
+  if (btn) { btn.classList.add('rolling'); btn.disabled = true; }
+  panel.classList.add('on');
+  // Driven by setTimeout alone, deliberately — NOT requestAnimationFrame. rAF is suspended
+  // entirely while the tab is backgrounded, so a reader who tabs away mid-roll comes back to a
+  // panel frozen on "Rolling…" and a disabled button. setTimeout is only throttled, never paused,
+  // so the roll always reaches its result.
+  const t0 = performance.now();
+  (function spin() {
+    if (performance.now() - t0 >= WOAP_ROLL_MS) {
+      _woapRolling = false;
+      if (btn) { btn.classList.remove('rolling'); btn.disabled = false; }
+      woapPaintPick(pick);
+      return;
+    }
+    const t = pool[Math.floor(Math.random() * pool.length)];
+    panel.innerHTML =
+      '<p class="woap-pick-kicker">&#127922; Rolling&hellip;</p>' +
+      '<div class="woap-pick-name">' + woapEsc(t.name) + '</div>' +
+      '<div class="woap-pick-venue">' + woapEsc(t.venue) + '</div>';
+    setTimeout(spin, 70);
+  })();
+}
+
+function woapPaintPick(b) {
+  const panel = document.getElementById('woapPick');
+  if (!panel) return;
+  const slug = woapBurgerSlug(b);
+  const imgs = woapImagesFor(b, slug);
+  const r = WOAP_RATINGS[slug];
+  const rating = (r && r.count)
+    ? '<span>&#9733; ' + r.avg.toFixed(1) + ' (' + r.count + ')</span>'
+    : '<span>Not rated yet &mdash; be the first</span>';
+  const diet = (b.dietary || []).map(d => '<span class="woap-diet">' + woapEsc(d) + '</span>').join('');
+  panel.innerHTML = `
+    <button type="button" class="woap-pick-close" data-woap-pick-close aria-label="Dismiss this pick">&#10005;</button>
+    <p class="woap-pick-kicker">&#127922; Your random burger</p>
+    <div class="woap-pick-head">
+      ${imgs.length ? `<img class="woap-pick-thumb" src="${imgs[0]}" alt="">` : ''}
+      <div class="woap-pick-body">
+        <div class="woap-pick-name">${woapEsc(b.name)}</div>
+        <div class="woap-pick-venue">${woapVenueLinkHtml(b, 'woap-pick-venue-link')}</div>
+        <div class="woap-pick-meta">${b.price ? `<span>${woapEsc(b.price)}</span>` : ''}${rating}${diet}</div>
+      </div>
+    </div>
+    ${b.desc ? `<p class="woap-pick-desc">${woapEsc(b.desc)}</p>` : ''}
+    <div class="woap-pick-actions">
+      <a class="woap-pick-maps" data-woap-maps data-woap-venue="${b.venue.replace(/"/g, '&quot;')}"
+         href="${woapMapsUrl(b)}" target="_blank" rel="noopener">&#128205; Open in Google Maps</a>
+      <button type="button" class="woap-pick-open" data-woap-open="${slug}">Rate &amp; review &rarr;</button>
+      <button type="button" class="woap-pick-again" data-woap-dice>&#127922; Spin again</button>
+    </div>`;
+  panel.classList.add('on');
+  try { panel.scrollIntoView({ block: 'nearest' }); } catch (e) {}
+}
+
 function renderWoap() {
   const view = document.getElementById('woapView');
   const board = document.getElementById('woapBoard');
@@ -3160,6 +3308,16 @@ document.addEventListener("click", function(e) {
   // "Show all 244 burgers" on the empty-search state
   const clr = e.target.closest("[data-woap-search-clear]");
   if (clr) { woapSetSearch(""); const si = document.getElementById("woapSearchInput"); if (si) si.focus(); return; }
+  // Burger randomiser: the button under the search, and "Spin again" inside a result
+  const dice = e.target.closest("#woapDiceBtn, [data-woap-dice]");
+  if (dice) { e.preventDefault(); woapRollDice(); return; }
+  const dx = e.target.closest("[data-woap-pick-close]");
+  if (dx) {
+    e.preventDefault();
+    const panel = document.getElementById("woapPick");
+    if (panel) { panel.classList.remove("on"); panel.innerHTML = ""; }
+    return;
+  }
   // Leaderboard column sort (Avg / Ratings)
   const sc = e.target.closest("[data-lb-sort]");
   if (sc) { woapLbSort = sc.getAttribute("data-lb-sort"); renderWoapBoard(); return; }
@@ -3990,6 +4148,7 @@ loadData().then(() => {
 // visitor opens the panel, and re-lights whenever a newer id appears. tag: "New" | "Added" | "Update".
 (function(){
   var SITE_UPDATES = [
+    { id:"2026-08-21-randomiser", date:"2026-08-21", tag:"New", text:"Pick me a random burger. Open the Burger Wellington leaderboard and hit the button to be sent one of the 244 at random, with the price, the description and a link straight to it on Google Maps. Every burger has the same odds, so it will happily send you somewhere you have never been." },
     { id:"2026-08-17-showfilter", date:"2026-08-17", tag:"New", text:"New Show row at the top of the filters. Tap Events only to see just the events and activities on a day, or Food only and Drinks only to skip straight to the eating and drinking. Suggested by a reader on Facebook, and it works the same way on every one of our city sites." },
     { id:"2026-08-05-ratingscroll", date:"2026-08-05", tag:"Update", text:"Fixed: rating a burger no longer throws you back to the top of the leaderboard. Your score still re-ranks the board on the spot, but the card you are in now stays exactly where it is, so you can score price, quality and quantity one after the other without losing your place. Thanks to Pei-Ying in the Burger Wellington group for flagging it." },
     { id:"2026-08-01-refresh", date:"2026-08-01", tag:"Update", text:"Central city refresh — re-checked the 45 busiest venues around Cuba Street, Courtenay Place and Te Aro, added Burger Wellington event picks, and cleared out a handful of deals that had quietly changed or ended." },
