@@ -4512,7 +4512,9 @@
   "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/Mr-Go-s-Burger-Photo-260520-110339.jpg",
   "google_rating": 4.6,
   "google_reviews": null,
-  "woap_url": "https://visawoap.com/venue/mr-go-s/7039?type=burger"
+  "woap_url": "https://visawoap.com/venue/mr-go-s/7039?type=burger",
+  "image_source": "venue-supplied",
+  "photo_credit": "Mosaic Venues"
  },
  {
   "name": "The Pickle Prince",
@@ -4534,7 +4536,9 @@
   "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/_DSC8624-260608-130610.jpg",
   "google_rating": 4.7,
   "google_reviews": null,
-  "woap_url": "https://visawoap.com/venue/kisa/6962?type=burger"
+  "woap_url": "https://visawoap.com/venue/kisa/6962?type=burger",
+  "image_source": "venue-supplied",
+  "photo_credit": "Mosaic Venues"
  },
  {
   "name": "The Porkshire",
@@ -4662,7 +4666,9 @@
   "source_image_url": "https://goodcms.s3.amazonaws.com/woap-26/event/Ombra-Burger-Photo-260520-110213.jpg",
   "google_rating": 4.6,
   "google_reviews": null,
-  "woap_url": "https://visawoap.com/venue/ombra/6963?type=burger"
+  "woap_url": "https://visawoap.com/venue/ombra/6963?type=burger",
+  "image_source": "venue-supplied",
+  "photo_credit": "Mosaic Venues"
  },
  {
   "name": "The Silence of the Lambs",
