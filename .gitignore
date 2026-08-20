@@ -83,3 +83,4 @@ REEL_POSTING_METHOD.md
 # above: publish dir is the repo ROOT, so these would be fetchable at
 # welly-deals-by-day.co.nz/woap_audit/<file>. They hold venue contact/reply state.
 woap_audit/
+WOAP_RECAP_REEL_SCRIPT.md
