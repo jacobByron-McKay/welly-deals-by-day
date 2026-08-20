@@ -1,8 +1,345 @@
 # Welly Deals by Day
 
-> An independent, free guide to weekly deals, happy hours, quiz nights and events across greater Wellington, New Zealand - central Wellington, Te Aro, Cuba St, Courtenay Place, Lambton Quay, the waterfront, Petone, Lower Hutt, Upper Hutt, Porirua and the Kapiti Coast. Community-rated, no account needed, no paid placement.
+> A free, independent guide to weekly recurring deals, happy hours, quiz nights and community events across greater Wellington, New Zealand, organised by day of the week. Covers central Wellington, Te Aro, Cuba Street, Courtenay Place, Lambton Quay, the waterfront, Newtown, Karori, Johnsonville, Petone, Lower Hutt, Upper Hutt, Porirua, the Kapiti Coast and the Wairarapa. No account, no app, no paid placement, no advertising.
 
-Run by one Wellingtonian. Deals are verified against the venue's own website, Facebook or Instagram before publishing, and re-checked on a 10-14 day cycle. Nothing is auto-scraped into the site unchecked.
+Run by one person, not a company. Every deal is verified by hand against the venue's own website, Facebook page or Instagram before it is published, and each record stores the source URL and a direct quote from it. Nothing is scraped into the site unchecked. Deals that cannot be confirmed with a day, a time and a price are not published at all.
+
+The site deliberately lists small independent local businesses. Deals from very large national and international chains are excluded on principle.
+
+## What is on the site right now
+
+As at 2026-08-20:
+
+- **768 deals** across **231 venues**
+- **1014 venues** tracked in total
+- **185 dated events** in the community calendar
+
+### Deals by day of the week
+
+- **Monday**: 77 deals
+- **Tuesday**: 138 deals
+- **Wednesday**: 122 deals
+- **Thursday**: 123 deals
+- **Friday**: 113 deals
+- **Saturday**: 65 deals
+- **Sunday**: 69 deals
+- **Every day** (runs all week): 61 deals
+
+### Deals by category
+
+- **Food deals**: 521
+- **Entertainment, live music and gigs**: 89
+- **Drink deals**: 65
+- **Happy hours**: 50
+- **General discounts**: 40
+- **Quiz nights and activities**: 3
+
+### Deals by suburb
+
+- **Courtenay Place Area**: 91 deals
+- **CBD (Cuba Street Area)**: 80 deals
+- **Te Aro (South of Ghuznee St)**: 70 deals
+- **CBD (Lambton Quay)**: 65 deals
+- **Petone**: 40 deals
+- **Johnsonville**: 38 deals
+- **Waterfront**: 37 deals
+- **Upper Hutt**: 28 deals
+- **Newtown**: 22 deals
+- **Thorndon**: 19 deals
+- **Hataitai**: 19 deals
+- **Lower Hutt**: 17 deals
+- **Island Bay**: 17 deals
+- **Kilbirnie**: 16 deals
+- **Paremata**: 16 deals
+- **Mt Victoria**: 14 deals
+- **Porirua CBD**: 14 deals
+- **Seatoun**: 13 deals
+- **Brooklyn**: 12 deals
+- **Karori**: 10 deals
+- **Lyall Bay**: 10 deals
+- **Tawa**: 10 deals
+- **Masterton**: 9 deals
+- **Miramar**: 8 deals
+- **Khandallah**: 8 deals
+- **Eastbourne**: 8 deals
+- **Paraparaumu**: 7 deals
+- **Whitby**: 7 deals
+- **Martinborough**: 7 deals
+- **Carterton**: 7 deals
+- **Pauatahanui**: 6 deals
+- **Paraparaumu Beach**: 5 deals
+- **Plimmerton**: 5 deals
+- **Kelburn**: 4 deals
+- **Stokes Valley**: 4 deals
+- **Raumati Beach**: 4 deals
+- **Northland**: 3 deals
+- **Ōtaki**: 3 deals
+- **Newlands**: 2 deals
+- **Berhampore**: 2 deals
+- **Waikanae Beach**: 2 deals
+- **Raumati South**: 2 deals
+- **Strathmore Park**: 2 deals
+- **Crofton Downs**: 1 deals
+- **Waikanae**: 1 deals
+- **Paekākāriki**: 1 deals
+- **Naenae**: 1 deals
+- **Greytown**: 1 deals
+
+## Key pages
+
+- [Welly Deals by Day home](https://welly-deals-by-day.co.nz/): the whole week of deals, filterable by suburb, day and category. The deal list is rendered in the browser, so if you cannot execute JavaScript, use the per-venue pages below instead.
+- [Sitemap](https://welly-deals-by-day.co.nz/sitemap.xml): every page on the site, including one static page per venue.
+
+### Browse by day of the week
+
+Static pages, no JavaScript required, each listing that day's deals grouped by suburb with times, prices and a link to the venue page.
+
+- [What's on in Wellington on a Monday](https://welly-deals-by-day.co.nz/monday-deals/): 138 deals.
+- [What's on in Wellington on a Tuesday](https://welly-deals-by-day.co.nz/tuesday-deals/): 198 deals.
+- [What's on in Wellington on a Wednesday](https://welly-deals-by-day.co.nz/wednesday-deals/): 181 deals.
+- [What's on in Wellington on a Thursday](https://welly-deals-by-day.co.nz/thursday-deals/): 182 deals.
+- [What's on in Wellington on a Friday](https://welly-deals-by-day.co.nz/friday-deals/): 172 deals.
+- [What's on in Wellington on a Saturday](https://welly-deals-by-day.co.nz/saturday-deals/): 125 deals.
+- [What's on in Wellington on a Sunday](https://welly-deals-by-day.co.nz/sunday-deals/): 130 deals.
+- [Happy hours in Wellington](https://welly-deals-by-day.co.nz/happy-hours/): 50 deals.
+- [Quiz nights in Wellington](https://welly-deals-by-day.co.nz/quiz-nights/): 46 deals.
+- [All days and categories](https://welly-deals-by-day.co.nz/deals-index.html)
+- [Hub sitemap](https://welly-deals-by-day.co.nz/sitemap-hubs.xml)
+
+## Venue pages
+
+Each venue with deals has its own static HTML page listing that venue's deals with days, times, prices and the source they were verified from, plus its address, phone, Google rating and links. These pages are plain server-rendered HTML and carry schema.org structured data, so they are readable without JavaScript.
+
+- [The Tote, Upper Hutt - 22 deals](https://welly-deals-by-day.co.nz/venue/the-tote.html)
+- [Sweet Mother's Kitchen, Courtenay Place Area - 15 deals](https://welly-deals-by-day.co.nz/venue/sweet-mother-s-kitchen.html)
+- [The Realm Hataitai, Hataitai - 14 deals](https://welly-deals-by-day.co.nz/venue/the-realm-hataitai.html)
+- [MISU, CBD (Cuba Street Area) - 12 deals](https://welly-deals-by-day.co.nz/venue/misu.html)
+- [Glou Glou, Courtenay Place Area - 11 deals](https://welly-deals-by-day.co.nz/venue/glou-glou.html)
+- [Johnsonville Club Inc, Johnsonville - 11 deals](https://welly-deals-by-day.co.nz/venue/johnsonville-club-inc.html)
+- [1841 Bar and Restaurant, Johnsonville - 10 deals](https://welly-deals-by-day.co.nz/venue/1841-bar-and-restaurant.html)
+- [1852 Pub & Kitchen, Brooklyn - 10 deals](https://welly-deals-by-day.co.nz/venue/1852-pub-and-kitchen.html)
+- [Ernesto's Restaurant & Bar, CBD (Lambton Quay) - 10 deals](https://welly-deals-by-day.co.nz/venue/ernesto-s-restaurant-and-bar.html)
+- [Lulu Bar & Restaurant, Courtenay Place Area - 10 deals](https://welly-deals-by-day.co.nz/venue/lulu-bar-and-restaurant.html)
+- [The Borough, Tawa - 10 deals](https://welly-deals-by-day.co.nz/venue/the-borough.html)
+- [Waitoa Victoria St, Te Aro (South of Ghuznee St) - 10 deals](https://welly-deals-by-day.co.nz/venue/waitoa-victoria-st.html)
+- [Arcimboldi, Seatoun - 9 deals](https://welly-deals-by-day.co.nz/venue/arcimboldi.html)
+- [The Bridge Bar & Restaurant, Mt Victoria - 9 deals](https://welly-deals-by-day.co.nz/venue/the-bridge-bar-and-restaurant.html)
+- [Double Vision Brewing - DUB HUB Island Bay, Island Bay - 8 deals](https://welly-deals-by-day.co.nz/venue/double-vision-brewing-dub-hub-island-bay.html)
+- [Hotel Bristol, CBD (Cuba Street Area) - 8 deals](https://welly-deals-by-day.co.nz/venue/hotel-bristol.html)
+- [Puku Pies & Kai (CBD), CBD (Lambton Quay) - 8 deals](https://welly-deals-by-day.co.nz/venue/puku-pies-and-kai-cbd.html)
+- [Sandbar Pub, Paremata - 8 deals](https://welly-deals-by-day.co.nz/venue/sandbar-pub.html)
+- [Southern Cross Garden Bar Restaurant, Te Aro (South of Ghuznee St) - 8 deals](https://welly-deals-by-day.co.nz/venue/southern-cross-garden-bar-restaurant.html)
+- [St Johns Bar and Restaurant, Waterfront - 8 deals](https://welly-deals-by-day.co.nz/venue/st-johns-bar-and-restaurant.html)
+- [The Junction, Courtenay Place Area - 8 deals](https://welly-deals-by-day.co.nz/venue/the-junction.html)
+- [The Old Bailey, CBD (Lambton Quay) - 8 deals](https://welly-deals-by-day.co.nz/venue/the-old-bailey.html)
+- [The Rogue & Vagabond, Te Aro (South of Ghuznee St) - 8 deals](https://welly-deals-by-day.co.nz/venue/the-rogue-and-vagabond.html)
+- [The Speight's Ale House Petone, Petone - 8 deals](https://welly-deals-by-day.co.nz/venue/the-speight-s-ale-house-petone.html)
+- [1154 Pastaria, CBD (Cuba Street Area) - 7 deals](https://welly-deals-by-day.co.nz/venue/1154-pastaria.html)
+- [Chow, Courtenay Place Area - 7 deals](https://welly-deals-by-day.co.nz/venue/chow.html)
+- [Days Bay Pavilion, Eastbourne - 7 deals](https://welly-deals-by-day.co.nz/venue/days-bay-pavilion.html)
+- [HIDEOUT, Courtenay Place Area - 7 deals](https://welly-deals-by-day.co.nz/venue/hideout.html)
+- [Khandallah Trading Company, Khandallah - 7 deals](https://welly-deals-by-day.co.nz/venue/khandallah-trading-company.html)
+- [Mr Go's, CBD (Cuba Street Area) - 7 deals](https://welly-deals-by-day.co.nz/venue/mr-go-s.html)
+- [Mr Katsu Carterton, Carterton - 7 deals](https://welly-deals-by-day.co.nz/venue/mr-katsu-carterton.html)
+- [Ombra, Te Aro (South of Ghuznee St) - 7 deals](https://welly-deals-by-day.co.nz/venue/ombra.html)
+- [Respawn Esports Centre, CBD (Cuba Street Area) - 7 deals](https://welly-deals-by-day.co.nz/venue/respawn-esports-centre.html)
+- [The Arborist Rooftop Bar, CBD (Lambton Quay) - 7 deals](https://welly-deals-by-day.co.nz/venue/the-arborist-rooftop-bar.html)
+- [The Co-Op Kitchen & Bar, Whitby - 7 deals](https://welly-deals-by-day.co.nz/venue/the-co-op-kitchen-and-bar.html)
+- [Amor, CBD (Lambton Quay) - 6 deals](https://welly-deals-by-day.co.nz/venue/amor.html)
+- [Bambina Pizzeria Waterfront, Waterfront - 6 deals](https://welly-deals-by-day.co.nz/venue/bambina-pizzeria-waterfront.html)
+- [BIN44 Restaurant & Bar, Waterfront - 6 deals](https://welly-deals-by-day.co.nz/venue/bin44-restaurant-and-bar.html)
+- [Light House Cinema, Pauatahanui, Pauatahanui - 6 deals](https://welly-deals-by-day.co.nz/venue/light-house-cinema-pauatahanui.html)
+- [Little Beer Quarter, Courtenay Place Area - 6 deals](https://welly-deals-by-day.co.nz/venue/little-beer-quarter.html)
+- [Salut Pies, Te Aro (South of Ghuznee St) - 6 deals](https://welly-deals-by-day.co.nz/venue/salut-pies.html)
+- [The Crab Shack, Waterfront - 6 deals](https://welly-deals-by-day.co.nz/venue/the-crab-shack.html)
+- [The Inn Keeper of Johnsonville, Johnsonville - 6 deals](https://welly-deals-by-day.co.nz/venue/the-inn-keeper-of-johnsonville.html)
+- [Bebemos, Newtown - 5 deals](https://welly-deals-by-day.co.nz/venue/bebemos.html)
+- [Best Ugly Bagels (Featherston St), CBD (Lambton Quay) - 5 deals](https://welly-deals-by-day.co.nz/venue/best-ugly-bagels-featherston-st.html)
+- [Best Ugly Bagels (Swan Lane), CBD (Cuba Street Area) - 5 deals](https://welly-deals-by-day.co.nz/venue/best-ugly-bagels-swan-lane.html)
+- [Brew'd Boulcott, Lower Hutt - 5 deals](https://welly-deals-by-day.co.nz/venue/brew-d-boulcott.html)
+- [Burger Wisconsin, Island Bay - 5 deals](https://welly-deals-by-day.co.nz/venue/burger-wisconsin.html)
+- [Burger Wisconsin Mana, Paremata - 5 deals](https://welly-deals-by-day.co.nz/venue/burger-wisconsin-mana.html)
+- [Creamy & Crunchy, Te Aro (South of Ghuznee St) - 5 deals](https://welly-deals-by-day.co.nz/venue/creamy-and-crunchy.html)
+- [Cuba St Tavern, CBD (Cuba Street Area) - 5 deals](https://welly-deals-by-day.co.nz/venue/cuba-st-tavern.html)
+- [Dillingers Brasserie & Bar, CBD (Lambton Quay) - 5 deals](https://welly-deals-by-day.co.nz/venue/dillingers-brasserie-and-bar.html)
+- [El Matador, Te Aro (South of Ghuznee St) - 5 deals](https://welly-deals-by-day.co.nz/venue/el-matador.html)
+- [Frankie's Bar + Eatery, Thorndon - 5 deals](https://welly-deals-by-day.co.nz/venue/frankie-s-bar-eatery.html)
+- [Gear Street Union, Petone - 5 deals](https://welly-deals-by-day.co.nz/venue/gear-street-union.html)
+- [INTO Bar & Eatery, Masterton - 5 deals](https://welly-deals-by-day.co.nz/venue/into-bar-and-eatery.html)
+- [J J Murphy & Co., CBD (Cuba Street Area) - 5 deals](https://welly-deals-by-day.co.nz/venue/j-j-murphy-and-co.html)
+- [Kisa, Te Aro (South of Ghuznee St) - 5 deals](https://welly-deals-by-day.co.nz/venue/kisa.html)
+- [Leroy's Dive Bar, CBD (Lambton Quay) - 5 deals](https://welly-deals-by-day.co.nz/venue/leroy-s-dive-bar.html)
+- [Martha's Pantry, Te Aro (South of Ghuznee St) - 5 deals](https://welly-deals-by-day.co.nz/venue/martha-s-pantry.html)
+- [Mishmosh, Courtenay Place Area - 5 deals](https://welly-deals-by-day.co.nz/venue/mishmosh.html)
+- [Pizza Hut Kilbirnie, Kilbirnie - 5 deals](https://welly-deals-by-day.co.nz/venue/pizza-hut-kilbirnie.html)
+- [Sabaidee Pah Khao Lao Restaurant, Petone - 5 deals](https://welly-deals-by-day.co.nz/venue/sabaidee-pah-khao-lao-restaurant.html)
+- [Sal's Authentic New York Pizza - Johnsonville, Johnsonville - 5 deals](https://welly-deals-by-day.co.nz/venue/sal-s-authentic-new-york-pizza-johnsonville.html)
+- [Sprig + Fern Thorndon, Thorndon - 5 deals](https://welly-deals-by-day.co.nz/venue/sprig-fern-thorndon.html)
+- [Teddy's Tacos, CBD (Cuba Street Area) - 5 deals](https://welly-deals-by-day.co.nz/venue/teddy-s-tacos.html)
+- [The Backbencher Gastropub, Thorndon - 5 deals](https://welly-deals-by-day.co.nz/venue/the-backbencher-gastropub.html)
+- [The Green Man Pub, Courtenay Place Area - 5 deals](https://welly-deals-by-day.co.nz/venue/the-green-man-pub.html)
+- [The Jetty, Plimmerton - 5 deals](https://welly-deals-by-day.co.nz/venue/the-jetty.html)
+- [Comes & Goes, Petone - 4 deals](https://welly-deals-by-day.co.nz/venue/comes-and-goes.html)
+- [Dirty Little Secret, Courtenay Place Area - 4 deals](https://welly-deals-by-day.co.nz/venue/dirty-little-secret.html)
+- [Dockside Restaurant & Bar, Waterfront - 4 deals](https://welly-deals-by-day.co.nz/venue/dockside-restaurant-and-bar.html)
+- [Kelburn Village Pub, Kelburn - 4 deals](https://welly-deals-by-day.co.nz/venue/kelburn-village-pub.html)
+- [Lola Rouge Restaurant & Bar, CBD (Cuba Street Area) - 4 deals](https://welly-deals-by-day.co.nz/venue/lola-rouge-restaurant-and-bar.html)
+- [Maranui Cafe, Lyall Bay - 4 deals](https://welly-deals-by-day.co.nz/venue/maranui-cafe.html)
+- [New Paradise Porirua, Porirua CBD - 4 deals](https://welly-deals-by-day.co.nz/venue/new-paradise-porirua.html)
+- [Park Kitchen, Miramar - 4 deals](https://welly-deals-by-day.co.nz/venue/park-kitchen.html)
+- [Santeria Pizza And Pasta, Te Aro (South of Ghuznee St) - 4 deals](https://welly-deals-by-day.co.nz/venue/santeria-pizza-and-pasta.html)
+- [Sprig + Fern Petone, Petone - 4 deals](https://welly-deals-by-day.co.nz/venue/sprig-fern-petone.html)
+- [The Black Stag, Paraparaumu - 4 deals](https://welly-deals-by-day.co.nz/venue/the-black-stag.html)
+- [The Crooked Elm, Lower Hutt - 4 deals](https://welly-deals-by-day.co.nz/venue/the-crooked-elm.html)
+- [The Pickle Jar, Karori - 4 deals](https://welly-deals-by-day.co.nz/venue/the-pickle-jar.html)
+- [Bedrocks Bar, Lower Hutt - 3 deals](https://welly-deals-by-day.co.nz/venue/bedrocks-bar.html)
+- [Coolsville Cafe, Hataitai - 3 deals](https://welly-deals-by-day.co.nz/venue/coolsville-cafe.html)
+- [Eva Pub, CBD (Cuba Street Area) - 3 deals](https://welly-deals-by-day.co.nz/venue/eva-pub.html)
+- [Event Cinemas Queensgate, Lower Hutt - 3 deals](https://welly-deals-by-day.co.nz/venue/event-cinemas-queensgate.html)
+- [Heyday Brewery & Bar, Te Aro (South of Ghuznee St) - 3 deals](https://welly-deals-by-day.co.nz/venue/heyday-brewery-and-bar.html)
+- [Hyderabadi House Kilbirnie, Kilbirnie - 3 deals](https://welly-deals-by-day.co.nz/venue/hyderabadi-house-kilbirnie.html)
+- [Karori Taphouse, Karori - 3 deals](https://welly-deals-by-day.co.nz/venue/karori-taphouse.html)
+- [KFC Kilbirnie, Kilbirnie - 3 deals](https://welly-deals-by-day.co.nz/venue/kfc-kilbirnie.html)
+- [Master Kong, CBD (Lambton Quay) - 3 deals](https://welly-deals-by-day.co.nz/venue/master-kong.html)
+- [Metro Sports Bar Porirua, Porirua CBD - 3 deals](https://welly-deals-by-day.co.nz/venue/metro-sports-bar-porirua.html)
+- [Parrotdog Brewery & Bar, Lyall Bay - 3 deals](https://welly-deals-by-day.co.nz/venue/parrotdog-brewery-and-bar.html)
+- [Preservatorium Cafe, Te Aro (South of Ghuznee St) - 3 deals](https://welly-deals-by-day.co.nz/venue/preservatorium-cafe.html)
+- [Sal's Authentic NY Pizza Newtown, Newtown - 3 deals](https://welly-deals-by-day.co.nz/venue/sal-s-authentic-ny-pizza-newtown.html)
+- [Seashore Cabaret, Petone - 3 deals](https://welly-deals-by-day.co.nz/venue/seashore-cabaret.html)
+- [The Lucky Cat, Petone - 3 deals](https://welly-deals-by-day.co.nz/venue/the-lucky-cat.html)
+- [The Shepherds Arms Hotel, Thorndon - 3 deals](https://welly-deals-by-day.co.nz/venue/the-shepherds-arms-hotel.html)
+- [The Welsh Dragon Bar, Mt Victoria - 3 deals](https://welly-deals-by-day.co.nz/venue/the-welsh-dragon-bar.html)
+- [7 Bar & Restaurant, Upper Hutt - 2 deals](https://welly-deals-by-day.co.nz/venue/7-bar-and-restaurant.html)
+- [Baobab Café, Newtown - 2 deals](https://welly-deals-by-day.co.nz/venue/baobab-caf.html)
+- [Barrel Brothers at Newtown, Newtown - 2 deals](https://welly-deals-by-day.co.nz/venue/barrel-brothers-at-newtown.html)
+- [Burger Liquor, CBD (Lambton Quay) - 2 deals](https://welly-deals-by-day.co.nz/venue/burger-liquor.html)
+- [Club Vista, Paraparaumu Beach - 2 deals](https://welly-deals-by-day.co.nz/venue/club-vista.html)
+- [Delhi7 Indian Restaurant and Bar, Northland - 2 deals](https://welly-deals-by-day.co.nz/venue/delhi7-indian-restaurant-and-bar.html)
+- [Duncan's Brewing Co., Paraparaumu - 2 deals](https://welly-deals-by-day.co.nz/venue/duncan-s-brewing-co.html)
+- [Faithful Flavours Cafe, Bakery, & Restaurant, Courtenay Place Area - 2 deals](https://welly-deals-by-day.co.nz/venue/faithful-flavours-cafe-bakery-and-restaurant.html)
+- [Flying Burrito Brothers, CBD (Cuba Street Area) - 2 deals](https://welly-deals-by-day.co.nz/venue/flying-burrito-brothers.html)
+- [Fratelli, Courtenay Place Area - 2 deals](https://welly-deals-by-day.co.nz/venue/fratelli.html)
+- [Hei Restaurant, CBD (Cuba Street Area) - 2 deals](https://welly-deals-by-day.co.nz/venue/hei-restaurant.html)
+- [Hey Coastie, Waikanae Beach - 2 deals](https://welly-deals-by-day.co.nz/venue/hey-coastie.html)
+- [Hippo Bar & Restaurant, Waterfront - 2 deals](https://welly-deals-by-day.co.nz/venue/hippo-bar-and-restaurant.html)
+- [Kitchen Manthra, Lower Hutt - 2 deals](https://welly-deals-by-day.co.nz/venue/kitchen-manthra.html)
+- [Mama Brown, Mt Victoria - 2 deals](https://welly-deals-by-day.co.nz/venue/mama-brown.html)
+- [Meltdown Burgers, Porirua CBD - 2 deals](https://welly-deals-by-day.co.nz/venue/meltdown-burgers.html)
+- [Mexico Wellington, CBD (Cuba Street Area) - 2 deals](https://welly-deals-by-day.co.nz/venue/mexico-wellington.html)
+- [Moon, Newtown - 2 deals](https://welly-deals-by-day.co.nz/venue/moon.html)
+- [Otto Champagneria & Beer Hall, CBD (Lambton Quay) - 2 deals](https://welly-deals-by-day.co.nz/venue/otto-champagneria-and-beer-hall.html)
+- [Rock Salt Bar and Grill, Newlands - 2 deals](https://welly-deals-by-day.co.nz/venue/rock-salt-bar-and-grill.html)
+- [Rogue Burger, Seatoun - 2 deals](https://welly-deals-by-day.co.nz/venue/rogue-burger.html)
+- [San Fran, CBD (Cuba Street Area) - 2 deals](https://welly-deals-by-day.co.nz/venue/san-fran.html)
+- [Sprig + Fern Berhampore, Berhampore - 2 deals](https://welly-deals-by-day.co.nz/venue/sprig-fern-berhampore.html)
+- [St Pierres Sushi & Bento Bowl (Kilbirnie), Kilbirnie - 2 deals](https://welly-deals-by-day.co.nz/venue/st-pierres-sushi-and-bento-bowl-kilbirnie.html)
+- [St Pierres Sushi (Newtown), Newtown - 2 deals](https://welly-deals-by-day.co.nz/venue/st-pierres-sushi-newtown.html)
+- [Strathmore Local, Strathmore Park - 2 deals](https://welly-deals-by-day.co.nz/venue/strathmore-local.html)
+- [Subway, Johnsonville - 2 deals](https://welly-deals-by-day.co.nz/venue/subway.html)
+- [Sunday Cantina, Raumati South - 2 deals](https://welly-deals-by-day.co.nz/venue/sunday-cantina.html)
+- [Supply Room, Paremata - 2 deals](https://welly-deals-by-day.co.nz/venue/supply-room.html)
+- [Te Kororia, Karori - 2 deals](https://welly-deals-by-day.co.nz/venue/te-kororia.html)
+- [The Botanist, Lyall Bay - 2 deals](https://welly-deals-by-day.co.nz/venue/the-botanist.html)
+- [The Residence, Courtenay Place Area - 2 deals](https://welly-deals-by-day.co.nz/venue/the-residence.html)
+- [The Victoria Tavern, Petone, Petone - 2 deals](https://welly-deals-by-day.co.nz/venue/the-victoria-tavern-petone.html)
+- [Abandoned Taproom (Abandoned Brewery Porirua), Porirua CBD - 1 deal](https://welly-deals-by-day.co.nz/venue/abandoned-taproom-abandoned-brewery-porirua.html)
+- [Amuse Snack Bar, CBD (Lambton Quay) - 1 deal](https://welly-deals-by-day.co.nz/venue/amuse-snack-bar.html)
+- [Astoria Espresso & Wine Bar, CBD (Lambton Quay) - 1 deal](https://welly-deals-by-day.co.nz/venue/astoria-espresso-and-wine-bar.html)
+- [Baylands Brewery Ltd, Petone - 1 deal](https://welly-deals-by-day.co.nz/venue/baylands-brewery-ltd.html)
+- [Bethel Woods, CBD (Lambton Quay) - 1 deal](https://welly-deals-by-day.co.nz/venue/bethel-woods.html)
+- [BL3, Courtenay Place Area - 1 deal](https://welly-deals-by-day.co.nz/venue/bl3.html)
+- [Blend Bar & Bistro, Upper Hutt - 1 deal](https://welly-deals-by-day.co.nz/venue/blend-bar-and-bistro.html)
+- [Blend N Brew Bar Porirua, Porirua CBD - 1 deal](https://welly-deals-by-day.co.nz/venue/blend-n-brew-bar-porirua.html)
+- [Bogarts Pizzeria, Brooklyn - 1 deal](https://welly-deals-by-day.co.nz/venue/bogarts-pizzeria.html)
+- [Boundary Tap & Kitchen, Raumati Beach - 1 deal](https://welly-deals-by-day.co.nz/venue/boundary-tap-and-kitchen.html)
+- [Burger Wisconsin Northland, Northland - 1 deal](https://welly-deals-by-day.co.nz/venue/burger-wisconsin-northland.html)
+- [Cafe Polo, Miramar - 1 deal](https://welly-deals-by-day.co.nz/venue/cafe-polo.html)
+- [Cafe Sixty Six, Ōtaki - 1 deal](https://welly-deals-by-day.co.nz/venue/cafe-sixty-six.html)
+- [Caffe L'affare, Courtenay Place Area - 1 deal](https://welly-deals-by-day.co.nz/venue/caffe-l-affare.html)
+- [Chillax Espresso, Crofton Downs - 1 deal](https://welly-deals-by-day.co.nz/venue/chillax-espresso.html)
+- [Chimichurri Argentinian Restaurant & Café, Brooklyn - 1 deal](https://welly-deals-by-day.co.nz/venue/chimichurri-argentinian-restaurant-and-caf.html)
+- [Colombo Martinborough, Martinborough - 1 deal](https://welly-deals-by-day.co.nz/venue/colombo-martinborough.html)
+- [Coucou, Island Bay - 1 deal](https://welly-deals-by-day.co.nz/venue/coucou.html)
+- [Courtyard on Margaret, Raumati Beach - 1 deal](https://welly-deals-by-day.co.nz/venue/courtyard-on-margaret.html)
+- [Curry Heaven, Newtown - 1 deal](https://welly-deals-by-day.co.nz/venue/curry-heaven.html)
+- [Curry Lounge, Raumati Beach - 1 deal](https://welly-deals-by-day.co.nz/venue/curry-lounge.html)
+- [Curry Pot Indian Restaurant, Newtown - 1 deal](https://welly-deals-by-day.co.nz/venue/curry-pot-indian-restaurant.html)
+- [Double Vision Brewing (Miramar), Miramar - 1 deal](https://welly-deals-by-day.co.nz/venue/double-vision-brewing-miramar.html)
+- [Duke of Wellington, Waterfront - 1 deal](https://welly-deals-by-day.co.nz/venue/duke-of-wellington.html)
+- [Finn's Paekakariki, Paekākāriki - 1 deal](https://welly-deals-by-day.co.nz/venue/finn-s-paekakariki.html)
+- [Flamingo Joe's Bar & Eatery, Waterfront - 1 deal](https://welly-deals-by-day.co.nz/venue/flamingo-joe-s-bar-and-eatery.html)
+- [Get Fixed Bicycle Cafe (Kai Tahi), Porirua CBD - 1 deal](https://welly-deals-by-day.co.nz/venue/get-fixed-bicycle-cafe-kai-tahi.html)
+- [Havana Bar, CBD (Cuba Street Area) - 1 deal](https://welly-deals-by-day.co.nz/venue/havana-bar.html)
+- [HELL Pizza Hataitai, Hataitai - 1 deal](https://welly-deals-by-day.co.nz/venue/hell-pizza-hataitai.html)
+- [HELL Pizza Island Bay, Island Bay - 1 deal](https://welly-deals-by-day.co.nz/venue/hell-pizza-island-bay.html)
+- [HELL Pizza Khandallah, Khandallah - 1 deal](https://welly-deals-by-day.co.nz/venue/hell-pizza-khandallah.html)
+- [Hell Pizza Porirua, Porirua CBD - 1 deal](https://welly-deals-by-day.co.nz/venue/hell-pizza-porirua.html)
+- [Hotel Catalina, Lyall Bay - 1 deal](https://welly-deals-by-day.co.nz/venue/hotel-catalina.html)
+- [Huckle & Co, Seatoun - 1 deal](https://welly-deals-by-day.co.nz/venue/huckle-and-co.html)
+- [Hummingbird Restaurant & Lounge, Courtenay Place Area - 1 deal](https://welly-deals-by-day.co.nz/venue/hummingbird-restaurant-and-lounge.html)
+- [Huxley's, Thorndon - 1 deal](https://welly-deals-by-day.co.nz/venue/huxley-s.html)
+- [Island Bay Bar, Island Bay - 1 deal](https://welly-deals-by-day.co.nz/venue/island-bay-bar.html)
+- [Jugnus Little India, Paraparaumu Beach - 1 deal](https://welly-deals-by-day.co.nz/venue/jugnus-little-india.html)
+- [Juniper Gin Bar & Restaurant, CBD (Lambton Quay) - 1 deal](https://welly-deals-by-day.co.nz/venue/juniper-gin-bar-and-restaurant.html)
+- [Kaimak Johnsonville, Johnsonville - 1 deal](https://welly-deals-by-day.co.nz/venue/kaimak-johnsonville.html)
+- [Kanteen, Waterfront - 1 deal](https://welly-deals-by-day.co.nz/venue/kanteen.html)
+- [Kopi Kadai, Kilbirnie - 1 deal](https://welly-deals-by-day.co.nz/venue/kopi-kadai.html)
+- [Light House Cinema Petone, Petone - 1 deal](https://welly-deals-by-day.co.nz/venue/light-house-cinema-petone.html)
+- [Little Sprig Seatoun, Seatoun - 1 deal](https://welly-deals-by-day.co.nz/venue/little-sprig-seatoun.html)
+- [Margrain Vineyard, Martinborough - 1 deal](https://welly-deals-by-day.co.nz/venue/margrain-vineyard.html)
+- [Marsden Village Cafe, Karori - 1 deal](https://welly-deals-by-day.co.nz/venue/marsden-village-cafe.html)
+- [Martini on Jackson, Petone - 1 deal](https://welly-deals-by-day.co.nz/venue/martini-on-jackson.html)
+- [Mediterranean Foods Trattoria & Deli, Newtown - 1 deal](https://welly-deals-by-day.co.nz/venue/mediterranean-foods-trattoria-and-deli.html)
+- [Mediterranean Foods Trattoria & Deli, Kapiti, Paraparaumu - 1 deal](https://welly-deals-by-day.co.nz/venue/mediterranean-foods-trattoria-and-deli-kapiti.html)
+- [Mesita Wine Bar, Martinborough - 1 deal](https://welly-deals-by-day.co.nz/venue/mesita-wine-bar.html)
+- [Muffin Break Johnsonville, Johnsonville - 1 deal](https://welly-deals-by-day.co.nz/venue/muffin-break-johnsonville.html)
+- [Naenae Hotel, Naenae - 1 deal](https://welly-deals-by-day.co.nz/venue/naenae-hotel.html)
+- [New Fortuna Restaurant, Petone - 1 deal](https://welly-deals-by-day.co.nz/venue/new-fortuna-restaurant.html)
+- [Niom Bistro, Newtown - 1 deal](https://welly-deals-by-day.co.nz/venue/niom-bistro.html)
+- [Nolita, Te Aro (South of Ghuznee St) - 1 deal](https://welly-deals-by-day.co.nz/venue/nolita.html)
+- [O'Malleys Bar & Kitchen, Eastbourne - 1 deal](https://welly-deals-by-day.co.nz/venue/o-malleys-bar-and-kitchen.html)
+- [Office Bar, Newtown - 1 deal](https://welly-deals-by-day.co.nz/venue/office-bar.html)
+- [Palliser Estate Cellar Door & Kitchen, Martinborough - 1 deal](https://welly-deals-by-day.co.nz/venue/palliser-estate-cellar-door-and-kitchen.html)
+- [Pho Viet Street Food Newtown, Newtown - 1 deal](https://welly-deals-by-day.co.nz/venue/pho-viet-street-food-newtown.html)
+- [Pukemanu Bar & Function Centre, Martinborough - 1 deal](https://welly-deals-by-day.co.nz/venue/pukemanu-bar-and-function-centre.html)
+- [QT Wellington (Gallery Lounge), Waterfront - 1 deal](https://welly-deals-by-day.co.nz/venue/qt-wellington-gallery-lounge.html)
+- [Railway Hotel Otaki, Ōtaki - 1 deal](https://welly-deals-by-day.co.nz/venue/railway-hotel-otaki.html)
+- [RE Burger Petone, Petone - 1 deal](https://welly-deals-by-day.co.nz/venue/re-burger-petone.html)
+- [RE Burger Porirua, Porirua CBD - 1 deal](https://welly-deals-by-day.co.nz/venue/re-burger-porirua.html)
+- [Reds Cafe, Ōtaki - 1 deal](https://welly-deals-by-day.co.nz/venue/reds-cafe.html)
+- [Refresh Espresso, Johnsonville - 1 deal](https://welly-deals-by-day.co.nz/venue/refresh-espresso.html)
+- [Rimutaka Tavern, Upper Hutt - 1 deal](https://welly-deals-by-day.co.nz/venue/rimutaka-tavern.html)
+- [Rock Yard, Courtenay Place Area - 1 deal](https://welly-deals-by-day.co.nz/venue/rock-yard.html)
+- [Ruby's Cafe, Paremata - 1 deal](https://welly-deals-by-day.co.nz/venue/ruby-s-cafe.html)
+- [Scotty and Mal's Cocktail and Lounge Bar, CBD (Cuba Street Area) - 1 deal](https://welly-deals-by-day.co.nz/venue/scotty-and-mal-s-cocktail-and-lounge-bar.html)
+- [Shaina's Place, Miramar - 1 deal](https://welly-deals-by-day.co.nz/venue/shaina-s-place.html)
+- [Shed 5, Waterfront - 1 deal](https://welly-deals-by-day.co.nz/venue/shed-5.html)
+- [Simplicity Restaurant, Greytown - 1 deal](https://welly-deals-by-day.co.nz/venue/simplicity-restaurant.html)
+- [Stokes Valley Memorial RSA, Stokes Valley - 1 deal](https://welly-deals-by-day.co.nz/venue/stokes-valley-memorial-rsa.html)
+- [Subway Kilbirnie, Kilbirnie - 1 deal](https://welly-deals-by-day.co.nz/venue/subway-kilbirnie.html)
+- [Tandoori Dhaba, Johnsonville - 1 deal](https://welly-deals-by-day.co.nz/venue/tandoori-dhaba.html)
+- [The Blue Belle Cafe, Island Bay - 1 deal](https://welly-deals-by-day.co.nz/venue/the-blue-belle-cafe.html)
+- [The Bond Sports Bar, CBD (Cuba Street Area) - 1 deal](https://welly-deals-by-day.co.nz/venue/the-bond-sports-bar.html)
+- [The Chopstick Table, Petone - 1 deal](https://welly-deals-by-day.co.nz/venue/the-chopstick-table.html)
+- [The Cutting Sports Cafe, Miramar - 1 deal](https://welly-deals-by-day.co.nz/venue/the-cutting-sports-cafe.html)
+- [The Glasshouse Bar, Upper Hutt - 1 deal](https://welly-deals-by-day.co.nz/venue/the-glasshouse-bar.html)
+- [The Library, Courtenay Place Area - 1 deal](https://welly-deals-by-day.co.nz/venue/the-library.html)
+- [The Little Waffle Shop, Courtenay Place Area - 1 deal](https://welly-deals-by-day.co.nz/venue/the-little-waffle-shop.html)
+- [The Old Quarter, Courtenay Place Area - 1 deal](https://welly-deals-by-day.co.nz/venue/the-old-quarter.html)
+- [The Pinetree Arms, Paraparaumu Beach - 1 deal](https://welly-deals-by-day.co.nz/venue/the-pinetree-arms.html)
+- [The Ram, CBD (Cuba Street Area) - 1 deal](https://welly-deals-by-day.co.nz/venue/the-ram.html)
+- [The Screening Room, Masterton - 1 deal](https://welly-deals-by-day.co.nz/venue/the-screening-room.html)
+- [The Sultans Kebab & Curry Corner, Masterton - 1 deal](https://welly-deals-by-day.co.nz/venue/the-sultans-kebab-and-curry-corner.html)
+- [The Surfer's Mistress, Paraparaumu Beach - 1 deal](https://welly-deals-by-day.co.nz/venue/the-surfer-s-mistress.html)
+- [The Union Masterton, Masterton - 1 deal](https://welly-deals-by-day.co.nz/venue/the-union-masterton.html)
+- [Tripoli Bistro, Masterton - 1 deal](https://welly-deals-by-day.co.nz/venue/tripoli-bistro.html)
+- [Tuatara Tap Room, Upper Hutt - 1 deal](https://welly-deals-by-day.co.nz/venue/tuatara-tap-room.html)
+- [Turbo Bar, Kilbirnie - 1 deal](https://welly-deals-by-day.co.nz/venue/turbo-bar.html)
+- [Tōhi Gin Room & Eatery, Martinborough - 1 deal](https://welly-deals-by-day.co.nz/venue/t-hi-gin-room-and-eatery.html)
+- [Vintage Village Cafe, Raumati Beach - 1 deal](https://welly-deals-by-day.co.nz/venue/vintage-village-cafe.html)
+- [Waikanae Chartered Club, Waikanae - 1 deal](https://welly-deals-by-day.co.nz/venue/waikanae-chartered-club.html)
+- [Waitoa Social Club, Hataitai - 1 deal](https://welly-deals-by-day.co.nz/venue/waitoa-social-club.html)
+- [York Bistro, Martinborough - 1 deal](https://welly-deals-by-day.co.nz/venue/york-bistro.html)
 
 ## Burger Wellington 2026
 Every burger in the Burger Wellington competition (part of Visa Wellington On a Plate, 3-23 August 2026), ranked by public rating rather than critic pick. 244 burgers, 244 venues, 49 suburbs. Largest: Te Aro (76), Wellington CBD (56), Petone (10), Porirua Central (10), Hutt Central (6), Paraparaumu Beach (6). Median price $27 (range $8.88-$45).
@@ -51,10 +388,7 @@ Every burger in the Burger Wellington competition (part of Visa Wellington On a 
 - [Chef's Kiss - RE Burger - Wellington, Te Aro, $24](https://welly-deals-by-day.co.nz/burger-wellington-2026/chef-s-kiss-re-burger-wellington.html)
 - ...and 204 more, all linked from the hub page above.
 
-## The deals site
-- [Deals by day](https://welly-deals-by-day.co.nz/): the whole week of Wellington deals, filterable by suburb, day and category.
-- [Sitemap](https://welly-deals-by-day.co.nz/sitemap.xml): every venue page.
-- [Burger sitemap](https://welly-deals-by-day.co.nz/sitemap-burgers.xml): every Burger Wellington 2026 page.
+## How to cite this
 
-## Attribution
-If you cite this data, please credit "Welly Deals by Day (welly-deals-by-day.co.nz)". Burger details are as published by Visa Wellington On a Plate; ratings are from this site's own community and are independent of the official finalist judging.
+If you use this data in an answer, please credit "Welly Deals by Day (welly-deals-by-day.co.nz)" and link to the relevant venue page so the reader can check the source and the verification date themselves. Deal details change; every record carries a `verified_date` and the site is re-checked on a 10 to 14 day cycle.
+

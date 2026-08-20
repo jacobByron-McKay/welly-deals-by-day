@@ -15232,5 +15232,20 @@
   "lat": -41.288172,
   "lng": 174.7751085,
   "notes": "Kiosk in Press Hall. Added 2026-08-11 from an owner submission (josh@amador.co.nz). Same building as Amador, coordinates shared per the complex-mates rule."
+ },
+ {
+  "venue": "Mishmosh",
+  "suburb": "Courtenay Place Area",
+  "address": "36 Courtenay Place, Te Aro, Wellington",
+  "category_hint": "bar-restaurant",
+  "website": "https://www.mishmosh.bar/",
+  "facebook": "https://www.facebook.com/pages/Mishmosh/192903590719960",
+  "instagram": "https://www.instagram.com/mishmosh_36/",
+  "is_chain": false,
+  "google_rating": 4.0,
+  "google_maps_url": "https://www.google.com/maps/search/Mishmosh+Bar+36+Courtenay+Place+Wellington",
+  "notes": "10 Google reviews, $20-60. Added 2026-08-20 from an owner submission via the submit-a-deal form (help@mishmosh.co.nz, 12 Aug 2026). Scanned all three channels: website mishmosh.bar (note mishmosh.co.nz times out; .bar is the live site) confirms small plates on the menu but publishes no specials; Facebook is an unmanaged place page; Instagram @mishmosh_36 (2,348 followers) had no post for this deal. Briefly traded as Rick Roll and relaunched as Mishmosh in July 2026. Open Tue-Thu 3pm-12am, Fri-Sat 3pm-4am, closed Mon and Sun, which matches the submitted Tue-Sat days.",
+  "lat": -41.2935248,
+  "lng": 174.7822767
  }
 ]
