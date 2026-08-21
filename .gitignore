@@ -84,3 +84,7 @@ REEL_POSTING_METHOD.md
 # welly-deals-by-day.co.nz/woap_audit/<file>. They hold venue contact/reply state.
 woap_audit/
 WOAP_RECAP_REEL_SCRIPT.md
+
+# Reel render working files. The publish dir is the repo root, so these would otherwise be
+# fetchable at welly-deals-by-day.co.nz/reel/... and they are large media.
+reel/
