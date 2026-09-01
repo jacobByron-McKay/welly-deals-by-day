@@ -1353,10 +1353,16 @@ let showClubs         = false;   // "Clubs" filter — default OFF. club:true re
 const CLUB_RUGBY_ENABLED = true;
 let showClubRugby     = false;   // Club Rugby tab — default OFF; reveals the Wellington Premier fixtures section
 // WOAP Burgers ("Burger Wellington") tab feature flag. Built for Visa Wellington on a Plate's
-// Burger Wellington festival, 3-23 August 2026. Kept DARK (false) until the real ~244-burger
-// dataset has been scraped into woap_burgers.json — while false, the toggle bar + section hide
-// themselves entirely and the burger data is never fetched. Flip to true to launch.
-const WOAP_ENABLED    = true;
+// Burger Wellington festival, 3-23 August 2026. While false, the toggle bar + section hide
+// themselves entirely and the burger data is never fetched.
+//
+// Turned OFF on 1 Sep 2026, the festival having ended on 23 August and Visa WOAP itself having
+// finished on 31 August. The live board is retired rather than deleted: everything it needs is
+// still here, so next year's festival is a one-line change plus a fresh scrape.
+// Visa WOAP publish their own list of venues that kept a burger on past the festival, so there
+// is nothing left for a live board to add:
+// visawoap.com/whats-fresh/curated-lists/burgers-still-on-this-week
+const WOAP_ENABLED    = false;
 let showWoap          = false;   // WOAP tab — default OFF; reveals the Burger Wellington leaderboard
 let woapView          = "board"; // "board" (leaderboard) | "map" (dedicated burger map)
 // The burgers overlay has its OWN search, deliberately separate from the deals-page searchQuery.
